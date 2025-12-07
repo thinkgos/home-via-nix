@@ -1,10 +1,10 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, username, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home.username = "thinkgo";
-  home.homeDirectory = "/home/thinkgo";
+  home.username = username;
+  home.homeDirectory = "/home/${username}";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -54,10 +54,12 @@
     tokei       # 统计代码行数
     glow        # markdown预览器
     bottom      # 图形化进程/系统监控器
+    fzf         # 模糊查找工具
 
     #! 编程相关
     sccache     # 缓存编译结果
     mdbook      # 从markdown文档生成book
+    pre-commit  # git pre-commit hook
 
     #! Rust工具链
     # cargo-cross # 跨平台编译Rust程序
@@ -68,8 +70,8 @@
     #! 编辑器
 
     #! zsh插件
-    # zsh-autosuggestions
-    # zsh-syntax-highlighting
+    zsh-autosuggestions
+    zsh-syntax-highlighting
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
@@ -130,77 +132,88 @@
     # EDITOR = "emacs";
   };
 
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
+  programs = {
+    # Let Home Manager install and manage itself.
+    home-manager.enable = true;
 
-  programs.zsh = {
-    enable = true;
-    envExtra = ''    
-      # rustup
-      export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
-      export RUSTUP_UPDATE_ROOT=https://mirrors.tuna.tsinghua.edu.cn/rustup/rustup
-      # goup
-      export GOUP_GO_REGISTRY_INDEX='ngx-fancy-index|https://mirrors.hust.edu.cn/golang'
-      export GOUP_GO_REGISTRY=https://mirrors.hust.edu.cn/golang
-
-      # rust
-      . "$HOME/.cargo/env"
-      # goup
-      . "$HOME/.goup/env"
-
-      # go
-      export GOPATH=~/go
-      if [[ ":$PATH:" != *":$GOPATH/bin:"* ]]; then
-          export PATH=$PATH:$GOPATH/bin
-      fi
-    '';
-    
-    setOptions = [ "no_nomatch" ];
-    shellAliases = {
-      nv = "nvim";
-      tf = "terraform";
-      ls = "eza";
-      cat = "bat -p";
-    };
-    initContent =  let 
-      zshConfigEarlyInit = lib.mkOrder 500 '' 
-        fpath=(~/.zfunc $fpath) # 增加zsh代码补全脚本路径
-      ''; 
-      zshConfigLast = lib.mkOrder 1500 ''
-        autoload -U +X bashcompinit && bashcompinit
-
-        eval "$(starship init zsh)"
-        eval "$(atuin init zsh --disable-up-arrow)"
-        eval "$(zoxide init zsh)"
-        # eval "$(fnm env --use-on-cd --shell zsh)"
-      ''; 
-    in 
-      lib.mkMerge [ zshConfigEarlyInit zshConfigLast ];
-
-    syntaxHighlighting.enable = true;
-    autosuggestion.enable = true;  
-    oh-my-zsh = {
+    zsh = {
       enable = true;
-      # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-      theme = "agnoster";
-      plugins = [
-        "zoxide"
-        "fzf"
-        "git"
-        "fig"
-        "golang"
-        "rust"
-        "npm"
-        "tmux"
-        "vagrant"
-        "kubectl"
-        "helm"
-        "minikube"
-        "docker"
-        "cp"
-        "ansible"
-        "fnm"
-      ];
+      envExtra = ''    
+        # rustup
+        export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
+        export RUSTUP_UPDATE_ROOT=https://mirrors.tuna.tsinghua.edu.cn/rustup/rustup
+
+        # rust
+        . "$HOME/.cargo/env"
+
+        # go
+        export GOPATH=~/go
+        if [[ ":$PATH:" != *":$GOPATH/bin:"* ]]; then
+            export PATH=$PATH:$GOPATH/bin
+        fi
+      '';
+      
+      setOptions = [ "no_nomatch" ];
+      shellAliases = {
+        nv = "nvim";
+        tf = "terraform";
+        ls = "eza";
+        cat = "bat -p";
+      };
+      initContent =  
+        let 
+          zshConfigEarlyInit = lib.mkOrder 500 
+            '' 
+              fpath=(~/.zfunc $fpath) # 增加zsh代码补全脚本路径
+            ''; 
+          zshConfigLast = lib.mkOrder 1500 
+            ''
+              autoload -U +X bashcompinit && bashcompinit
+
+              eval "$(starship init zsh)"
+              eval "$(atuin init zsh --disable-up-arrow)"
+              eval "$(zoxide init zsh)"
+              # eval "$(fnm env --use-on-cd --shell zsh)"
+            '';
+        in 
+          lib.mkMerge [ zshConfigEarlyInit zshConfigLast ];
+
+      syntaxHighlighting.enable = true;
+      autosuggestion.enable = true;  
+      oh-my-zsh = {
+        enable = true;
+        # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+        theme = "agnoster";
+        plugins = [
+          "zoxide"
+          "fzf"
+          "git"
+          "fig"
+          "golang"
+          "rust"
+          "npm"
+          "tmux"
+          "vagrant"
+          "kubectl"
+          "helm"
+          "minikube"
+          "docker"
+          "cp"
+          "ansible"
+        ];
+      };
+    };
+
+    direnv = {
+      enable = true;
+      enableZshIntegration = true;
+      silent = false;
+      mise.enable = true;
+    };
+
+    mise = {
+      enable = true;
+      enableZshIntegration = true;
     };
   };
 }

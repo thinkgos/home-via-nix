@@ -14,18 +14,22 @@
   outputs = inputs@{ self, nixpkgs, flake-parts, home-manager, ... }: 
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
-
       perSystem = { pkgs, ... }: {
-        legacyPackages.homeConfigurations.thinkgo = inputs.home-manager.lib.homeManagerConfiguration{
-          inherit pkgs;
+        legacyPackages.homeConfigurations = 
+          let makeHome = username:
+            inputs.home-manager.lib.homeManagerConfiguration {
+              inherit pkgs;
 
-          modules = [
-            ./home.nix
-          ];
+              modules = [./home.nix];
 
-          # Optionally use extraSpecialArgs
-          # to pass through arguments to home.nix
-        };
+              # Optionally use extraSpecialArgs
+              # to pass through arguments to home.nix
+              extraSpecialArgs = { inherit username; };
+            };
+          in {
+            thinkgo = makeHome "thinkgo";
+            nova = makeHome "nova";
+          };
       
         devShells.default = pkgs.mkShell {
           packages = [
