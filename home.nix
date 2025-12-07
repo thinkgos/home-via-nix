@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -67,6 +67,9 @@
 
     #! 编辑器
 
+    #! zsh插件
+    # zsh-autosuggestions
+    # zsh-syntax-highlighting
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
@@ -100,7 +103,7 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';
 
-    ".vimrc".source = dotfiles/vimrc;
+    ".vimrc".source = dotfiles/.vimrc;
     ".wezterm.lua".source = dotfiles/wezterm.lua;
 
     ".config/starship.toml".source = dotfiles/starship/gruvbox-rainbow.toml;
@@ -129,4 +132,55 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  programs.zsh = {
+    enable = true;
+    setOptions = [ "no_nomatch" ];
+    shellAliases = {
+      nv = "nvim";
+      tf = "terraform";
+      ls = "eza";
+      cat = "bat -p";
+    };
+
+    initContent =  let 
+      zshConfigEarlyInit = lib.mkOrder 500 ''     
+      ''; 
+      zshConfigLast = lib.mkOrder 1500 ''
+        autoload -U +X bashcompinit && bashcompinit
+
+        eval "$(starship init zsh)"
+        eval "$(atuin init zsh --disable-up-arrow)"
+        eval "$(zoxide init zsh)"
+        # eval "$(fnm env --use-on-cd --shell zsh)"
+      ''; 
+    in 
+      lib.mkMerge [ zshConfigEarlyInit zshConfigLast ];
+
+    syntaxHighlighting.enable = true;
+    autosuggestion.enable = true;  
+    oh-my-zsh = {
+      enable = true;
+      # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+      theme = "agnoster";
+      plugins = [
+        "zoxide"
+        "fzf"
+        "git"
+        "fig"
+        "golang"
+        "rust"
+        "npm"
+        "tmux"
+        "vagrant"
+        "kubectl"
+        "helm"
+        "minikube"
+        "docker"
+        "cp"
+        "ansible"
+        "fnm"
+      ];
+    };
+  };
 }
