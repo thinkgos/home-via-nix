@@ -135,6 +135,26 @@
 
   programs.zsh = {
     enable = true;
+    envExtra = ''    
+      # rustup
+      export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
+      export RUSTUP_UPDATE_ROOT=https://mirrors.tuna.tsinghua.edu.cn/rustup/rustup
+      # goup
+      export GOUP_GO_REGISTRY_INDEX='ngx-fancy-index|https://mirrors.hust.edu.cn/golang'
+      export GOUP_GO_REGISTRY=https://mirrors.hust.edu.cn/golang
+
+      # rust
+      . "$HOME/.cargo/env"
+      # goup
+      . "$HOME/.goup/env"
+
+      # go
+      export GOPATH=~/go
+      if [[ ":$PATH:" != *":$GOPATH/bin:"* ]]; then
+          export PATH=$PATH:$GOPATH/bin
+      fi
+    '';
+    
     setOptions = [ "no_nomatch" ];
     shellAliases = {
       nv = "nvim";
@@ -142,9 +162,9 @@
       ls = "eza";
       cat = "bat -p";
     };
-
     initContent =  let 
-      zshConfigEarlyInit = lib.mkOrder 500 ''     
+      zshConfigEarlyInit = lib.mkOrder 500 '' 
+        fpath=(~/.zfunc $fpath) # 增加zsh代码补全脚本路径
       ''; 
       zshConfigLast = lib.mkOrder 1500 ''
         autoload -U +X bashcompinit && bashcompinit
