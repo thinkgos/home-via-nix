@@ -19,9 +19,14 @@
   # environment.
   home.packages = with pkgs;[
     #! 基础工具
+    zsh         # 终端shell
     tmux        # 终端多路复用工具
     vim         # 终端文本编辑器  
     jq          # json美化过滤
+
+    #! 编译工具链
+    mold        # 快速编译链接器
+    clang_20    # clang-20
 
     #! 命令行替代工具
     bat         # 替代cat
@@ -49,11 +54,14 @@
     #! 编程相关
     sccache     # 缓存编译结果
     mdbook      # 从markdown文档生成book
+    git-cliff   # 定制生成Changelog
+
+    #! Rust工具链
+    # cargo-cross # 跨平台编译Rust程序
 
     #! 环境管理
     direnv      # shell扩展用于管理环境变量
     mise        # 管理开发环境, 软件多版本管理
-
 
     #! 编辑器
 
