@@ -1,6 +1,9 @@
 { config, lib, pkgs, username, ... }:
-
-{
+let 
+  fromTomlFile = filename: builtins.fromTOML (builtins.readFile filename);
+  # 配置文件路径
+  starshipFilename = dotfiles/starship/gruvbox-rainbow.toml;
+in {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = username;
@@ -19,7 +22,6 @@
   # environment.
   home.packages = with pkgs;[
     #! 基础工具
-    zsh         # 终端shell
     tmux        # 终端多路复用工具
     vim         # 终端文本编辑器  
     jq          # json美化过滤
@@ -43,13 +45,11 @@
     gfold       # 跟踪git仓库
 
     #! shell相关
-    direnv      # shell扩展用于管理环境变量
 
     #! 通用工具
     yazi        # 终端文件管理
     zellij      # 终端多路复用工具
     atuin       # 命令历史记录
-    starship    # 提示工具
     tealdeer    # 快速查找命令, 同tldr
     tokei       # 统计代码行数
     glow        # markdown预览器
@@ -65,13 +65,16 @@
     # cargo-cross # 跨平台编译Rust程序
 
     #! 环境管理
-    mise        # 管理开发环境, 软件多版本管理
 
     #! 编辑器
 
-    #! zsh插件
-    zsh-autosuggestions
-    zsh-syntax-highlighting
+    #! home-manager 在programs中统一开启
+    # zsh         # 终端shell
+    # zsh-autosuggestions
+    # zsh-syntax-highlighting
+    # starship    # 提示工具
+    # direnv      # shell扩展用于管理环境变量
+    # mise        # 管理开发环境, 软件多版本管理
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
@@ -108,7 +111,6 @@
     ".vimrc".source = dotfiles/.vimrc;
     ".wezterm.lua".source = dotfiles/wezterm.lua;
 
-    ".config/starship.toml".source = dotfiles/starship/gruvbox-rainbow.toml;
     ".config/zellij/config.kdl".source = dotfiles/zellij.kdl;
   };
 
@@ -126,7 +128,7 @@
   #
   # or
   #
-  #  /etc/profiles/per-user/thinkgo/etc/profile.d/hm-session-vars.sh
+  #  /etc/profiles/per-user/${USER}/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
     # EDITOR = "emacs";
@@ -170,7 +172,7 @@
             ''
               autoload -U +X bashcompinit && bashcompinit
 
-              eval "$(starship init zsh)"
+              # eval "$(starship init zsh)"
               eval "$(atuin init zsh --disable-up-arrow)"
               eval "$(zoxide init zsh)"
               # eval "$(fnm env --use-on-cd --shell zsh)"
@@ -202,6 +204,12 @@
           "ansible"
         ];
       };
+    };
+
+    starship = {
+      enable = true;
+      enableZshIntegration = true;
+      settings = fromTomlFile starshipFilename;
     };
 
     direnv = {
