@@ -36,31 +36,33 @@
     dust        # 替代du  
     zoxide      # 替代z, 快速跳转目录
 
-    #! 终端工具
+    #! git相关
     gitui       # git ui界面
     delta       # git-delta, git语法高亮分页器
-    bottom      # 图形化进程/系统监控器
+    git-cliff   # 定制生成Changelog
+    gfold       # 跟踪git仓库
+
+    #! shell相关
+    direnv      # shell扩展用于管理环境变量
 
     #! 通用工具
     yazi        # 终端文件管理
     zellij      # 终端多路复用工具
     atuin       # 命令历史记录
-    gfold       # 跟踪git仓库
     starship    # 提示工具
     tealdeer    # 快速查找命令, 同tldr
     tokei       # 统计代码行数
     glow        # markdown预览器
+    bottom      # 图形化进程/系统监控器
 
     #! 编程相关
     sccache     # 缓存编译结果
     mdbook      # 从markdown文档生成book
-    git-cliff   # 定制生成Changelog
 
     #! Rust工具链
     # cargo-cross # 跨平台编译Rust程序
 
     #! 环境管理
-    direnv      # shell扩展用于管理环境变量
     mise        # 管理开发环境, 软件多版本管理
 
     #! 编辑器
@@ -97,6 +99,12 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
+
+    ".vimrc".source = dotfiles/vimrc;
+    ".wezterm.lua".source = dotfiles/wezterm.lua;
+
+    ".config/starship.toml".source = dotfiles/starship/gruvbox-rainbow.toml;
+    ".config/zellij/config.kdl".source = dotfiles/zellij.kdl;
   };
 
   # Home Manager can also manage your environment variables through
