@@ -16,19 +16,17 @@
       systems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
       perSystem = { pkgs, ... }: {
         legacyPackages.homeConfigurations = 
-          let makeHome = username:
+          let makeHome = {...}@customize:
             inputs.home-manager.lib.homeManagerConfiguration {
               inherit pkgs;
-
               modules = [./home.nix];
-
               # Optionally use extraSpecialArgs
               # to pass through arguments to home.nix
-              extraSpecialArgs = { inherit username; };
+              extraSpecialArgs = { inherit customize; };
             };
           in {
-            thinkgo = makeHome "thinkgo";
-            nova = makeHome "nova";
+            thinkgo = makeHome { username = "thinkgo"; onGui = true; };
+            nova = makeHome { username = "nova"; onGui = true; };
           };
       
         devShells.default = pkgs.mkShell {
@@ -40,6 +38,18 @@
           shellHook = ''
             echo "development shell ready!"
           '';
+        };
+
+        apps = {
+          cargo-bin = {
+            type = "app";
+            program =
+              let 
+                script = pkgs.writeShellScriptBin "cargo-bin" ''
+                    echo "!! Install via cargo"
+                  '';
+              in "${script}/bin/cargo-bin";
+          };
         };
       };
     };

@@ -1,14 +1,18 @@
-{ config, lib, pkgs, username, ... }:
+{ config, lib, pkgs, customize, ... }:
 let 
   fromTomlFile = filename: builtins.fromTOML (builtins.readFile filename);
+  onGui = cfg: lib.mkIf (customize.onGui) cfg;
   # 配置文件路径
-  starshipFilename = dotfiles/starship/gruvbox-rainbow.toml;
-  zellijFilename = dotfiles/zellij.kdl;
+  configPath = {
+    starship = dotfiles/starship/gruvbox-rainbow.toml;
+    zellij = dotfiles/zellij.kdl;
+    wezterm = dotfiles/wezterm.lua;
+  };
 in {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home.username = username;
-  home.homeDirectory = "/home/${username}";
+  home.username = customize.username;
+  home.homeDirectory = "/home/${customize.username}";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -24,12 +28,18 @@ in {
   home.packages = with pkgs;[
     #! 基础工具
     tree        # 目录树
+    curl        # 网络请求工具
+    wget        # 网络下载工具
     tmux        # 终端多路复用工具
     jq          # json美化过滤
 
-    #! 编译工具链
+    #! 编译库及工具链
+    autoconf    # 自动配置工具
+    gnumake     # 构建工具
+    cmake       # 跨平台构建工具
     mold        # 快速编译链接器
-    clang_20    # clang-20
+    gcc         # gcc
+    libgcc      # 运行时库
 
     #! 命令行替代工具
     eza         # 替代ls
@@ -49,14 +59,36 @@ in {
     tokei       # 统计代码行数
     glow        # markdown预览器
     bottom      # 图形化进程/系统监控器
+    typos       # 检查拼写错误
 
     #! 编程相关
     sccache     # 缓存编译结果
     mdbook      # 从markdown文档生成book
     pre-commit  # git pre-commit hook
 
+    #! 数据库工具
+    sqlite          # sqlite数据库工具
+    sqlcipher       # sqlite数据库工具, 支持加密
+    libmysqlclient  # mysql数据库工具
+    mycli           # mysql客户端
+
     #! Rust工具链
-    # cargo-cross # 跨平台编译Rust程序
+    cargo-deny          # 检查依赖项
+    cargo-udeps         # 检查未使用的依赖
+    cargo-shear         # 检测和删除未使用的依赖
+    cargo-audit         # 检查依赖项安全
+    cargo-tarpaulin     # 测试覆盖率工具
+    cargo-expand        # 宏展开
+    cargo-nextest       # 并行测试运行器
+
+    cargo-cross         # 跨平台编译Rust程序
+    cargo-update        # 检查更新已安装可执行文件
+    cargo-zigbuild      # 跨平台编译Rust程序, 使用zig作为后端
+    cargo-generate      # 从模板生成Rust项目
+    cargo-bloat         # 检查二进制文件中的大依赖项
+    cargo-binutils      # llvm二进制工具
+    cargo-semver-checks # 检查crate是否符合语义版本规范
+    tokio-console       # tokio任务调试工具
 
     #! 环境管理
 
@@ -85,7 +117,6 @@ in {
     nerd-fonts.hack
     nerd-fonts.meslo-lg
     nerd-fonts.fira-code
-
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
     # # environment:
@@ -108,8 +139,7 @@ in {
     #   org.gradle.daemon.idletimeout=3600000
     # '';
     ".wezterm.lua".source = dotfiles/wezterm.lua;
-
-    ".config/zellij/config.kdl".source = dotfiles/zellij.kdl;
+    ".config/git/.gitmessage".source = dotfiles/.gitmessage;
   };
 
   # Home Manager can also manage your environment variables through
@@ -131,6 +161,19 @@ in {
   home.sessionVariables = {
     # EDITOR = "emacs";
   };
+
+  home.activation.ensureFonts = lib.hm.dag.entryAfter [ "copyFonts" ] ''
+    echo "!! Symlink fonts"
+
+    srcFontDir=${config.home.homeDirectory}/.nix-profile/share/fonts/truetype/NerdFonts;
+    dstFontDir=${config.home.homeDirectory}/.local/share/fonts;
+
+    mkdir -p $dstFontDir
+    ln -sfn $srcFontDir/JetBrainsMono $dstFontDir/JetBrainsMono
+    ln -sfn $srcFontDir/FiraCode $dstFontDir/FiraCode
+    ln -sfn $srcFontDir/MesloLG $dstFontDir/MesloLG
+    ln -sfn $srcFontDir/Hack $dstFontDir/Hack
+  '';
 
   programs = {
     # Let Home Manager install and manage itself.
@@ -202,7 +245,7 @@ in {
     starship = {
       enable = true;
       enableZshIntegration = true;
-      settings = fromTomlFile starshipFilename;
+      settings = fromTomlFile configPath.starship;
     };
 
     direnv = {
@@ -246,12 +289,10 @@ in {
       plugins = [];
     };
 
-    # zellij = {
-    #   enable = true;
-    #   enableZshIntegration = true;
-    #   attachExistingSession = false;
-    #   extraConfig = builtins.readFile zellijFilename;
-    # };
+    zellij = {
+      enable = true;
+      extraConfig = builtins.readFile configPath.zellij;
+    };
 
     zoxide = {
       enable = true;
@@ -273,6 +314,39 @@ in {
     fzf = {
       enable = true;
       enableZshIntegration = true;
+    };
+
+    git = {
+      enable = true;
+      lfs.enable = true;
+      settings = {
+        user = {
+          name = "thinkgo";
+          email = "thinkgo@aliyun.com";
+        };
+        core = {
+          # autocrlf
+          # windows和linux换行符差异, 需要配置换行符, windows 是CRLF, linux/mac是LF
+          # 保存仓库永远为LF, 在Windows工作空间都是CRLF, 在Mac/Linux工作空间都是LF.
+          # 在windows配置`autocrlf = true`, 提交时自动CRLF转LF, 检出时自动将LF转CRLF
+          # linux/mac配置`autocrlf = input`, 提交时自动CRLF转LF, 检出时自动将保持LF.
+          autocrlf = "input";
+          safecrlf = "warn"; # 提交包含混合换行符的文件时给出警告
+          pager = "delta";
+          editor = "vim";
+        };
+        interactive.diffFilter = "delta --color-only";
+        add.interactive.useBuiltin = false;
+        delta = {
+          navigate = true;    
+          light = false;      
+          side-by-side = true;
+        };
+        merge.conflictstyle = "diff3";
+        diff.colorMoved = "default";
+        credential.helper = "store";
+        commit.template = "~/.config/git/.gitmessage";
+      };
     };
   };
 }
