@@ -65,6 +65,7 @@ in {
     sccache     # 缓存编译结果
     mdbook      # 从markdown文档生成book
     pre-commit  # git pre-commit hook
+    upx         # 二进制压缩工具
 
     #! 数据库工具
     sqlite          # sqlite数据库工具
