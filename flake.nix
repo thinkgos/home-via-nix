@@ -19,14 +19,14 @@
           let makeHome = {...}@customize:
             inputs.home-manager.lib.homeManagerConfiguration {
               inherit pkgs;
-              modules = [./home.nix];
+              modules = [ ./home ];
               # Optionally use extraSpecialArgs
               # to pass through arguments to home.nix
               extraSpecialArgs = { inherit customize; };
             };
           in {
-            thinkgo = makeHome { username = "thinkgo"; onGui = true; };
-            nova = makeHome { username = "nova"; onGui = true; };
+            thinkgo = makeHome { username = "thinkgo"; graphics = true; };
+            nova = makeHome { username = "nova"; graphics = true; };
           };
       
         devShells.default = pkgs.mkShell {
