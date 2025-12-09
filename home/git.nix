@@ -1,11 +1,4 @@
 { config, lib, pkgs, ... }:
-let 
-  # 配置文件路径
-  configPath = {
-    gitMessageDst = ".config/git/.gitmessage";
-    gitMessageSrc = ./assets/.gitmessage;
-  };
-in
 {
   home.packages = with pkgs;[
     gitui       # git ui界面
@@ -17,7 +10,23 @@ in
   # Home Manager is pretty good at managing dotfiles. 
   # The primary way to manage plain files is through 'home.file'.
   home.file = {
-    "${configPath.gitMessageDst}".source = configPath.gitMessageSrc;
+    ".config/git/.gitmessage".text = ''
+
+      # head: <type>(<scope>): <subject>
+      # - type: feat, fix, doc, perf, style, refactor, test, chore, security, revert
+      # - scope: can be empty (eg. if the change is a global or difficult to assign to a single component)
+      # - subject: start with verb (such as 'change'), 50-character line
+
+      # body: 72-character wrapped.
+      # This should answer:              
+      # * Why was this change necessary?
+      # * How does it address the problem?
+      # * Are there any side effects?
+
+      # footer:
+      # - Include a link to the ticket, if any.
+      # - BREAKING CHANGE
+    '';
   };
 
   programs.git = {
