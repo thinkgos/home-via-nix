@@ -14,6 +14,11 @@
   # release notes.
   home.stateVersion = "25.11"; # Please read the comment before changing.
 
+  targets.genericLinux = {
+    enable = true;
+    gpu.enable = true;
+  };
+
   imports = [
     ./shell
     ./devtools
