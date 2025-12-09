@@ -3,4 +3,8 @@
   imports = [
     ./shell
   ];
+
+  home.packages = with pkgs;[
+    dbeaver-bin
+  ];
 }
