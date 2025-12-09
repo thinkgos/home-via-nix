@@ -55,10 +55,13 @@ systemctl --user show-environment | grep XDG_DATA_DIRS
 
 ### 4.2 桌面端启动器只有一部份显示
 
+在4.1解决后, 仍有部份不显示, 主要是找不到二进制程序, 原因是`PATH`没有包含Nix对应路径.
+
 ```shell
  systemctl --user show-environment | grep PATH
 ```
 
-- https://github.com/nix-community/home-manager/issues/1439
-- https://gist.github.com/BohdanTkachenko/6ba2730ff54ecbb2d7aed22dec3507d5
-- https://github.com/nix-community/home-manager/pull/7949
+- [issues 1439](https://github.com/nix-community/home-manager/issues/1439)
+- [BohdanTkachenko gist](https://gist.github.com/BohdanTkachenko/6ba2730ff54ecbb2d7aed22dec3507d5)
+- [systemd/systemd#32423](https://github.com/systemd/systemd/issues/32423#issuecomment-2907893187)
+- [pr 7949](https://github.com/nix-community/home-manager/pull/7949)

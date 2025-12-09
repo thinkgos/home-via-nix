@@ -6,6 +6,7 @@ in
   # relate issue:
   # - https://github.com/nix-community/home-manager/issues/1439
   # - https://gist.github.com/BohdanTkachenko/6ba2730ff54ecbb2d7aed22dec3507d5
+  # - https://github.com/systemd/systemd/issues/32423#issuecomment-2907893187
   systemd.user.sessionVariables = {
     PATH = "$HOME/.nix-profile/bin:$HOME/.nix-profile/sbin:$PATH";
   };

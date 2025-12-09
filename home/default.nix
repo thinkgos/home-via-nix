@@ -108,7 +108,6 @@
   #
   home.sessionVariables = {
     # EDITOR = "emacs";
-
   };
 
   home.activation.ensureFonts = lib.hm.dag.entryAfter [ "copyFonts" ] ''
