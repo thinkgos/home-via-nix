@@ -32,3 +32,33 @@ home-manager switch --flake .#thinkgo
 ```
 
 `sudo chsh -s ~/.nix-profile/bin/zsh $USER` 设置默认shell为zsh
+
+## 4. Issue
+
+### 4.1 桌面端启动器找不到相关程序
+
+`XDG_DATA_DIRS` 没有Nix对应路径
+
+```shell
+systemctl --user show-environment | grep XDG_DATA_DIRS
+```
+
+`home-manager`添加以下配置暂时解决
+
+```nix
+  xdg.enable = true;
+  targets.genericLinux = {
+    enable = true;
+    gpu.enable = true;
+  };
+```
+
+### 4.2 桌面端启动器只有一部份显示
+
+```shell
+ systemctl --user show-environment | grep PATH
+```
+
+- https://github.com/nix-community/home-manager/issues/1439
+- https://gist.github.com/BohdanTkachenko/6ba2730ff54ecbb2d7aed22dec3507d5
+- https://github.com/nix-community/home-manager/pull/7949
