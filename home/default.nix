@@ -21,6 +21,7 @@
 
   imports = [
     ./systemd.nix
+    ./fonts.nix
     ./terminal
   ] ++ lib.optionals customize.graphics [
     ./graphical
@@ -51,19 +52,14 @@
     typos       # 检查拼写错误
     mdbook      # 从markdown文档生成book
 
-    #! home-manager - devtools 统一管理
-    #! home-manager - shell 统一管理
-    #! home-manager 在programs中统一开启
+
+    #! home-manager - terminal 统一管理终端应用
+    #! home-manager - graphical 统一管理图形化应用
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # hello
-
-    #! fonts
-    nerd-fonts.jetbrains-mono
-    nerd-fonts.hack
-    nerd-fonts.meslo-lg
-    nerd-fonts.fira-code
+    
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
     # # environment:
@@ -106,19 +102,6 @@
   home.sessionVariables = {
     # EDITOR = "emacs";
   };
-
-  home.activation.ensureFonts = lib.hm.dag.entryAfter [ "copyFonts" ] ''
-    echo "!! Symlink fonts"
-
-    srcFontDir=${config.home.homeDirectory}/.nix-profile/share/fonts/truetype/NerdFonts;
-    dstFontDir=${config.home.homeDirectory}/.local/share/fonts;
-
-    mkdir -p $dstFontDir
-    ln -sfn $srcFontDir/JetBrainsMono $dstFontDir/JetBrainsMono
-    ln -sfn $srcFontDir/FiraCode $dstFontDir/FiraCode
-    ln -sfn $srcFontDir/MesloLG $dstFontDir/MesloLG
-    ln -sfn $srcFontDir/Hack $dstFontDir/Hack
-  '';
 
   programs = {
     # Let Home Manager install and manage itself.
