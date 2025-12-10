@@ -19,10 +19,5 @@
     ];
   };
 
-  home.packages = with pkgs;[
-    flameshot    # 截图工具
-    localsend    # 局域网文件传输工具
-    wireshark    # 网络协议分析工具
-    vlc          # 多媒体播放器
-  ];
+  home.packages = with pkgs;[];
 }

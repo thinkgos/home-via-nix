@@ -1,5 +1,11 @@
 { config, lib, pkgs, ... }: 
 {
+  home.packages = with pkgs;[
+    flameshot    # 截图工具
+    localsend    # 局域网文件传输工具
+    vlc          # 多媒体播放器
+  ];
+
   i18n = {
     inputMethod = {
       enable = true;
