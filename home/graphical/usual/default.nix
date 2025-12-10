@@ -1,9 +1,10 @@
 { config, lib, pkgs, ... }: 
 {
   home.packages = with pkgs;[
-    flameshot    # 截图工具
-    localsend    # 局域网文件传输工具
-    vlc          # 多媒体播放器
+    flameshot       # 截图工具
+    localsend       # 局域网文件传输工具
+    vlc             # 多媒体播放器
+    mission-center  # 监控您的CPU,内存,磁盘,网络和GPU使用情况
   ];
 
   i18n = {

@@ -18,4 +18,10 @@
     cargo-semver-checks # 检查crate是否符合语义版本规范
     tokio-console       # tokio任务调试工具
   ];
+
+  # 暂不支持
+  # programs.cargo = {
+  #   enable = true;
+  #   settings = {};
+  # };
 }

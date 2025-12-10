@@ -16,8 +16,8 @@
       systems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
       perSystem = { pkgs, ... }: {
         legacyPackages.homeConfigurations = 
-          let makeHome = {...}@customize:
-            inputs.home-manager.lib.homeManagerConfiguration {
+          let 
+            mkHome = {...}@customize: inputs.home-manager.lib.homeManagerConfiguration {
               inherit pkgs;
               modules = [ ./home ];
               # Optionally use extraSpecialArgs
@@ -25,8 +25,8 @@
               extraSpecialArgs = { inherit customize; };
             };
           in {
-            thinkgo = makeHome { username = "thinkgo"; graphics = true; };
-            nova = makeHome { username = "nova"; graphics = true; };
+            thinkgo = mkHome { username = "thinkgo"; graphics = true; };
+            nova = mkHome { username = "nova"; graphics = true; };
           };
       
         devShells.default = pkgs.mkShell {

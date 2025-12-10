@@ -36,6 +36,7 @@
     wget        # 网络下载工具
     tmux        # 终端多路复用工具
     jq          # json美化过滤
+    yq          # yaml美化过滤
 
     #! 命令行替代工具
     eza         # 替代ls

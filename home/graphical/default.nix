@@ -16,6 +16,7 @@
     allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
       "redisinsight"
       "vscode"
+      "spotify"
     ];
   };
 
