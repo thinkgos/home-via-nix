@@ -32,6 +32,7 @@
   home.packages = with pkgs;[
     #! 基础工具
     tree        # 目录树
+    nmap        # 网络扫描工具
     curl        # 网络请求工具
     wget        # 网络下载工具
     tmux        # 终端多路复用工具
