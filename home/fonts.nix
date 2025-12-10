@@ -2,6 +2,9 @@
 {
   home.packages = with pkgs;[
     adwaita-fonts
+    noto-fonts
+    noto-fonts-cjk-sans
+    noto-fonts-cjk-serif
     noto-fonts-color-emoji
     nerd-fonts.jetbrains-mono
     nerd-fonts.hack
@@ -18,9 +21,10 @@
         "Hack Nerd Font" 
         "MesloLGS NF" 
         "FiraCode Nerd Font"
+        "Noto Sans Mono CJK SC"
       ];
-      sansSerif = [ "Adwaita Sans" ];
-      serif = [ "Adwaita Sans" ];
+      sansSerif = [ "Adwaita Sans" "Noto Serif CJK SC" ];
+      serif = [ "Adwaita Sans" "Noto Serif CJK SC" ];
     };
   };
 }
