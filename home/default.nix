@@ -37,6 +37,7 @@
     tmux        # 终端多路复用工具
     jq          # json美化过滤
     yq          # yaml美化过滤
+    fastfetch   # 
 
     #! 命令行替代工具
     eza         # 替代ls
@@ -52,7 +53,6 @@
     bottom      # 图形化进程/系统监控器
     typos       # 检查拼写错误
     mdbook      # 从markdown文档生成book
-
 
     #! home-manager - terminal 统一管理终端应用
     #! home-manager - graphical 统一管理图形化应用

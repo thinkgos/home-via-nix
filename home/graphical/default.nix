@@ -1,10 +1,11 @@
-{ config, lib, pkgs, ... }: 
+{ config, lib, pkgs, customize, ... }: 
 {
   imports = [
     ./shell
     ./editor
     ./devtools
-  ];
+  ]
+  ++ lib.optional (customize.window == "hyprland") ./windows/hyprland.nix;
 
   xdg = {
     enable = true;

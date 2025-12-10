@@ -26,7 +26,8 @@
             };
           in {
             thinkgo = mkHome { username = "thinkgo"; graphics = true; };
-            nova = mkHome { username = "nova"; graphics = true; };
+            thinkgo-hyprland = mkHome { username = "thinkgo"; graphics = true; window = "hyprland"; };
+            nova = mkHome { username = "nova"; graphics = true; };    
           };
       
         devShells.default = pkgs.mkShell {
