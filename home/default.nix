@@ -21,10 +21,7 @@
 
   imports = [
     ./systemd.nix
-    ./shell
-    ./devtools
-    ./editor
-    ./git.nix
+    ./terminal
   ] ++ lib.optionals customize.graphics [
     ./graphical
   ];
