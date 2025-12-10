@@ -25,9 +25,8 @@
               extraSpecialArgs = { inherit customize; };
             };
           in {
-            thinkgo = mkHome { username = "thinkgo"; graphics = true; window = null;};
-            thinkgo-hyprland = mkHome { username = "thinkgo"; graphics = true; window = "hyprland"; };
-            nova = mkHome { username = "nova"; graphics = true; window = null;};    
+            thinkgo = mkHome { username = "thinkgo"; graphics = true; window = "gnome";};
+            thinkgo-hyprland = mkHome { username = "thinkgo"; graphics = true; window = "hyprland"; };  
           };
       
         devShells.default = pkgs.mkShell {
