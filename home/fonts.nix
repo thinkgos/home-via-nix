@@ -2,6 +2,7 @@
 {
   home.packages = with pkgs;[
     adwaita-fonts
+    adwaita-icon-theme 
     noto-fonts
     noto-fonts-cjk-sans
     noto-fonts-cjk-serif
