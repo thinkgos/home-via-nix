@@ -21,6 +21,14 @@
     ];
   };
 
+  home.sessionVariables = {
+    GTK_IM_MODULE = "fcitx";
+    QT_IM_MODULE = "fcitx";
+    XMODIFIERS = "@im=fcitx";
+    SDL_IM_MODULE = "fcitx";
+    GLFW_IM_MODULE = "ibus";
+  };
+
   home.packages = with pkgs;[
     flameshot       # 截图工具
     localsend       # 局域网文件传输工具
@@ -74,9 +82,7 @@
   programs = {
     thunderbird = {
       enable = true;
-      profiles = {
-
-      };
+      profiles = {};
     };
   };
 }
