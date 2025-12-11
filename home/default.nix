@@ -55,6 +55,7 @@
     bottom      # 图形化进程/系统监控器
     typos       # 检查拼写错误
     mdbook      # 从markdown文档生成book
+    aria2c      # 高速下载工具
 
     #! home-manager - terminal 统一管理终端应用
     #! home-manager - graphical 统一管理图形化应用
