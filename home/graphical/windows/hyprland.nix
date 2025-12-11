@@ -29,21 +29,20 @@
   };
 
   home.packages = with pkgs;[
-    hyprland
-    hyprpaper
-    hyprpicker
+    # hyprpaper
+    # hyprpicker
     # hyprlock
     # hypridle
-    wayland
-    swww
-    waybar
-    grim
-    grimblast
-    slurp
-    wl-clip-persist
-    cliphist
-    wf-recorder
-    glib
+    # wayland
+    # swww
+    # waybar
+    # grim
+    # grimblast
+    # slurp
+    # wl-clip-persist
+    # cliphist
+    # wf-recorder
+    # glib
   ];
 
   wayland.windowManager.hyprland = {
@@ -70,9 +69,9 @@
       #   );
     };
 
+    xwayland.enable = true;
     systemd.enable = true;
     systemd.variables = ["--all"];
-    xwayland.enable = true;
   };
   programs.kitty.enable = true;
 }
