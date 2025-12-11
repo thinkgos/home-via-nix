@@ -4,6 +4,7 @@
     dconf2nix     # 用于将dconf配置转换为nix表达式
     whitesur-gtk-theme  # MacOS like theme for all gtk based desktops
     whitesur-icon-theme # MacOS Big Sur style icon theme for linux desktops
+    whitesur-cursors    # X-cursor theme inspired by macOS and based on capitaine-cursors
   ];
   # dconf2nix: https://github.com/nix-community/dconf2nix
   # gvariant:https://github.com/nix-community/home-manager/blob/master/modules/lib/gvariant.nix
@@ -27,7 +28,7 @@
     # 主题
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
-      cursor-theme = "Adwaita";
+      cursor-theme = "WhiteSur-cursors";
       gtk-theme = "WhiteSur-Dark";
       icon-theme = "WhiteSur-dark";
     };
