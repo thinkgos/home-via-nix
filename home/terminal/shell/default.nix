@@ -36,6 +36,7 @@ in {
       enableZshIntegration = true;
       silent = false;
       mise.enable = true;
+      nix-direnv.enable = true;
     };
 
     zoxide = {

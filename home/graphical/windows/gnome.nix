@@ -7,5 +7,6 @@
   home.packages = with pkgs;[
     # gnome-shell-extensions
     gnome-tweaks
+    gnomeExtensions.pop-shell
   ];
 }

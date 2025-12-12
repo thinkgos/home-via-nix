@@ -39,7 +39,8 @@
       switch-to-workspace-4 = ["<Alt>4"];
     };
     "org/gnome/desktop/wm/preferences" = {
-      num-workspaces = 4;       # 工作区数量
+      num-workspaces = 4;                                  # 工作区数量
+      button-layout = "close,minimize,maximize:appmenu";   # 窗口按钮布局
     };
     "org/gnome/shell/keybindings" = {
       screenshot = mkEmptyArray type.string;                # 截图, 默认: <Shift>Print
