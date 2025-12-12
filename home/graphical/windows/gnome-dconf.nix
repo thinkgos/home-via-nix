@@ -5,6 +5,11 @@
     whitesur-gtk-theme  # MacOS like theme for all gtk based desktops
     whitesur-icon-theme # MacOS Big Sur style icon theme for linux desktops
     whitesur-cursors    # X-cursor theme inspired by macOS and based on capitaine-cursors
+
+    # 扩展管理
+    # gnome-shell-extensions
+    gnome-tweaks
+    # gnomeExtensions.tiling-shell # 平铺窗口扩展
   ];
   # dconf2nix: https://github.com/nix-community/dconf2nix
   # gvariant:https://github.com/nix-community/home-manager/blob/master/modules/lib/gvariant.nix
@@ -25,12 +30,16 @@
       dynamic-workspaces = false;         # 动态工作区 - 禁用
       workspaces-only-on-primary = true;  # 工作区只作用于主屏目
     };
+    # "org/gnome/mutter.keybindings" = {
+      # toggle-tiled-left = mkEmptyArray type.string;  # 切换到左侧平铺窗口, 默认: <Super>Left
+      # toggle-tiled-right = mkEmptyArray type.string;  # 切换到右侧平铺窗口, 默认: <Super>Right
+    # };
     # 主题
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
       cursor-theme = "WhiteSur-cursors";
       gtk-theme = "WhiteSur-Dark";
-      icon-theme = "WhiteSur-dark";
+      icon-theme = "WhiteSur-dark"; 
     };
     "org/gnome/desktop/wm/keybindings" = {
       switch-to-workspace-1 = ["<Alt>1"];
