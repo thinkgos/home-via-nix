@@ -5,6 +5,7 @@
     delta       # git-delta, git语法高亮分页器
     git-cliff   # 定制生成Changelog
     gfold       # 跟踪git仓库
+    pre-commit  # git pre-commit hook
   ];
   
   # Home Manager is pretty good at managing dotfiles. 
