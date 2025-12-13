@@ -10,15 +10,15 @@
     # gnome-shell-extensions
     gnome-tweaks
     # gnomeExtensions.user-themes                   # 用户主题
+    # gnomeExtensions.auto-move-windows               # 自动移动窗口
     gnomeExtensions.tiling-shell                    # 平铺窗口
     gnomeExtensions.kimpanel                        # 输入法面板
     gnomeExtensions.appindicator                    # 应用程序指示器
-    gnomeExtensions.auto-move-windows               # 自动移动窗口
     gnomeExtensions.dash-to-dock                    # 任务栏
     gnomeExtensions.compiz-alike-magic-lamp-effect  # 仿Compiz的魔法灯效果
   ];
   # dconf2nix: https://github.com/nix-community/dconf2nix
-  # gvariant:https://github.com/nix-community/home-manager/blob/master/modules/lib/gvariant.nix
+  # gvariant: https://github.com/nix-community/home-manager/blob/master/modules/lib/gvariant.nix
   dconf.settings = with lib.hm.gvariant; {
     # 查看相关配置： gsettings list-recursively org.gnome.xxx.xx 
 
@@ -53,6 +53,7 @@
       switch-to-workspace-2 = ["<Alt>2"];
       switch-to-workspace-3 = ["<Alt>3"];
       switch-to-workspace-4 = ["<Alt>4"];
+      toggle-fullscreen = ["<Super>F"];
       # 开启tiling-shell已覆盖
       # unmaximize = mkEmptyArray type.string;  # 取消最大化, 默认: <Super>Up
       # maximize = mkEmptyArray type.string;    # 最大化, 默认: <Super>Up
@@ -92,7 +93,7 @@
       enable-wraparound-focus = true;
       enable-snap-assist = false;
       inner-gaps = mkUint32 2;
-      layouts-json=''[{"id":"Layout 1","tiles":[{"x":0,"y":0,"width":0.5,"height":1,"groups":[2]},{"x":0.5,"y":0,"width":0.49999999999999994,"height":0.5979087452471483,"groups":[4,2]},{"x":0.5,"y":0.5979087452471483,"width":0.49999999999999994,"height":0.4020912547528517,"groups":[4,2]}]},{"id":"Layout 2","tiles":[{"x":0,"y":0,"width":0.49947916666666664,"height":1,"groups":[2]},{"x":0.49947916666666664,"y":0,"width":0.5005208333333333,"height":1,"groups":[2]}]},{"id":"Layout 3","tiles":[{"x":0,"y":0,"width":0.33,"height":1,"groups":[1]},{"x":0.33,"y":0,"width":0.67,"height":1,"groups":[1]}]},{"id":"Layout 4","tiles":[{"x":0,"y":0,"width":0.5,"height":0.5,"groups":[1,2]},{"x":0.5,"y":0,"width":0.5000000000000014,"height":0.5,"groups":[3,1]},{"x":0,"y":0.5,"width":0.5,"height":0.49999999999999994,"groups":[2,1]},{"x":0.5,"y":0.5,"width":0.5000000000000014,"height":0.5,"groups":[3,1]}]}]'';
+      layouts-json=''[{"id":"Layout 1","tiles":[{"x":0,"y":0,"width":0.5,"height":1,"groups":[2]},{"x":0.5,"y":0,"width":0.49999999999999994,"height":0.5,"groups":[4,2]},{"x":0.5,"y":0.5,"width":0.49999999999999994,"height":0.49999999999999994,"groups":[4,2]}]},{"id":"Layout 2","tiles":[{"x":0,"y":0,"width":0.49947916666666664,"height":1,"groups":[2]},{"x":0.49947916666666664,"y":0,"width":0.5005208333333333,"height":1,"groups":[2]}]},{"id":"Layout 3","tiles":[{"x":0,"y":0,"width":0.33,"height":1,"groups":[1]},{"x":0.33,"y":0,"width":0.67,"height":1,"groups":[1]}]},{"id":"Layout 4","tiles":[{"x":0,"y":0,"width":0.5,"height":0.5,"groups":[1,2]},{"x":0.5,"y":0,"width":0.5000000000000014,"height":0.5,"groups":[3,1]},{"x":0,"y":0.5,"width":0.5,"height":0.49999999999999994,"groups":[2,1]},{"x":0.5,"y":0.5,"width":0.5000000000000014,"height":0.5,"groups":[3,1]}]}]'';
       outer-gaps = mkUint32 2;
       overridden-settings=''{"org.gnome.mutter.keybindings":{"toggle-tiled-right":"['<Super>Right']","toggle-tiled-left":"['<Super>Left']"},"org.gnome.desktop.wm.keybindings":{"maximize":"['<Super>Up']","unmaximize":"['<Super>Down', '<Alt>F5']"},"org.gnome.mutter":{"edge-tiling":"true"}}'';
       quarter-tiling-threshold = mkUint32 30;
@@ -139,6 +140,5 @@
       icon-size = 0;
       tray-pos = "right";
     };
-
   };
 }

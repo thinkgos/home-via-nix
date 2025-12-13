@@ -1,6 +1,9 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
+-- config.color_scheme = "Batman"
+config.color_scheme = "iTerm2 Dark Background"
+
 config.font = wezterm.font("JetBrains Mono")
 config.font = wezterm.font_with_fallback({
 	"JetBrains Mono",
@@ -9,16 +12,16 @@ config.font = wezterm.font_with_fallback({
 	"FiraCode Nerd Font",
 	"Noto Sans CJK SC",
 })
--- config.color_scheme = "Batman"
-config.color_scheme = "iTerm2 Dark Background"
+config.font_size = 10.0;
 
+config.window_decorations = "TITLE"
 config.window_background_opacity = 0.85
 config.default_cursor_style = "BlinkingBar"
 config.window_padding = {
-	left = 20,
-	right = 20,
+	left = 10,
+	right = 10,
 	top = 5,
-	bottom = 5,
+	bottom = 20,
 }
 
 config.leader = { key = "m", mods = "CTRL", timeout_millisends = 1000 }
