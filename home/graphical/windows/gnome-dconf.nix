@@ -9,18 +9,20 @@
     # 扩展管理
     # gnome-shell-extensions
     gnome-tweaks
-    # gnomeExtensions.user-themes                   # 用户主题
-    # gnomeExtensions.auto-move-windows               # 自动移动窗口
+    gnomeExtensions.user-themes                     # 用户主题
+    gnomeExtensions.auto-move-windows               # 自动移动窗口
     gnomeExtensions.tiling-shell                    # 平铺窗口
     gnomeExtensions.kimpanel                        # 输入法面板
     gnomeExtensions.appindicator                    # 应用程序指示器
     gnomeExtensions.dash-to-dock                    # 任务栏
     gnomeExtensions.compiz-alike-magic-lamp-effect  # 仿Compiz的魔法灯效果
+    gnomeExtensions.blur-my-shell                   # 模糊窗口
   ];
   # dconf2nix: https://github.com/nix-community/dconf2nix
   # gvariant: https://github.com/nix-community/home-manager/blob/master/modules/lib/gvariant.nix
   dconf.settings = with lib.hm.gvariant; {
     # 查看相关配置： gsettings list-recursively org.gnome.xxx.xx 
+    # 导出路径具体的配置： dconf dump /org/xx/xx > xx.settings  
 
     "org/gnome/desktop/privacy" = {
       remember-recent-files = true;   # 文件历史记录
@@ -54,6 +56,7 @@
       switch-to-workspace-3 = ["<Alt>3"];
       switch-to-workspace-4 = ["<Alt>4"];
       toggle-fullscreen = ["<Super>F"];
+      close = ["<Super>Q"];
       # 开启tiling-shell已覆盖
       # unmaximize = mkEmptyArray type.string;  # 取消最大化, 默认: <Super>Up
       # maximize = mkEmptyArray type.string;    # 最大化, 默认: <Super>Up
@@ -89,7 +92,7 @@
 
     # 平铺窗口扩展配置
     "org/gnome/shell/extensions/tilingshell" = {
-      enable-window-border = true;
+      enable-window-border = false;
       enable-wraparound-focus = true;
       enable-snap-assist = false;
       inner-gaps = mkUint32 2;
@@ -103,7 +106,7 @@
 
     "org/gnome/shell/extensions/dash-to-dock" = {
       always-center-icons = true;
-      apply-custom-theme = false;
+      apply-custom-theme = true;
       background-color = "rgb(222,221,218)";
       background-opacity = 0.75;
       click-action = "focus-minimize-or-previews";
@@ -112,16 +115,17 @@
       dash-max-icon-size = 40;
       disable-overview-on-startup = false;
       dock-position = "BOTTOM";
-      extend-height = true;
+      extend-height = false;
       height-fraction = 0.90;
       icon-size-fixed = false;
       intellihide-mode = "FOCUS_APPLICATION_WINDOWS";
       preferred-monitor = -2;
       preferred-monitor-by-connector = "eDP-1";
-      preview-size-scale = 0.7;
+      preview-size-scale = 0.70;
       running-indicator-style = "DASHES";
       transparency-mode = "FIXED";
     };
+
     "org/gnome/shell/extensions/auto-move-windows" = {
       application-list=[
         "google-chrome.desktop:1" 
@@ -131,6 +135,7 @@
         "org.wezfurlong.wezterm.desktop:4"
       ];
     };
+
     "org/gnome/shell/extensions/appindicator" = {
       legacy-tray-enabled = true;
       icon-brightness = 0.0;
@@ -139,6 +144,65 @@
       icon-saturation = 0.0;
       icon-size = 0;
       tray-pos = "right";
+    };
+
+    "org/gnome/shell/extensions/blur-my-shell" = {
+      hacks-level = 2;
+      settings-version = 2;
+    };
+    "org/gnome/shell/extensions/blur-my-shell/appfolder" = {
+      blur = false;
+      brightness = 0.6;
+      sigma = 30;
+      style-dialogs = 1;
+    };
+    "org/gnome/shell/extensions/blur-my-shell/applications" = {
+      blur = true;
+      brightness = 0.85;
+      dynamic-opacity = false;
+      opacity = 245;
+      sigma = 0;
+      whitelist = ["org.gnome.Nautilus"];
+    };
+    "org/gnome/shell/extensions/blur-my-shell/coverflow-alt-tab" = {
+      blur = false;
+      pipeline = "pipeline_default";
+    };
+    "org/gnome/shell/extensions/blur-my-shell/dash-to-dock" = {
+      blur = false;
+      brightness = 0.6;
+      pipeline = "pipeline_default";
+      sigma = 30;
+      static-blur = true;
+      style-dash-to-dock = 0;
+      unblur-in-overview = false;
+    };
+    "org/gnome/shell/extensions/blur-my-shell/dash-to-panel" = {
+      blur-original-panel = false;
+    };
+    "org/gnome/shell/extensions/blur-my-shell/lockscreen" = {
+      pipeline = "pipeline_default";
+    };
+    "org/gnome/shell/extensions/blur-my-shell/overview" = {
+      blur = true;
+      pipeline = "pipeline_default_rounded";
+      style-components = 3;
+    };
+    "org/gnome/shell/extensions/blur-my-shell/panel" = {
+      blur = true;
+      brightness = 0.6;
+      pipeline = "pipeline_default";
+      sigma = 30;
+      static-blur = true;
+      unblur-in-overview = false;
+    };
+    "org/gnome/shell/extensions/blur-my-shell/screenshot" = {
+      pipeline = "pipeline_default";
+    };
+    "org/gnome/shell/extensions/blur-my-shell/window-list" = {
+      blur = false;
+      brightness = 0.6;
+      sigma = 30;
     };
   };
 }
