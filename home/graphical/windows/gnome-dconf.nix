@@ -9,7 +9,13 @@
     # 扩展管理
     # gnome-shell-extensions
     gnome-tweaks
-    # gnomeExtensions.tiling-shell # 平铺窗口扩展
+    # gnomeExtensions.user-themes                   # 用户主题
+    gnomeExtensions.tiling-shell                    # 平铺窗口
+    gnomeExtensions.kimpanel                        # 输入法面板
+    gnomeExtensions.appindicator                    # 应用程序指示器
+    gnomeExtensions.auto-move-windows               # 自动移动窗口
+    gnomeExtensions.dash-to-dock                    # 任务栏
+    gnomeExtensions.compiz-alike-magic-lamp-effect  # 仿Compiz的魔法灯效果
   ];
   # dconf2nix: https://github.com/nix-community/dconf2nix
   # gvariant:https://github.com/nix-community/home-manager/blob/master/modules/lib/gvariant.nix
@@ -30,10 +36,11 @@
       dynamic-workspaces = false;         # 动态工作区 - 禁用
       workspaces-only-on-primary = true;  # 工作区只作用于主屏目
     };
-    # "org/gnome/mutter.keybindings" = {
-      # toggle-tiled-left = mkEmptyArray type.string;  # 切换到左侧平铺窗口, 默认: <Super>Left
-      # toggle-tiled-right = mkEmptyArray type.string;  # 切换到右侧平铺窗口, 默认: <Super>Right
-    # };
+    "org/gnome/mutter.keybindings" = {
+      # 开启tiling-shell已覆盖
+      # toggle-tiled-left = mkEmptyArray type.string;  # 分屏到左侧平铺窗口, 默认: <Super>Left
+      # toggle-tiled-right = mkEmptyArray type.string;  # 分屏到右侧平铺窗口, 默认: <Super>Right
+    };
     # 主题
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
@@ -46,17 +53,15 @@
       switch-to-workspace-2 = ["<Alt>2"];
       switch-to-workspace-3 = ["<Alt>3"];
       switch-to-workspace-4 = ["<Alt>4"];
+      # 开启tiling-shell已覆盖
+      # unmaximize = mkEmptyArray type.string;  # 取消最大化, 默认: <Super>Up
+      # maximize = mkEmptyArray type.string;    # 最大化, 默认: <Super>Up
     };
     "org/gnome/desktop/wm/preferences" = {
       num-workspaces = 4;                                  # 工作区数量
       button-layout = "close,minimize,maximize:appmenu";   # 窗口按钮布局
     };
-    "org/gnome/shell/keybindings" = {
-      screenshot = mkEmptyArray type.string;                # 截图, 默认: <Shift>Print
-      screenshot-window = mkEmptyArray type.string;         # 窗口截图, 默认: <Alt>Print
-      show-screenshot-ui = mkEmptyArray type.string;        # 交互式截图, 默认: Print
-      # show-screen-recording-ui = ["<Ctrl><Shift><Alt>R"]; # 交互式屏幕录制, 默认： <Ctrl><Shift><Alt>R
-    };
+
     "org/gnome/settings-daemon/plugins/media-keys" = {
       # 自定义截图快捷键
       custom-keybindings = ["/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"];
@@ -68,5 +73,72 @@
       command = "sh -c 'flameshot gui < /dev/null'";
       binding = "Print";
     };
+
+    "org/gnome/shell/keybindings" = {
+      screenshot = mkEmptyArray type.string;                # 截图, 默认: <Shift>Print
+      screenshot-window = mkEmptyArray type.string;         # 窗口截图, 默认: <Alt>Print
+      show-screenshot-ui = mkEmptyArray type.string;        # 交互式截图, 默认: Print
+      # show-screen-recording-ui = ["<Ctrl><Shift><Alt>R"]; # 交互式屏幕录制, 默认： <Ctrl><Shift><Alt>R
+    };
+
+    #! gnome 扩展配置
+    "org/gnome/shell/extensions/user-theme" = {
+      name = "WhiteSur-Dark";
+    };
+
+    # 平铺窗口扩展配置
+    "org/gnome/shell/extensions/tilingshell" = {
+      enable-window-border = true;
+      enable-wraparound-focus = true;
+      enable-snap-assist = false;
+      inner-gaps = mkUint32 2;
+      layouts-json=''[{"id":"Layout 1","tiles":[{"x":0,"y":0,"width":0.5,"height":1,"groups":[2]},{"x":0.5,"y":0,"width":0.49999999999999994,"height":0.5979087452471483,"groups":[4,2]},{"x":0.5,"y":0.5979087452471483,"width":0.49999999999999994,"height":0.4020912547528517,"groups":[4,2]}]},{"id":"Layout 2","tiles":[{"x":0,"y":0,"width":0.49947916666666664,"height":1,"groups":[2]},{"x":0.49947916666666664,"y":0,"width":0.5005208333333333,"height":1,"groups":[2]}]},{"id":"Layout 3","tiles":[{"x":0,"y":0,"width":0.33,"height":1,"groups":[1]},{"x":0.33,"y":0,"width":0.67,"height":1,"groups":[1]}]},{"id":"Layout 4","tiles":[{"x":0,"y":0,"width":0.5,"height":0.5,"groups":[1,2]},{"x":0.5,"y":0,"width":0.5000000000000014,"height":0.5,"groups":[3,1]},{"x":0,"y":0.5,"width":0.5,"height":0.49999999999999994,"groups":[2,1]},{"x":0.5,"y":0.5,"width":0.5000000000000014,"height":0.5,"groups":[3,1]}]}]'';
+      outer-gaps = mkUint32 2;
+      overridden-settings=''{"org.gnome.mutter.keybindings":{"toggle-tiled-right":"['<Super>Right']","toggle-tiled-left":"['<Super>Left']"},"org.gnome.desktop.wm.keybindings":{"maximize":"['<Super>Up']","unmaximize":"['<Super>Down', '<Alt>F5']"},"org.gnome.mutter":{"edge-tiling":"true"}}'';
+      quarter-tiling-threshold = mkUint32 30;
+      selected-layouts = [["Layout 1" "Layout 2"] ["Layout 1" "Layout 2"] ["Layout 1" "Layout 1"] ["Layout 1" "Layout 2"]];
+      window-use-custom-border-color = false;
+    };
+
+    "org/gnome/shell/extensions/dash-to-dock" = {
+      always-center-icons = true;
+      apply-custom-theme = false;
+      background-color = "rgb(222,221,218)";
+      background-opacity = 0.75;
+      click-action = "focus-minimize-or-previews";
+      custom-background-color = false;
+      custom-theme-shrink = false;
+      dash-max-icon-size = 40;
+      disable-overview-on-startup = false;
+      dock-position = "BOTTOM";
+      extend-height = true;
+      height-fraction = 0.90;
+      icon-size-fixed = false;
+      intellihide-mode = "FOCUS_APPLICATION_WINDOWS";
+      preferred-monitor = -2;
+      preferred-monitor-by-connector = "eDP-1";
+      preview-size-scale = 0.7;
+      running-indicator-style = "DASHES";
+      transparency-mode = "FIXED";
+    };
+    "org/gnome/shell/extensions/auto-move-windows" = {
+      application-list=[
+        "google-chrome.desktop:1" 
+        "code.desktop:2"
+        "realvnc-vncviewer.desktop:3"
+        "dev.warp.Warp.desktop:4"
+        "org.wezfurlong.wezterm.desktop:4"
+      ];
+    };
+    "org/gnome/shell/extensions/appindicator" = {
+      legacy-tray-enabled = true;
+      icon-brightness = 0.0;
+      icon-contrast = 0.0;
+      icon-opacity = 200;
+      icon-saturation = 0.0;
+      icon-size = 0;
+      tray-pos = "right";
+    };
+
   };
 }
