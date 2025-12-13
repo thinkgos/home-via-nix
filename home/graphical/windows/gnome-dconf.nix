@@ -64,7 +64,8 @@
      # 自定义截图快捷键
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
       name = "flameshot";
-      command = "flameshot gui";
+      # command =  "sh -c 'flameshot gui --raw | wl-copy'";
+      command = "sh -c 'flameshot gui < /dev/null'";
       binding = "Print";
     };
   };
