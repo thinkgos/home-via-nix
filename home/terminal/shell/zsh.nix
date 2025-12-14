@@ -19,10 +19,8 @@
     
     setOptions = [ "no_nomatch" ];
     shellAliases = {
-      nv = "nvim";
-      tf = "terraform";
-      ls = "eza";
-      cat = "bat -p";
+      # see home.shellAliases for the top level attribute names 
+      # here specific to zsh
     };
     initContent =  
       let 

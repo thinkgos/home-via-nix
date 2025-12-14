@@ -9,6 +9,7 @@ let
 in {
   imports = [ 
     ./zsh.nix 
+    ./bash.nix
   ];
 
   home.packages = with pkgs;[
@@ -22,18 +23,35 @@ in {
     # fzf                     # 模糊查找工具
     # zellij                  # 终端多路复用工具
     # yazi                    # 终端文件管理
+    trash-cli                 # 回收站
  ];
+
+  home.shellAliases = {
+    # the top level attribute names.
+    # If you need to use a shell specific feature 
+    # then make sure to use a shell specific option
+    ls = "eza";
+    cat = "bat -p";
+    mv = "mv -i";
+    cp = "cp -i";
+    rm = "trash -v";
+    mkdir = "mkdir -p";
+    nv = "nvim";
+    tf = "terraform";
+  };
 
   programs = {
     starship = {
       enable = true;
       enableZshIntegration = true;
+      enableBashIntegration = true;
       settings = fromTomlFile configPath.starship;
     };
 
     direnv = {
       enable = true;
       enableZshIntegration = true;
+      enableBashIntegration = true;
       silent = false;
       mise.enable = true;
       nix-direnv.enable = true;
@@ -42,17 +60,20 @@ in {
     zoxide = {
       enable = true;
       enableZshIntegration = true;
+      enableBashIntegration = true;
     };
 
     atuin = {
       enable = true;
       enableZshIntegration = true;
+      enableBashIntegration = true;
       flags = [ "--disable-up-arrow" ];
     };
 
     fzf = {
       enable = true;
       enableZshIntegration = true;
+      enableBashIntegration = true;
     };
 
     zellij = {
@@ -63,6 +84,7 @@ in {
     yazi = {
       enable = true;
       enableZshIntegration = true;
+      enableBashIntegration = true;
       extraPackages = with pkgs;[ glow ];
     };
   };
