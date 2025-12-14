@@ -33,7 +33,7 @@
       old-files-age = mkUint32 7;     # 自动清空周期
     };
     "org/gnome/desktop/peripherals/mouse" = {
-      speed = 0.6; 
+      speed = 0.325;
     };
     "org/gnome/mutter" = {
       dynamic-workspaces = false;         # 动态工作区 - 禁用
@@ -57,7 +57,7 @@
       switch-to-workspace-3 = ["<Alt>3"];
       switch-to-workspace-4 = ["<Alt>4"];
       toggle-fullscreen = ["<Super>F"];
-      close = ["<Super>Q"];
+      close = ["<Super>q"];
       # 开启tiling-shell已覆盖
       # unmaximize = mkEmptyArray type.string;  # 取消最大化, 默认: <Super>Up
       # maximize = mkEmptyArray type.string;    # 最大化, 默认: <Super>Up
