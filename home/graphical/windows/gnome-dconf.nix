@@ -6,9 +6,10 @@
     whitesur-icon-theme # MacOS Big Sur style icon theme for linux desktops
     whitesur-cursors    # X-cursor theme inspired by macOS and based on capitaine-cursors
 
+    gnome-tweaks                                    # 系统设置
     # 扩展管理
-    # gnome-shell-extensions
-    gnome-tweaks
+    gnome-shell                                     # 扩展管理        
+    # gnome-shell-extensions                          # 包含多种扩展
     gnomeExtensions.user-themes                     # 用户主题
     gnomeExtensions.auto-move-windows               # 自动移动窗口
     gnomeExtensions.tiling-shell                    # 平铺窗口
