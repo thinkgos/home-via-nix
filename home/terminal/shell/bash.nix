@@ -18,5 +18,8 @@
       # see home.shellAliases for the top level attribute names 
       # here specific to bash
     };
+    initExtra = ''
+      if [[ "$TERM" == "xterm-kitty" ]] && ! infocmp "$TERM" >/dev/null 2>&1; then export TERM=xterm-256color fi
+    ''
   };
 }
