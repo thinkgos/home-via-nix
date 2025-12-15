@@ -133,8 +133,8 @@
         "code.desktop:2"
         "realvnc-vncviewer.desktop:3"
         "dev.warp.Warp.desktop:4"
-        "org.wezfurlong.wezterm.desktop:4"
-        "kitty.desktop:4"
+        # "org.wezfurlong.wezterm.desktop:4"
+        # "kitty.desktop:4"
       ];
     };
 

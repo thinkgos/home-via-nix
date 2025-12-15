@@ -38,6 +38,7 @@
     wget            # 网络下载工具
     tmux            # 终端多路复用工具
     jq              # json美化过滤
+    jaq             # json美化过滤
     yq              # yaml美化过滤
     fastfetch       # 系统信息查看工具
 
