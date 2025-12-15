@@ -17,7 +17,7 @@
     defaultFonts = {
       emoji = [ "Noto Color Emoji" ];
       monospace = [ 
-        "JetBrainsMono Nerd Font" 
+        "JetBrainsMono Nerd Font Mono" 
         "MesloLGL Nerd Font Mono" 
         "Hack Nerd Font" 
         "MesloLGS NF" 

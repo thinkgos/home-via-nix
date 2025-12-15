@@ -10,8 +10,8 @@
     # 扩展管理
     gnome-shell                                     # 扩展管理        
     # gnome-shell-extensions                          # 包含多种扩展
-    gnomeExtensions.user-themes                     # 用户主题
-    gnomeExtensions.auto-move-windows               # 自动移动窗口
+    # gnomeExtensions.user-themes                     # 用户主题
+    # gnomeExtensions.auto-move-windows               # 自动移动窗口
     gnomeExtensions.tiling-shell                    # 平铺窗口
     gnomeExtensions.kimpanel                        # 输入法面板
     gnomeExtensions.appindicator                    # 应用程序指示器
@@ -121,7 +121,7 @@
       icon-size-fixed = false;
       intellihide-mode = "FOCUS_APPLICATION_WINDOWS";
       preferred-monitor = -2;
-      preferred-monitor-by-connector = "eDP-1";
+      # preferred-monitor-by-connector = "eDP-1";
       preview-size-scale = 0.70;
       running-indicator-style = "DASHES";
       transparency-mode = "FIXED";
