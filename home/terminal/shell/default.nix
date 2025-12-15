@@ -38,6 +38,7 @@ in {
     mkdir = "mkdir -p";
     nv = "nvim";
     tf = "terraform";
+    jq = "jaq"
   };
 
   programs = {
