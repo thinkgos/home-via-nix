@@ -1,5 +1,9 @@
 { config, lib, pkgs, ... }: 
 {
+  home.packages = with pkgs;[
+    kitty-themes
+  ];
+
   programs.kitty = {
     enable = true;
     shellIntegration.mode = "no-rc";
@@ -7,7 +11,7 @@
       name = "JetBrainsMono Nerd Font Mono";
       size = 10.0;
     };
-    extraConfig = builtins.readFile ./assets/Catppuccin-Mocha.conf;
+    themeFile = "Catppuccin-Mocha";
     keybindings = {
       # 标签页管理
       "ctrl+shift+t" = "new_tab";                                 # 创建标签页
@@ -24,6 +28,8 @@
       "ctrl+shift+r" = "start_resizing_window";                   # 调整窗口大小
     };
     settings = {
+      term  ="xterm-kitty";
+
       # tab bar
       tab_bar_edge  = "top";
       tab_bar_style = "powerline";
