@@ -9,7 +9,7 @@ let
 in {
   imports = [ 
     ./zsh.nix 
-    ./bash.nix
+    # ./bash.nix
   ];
 
   home.packages = with pkgs;[
