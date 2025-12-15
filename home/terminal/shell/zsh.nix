@@ -31,7 +31,9 @@
         zshConfigLast = lib.mkOrder 1500 
           ''
             autoload -U +X bashcompinit && bashcompinit
-            if [[ "$TERM" == "xterm-kitty" ]] && ! infocmp "$TERM" >/dev/null 2>&1; then export TERM=xterm-256color fi
+            if [[ "$TERM" == "xterm-kitty" ]] && ! infocmp "$TERM" >/dev/null 2>&1; then 
+              export TERM=xterm-256color 
+            fi
           '';
       in 
         lib.mkMerge [ zshConfigEarlyInit zshConfigLast ];
