@@ -93,6 +93,7 @@
 
     # 平铺窗口扩展配置
     "org/gnome/shell/extensions/tilingshell" = {
+      enable-autotiling = false;
       enable-window-border = false;
       enable-wraparound-focus = true;
       enable-snap-assist = false;
@@ -101,7 +102,7 @@
       outer-gaps = mkUint32 2;
       overridden-settings=''{"org.gnome.mutter.keybindings":{"toggle-tiled-right":"['<Super>Right']","toggle-tiled-left":"['<Super>Left']"},"org.gnome.desktop.wm.keybindings":{"maximize":"['<Super>Up']","unmaximize":"['<Super>Down', '<Alt>F5']"},"org.gnome.mutter":{"edge-tiling":"true"}}'';
       quarter-tiling-threshold = mkUint32 30;
-      selected-layouts = [["Layout 1" "Layout 2"] ["Layout 1" "Layout 2"] ["Layout 1" "Layout 1"] ["Layout 1" "Layout 2"]];
+      selected-layouts = [["Layout 1" "Layout 2"] ["Layout 2" "Layout 1"] ["Layout 1" "Layout 1"] ["Layout 1" "Layout 2"]];
       window-use-custom-border-color = false;
     };
 
