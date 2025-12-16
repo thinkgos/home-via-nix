@@ -11,13 +11,18 @@
       name = "JetBrainsMono Nerd Font Mono";
       size = 10.0;
     };
-    themeFile = "Catppuccin-Mocha";
+    # themeFile = "Catppuccin-Mocha";
+    themeFile = "Monokai_Soda";
+    # themeFile = "tokyo_night_night";
+    # themeFile = "noirbuddy-oxide";
     keybindings = {
       # 标签页管理
       "ctrl+shift+t" = "new_tab";                                 # 创建标签页
       "ctrl+shift+q" = "close_tab";                               # 关闭标签页
-      "ctrl+page_up" = "next_tab";                                # 切换到上一个标签页
-      "ctrl+page_down" = "prev_tab";                              # 切换到下一个标签页
+      "ctrl+page_up" = "prev_tab";                                # 切换到上一个标签页
+      "ctrl+shift+," = "prev_tab";                                # 切换到上一个标签页
+      "ctrl+page_down" = "next_tab";                              # 切换到下一个标签页
+      "ctrl+shift+." = "next_tab";                                # 切换到下一个标签页
       "ctrl+1" = "goto_tab 1";                                    # 切换到第一个标签页
       "ctrl+2" = "goto_tab 2";                                    # 切换到第二个标签页
       "ctrl+3" = "goto_tab 3";                                    # 切换到第三个标签页
@@ -41,18 +46,19 @@
       # 布局
       "f1" = "toggle_layout stack";                               # 临时切换到堆栈布局
       "ctrl+shift+l" = "next_layout";                             # 切换到下一个布局
-      
+
       # font size 
       "ctrl+shift+minus" = "change_font_size all -2.0";           # 减少字体大小
-      "ctrl+shift+," = "change_font_size all -2.0";               # 减少字体大小
       "ctrl+-" = "change_font_size all -2.0";                     # 减少字体大小
       "ctrl+shift+plus" = "change_font_size all +2.0";            # 增加字体大小
-      "ctrl+shift+." = "change_font_size all +2.0";               # 增加字体大小
       "ctrl+=" = "change_font_size all +2.0";                     # 增加字体大小
       "ctrl+0" = "change_font_size all 0";                        # 重置字体大小
     };
     settings = {
       term  ="xterm-kitty";
+
+      # layout
+      enabled_layouts = "splits";
 
       # tab bar
       tab_bar_edge  = "top";

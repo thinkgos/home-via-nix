@@ -6,18 +6,22 @@
     whitesur-icon-theme # MacOS Big Sur style icon theme for linux desktops
     whitesur-cursors    # X-cursor theme inspired by macOS and based on capitaine-cursors
 
-    gnome-tweaks                                    # 系统设置
+    # gnome-browser-connector 浏览器连接器系统安装
+    gnome-tweaks                                    # 系统设置(可选替代refine)
     # 扩展管理
     gnome-shell                                     # 扩展管理        
     # gnome-shell-extensions                          # 包含多种扩展
     # gnomeExtensions.user-themes                     # 用户主题
     # gnomeExtensions.auto-move-windows               # 自动移动窗口
+    # gnomeExtensions.vitals                          # 系统资源监控
     gnomeExtensions.tiling-shell                    # 平铺窗口
     gnomeExtensions.kimpanel                        # 输入法面板
     gnomeExtensions.appindicator                    # 应用程序指示器
     gnomeExtensions.dash-to-dock                    # 任务栏
     gnomeExtensions.compiz-alike-magic-lamp-effect  # 仿Compiz的魔法灯效果
     gnomeExtensions.blur-my-shell                   # 模糊窗口
+    gnomeExtensions.gnome-40-ui-improvements        # GNOME 40界面改进
+    gnomeExtensions.open-bar                        # top bar
   ];
   # dconf2nix: https://github.com/nix-community/dconf2nix
   # gvariant: https://github.com/nix-community/home-manager/blob/master/modules/lib/gvariant.nix
@@ -102,7 +106,7 @@
       outer-gaps = mkUint32 2;
       overridden-settings=''{"org.gnome.mutter.keybindings":{"toggle-tiled-right":"['<Super>Right']","toggle-tiled-left":"['<Super>Left']"},"org.gnome.desktop.wm.keybindings":{"maximize":"['<Super>Up']","unmaximize":"['<Super>Down', '<Alt>F5']"},"org.gnome.mutter":{"edge-tiling":"true"}}'';
       quarter-tiling-threshold = mkUint32 30;
-      selected-layouts = [["Layout 1" "Layout 2"] ["Layout 2" "Layout 1"] ["Layout 1" "Layout 1"] ["Layout 1" "Layout 2"]];
+      selected-layouts = [["Layout 2" "Layout 1"] ["Layout 2" "Layout 1"] ["Layout 2" "Layout 1"] ["Layout 2" "Layout 1"]];
       window-use-custom-border-color = false;
     };
 
@@ -134,8 +138,8 @@
         "code.desktop:2"
         "realvnc-vncviewer.desktop:3"
         "dev.warp.Warp.desktop:4"
+        "kitty.desktop:4"
         # "org.wezfurlong.wezterm.desktop:4"
-        # "kitty.desktop:4"
       ];
     };
 
