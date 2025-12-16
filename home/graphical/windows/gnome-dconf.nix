@@ -13,15 +13,17 @@
     # gnome-shell-extensions                          # 包含多种扩展
     # gnomeExtensions.user-themes                     # 用户主题
     # gnomeExtensions.auto-move-windows               # 自动移动窗口
-    # gnomeExtensions.vitals                          # 系统资源监控
-    gnomeExtensions.tiling-shell                    # 平铺窗口
+    gnomeExtensions.tophat                          # 系统资源监控
+    gnomeExtensions.gnome-40-ui-improvements        # GNOME 40界面改进
     gnomeExtensions.kimpanel                        # 输入法面板
     gnomeExtensions.appindicator                    # 应用程序指示器
+    gnomeExtensions.clipboard-indicator             # clipboard管理
+    gnomeExtensions.tiling-shell                    # 平铺窗口
     gnomeExtensions.dash-to-dock                    # 任务栏
     gnomeExtensions.compiz-alike-magic-lamp-effect  # 仿Compiz的魔法灯效果
-    gnomeExtensions.blur-my-shell                   # 模糊窗口
-    gnomeExtensions.gnome-40-ui-improvements        # GNOME 40界面改进
+    gnomeExtensions.compiz-windows-effect           # 仿Compiz的窗口特效
     gnomeExtensions.open-bar                        # top bar
+    gnomeExtensions.blur-my-shell                   # 模糊窗口
   ];
   # dconf2nix: https://github.com/nix-community/dconf2nix
   # gvariant: https://github.com/nix-community/home-manager/blob/master/modules/lib/gvariant.nix
@@ -95,6 +97,53 @@
       name = "WhiteSur-Dark";
     };
 
+    "org/gnome/shell/extensions/auto-move-windows" = {
+      application-list=[
+        "google-chrome.desktop:1" 
+        "code.desktop:2"
+        "realvnc-vncviewer.desktop:3"
+        "dev.warp.Warp.desktop:4"
+        "kitty.desktop:4"
+        # "org.wezfurlong.wezterm.desktop:4"
+      ];
+    };
+
+    "org/gnome/shell/extensions/tophat" = {
+      show-icons = true;
+      show-menu-actions = false;
+      use-system-accent = false;
+      refresh-rate = "slow";
+      meter-fg-color = "rgb(51,209,122)";
+      cpu-display = "numeric";
+      group-procs = true;
+      mem-abs-units = false;
+      mem-display = "numeric";
+      show-disk = true;
+      fs-display = "numeric";
+      mount-to-monitor = "/";
+    };
+
+    "org/gnome/shell/extensions/appindicator" = {
+      legacy-tray-enabled = true;
+      icon-brightness = 0.0;
+      icon-contrast = 0.0;
+      icon-opacity = 200;
+      icon-saturation = 0.0;
+      icon-size = 0;
+      tray-pos = "right";
+    };
+    
+    "org/gnome/shell/extensions/clipboard-indicator" = {
+      cache-size = 10;
+      history-size = 100;
+      topbar-preview-size = 15;
+      disable-down-arrow = false;
+      enable-keybindings = false;
+      move-item-first = true;
+      paste-button = true;
+      regex-search = true;
+    };
+
     # 平铺窗口扩展配置
     "org/gnome/shell/extensions/tilingshell" = {
       enable-autotiling = false;
@@ -132,25 +181,20 @@
       transparency-mode = "FIXED";
     };
 
-    "org/gnome/shell/extensions/auto-move-windows" = {
-      application-list=[
-        "google-chrome.desktop:1" 
-        "code.desktop:2"
-        "realvnc-vncviewer.desktop:3"
-        "dev.warp.Warp.desktop:4"
-        "kitty.desktop:4"
-        # "org.wezfurlong.wezterm.desktop:4"
-      ];
+    "org/gnome/shell/extensions/ncom/github/hermes83/compiz-alike-magic-lamp-effect" = {
+      duration = 500.0;
+      effect = "default";
+      x-tiles = 15.0;
+      y-tiles = 20.0;
     };
 
-    "org/gnome/shell/extensions/appindicator" = {
-      legacy-tray-enabled = true;
-      icon-brightness = 0.0;
-      icon-contrast = 0.0;
-      icon-opacity = 200;
-      icon-saturation = 0.0;
-      icon-size = 0;
-      tray-pos = "right";
+    "org/gnome/shell/extensions/com/github/hermes83/compiz-windows-effect" = {
+      friction = 3.70;
+      mass = 60.0;
+      resize-effect = true;
+      speedup-factor-divider = 12.0;
+      x-tiles = 8.0;
+      y-tiles = 8.0;
     };
 
     "org/gnome/shell/extensions/blur-my-shell" = {
