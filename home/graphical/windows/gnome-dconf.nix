@@ -88,9 +88,9 @@
     };
 
     "org/gnome/shell/keybindings" = {
-      screenshot = mkEmptyArray type.string;                # 截图, 默认: <Shift>Print
-      screenshot-window = mkEmptyArray type.string;         # 窗口截图, 默认: <Alt>Print
-      show-screenshot-ui = mkEmptyArray type.string;        # 交互式截图, 默认: Print
+      # screenshot = ["<Shift>Print"];                      # 截图, 默认: <Shift>Print
+      # screenshot-window = ["<Alt>Print"];                 # 窗口截图, 默认: <Alt>Print
+      # show-screenshot-ui = ["Print"];                     # 交互式截图, 默认: Print
       # show-screen-recording-ui = ["<Ctrl><Shift><Alt>R"]; # 交互式屏幕录制, 默认： <Ctrl><Shift><Alt>R
     };
 
