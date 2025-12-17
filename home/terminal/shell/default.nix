@@ -23,7 +23,6 @@ in {
     # fzf                     # 模糊查找工具
     # zellij                  # 终端多路复用工具
     # yazi                    # 终端文件管理
-    trash-cli                 # 回收站
  ];
 
   home.shellAliases = {

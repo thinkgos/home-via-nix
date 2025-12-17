@@ -14,11 +14,6 @@
   # release notes.
   home.stateVersion = "25.11"; # Please read the comment before changing.
 
-  targets.genericLinux = {
-    enable = true;
-    gpu.enable = true;
-  };
-
   imports = [
     ./systemd.nix
     ./fonts.nix
@@ -26,6 +21,16 @@
   ] ++ lib.optionals customize.graphics [
     ./graphical
   ];
+
+  targets.genericLinux = {
+    enable = true;
+    gpu.enable = true;
+  };
+
+  xdg = {
+    enable = true;
+    mime.enable = true;
+  };
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
@@ -57,6 +62,8 @@
     typos       # 检查拼写错误
     mdbook      # 从markdown文档生成book
     aria2       # 高速下载工具
+    trash-cli   # 回收站
+    parallel    # 并行执行命令
 
     #! home-manager - terminal 统一管理终端应用
     #! home-manager - graphical 统一管理图形化应用

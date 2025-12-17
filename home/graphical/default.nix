@@ -9,11 +9,6 @@
   ++ lib.optional (customize.window == "hyprland") ./windows/hyprland.nix
   ++ lib.optional (customize.window == "gnome") ./windows/gnome.nix;
 
-  xdg = {
-    enable = true;
-    mime.enable = true;
-  };
-
   nixpkgs.config = {
     allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
       "redisinsight"
