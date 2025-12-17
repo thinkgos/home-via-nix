@@ -6,7 +6,9 @@
     whitesur-icon-theme # MacOS Big Sur style icon theme for linux desktops
     whitesur-cursors    # X-cursor theme inspired by macOS and based on capitaine-cursors
 
+    # 从系统安装
     # gnome-browser-connector 浏览器连接器系统安装
+    
     gnome-tweaks                                    # 系统设置(可选替代refine)
     # 扩展管理
     gnome-shell                                     # 扩展管理        
@@ -21,7 +23,7 @@
     gnomeExtensions.tiling-shell                    # 平铺窗口
     gnomeExtensions.dash-to-dock                    # 任务栏
     gnomeExtensions.compiz-alike-magic-lamp-effect  # 仿Compiz的魔法灯效果
-    gnomeExtensions.compiz-windows-effect           # 仿Compiz的窗口特效
+    # gnomeExtensions.compiz-windows-effect           # 仿Compiz的窗口特效
     gnomeExtensions.open-bar                        # top bar
     gnomeExtensions.blur-my-shell                   # 模糊窗口
   ];
