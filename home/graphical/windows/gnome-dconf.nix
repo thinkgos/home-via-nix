@@ -75,17 +75,17 @@
       button-layout = "close,minimize,maximize:appmenu";   # 窗口按钮布局
     };
 
-    "org/gnome/settings-daemon/plugins/media-keys" = {
-      # 自定义截图快捷键
-      custom-keybindings = ["/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"];
-    };
-     # 自定义截图快捷键
-    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
-      name = "flameshot";
-      # command =  "sh -c 'flameshot gui --raw | wl-copy'";
-      command = "sh -c 'flameshot gui < /dev/null'";
-      binding = "Print";
-    };
+    # "org/gnome/settings-daemon/plugins/media-keys" = {
+    #   # 自定义截图快捷键
+    #   custom-keybindings = ["/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"];
+    # };
+    #  # 自定义截图快捷键
+    # "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+    #   name = "flameshot";
+    #   # command =  "sh -c 'flameshot gui --raw | wl-copy'";
+    #   command = "sh -c 'flameshot gui < /dev/null'";
+    #   binding = "Print";
+    # };
 
     "org/gnome/shell/keybindings" = {
       screenshot = mkEmptyArray type.string;                # 截图, 默认: <Shift>Print
