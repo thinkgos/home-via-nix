@@ -1,7 +1,6 @@
 { config, lib, pkgs, ... }:
 {
   home.packages = with pkgs;[
-    git-cliff   # 定制生成Changelog
     gfold       # 跟踪git仓库
     pre-commit  # git pre-commit hook
   ];
@@ -67,6 +66,13 @@
         navigate = true;    
         light = false;      
         side-by-side = true;
+      };
+    };
+
+    git-cliff = {
+      enable = true;
+      settings = {
+
       };
     };
 
