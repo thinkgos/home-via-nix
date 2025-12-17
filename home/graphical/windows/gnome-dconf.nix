@@ -11,7 +11,7 @@
     
     gnome-tweaks                                    # 系统设置(可选替代refine)
     # 扩展管理
-    gnome-shell                                     # 扩展管理        
+    # gnome-shell                                     # 扩展管理        
     # gnome-shell-extensions                          # 包含多种扩展
     # gnomeExtensions.user-themes                     # 用户主题
     # gnomeExtensions.auto-move-windows               # 自动移动窗口
