@@ -46,6 +46,7 @@
           safecrlf = "warn"; # 提交包含混合换行符的文件时给出警告
           editor = "vim";
         };
+        pull.rebase = true;
         add.interactive.useBuiltin = false;
         merge.conflictstyle = "diff3";
         diff.colorMoved = "default";
@@ -80,7 +81,13 @@
       enable = true;
       ediff = config.programs.vim.enable;
       settings = {
-
+        user = {
+          name = "thinkgo";
+          email = "thinkgo@aliyun.com";
+        };
+        ui = {
+          editor = "vim";
+        };
       };
     };
 
