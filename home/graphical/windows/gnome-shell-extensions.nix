@@ -15,7 +15,8 @@ let
     gnomeExtensions.compiz-alike-magic-lamp-effect  # 仿Compiz的魔法灯效果
     # gnomeExtensions.compiz-windows-effect           # 仿Compiz的窗口特效
     gnomeExtensions.open-bar                        # top bar
-    gnomeExtensions.blur-my-shell
+    gnomeExtensions.blur-my-shell                   # 模糊窗口
+    gnomeExtensions.customize-clock-on-lock-screen  # 自定义锁屏时间显示
   ];
 in
 {
@@ -83,6 +84,9 @@ in
             "compiz-windows-effect@hermes83.github.com"
           ]
         );
+      disabled-extensions = [
+        pkgs.gnomeExtensions.open-bar.extensionUuid
+      ];
     };
 
     "org/gnome/shell/extensions/user-theme" = {
