@@ -25,8 +25,9 @@
               extraSpecialArgs = { inherit customize; };
             };
           in {
-            thinkgo = mkHome { username = "thinkgo"; graphics = true; window = "gnome";};
-            thinkgo-hyprland = mkHome { username = "thinkgo"; graphics = true; window = "hyprland"; };  
+            thinkgo-fedora43 = mkHome { username = "thinkgo"; graphics = true; window = "gnome"; window-version = "gnome-49"; };
+            thinkgo-ubuntu24_04 = mkHome { username = "thinkgo"; graphics = true; window = "gnome"; window-version = "gnome-48"; };
+            thinkgo-hyprland = mkHome { username = "thinkgo"; graphics = true; window = "hyprland"; distro = null; }; 
           };
       
         devShells.default = pkgs.mkShell {
