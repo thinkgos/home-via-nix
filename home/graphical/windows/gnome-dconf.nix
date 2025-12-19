@@ -53,7 +53,10 @@
 
     "org/gnome/settings-daemon/plugins/media-keys" = {
       # 自定义截图快捷键
-      custom-keybindings = ["/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"];
+      custom-keybindings = [
+        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
+      ];
     };
      # 自定义截图快捷键
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
@@ -61,6 +64,11 @@
       # command =  "sh -c 'flameshot gui --raw | wl-copy'";
       command = "sh -c 'flameshot gui < /dev/null'";
       binding = "<Control>Print";
+    };
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+      name = "albert";
+      command = "albert toggle";
+      binding = "<Shift><Control>semicolon";
     };
 
     "org/gnome/shell/keybindings" = {
