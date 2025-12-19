@@ -2,30 +2,6 @@
 {
   home.packages = with pkgs;[
     dconf2nix     # 用于将dconf配置转换为nix表达式
-    whitesur-gtk-theme  # MacOS like theme for all gtk based desktops
-    whitesur-icon-theme # MacOS Big Sur style icon theme for linux desktops
-    whitesur-cursors    # X-cursor theme inspired by macOS and based on capitaine-cursors
-
-    # 从系统安装
-    # gnome-browser-connector 浏览器连接器系统安装
-    
-    gnome-tweaks                                    # 系统设置(可选替代refine)
-    # 扩展管理
-    # gnome-shell                                     # 扩展管理        
-    # gnome-shell-extensions                          # 包含多种扩展
-    # gnomeExtensions.user-themes                     # 用户主题
-    # gnomeExtensions.auto-move-windows               # 自动移动窗口
-    gnomeExtensions.tophat                          # 系统资源监控
-    gnomeExtensions.gnome-40-ui-improvements        # GNOME 40界面改进
-    gnomeExtensions.kimpanel                        # 输入法面板
-    gnomeExtensions.appindicator                    # 应用程序指示器
-    gnomeExtensions.clipboard-indicator             # clipboard管理
-    gnomeExtensions.tiling-shell                    # 平铺窗口
-    gnomeExtensions.dash-to-dock                    # 任务栏
-    gnomeExtensions.compiz-alike-magic-lamp-effect  # 仿Compiz的魔法灯效果
-    # gnomeExtensions.compiz-windows-effect           # 仿Compiz的窗口特效
-    gnomeExtensions.open-bar                        # top bar
-    gnomeExtensions.blur-my-shell                   # 模糊窗口
   ];
   # dconf2nix: https://github.com/nix-community/dconf2nix
   # gvariant: https://github.com/nix-community/home-manager/blob/master/modules/lib/gvariant.nix
@@ -94,7 +70,8 @@
       # show-screen-recording-ui = ["<Ctrl><Shift><Alt>R"]; # 交互式屏幕录制, 默认： <Ctrl><Shift><Alt>R
     };
 
-    #! gnome 扩展配置
+    #! --- gnome 扩展配置 ---------------------------------------
+   
     "org/gnome/shell/extensions/user-theme" = {
       name = "WhiteSur-Dark";
     };
