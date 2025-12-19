@@ -1,8 +1,10 @@
 { config, lib, pkgs, customize, ... }: 
 let 
   gnome-48-extensions = with pkgs;[
-    # gnomeExtensions.user-themes                     # 用户主题
-    # gnomeExtensions.auto-move-windows               # 自动移动窗口
+    # NOTE: 注释掉的从系统安装, nix不兼容gnome-48
+    # - user-themes 用户主题
+    # - auto-move-windows 自动移动窗口
+    # gnome-shell-extensions                          # 包含多种扩展
     gnomeExtensions.tophat                          # 系统资源监控
     gnomeExtensions.gnome-40-ui-improvements        # GNOME 40界面改进
     gnomeExtensions.kimpanel                        # 输入法面板
@@ -20,7 +22,7 @@ in
   home.packages = with pkgs;[
     # 从系统安装
     # https://extensions.gnome.org
-    # gnome-browser-connector 浏览器连接器
+    # gnome-browser-connector # 浏览器连接器
     
     gnome-tweaks                                    # 系统设置(可选替代refine)
     # 扩展管理
@@ -71,7 +73,16 @@ in
 
   dconf.settings = with lib.hm.gvariant; {
     "org/gnome/shell" = {
-      enabled-extensions = lib.mkIf (customize.window-version == "gnome-48") (lib.catAttrs "id" gnome-48-extensions);
+      enabled-extensions = lib.mkIf 
+        (customize.window-version == "gnome-48") 
+        (
+          (map (extension: extension.extensionUuid) gnome-48-extensions)
+          ++[
+            "auto-move-windows@gnome-shell-extensions.gcampax.github.com"
+            "user-theme@gnome-shell-extensions.gcampax.github.com"
+            "compiz-windows-effect@hermes83.github.com"
+          ]
+        );
     };
 
     "org/gnome/shell/extensions/user-theme" = {
