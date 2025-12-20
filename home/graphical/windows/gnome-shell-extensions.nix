@@ -108,10 +108,11 @@ in
     };
 
     "org/gnome/shell/extensions/tophat" = {
+      position-in-panel = "left";
       show-icons = true;
       show-menu-actions = false;
-      use-system-accent = false;
       refresh-rate = "slow";
+      use-system-accent = true;
       meter-fg-color = "rgb(51,209,122)";
       cpu-display = "numeric";
       group-procs = true;
