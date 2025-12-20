@@ -65,3 +65,9 @@ systemctl --user show-environment | grep XDG_DATA_DIRS
 - [BohdanTkachenko gist](https://gist.github.com/BohdanTkachenko/6ba2730ff54ecbb2d7aed22dec3507d5)
 - [systemd/systemd#32423](https://github.com/systemd/systemd/issues/32423#issuecomment-2907893187)
 - [pr 7949](https://github.com/nix-community/home-manager/pull/7949)
+
+### 4,3 禁用用户级IBus
+
+```shell
+systemctl --user mask org.freedesktop.IBus.session.GNOME.service
+```
