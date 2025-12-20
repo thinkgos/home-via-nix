@@ -231,7 +231,7 @@ in
     "org/gnome/shell/extensions/hidetopbar" = {
       mouse-sensitive = true;
       mouse-sensitive-fullscreen-window = false;
-      enable-active-window = true;
+      enable-active-window = false;
       enable-intellihide = true;
     };
     "org/gnome/shell/extensions/blur-my-shell/dash-to-panel" = {
