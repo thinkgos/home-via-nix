@@ -229,10 +229,12 @@ in
       unblur-in-overview = false;
     };
     "org/gnome/shell/extensions/hidetopbar" = {
+      enable-active-window = false;
+      enable-intellihide = false;
       mouse-sensitive = true;
       mouse-sensitive-fullscreen-window = false;
-      enable-active-window = false;
-      enable-intellihide = true;
+      pressure-threshold = 100;
+      pressure-timeout = 800;
     };
     "org/gnome/shell/extensions/blur-my-shell/dash-to-panel" = {
       blur-original-panel = false;
