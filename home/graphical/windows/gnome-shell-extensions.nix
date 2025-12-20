@@ -12,6 +12,7 @@ let
     gnomeExtensions.clipboard-indicator             # clipboard管理
     gnomeExtensions.tiling-shell                    # 平铺窗口
     gnomeExtensions.dash-to-dock                    # 任务栏
+    gnomeExtensions.hide-top-bar                    # 隐藏顶部栏
     gnomeExtensions.compiz-alike-magic-lamp-effect  # 仿Compiz的魔法灯效果
     # gnomeExtensions.compiz-windows-effect           # 仿Compiz的窗口特效
     gnomeExtensions.open-bar                        # top bar
@@ -60,6 +61,8 @@ in
         { package = gnomeExtensions.tiling-shell; }
         # 任务栏
         { package = gnomeExtensions.dash-to-dock; }
+        # 隐藏顶部栏
+        { package = gnomeExtensions.hide-top-bar; }
         # 仿Compiz的魔法灯效果
         { package = gnomeExtensions.compiz-alike-magic-lamp-effect; }
         # 仿Compiz的窗口特效
@@ -223,6 +226,12 @@ in
       static-blur = true;
       style-dash-to-dock = 0;
       unblur-in-overview = false;
+    };
+    "org/gnome/shell/extensions/hidetopbar" = {
+      mouse-sensitive = true;
+      mouse-sensitive-fullscreen-window = false;
+      enable-active-window = true;
+      enable-intellihide = true;
     };
     "org/gnome/shell/extensions/blur-my-shell/dash-to-panel" = {
       blur-original-panel = false;
