@@ -71,3 +71,11 @@ systemctl --user show-environment | grep XDG_DATA_DIRS
 ```shell
 systemctl --user mask org.freedesktop.IBus.session.GNOME.service
 ```
+
+### 4.4 code出现sandbox权限问题
+
+放开`AppArmor`权限
+
+```shell
+echo "kernel.apparmor_restrict_unprivileged_userns=0" | sudo tee /etc/sysctl.d/60-apparmor-namespace.conf
+```
