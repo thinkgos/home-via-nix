@@ -17,6 +17,7 @@
     cargo-binutils      # llvm二进制工具
     cargo-semver-checks # 检查crate是否符合语义版本规范
     tokio-console       # tokio任务调试工具
+    rustup              # rust版本管理
   ];
 
   # 暂不支持
