@@ -213,7 +213,7 @@ in
       dynamic-opacity = false;
       opacity = 245;
       sigma = 0;
-      whitelist = ["org.gnome.Nautilus"];
+      whitelist = ["org.gnome.Nautilus" "dev.zed.Zed"];
     };
     "org/gnome/shell/extensions/blur-my-shell/coverflow-alt-tab" = {
       blur = false;
