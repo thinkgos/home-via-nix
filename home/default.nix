@@ -14,6 +14,12 @@
   # release notes.
   home.stateVersion = "25.11"; # Please read the comment before changing.
 
+  nix.gc = {
+    automatic = true;
+    dates = "daily";
+    options = "--delete-older-than 3d";
+  };
+
   imports = [
     ./systemd.nix
     ./fonts.nix
