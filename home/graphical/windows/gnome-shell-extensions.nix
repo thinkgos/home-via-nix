@@ -1,5 +1,5 @@
-{ config, lib, pkgs, customize, ... }: 
-let 
+{ config, lib, pkgs, customize, ... }:
+let
   gnome-48-extensions = with pkgs;[
     # NOTE: 注释掉的从系统安装, nix不兼容gnome-48
     # - user-themes 用户主题
@@ -25,13 +25,13 @@ in
     # 从系统安装
     # https://extensions.gnome.org
     # gnome-browser-connector # 浏览器连接器
-    
+
     gnome-tweaks                                    # 系统设置(可选替代refine)
     # 扩展管理
-    # gnome-shell                                     # 扩展管理        
+    # gnome-shell                                     # 扩展管理
   ] ++lib.optionals (customize.window-version == "gnome-48") gnome-48-extensions;
 
-  
+
   # NOTE: 扩展配置位于 gnome-dconf.nix
   programs = {
     gnome-shell = lib.mkIf (customize.window-version == "gnome-49") {
@@ -77,8 +77,8 @@ in
 
   dconf.settings = with lib.hm.gvariant; {
     "org/gnome/shell" = {
-      enabled-extensions = lib.mkIf 
-        (customize.window-version == "gnome-48") 
+      enabled-extensions = lib.mkIf
+        (customize.window-version == "gnome-48")
         (
           (map (extension: extension.extensionUuid) gnome-48-extensions)
           ++[
@@ -98,9 +98,10 @@ in
 
     "org/gnome/shell/extensions/auto-move-windows" = {
       application-list=[
-        "google-chrome.desktop:1" 
+        "google-chrome.desktop:1"
         "code.desktop:2"
         "realvnc-vncviewer.desktop:3"
+        "dev.zed.Zed.desktop:3"
         "dev.warp.Warp.desktop:4"
         "kitty.desktop:4"
         # "org.wezfurlong.wezterm.desktop:4"
@@ -132,7 +133,7 @@ in
       icon-size = 0;
       tray-pos = "right";
     };
-    
+
     "org/gnome/shell/extensions/clipboard-indicator" = {
       cache-size = 10;
       history-size = 100;

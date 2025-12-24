@@ -1,4 +1,4 @@
-{ config, lib, pkgs, customize, ... }: 
+{ config, lib, pkgs, customize, ... }:
 {
   imports = [
     ./i18n.nix
@@ -13,15 +13,7 @@
     allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
       "redisinsight"
       "albert"
-
       "vscode"
-      "vscode-extension-ms-vscode-remote-remote-ssh"
-      "vscode-extension-ms-vscode-remote-explorer"
-      "vscode-extension-ms-vscode-remote-remote-ssh-edit"
-      "vscode-extension-ms-vscode-remote-remote-containers"
-      "vscode-extension-ms-vscode-remote-vscode-remote-extensionpack"
-      "vscode-extension-fill-labs-dependi"
-      "vscode-extension-mhutchie-git-graph"
     ];
   };
 
