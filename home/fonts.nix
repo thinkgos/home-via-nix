@@ -24,9 +24,9 @@
       monospace = [
         "JetBrainsMono Nerd Font Mono"
         "MesloLGL Nerd Font Mono"
+        "FiraCode Nerd Font Mono"
         "Hack Nerd Font"
         "MesloLGS NF"
-        "FiraCode Nerd Font"
         "Noto Sans Mono CJK SC"
       ];
       sansSerif = [
