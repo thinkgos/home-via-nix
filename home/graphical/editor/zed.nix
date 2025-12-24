@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }: 
+{ config, lib, pkgs, ... }:
 {
   programs.zed-editor = {
     enable = true;
@@ -6,8 +6,21 @@
     installRemoteServer = true;
     extensions = [
       "catppuccin-icons"
+      "one-dark-pro-enhanced"
       "git-firefly"
+      "ini"
+      "toml"
+      "xml"
+      "json5"
+      "kdl"
+      "csv"
+      "dockerfile"
+      "sql"
+      "make"
       "markdown-oxide"
+      "proto"
+      "lua"
+      "nix"
     ];
     # themes = {};
     # mutableUserDebug = true;
