@@ -1,8 +1,13 @@
-{ config, lib, pkgs, ... }:
 {
-  home.packages = with pkgs;[
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
+  home.packages = with pkgs; [
     adwaita-fonts
-    adwaita-icon-theme 
+    adwaita-icon-theme
     noto-fonts
     noto-fonts-cjk-sans
     noto-fonts-cjk-serif
@@ -16,16 +21,22 @@
     enable = true;
     defaultFonts = {
       emoji = [ "Noto Color Emoji" ];
-      monospace = [ 
-        "JetBrainsMono Nerd Font Mono" 
-        "MesloLGL Nerd Font Mono" 
-        "Hack Nerd Font" 
-        "MesloLGS NF" 
+      monospace = [
+        "JetBrainsMono Nerd Font Mono"
+        "MesloLGL Nerd Font Mono"
+        "Hack Nerd Font"
+        "MesloLGS NF"
         "FiraCode Nerd Font"
         "Noto Sans Mono CJK SC"
       ];
-      sansSerif = [ "Adwaita Sans" "Noto Serif CJK SC" ];
-      serif = [ "Adwaita Sans" "Noto Serif CJK SC" ];
+      sansSerif = [
+        "Adwaita Sans"
+        "Noto Serif CJK SC"
+      ];
+      serif = [
+        "Adwaita Sans"
+        "Noto Serif CJK SC"
+      ];
     };
   };
 }

@@ -1,11 +1,16 @@
-{ config, lib, pkgs, ... }:
 {
-  home.packages = with pkgs;[
-    gfold       # 跟踪git仓库
-    pre-commit  # git pre-commit hook
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
+  home.packages = with pkgs; [
+    gfold # 跟踪git仓库
+    pre-commit # git pre-commit hook
   ];
-  
-  # Home Manager is pretty good at managing dotfiles. 
+
+  # Home Manager is pretty good at managing dotfiles.
   # The primary way to manage plain files is through 'home.file'.
   home.file = {
     ".config/git/.gitmessage".text = ''
@@ -27,7 +32,7 @@
     '';
   };
 
-  programs ={
+  programs = {
     git = {
       enable = true;
       lfs.enable = true;
@@ -64,8 +69,8 @@
       enableGitIntegration = true;
       enableJujutsuIntegration = true;
       options = {
-        navigate = true;    
-        light = false;      
+        navigate = true;
+        light = false;
         side-by-side = true;
       };
     };

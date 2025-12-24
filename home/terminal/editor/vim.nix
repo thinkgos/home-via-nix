@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }: 
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 {
   programs.vim = {
     enable = true;
@@ -28,6 +33,6 @@
       noremap <Left> <NOP>
       noremap <Right> <NOP>
     '';
-    plugins = [];
+    plugins = [ ];
   };
 }

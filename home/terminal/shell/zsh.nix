@@ -1,8 +1,13 @@
-{config, lib, pkgs, ...}: 
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 {
   programs.zsh = {
     enable = true;
-    envExtra = ''    
+    envExtra = ''
       # rustup
       export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
       export RUSTUP_UPDATE_ROOT=https://mirrors.tuna.tsinghua.edu.cn/rustup/rustup
@@ -25,30 +30,31 @@
           export PATH=$PATH:$GOPATH/bin
       fi
     '';
-    
+
     setOptions = [ "no_nomatch" ];
     shellAliases = {
-      # see home.shellAliases for the top level attribute names 
+      # see home.shellAliases for the top level attribute names
       # here specific to zsh
     };
-    initContent =  
-      let 
-        zshConfigEarlyInit = lib.mkOrder 500 
-          '' 
-            fpath=(~/.zfunc $fpath) # 增加zsh代码补全脚本路径
-          ''; 
-        zshConfigLast = lib.mkOrder 1500 
-          ''
-            autoload -U +X bashcompinit && bashcompinit
-            if [[ "$TERM" == "xterm-kitty" ]] && ! infocmp "$TERM" >/dev/null 2>&1; then 
-              export TERM=xterm-256color 
-            fi
-          '';
-      in 
-        lib.mkMerge [ zshConfigEarlyInit zshConfigLast ];
+    initContent =
+      let
+        zshConfigEarlyInit = lib.mkOrder 500 ''
+          fpath=(~/.zfunc $fpath) # 增加zsh代码补全脚本路径
+        '';
+        zshConfigLast = lib.mkOrder 1500 ''
+          autoload -U +X bashcompinit && bashcompinit
+          if [[ "$TERM" == "xterm-kitty" ]] && ! infocmp "$TERM" >/dev/null 2>&1; then 
+            export TERM=xterm-256color 
+          fi
+        '';
+      in
+      lib.mkMerge [
+        zshConfigEarlyInit
+        zshConfigLast
+      ];
 
     syntaxHighlighting.enable = true;
-    autosuggestion.enable = true;  
+    autosuggestion.enable = true;
     oh-my-zsh = {
       enable = true;
       # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes

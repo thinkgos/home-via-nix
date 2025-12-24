@@ -1,18 +1,24 @@
-{config, lib, pkgs, ...}:
-let 
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+let
   fromTomlFile = filename: builtins.fromTOML (builtins.readFile filename);
   # 配置文件路径
   configPath = {
     starship = ./assets/starship/gruvbox-rainbow.toml;
     zellij = ./assets/zellij.kdl;
   };
-in {
-  imports = [ 
-    ./zsh.nix 
+in
+{
+  imports = [
+    ./zsh.nix
     # ./bash.nix
   ];
 
-  home.packages = with pkgs;[
+  home.packages = with pkgs; [
     # zsh                     # zsh
     # zsh-autosuggestions     # zsh命令自动建议
     # zsh-syntax-highlighting # zsh语法高亮
@@ -23,11 +29,11 @@ in {
     # fzf                     # 模糊查找工具
     # zellij                  # 终端多路复用工具
     # yazi                    # 终端文件管理
- ];
+  ];
 
   home.shellAliases = {
     # the top level attribute names.
-    # If you need to use a shell specific feature 
+    # If you need to use a shell specific feature
     # then make sure to use a shell specific option
     ls = "eza";
     cat = "bat -p";
@@ -85,7 +91,7 @@ in {
       enable = true;
       enableZshIntegration = true;
       enableBashIntegration = true;
-      extraPackages = with pkgs;[ glow ];
+      extraPackages = with pkgs; [ glow ];
     };
   };
 }

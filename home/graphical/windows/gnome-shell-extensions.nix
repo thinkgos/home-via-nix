@@ -1,36 +1,44 @@
-{ config, lib, pkgs, customize, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  customize,
+  ...
+}:
 let
-  gnome-48-extensions = with pkgs;[
+  gnome-48-extensions = with pkgs; [
     # NOTE: 注释掉的从系统安装, nix不兼容gnome-48
     # - user-themes 用户主题
     # - auto-move-windows 自动移动窗口
     # gnome-shell-extensions                          # 包含多种扩展
-    gnomeExtensions.tophat                          # 系统资源监控
-    gnomeExtensions.gnome-40-ui-improvements        # GNOME 40界面改进
-    gnomeExtensions.kimpanel                        # 输入法面板
-    gnomeExtensions.appindicator                    # 应用程序指示器
-    gnomeExtensions.clipboard-indicator             # clipboard管理
-    gnomeExtensions.tiling-shell                    # 平铺窗口
-    gnomeExtensions.dash-to-dock                    # 任务栏
-    gnomeExtensions.hide-top-bar                    # 隐藏顶部栏
-    gnomeExtensions.compiz-alike-magic-lamp-effect  # 仿Compiz的魔法灯效果
+    gnomeExtensions.tophat # 系统资源监控
+    gnomeExtensions.gnome-40-ui-improvements # GNOME 40界面改进
+    gnomeExtensions.kimpanel # 输入法面板
+    gnomeExtensions.appindicator # 应用程序指示器
+    gnomeExtensions.clipboard-indicator # clipboard管理
+    gnomeExtensions.tiling-shell # 平铺窗口
+    gnomeExtensions.dash-to-dock # 任务栏
+    gnomeExtensions.hide-top-bar # 隐藏顶部栏
+    gnomeExtensions.compiz-alike-magic-lamp-effect # 仿Compiz的魔法灯效果
     # gnomeExtensions.compiz-windows-effect           # 仿Compiz的窗口特效
-    gnomeExtensions.open-bar                        # top bar
-    gnomeExtensions.blur-my-shell                   # 模糊窗口
-    gnomeExtensions.customize-clock-on-lock-screen  # 自定义锁屏时间显示
+    gnomeExtensions.open-bar # top bar
+    gnomeExtensions.blur-my-shell # 模糊窗口
+    gnomeExtensions.customize-clock-on-lock-screen # 自定义锁屏时间显示
   ];
 in
 {
-  home.packages = with pkgs;[
-    # 从系统安装
-    # https://extensions.gnome.org
-    # gnome-browser-connector # 浏览器连接器
+  home.packages =
+    with pkgs;
+    [
+      # 从系统安装
+      # https://extensions.gnome.org
+      # gnome-browser-connector # 浏览器连接器
 
-    gnome-tweaks                                    # 系统设置(可选替代refine)
-    # 扩展管理
-    # gnome-shell                                     # 扩展管理
-  ] ++lib.optionals (customize.window-version == "gnome-48") gnome-48-extensions;
-
+      gnome-tweaks # 系统设置(可选替代refine)
+      # 扩展管理
+      # gnome-shell                                     # 扩展管理
+    ]
+    ++ lib.optionals (customize.window-version == "gnome-48") gnome-48-extensions;
 
   # NOTE: 扩展配置位于 gnome-dconf.nix
   programs = {
@@ -44,9 +52,12 @@ in
         name = "WhiteSur-Dark";
         package = pkgs.whitesur-gtk-theme;
       };
-      extensions = with pkgs;[
+      extensions = with pkgs; [
         # 自动移动窗口
-        { package = gnome-shell-extensions; id = "auto-move-windows@gnome-shell-extensions.gcampax.github.com"; }
+        {
+          package = gnome-shell-extensions;
+          id = "auto-move-windows@gnome-shell-extensions.gcampax.github.com";
+        }
         # 系统资源监控
         { package = gnomeExtensions.tophat; }
         # GNOME 40界面改进
@@ -77,16 +88,14 @@ in
 
   dconf.settings = with lib.hm.gvariant; {
     "org/gnome/shell" = {
-      enabled-extensions = lib.mkIf
-        (customize.window-version == "gnome-48")
-        (
-          (map (extension: extension.extensionUuid) gnome-48-extensions)
-          ++[
-            "auto-move-windows@gnome-shell-extensions.gcampax.github.com"
-            "user-theme@gnome-shell-extensions.gcampax.github.com"
-            "compiz-windows-effect@hermes83.github.com"
-          ]
-        );
+      enabled-extensions = lib.mkIf (customize.window-version == "gnome-48") (
+        (map (extension: extension.extensionUuid) gnome-48-extensions)
+        ++ [
+          "auto-move-windows@gnome-shell-extensions.gcampax.github.com"
+          "user-theme@gnome-shell-extensions.gcampax.github.com"
+          "compiz-windows-effect@hermes83.github.com"
+        ]
+      );
       disabled-extensions = [
         pkgs.gnomeExtensions.open-bar.extensionUuid
       ];
@@ -97,7 +106,7 @@ in
     };
 
     "org/gnome/shell/extensions/auto-move-windows" = {
-      application-list=[
+      application-list = [
         "google-chrome.desktop:1"
         "code.desktop:2"
         "realvnc-vncviewer.desktop:3"
@@ -152,11 +161,28 @@ in
       enable-wraparound-focus = true;
       enable-snap-assist = false;
       inner-gaps = mkUint32 2;
-      layouts-json=''[{"id":"Layout 1","tiles":[{"x":0,"y":0,"width":0.5,"height":1,"groups":[2]},{"x":0.5,"y":0,"width":0.49999999999999994,"height":0.5,"groups":[4,2]},{"x":0.5,"y":0.5,"width":0.49999999999999994,"height":0.49999999999999994,"groups":[4,2]}]},{"id":"Layout 2","tiles":[{"x":0,"y":0,"width":0.49947916666666664,"height":1,"groups":[2]},{"x":0.49947916666666664,"y":0,"width":0.5005208333333333,"height":1,"groups":[2]}]},{"id":"Layout 3","tiles":[{"x":0,"y":0,"width":0.33,"height":1,"groups":[1]},{"x":0.33,"y":0,"width":0.67,"height":1,"groups":[1]}]},{"id":"Layout 4","tiles":[{"x":0,"y":0,"width":0.5,"height":0.5,"groups":[1,2]},{"x":0.5,"y":0,"width":0.5000000000000014,"height":0.5,"groups":[3,1]},{"x":0,"y":0.5,"width":0.5,"height":0.49999999999999994,"groups":[2,1]},{"x":0.5,"y":0.5,"width":0.5000000000000014,"height":0.5,"groups":[3,1]}]}]'';
+      layouts-json = ''[{"id":"Layout 1","tiles":[{"x":0,"y":0,"width":0.5,"height":1,"groups":[2]},{"x":0.5,"y":0,"width":0.49999999999999994,"height":0.5,"groups":[4,2]},{"x":0.5,"y":0.5,"width":0.49999999999999994,"height":0.49999999999999994,"groups":[4,2]}]},{"id":"Layout 2","tiles":[{"x":0,"y":0,"width":0.49947916666666664,"height":1,"groups":[2]},{"x":0.49947916666666664,"y":0,"width":0.5005208333333333,"height":1,"groups":[2]}]},{"id":"Layout 3","tiles":[{"x":0,"y":0,"width":0.33,"height":1,"groups":[1]},{"x":0.33,"y":0,"width":0.67,"height":1,"groups":[1]}]},{"id":"Layout 4","tiles":[{"x":0,"y":0,"width":0.5,"height":0.5,"groups":[1,2]},{"x":0.5,"y":0,"width":0.5000000000000014,"height":0.5,"groups":[3,1]},{"x":0,"y":0.5,"width":0.5,"height":0.49999999999999994,"groups":[2,1]},{"x":0.5,"y":0.5,"width":0.5000000000000014,"height":0.5,"groups":[3,1]}]}]'';
       outer-gaps = mkUint32 2;
-      overridden-settings=''{"org.gnome.mutter.keybindings":{"toggle-tiled-right":"['<Super>Right']","toggle-tiled-left":"['<Super>Left']"},"org.gnome.desktop.wm.keybindings":{"maximize":"['<Super>Up']","unmaximize":"['<Super>Down', '<Alt>F5']"},"org.gnome.mutter":{"edge-tiling":"true"}}'';
+      overridden-settings = ''{"org.gnome.mutter.keybindings":{"toggle-tiled-right":"['<Super>Right']","toggle-tiled-left":"['<Super>Left']"},"org.gnome.desktop.wm.keybindings":{"maximize":"['<Super>Up']","unmaximize":"['<Super>Down', '<Alt>F5']"},"org.gnome.mutter":{"edge-tiling":"true"}}'';
       quarter-tiling-threshold = mkUint32 30;
-      selected-layouts = [["Layout 2" "Layout 1"] ["Layout 2" "Layout 1"] ["Layout 2" "Layout 1"] ["Layout 2" "Layout 1"]];
+      selected-layouts = [
+        [
+          "Layout 2"
+          "Layout 1"
+        ]
+        [
+          "Layout 2"
+          "Layout 1"
+        ]
+        [
+          "Layout 2"
+          "Layout 1"
+        ]
+        [
+          "Layout 2"
+          "Layout 1"
+        ]
+      ];
       window-use-custom-border-color = false;
     };
 
@@ -214,7 +240,11 @@ in
       dynamic-opacity = false;
       opacity = 245;
       sigma = 0;
-      whitelist = ["org.gnome.Nautilus" "dev.zed.Zed" "code"];
+      whitelist = [
+        "org.gnome.Nautilus"
+        "dev.zed.Zed"
+        "code"
+      ];
     };
     "org/gnome/shell/extensions/blur-my-shell/coverflow-alt-tab" = {
       blur = false;

@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
   nixPkg = if config.nix.package == null then pkgs.nix else config.nix.package;
 in

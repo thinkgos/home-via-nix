@@ -1,8 +1,13 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 {
   programs.zed-editor = {
     enable = true;
-    extraPackages = [];
+    extraPackages = [ ];
     installRemoteServer = true;
     extensions = [
       "catppuccin-icons"
