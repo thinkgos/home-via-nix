@@ -24,6 +24,7 @@ let
     gnomeExtensions.open-bar # top bar
     gnomeExtensions.blur-my-shell # 模糊窗口
     gnomeExtensions.customize-clock-on-lock-screen # 自定义锁屏时间显示
+    gnomeExtensions.kando-integration # pie菜单
   ];
 in
 {
@@ -37,6 +38,7 @@ in
       gnome-tweaks # 系统设置(可选替代refine)
       # 扩展管理
       # gnome-shell                                     # 扩展管理
+      kando # pie菜单 https://kando.menu/
     ]
     ++ lib.optionals (customize.window-version == "gnome-48") gnome-48-extensions;
 
