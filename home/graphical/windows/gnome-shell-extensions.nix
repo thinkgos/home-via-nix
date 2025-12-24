@@ -84,6 +84,8 @@ in
         # { package = gnomeExtensions.open-bar; }
         # 模糊窗口
         { package = gnomeExtensions.blur-my-shell; }
+        # pie菜单
+        { package = gnomeExtensions.kando-integration; }
       ];
     };
   };
