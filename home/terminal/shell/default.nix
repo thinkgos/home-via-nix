@@ -83,6 +83,10 @@ in
       enable = true;
       enableZshIntegration = true;
       enableBashIntegration = true;
+      changeDirWidgetOptions = [
+        "--walker-skip .git,node_modules,target"
+        "--preview 'tree -C -L 3 {}'"
+      ];
     };
 
     zellij = {
