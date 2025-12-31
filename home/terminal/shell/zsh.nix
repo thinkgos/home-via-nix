@@ -7,6 +7,7 @@
 {
   programs.zsh = {
     enable = true;
+    enableCompletion = true;
     envExtra = ''
       # rustup
       export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
@@ -46,6 +47,23 @@
           if [[ "$TERM" == "xterm-kitty" ]] && ! infocmp "$TERM" >/dev/null 2>&1; then 
             export TERM=xterm-256color 
           fi
+
+          ff() { fd . ''${1} | fzf }
+          fb() { fd . ''${1} | fzf --preview 'bat --color=always {-1}' }
+          fbv() { fd . ''${1} | fzf --preview 'bat --color=always {}' --bind 'enter:become(vim {-1})' --bind 'ctrl-o:execute:vim {-1}' }
+          frv() { 
+            local target_dir=''${1}
+            local RELOAD="reload:rg --column --color=always --smart-case {q} $target_dir || :"
+            fzf --disabled \
+                --ansi \
+                --bind "start:$RELOAD" \
+                --bind "change:$RELOAD" \
+                --bind 'enter:become:vim {1} +{2}' \
+                --bind 'ctrl-o:execute:vim {1} +{2}' \
+                --delimiter : \
+                --preview 'bat --style=full --color=always --highlight-line {2} {1}' \
+                --preview-window '~4,+{2}+4/3,<80(up)'
+          }
         '';
       in
       lib.mkMerge [
