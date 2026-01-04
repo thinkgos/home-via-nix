@@ -79,3 +79,9 @@ systemctl --user mask org.freedesktop.IBus.session.GNOME.service
 ```shell
 echo "kernel.apparmor_restrict_unprivileged_userns=0" | sudo tee /etc/sysctl.d/60-apparmor-namespace.conf
 ```
+
+#### 4.5 用户目录名称改成英文
+
+```shell
+LANG=C xdg-user-dirs-gtk-update
+```
