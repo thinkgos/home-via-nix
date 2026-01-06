@@ -32,7 +32,7 @@ frv() {
 }
 
 # 递归子模块 执行命令
-git-sub-command() {
+gitsub-command() {
 	local command=${1}
 	if [[ -z $command ]]; then
 		echo "请指定命令"
@@ -41,38 +41,38 @@ git-sub-command() {
 	git submodule foreach --recursive "$command"
 }
 # 递归子模块 git pull rebase
-git-sub-pull-rebase() {
-	git-sub-command "git pull --rebase"
+gitsub-pull-rebase() {
+	gitsub-command "git pull --rebase"
 }
 # 递归子模块 git checkout ${branch}
-git-sub-switch-branch() {
+gitsub-switch-branch() {
 	local branch=${1}
 	if [[ -z $branch ]]; then
 		echo "请指定分支"
 		return 1
 	fi
-	git-sub-command "git checkout ${branch}"
+	gitsub-command "git checkout ${branch}"
 }
 # 递归子模块 git checkout -b ${branch} origin/${branch}
-git-sub-checkout-branch() {
+gitsub-checkout-branch() {
 	local branch=${1}
 	if [[ -z $branch ]]; then
 		echo "请指定分支"
 		return 1
 	fi
-	git-sub-command "git checkout -b ${branch} origin/${branch}"
+	gitsub-command "git checkout -b ${branch} origin/${branch}"
 }
 # 递归子模块 git fetch origin ${branch}:${branch}
-git-sub-fetch-origin() {
+gitsub-fetch-origin() {
 	local branch=${1}
 	if [[ -z $branch ]]; then
 		echo "请指定分支"
 		return 1
 	fi
-	git-sub-command "git fetch origin ${branch}:${branch}"
+	gitsub-command "git fetch origin ${branch}:${branch}"
 }
 # 递归子模块 执行命令
-git-sub-command-cc() {
+gitsub-command-cc() {
 	local command=${1}
 	if [[ -z $command ]]; then
 		echo "请指定命令"
@@ -81,33 +81,33 @@ git-sub-command-cc() {
 	git submodule foreach --quiet --recursive 'echo $path' | parallel -j 8 "cd {} && echo '进入 {}' && $command"
 }
 # 递归子模块 git pull rebase
-git-sub-pull-rebase-cc() {
-	git-sub-command-cc "git pull --rebase"
+gitsub-pull-rebase-cc() {
+	gitsub-command-cc "git pull --rebase"
 }
 # 递归子模块 git checkout ${branch}
-git-sub-switch-branch-cc() {
+gitsub-switch-branch-cc() {
 	local branch=${1}
 	if [[ -z $branch ]]; then
 		echo "请指定分支"
 		return 1
 	fi
-	git-sub-command-cc "git checkout ${branch}"
+	gitsub-command-cc "git checkout ${branch}"
 }
 # 递归子模块 git checkout -b ${branch} origin/${branch}
-git-sub-checkout-branch-cc() {
+gitsub-checkout-branch-cc() {
 	local branch=${1}
 	if [[ -z $branch ]]; then
 		echo "请指定分支"
 		return 1
 	fi
-	git-sub-command-cc "git checkout -b ${branch} origin/${branch}"
+	gitsub-command-cc "git checkout -b ${branch} origin/${branch}"
 }
 # 递归子模块 git fetch origin ${branch}:${branch}
-git-sub-fetch-origin-cc() {
+gitsub-fetch-origin-cc() {
 	local branch=${1}
 	if [[ -z $branch ]]; then
 		echo "请指定分支"
 		return 1
 	fi
-	git-sub-command-cc "git fetch origin ${branch}:${branch}"
+	gitsub-command-cc "git fetch origin ${branch}:${branch}"
 }
