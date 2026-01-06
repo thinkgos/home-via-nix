@@ -112,12 +112,12 @@ in
     "org/gnome/shell/extensions/auto-move-windows" = {
       application-list = [
         "google-chrome.desktop:1"
-        "code.desktop:2"
+        "code.desktop:1"
         "realvnc-vncviewer.desktop:3"
-        "dev.zed.Zed.desktop:3"
-        "dev.warp.Warp.desktop:4"
-        "kitty.desktop:4"
-        # "org.wezfurlong.wezterm.desktop:4"
+        "dev.zed.Zed.desktop:1"
+        "dev.warp.Warp.desktop:2"
+        "kitty.desktop:2"
+        # "org.wezfurlong.wezterm.desktop:2"
       ];
     };
 
