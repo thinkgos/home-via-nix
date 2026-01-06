@@ -72,19 +72,6 @@
               echo "development shell ready!"
             '';
           };
-
-          apps = {
-            cargo-bin = {
-              type = "app";
-              program =
-                let
-                  script = pkgs.writeShellScriptBin "cargo-bin" ''
-                    echo "!! Install via cargo"
-                  '';
-                in
-                "${script}/bin/cargo-bin";
-            };
-          };
         };
     };
 }
