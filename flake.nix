@@ -58,7 +58,6 @@
                 username = "thinkgo";
                 graphics = true;
                 window = "hyprland";
-                distro = null;
               };
             };
 

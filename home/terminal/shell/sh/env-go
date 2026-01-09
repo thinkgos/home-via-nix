@@ -1,0 +1,4 @@
+export GOPATH=~/go
+if [[ ":$PATH:" != *":$GOPATH/bin:"* ]]; then
+    export PATH=$PATH:$GOPATH/bin
+fi

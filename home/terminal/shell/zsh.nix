@@ -6,8 +6,10 @@
 }:
 {
   home.file = {
+    ".config/zsh/env-cargo".source = ./sh/env-cargo;
+    ".config/zsh/env-go".source = ./sh/env-go;
     # 附加自定义函数
-    ".config/zsh/functions.zsh".source = ./functions.zsh;
+    ".config/zsh/functions.zsh".source = ./sh/functions.sh;
   };
 
   # https://github.com/ohmyzsh/ohmyzsh
@@ -15,26 +17,14 @@
     enable = true;
     enableCompletion = true;
     envExtra = ''
-      # rustup
-      export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
-      export RUSTUP_UPDATE_ROOT=https://mirrors.tuna.tsinghua.edu.cn/rustup/rustup
+      # go
+      if [ -f "$HOME/.config/zsh/env-go" ]; then
+        source "$HOME/.config/zsh/env-go"
+      fi
 
       # rust
-      # rustup shell setup
-      # affix colons on either side of $PATH to simplify matching
-      case ":$PATH:" in
-          *:"$HOME/.cargo/bin":*)
-              ;;
-          *)
-              # Prepending path in case a system-installed rustc needs to be overridden
-              export PATH="$HOME/.cargo/bin:$PATH"
-              ;;
-      esac
-
-      # go
-      export GOPATH=~/go
-      if [[ ":$PATH:" != *":$GOPATH/bin:"* ]]; then
-          export PATH=$PATH:$GOPATH/bin
+      if [ -f "$HOME/.config/zsh/env-cargo" ]; then
+        source "$HOME/.config/zsh/env-cargo"
       fi
     '';
 
