@@ -10,5 +10,7 @@
     ./devtools
     ./editor
     ./git.nix
+    ./password-store.nix
+    ./github.nix
   ];
 }

@@ -70,21 +70,23 @@
       # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
       theme = "agnoster";
       plugins = [
-        "zoxide"
-        "fzf"
-        "git"
-        "fig"
-        "golang"
-        "rust"
-        "npm"
+        "zoxide" # zoxide: smarter cd command
+        "fzf" # fzf fuzzy finder
+        "git" # git client
+        "pass" # password-store
+        "gh" # github cli
+        "cp"
         "tmux"
         "vagrant"
         "kubectl"
         "helm"
         "minikube"
         "docker"
-        "cp"
+        "podman"
         "ansible"
+        "golang"
+        "rust"
+        "npm"
       ];
     };
   };
