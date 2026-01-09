@@ -1,5 +1,3 @@
-#!/usr/bin/env zsh
-
 # 指定路径进行fzf搜索
 # ff [path]
 ff() {

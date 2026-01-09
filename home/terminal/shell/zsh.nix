@@ -9,7 +9,7 @@
     ".config/zsh/env-cargo".source = ./sh/env-cargo;
     ".config/zsh/env-go".source = ./sh/env-go;
     # 附加自定义函数
-    ".config/zsh/functions.zsh".source = ./sh/functions.sh;
+    ".config/zsh/functions.sh".source = ./sh/functions.sh;
   };
 
   # https://github.com/ohmyzsh/ohmyzsh
@@ -44,8 +44,8 @@
             export TERM=xterm-256color 
           fi
 
-          if [ -f "$HOME/.config/zsh/functions.zsh" ]; then
-            source "$HOME/.config/zsh/functions.zsh"
+          if [ -f "$HOME/.config/zsh/functions.sh" ]; then
+            source "$HOME/.config/zsh/functions.sh"
           fi
         '';
       in
