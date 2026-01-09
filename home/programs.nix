@@ -16,7 +16,7 @@
     jq # json美化过滤
     yq # yaml美化过滤
     fastfetch # 系统信息查看工具
-    stow # 管理dotfiles
+    chezmoi # 管理dotfiles
 
     #! 命令行替代工具
     eza # 替代ls

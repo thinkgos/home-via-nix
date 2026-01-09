@@ -10,6 +10,7 @@
     ".config/zsh/functions.zsh".source = ./functions.zsh;
   };
 
+  # https://github.com/ohmyzsh/ohmyzsh
   programs.zsh = {
     enable = true;
     enableCompletion = true;
