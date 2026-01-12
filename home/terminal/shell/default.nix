@@ -51,6 +51,7 @@ in
       enable = true;
       enableZshIntegration = true;
       enableBashIntegration = true;
+      enableNushellIntegration = true;
       settings = fromTomlFile configPath.starship;
     };
 
@@ -58,6 +59,7 @@ in
       enable = true;
       enableZshIntegration = true;
       enableBashIntegration = true;
+      enableNushellIntegration = true;
       silent = false;
       mise.enable = true;
       nix-direnv.enable = true;
@@ -67,12 +69,14 @@ in
       enable = true;
       enableZshIntegration = true;
       enableBashIntegration = true;
+      enableNushellIntegration = true;
     };
 
     atuin = {
       enable = true;
       enableZshIntegration = true;
       enableBashIntegration = true;
+      enableNushellIntegration = true;
       flags = [ "--disable-up-arrow" ];
     };
 
@@ -95,6 +99,7 @@ in
       enable = true;
       enableZshIntegration = true;
       enableBashIntegration = true;
+      enableNushellIntegration = true;
       extraPackages = with pkgs; [ glow ];
     };
   };

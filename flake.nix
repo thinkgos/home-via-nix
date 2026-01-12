@@ -48,6 +48,12 @@
                 window = "gnome";
                 window-version = "gnome-49";
               };
+              thinkgo-ubuntu25_10 = mkHome {
+                username = "thinkgo";
+                graphics = true;
+                window = "gnome";
+                window-version = "gnome-49";
+              };
               thinkgo-ubuntu24_04 = mkHome {
                 username = "thinkgo";
                 graphics = true;
