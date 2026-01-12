@@ -6,7 +6,7 @@
 }:
 {
   imports = [
-    ./zed.nix
+    # ./zed.nix
   ];
 
   home.packages = with pkgs; [
