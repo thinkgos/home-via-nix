@@ -41,7 +41,6 @@ in
     mv = "mv -i";
     cp = "cp -i";
     rm = "trash -v";
-    mkdir = "mkdir -p";
     nv = "nvim";
     tf = "terraform";
   };

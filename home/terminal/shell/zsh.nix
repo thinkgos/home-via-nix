@@ -32,6 +32,7 @@
     shellAliases = {
       # see home.shellAliases for the top level attribute names
       # here specific to zsh
+      mkdir = "mkdir -p";
     };
     initContent =
       let

@@ -25,9 +25,9 @@ $python\
 $docker_context\
 $conda\
 [](fg:color_bg3 bg:color_bg1)\
-$all\
 $time\
 [ ](fg:color_bg1)\
+$all\
 $line_break$character"""
 
 palette = 'gruvbox_dark'
@@ -88,6 +88,11 @@ truncation_length = 6
 "Music" = "󰝚 "
 "Pictures" = " "
 "Developer" = "󰲋 "
+
+[shell]
+disabled = false
+format = '🍃 [$indicator]($style)'
+style = 'cyan bold'
 
 [git_branch]
 symbol = ""

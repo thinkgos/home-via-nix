@@ -32,3 +32,8 @@ format = '[<$symbol >]($style) '
 pipestatus = true
 map_symbol = true
 disabled = true
+
+[shell]
+disabled = false
+format = '🍃 [$indicator]($style)'
+style = 'cyan bold'

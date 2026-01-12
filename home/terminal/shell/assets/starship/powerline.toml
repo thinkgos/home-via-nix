@@ -77,6 +77,11 @@ truncation_symbol = "…/"
 # So either put "Important Documents" before "Documents" or use the substituted version:
 # "Important 󰈙 " = " 󰈙 "
 
+[shell]
+disabled = false
+format = '🍃 [$indicator]($style)'
+style = 'cyan bold'
+
 [c]
 symbol = " "
 style = "bg:#86BBD8"
