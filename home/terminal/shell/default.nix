@@ -36,13 +36,10 @@ in
     # the top level attribute names.
     # If you need to use a shell specific feature
     # then make sure to use a shell specific option
-    ls = "eza";
     cat = "bat -p";
-    mv = "mv -i";
-    cp = "cp -i";
-    rm = "trash -v";
     nv = "nvim";
     tf = "terraform";
+    trash = "trash -v";
   };
 
   programs = {

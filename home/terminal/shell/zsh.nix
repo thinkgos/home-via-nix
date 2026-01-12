@@ -33,6 +33,10 @@
       # see home.shellAliases for the top level attribute names
       # here specific to zsh
       mkdir = "mkdir -p";
+      ls = "eza";
+      mv = "mv -i";
+      cp = "cp -i";
+      rm = "trash -v";
     };
     initContent =
       let
