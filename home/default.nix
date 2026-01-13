@@ -49,7 +49,6 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    #! usual 统一管理常用应用
     #! terminal 统一管理终端应用
     #! graphical 统一管理图形化应用
 

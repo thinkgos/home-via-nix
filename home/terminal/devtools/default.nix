@@ -26,6 +26,7 @@
     sqlcipher # sqlite数据库工具, 支持加密
     mysql84 # mysql数据库工具
     mycli # mysql客户端
+    duckdb # 嵌入式分析数据库
   ];
   programs = {
     mise = {
