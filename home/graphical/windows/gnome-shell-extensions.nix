@@ -192,12 +192,12 @@ in
 
     "org/gnome/shell/extensions/dash-to-dock" = {
       always-center-icons = true;
-      apply-custom-theme = true;
+      apply-custom-theme = false;
       background-color = "rgb(222,221,218)";
       background-opacity = 0.75;
       click-action = "focus-minimize-or-previews";
       custom-background-color = false;
-      custom-theme-shrink = false;
+      custom-theme-shrink = true;
       dash-max-icon-size = 40;
       disable-overview-on-startup = false;
       dock-position = "BOTTOM";
@@ -283,7 +283,7 @@ in
       style-components = 3;
     };
     "org/gnome/shell/extensions/blur-my-shell/panel" = {
-      blur = true;
+      blur = false;
       brightness = 0.6;
       pipeline = "pipeline_default";
       sigma = 30;
