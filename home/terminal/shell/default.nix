@@ -43,10 +43,15 @@ in
   };
 
   programs = {
+    carapace = {
+      enable = true;
+      enableZshIntegration = true;
+      enableNushellIntegration = true;
+    };
+
     starship = {
       enable = true;
       enableZshIntegration = true;
-      enableBashIntegration = true;
       enableNushellIntegration = true;
       settings = fromTomlFile configPath.starship;
     };
@@ -54,7 +59,6 @@ in
     direnv = {
       enable = true;
       enableZshIntegration = true;
-      enableBashIntegration = true;
       enableNushellIntegration = true;
       silent = false;
       mise.enable = true;
@@ -64,14 +68,12 @@ in
     zoxide = {
       enable = true;
       enableZshIntegration = true;
-      enableBashIntegration = true;
       enableNushellIntegration = true;
     };
 
     atuin = {
       enable = true;
       enableZshIntegration = true;
-      enableBashIntegration = true;
       enableNushellIntegration = true;
       flags = [ "--disable-up-arrow" ];
     };
@@ -79,7 +81,6 @@ in
     fzf = {
       enable = true;
       enableZshIntegration = true;
-      enableBashIntegration = true;
       changeDirWidgetOptions = [
         "--walker-skip .git,node_modules,target"
         "--preview 'tree -C -L 3 {}'"
@@ -94,7 +95,6 @@ in
     yazi = {
       enable = true;
       enableZshIntegration = true;
-      enableBashIntegration = true;
       enableNushellIntegration = true;
       extraPackages = with pkgs; [ glow ];
     };
