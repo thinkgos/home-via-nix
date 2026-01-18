@@ -6,7 +6,7 @@
 }:
 {
   home.file = {
-    ".config/aquaproj-aqua/aqua.yaml".source = ./assets/aqua.yaml;
+    ".config/aquaproj-aqua".source = ./aqua;
 
     ".config/zsh/env".source = ./sh/env;
     ".config/zsh/env-cargo".source = ./sh/env-cargo;
