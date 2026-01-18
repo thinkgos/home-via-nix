@@ -6,6 +6,9 @@
 }:
 {
   home.file = {
+    ".config/aquaproj-aqua/aqua.yaml".source = ./assets/aqua.yaml;
+
+    ".config/zsh/env".source = ./sh/env;
     ".config/zsh/env-cargo".source = ./sh/env-cargo;
     ".config/zsh/env-go".source = ./sh/env-go;
     # 附加自定义函数
@@ -17,6 +20,11 @@
     enable = true;
     enableCompletion = true;
     envExtra = ''
+      # env
+      if [ -f "$HOME/.config/zsh/env" ]; then
+        source "$HOME/.config/zsh/env"
+      fi
+
       # go
       if [ -f "$HOME/.config/zsh/env-go" ]; then
         source "$HOME/.config/zsh/env-go"
