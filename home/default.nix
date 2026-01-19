@@ -97,6 +97,7 @@
   #
   home.sessionVariables = {
     # EDITOR = "emacs";
+    BAT_PAGER = "less -r";
   };
 
   programs = {
