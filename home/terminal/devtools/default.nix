@@ -7,13 +7,17 @@
 {
   imports = [
     ./rust.nix
+    ./go.nix
     ./python.nix
   ];
 
   home.packages = with pkgs; [
     # mise    # 管理开发环境, 软件多版本管理
 
-    # 编译工具
+    #! 通用
+    nfpm # a simple deb, rpm, apk, ipk, and arch linux packager
+
+    #! 编译工具
     autoconf # 自动配置工具
     gnumake # 构建工具
     cmake # 跨平台构建工具
@@ -27,6 +31,16 @@
     mysql84 # mysql数据库工具
     mycli # mysql客户端
     duckdb # 嵌入式分析数据库
+
+    #! grpc
+    grpcurl
+    grpcui
+
+    #! nats
+    natscli
+    nkeys
+    nats-top
+    nats-server
   ];
   programs = {
     mise = {
