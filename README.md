@@ -1,6 +1,13 @@
 # home-via-nix
 
-## 1. 关闭SELINUX
+## 1. 前置条件
+
+- [nix](https://nixos.org)
+- [home-manager](https://nix-community.github.io/home-manager)
+
+NOTE: 目前使用`nix flakes`方式, `home-manager`管理用户级配置. `mise`管理一些常用的开发环境和部份编译工具
+
+## 2. 关闭SELINUX
 
 ### 永久关闭 - 需重启
 
