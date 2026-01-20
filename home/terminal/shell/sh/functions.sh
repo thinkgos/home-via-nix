@@ -6,12 +6,12 @@ ff() {
 # 指定路径进行fzf搜索, 并bat进行预览文件内容
 # fb [path]
 fb() {
-	fd . ${1} | fzf --preview 'bat --color=always {-1}'
+	fd . ${1} | fzf --preview 'bat --style=plain --color=always {-1}'
 }
 # 指定路径进行fzf搜索, 并bat进行预览文件内容, 选中回车进行vim编辑或ctrl+o开新窗口进行vim编辑
 # fbv [path]
 fbv() {
-	fd . ${1} | fzf --preview 'bat --color=always {}' --bind 'enter:become(vim {-1})' --bind 'ctrl-o:execute:vim {-1}'
+	fd . ${1} | fzf --preview 'bat --style=plain --color=always {}' --bind 'enter:become(vim {-1})' --bind 'ctrl-o:execute:vim {-1}'
 }
 # 指定路径使用fzf提供交互窗口进行rg搜索, 并bat进行预览文件内容, 选中回车进行vim编辑或ctrl+o开新窗口进行vim编辑
 # frv [path]
@@ -25,7 +25,7 @@ frv() {
 		--bind 'enter:become:vim {1} +{2}' \
 		--bind 'ctrl-o:execute:vim {1} +{2}' \
 		--delimiter : \
-		--preview 'bat --style=full --color=always --highlight-line {2} {1}' \
+		--preview 'bat --style=plain --color=always --highlight-line {2} {1}' \
 		--preview-window '~4,+{2}+4/3,<80(up)'
 }
 
