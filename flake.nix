@@ -55,8 +55,8 @@
                 window-version = "gnome-49";
               };
               journey-ubuntu25_10 = mkHome {
-                username = "journeyer";
-                graphics = false;
+                username = "journey";
+                graphics = true;
                 window = "gnome";
                 window-version = "gnome-49";
               };
