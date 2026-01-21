@@ -54,16 +54,11 @@
                 window = "gnome";
                 window-version = "gnome-49";
               };
-              thinkgo-ubuntu24_04 = mkHome {
-                username = "thinkgo";
-                graphics = true;
+              journey-ubuntu25_10 = mkHome {
+                username = "journeyer";
+                graphics = false;
                 window = "gnome";
-                window-version = "gnome-48";
-              };
-              thinkgo-hyprland = mkHome {
-                username = "thinkgo";
-                graphics = true;
-                window = "hyprland";
+                window-version = "gnome-49";
               };
             };
 

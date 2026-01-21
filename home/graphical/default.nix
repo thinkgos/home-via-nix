@@ -12,8 +12,8 @@
     ./editor
     ./devtools
   ]
-  ++ lib.optional (customize.window == "hyprland") ./windows/hyprland.nix
-  ++ lib.optional (customize.window == "gnome") ./windows/gnome.nix;
+  ++ lib.optional (customize.window == "gnome") ./windows/gnome.nix
+  ++ lib.optional (customize.window == "hyprland") ./windows/hyprland.nix;
 
   nixpkgs.config = {
     allowUnfreePredicate =

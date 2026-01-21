@@ -5,46 +5,21 @@
   customize,
   ...
 }:
-let
-  gnome-48-extensions = with pkgs; [
-    # NOTE: 注释掉的从系统安装, nix不兼容gnome-48
-    # - user-themes 用户主题
-    # - auto-move-windows 自动移动窗口
-    # gnome-shell-extensions                          # 包含多种扩展
-    gnomeExtensions.tophat # 系统资源监控
-    gnomeExtensions.gnome-40-ui-improvements # GNOME 40界面改进
-    gnomeExtensions.kimpanel # 输入法面板
-    gnomeExtensions.appindicator # 应用程序指示器
-    gnomeExtensions.clipboard-indicator # clipboard管理
-    gnomeExtensions.tiling-shell # 平铺窗口
-    gnomeExtensions.dash-to-dock # 任务栏
-    gnomeExtensions.hide-top-bar # 隐藏顶部栏
-    gnomeExtensions.compiz-alike-magic-lamp-effect # 仿Compiz的魔法灯效果
-    # gnomeExtensions.compiz-windows-effect           # 仿Compiz的窗口特效
-    gnomeExtensions.open-bar # top bar
-    gnomeExtensions.blur-my-shell # 模糊窗口
-    gnomeExtensions.customize-clock-on-lock-screen # 自定义锁屏时间显示
-    gnomeExtensions.kando-integration # pie菜单
-  ];
-in
 {
-  home.packages =
-    with pkgs;
-    [
-      # 从系统安装
-      # https://extensions.gnome.org
-      # gnome-browser-connector # 浏览器连接器
+  home.packages = with pkgs; [
+    # 从系统安装
+    # https://extensions.gnome.org
+    # gnome-browser-connector # 浏览器连接器
 
-      gnome-tweaks # 系统设置(可选替代refine)
-      # 扩展管理
-      # gnome-shell                                     # 扩展管理
-      kando # pie菜单 https://kando.menu/
-    ]
-    ++ lib.optionals (customize.window-version == "gnome-48") gnome-48-extensions;
+    gnome-tweaks # 系统设置(可选替代refine)
+    # 扩展管理
+    # gnome-shell                                     # 扩展管理
+    kando # pie菜单 https://kando.menu/
+  ];
 
   # NOTE: 扩展配置位于 gnome-dconf.nix
   programs = {
-    gnome-shell = lib.mkIf (customize.window-version == "gnome-49") {
+    gnome-shell = {
       enable = true;
       # 主题单独配置
       # 使用的是 gnome-shell-extensions 包含多种扩展
@@ -92,14 +67,7 @@ in
 
   dconf.settings = with lib.hm.gvariant; {
     "org/gnome/shell" = {
-      enabled-extensions = lib.mkIf (customize.window-version == "gnome-48") (
-        (map (extension: extension.extensionUuid) gnome-48-extensions)
-        ++ [
-          "auto-move-windows@gnome-shell-extensions.gcampax.github.com"
-          "user-theme@gnome-shell-extensions.gcampax.github.com"
-          "compiz-windows-effect@hermes83.github.com"
-        ]
-      );
+      # enabled-extensions = null;
       disabled-extensions = [
         pkgs.gnomeExtensions.open-bar.extensionUuid
       ];
