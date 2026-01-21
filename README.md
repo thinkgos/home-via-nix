@@ -24,7 +24,7 @@ sudo setenforce 0
 ## 2. 安装nix
 
 - [Install Nix](https://nixos.org/download/#download-nix)
-- 添加channel, `nix-channel --add https://nixos.org/channels/nixos-25.11 nixpkgs`
+- 添加channel, `nix-channel --add https://nixos.org/channels/nixos-unstable nixpkgs`
 - 更新channel, `nix-channel --update`
 - 添加相关help文档, `nix-env -i nix`.
 
