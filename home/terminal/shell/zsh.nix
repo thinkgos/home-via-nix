@@ -103,7 +103,7 @@
         		echo "请指定分支"
         		return 1
         	fi
-        	gitsub-command "git checkout $\{branch}"
+        	gitsub-command "git checkout ''${branch}"
       '';
       # 递归子模块 git checkout -b ${branch} origin/${branch}
       gitsub-checkout-branch = ''
@@ -112,7 +112,7 @@
         		echo "请指定分支"
         		return 1
         	fi
-        	gitsub-command "git checkout -b $\{branch} origin/$\{branch}"
+        	gitsub-command "git checkout -b ''${branch} origin/''${branch}"
       '';
       # 递归子模块 git fetch origin ${branch}:${branch}
       gitsub-fetch-origin = ''
@@ -121,7 +121,7 @@
         		echo "请指定分支"
         		return 1
         	fi
-        	gitsub-command "git fetch origin $\{branch}:$\{branch}"
+        	gitsub-command "git fetch origin ''${branch}:''${branch}"
       '';
       # 递归子模块 执行命令
       gitsub-command-cc = ''
@@ -141,7 +141,7 @@
         		echo "请指定分支"
         		return 1
         	fi
-        	gitsub-command-cc "git checkout $\{branch}"
+        	gitsub-command-cc "git checkout ''${branch}"
       '';
       # 递归子模块 git checkout -b ${branch} origin/${branch}
       gitsub-checkout-branch-cc = ''
@@ -150,7 +150,7 @@
         		echo "请指定分支"
         		return 1
         	fi
-        	gitsub-command-cc "git checkout -b $\{branch} origin/$\{branch}"
+        	gitsub-command-cc "git checkout -b ''${branch} origin/''${branch}"
       '';
       # 递归子模块 git fetch origin ${branch}:${branch}
       gitsub-fetch-origin-cc = ''
@@ -159,7 +159,7 @@
         		echo "请指定分支"
         		return 1
         	fi
-        	gitsub-command-cc "git fetch origin $\{branch}:$\{branch}"
+        	gitsub-command-cc "git fetch origin ''${branch}:''${branch}"
       '';
     };
 
