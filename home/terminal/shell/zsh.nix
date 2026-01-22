@@ -6,8 +6,8 @@
 }:
 {
   home.file = {
-    "${config.xdg.configHome}/zsh/site-functions/env-cargo".source = ./sh/env-cargo;
-    "${config.xdg.configHome}/zsh/site-functions/env-go".source = ./sh/env-go;
+    "${config.xdg.configHome}/zsh/env-extra/env-cargo".source = ./sh/env-cargo;
+    "${config.xdg.configHome}/zsh/env-extra/env-go".source = ./sh/env-go;
   };
 
   # https://github.com/ohmyzsh/ohmyzsh
@@ -19,8 +19,8 @@
       # env
       export PATH=$HOME/.opencode/bin:$PATH
       # develop tools
-      source "${config.xdg.configHome}/zsh/site-functions/env-go"
-      source "${config.xdg.configHome}/zsh/site-functions/env-cargo"
+      source "${config.xdg.configHome}/zsh/env-extra/env-go"
+      source "${config.xdg.configHome}/zsh/env-extra/env-cargo"
     '';
 
     setOptions = [ "no_nomatch" ];
@@ -35,9 +35,7 @@
     };
     initContent =
       let
-        zshConfigEarlyInit = lib.mkOrder 500 ''
-          fpath=(~/.zfunc $fpath) # 增加zsh代码补全脚本路径
-        '';
+        zshConfigEarlyInit = lib.mkOrder 500 "";
         zshConfigLast = lib.mkOrder 1500 ''
           autoload -U +X bashcompinit && bashcompinit
           if [[ "$TERM" == "xterm-kitty" ]] && ! infocmp "$TERM" >/dev/null 2>&1; then 
