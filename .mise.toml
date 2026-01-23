@@ -4,4 +4,4 @@
 run = "chezmoi apply -S dotfiles"
 
 [tasks.bump-tools]
-run = "mise upgrade --bump --cd dotfiles/dot_config"
+run = "mise upgrade --bump --cd dotfiles/dot_config/mise/conf.d"
