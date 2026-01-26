@@ -85,6 +85,7 @@ in
         "--walker-skip .git,node_modules,target"
         "--preview 'tree -C -L 3 {}'"
       ];
+      defaultCommand = "fd --hidden";
     };
 
     zellij = {

@@ -63,16 +63,16 @@
       ff = "fd . $1 | fzf";
       # 指定路径进行fzf搜索, 并bat进行预览文件内容
       # fb [path]
-      fb = ''fd . $1 | fzf --preview "bat --style=plain --color=always {-1}"'';
+      fb = ''fd . --type file $1 | fzf --preview "bat --style=plain --color=always {-1}"'';
       # 指定路径进行fzf搜索, 并bat进行预览文件内容, 选中回车进行vim编辑或ctrl+o开新窗口进行vim编辑
       # fbv [path]
-      fbv = ''fd . $1 | fzf --preview "bat --style=plain --color=always {}" --bind "enter:become(vim {-1})" --bind "ctrl-o:execute:vim {-1}"'';
+      fbv = ''fd . --type file $1 | fzf --preview "bat --style=plain --color=always {}" --bind "enter:become(vim {-1})" --bind "ctrl-o:execute:vim {-1}"'';
       # 指定路径使用fzf提供交互窗口进行rg搜索, 并bat进行预览文件内容, 选中回车进行vim编辑或ctrl+o开新窗口进行vim编辑
       # frv [path]
       frv = ''
         local target_dir=$1
         local RELOAD="reload:rg --column --color=always --smart-case {q} $target_dir || :"
-        fzf 
+        fzf \
           --disabled \
           --ansi \
           --bind "start:$RELOAD" \
