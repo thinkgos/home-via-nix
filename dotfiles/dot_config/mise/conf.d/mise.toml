@@ -3,4 +3,4 @@
 # cargo tools
 "cargo:skim" = "1.1.1"
 "cargo:goup-rs" = "0.16.6"
-"cargo:sea-orm-cli" = "2.0.0-rc.28"
+"cargo:sea-orm-cli" = "2.0.0-rc.30"
