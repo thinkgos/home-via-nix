@@ -5,3 +5,4 @@
 "cargo:sea-orm-cli" = "2.0.0-rc.30"
 # via github
 "github:skim-rs/skim" = "2.0.1"
+"github:go-task/task" = "3.48.0"
