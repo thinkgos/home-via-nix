@@ -27,7 +27,7 @@ zinit light-mode for \
 ### End of Zinit's installer chunk
 
 # zsh plugin via zinit
-zinit ice wait"0" lucid
+zinit ice wait"0" lucid atload"_zsh_autosuggest_start"
 zinit light zsh-users/zsh-autosuggestions
 
 zinit ice wait"0" lucid
