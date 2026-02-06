@@ -5,10 +5,6 @@
   ...
 }:
 {
-  home.packages = with pkgs; [
-    zinit # zsh plugin manager
-  ];
-
   home.file = {
     "${config.xdg.configHome}/zsh/env-extra/env-cargo".source = ./sh/env-cargo;
     "${config.xdg.configHome}/zsh/env-extra/env-go".source = ./sh/env-go;
