@@ -5,6 +5,10 @@
   ...
 }:
 {
+  home.packages = with pkgs; [
+    zinit # zsh plugin manager
+  ];
+
   home.file = {
     "${config.xdg.configHome}/zsh/env-extra/env-cargo".source = ./sh/env-cargo;
     "${config.xdg.configHome}/zsh/env-extra/env-go".source = ./sh/env-go;
@@ -36,12 +40,7 @@
     initContent =
       let
         zshConfigEarlyInit = lib.mkOrder 500 "";
-        zshConfigLast = lib.mkOrder 1500 ''
-          autoload -U +X bashcompinit && bashcompinit
-          if [[ "$TERM" == "xterm-kitty" ]] && ! infocmp "$TERM" >/dev/null 2>&1; then 
-            export TERM=xterm-256color 
-          fi
-        '';
+        zshConfigLast = lib.mkOrder 1500 (builtins.readFile ./sh/zsh-latest.sh);
       in
       lib.mkMerge [
         zshConfigEarlyInit
@@ -162,8 +161,6 @@
     };
 
     autocd = true;
-    syntaxHighlighting.enable = true;
-    autosuggestion.enable = true;
     oh-my-zsh = {
       enable = true;
       # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
