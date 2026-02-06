@@ -10,12 +10,21 @@ $directory\
 $git_branch\
 $git_status\
 [](fg:#FCA17D bg:#86BBD8)\
-$all\
+$c\
+$rust\
+$golang\
+$nodejs\
+$php\
+$java\
+$kotlin\
+$haskell\
+$python\
 [](fg:#86BBD8 bg:#06969A)\
 $docker_context\
 [](fg:#06969A bg:#33658A)\
 $time\
-[ ](fg:#33658A)\
+[ ](fg:#33658A)\
+$all\
 $line_break\
 $character
 """
@@ -60,9 +69,9 @@ disabled = true      # Disabled by default
 
 [directory]
 style = "bg:#DA627D"
-format = "[ $path ]($style)"
-truncation_length = 3
-truncation_symbol = "…/"
+format = "[ $path ]($style)[$read_only]($read_only_style)"
+truncation_length = 6
+# truncation_symbol = "…/"
 
 # Here is how you can shorten some long paths by text replacement
 # similar to mapped_locations in Oh My Posh:

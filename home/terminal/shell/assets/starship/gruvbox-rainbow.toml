@@ -28,7 +28,9 @@ $conda\
 $time\
 [ ](fg:color_bg1)\
 $all\
-$line_break$character"""
+$line_break \
+$character
+"""
 
 palette = 'gruvbox_dark'
 
