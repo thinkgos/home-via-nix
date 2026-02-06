@@ -61,6 +61,8 @@
         { package = gnomeExtensions.blur-my-shell; }
         # pie菜单
         { package = gnomeExtensions.kando-integration; }
+        #  caffeine
+        { package = gnomeExtensions.caffeine; }
       ];
     };
   };
