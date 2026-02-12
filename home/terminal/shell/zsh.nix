@@ -20,6 +20,7 @@
       export PATH=$HOME/.opencode/bin:$PATH
       # develop tools
       source "${config.xdg.configHome}/zsh/env-extra/env-go"
+      source "${config.xdg.configHome}/zsh/env-extra/env-goup"
       source "${config.xdg.configHome}/zsh/env-extra/env-cargo"
     '';
 
