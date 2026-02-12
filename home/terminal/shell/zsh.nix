@@ -8,6 +8,7 @@
   home.file = {
     "${config.xdg.configHome}/zsh/env-extra/env-cargo".source = ./sh/env-cargo;
     "${config.xdg.configHome}/zsh/env-extra/env-go".source = ./sh/env-go;
+    "${config.xdg.configHome}/zsh/env-extra/env-goup".source = ./sh/env-goup;
   };
 
   # https://github.com/ohmyzsh/ohmyzsh
