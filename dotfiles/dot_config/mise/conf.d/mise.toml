@@ -1,8 +1,8 @@
 [tools]
 
 # via cargo
-"cargo:goup-rs" = "0.16.6"
 "cargo:sea-orm-cli" = "2.0.0-rc.30"
 # via github
-"github:skim-rs/skim" = "2.0.1"
+"github:thinkgos/goup-rs" = "0.16.8"
+"github:skim-rs/skim" = "2.0.2"
 "github:go-task/task" = "3.48.0"
