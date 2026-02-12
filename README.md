@@ -92,3 +92,9 @@ echo "kernel.apparmor_restrict_unprivileged_userns=0" | sudo tee /etc/sysctl.d/6
 ```shell
 LANG=C xdg-user-dirs-gtk-update
 ```
+
+#### 4.6 远程桌面在无显示器时无法使用
+
+```shell
+gsettings set org.gnome.desktop.remote-desktop.rdp screen-share-mode 'extend'
+```
