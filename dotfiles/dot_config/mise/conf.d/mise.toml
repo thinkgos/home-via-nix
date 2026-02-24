@@ -3,6 +3,6 @@
 # via cargo
 "cargo:sea-orm-cli" = "2.0.0-rc.30"
 # via github
-"github:thinkgos/goup-rs" = "0.16.9"
-"github:skim-rs/skim" = "2.0.2"
+"github:thinkgos/goup-rs" = "0.16.10"
+"github:skim-rs/skim" = "3.5.0"
 "github:go-task/task" = "3.48.0"
