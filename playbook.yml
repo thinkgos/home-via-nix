@@ -1,0 +1,24 @@
+# ansible-playbook playbook.yml -u <username>
+- name: 声明apt包
+  hosts: 127.0.0.1
+  become: true
+  vars:
+    required_packages:
+      - build-essential
+      - pkg-config
+      - clang-format
+
+  tasks:
+    - name: Ping
+      ansible.builtin.ping:
+
+    - name: 更新 apt 缓存
+      ansible.builtin.apt:
+        update_cache: true
+        cache_valid_time: 3600
+
+    - name: 安装列表中的包
+      ansible.builtin.apt:
+        name: "{{ item }}"
+        state: present
+      loop: "{{ required_packages }}"
