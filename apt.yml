@@ -13,6 +13,7 @@
       - shfmt
       - libclang-dev
       - libssl-dev
+      - libopencv-dev
 
   tasks:
     - name: Ping
