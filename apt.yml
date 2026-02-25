@@ -1,12 +1,18 @@
-# ansible-playbook playbook.yml -u <username>
+# ansible-playbook apt.yml -u <username>
 - name: 声明apt包
   hosts: 127.0.0.1
   become: true
   vars:
     required_packages:
+      - gcc
+      - clang
       - build-essential
       - pkg-config
+      - openssl
       - clang-format
+      - shfmt
+      - libclang-dev
+      - libssl-dev
 
   tasks:
     - name: Ping
