@@ -9,6 +9,7 @@
       - build-essential
       - pkg-config
       - openssl
+      - clangd
       - clang-format
       - shfmt
       - libclang-dev
