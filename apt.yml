@@ -4,18 +4,18 @@
   become: true
   vars:
     required_packages:
+      - curl
+      - zip
+      - unzip
+      - tar
       - gcc
       - clang
       - build-essential
-      - pkg-config
       - openssl
-      - clangd
-      - clang-format
       - shfmt
       - libclang-dev
       - libssl-dev
       - libopencv-dev
-      - ninja-build
   tasks:
     - name: Ping
       ansible.builtin.ping:

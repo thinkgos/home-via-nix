@@ -8,6 +8,7 @@
   imports = [
     ./rust.nix
     ./go.nix
+    ./cpp.nix
     ./python.nix
   ];
 
@@ -21,6 +22,7 @@
     autoconf # 自动配置工具
     gnumake # 构建工具
     cmake # 跨平台构建工具
+    pkg-config # 库的配置工具
     sccache # 缓存编译结果
     mold # 快速编译链接器
     upx # 二进制压缩工具
