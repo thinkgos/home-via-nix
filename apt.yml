@@ -10,6 +10,7 @@
       - tar
       - gcc
       - clang
+      - llvm
       - build-essential
       - openssl
       - shfmt
