@@ -11,6 +11,12 @@
     installVimSyntax = true;
     settings = {
       keybind = [
+        # 全局热键：下拉终端,
+
+        # GNOME 不支持wlr-layer-shell
+        # warning(winproto_wayland): your compositor does not support the wlr-layer-shell protocol; disabling quick terminal
+        # "global:ctrl+period=toggle_quick_terminal"
+
         # font size
         "ctrl+shift+minus=decrease_font_size:2" # 减少字体大小
         "ctrl+-=decrease_font_size:2" # 减少字体大小
@@ -47,8 +53,11 @@
       ];
 
       # general
+      scrollback-limit = 100000000;
       copy-on-select = "clipboard";
       right-click-action = "paste";
+      clipboard-paste-protection = true;
+      clipboard-paste-bracketed-safe = true;
       notify-on-command-finish = "always";
 
       # theme
@@ -57,20 +66,34 @@
       # font
       font-family = "JetBrainsMono Nerd Font Mono";
       font-size = 10;
+      font-thicken = true;
+      adjust-cell-height = 2;
 
       # window
+      window-theme = "auto";
       window-decoration = "none";
       window-position-x = 8;
       window-position-y = 8;
       window-save-state = "always";
+      macos-titlebar-style = "transparent";
 
       # tab bar
       gtk-wide-tabs = false;
-      macos-titlebar-style = "transparent";
 
       # background
       background-opacity = 0.90;
       background-blur-radius = 30;
+
+      # cursor
+      cursor-style = "bar";
+      cursor-style-blink = true;
+      cursor-opacity = 0.8;
+
+      # 下拉终端(Quake 风格)
+      # quick-terminal-position = "top";
+      # quick-terminal-screen = "mouse";
+      # quick-terminal-autohide = true;
+      # quick-terminal-animation-duration = 0.15;
     };
     # themes = {};
   };

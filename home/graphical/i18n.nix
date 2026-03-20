@@ -55,12 +55,15 @@
           };
 
           addons = {
-            punctuation.globalSection = {
-              HotKey = "";
-              HalfWidthPuncAfterLetterOrNumber = "True"; # 字母或数字后是否启用半角标点
-              TypePairedPunctuationsTogether = "False"; # 同时输入成对标点 (例如引号)
-              Enabled = "False"; # True: 全角标点, False: 半角标点
+            punctuation = {
+              globalSection = {
+                Hotkey = ""; # 
+                HalfWidthPuncAfterLetterOrNumber = "True"; # 字母或数字后是否启用半角标点
+                TypePairedPunctuationsTogether = "False"; # 同时输入成对标点 (例如引号)
+                Enabled = "False"; # True: 全角标点, False: 半角标点
+              };
             };
+
             classicui.globalSection = {
               "Vertical Candidate List" = "False"; # 垂直候选列表
               WheelForPaging = "True"; # 使用鼠标滚轮翻页
