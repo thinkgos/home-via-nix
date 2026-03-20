@@ -56,6 +56,7 @@
 
           addons = {
             punctuation.globalSection = {
+              HotKey = "";
               HalfWidthPuncAfterLetterOrNumber = "True"; # 字母或数字后是否启用半角标点
               TypePairedPunctuationsTogether = "False"; # 同时输入成对标点 (例如引号)
               Enabled = "False"; # True: 全角标点, False: 半角标点
@@ -78,6 +79,21 @@
               PerScreenDPI = "False"; # 在 X11 上针对不同屏幕使用单独的 DPI
               ForceWaylandDPI = 5; # 固定 Wayland 的字体 DPI
               EnableFractionalScale = "True"; # 在 Wayland 下启用分数缩放
+            };
+            chttrans.globalSection = {
+              Engine = "OpenCC"; # 转换引擎
+              Hotkey = ""; # 切换键
+              EnabledIM = ""; # 启用的输入法
+              OpenCCS2TProfile = "default"; # 简转繁的 OpenCC 配置
+              OpenCCT2SProfile = "default"; # 繁转简的 OpenCC 配置
+            };
+            clipboard.globalSection = {
+              TriggerKey = ""; # 触发键
+              PastePrimaryKey = ""; # 粘贴主选区
+              "Number of entries" = 5; # 项目个数
+              IgnorePasswordFromPasswordManager = "False"; # 不要显示密码管理工具中的密码
+              ShowPassword = "False"; # 以普通文本方式显示密码
+              ClearPasswordAfter = 30; # 自动清除密码的秒数
             };
           };
         };
