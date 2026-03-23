@@ -73,9 +73,9 @@
       # tab bar
       tab_bar_edge = "top";
       tab_bar_style = "separator";
-      tab_bar_min_tabs = 1;
       tab_separator = " ┇ ";
       tab_title_template = "💥 {index}.{title}";
+      # tab_bar_min_tabs = 1;
       # tab_bar_style = "powerline";
       # tab_powerline_style = "angled";
 
