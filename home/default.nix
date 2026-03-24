@@ -99,6 +99,10 @@
     # EDITOR = "emacs";
     BAT_PAGER = "less -r";
   };
+  home.sessionPath = [
+    "$HOME/.local/bin"
+    "$HOME/.opencode/bin"
+  ];
 
   programs = {
     # Let Home Manager install and manage itself.
