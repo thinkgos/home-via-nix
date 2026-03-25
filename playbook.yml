@@ -1,5 +1,5 @@
 # ansible-playbook apt.yml -u <username>
-- name: 声明apt包
+- name: 通用服务器管理
   hosts: 127.0.0.1
   become: true
   vars:

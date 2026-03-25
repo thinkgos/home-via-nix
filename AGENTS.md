@@ -24,7 +24,7 @@ This repository contains a Nix-based home-manager configuration for managing use
 - Update mise tools: `mise upgrade --bump --cd dotfiles/dot_config/mise/conf.d`
 
 ### System Package Management (Ansible)
-- Install required system packages: `ansible-playbook apt.yml -u <username>`
+- Install required system packages: `ansible-playbook playbook.yml -u <username>`
 
 ### Development Tasks
 - Update mise tools (defined in .mise.toml): `mise upgrade --bump --cd dotfiles/dot_config/mise/conf.d`
@@ -67,7 +67,7 @@ Configurations accept `customize` attribute set with:
 ### External Tools Integration
 - **mise**: Tool version manager for development tools (configured in `dotfiles/dot_config/mise/conf.d/mise.toml`).
 - **chezmoi**: Dotfiles manager.
-- **ansible**: System package provisioning via `apt.yml`.
+- **ansible**: System package provisioning via `playbook.yml`.
 
 ### Key Design Patterns
 - Conditional imports using `lib.optionals` and `lib.optional` based on `customize` attributes.
