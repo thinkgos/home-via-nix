@@ -9,6 +9,7 @@
     ./shell
     ./devtools
     ./editor
+    ./ai
     ./git.nix
     ./password-store.nix
     ./github.nix
