@@ -33,7 +33,7 @@
     sqlite # sqlite数据库工具
     sqlcipher # sqlite数据库工具, 支持加密
     mysql84 # mysql数据库工具
-    # mycli # mysql客户端
+    # mycli # mysql客户端  # TODO: tmp removed
     duckdb # 嵌入式分析数据库
 
     #! grpc
@@ -43,7 +43,7 @@
     #! nats
     natscli
     nkeys
-    nats-top
+    # nats-top # TODO: tmp removed
     nats-server
   ];
   programs = {
