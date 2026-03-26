@@ -96,9 +96,15 @@
   #  /etc/profiles/per-user/${USER}/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
     BAT_PAGER = "less -r";
+    TMPDIR = "$HOME/.cache/tmp";
   };
+
+  # Create TMPDIR if it doesn't exist
+  home.activation.createTmpDir = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    mkdir -p "$HOME/.cache/tmp"
+  '';
+
   home.sessionPath = [
     "$HOME/.local/bin"
     "$HOME/.opencode/bin"

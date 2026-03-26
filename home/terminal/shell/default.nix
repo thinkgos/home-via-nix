@@ -97,6 +97,7 @@ in
       enable = true;
       enableZshIntegration = true;
       enableNushellIntegration = true;
+      shellWrapperName = "y";
       extraPackages = with pkgs; [ glow ];
     };
   };
