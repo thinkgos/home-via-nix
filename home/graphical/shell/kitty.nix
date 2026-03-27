@@ -9,6 +9,7 @@
     kitty-themes
   ];
 
+
   programs.kitty = {
     enable = true;
     shellIntegration.mode = "no-rc";
