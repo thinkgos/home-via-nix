@@ -1,4 +1,4 @@
-# ansible-playbook apt.yml -u <username>
+# ansible-playbook playbook.yml -u <username>
 - name: 通用服务器管理
   tags: packages
   hosts: 127.0.0.1
@@ -46,11 +46,11 @@
     - vars/main.yml
   tasks:
     - name: Gather the package facts
-      package_facts:
+      ansible.builtin.package_facts:
         manager: auto
 
     - name: Process Github Deb installations
-      include_tasks: tasks/install_logic.yml
+      ansible.builtin.include_tasks: tasks/install_logic.yml
       loop: "{{ softwares }}"
       loop_control:
         loop_var: app
