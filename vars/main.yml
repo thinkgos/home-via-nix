@@ -1,0 +1,9 @@
+softwares:
+  - name: "clash-verge-rev" # clash代理
+    repo: "clash-verge-rev/clash-verge-rev" # 仓库
+    package_name: "clash-verge" # 系统中的名称
+    version: 2.4.7
+    tag_v: true
+    asset_v: false
+    debian_pattern: "Clash.Verge___VERSION___amd64.deb"
+    redhat_pattern: "Clash.Verge-__VERSION__-1.x86_64.rpm"

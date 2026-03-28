@@ -1,5 +1,6 @@
 # ansible-playbook apt.yml -u <username>
 - name: 通用服务器管理
+  tags: packages
   hosts: 127.0.0.1
   become: true
   vars:
@@ -31,3 +32,25 @@
         name: "{{ item }}"
         state: present
       loop: "{{ required_packages }}"
+
+- name: 安装github上指定版本的包
+  tags: apps
+  hosts: 127.0.0.1
+  become: true
+  gather_facts: true
+  environment:
+    http_proxy: "http://127.0.0.1:7890"
+    https_proxy: "http://127.0.0.1:7890"
+    socks5_proxy: "socks5://127.0.0.1:7890"
+  vars_files:
+    - vars/main.yml
+  tasks:
+    - name: Gather the package facts
+      package_facts:
+        manager: auto
+
+    - name: Process Github Deb installations
+      include_tasks: tasks/install_logic.yml
+      loop: "{{ softwares }}"
+      loop_control:
+        loop_var: app

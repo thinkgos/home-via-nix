@@ -3,7 +3,6 @@
 由于一些软件是商业软件或特殊限制, 需要从手动或从系统中安装.
 
 - [`chrome`](https://www.google.com/intl/zh-CN/chrome/) 浏览器
-- [`clash-verge-rev`](https://github.com/clash-verge-rev/clash-verge-rev) clash代理
 - [`virtualbox`](https://www.virtualbox.org) 虚拟机
 - [`wireshark`](https://www.wireshark.org) 网络分析工具
 - [`vnc-viewer`](https://www.realvnc.com/en/connect/download/viewer/) VNC客户端
@@ -11,3 +10,7 @@
 - [`vscode`](https://code.visualstudio.com/) vscode代码编辑器
 - [`opencode`](https://github.com/anomalyco/opencode) code agent
 - [`claude-code`](https://claude.com/product/claude-code) code agent
+
+## via ansible
+
+- [`clash-verge-rev`](https://github.com/clash-verge-rev/clash-verge-rev) clash代理

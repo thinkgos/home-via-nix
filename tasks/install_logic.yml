@@ -1,0 +1,60 @@
+- name: "Set current asset name and is_installed if {{ app.package_name }} is current"
+  set_fact:
+    final_tag: >-
+      {{ 
+        (app.tag_v | default(true) | bool) | 
+        ternary('v' + (app.version | string | regex_replace('^v', '')), (app.version | string | regex_replace('^v', ''))) 
+      }}
+    asset_version: >-
+      {{ 
+        (app.asset_v | default(true) | bool) | 
+        ternary('v' + (app.version | string | regex_replace('^v', '')), (app.version | string | regex_replace('^v', ''))) 
+      }}
+
+- name: "Prepare final asset name"
+  set_fact:
+    final_asset_name: >-
+      {{ 
+        (ansible_facts['os_family'] == 'RedHat') | 
+        ternary(app.redhat_pattern | replace('__VERSION__', asset_version), 
+                app.debian_pattern | replace('__VERSION__', asset_version)) 
+      }}
+    is_installed: >-
+      {{ 
+        app.package_name in ansible_facts.packages and 
+        (app.version | regex_replace('^v', '')) in (ansible_facts.packages[app.package_name] | map(attribute='version') | list) 
+      }}
+
+- name: "Download {{ app.name }} for {{ ansible_facts['os_family'] }}"
+  ansible.builtin.get_url:
+    url: "https://github.com/{{ app.repo }}/releases/download/{{ final_tag }}/{{ final_asset_name }}"
+    dest: "/tmp/{{ final_asset_name }}"
+    mode: "0644"
+  when: not is_installed
+  register: download_result
+
+- name: "Install {{ app.name }} on Debian/Ubuntu"
+  ansible.builtin.apt:
+    deb: "/tmp/{{ final_asset_name }}"
+    state: present
+  when:
+    - not is_installed
+    - ansible_facts['os_family'] == "Debian"
+
+- name: "Install {{ app.name }} on Fedora"
+  dnf:
+    name: "/tmp/{{ final_asset_name }}"
+    state: present
+    disable_gpg_check: yes
+  become: true
+  when:
+    - not is_installed
+    - ansible_facts['os_family'] == "RedHat"
+
+- name: "Cleanup {{ app.name }} deb"
+  ansible.builtin.file:
+    path: "/tmp/{{ final_asset_name }}"
+    state: absent
+  when:
+    - not is_installed
+    - download_result.changed
