@@ -1,9 +1,40 @@
 softwares:
-  - name: "clash-verge-rev" # clash代理
-    repo: "clash-verge-rev/clash-verge-rev" # 仓库
-    package_name: "clash-verge" # 系统中的名称
+  # examples
+  # - name: "clash-verge-rev"
+  #   description: "clash代理"
+  #   repo: "clash-verge-rev/clash-verge-rev"
+  #   version: 2.4.7
+  #   tag_v: true
+  #   package_name: "clash-verge"
+  #   debian_pattern: "Clash.Verge___VERSION___amd64.deb"
+  #   redhat_pattern: "Clash.Verge-__VERSION__-1.x86_64.rpm"
+  #   binary_name: ""
+  #   version_arg: "--version"
+  #   binaries: []
+  #   binary_pattern: ""
+
+  - name: "clash-verge-rev"
+    description: "clash代理"
+    repo: "clash-verge-rev/clash-verge-rev"
     version: 2.4.7
     tag_v: true
-    asset_v: false
+    package_name: "clash-verge"
     debian_pattern: "Clash.Verge___VERSION___amd64.deb"
     redhat_pattern: "Clash.Verge-__VERSION__-1.x86_64.rpm"
+
+  - name: "task"
+    description: "clash代理"
+    repo: "go-task/task"
+    version: 3.49.1
+    tag_v: true
+    package_name: "task"
+    debian_pattern: "task___VERSION___linux_amd64.deb"
+    redhat_pattern: "task___VERSION___linux_amd64.rpm"
+
+  - name: "goup"
+    description: "an elegant Go version manager write in rust"
+    repo: "thinkgos/goup-rs"
+    version: 0.16.10
+    tag_v: true
+    binary_name: "goup"
+    binary_pattern: "goup-x86_64-unknown-linux-musl.tar.gz"

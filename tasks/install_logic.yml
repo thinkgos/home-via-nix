@@ -1,60 +1,113 @@
-- name: "Set fact: {{ app.name }}"
-  ansible.builtin.set_fact:
-    final_tag: >-
-      {{
-        (app.tag_v | default(true) | bool) |
-        ternary('v' + (app.version | string | regex_replace('^v', '')), (app.version | string | regex_replace('^v', '')))
-      }}
-    asset_version: >-
-      {{
-        (app.asset_v | default(true) | bool) |
-        ternary('v' + (app.version | string | regex_replace('^v', '')), (app.version | string | regex_replace('^v', '')))
-      }}
+- name: "Install Software: {{ app.name }}"
+  block:
+    - name: "Prepare fact: {{ app.name }}"
+      ansible.builtin.set_fact:
+        final_tag: >-
+          {{
+            (app.tag_v | default(true) | bool) |
+            ternary('v' + (app.version | string | regex_replace('^v', '')), (app.version | string | regex_replace('^v', '')))
+          }}
 
-- name: "Prepare final asset name: {{ app.name }}"
-  ansible.builtin.set_fact:
-    final_asset_name: >-
-      {{
-        (ansible_facts['os_family'] == 'RedHat') |
-        ternary(app.redhat_pattern | replace('__VERSION__', asset_version),
-                app.debian_pattern | replace('__VERSION__', asset_version))
-      }}
-    is_installed: >-
-      {{
-        app.package_name in ansible_facts.packages and
-        (app.version | regex_replace('^v', '')) in (ansible_facts.packages[app.package_name] | map(attribute='version') | list)
-      }}
+    - name: "Determine install strategy"
+      ansible.builtin.set_fact:
+        install_strategy: "{{ 'package' if ( (ansible_facts['os_family'] == 'Debian' and app.debian_pattern | default('')) or (ansible_facts['os_family'] == 'RedHat' and app.redhat_pattern | default('')) ) else 'binary' }}"
 
-- name: "Download final asset: {{ app.name }}"
-  ansible.builtin.get_url:
-    url: "https://github.com/{{ app.repo }}/releases/download/{{ final_tag }}/{{ final_asset_name }}"
-    dest: "/tmp/{{ final_asset_name }}"
-    mode: "0644"
-  when: not is_installed
-  register: download_result
+    - name: "Prepare final asset name: {{ app.name }}"
+      ansible.builtin.set_fact:
+        final_asset_name: "{{ (app.redhat_pattern if ansible_facts['os_family'] == 'RedHat' else app.debian_pattern) | replace('__VERSION__', app.version) if install_strategy | trim == 'package' else app.binary_pattern | replace('__VERSION__', app.version) }}"
 
-- name: "Install on Debian/Ubuntu: {{ app.name }}"
-  ansible.builtin.apt:
-    deb: "/tmp/{{ final_asset_name }}"
-    state: present
-  when:
-    - not is_installed
-    - ansible_facts['os_family'] == "Debian"
+    - name: "Check if package is installed"
+      ansible.builtin.set_fact:
+        is_installed: >-
+          {{
+            app.package_name in ansible_facts.packages and
+            app.version in (ansible_facts.packages[app.package_name] | map(attribute='version') | list)
+          }}
+      when: install_strategy == 'package'
 
-- name: "Install on Fedora: {{ app.name }}"
-  ansible.builtin.dnf:
-    name: "/tmp/{{ final_asset_name }}"
-    state: present
-    disable_gpg_check: true
-  become: true
-  when:
-    - not is_installed
-    - ansible_facts['os_family'] == "RedHat"
+    - name: "Check if binary is installed and version matches: {{ app.name }}"
+      block:
+        - name: "Get current binary version"
+          ansible.builtin.shell: "{{ app.binary_name }} {{ app.version_arg | default('--version') }}"
+          register: bin_v_result
+          failed_when: false
+          changed_when: false
+          check_mode: false
 
-- name: "Cleanup temporary file: {{ app.name }}"
-  ansible.builtin.file:
-    path: "/tmp/{{ final_asset_name }}"
-    state: absent
-  when:
-    - not is_installed
-    - download_result.changed
+        - name: "Compare binary version"
+          ansible.builtin.set_fact:
+            is_installed: >-
+              {{
+                bin_v_result.rc == 0 and
+                app.version in (bin_v_result.stdout + bin_v_result.stderr)
+              }}
+      when: install_strategy == 'binary'
+
+- name: "Execute Installation if not installed: {{ app.name }}"
+  block:
+    - name: "Download final asset: {{ app.name }}"
+      ansible.builtin.get_url:
+        url: "https://github.com/{{ app.repo }}/releases/download/{{ final_tag }}/{{ final_asset_name }}"
+        dest: "/tmp/{{ final_asset_name }}"
+        mode: "0644"
+      when: not is_installed
+      register: download_result
+
+    - name: "Install on Debian/Ubuntu: {{ app.name }}"
+      ansible.builtin.apt:
+        deb: "/tmp/{{ final_asset_name }}"
+        state: present
+      when:
+        - not is_installed
+        - ansible_facts['os_family'] == "Debian"
+        - install_strategy == 'package'
+
+    - name: "Install on Fedora: {{ app.name }}"
+      ansible.builtin.dnf:
+        name: "/tmp/{{ final_asset_name }}"
+        state: present
+        disable_gpg_check: true
+      become: true
+      when:
+        - not is_installed
+        - ansible_facts['os_family'] == "RedHat"
+        - install_strategy == 'package'
+
+    - name: "Install Binary: {{ app.name }}"
+      block:
+        - name: "Create a temporary directory for extraction"
+          ansible.builtin.file:
+            path: "/tmp/{{ app.name }}_extract"
+            state: directory
+            mode: "0755"
+
+        - name: "Unarchive binary"
+          ansible.builtin.unarchive:
+            src: "/tmp/{{ final_asset_name }}"
+            dest: "/tmp/{{ app.name }}_extract"
+            remote_src: yes
+            list_files: yes
+          register: unarchive_result
+
+        - name: "Move binaries to /usr/local/bin"
+          ansible.builtin.shell: |
+            find "/tmp/{{ app.name }}_extract" -type f -name "{{ item }}" -exec cp -af {} /usr/local/bin/ \;
+            chmod +x "/usr/local/bin/{{ item }}"
+          loop: "{{ app.binaries | default([app.binary_name]) }}"
+          when: item is defined
+
+        - name: "Cleanup extraction directory"
+          ansible.builtin.file:
+            path: "/tmp/{{ app.name }}_extract"
+            state: absent
+      when:
+        - not is_installed
+        - install_strategy == 'binary'
+
+    - name: "Cleanup temporary file: {{ app.name }}"
+      ansible.builtin.file:
+        path: "/tmp/{{ final_asset_name }}"
+        state: absent
+      when:
+        - not is_installed
+        - download_result.changed
