@@ -1,5 +1,0 @@
-[tasks.update-dotfiles]
-run = "chezmoi apply -S dotfiles"
-
-[tasks.bump-tools]
-run = "mise upgrade --bump --cd dotfiles/dot_config/mise/conf.d"

@@ -1,6 +1,0 @@
-[tools]
-
-# via cargo
-"cargo:sea-orm-cli" = "2.0.0-rc.30"
-
-"github:skim-rs/skim" = "3.5.0"

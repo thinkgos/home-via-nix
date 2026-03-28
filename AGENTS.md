@@ -19,16 +19,8 @@ This repository contains a Nix-based home-manager configuration for managing use
 - Enter development shell: `nix develop` (empty shell, defined in flake)
 - Build a specific home configuration: `nix build .#homeConfigurations.x86_64-linux.thinkgo-fedora43`
 
-### Dotfiles Management
-- Apply dotfiles changes with chezmoi: `chezmoi apply -S dotfiles`
-- Update mise tools: `mise upgrade --bump --cd dotfiles/dot_config/mise/conf.d`
-
 ### System Package Management (Ansible)
 - Install required system packages: `ansible-playbook playbook.yml -u <username>`
-
-### Development Tasks
-- Update mise tools (defined in .mise.toml): `mise upgrade --bump --cd dotfiles/dot_config/mise/conf.d`
-- Update dotfiles: `chezmoi apply -S dotfiles`
 
 ## Architecture
 
@@ -48,7 +40,6 @@ This repository contains a Nix-based home-manager configuration for managing use
     - `default.nix`: Imports i18n, shell, editor, devtools, and window-specific modules (GNOME, Hyprland).
     - `windows/`: Window manager configurations.
     - `shell/`: Graphical shell configurations (Wezterm).
-- `dotfiles/`: Dotfiles managed by chezmoi, includes mise configuration.
 
 ### Flake Structure
 - Uses `flake-parts` for modular flake definition.
@@ -65,8 +56,6 @@ Configurations accept `customize` attribute set with:
 - `window-version`: Version string (e.g., "gnome-49")
 
 ### External Tools Integration
-- **mise**: Tool version manager for development tools (configured in `dotfiles/dot_config/mise/conf.d/mise.toml`).
-- **chezmoi**: Dotfiles manager.
 - **ansible**: System package provisioning via `playbook.yml`.
 
 ### Key Design Patterns

@@ -7,14 +7,12 @@
 
 - [nix](https://nixos.org)
 - [home-manager](https://nix-community.github.io/home-manager)
-- [mise](https://mise.jdx.dev)
 - [ansible](https://www.ansible.com)
 
 **NOTE**:
 
 - `home-manager`管理用户级配置, 使用`nix flakes`方式.
-- `mise`管理一些常用的开发环境和部份编译工具
-- `ansible`管理一些系统包
+- `ansible`管理一些系统包和常用工具
 - 其它商业或特殊软件见[Manual Install](MANUAL-INSTALL.md)
 
 ## 2. 关闭SELINUX
