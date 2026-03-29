@@ -3,7 +3,6 @@ softwares:
   # - name: "clash-verge-rev"
   #   description: "clash代理"
   #   repo: "clash-verge-rev/clash-verge-rev"
-  #   # renovate: datasource=github-releases depName=clash-verge-rev/clash-verge-rev
   #   version: 2.4.7
   #   tag_v: true
   #   package_name: "clash-verge"
@@ -16,7 +15,6 @@ softwares:
 
   - name: "clash-verge-rev"
     description: "clash代理"
-    # renovate: datasource=github-releases depName=clash-verge-rev/clash-verge-rev
     repo: "clash-verge-rev/clash-verge-rev"
     version: 2.4.7
     tag_v: true
@@ -27,7 +25,6 @@ softwares:
   - name: "task"
     description: "clash代理"
     repo: "go-task/task"
-    # renovate: datasource=github-releases depName=go-task/task
     version: 3.49.1
     tag_v: true
     package_name: "task"
@@ -46,7 +43,6 @@ softwares:
   - name: "skim"
     description: "Fuzzy Finder in rust!"
     repo: "skim-rs/skim"
-    # renovate: datasource=github-releases depName=skim-rs/skim
     version: 4.0.0
     tag_v: true
     binary_name: "sk"

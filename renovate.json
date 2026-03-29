@@ -5,17 +5,20 @@
   ],
   "regexManagers": [
     {
-      "fileMatch": ["^vars/main\\.yml$"],
-      "matchStrings": [
-        "# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)\\s+version:\\s+[\"']?(?<currentValue>.*?)[\"']?\\s"
+      "fileMatch": [
+        "^vars/main\\.yml$"
       ],
-      "datasourceTemplate": "{{{datasource}}}",
-      "depNameTemplate": "{{{depName}}}"
+      "matchStrings": [
+        "repo:\\s+[\"']?(?<depName>[\\w\\-\\.]+\\/[\\w\\-\\.]+)[\"']?\\s+version:\\s+[\"']?(?<currentValue>[\\d\\.]+)[\"']?"
+      ],
+      "datasourceTemplate": "github-releases"
     }
   ],
   "packageRules": [
     {
-      "matchDatasources": ["github-releases"],
+      "matchDatasources": [
+        "github-releases"
+      ],
       "extractVersion": "^v?(?<version>.*)$"
     }
   ]
