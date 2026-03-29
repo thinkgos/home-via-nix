@@ -1,0 +1,5 @@
+rpm_packages:
+  - "@development-tools"
+  - clang-devel
+  - openssl-devel
+  - opencv-devel
