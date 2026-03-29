@@ -23,7 +23,7 @@ apps:
     redhat_pattern: "Clash.Verge-__VERSION__-1.x86_64.rpm"
 
   - name: "task"
-    description: "clash代理"
+    description: "task manager written in Go"
     repo: "go-task/task"
     version: 3.49.1
     tag_v: true
