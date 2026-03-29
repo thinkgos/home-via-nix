@@ -6,8 +6,8 @@
   "customManagers": [
     {
       "customType": "regex",
-      "managerFilePatterns": ["/^vars/main\.yml$/"],
-      "matchStrings": ["repo:\s+[\"']?(?<depName>[\w\-\.]+\/[\w\-\.]+)[\"']?\s+version:\s+[\"']?(?<currentValue>[\d\.]+)[\"']?"],
+      "managerFilePatterns": ["^vars/main\\.yml$"],
+      "matchStrings": ["repo:\\s+[\"']?(?<depName>[\\w\\-\\.]+\\/[\\w\\-\\.]+)[\"']?\\s+version:\\s+[\"']?(?<currentValue>[\\d\\.]+)[\"']?"],
       "datasourceTemplate": "github-releases"
     }
   ],
