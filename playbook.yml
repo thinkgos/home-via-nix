@@ -19,11 +19,10 @@
       ansible.builtin.ping:
 
     - name: 系统基础配置
-      tags: "always"
       ansible.builtin.include_tasks: tasks/install_packages.yml
 
+      # BUG: 使用tags时, 无法识别facts的信息.
     - name: 安装Github上的软件
-      tags: "always"
       block:
         - name: Gather the package facts
           ansible.builtin.package_facts:
