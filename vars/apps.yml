@@ -1,13 +1,13 @@
 apps:
   # examples
-  # - name: "clash-verge-rev"
-  #   description: "clash代理"
-  #   repo: "clash-verge-rev/clash-verge-rev"
-  #   version: 2.4.7
+  # - name: "example"
+  #   description: ""
+  #   repo: "owner/repo"
+  #   version: 0.1.x
   #   tag_v: true
-  #   package_name: "clash-verge"
-  #   debian_pattern: "Clash.Verge___VERSION___amd64.deb"
-  #   redhat_pattern: "Clash.Verge-__VERSION__-1.x86_64.rpm"
+  #   package_name: "example"
+  #   debian_pattern: "__VERSION__.deb"
+  #   redhat_pattern: "__VERSION__.rpm"
   #   binary_name: ""
   #   version_arg: "--version"
   #   binaries: []
@@ -34,7 +34,6 @@ apps:
   - name: "goup"
     description: "an elegant Go version manager write in rust"
     repo: "thinkgos/goup-rs"
-    # renovate: datasource=github-releases depName=thinkgos/goup-rs
     version: 0.16.10
     tag_v: true
     binary_name: "goup"
