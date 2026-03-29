@@ -22,6 +22,15 @@ apps:
     debian_pattern: "Clash.Verge___VERSION___amd64.deb"
     redhat_pattern: "Clash.Verge-__VERSION__-1.x86_64.rpm"
 
+  - name: "cc-switch"
+    description: "cc-switch"
+    repo: "farion1231/cc-switch"
+    version: 3.12.3
+    tag_v: true
+    package_name: "cc-switch"
+    debian_pattern: "CC-Switch-v3.12.3-Linux-arm64.deb"
+    redhat_pattern: "CC-Switch-v3.12.3-Linux-arm64.rpm"
+
   - name: "task"
     description: "task manager written in Go"
     repo: "go-task/task"
