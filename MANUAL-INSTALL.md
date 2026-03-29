@@ -10,7 +10,3 @@
 - [`vscode`](https://code.visualstudio.com/) vscode代码编辑器
 - [`opencode`](https://github.com/anomalyco/opencode) code agent
 - [`claude-code`](https://claude.com/product/claude-code) code agent
-
-## via ansible
-
-- [`clash-verge-rev`](https://github.com/clash-verge-rev/clash-verge-rev) clash代理

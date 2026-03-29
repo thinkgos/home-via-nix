@@ -17,15 +17,16 @@
         final_asset_name: "{{ (app.redhat_pattern if ansible_facts['os_family'] == 'RedHat' else app.debian_pattern) | replace('__VERSION__', app.version) if install_strategy | trim == 'package' else app.binary_pattern | replace('__VERSION__', app.version) }}"
 
     - name: "Check if package is installed"
+      when: install_strategy == 'package'
       ansible.builtin.set_fact:
         is_installed: >-
           {{
             app.package_name in ansible_facts.packages and
             app.version in (ansible_facts.packages[app.package_name] | map(attribute='version') | list)
           }}
-      when: install_strategy == 'package'
 
     - name: "Check if binary is installed and version matches: {{ app.name }}"
+      when: install_strategy == 'binary'
       block:
         - name: "Get current binary version"
           ansible.builtin.shell: "{{ app.binary_name }} {{ app.version_arg | default('--version') }}"
@@ -41,39 +42,41 @@
                 bin_v_result.rc == 0 and
                 app.version in (bin_v_result.stdout + bin_v_result.stderr)
               }}
-      when: install_strategy == 'binary'
 
 - name: "Execute Installation if not installed: {{ app.name }}"
   block:
     - name: "Download final asset: {{ app.name }}"
+      when: not is_installed
       ansible.builtin.get_url:
         url: "https://github.com/{{ app.repo }}/releases/download/{{ final_tag }}/{{ final_asset_name }}"
         dest: "/tmp/{{ final_asset_name }}"
         mode: "0644"
-      when: not is_installed
       register: download_result
 
     - name: "Install on Debian/Ubuntu: {{ app.name }}"
-      ansible.builtin.apt:
-        deb: "/tmp/{{ final_asset_name }}"
-        state: present
       when:
         - not is_installed
         - ansible_facts['os_family'] == "Debian"
         - install_strategy == 'package'
+      ansible.builtin.apt:
+        deb: "/tmp/{{ final_asset_name }}"
+        state: present
 
     - name: "Install on Fedora: {{ app.name }}"
+      when:
+        - not is_installed
+        - ansible_facts['os_family'] == "RedHat"
+        - install_strategy == 'package'
       ansible.builtin.dnf:
         name: "/tmp/{{ final_asset_name }}"
         state: present
         disable_gpg_check: true
       become: true
-      when:
-        - not is_installed
-        - ansible_facts['os_family'] == "RedHat"
-        - install_strategy == 'package'
 
     - name: "Install Binary: {{ app.name }}"
+      when:
+        - not is_installed
+        - install_strategy == 'binary'
       block:
         - name: "Create a temporary directory for extraction"
           ansible.builtin.file:
@@ -85,8 +88,8 @@
           ansible.builtin.unarchive:
             src: "/tmp/{{ final_asset_name }}"
             dest: "/tmp/{{ app.name }}_extract"
-            remote_src: yes
-            list_files: yes
+            remote_src: true
+            list_files: true
           register: unarchive_result
 
         - name: "Move binaries to /usr/local/bin"
@@ -100,14 +103,11 @@
           ansible.builtin.file:
             path: "/tmp/{{ app.name }}_extract"
             state: absent
-      when:
-        - not is_installed
-        - install_strategy == 'binary'
 
     - name: "Cleanup temporary file: {{ app.name }}"
-      ansible.builtin.file:
-        path: "/tmp/{{ final_asset_name }}"
-        state: absent
       when:
         - not is_installed
         - download_result.changed
+      ansible.builtin.file:
+        path: "/tmp/{{ final_asset_name }}"
+        state: absent
