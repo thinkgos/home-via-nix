@@ -8,11 +8,6 @@
     http_proxy: "http://127.0.0.1:7890"
     https_proxy: "http://127.0.0.1:7890"
     socks5_proxy: "socks5://127.0.0.1:7890"
-  vars_files:
-    - vars/main.yml
-    - vars/deb.yml
-    - vars/rpm.yml
-    - vars/apps.yml
 
   tasks:
     - name: Ping
@@ -25,7 +20,7 @@
 
     - name: 系统基础配置
       tags: "system"
-      ansible.builtin.include_tasks: tasks/install_packages.yml
+      ansible.builtin.import_tasks: tasks/install_packages.yml
 
     - name: 安装Github上的软件
       tags: "apps"
@@ -34,8 +29,11 @@
           ansible.builtin.package_facts:
             manager: auto
 
+        - name: Load github variables
+          ansible.builtin.include_vars: vars/github.yml
+
         - name: Process Github installations
-          ansible.builtin.include_tasks: tasks/install_logic.yml
+          ansible.builtin.include_tasks: tasks/install_via_github.yml
           loop: "{{ apps }}"
           loop_control:
             loop_var: app

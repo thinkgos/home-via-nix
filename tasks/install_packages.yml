@@ -1,17 +1,19 @@
-- name: Install via Debian
+- name: Load package variables
+  ansible.builtin.include_vars: "{{ item }}"
+  with_items:
+    - vars/main.yml
+    - vars/deb.yml
+    - vars/rpm.yml
+
+- name: Install via Debian (Ubuntu)
   when: ansible_facts['os_family'] == "Debian"
-  block:
-    - name: 更新APT缓存
-      ansible.builtin.apt:
-        update_cache: true
-        cache_valid_time: 3600
+  ansible.builtin.apt:
+    name: "{{ (main_packages | default([])) + (deb_packages | default([])) }}"
+    state: present
+    update_cache: true
+    cache_valid_time: 3600
 
-    - name: 安装列表中的包
-      ansible.builtin.apt:
-        name: "{{ (main_packages | default([])) + (deb_packages | default([])) }}"
-        state: present
-
-- name: Install via RedHat (Fedora/RHEL)
+- name: Install via RedHat (Fedora)
   when: ansible_facts['os_family'] == "RedHat"
   ansible.builtin.dnf:
     name: "{{ (main_packages | default([])) + (rpm_packages | default([])) }}"

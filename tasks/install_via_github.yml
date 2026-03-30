@@ -1,6 +1,6 @@
-- name: "Install Software: {{ app.name }}"
+- name: "Prepare fact: {{ app.name }}"
   block:
-    - name: "Prepare fact: {{ app.name }}"
+    - name: "Prepare variables: {{ app.name }}"
       ansible.builtin.set_fact:
         final_tag: >-
           {{
