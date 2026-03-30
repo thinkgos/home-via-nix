@@ -107,7 +107,6 @@
 
   home.sessionPath = [
     "$HOME/.local/bin"
-    "$HOME/.opencode/bin"
   ];
 
   programs = {
