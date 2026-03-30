@@ -46,7 +46,7 @@ github_apps:
     version: 1.3.0
     tag_v: true
     binary_name: "opencode"
-    binary_pattern: "opencode-linux-x64-musl.tar.gz"
+    binary_pattern: "opencode-linux-x64.tar.gz"
 
   - name: "goup"
     description: "an elegant Go version manager write in rust"
