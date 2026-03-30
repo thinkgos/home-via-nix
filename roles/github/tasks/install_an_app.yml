@@ -8,7 +8,7 @@
             ternary('v' + (app.version | string | regex_replace('^v', '')), (app.version | string | regex_replace('^v', '')))
           }}
 
-    - name: "Determine install strategy"
+    - name: "Determine install strategy: {{ app.name }}"
       ansible.builtin.set_fact:
         install_strategy: "{{ 'package' if ( (ansible_facts['os_family'] == 'Debian' and app.debian_pattern | default('')) or (ansible_facts['os_family'] == 'RedHat' and app.redhat_pattern | default('')) ) else 'binary' }}"
 
@@ -16,7 +16,7 @@
       ansible.builtin.set_fact:
         final_asset_name: "{{ (app.redhat_pattern if ansible_facts['os_family'] == 'RedHat' else app.debian_pattern) | replace('__VERSION__', app.version) if install_strategy | trim == 'package' else app.binary_pattern | replace('__VERSION__', app.version) }}"
 
-    - name: "Check if package is installed"
+    - name: "Check if package is installed: {{ app.name }}"
       when: install_strategy == 'package'
       ansible.builtin.set_fact:
         is_installed: >-
