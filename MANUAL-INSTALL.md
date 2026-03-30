@@ -8,5 +8,4 @@
 - [`vnc-viewer`](https://www.realvnc.com/en/connect/download/viewer/) VNC客户端
 - [`gnome-browser-connector`](https://extensions.gnome.org) GNOME浏览器连接器
 - [`vscode`](https://code.visualstudio.com/) vscode代码编辑器
-- [`opencode`](https://github.com/anomalyco/opencode) code agent
 - [`claude-code`](https://claude.com/product/claude-code) code agent
