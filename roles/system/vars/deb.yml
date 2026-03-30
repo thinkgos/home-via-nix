@@ -1,4 +1,4 @@
-deb_packages:
+system_deb_packages:
   - build-essential
   - libclang-dev
   - libssl-dev

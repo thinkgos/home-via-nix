@@ -1,4 +1,4 @@
-main_packages:
+system_main_packages:
   - curl
   - zip
   - unzip

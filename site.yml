@@ -1,0 +1,25 @@
+# ansible-playbook site.yml -u <username> --tags system,github -K
+- name: 通用软件管理
+  hosts: 127.0.0.1
+  become: true
+  gather_facts: false
+  environment:
+    http_proxy: "http://127.0.0.1:7890"
+    https_proxy: "http://127.0.0.1:7890"
+    socks5_proxy: "socks5://127.0.0.1:7890"
+
+  pre_tasks:
+    - name: Ping
+      tags: "always"
+      ansible.builtin.ping:
+
+    - name: Gather facts
+      tags: "always"
+      ansible.builtin.setup:
+
+  roles:
+    - role: system
+      tags: "system"
+
+    - role: github
+      tags: "github"

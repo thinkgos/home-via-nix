@@ -1,4 +1,4 @@
-rpm_packages:
+system_rpm_packages:
   - "@development-tools"
   - clang-devel
   - openssl-devel
