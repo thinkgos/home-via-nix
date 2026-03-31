@@ -43,7 +43,7 @@
     #! nats
     natscli
     nkeys
-    # nats-top # TODO: tmp removed
+    nats-top
     nats-server
   ];
   programs = {

@@ -40,6 +40,7 @@ in
     nv = "nvim";
     tf = "terraform";
     trash = "trash -v";
+    cco = "claude";
   };
 
   programs = {
