@@ -11,7 +11,6 @@
     "${config.xdg.configHome}/zsh/env-extra/env-goup".source = ./sh/env-goup;
   };
 
-  # https://github.com/ohmyzsh/ohmyzsh
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -157,10 +156,9 @@
     };
 
     autocd = true;
+    # https://github.com/ohmyzsh/ohmyzsh/wiki
     oh-my-zsh = {
       enable = true;
-      # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-      theme = "agnoster";
       plugins = [
         "git" # git client
         "cp"
