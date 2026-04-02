@@ -162,7 +162,6 @@
       plugins = [
         "git" # git client
         "cp"
-        "tmux"
         "extract"
       ];
     };
