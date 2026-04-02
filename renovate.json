@@ -5,11 +5,11 @@
   ],
   "regexManagers": [
     {
-      "managerFilePatterns": [
+      "fileMatch": [
         "^roles/github/vars/main\\.yml$"
       ],
       "matchStrings": [
-        "repo:\\s+[\"']?(?<depName>[\\w\\-\\./]+)[\"']?\\n\\s+version:\\s+[\"']?(?<currentValue>[\\d\\.]+)[\"']?"
+        "repo:\\s+[\"']?(?<depName>[\\w\\-\\.]+\\/[\\w\\-\\.]+)[\"']?\\s+version:\\s+[\"']?(?<currentValue>[\\d\\.]+)[\"']?"
       ],
       "datasourceTemplate": "github-releases"
     }
