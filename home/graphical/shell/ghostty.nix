@@ -6,14 +6,14 @@
 }:
 let
   # 光标动画: https://github.com/sahaj-b/ghostty-cursor-shaders
-  cursorTrailShader = pkgs.writeTextFile {
-    name = "cursor-trail.glsl";
-    text = builtins.readFile ./assets/ghostty-cursor-trail.glsl;
+  cursorTrailShader = pkgs.fetchFromGitHub {
+    owner = "sahaj-b";
+    repo = "ghostty-cursor-shaders";
+    rev = "main";
+    hash = "sha256-ruhEqXnWRCYdX5mRczpY3rj1DTdxyY3BoN9pdlDOKrE=";
   };
 in
 {
-  home.file.".config/ghostty/shaders/cursor-trail.glsl".source = cursorTrailShader;
-
   programs.ghostty = {
     enable = true;
     installBatSyntax = true;
@@ -102,7 +102,7 @@ in
       cursor-opacity = 0.8;
 
       # custom shader
-      custom-shader = "${config.home.homeDirectory}/.config/ghostty/shaders/cursor-trail.glsl";
+      custom-shader = "${cursorTrailShader}/cursor_tail.glsl";
 
       # 下拉终端(Quake 风格)
       # quick-terminal-position = "top";
