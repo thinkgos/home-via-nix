@@ -56,12 +56,15 @@
       scrollback-limit = 100000000;
       copy-on-select = "clipboard";
       right-click-action = "paste";
+      clipboard-read = "allow";
+      clipboard-write = "allow";
       clipboard-paste-protection = true;
       clipboard-paste-bracketed-safe = true;
       notify-on-command-finish = "always";
 
       # theme
-      theme = "Catppuccin Mocha";
+      # theme = "Catppuccin Mocha";
+      theme = "Dracula+";
 
       # font
       font-family = "JetBrainsMono Nerd Font Mono";
