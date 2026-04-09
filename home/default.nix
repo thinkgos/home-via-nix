@@ -96,6 +96,11 @@
   #  /etc/profiles/per-user/${USER}/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
+    NIXOS_OZONE_WL = "1"; # Chromium 内核应用 使用 Wayland
+    QT_QPA_PLATFORM = "wayland"; # QT 框架应用 使用 Wayland
+    SDL_VIDEODRIVER = "wayland"; # 游戏及多媒体应用 使用 Wayland
+    XDG_SESSION_TYPE = "wayland"; # 系统级中间件和桌面环境 使用 Wayland
+    MOZ_ENABLE_WAYLAND = "1"; # Mozilla 系应用 使用 Wayland
     BAT_PAGER = "less -r";
     TMPDIR = "$HOME/.cache/tmp";
   };
