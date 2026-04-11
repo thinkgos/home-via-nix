@@ -171,10 +171,10 @@
       dash-max-icon-size = 40;
       disable-overview-on-startup = false;
       dock-position = "BOTTOM";
-      extend-height = true;
+      extend-height = false;
       height-fraction = 0.90;
       icon-size-fixed = false;
-      intellihide-mode = "FOCUS_APPLICATION_WINDOWS";
+      intellihide-mode = "ALL_WINDOWS";
       preferred-monitor = -2;
       # preferred-monitor-by-connector = "eDP-1";
       preview-size-scale = 0.70;
