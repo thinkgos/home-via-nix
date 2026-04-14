@@ -60,6 +60,12 @@
                 window = "gnome";
                 window-version = "gnome-49";
               };
+              cors-ubuntu25_10 = mkHome {
+                username = "cors";
+                graphics = true;
+                window = "hyprland";
+                window-version = "hyprland";
+              };
             };
 
           devShells.default = pkgs.mkShell {
