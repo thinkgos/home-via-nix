@@ -32,7 +32,7 @@ github_apps:
   - name: "task"
     description: "task manager written in Go"
     repo: "go-task/task"
-    version: 3.49.1
+    version: 3.50.0
     package_name: "task"
     debian_pattern: "task___VERSION___linux_amd64.deb"
     redhat_pattern: "task___VERSION___linux_amd64.rpm"
