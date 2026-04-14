@@ -8,12 +8,13 @@
 {
   imports = [
     ./i18n.nix
+    ./email.nix
+    ./screenshot.nix
     ./shell
     ./editor
     ./devtools
-  ]
-  ++ lib.optional (customize.window == "gnome") ./windows/gnome.nix
-  ++ lib.optional (customize.window == "hyprland") ./windows/hyprland.nix;
+    ./windows
+  ];
 
   nixpkgs.config = {
     allowUnfreePredicate =
@@ -21,7 +22,6 @@
       builtins.elem (lib.getName pkg) [
         "redisinsight"
         "albert"
-        "vscode"
       ];
   };
 
@@ -38,35 +38,10 @@
     mission-center # 监控您的CPU,内存,磁盘,网络和GPU使用情况
     vlc # 多媒体播放器
     uget # 下载工具
-    albert # 启动器(可选替代ulauncher)
 
     nixd
     nil
     nixfmt
     nixfmt-tree
   ];
-
-  programs = {
-    # 邮件客户端
-    thunderbird = {
-      enable = true;
-      profiles = { };
-    };
-  };
-  services = {
-    # 截图工具
-    flameshot = {
-      enable = true;
-      # https://github.com/flameshot-org/flameshot/blob/master/flameshot.example.ini
-      settings = {
-        General = {
-          showStartupLaunchMessage = false;
-          disabledTrayIcon = false;
-          autoCloseIdleDaemon = true;
-          useGrimAdapter = true;
-          contrastOpacity = 188;
-        };
-      };
-    };
-  };
 }
