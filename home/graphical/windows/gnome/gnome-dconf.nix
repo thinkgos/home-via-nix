@@ -39,6 +39,9 @@
       cursor-theme = "WhiteSur-cursors";
       gtk-theme = "WhiteSur-Dark";
       icon-theme = "WhiteSur-dark";
+      font-name = "Inter 11";
+      document-font-name = "Inter 11";
+      monospace-font-name = "JetBrainsMono Nerd Font Mono 11";
     };
     "org/gnome/desktop/wm/keybindings" = {
       switch-to-workspace-1 = [ "<Alt>1" ];
