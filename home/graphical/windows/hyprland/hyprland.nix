@@ -6,6 +6,7 @@
 }:
 {
   imports = [
+    ./hyprland.plugins.nix
     ./hyprland.keybinding.nix
   ];
 
