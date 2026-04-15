@@ -73,8 +73,8 @@ in
       notify-on-command-finish = "always";
 
       # theme
-      # theme = "Catppuccin Mocha";
-      theme = "Dracula+";
+      theme = "Catppuccin Mocha";
+      # theme = "Dracula+";
 
       # font
       font-family = "JetBrainsMono Nerd Font Mono";
