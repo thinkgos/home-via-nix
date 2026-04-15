@@ -158,6 +158,16 @@
         ]
       ];
       window-use-custom-border-color = false;
+      focus-window-prev = [ "<Super>comma" ];
+      focus-window-next = [ "<Super>period" ];
+      focus-window-down = [ "<Super>Down" ];
+      focus-window-left = [ "<Super>Left" ];
+      focus-window-right = [ "<Super>Right" ];
+      focus-window-up = [ "<Super>Up" ];
+      move-window-down = [ "<Super><Shift>Down" ];
+      move-window-left = [ "<Super><Shift>Left" ];
+      move-window-right = [ "<Super><Shift>Right" ];
+      move-window-up = [ "<Super><Shift>Up" ];
     };
 
     "org/gnome/shell/extensions/dash-to-dock" = {

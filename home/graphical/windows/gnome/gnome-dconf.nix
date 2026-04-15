@@ -56,6 +56,11 @@
       toggle-maximized = [ "<Super>m" ];
       close = [ "<Super>q" ];
 
+      move-to-monitor-down = mkEmptyArray type.string;
+      move-to-monitor-left = mkEmptyArray type.string;
+      move-to-monitor-right = mkEmptyArray type.string;
+      move-to-monitor-up = mkEmptyArray type.string;
+
       switch-to-workspace-1 = [
         "<Super>1"
         "<Super>Home"

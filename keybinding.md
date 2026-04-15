@@ -3,10 +3,14 @@
 标记:
 
 - 无: ❌
+
 - 禁用: 🚫
+
 - 未配置: ◻️
+
 - 已配置: ✅
-- 
+
+  
 
 ## 系统
 
@@ -62,14 +66,13 @@
 | 功能 | Gnome | Gnome(调整) | Hyprland |
 | ------ | ----------- | ------- | ---------- |
 | 启动帮助浏览器 | Super + F1 | ◻️ | ◻️ |
-| 启动计算器 | 🚫 | Super + C ✅ | ◻️ |
+| 启动计算器 | 🚫 | Super + C ✅ | Super + C ✅ |
 | 启动网页浏览器 | 🚫 | Super + B ✅ | Super + B ✅ |
 | 启动邮件客户端 | 🚫 | ◻️ | ◻️ |
 | 设置 | 🚫 | ◻️ | ◻️ |
 | 搜索 | 🚫 | ◻️ | ◻️ |
-| 主目录 | 🚫 | ◻️ | ◻️ |
+| 主目录(启动文件管理器) | 🚫 | Super + E ✅ | Super + E ✅ |
 | 启动终端 | ❌ | Super + T ✅ | Super + T ✅ |
-| 启动文件管理器 | ❌ | Super + E ✅ | Super + E ✅ |
 | 启动应用启动器 | ❌ | Super + semicolon ✅ | Super + semicolon ✅ |
 | 启动提取颜色 | ❌ | ◻️ | Super + Alt + C ✅ |
 
@@ -79,11 +82,11 @@
 
 | 功能 | Gnome | Gnome(调整) | Hyprland |
 | ------ | ----------- | ------- | ---------- |
-| 将窗口上移一个显示器 | Super + Shift + Up | ◻️ | ◻️ |
-| 将窗口下移一个显示器 | Super + Shift + Down | ◻️ | ◻️ |
-| 将窗口左移一个显示器 | Super + Shift + Left | ◻️ | ◻️ |
-| 将窗口右移一个显示器 | Super + Shift + Right | ◻️ | ◻️ |
-| 将窗口移至工作区1 | Super + Shift + Home | Super + Shift + 1 / Super + Shift + Home ✅ | Super + Shift + 1 / Super + Shift + Home ✅ |
+| 将窗口上移一个显示器 | Super + Shift + Up | ❌ ✅ | ◻️ |
+| 将窗口下移一个显示器 | Super + Shift + Down | ❌ ✅ | ◻️ |
+| 将窗口左移一个显示器 | Super + Shift + Left | ❌ ✅ | ◻️ |
+| 将窗口右移一个显示器 | Super + Shift + Right | ❌ ✅ | ◻️ |
+| 将窗口移至工作区1 | Super + Shift + Home | Super + Shift + 1<br />Super + Shift + Home ✅ | Super + Shift + 1<br />Super + Shift + Home ✅ |
 | 将窗口移至工作区2 | 🚫 | Super + Shift + 2 ✅ | Super + Shift + 2 ✅ |
 | 将窗口移至工作区3 | 🚫 | Super + Shift + 3 ✅ | Super + Shift + 3 ✅ |
 | 将窗口移至工作区4 | 🚫 | Super + Shift + 4 ✅ | Super + Shift + 4 ✅ |
@@ -96,7 +99,7 @@
 | 将窗口左移一个工作区 | Super + Shift + PgUp | Super + Shift + Prior ✅ | Super + Shift + Prior ✅ |
 | 将窗口右移一个工作区 | Super + Shift + PgDown | Super + Shift + Next ✅ | Super + Shift + Next ✅ |
 | 切换窗口 | 🚫 | Super + Tab ✅ | Super + Tab ✅ |
-| 切换到工作区1 | Super + Home | Super + 1 / Super + Home ✅ | Super + 1 / Super + Home ✅ |
+| 切换到工作区1 | Super + Home | Super + 1<br />Super + Home ✅ | Super + 1<br />Super + Home ✅ |
 | 切换到工作区2 | 🚫 | Super + 2 ✅ | Super + 2 ✅ |
 | 切换到工作区3 | 🚫 | Super + 3 ✅ | Super + 3 ✅ |
 | 切换到工作区4 | 🚫 | Super + 4 ✅ | Super + 4 ✅ |
@@ -138,15 +141,15 @@
 | 在位于所有或仅一个工作区的窗口间切换 | 🚫 | ◻️ | ◻️ |
 | 最大化窗口 | Super + Up | 🚫 ✅ | ◻️ |
 | 切换浮动窗口 | ❌ | ◻️ | Super + V ✅ |
-| 移动聚焦到左边 | ❌ | ◻️ | Super + Left ✅ |
-| 移动聚焦到右边 | ❌ | ◻️ | Super + Right ✅ |
-| 移动聚焦到上边 | ❌ | ◻️ | Super + Up ✅ |
-| 移动聚焦到下边 | ❌ | ◻️ | Super + Down ✅ |
-| 移动活跃窗口到左边 | ❌ | ◻️ | Super + Shift + Left ✅ |
-| 移动活跃窗口到右边 | ❌ | ◻️ | Super + Shift + Right ✅ |
-| 移动活跃窗口到上边 | ❌ | ◻️ | Super + Shift + Up ✅ |
-| 移动活跃窗口到下边 | ❌ | ◻️ | Super + Shift + Down ✅ |
-| 拖拽窗口 | ❌ | ◻️ | Super + mouse:272(鼠标左键) ✅ |
+| 移动聚焦到左边 | ❌ | Super + Left ✅ | Super + Left ✅ |
+| 移动聚焦到右边 | ❌ | Super + Right ✅ | Super + Right ✅ |
+| 移动聚焦到上边 | ❌ | Super + Up ✅ | Super + Up ✅ |
+| 移动聚焦到下边 | ❌ | Super + Down ✅ | Super + Down ✅ |
+| 移动活跃窗口到左边 | ❌ | Super + Shift + Left ✅ | Super + Shift + Left ✅ |
+| 移动活跃窗口到右边 | ❌ | Super + Shift + Right ✅ | Super + Shift + Right ✅ |
+| 移动活跃窗口到上边 | ❌ | Super + Shift + Up ✅ | Super + Shift + Up ✅ |
+| 移动活跃窗口到下边 | ❌ | Super + Shift + Down ✅ | Super + Shift + Down ✅ |
+| 拖拽窗口 | ❌ | ◻️ ✅ | Super + mouse:272(鼠标左键) ✅ |
 | 缩放窗口 | ❌ | ◻️ | Super + mouse:273(鼠标右键) ✅ |
 
 
@@ -154,6 +157,6 @@
 
 | 功能 | Gnome | Gnome(调整) | Hyprland |
 | ------ | ----------- | ------- | ---------- |
-| 切换到上一个窗口 | ❌ | ◻️ | Super + bracketleft ✅ |
-| 切换到下一个窗口 | ❌ | ◻️ | Super + bracketright ✅ |
+| 切换到上一个窗口 | ❌ | Super + bracketleft ✅ | Super + bracketleft ✅ |
+| 切换到下一个窗口 | ❌ | Super + bracketright ✅ | Super + bracketright ✅ |
 
