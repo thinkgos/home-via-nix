@@ -113,8 +113,19 @@
       command = "albert toggle";
       binding = "<Super>semicolon";
     };
-
+    "org/gnome/shell" = {
+      # enabled-extensions = null;
+      disabled-extensions = [
+        pkgs.gnomeExtensions.open-bar.extensionUuid
+      ];
+    };
     "org/gnome/shell/keybindings" = {
+      switch-to-application-1 = mkEmptyArray type.string;
+      switch-to-application-2 = mkEmptyArray type.string;
+      switch-to-application-3 = mkEmptyArray type.string;
+      switch-to-application-4 = mkEmptyArray type.string;
+      toggle-message-tray = mkEmptyArray type.string;
+      toggle-quick-settings = mkEmptyArray type.string;
       # screenshot = ["<Shift>Print"];                      # 截图, 默认: <Shift>Print
       # screenshot-window = ["<Alt>Print"];                 # 窗口截图, 默认: <Alt>Print
       # show-screenshot-ui = ["Print"];                     # 交互式截图, 默认: Print

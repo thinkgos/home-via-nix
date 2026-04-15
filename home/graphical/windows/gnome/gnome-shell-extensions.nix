@@ -68,13 +68,6 @@
   };
 
   dconf.settings = with lib.hm.gvariant; {
-    "org/gnome/shell" = {
-      # enabled-extensions = null;
-      disabled-extensions = [
-        pkgs.gnomeExtensions.open-bar.extensionUuid
-      ];
-    };
-
     "org/gnome/shell/extensions/user-theme" = {
       name = "WhiteSur-Dark";
     };
@@ -158,8 +151,8 @@
         ]
       ];
       window-use-custom-border-color = false;
-      focus-window-prev = [ "<Super>comma" ];
-      focus-window-next = [ "<Super>period" ];
+      focus-window-prev = [ "<Super>bracketleft" ];
+      focus-window-next = [ "<Super>bracketright" ];
       focus-window-down = [ "<Super>Down" ];
       focus-window-left = [ "<Super>Left" ];
       focus-window-right = [ "<Super>Right" ];
