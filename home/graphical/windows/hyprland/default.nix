@@ -46,6 +46,7 @@
     wl-clipboard # wayland剪贴板工具
     hyprpicker # 颜色拾取器
     hyprsysteminfo # 系统信息工具
+    qalculate-gtk # 计算器
     # nemo # 文件管理器
     # nemo-fileroller
     # nemo-preview

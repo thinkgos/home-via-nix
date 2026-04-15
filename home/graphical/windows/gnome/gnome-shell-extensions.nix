@@ -173,6 +173,7 @@
       dock-position = "BOTTOM";
       extend-height = false;
       height-fraction = 0.90;
+      hot-keys = false;
       icon-size-fixed = false;
       intellihide-mode = "ALL_WINDOWS";
       preferred-monitor = -2;

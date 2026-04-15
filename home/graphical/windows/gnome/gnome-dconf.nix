@@ -28,10 +28,10 @@
       dynamic-workspaces = false; # 动态工作区 - 禁用
       workspaces-only-on-primary = true; # 工作区只作用于主屏目
     };
-    "org/gnome/mutter.keybindings" = {
+    "org/gnome/mutter/keybindings" = {
       # 开启tiling-shell已覆盖
-      # toggle-tiled-left = mkEmptyArray type.string;  # 分屏到左侧平铺窗口, 默认: <Super>Left
-      # toggle-tiled-right = mkEmptyArray type.string;  # 分屏到右侧平铺窗口, 默认: <Super>Right
+      toggle-tiled-left = mkEmptyArray type.string; # 分屏到左侧平铺窗口, 默认: <Super>Left
+      toggle-tiled-right = mkEmptyArray type.string; # 分屏到右侧平铺窗口, 默认: <Super>Right
     };
     # 主题
     "org/gnome/desktop/interface" = {
@@ -44,15 +44,39 @@
       monospace-font-name = "JetBrainsMono Nerd Font Mono 11";
     };
     "org/gnome/desktop/wm/keybindings" = {
-      switch-to-workspace-1 = [ "<Alt>1" ];
-      switch-to-workspace-2 = [ "<Alt>2" ];
-      switch-to-workspace-3 = [ "<Alt>3" ];
-      switch-to-workspace-4 = [ "<Alt>4" ];
-      toggle-fullscreen = [ "<Super>F" ];
-      close = [ "<Super>q" ];
       # 开启tiling-shell已覆盖
-      # unmaximize = mkEmptyArray type.string;  # 取消最大化, 默认: <Super>Up
-      # maximize = mkEmptyArray type.string;    # 最大化, 默认: <Super>Up
+      unmaximize = mkEmptyArray type.string;
+      maximize = mkEmptyArray type.string;
+      switch-applications = mkEmptyArray type.string;
+      switch-applications-backward = mkEmptyArray type.string;
+
+      switch-windows = [ "<Super>Tab" ];
+      switch-windows-backward = [ "<Shift><Super>Tab" ];
+      toggle-fullscreen = [ "<Super>f" ];
+      toggle-maximized = [ "<Super>m" ];
+      close = [ "<Super>q" ];
+
+      switch-to-workspace-1 = [
+        "<Super>1"
+        "<Super>Home"
+      ];
+      switch-to-workspace-2 = [ "<Super>2" ];
+      switch-to-workspace-3 = [ "<Super>3" ];
+      switch-to-workspace-4 = [ "<Super>4" ];
+      switch-to-workspace-last = [ "<Super>End" ];
+      switch-to-workspace-left = [ "<Super>Page_Up" ];
+      switch-to-workspace-right = [ "<Super>Page_Down" ];
+
+      move-to-workspace-1 = [
+        "<Shift><Super>1"
+        "<Shift><Super>Home"
+      ];
+      move-to-workspace-2 = [ "<Shift><Super>2" ];
+      move-to-workspace-3 = [ "<Shift><Super>3" ];
+      move-to-workspace-4 = [ "<Shift><Super>4" ];
+      move-to-workspace-last = [ "<Shift><Super>End" ];
+      move-to-workspace-left = [ "<Shift><Super>Page_Up" ];
+      move-to-workspace-right = [ "<Shift><Super>Page_Down" ];
     };
     "org/gnome/desktop/wm/preferences" = {
       num-workspaces = 4; # 工作区数量
@@ -60,6 +84,12 @@
     };
 
     "org/gnome/settings-daemon/plugins/media-keys" = {
+      terminal = [ "<Super>t" ]; # 启动终端
+      www = [ "<Super>b" ]; # 启动浏览器
+      calculator = [ "<Super>c" ]; # 启动计算器
+      home = [ "<Super>e" ]; # 启动文件管理器
+
+      screensaver = [ "<Super>l" ]; # 锁屏
       # 自定义截图快捷键
       custom-keybindings = [
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
@@ -76,7 +106,7 @@
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
       name = "albert";
       command = "albert toggle";
-      binding = "<Shift><Control>semicolon";
+      binding = "<Super>semicolon";
     };
 
     "org/gnome/shell/keybindings" = {

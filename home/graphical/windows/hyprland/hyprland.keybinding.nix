@@ -31,6 +31,7 @@
       # 应用
       "$mod, T, exec, $terminal" # 启动终端
       "$mod, E, exec, $fileManager" # 启动文件管理器
+      "$mod, C, exec, qalc" # 启动计算器
       "$mod, B, exec, $launchBrowser" # 启动浏览器
       "$mod, semicolon, exec, $appLauncher" # 启动应用启动器
       "$mod ALT, C, exec, $pickColor" # 启动提取颜色
