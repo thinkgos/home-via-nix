@@ -18,6 +18,7 @@ in
     enable = true;
     installBatSyntax = true;
     installVimSyntax = true;
+    # https://ghostty.org/docs/config/reference
     settings = {
       keybind = [
         # 全局热键：下拉终端,
@@ -87,6 +88,7 @@ in
       window-position-x = 8;
       window-position-y = 8;
       window-save-state = "always";
+      maximize = true;
       macos-titlebar-style = "transparent";
 
       # tab bar

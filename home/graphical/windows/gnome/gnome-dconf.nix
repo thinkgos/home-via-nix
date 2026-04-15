@@ -89,7 +89,7 @@
     };
 
     "org/gnome/settings-daemon/plugins/media-keys" = {
-      terminal = [ "<Super>t" ]; # 启动终端
+      terminal = mkEmptyArray type.string; # 禁用终端, 采用自定义快捷键
       www = [ "<Super>b" ]; # 启动浏览器
       calculator = [ "<Super>c" ]; # 启动计算器
       home = [ "<Super>e" ]; # 启动文件管理器
@@ -99,16 +99,22 @@
       custom-keybindings = [
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
+        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
       ];
     };
-    # 自定义截图快捷键
+    # 自定义快捷键
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+      name = "terminal";
+      command = "ghostty";
+      binding = "<Super>t";
+    };
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
       name = "flameshot";
       # command =  "sh -c 'flameshot gui --raw | wl-copy'";
       command = "sh -c 'flameshot gui < /dev/null'";
       binding = "<Control>Print";
     };
-    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
       name = "albert";
       command = "albert toggle";
       binding = "<Super>semicolon";
