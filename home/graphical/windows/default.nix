@@ -6,8 +6,9 @@
   ...
 }:
 {
-  imports =
-    [ ]
-    ++ lib.optional (customize.window == "gnome") ./gnome
-    ++ lib.optional (customize.window == "hyprland") ./hyprland;
+  imports = [
+    # ./wayvnc.nix
+  ]
+  ++ lib.optional (customize.window == "gnome") ./gnome
+  ++ lib.optional (customize.window == "hyprland") ./hyprland;
 }
