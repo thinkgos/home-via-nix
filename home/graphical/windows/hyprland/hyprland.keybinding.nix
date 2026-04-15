@@ -23,6 +23,7 @@
       # "$mod, J, togglesplit" # Dwindle: 切换横纵分割
       # "$mod, G, togglegroup" # 窗口成组
       # "$mod, L, lockactivegroup, toggle" # 锁定组
+      # "$mod, , hyprexpo:expo, toggle" # 显示概览
 
       # 截图
       ", Print, exec, flameshot gui < /dev/null" # 截图

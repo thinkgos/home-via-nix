@@ -6,8 +6,8 @@
 }:
 {
   imports = [
-    ./hyprland.plugins.nix
-    ./hyprland.keybinding.nix
+    ./hyprland.plugins.nix # 插件
+    ./hyprland.keybinding.nix # 按键绑定
   ];
 
   wayland.windowManager.hyprland = {
