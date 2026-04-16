@@ -37,7 +37,7 @@
           "network"
           "pulseaudio"
           "battery"
-          # "custom/notification"
+          # "custom/power"
         ];
 
         # 左侧模块
@@ -194,11 +194,13 @@
         #     };
         #   };
 
-        #   "custom/notification" = {
-        #     format = " ";
-        #     on-click = "swaync-client -t -sw";
-        #     tooltip = false;
-        #   };
+        # "custom/power" = {
+        #   format = "⏻";
+        #   on-click = "hyprshutdown -t 'Shutting down...' --post-cmd 'shutdown -P 0'";
+        #   on-click-right = "hyprlock";
+        #   tooltip = true;
+        #   tooltip-format = "左键: 关机\n右键: 锁屏";
+        # };
       };
     };
     style = builtins.readFile ./waybar/style.gtk.css;

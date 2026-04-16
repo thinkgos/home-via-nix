@@ -16,8 +16,9 @@
     "$lockScreen" = "hyprlock";
     "$pickColor" = "hyprpicker -a -n -s 5 -u 60";
     bind = [
-      # 系统
+      # 系统 注销中
       "$mod, L, exec, $lockScreen" # 锁定屏幕
+      ''CTRL ALT, Delete, exec, zenity --question --text="确定要登出 $USER 吗？" && hyprshutdown -t "注销中..."'' # 注销当前用户会话
       "$mod ALT, M, exit" # 退出桌面
       # "$mod, P, pseudo" # Dwindle: 伪平铺
       # "$mod, J, togglesplit" # Dwindle: 切换横纵分割
