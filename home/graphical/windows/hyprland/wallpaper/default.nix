@@ -17,7 +17,7 @@
       wallpaper = [
         {
           monitor = "";
-          path = "${config.xdg.dataHome}/wallpapers";
+          path = "${config.xdg.dataHome}/wallpapers/dynamic";
           fit_mode = "cover"; # contain|cover|tile|fill
           timeout = 180; # 3min
           # order = "random"; # 暂不支持

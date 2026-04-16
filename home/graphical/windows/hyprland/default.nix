@@ -13,6 +13,7 @@
   #       brightnessctl bluez playerctl \
   #       qt6-wayland \
   #       fonts-noto-core fonts-noto-cjk \
+  #       gvfs \
   #       network-manager \
   #       libnotify-bin \
   #       thermald \
@@ -43,15 +44,13 @@
   ];
 
   home.packages = with pkgs; [
-    nautilus # 文件管理器
     wl-clipboard # wayland剪贴板工具
     hyprpicker # 颜色拾取器
     hyprsysteminfo # 系统信息工具
     qalculate-gtk # 计算器
     hyprshutdown # 关机工具
-    # nemo # 文件管理器
-    # nemo-fileroller
-    # nemo-preview
+    # nautilus # 文件管理器
+    nemo-with-extensions # 文件管理器
   ];
 
   # XDG portal config for Hyprland
