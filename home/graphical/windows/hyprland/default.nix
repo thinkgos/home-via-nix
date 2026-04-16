@@ -44,7 +44,6 @@
   ];
 
   home.packages = with pkgs; [
-    wl-clipboard # wayland剪贴板工具
     hyprpicker # 颜色拾取器
     hyprsysteminfo # 系统信息工具
     qalculate-gtk # 计算器

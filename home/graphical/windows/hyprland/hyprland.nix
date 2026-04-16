@@ -6,6 +6,7 @@
 }:
 {
   imports = [
+    ./hyprland.scripts.nix # 脚本配置
     ./hyprland.plugins.nix # 插件
     ./hyprland.keybinding.nix # 按键绑定
   ];

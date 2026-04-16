@@ -10,7 +10,7 @@
   wayland.windowManager.hyprland.settings = {
     "$mod" = "SUPER";
     "$terminal" = "ghostty";
-    "$fileManager" = "nautilus --new-window";
+    "$fileManager" = "nemo";
     "$launchBrowser" = "xdg-open https://google.com";
     "$appLauncher" = "pkill wofi || wofi";
     "$lockScreen" = "hyprlock";
@@ -27,8 +27,14 @@
       # "$mod, , hyprexpo:expo, toggle" # 显示概览
 
       # 截图
-      ", Print, exec, flameshot gui < /dev/null" # 截图
-      # ", Print, exec, grim -g \"$(slurp)\" - | wl-copy" # 截图
+      # 活动窗口截图
+      "ALT, Print, exec, blast-screenshot active"
+      # 全屏截图
+      "Shift, Print, exec, blast-screenshot full"
+      # 交互式截图
+      ", Print, exec, blast-screenshot region"
+      # 交互式截图+标注
+      "Ctrl, Print, exec, blast-screenshot annotate"
 
       # 应用
       "$mod, T, exec, $terminal" # 启动终端

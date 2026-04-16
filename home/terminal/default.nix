@@ -11,7 +11,6 @@
     ./editor
     ./ai
     ./git.nix
-    ./password-store.nix
     ./github.nix
     ./ansible.nix
   ];

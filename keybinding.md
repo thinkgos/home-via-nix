@@ -44,10 +44,11 @@
 
 | 功能 | Gnome | Gnome(调整) | Status | Hyprland | Status |
 | ------ | ----------- | ------- | ------- | ------- | ------- |
-| 对窗口进行截图 | `Alt` + `PrtSc` | | ◻️ | | ◻️ |
-| 交互式截图 | `PrtSc` | | ◻️ | `Print` | ✅ |
+| 对窗口进行截图 | `Alt` + `PrtSc` | `Alt` + `PrtSc` | ✅ | `Alt` + `Print` | ✅ |
+| 交互式截图 | `PrtSc` | `PrtSc` | ✅ | `Print` | ✅ |
 | 交互式录屏 | `Alt` + `Shift` + `Tab` | | ◻️ | | ◻️ |
-| 截图 | `Alt` + `PrtSc` | | ◻️ | | ◻️ |
+| 截图 | `Shift` + `PrtSc` | `Shift` + `PrtSc` | ✅ | `Shift` + `Print` | ✅ |
+| 交互式截图+标注 | ❌ | `Ctrl` + `PrtSc` | ✅ | `Ctrl` + `Print` | ✅ |
 
 ## 打字
 
