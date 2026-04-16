@@ -115,8 +115,8 @@
       binding = "<Control>Print";
     };
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
-      name = "app launchers";
-      command = "sh -c 'pkill wofi || wofi'";
+      name = "albert";
+      command = "albert toggle";
       binding = "<Super>slash";
     };
     "org/gnome/shell" = {
