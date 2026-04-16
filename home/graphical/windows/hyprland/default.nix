@@ -31,14 +31,15 @@
   # EOF'
   imports = [
     ./hyprland.nix # Hyprland配置
-    ./daemon.nix # 守护进程
-    ./app-launchers.nix # 应用启动器
-    ./status-bars.nix # 状态栏
-    ./notification-center.nix # 通知中心
-    ./idle-management.nix # 空闲管理
-    ./screen-lock.nix # 屏幕锁定
-    ./wallpaper.nix # 壁纸
-    ./sunset.nix # 蓝光配置
+    ./authentication-agent # 身份验证代理
+    ./app-launchers # 应用启动器
+    ./status-bars # 状态栏
+    ./notification-center # 通知中心
+    ./idle-management # 空闲管理
+    ./screen-lock # 屏幕锁定
+    ./wallpaper # 壁纸
+    ./sunset # 蓝光保护
+    ./clipboard # 剪贴板
   ];
 
   home.packages = with pkgs; [
@@ -51,10 +52,6 @@
     # nemo-fileroller
     # nemo-preview
   ];
-
-  home.sessionVariables = {
-    XCURSOR_SIZE = "24"; # 定义鼠标光标的大小
-  };
 
   # XDG portal config for Hyprland
   xdg.portal = {

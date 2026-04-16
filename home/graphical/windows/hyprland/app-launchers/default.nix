@@ -36,6 +36,6 @@
       insensitive = true;
       gtk_dark = true;
     };
-    style = builtins.readFile ./assets/wofi/style.gtk.css;
+    style = builtins.readFile ./wofi/style.gtk.css;
   };
 }

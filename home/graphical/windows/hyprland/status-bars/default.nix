@@ -201,6 +201,6 @@
         #   };
       };
     };
-    style = builtins.readFile ./assets/waybar/style.gtk.css;
+    style = builtins.readFile ./waybar/style.gtk.css;
   };
 }

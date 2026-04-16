@@ -5,7 +5,7 @@
   ...
 }:
 {
-  # 蓝光配置
+  # 蓝光保护
   # https://wiki.hypr.land/Hypr-Ecosystem/hyprsunset/
   services.hyprsunset = {
     enable = true;

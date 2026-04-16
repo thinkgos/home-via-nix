@@ -5,7 +5,7 @@
   ...
 }:
 {
-  # 屏幕锁定
+  # 屏幕锁定 Catmao110!
   # https://wiki.hypr.land/Hypr-Ecosystem/hyprlock/
   # https://github.com/mahaveergurjar/Hyprlock-Dots
   programs.hyprlock = {
