@@ -29,7 +29,6 @@
   imports = [
     ./systemd.nix
     ./fonts.nix
-    ./gtk.nix
     ./programs.nix
     ./resources.nix
     ./terminal

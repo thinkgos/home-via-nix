@@ -7,6 +7,8 @@
 }:
 {
   imports = [
+    ./gtk.nix
+    ./pointer-cursor.nix
     ./i18n.nix
     ./email.nix
     ./screenshot.nix
