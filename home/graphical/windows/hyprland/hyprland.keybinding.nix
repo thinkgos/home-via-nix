@@ -35,7 +35,7 @@
       "$mod, E, exec, $fileManager" # 启动文件管理器
       "$mod, C, exec, qalculate-gtk" # 启动计算器
       "$mod, B, exec, $launchBrowser" # 启动浏览器
-      "$mod, semicolon, exec, $appLauncher" # 启动应用启动器
+      "$mod, slash, exec, $appLauncher" # 启动应用启动器
       "$mod ALT, C, exec, $pickColor" # 启动提取颜色
 
       # 布局

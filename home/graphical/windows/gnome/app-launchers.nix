@@ -13,6 +13,7 @@
       # man 5 wofi
       show = "drun";
       location = "center";
+      anchor = "center";
       width = "40%";
       height = "40%";
       halign = "fill";

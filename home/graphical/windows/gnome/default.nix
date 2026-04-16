@@ -8,6 +8,6 @@
   imports = [
     ./gnome-dconf.nix
     ./gnome-shell-extensions.nix
-    ./app-launchers
+    ./app-launchers.nix
   ];
 }

@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  customize,
   ...
 }:
 {
@@ -12,6 +13,6 @@
     size = 24;
     gtk.enable = true;
     x11.enable = true;
-    hyprcursor.enable = true;
+    hyprcursor.enable = customize.window == "hyprland";
   };
 }

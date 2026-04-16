@@ -119,9 +119,9 @@
     SDL_VIDEODRIVER = "wayland"; # 游戏及多媒体应用 使用 Wayland
     CLUTTER_BACKEND = "wayland"; # Clutter 框架应用 使用 Wayland
     # XDG
-    XDG_CURRENT_DESKTOP = "Hyprland";
+    XDG_CURRENT_DESKTOP = if customize.window == "hyprland" then "Hyprland" else "GNOME";
     XDG_SESSION_TYPE = "wayland"; # 系统级中间件和桌面环境 使用 Wayland
-    XDG_SESSION_DESKTOP = "Hyprland";
+    XDG_SESSION_DESKTOP = if customize.window == "hyprland" then "Hyprland" else "GNOME";
     # QT
     QT_AUTO_SCREEN_SCALE_FACTOR = 1;
     QT_QPA_PLATFORM = "wayland;xcb";

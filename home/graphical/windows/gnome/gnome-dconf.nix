@@ -115,9 +115,9 @@
       binding = "<Control>Print";
     };
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
-      name = "albert";
-      command = "albert toggle";
-      binding = "<Super>semicolon";
+      name = "app launchers";
+      command = "sh -c 'pkill wofi || wofi'";
+      binding = "<Super>slash";
     };
     "org/gnome/shell" = {
       # enabled-extensions = null;
