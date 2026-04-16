@@ -48,6 +48,7 @@
     hyprpicker # 颜色拾取器
     hyprsysteminfo # 系统信息工具
     qalculate-gtk # 计算器
+    hyprpwcenter # pipewire 控制中心
     hyprshutdown # 关机工具
     # nautilus # 文件管理器
     nemo-with-extensions # 文件管理器
