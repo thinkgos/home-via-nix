@@ -2,8 +2,8 @@
 
 基于`home-manager`的用户级配置管理, ansible 管理系统包和github应用. 开发环境使用`mise`进行管理, 本仓库不涉及开发环境的管理.
 
-- [Issue](ISSUES.md) 问题及解决方法
-- [Manual Install](MANUAL-INSTALL.md) 手动安装软件
+- [Issue](docs/system/issues.md) 问题及解决方法
+- [Manual Install](docs/system/manual-install.md) 手动安装软件
 
 ## 1. **前置条件**
 
@@ -14,7 +14,7 @@
 
 - `home-manager`通过`nix flakes`方式管理用户级配置.
 - [`ansible`](https://www.ansible.com) 管理系统包和github应用
-- 其它商业或特殊软件使用手动安装[Manual Install](MANUAL-INSTALL.md).
+- 其它商业或特殊软件使用手动安装[Manual Install](docs/system/manual-install.md).
 
 ## 2. 使用指南
 
