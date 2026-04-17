@@ -9,6 +9,8 @@
     ./hyprland.scripts.nix # 脚本配置
     ./hyprland.plugins.nix # 插件
     ./hyprland.keybinding.nix # 按键绑定
+    ./hyprland.workspace.nix # 工作空间
+    ./hyprland.window.nix # 窗口
   ];
 
   wayland.windowManager.hyprland = {
@@ -33,13 +35,6 @@
         gaps_out = 6;
         layout = "dwindle";
       };
-
-      workspace = [
-        "r[1-4], persistent:true"
-        "r[1-2], layout:dwindle"
-        "3, layout:dwindle"
-        "4, on-created-empty:$terminal"
-      ];
 
       layerrule = [
         "blur on, match:namespace wofi"
