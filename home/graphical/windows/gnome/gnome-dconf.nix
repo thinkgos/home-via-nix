@@ -32,6 +32,7 @@
       # 开启tiling-shell已覆盖
       toggle-tiled-left = mkEmptyArray type.string; # 分屏到左侧平铺窗口, 默认: <Super>Left
       toggle-tiled-right = mkEmptyArray type.string; # 分屏到右侧平铺窗口, 默认: <Super>Right
+      switch-monitor = [ "XF86Display" ];
     };
     # 主题
     "org/gnome/desktop/interface" = {
@@ -100,6 +101,7 @@
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
+        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/"
       ];
     };
     # 自定义快捷键
@@ -118,6 +120,11 @@
       name = "albert";
       command = "albert toggle";
       binding = "<Super>slash";
+    };
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3" = {
+      name = "ide";
+      command = "sh -c 'code'";
+      binding = "<Super>p";
     };
     "org/gnome/shell" = {
       # enabled-extensions = null;
