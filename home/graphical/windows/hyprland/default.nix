@@ -41,6 +41,7 @@
     ./wallpaper # 壁纸
     ./sunset # 蓝光保护
     ./clipboard # 剪贴板
+    ./window-switcher # 窗口切换器
   ];
 
   home.packages = with pkgs; [
