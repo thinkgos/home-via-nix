@@ -13,6 +13,7 @@
     ./password-store.nix
     ./email.nix
     ./screenshot.nix
+    ./resources
     ./shell
     ./editor
     ./devtools

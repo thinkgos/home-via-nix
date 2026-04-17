@@ -30,10 +30,9 @@
     ./systemd.nix
     ./fonts.nix
     ./programs.nix
-    ./resources
     ./terminal
   ]
-  ++ lib.optionals customize.graphics ./graphical;
+  ++ lib.optionals customize.graphics [ ./graphical ];
 
   targets.genericLinux = {
     enable = true;
