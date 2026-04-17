@@ -96,7 +96,6 @@ in
 
       # background
       background-opacity = 0.90;
-      background-blur-radius = 30;
 
       # cursor
       cursor-style = "bar";
