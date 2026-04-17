@@ -48,7 +48,7 @@
 | 交互式截图 | `PrtSc` | `PrtSc` | ✅ | `Print` | ✅ |
 | 交互式录屏 | `Alt` + `Shift` + `Tab` | | ◻️ | | ◻️ |
 | 截图 | `Shift` + `PrtSc` | `Shift` + `PrtSc` | ✅ | `Shift` + `Print` | ✅ |
-| 交互式截图+标注 | ❌ | `Ctrl` + `PrtSc` | ✅ | `Ctrl` + `Print` | ✅ |
+| 交互式截图+标注 | ❌ | `Super` + `PrtSc` | ✅ | `Super` + `Print` | ✅ |
 
 ## 打字
 

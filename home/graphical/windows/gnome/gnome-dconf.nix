@@ -112,7 +112,7 @@
       name = "flameshot";
       # command =  "sh -c 'flameshot gui --raw | wl-copy'";
       command = "sh -c 'flameshot gui < /dev/null'";
-      binding = "<Control>Print";
+      binding = "<Super>Print";
     };
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
       name = "albert";

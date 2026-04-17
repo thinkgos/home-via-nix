@@ -34,7 +34,7 @@
       # 交互式截图
       ", Print, exec, blast-screenshot region"
       # 交互式截图+标注
-      "Ctrl, Print, exec, blast-screenshot annotate"
+      "$mod, Print, exec, blast-screenshot annotate"
 
       # 应用
       "$mod, T, exec, $terminal" # 启动终端
