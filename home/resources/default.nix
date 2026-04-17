@@ -7,11 +7,11 @@
 {
   home.file = {
     "${config.xdg.dataHome}/wallpapers" = {
-      source = ./assets/wallpapers;
+      source = ./wallpapers;
       recursive = true;
     };
     "${config.xdg.dataHome}/backgrounds" = {
-      source = ./assets/wallpapers;
+      source = ./wallpapers;
       recursive = true;
     };
   };
