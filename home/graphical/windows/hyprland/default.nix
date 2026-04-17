@@ -68,4 +68,10 @@
     ];
     configPackages = [ pkgs.hyprland ];
   };
+
+  # BUG: https://github.com/nix-community/home-manager/issues/4922
+  home.file.".config/systemd/user/xdg-desktop-portal-hyprland.service".source =
+    "${pkgs.xdg-desktop-portal-hyprland}/share/systemd/user/xdg-desktop-portal-hyprland.service";
+  home.file.".config/systemd/user/xdg-desktop-portal-gtk.service".source =
+    "${pkgs.xdg-desktop-portal-gtk}/share/systemd/user/xdg-desktop-portal-gtk.service";
 }

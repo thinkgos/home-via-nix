@@ -25,7 +25,7 @@ in
 
         # GNOME 不支持wlr-layer-shell
         # warning(winproto_wayland): your compositor does not support the wlr-layer-shell protocol; disabling quick terminal
-        # "global:ctrl+period=toggle_quick_terminal"
+        # "global:super+enter=toggle_quick_terminal"
 
         # font size
         "ctrl+shift+minus=decrease_font_size:2" # 减少字体大小
