@@ -10,6 +10,6 @@
     "r[1-4], persistent:true"
     "r[1-2], layout:dwindle"
     "3, layout:dwindle"
-    "4, on-created-empty:$terminal"
+    "4, on-created-empty:$launchTerminal"
   ];
 }
