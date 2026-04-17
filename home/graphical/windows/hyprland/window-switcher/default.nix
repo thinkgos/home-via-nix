@@ -26,12 +26,7 @@
           hide_filtered = false;
           exclude_special_workspaces = "";
           launcher = {
-            default_terminal = [
-              "ghostty"
-              "kitty"
-              "wezterm"
-              "alacritty"
-            ];
+            default_terminal = "ghostty";
             launch_modifier = "ctrl";
             width = 650;
             max_items = 5;

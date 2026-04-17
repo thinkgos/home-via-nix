@@ -9,12 +9,17 @@
   # https://wiki.hypr.land/Configuring/Binds/
   wayland.windowManager.hyprland.settings = {
     "$mod" = "SUPER";
-    "$terminal" = "ghostty";
-    "$fileManager" = "nemo";
+    "$launchTerminal" = "ghostty";
+    "$launchFileManager" = "nemo";
+    "$launchCalculator" = "pkill qalculate-gtk || qalculate-gtk";
     "$launchBrowser" = "xdg-open https://google.com";
+    "$launchIde" = "code";
     "$appLauncher" = "pkill wofi || wofi";
     "$lockScreen" = "hyprlock";
     "$pickColor" = "hyprpicker -a -n -s 5 -u 60";
+    # NOTE:
+    # `Super`: 显示工作区和应用启动器概览(hyprshell支持)
+    # `Alt` + `Tab`: 显示工作区概览(hyprshell支持)
     bind = [
       # 系统 注销中
       "$mod, L, exec, $lockScreen" # 锁定屏幕
@@ -24,7 +29,6 @@
       # "$mod, J, togglesplit" # Dwindle: 切换横纵分割
       # "$mod, G, togglegroup" # 窗口成组
       # "$mod, L, lockactivegroup, toggle" # 锁定组
-      # "$mod, , hyprexpo:expo, toggle" # 显示概览
 
       # 截图
       # 活动窗口截图
@@ -37,10 +41,11 @@
       "$mod, Print, exec, blast-screenshot annotate"
 
       # 应用
-      "$mod, T, exec, $terminal" # 启动终端
-      "$mod, E, exec, $fileManager" # 启动文件管理器
-      "$mod, C, exec, qalculate-gtk" # 启动计算器
+      "$mod, T, exec, $launchTerminal" # 启动终端
+      "$mod, E, exec, $launchFileManager" # 启动文件管理器
+      "$mod, C, exec, $launchCalculator" # 启动计算器
       "$mod, B, exec, $launchBrowser" # 启动浏览器
+      "$mod, P, exec, $launchIde" # 启动IDE
       "$mod, slash, exec, $appLauncher" # 启动应用启动器
       "$mod ALT, C, exec, $pickColor" # 启动提取颜色
 
