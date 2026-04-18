@@ -31,7 +31,7 @@
   # DesktopNames=Hyprland
   # EOF'
   imports = [
-    ./hyprland.nix # Hyprland配置
+    ./hypr-config # Hyprland配置
     ./settings-center # 设置中心
     ./authentication-agent # 身份验证代理
     ./app-launchers # 应用启动器
@@ -44,7 +44,6 @@
     ./clipboard # 剪贴板
     ./window-switcher # 窗口切换器
     ./scripts # 脚本配置
-    ./hypr-config # Hyprland配置
   ];
 
   home.packages = with pkgs; [

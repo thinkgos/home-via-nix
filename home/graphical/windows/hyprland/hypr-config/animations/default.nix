@@ -9,7 +9,7 @@
   # https://wiki.hypr.land/Configuring/Animations/
   # https://github.com/LinuxBeginnings/Hyprland-Dots/tree/main/config/hypr/animations
   wayland.windowManager.hyprland.settings.animations = {
-    enable = true;
+    enabled = true;
     bezier = [
       "wind, 0.05, 0.9, 0.1, 1.05"
       "winIn, 0.1, 1.1, 0.1, 1.1"

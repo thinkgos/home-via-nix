@@ -6,7 +6,7 @@
 }:
 {
   imports = [
-    ./plugins # 插件
+    # ./plugins # 插件
     ./keybinding # 按键绑定
     ./workspace # 工作空间
     ./window # 窗口
@@ -32,12 +32,12 @@
         border_size = 2;
         gaps_in = 2;
         gaps_out = 6;
-        col.inactive_border = "rgba(595959aa)";
-        col.active_border = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+        "col.inactive_border" = "rgba(595959aa)";
+        "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
         layout = "dwindle";
       };
       decoration = {
-        rounding = 5;
+        rounding = 10;
         active_opacity = 0.8;
         inactive_opacity = 0.9;
         fullscreen_opacity = 0.8;
