@@ -50,7 +50,7 @@
         # 任务栏
         { package = gnomeExtensions.dash-to-dock; }
         # 隐藏顶部栏
-        { package = gnomeExtensions.hide-top-bar; }
+        # { package = gnomeExtensions.hide-top-bar; }
         # 仿Compiz的魔法灯效果
         { package = gnomeExtensions.compiz-alike-magic-lamp-effect; }
         # 仿Compiz的窗口特效
@@ -257,14 +257,14 @@
       style-dash-to-dock = 0;
       unblur-in-overview = false;
     };
-    "org/gnome/shell/extensions/hidetopbar" = {
-      enable-active-window = false;
-      enable-intellihide = false;
-      mouse-sensitive = true;
-      mouse-sensitive-fullscreen-window = false;
-      pressure-threshold = 100;
-      pressure-timeout = 800;
-    };
+    # "org/gnome/shell/extensions/hidetopbar" = {
+    #   enable-active-window = false;
+    #   enable-intellihide = false;
+    #   mouse-sensitive = true;
+    #   mouse-sensitive-fullscreen-window = false;
+    #   pressure-threshold = 100;
+    #   pressure-timeout = 800;
+    # };
     "org/gnome/shell/extensions/blur-my-shell/dash-to-panel" = {
       blur-original-panel = false;
     };
