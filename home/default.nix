@@ -32,7 +32,10 @@
     ./programs.nix
     ./terminal
   ]
-  ++ lib.optionals customize.graphics [ ./graphical ];
+  ++ lib.optionals customize.graphics [
+    ./graphical
+    ./fun
+  ];
 
   targets.genericLinux = {
     enable = true;

@@ -43,6 +43,8 @@
     ./sunset # 蓝光保护
     ./clipboard # 剪贴板
     ./window-switcher # 窗口切换器
+    ./scripts # 脚本配置
+    ./hypr-config # Hyprland配置
   ];
 
   home.packages = with pkgs; [
