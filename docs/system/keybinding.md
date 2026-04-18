@@ -13,18 +13,18 @@
 
 | 功能 | Gnome | Gnome(调整) | Status | Hyprland | Status |
 | ------ | ----------- | ------- | ---------- | ---------- | ---------- |
-| 打开快速设置菜单 | `Super` + `S` | | ◻️ | | ◻️ |
+| 打开快速设置菜单 | `Super` + `S` | 🚫 | ✅ | ❌ | ❌ |
 | 关机 | 🚫 | | ◻️ | | ◻️ |
 | 还原键盘快捷键 | `Super` + `Esc` | | ◻️ | | ◻️ |
 | 聚焦到活动通知 | `Super` + `N` | | ◻️ | | ◻️ |
-| 锁定屏幕 | `Super` + `L` | `Super` + `L` | ✅ | | `Super` + `L` ✅ |
-| 显示概览 | 🚫 (`Super`) | 🚫 (`Super`) | ✅(无需配置) | `Super` + `A` | ✅ (`hyprshell`) |
-| 显示全部应用 | `Super` + `A` | | ◻️ | | ◻️ |
-| 显示通知列表 | `Super` + `V` | | 🚫 | | ◻️ |
+| 锁定屏幕 | `Super` + `L` | `Super` + `L` | ✅ | `Super` + `L` | ✅ |
+| 显示概览 | 🚫 (`Super`) | `Super`(系统级)<br />`Super` + `A` | ✅ | `Super` + `A` | ✅ (`hyprshell`) |
+| 显示全部应用 | `Super` + `A` | 🚫 | ✅ | ❌ | ❌ |
+| 显示通知列表 | `Super` + `V` | 🚫 | ✅ | ❌ | ❌ |
 | 显示运行命令提示符 | `Alt` + `F2` | | ◻️ | | ◻️ |
 | 重启 | 🚫 | | ◻️ | | ◻️ |
 | 注销 | `Ctrl` + `Alt` + `Delete` | `Ctrl` + `Alt` + `Delete` | ✅ | `Ctrl` + `Alt` + `Delete` | ✅ |
-| 退出桌面 | ❌ | | ◻️ | | `Super` + `Alt` + M ✅ |
+| 退出桌面 | ❌ | ❌ | ❌ | `Super` + `Alt` + `M` | ✅ |
 
 ## 声音和媒体
 
@@ -88,11 +88,11 @@
 | 将窗口移至工作区2 | 🚫 | `Super` + `Shift` + `2` | ✅ | `Super` + `Shift` + `2` | ✅ |
 | 将窗口移至工作区3 | 🚫 | `Super` + `Shift` + `3` | ✅ | `Super` + `Shift` + `3` | ✅ |
 | 将窗口移至工作区4 | 🚫 | `Super` + `Shift` + `4` | ✅ | `Super` + `Shift` + `4` | ✅ |
-| 将窗口移至工作区5 | ❌ | | ◻️ | `Super` + `Shift` + `5` | ✅ |
-| 将窗口移至工作区6 | ❌ | | ◻️ | `Super` + `Shift` + `6` | ✅ |
-| 将窗口移至工作区7 | ❌ | | ◻️ | `Super` + `Shift` + `7` | ✅ |
-| 将窗口移至工作区8 | ❌ | | ◻️ | `Super` + `Shift` + `8` | ✅ |
-| 将窗口移至工作区9 | ❌ | | ◻️ | `Super` + `Shift` + `9` | ✅ |
+| 将窗口移至工作区5 | ❌ | ❌ | ❌ | `Super` + `Shift` + `5` | ✅ |
+| 将窗口移至工作区6 | ❌ | ❌ | ❌ | `Super` + `Shift` + `6` | ✅ |
+| 将窗口移至工作区7 | ❌ | ❌ | ❌ | `Super` + `Shift` + `7` | ✅ |
+| 将窗口移至工作区8 | ❌ | ❌ | ❌ | `Super` + `Shift` + `8` | ✅ |
+| 将窗口移至工作区9 | ❌ | ❌ | ❌ | `Super` + `Shift` + `9` | ✅ |
 | 将窗口移至最后一个工作区 | `Super` + `Shift` + `End` | `Super` + `Shift` + `End` | ✅ | `Super` + `Shift` + `End` | ✅ |
 | 将窗口左移一个工作区 | `Super` + `Shift` + `PgUp` | `Super` + `Shift` + `Prior` | ✅ | `Super` + `Shift` + `Prior` | ✅ |
 | 将窗口右移一个工作区 | `Super` + `Shift` + `PgDown` | `Super` + `Shift` + `Next` | ✅ | `Super` + `Shift` + `Next` | ✅ |
@@ -101,11 +101,11 @@
 | 切换到工作区2 | 🚫 | `Super` + `2` | ✅ | `Super` + `2` | ✅ |
 | 切换到工作区3 | 🚫 | `Super` + `3` | ✅ | `Super` + `3` | ✅ |
 | 切换到工作区4 | 🚫 | `Super` + `4` | ✅ | `Super` + `4` | ✅ |
-| 切换到工作区5 | ❌ | | ◻️ | `Super` + `5` | ✅ |
-| 切换到工作区6 | ❌ | | ◻️ | `Super` + `6` | ✅ |
-| 切换到工作区7 | ❌ | | ◻️ | `Super` + `7` | ✅ |
-| 切换到工作区8 | ❌ | | ◻️ | `Super` + `8` | ✅ |
-| 切换到工作区9 | ❌ | | ◻️ | `Super` + `9` | ✅ |
+| 切换到工作区5 | ❌ | ❌ | ❌ | `Super` + `5` | ✅ |
+| 切换到工作区6 | ❌ | ❌ | ❌ | `Super` + `6` | ✅ |
+| 切换到工作区7 | ❌ | ❌ | ❌ | `Super` + `7` | ✅ |
+| 切换到工作区8 | ❌ | ❌ | ❌ | `Super` + `8` | ✅ |
+| 切换到工作区9 | ❌ | ❌ | ❌ | `Super` + `9` | ✅ |
 | 切换到最后一个工作区 | `Super` + `End` | `Super` + `End` | ✅ | `Super` + `End` | ✅ |
 | 切换到左侧工作区 | `Super` + `PgUp` | `Super` + `Prior` | ✅ | `Super` + `Prior` | ✅ |
 | 切换到右侧工作区 | `Super` + `PgDown` | `Super` + `Next` | ✅ | `Super` + `Next` | ✅ |
@@ -139,7 +139,7 @@
 | 在位于所有或仅一个工作区的窗口间切换 | 🚫 | | | | ◻️ |
 | 最大化窗口 | `Super` + `Up` | ❌ | ✅(tilingshell覆盖) | ❌ | ✅ |
 | 取消最大化窗口 | ❌ | ❌ | ✅(tilingshell覆盖) | ❌ | ✅ |
-| 切换浮动窗口 | ❌ | | ◻️ | `Super` + `V` | ✅ |
+| 切换浮动窗口 | ❌ | ❌ | ❌ | `Super` + `V` | ✅ |
 | 移动聚焦到左边 | ❌ | `Super` + `Left` | ✅(tilingshell) | `Super` + `Left` | ✅ |
 | 移动聚焦到右边 | ❌ | `Super` + `Right` | ✅(tilingshell) | `Super` + `Right` | ✅ |
 | 移动聚焦到上边 | ❌ | `Super` + `Up` | ✅(tilingshell) | `Super` + `Up` | ✅ |

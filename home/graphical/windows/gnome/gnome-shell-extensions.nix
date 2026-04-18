@@ -81,6 +81,8 @@
       switch-to-application-4 = mkEmptyArray type.string;
       toggle-message-tray = mkEmptyArray type.string;
       toggle-quick-settings = mkEmptyArray type.string;
+      toggle-application-view = mkEmptyArray type.string;
+      toggle-overview = [ "<Super>a" ];
       # screenshot = ["<Shift>Print"];                      # 截图, 默认: <Shift>Print
       # screenshot-window = ["<Alt>Print"];                 # 窗口截图, 默认: <Alt>Print
       # show-screenshot-ui = ["Print"];                     # 交互式截图, 默认: Print
