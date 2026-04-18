@@ -21,7 +21,7 @@
         items_per_row = 5;
         overview = {
           modifier = "super";
-          key = "Super_L";
+          key = "a";
           filter_by = [ ];
           hide_filtered = false;
           exclude_special_workspaces = "";

@@ -18,14 +18,13 @@
 | 还原键盘快捷键 | `Super` + `Esc` | | ◻️ | | ◻️ |
 | 聚焦到活动通知 | `Super` + `N` | | ◻️ | | ◻️ |
 | 锁定屏幕 | `Super` + `L` | `Super` + `L` | ✅ | | `Super` + `L` ✅ |
-| 显示概览 | 🚫 (`Super`) | 🚫 (`Super`) | ✅(无需配置) | `Super` | ✅ (`hyprshell`) |
+| 显示概览 | 🚫 (`Super`) | 🚫 (`Super`) | ✅(无需配置) | `Super` + `A` | ✅ (`hyprshell`) |
 | 显示全部应用 | `Super` + `A` | | ◻️ | | ◻️ |
 | 显示通知列表 | `Super` + `V` | | 🚫 | | ◻️ |
 | 显示运行命令提示符 | `Alt` + `F2` | | ◻️ | | ◻️ |
 | 重启 | 🚫 | | ◻️ | | ◻️ |
 | 注销 | `Ctrl` + `Alt` + `Delete` | `Ctrl` + `Alt` + `Delete` | ✅ | `Ctrl` + `Alt` + `Delete` | ✅ |
 | 退出桌面 | ❌ | | ◻️ | | `Super` + `Alt` + M ✅ |
-| 显示概览 | ❌ | ❌ | ✅ | `Alt` + `Tab` | ✅ (`hyprshell`) |
 
 ## 声音和媒体
 
@@ -111,7 +110,7 @@
 | 切换到左侧工作区 | `Super` + `PgUp` | `Super` + `Prior` | ✅ | `Super` + `Prior` | ✅ |
 | 切换到右侧工作区 | `Super` + `PgDown` | `Super` + `Next` | ✅ | `Super` + `Next` | ✅ |
 | 切换系统控制 | `Ctrl` + `Alt` + `Tab` | | ◻️ | | ◻️ |
-| 切换应用程序 | `Super` + `Tab` | 🚫 | ✅ | ❌ | ✅ |
+| 切换应用程序 | `Super` + `Tab` | `Alt` + `Tab` | ✅ | `Alt` + `Tab` | ✅ (`hyprshell`) |
 | 隐藏所有窗口 | 🚫 | | ◻️ | | ◻️ |
 | 在应用程序窗口间直接移动集点 | `Alt` + F6 | | ◻️ | | ◻️ |
 | 在应用程序的窗口之间切换窗口 | `Super` + ` | | ◻️ | | ◻️ |

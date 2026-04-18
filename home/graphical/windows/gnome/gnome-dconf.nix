@@ -46,7 +46,7 @@
     "org/gnome/desktop/wm/keybindings" = {
       # unmaximize = mkEmptyArray type.string; # 取消最大化窗口(tiling-shell覆盖)
       # maximize = mkEmptyArray type.string; # 最大化窗口(tiling-shell覆盖)
-      switch-applications = mkEmptyArray type.string;
+      switch-applications = [ "<Alt>Tab" ];
       switch-applications-backward = mkEmptyArray type.string;
 
       switch-windows = [ "<Super>Tab" ];
