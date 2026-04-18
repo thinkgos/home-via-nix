@@ -29,9 +29,8 @@
       workspaces-only-on-primary = true; # 工作区只作用于主屏目
     };
     "org/gnome/mutter/keybindings" = {
-      # 开启tiling-shell已覆盖
-      toggle-tiled-left = mkEmptyArray type.string; # 分屏到左侧平铺窗口, 默认: <Super>Left
-      toggle-tiled-right = mkEmptyArray type.string; # 分屏到右侧平铺窗口, 默认: <Super>Right
+      # toggle-tiled-left = mkEmptyArray type.string; # 分屏到左侧平铺窗口(tiling-shell覆盖)
+      # toggle-tiled-right = mkEmptyArray type.string; # 分屏到右侧平铺窗口(tiling-shell覆盖)
       switch-monitor = [ "XF86Display" ];
     };
     # 主题
@@ -45,9 +44,8 @@
       monospace-font-name = "JetBrainsMono Nerd Font Mono 11";
     };
     "org/gnome/desktop/wm/keybindings" = {
-      # 开启tiling-shell已覆盖
-      unmaximize = mkEmptyArray type.string;
-      maximize = mkEmptyArray type.string;
+      # unmaximize = mkEmptyArray type.string; # 取消最大化窗口(tiling-shell覆盖)
+      # maximize = mkEmptyArray type.string; # 最大化窗口(tiling-shell覆盖)
       switch-applications = mkEmptyArray type.string;
       switch-applications-backward = mkEmptyArray type.string;
 

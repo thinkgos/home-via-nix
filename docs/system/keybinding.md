@@ -7,6 +7,8 @@
 - 未配置: ◻️
 - 已配置: ✅
 
+NOTE: 由于GNOME不是平铺.
+
 ## 系统
 
 | 功能 | Gnome | Gnome(调整) | Status | Hyprland | Status |
@@ -121,8 +123,8 @@
 | 功能 | Gnome | Gnome(调整) | Status | Hyprland | Status |
 | ------ | ----------- | ------- | ---------- | ---------- | ---------- |
 | 垂直最大化窗口 | 🚫 | | ◻️ | ◻️ | |
-| 分屏到右侧 | `Super` + `Right` | `Super` + `Alt` + `Right` | ✅(tilingshell) | ❌ | ◻️ |
-| 分屏到左侧 | `Super` + `Left` | `Super` + `Alt` + `Left` | ✅(tilingshell) | ❌ | ◻️ |
+| 分屏到右侧 | `Super` + `Right` | `Super` `Right` | ✅(tilingshell) | ❌ | ◻️ |
+| 分屏到左侧 | `Super` + `Left` | `Super` `Left` | ✅(tilingshell) | ❌ | ◻️ |
 | 改变窗口大小 | `Alt` + `F8` | | ◻️ | | ◻️ |
 | 关闭窗口 | `Alt` + `F4` | `Super` + `Q` | ✅ | `Super` + `Q` | ✅ |
 | 恢复窗口 | `Super` + `Down` | | ◻️ | | ◻️ |
@@ -136,16 +138,17 @@
 | 移动窗口 | `Alt` + `F7` | | ◻️ | | ◻️ |
 | 隐藏窗口 | `Super` + `H` | | ◻️ | | ◻️ |
 | 在位于所有或仅一个工作区的窗口间切换 | 🚫 | | | | ◻️ |
-| 最大化窗口 | `Super` + `Up` | 🚫 | ✅ | | ◻️ |
+| 最大化窗口 | `Super` + `Up` | `Super` + `Up` | ✅(tilingshell) | ❌ | ✅ |
+| 取消最大化窗口 | ❌ | `Super` + `Down` | ✅(tilingshell) | ❌ | ✅ |
 | 切换浮动窗口 | ❌ | | ◻️ | `Super` + `V` | ✅ |
-| 移动聚焦到左边 | ❌ | `Super` + `Left` | ✅ | `Super` + `Left` | ✅ |
-| 移动聚焦到右边 | ❌ | `Super` + `Right` | ✅ | `Super` + `Right` | ✅ |
-| 移动聚焦到上边 | ❌ | `Super` + `Up` | ✅ | `Super` + `Up` | ✅ |
-| 移动聚焦到下边 | ❌ | `Super` + `Down` | ✅ | `Super` + `Down` | ✅ |
-| 移动活跃窗口到左边 | ❌ | `Super` + `Shift` + `Left` | ✅ | `Super` + `Shift` + `Left` | ✅ |
-| 移动活跃窗口到右边 | ❌ | `Super` + `Shift` + `Right` | ✅ | `Super` + `Shift` + `Right` | ✅ |
-| 移动活跃窗口到上边 | ❌ | `Super` + `Shift` + `Up` | ✅ | `Super` + `Shift` + `Up` | ✅ |
-| 移动活跃窗口到下边 | ❌ | `Super` + `Shift` + `Down` | ✅ | `Super` + `Shift` + `Down` | ✅ |
+| 移动聚焦到左边 | ❌ | ❌ | ✅ | `Super` + `Left` | ✅ |
+| 移动聚焦到右边 | ❌ | ❌ | ✅ | `Super` + `Right` | ✅ |
+| 移动聚焦到上边 | ❌ | ❌ | ✅ | `Super` + `Up` | ✅ |
+| 移动聚焦到下边 | ❌ | ❌ | ✅ | `Super` + `Down` | ✅ |
+| 移动活跃窗口到左边 | ❌ | `Super` + `Shift` + `Left` | ✅(tilingshell) | `Super` + `Shift` + `Left` | ✅ |
+| 移动活跃窗口到右边 | ❌ | `Super` + `Shift` + `Right` | ✅(tilingshell) | `Super` + `Shift` + `Right` | ✅ |
+| 移动活跃窗口到上边 | ❌ | `Super` + `Shift` + `Up` | ✅(tilingshell) | `Super` + `Shift` + `Up` | ✅ |
+| 移动活跃窗口到下边 | ❌ | `Super` + `Shift` + `Down` | ✅(tilingshell) | `Super` + `Shift` + `Down` | ✅ |
 | 拖拽窗口 | ❌ | `Super` + `mouse:272`(鼠标左键) | ✅ | `Super` + `mouse:272`(鼠标左键) | ✅ |
 | 缩放窗口 | ❌ | | ◻️ | `Super` + `mouse:273`(鼠标右键) | ✅ |
 
