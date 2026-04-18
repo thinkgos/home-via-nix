@@ -68,6 +68,24 @@
   };
 
   dconf.settings = with lib.hm.gvariant; {
+    "org/gnome/shell" = {
+      # enabled-extensions = null;
+      disabled-extensions = [
+        pkgs.gnomeExtensions.open-bar.extensionUuid
+      ];
+    };
+    "org/gnome/shell/keybindings" = {
+      switch-to-application-1 = mkEmptyArray type.string;
+      switch-to-application-2 = mkEmptyArray type.string;
+      switch-to-application-3 = mkEmptyArray type.string;
+      switch-to-application-4 = mkEmptyArray type.string;
+      toggle-message-tray = mkEmptyArray type.string;
+      toggle-quick-settings = mkEmptyArray type.string;
+      # screenshot = ["<Shift>Print"];                      # 截图, 默认: <Shift>Print
+      # screenshot-window = ["<Alt>Print"];                 # 窗口截图, 默认: <Alt>Print
+      # show-screenshot-ui = ["Print"];                     # 交互式截图, 默认: Print
+      # show-screen-recording-ui = ["<Ctrl><Shift><Alt>R"]; # 交互式屏幕录制, 默认： <Ctrl><Shift><Alt>R
+    };
     "org/gnome/shell/extensions/user-theme" = {
       name = "WhiteSur-Dark";
     };
@@ -122,6 +140,7 @@
     };
 
     # 平铺窗口扩展配置
+    # 不支持多组合按键, 比如
     "org/gnome/shell/extensions/tilingshell" = {
       enable-autotiling = false;
       enable-window-border = false;
@@ -130,7 +149,7 @@
       inner-gaps = mkUint32 2;
       layouts-json = ''[{"id":"Layout 1","tiles":[{"x":0,"y":0,"width":0.5,"height":1,"groups":[2]},{"x":0.5,"y":0,"width":0.49999999999999994,"height":0.5,"groups":[4,2]},{"x":0.5,"y":0.5,"width":0.49999999999999994,"height":0.49999999999999994,"groups":[4,2]}]},{"id":"Layout 2","tiles":[{"x":0,"y":0,"width":0.49947916666666664,"height":1,"groups":[2]},{"x":0.49947916666666664,"y":0,"width":0.5005208333333333,"height":1,"groups":[2]}]},{"id":"Layout 3","tiles":[{"x":0,"y":0,"width":0.33,"height":1,"groups":[1]},{"x":0.33,"y":0,"width":0.67,"height":1,"groups":[1]}]},{"id":"Layout 4","tiles":[{"x":0,"y":0,"width":0.5,"height":0.5,"groups":[1,2]},{"x":0.5,"y":0,"width":0.5000000000000014,"height":0.5,"groups":[3,1]},{"x":0,"y":0.5,"width":0.5,"height":0.49999999999999994,"groups":[2,1]},{"x":0.5,"y":0.5,"width":0.5000000000000014,"height":0.5,"groups":[3,1]}]}]'';
       outer-gaps = mkUint32 2;
-      overridden-settings = ''{"org.gnome.mutter.keybindings":{"toggle-tiled-right":"['<Super>Right']","toggle-tiled-left":"['<Super>Left']"},"org.gnome.desktop.wm.keybindings":{"maximize":"['<Super>Up']","unmaximize":"['<Super>Down', '<Alt>F5']"},"org.gnome.mutter":{"edge-tiling":"true"}}'';
+      overridden-settings = ''{"org.gnome.mutter.keybindings":{"toggle-tiled-right":"['<Super><Shift>Right']","toggle-tiled-left":"['<Super><Shift>Left']"},"org.gnome.desktop.wm.keybindings":{"maximize":"['<Super><Shift>Up']","unmaximize":"['<Super><Shift>Down']"},"org.gnome.mutter":{"edge-tiling":"true"}}'';
       quarter-tiling-threshold = mkUint32 30;
       selected-layouts = [
         [
@@ -153,10 +172,10 @@
       window-use-custom-border-color = false;
       focus-window-prev = [ "<Super>bracketleft" ];
       focus-window-next = [ "<Super>bracketright" ];
-      # focus-window-down = [ "<Super>Down" ];
-      # focus-window-left = [ "<Super>Left" ];
-      # focus-window-right = [ "<Super>Right" ];
-      # focus-window-up = [ "<Super>Up" ];
+      focus-window-down = [ "<Super>Down" ];
+      focus-window-left = [ "<Super>Left" ];
+      focus-window-right = [ "<Super>Right" ];
+      focus-window-up = [ "<Super>Up" ];
       move-window-down = [ "<Super><Shift>Down" ];
       move-window-left = [ "<Super><Shift>Left" ];
       move-window-right = [ "<Super><Shift>Right" ];

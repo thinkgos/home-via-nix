@@ -7,7 +7,7 @@
 - 未配置: ◻️
 - 已配置: ✅
 
-NOTE: 由于GNOME不是平铺.
+**NOTE**: 由于GNOME不是平铺, 某些按键绑定不能完全一致.
 
 ## 系统
 
@@ -123,8 +123,8 @@ NOTE: 由于GNOME不是平铺.
 | 功能 | Gnome | Gnome(调整) | Status | Hyprland | Status |
 | ------ | ----------- | ------- | ---------- | ---------- | ---------- |
 | 垂直最大化窗口 | 🚫 | | ◻️ | ◻️ | |
-| 分屏到右侧 | `Super` + `Right` | `Super` `Right` | ✅(tilingshell) | ❌ | ◻️ |
-| 分屏到左侧 | `Super` + `Left` | `Super` `Left` | ✅(tilingshell) | ❌ | ◻️ |
+| 分屏到右侧 | `Super` + `Right` | 🚫 | ✅(tilingshell覆盖) | ❌ | ◻️ |
+| 分屏到左侧 | `Super` + `Left` | 🚫 | ✅(tilingshell覆盖) | ❌ | ◻️ |
 | 改变窗口大小 | `Alt` + `F8` | | ◻️ | | ◻️ |
 | 关闭窗口 | `Alt` + `F4` | `Super` + `Q` | ✅ | `Super` + `Q` | ✅ |
 | 恢复窗口 | `Super` + `Down` | | ◻️ | | ◻️ |
@@ -138,13 +138,13 @@ NOTE: 由于GNOME不是平铺.
 | 移动窗口 | `Alt` + `F7` | | ◻️ | | ◻️ |
 | 隐藏窗口 | `Super` + `H` | | ◻️ | | ◻️ |
 | 在位于所有或仅一个工作区的窗口间切换 | 🚫 | | | | ◻️ |
-| 最大化窗口 | `Super` + `Up` | `Super` + `Up` | ✅(tilingshell) | ❌ | ✅ |
-| 取消最大化窗口 | ❌ | `Super` + `Down` | ✅(tilingshell) | ❌ | ✅ |
+| 最大化窗口 | `Super` + `Up` | ❌ | ✅(tilingshell覆盖) | ❌ | ✅ |
+| 取消最大化窗口 | ❌ | ❌ | ✅(tilingshell覆盖) | ❌ | ✅ |
 | 切换浮动窗口 | ❌ | | ◻️ | `Super` + `V` | ✅ |
-| 移动聚焦到左边 | ❌ | ❌ | ✅ | `Super` + `Left` | ✅ |
-| 移动聚焦到右边 | ❌ | ❌ | ✅ | `Super` + `Right` | ✅ |
-| 移动聚焦到上边 | ❌ | ❌ | ✅ | `Super` + `Up` | ✅ |
-| 移动聚焦到下边 | ❌ | ❌ | ✅ | `Super` + `Down` | ✅ |
+| 移动聚焦到左边 | ❌ | `Super` + `Left` | ✅(tilingshell) | `Super` + `Left` | ✅ |
+| 移动聚焦到右边 | ❌ | `Super` + `Right` | ✅(tilingshell) | `Super` + `Right` | ✅ |
+| 移动聚焦到上边 | ❌ | `Super` + `Up` | ✅(tilingshell) | `Super` + `Up` | ✅ |
+| 移动聚焦到下边 | ❌ | `Super` + `Down` | ✅(tilingshell) | `Super` + `Down` | ✅ |
 | 移动活跃窗口到左边 | ❌ | `Super` + `Shift` + `Left` | ✅(tilingshell) | `Super` + `Shift` + `Left` | ✅ |
 | 移动活跃窗口到右边 | ❌ | `Super` + `Shift` + `Right` | ✅(tilingshell) | `Super` + `Shift` + `Right` | ✅ |
 | 移动活跃窗口到上边 | ❌ | `Super` + `Shift` + `Up` | ✅(tilingshell) | `Super` + `Shift` + `Up` | ✅ |
