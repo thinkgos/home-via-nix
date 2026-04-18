@@ -7,9 +7,13 @@
 }:
 {
   imports = [
+    ./gtk.nix
+    ./pointer-cursor.nix
     ./i18n.nix
+    ./password-store.nix
     ./email.nix
     ./screenshot.nix
+    ./resources
     ./shell
     ./editor
     ./devtools
@@ -33,7 +37,9 @@
     # wireshark       # 网络分析工具, https://www.wireshark.org
     # vnc-viewer      # VNC客户端, https://www.realvnc.com/en/connect/download/viewer/
 
-    grim # 截图工具, 配合flameshot使用
+    zenity # 用于命令行或脚本弹出对话框
+    slurp # wayland区域选择
+    wl-clipboard # wayland剪贴板工具
     localsend # 局域网文件传输工具
     mission-center # 监控您的CPU,内存,磁盘,网络和GPU使用情况
     vlc # 多媒体播放器

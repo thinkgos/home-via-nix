@@ -9,15 +9,21 @@
   # https://wiki.hypr.land/Configuring/Binds/
   wayland.windowManager.hyprland.settings = {
     "$mod" = "SUPER";
-    "$terminal" = "ghostty";
-    "$fileManager" = "nautilus";
+    "$launchTerminal" = "ghostty";
+    "$launchFileManager" = "nemo";
+    "$launchCalculator" = "pkill qalculate-gtk || qalculate-gtk";
     "$launchBrowser" = "xdg-open https://google.com";
+    "$launchIde" = "code";
     "$appLauncher" = "pkill wofi || wofi";
     "$lockScreen" = "hyprlock";
     "$pickColor" = "hyprpicker -a -n -s 5 -u 60";
+    # NOTE:
+    # `Super`: 显示工作区和应用启动器概览(hyprshell支持)
+    # `Alt` + `Tab`: 显示工作区概览(hyprshell支持)
     bind = [
-      # 系统
+      # 系统 注销中
       "$mod, L, exec, $lockScreen" # 锁定屏幕
+      ''CTRL ALT, Delete, exec, zenity --question --text="确定要登出 $USER 吗？" && hyprshutdown -t "注销中..."'' # 注销当前用户会话
       "$mod ALT, M, exit" # 退出桌面
       # "$mod, P, pseudo" # Dwindle: 伪平铺
       # "$mod, J, togglesplit" # Dwindle: 切换横纵分割
@@ -25,14 +31,23 @@
       # "$mod, L, lockactivegroup, toggle" # 锁定组
 
       # 截图
-      ", Print, exec, flameshot gui < /dev/null" # 截图
-      # ", Print, exec, grim -g \"$(slurp)\" - | wl-copy" # 截图
+      # 活动窗口截图
+      "ALT, Print, exec, blast-screenshot active"
+      # 全屏截图
+      "Shift, Print, exec, blast-screenshot full"
+      # 交互式截图
+      ", Print, exec, blast-screenshot region"
+      # 交互式截图+标注
+      "$mod, Print, exec, blast-screenshot annotate"
 
       # 应用
-      "$mod, T, exec, $terminal" # 启动终端
-      "$mod, E, exec, $fileManager" # 启动文件管理器
+      "$mod, T, exec, $launchTerminal" # 启动终端
+      "$mod, E, exec, $launchFileManager" # 启动文件管理器
+      "$mod, C, exec, $launchCalculator" # 启动计算器
       "$mod, B, exec, $launchBrowser" # 启动浏览器
-      "$mod, semicolon, exec, $appLauncher" # 启动应用启动器
+      "$mod, P, exec, $launchIde" # 启动IDE
+      # "$mod, Return, global, :toggle_quick_terminal" # 切换到下拉终端
+      "$mod, slash, exec, $appLauncher" # 启动应用启动器
       "$mod ALT, C, exec, $pickColor" # 启动提取颜色
 
       # 布局

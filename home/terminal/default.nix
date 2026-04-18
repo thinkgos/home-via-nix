@@ -10,8 +10,8 @@
     ./devtools
     ./editor
     ./ai
-    ./git.nix
     ./password-store.nix
+    ./git.nix
     ./github.nix
     ./ansible.nix
   ];

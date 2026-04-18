@@ -28,10 +28,10 @@
       dynamic-workspaces = false; # 动态工作区 - 禁用
       workspaces-only-on-primary = true; # 工作区只作用于主屏目
     };
-    "org/gnome/mutter.keybindings" = {
-      # 开启tiling-shell已覆盖
-      # toggle-tiled-left = mkEmptyArray type.string;  # 分屏到左侧平铺窗口, 默认: <Super>Left
-      # toggle-tiled-right = mkEmptyArray type.string;  # 分屏到右侧平铺窗口, 默认: <Super>Right
+    "org/gnome/mutter/keybindings" = {
+      # toggle-tiled-left = mkEmptyArray type.string; # 分屏到左侧平铺窗口(tiling-shell覆盖)
+      # toggle-tiled-right = mkEmptyArray type.string; # 分屏到右侧平铺窗口(tiling-shell覆盖)
+      switch-monitor = [ "XF86Display" ];
     };
     # 主题
     "org/gnome/desktop/interface" = {
@@ -44,15 +44,43 @@
       monospace-font-name = "JetBrainsMono Nerd Font Mono 11";
     };
     "org/gnome/desktop/wm/keybindings" = {
-      switch-to-workspace-1 = [ "<Alt>1" ];
-      switch-to-workspace-2 = [ "<Alt>2" ];
-      switch-to-workspace-3 = [ "<Alt>3" ];
-      switch-to-workspace-4 = [ "<Alt>4" ];
-      toggle-fullscreen = [ "<Super>F" ];
+      # unmaximize = mkEmptyArray type.string; # 取消最大化窗口(tiling-shell覆盖)
+      # maximize = mkEmptyArray type.string; # 最大化窗口(tiling-shell覆盖)
+      switch-applications = mkEmptyArray type.string;
+      switch-applications-backward = mkEmptyArray type.string;
+
+      switch-windows = [ "<Super>Tab" ];
+      switch-windows-backward = [ "<Shift><Super>Tab" ];
+      toggle-fullscreen = [ "<Super>f" ];
+      toggle-maximized = [ "<Super>m" ];
       close = [ "<Super>q" ];
-      # 开启tiling-shell已覆盖
-      # unmaximize = mkEmptyArray type.string;  # 取消最大化, 默认: <Super>Up
-      # maximize = mkEmptyArray type.string;    # 最大化, 默认: <Super>Up
+
+      move-to-monitor-down = mkEmptyArray type.string;
+      move-to-monitor-left = mkEmptyArray type.string;
+      move-to-monitor-right = mkEmptyArray type.string;
+      move-to-monitor-up = mkEmptyArray type.string;
+
+      switch-to-workspace-1 = [
+        "<Super>1"
+        "<Super>Home"
+      ];
+      switch-to-workspace-2 = [ "<Super>2" ];
+      switch-to-workspace-3 = [ "<Super>3" ];
+      switch-to-workspace-4 = [ "<Super>4" ];
+      switch-to-workspace-last = [ "<Super>End" ];
+      switch-to-workspace-left = [ "<Super>Page_Up" ];
+      switch-to-workspace-right = [ "<Super>Page_Down" ];
+
+      move-to-workspace-1 = [
+        "<Shift><Super>1"
+        "<Shift><Super>Home"
+      ];
+      move-to-workspace-2 = [ "<Shift><Super>2" ];
+      move-to-workspace-3 = [ "<Shift><Super>3" ];
+      move-to-workspace-4 = [ "<Shift><Super>4" ];
+      move-to-workspace-last = [ "<Shift><Super>End" ];
+      move-to-workspace-left = [ "<Shift><Super>Page_Up" ];
+      move-to-workspace-right = [ "<Shift><Super>Page_Down" ];
     };
     "org/gnome/desktop/wm/preferences" = {
       num-workspaces = 4; # 工作区数量
@@ -60,26 +88,55 @@
     };
 
     "org/gnome/settings-daemon/plugins/media-keys" = {
+      terminal = mkEmptyArray type.string; # 禁用终端, 采用自定义快捷键
+      www = [ "<Super>b" ]; # 启动浏览器
+      calculator = [ "<Super>c" ]; # 启动计算器
+      home = [ "<Super>e" ]; # 启动文件管理器
+
+      screensaver = [ "<Super>l" ]; # 锁屏
       # 自定义截图快捷键
       custom-keybindings = [
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
+        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
+        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/"
       ];
     };
-    # 自定义截图快捷键
+    # 自定义快捷键
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+      name = "terminal";
+      command = "ghostty";
+      binding = "<Super>t";
+    };
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
       name = "flameshot";
       # command =  "sh -c 'flameshot gui --raw | wl-copy'";
       command = "sh -c 'flameshot gui < /dev/null'";
-      binding = "<Control>Print";
+      binding = "<Super>Print";
     };
-    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
       name = "albert";
       command = "albert toggle";
-      binding = "<Shift><Control>semicolon";
+      binding = "<Super>slash";
     };
-
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3" = {
+      name = "ide";
+      command = "sh -c 'code'";
+      binding = "<Super>p";
+    };
+    "org/gnome/shell" = {
+      # enabled-extensions = null;
+      disabled-extensions = [
+        pkgs.gnomeExtensions.open-bar.extensionUuid
+      ];
+    };
     "org/gnome/shell/keybindings" = {
+      switch-to-application-1 = mkEmptyArray type.string;
+      switch-to-application-2 = mkEmptyArray type.string;
+      switch-to-application-3 = mkEmptyArray type.string;
+      switch-to-application-4 = mkEmptyArray type.string;
+      toggle-message-tray = mkEmptyArray type.string;
+      toggle-quick-settings = mkEmptyArray type.string;
       # screenshot = ["<Shift>Print"];                      # 截图, 默认: <Shift>Print
       # screenshot-window = ["<Alt>Print"];                 # 窗口截图, 默认: <Alt>Print
       # show-screenshot-ui = ["Print"];                     # 交互式截图, 默认: Print

@@ -94,7 +94,7 @@
 2. 运行 `ansible-playbook site.yml --tags github -K` 进行部署。
 
 ### 调试问题时
-1. 查看 `ISSUES.md` 了解已知问题（SELinux、PATH、XDG_DATA_DIRS、IBus、AppArmor 等）。
+1. 查看 `docs/system/issues.md` 了解已知问题（SELinux、PATH、XDG_DATA_DIRS、IBus、AppArmor 等）。
 2. 检查 home-manager 日志：`journalctl --user -u home-manager`。
 3. 验证 Nix 配置：`nix flake check`。
 4. 验证 ansible 时：`ansible localhost -m setup -a 'filter=ansible_*'`。
@@ -103,7 +103,7 @@
 
 - Home Manager `stateVersion` 设置为 "25.11"。更新前请阅读发行说明。
 - 图形配置依赖于 `targets.genericLinux` 和 `xdg.enable`。
-- 某些商业软件（Chrome、VirtualBox、VSCode、Wireshark）必须手动安装（见 `MANUAL-INSTALL.md`）。
+- 某些商业软件（Chrome、VirtualBox、VSCode、Wireshark）必须手动安装（见 `docs/system/manual-install.md`）。
 
 ## 快速参考
 

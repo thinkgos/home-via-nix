@@ -68,13 +68,6 @@
   };
 
   dconf.settings = with lib.hm.gvariant; {
-    "org/gnome/shell" = {
-      # enabled-extensions = null;
-      disabled-extensions = [
-        pkgs.gnomeExtensions.open-bar.extensionUuid
-      ];
-    };
-
     "org/gnome/shell/extensions/user-theme" = {
       name = "WhiteSur-Dark";
     };
@@ -158,6 +151,16 @@
         ]
       ];
       window-use-custom-border-color = false;
+      focus-window-prev = [ "<Super>bracketleft" ];
+      focus-window-next = [ "<Super>bracketright" ];
+      # focus-window-down = [ "<Super>Down" ];
+      # focus-window-left = [ "<Super>Left" ];
+      # focus-window-right = [ "<Super>Right" ];
+      # focus-window-up = [ "<Super>Up" ];
+      move-window-down = [ "<Super><Shift>Down" ];
+      move-window-left = [ "<Super><Shift>Left" ];
+      move-window-right = [ "<Super><Shift>Right" ];
+      move-window-up = [ "<Super><Shift>Up" ];
     };
 
     "org/gnome/shell/extensions/dash-to-dock" = {
@@ -173,7 +176,9 @@
       dock-position = "BOTTOM";
       extend-height = false;
       height-fraction = 0.90;
+      hot-keys = false;
       icon-size-fixed = false;
+      intellihide = false;
       intellihide-mode = "ALL_WINDOWS";
       preferred-monitor = -2;
       # preferred-monitor-by-connector = "eDP-1";

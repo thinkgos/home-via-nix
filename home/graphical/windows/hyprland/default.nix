@@ -13,6 +13,7 @@
   #       brightnessctl bluez playerctl \
   #       qt6-wayland \
   #       fonts-noto-core fonts-noto-cjk \
+  #       gvfs \
   #       network-manager \
   #       libnotify-bin \
   #       thermald \
@@ -31,29 +32,25 @@
   # EOF'
   imports = [
     ./hyprland.nix # Hyprland配置
-    ./daemon.nix # 守护进程
-    ./app-launchers.nix # 应用启动器
-    ./status-bars.nix # 状态栏
-    ./notification-center.nix # 通知中心
-    ./idle-management.nix # 空闲管理
-    ./screen-lock.nix # 屏幕锁定
-    ./wallpaper.nix # 壁纸
-    ./sunset.nix # 蓝光配置
+    ./settings-center # 设置中心
+    ./authentication-agent # 身份验证代理
+    ./app-launchers # 应用启动器
+    ./status-bars # 状态栏
+    ./notification-center # 通知中心
+    ./idle-management # 空闲管理
+    ./screen-lock # 屏幕锁定
+    ./wallpaper # 壁纸
+    ./sunset # 蓝光保护
+    ./clipboard # 剪贴板
+    ./window-switcher # 窗口切换器
   ];
 
   home.packages = with pkgs; [
-    nautilus # 文件管理器
-    wl-clipboard # wayland剪贴板工具
     hyprpicker # 颜色拾取器
-    hyprsysteminfo # 系统信息工具
-    # nemo # 文件管理器
-    # nemo-fileroller
-    # nemo-preview
+    qalculate-gtk # 计算器
+    # nautilus # 文件管理器
+    nemo-with-extensions # 文件管理器
   ];
-
-  home.sessionVariables = {
-    XCURSOR_SIZE = "24"; # 定义鼠标光标的大小
-  };
 
   # XDG portal config for Hyprland
   xdg.portal = {
@@ -69,4 +66,10 @@
     ];
     configPackages = [ pkgs.hyprland ];
   };
+
+  # BUG: https://github.com/nix-community/home-manager/issues/4922
+  home.file.".config/systemd/user/xdg-desktop-portal-hyprland.service".source =
+    "${pkgs.xdg-desktop-portal-hyprland}/share/systemd/user/xdg-desktop-portal-hyprland.service";
+  home.file.".config/systemd/user/xdg-desktop-portal-gtk.service".source =
+    "${pkgs.xdg-desktop-portal-gtk}/share/systemd/user/xdg-desktop-portal-gtk.service";
 }

@@ -57,7 +57,7 @@
           addons = {
             punctuation = {
               globalSection = {
-                Hotkey = ""; # 
+                Hotkey = "";
                 HalfWidthPuncAfterLetterOrNumber = "True"; # 字母或数字后是否启用半角标点
                 TypePairedPunctuationsTogether = "False"; # 同时输入成对标点 (例如引号)
                 Enabled = "False"; # True: 全角标点, False: 半角标点
@@ -97,6 +97,12 @@
               IgnorePasswordFromPasswordManager = "False"; # 不要显示密码管理工具中的密码
               ShowPassword = "False"; # 以普通文本方式显示密码
               ClearPasswordAfter = 30; # 自动清除密码的秒数
+            };
+            quickphrase.globalSection = {
+              TriggerKey = ""; # 触发键
+              "Choose Modifier" = "Alt"; # Choose key modifier
+              Spell = "True"; # Enable Spell check
+              FallbackSpellLanguage = "en"; # Fallback Spell check language
             };
           };
         };

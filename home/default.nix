@@ -29,14 +29,10 @@
   imports = [
     ./systemd.nix
     ./fonts.nix
-    ./gtk.nix
     ./programs.nix
-    ./resources.nix
     ./terminal
   ]
-  ++ lib.optionals customize.graphics [
-    ./graphical
-  ];
+  ++ lib.optionals customize.graphics [ ./graphical ];
 
   targets.genericLinux = {
     enable = true;
@@ -46,6 +42,22 @@
   xdg = {
     enable = true;
     mime.enable = true;
+    userDirs = {
+      enable = true;
+      createDirectories = true;
+      setSessionVariables = false;
+      desktop = "${config.home.homeDirectory}/Desktop";
+      documents = "${config.home.homeDirectory}/Documents";
+      download = "${config.home.homeDirectory}/Downloads";
+      music = "${config.home.homeDirectory}/Music";
+      pictures = "${config.home.homeDirectory}/Pictures";
+      publicShare = "${config.home.homeDirectory}/Public";
+      templates = "${config.home.homeDirectory}/Templates";
+      videos = "${config.home.homeDirectory}/Videos";
+      extraConfig = {
+        program = "${config.home.homeDirectory}/Programs";
+      };
+    };
   };
 
   # The home.packages option allows you to install Nix packages into your
@@ -104,9 +116,9 @@
     SDL_VIDEODRIVER = "wayland"; # 游戏及多媒体应用 使用 Wayland
     CLUTTER_BACKEND = "wayland"; # Clutter 框架应用 使用 Wayland
     # XDG
-    XDG_CURRENT_DESKTOP = "Hyprland";
+    XDG_CURRENT_DESKTOP = if customize.window == "hyprland" then "Hyprland" else "GNOME";
     XDG_SESSION_TYPE = "wayland"; # 系统级中间件和桌面环境 使用 Wayland
-    XDG_SESSION_DESKTOP = "Hyprland";
+    XDG_SESSION_DESKTOP = if customize.window == "hyprland" then "Hyprland" else "GNOME";
     # QT
     QT_AUTO_SCREEN_SCALE_FACTOR = 1;
     QT_QPA_PLATFORM = "wayland;xcb";
