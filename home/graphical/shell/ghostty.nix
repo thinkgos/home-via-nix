@@ -87,6 +87,8 @@ in
       window-decoration = "none";
       window-position-x = 8;
       window-position-y = 8;
+      window-padding-x = 8;
+      window-padding-y = 8;
       window-save-state = "always";
       maximize = true;
       macos-titlebar-style = "transparent";
