@@ -33,7 +33,7 @@
         gaps_in = 2;
         gaps_out = 6;
         "col.inactive_border" = "rgba(595959aa)";
-        "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+        "col.active_border" = "rgba(33ccffee) rgba(6c71ffee) rgba(00ff99ee) 45deg"; # 天蓝/靛紫色/翠绿
         layout = "dwindle";
       };
       decoration = {
