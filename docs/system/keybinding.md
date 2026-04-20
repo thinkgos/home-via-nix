@@ -22,9 +22,8 @@
 | 显示全部应用 | `Super` + `A` | 🚫 | ✅ | ❌ | ❌ |
 | 显示通知列表 | `Super` + `V` | 🚫 | ✅ | ❌ | ❌ |
 | 显示运行命令提示符 | `Alt` + `F2` | | ◻️ | | ◻️ |
-| 重启 | 🚫 | | ◻️ | | ◻️ |
-| 注销 | `Ctrl` + `Alt` + `Delete` | `Ctrl` + `Alt` + `Delete` | ✅ | `Ctrl` + `Alt` + `Delete` | ✅ |
-| 退出桌面 | ❌ | ❌ | ❌ | `Super` + `Alt` + `M` | ✅ |
+| 重启 | 🚫 | | ◻️ | `Super` + `Alt` + `M` | ✅ |
+| 注销/退出桌面 | `Ctrl` + `Alt` + `Delete` | `Ctrl` + `Alt` + `Delete` | ✅ | `Ctrl` + `Alt` + `Delete` | ✅ |
 
 ## 声音和媒体
 
