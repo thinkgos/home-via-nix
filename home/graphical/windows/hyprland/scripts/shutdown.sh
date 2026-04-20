@@ -6,10 +6,10 @@ logout)
     zenity --question --text="确定要登出 $USER 吗？" && hyprshutdown -t "注销中..."
     ;;
 reboot)
-    zenity --question --text="确定要重启吗？" && hyprshutdown -t "重启中..." --post-cmd "reboot"
+    zenity --question --text="确定要重启吗？" && hyprshutdown -t "重启中..." --post-cmd "systemctl reboot"
     ;;
-shutdown)
-    zenity --question --text="确定要关机吗？" && hyprshutdown -t "关机中..." --post-cmd "shutdown -P 0"
+poweroff)
+    zenity --question --text="确定要关机吗？" && hyprshutdown -t "关机中..." --post-cmd "systemctl poweroff"
     ;;
 esac
 
