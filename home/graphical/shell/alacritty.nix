@@ -40,8 +40,14 @@
         };
         size = 10;
       };
+      selection = {
+        save_to_clipboard = true;
+      };
       cursor = {
-        style = "Block";
+        style = {
+          shape = "Beam";
+          blinking = "On";
+        };
       };
     };
   };
