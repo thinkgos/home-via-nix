@@ -12,6 +12,7 @@
     hyprpwcenter # pipewire控制中心
     hyprshutdown # 关机工具
     hyprsysteminfo # 系统信息工具
+    networkmanagerapplet # NetworkManager控制中心
   ];
   # 守护进程
   imports = [

@@ -18,7 +18,7 @@ sudo apt install -y \
 
 # sddm桌面登录
 SESSION_FILE="/usr/share/wayland-sessions/hyprland.desktop"
-sudo apt install --no-install-recommends sddm
+sudo apt install -y --no-install-recommends sddm sddm-theme-breeze
 sudo mkdir -p $(dirname "$SESSION_FILE")
 cat <<EOF | sudo tee "$SESSION_FILE" >/dev/null
 [Desktop Entry]

@@ -163,7 +163,7 @@
             "󰤥"
             "󰤨"
           ];
-          # "on-click-right" = "$HOME/.config/hypr/scripts/WaybarScripts.sh --nmtui";
+          "on-click-right" = "nm-connection-editor";
         };
         # "network#speed" = {
         #   "interval" = 1;
