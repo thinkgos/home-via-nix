@@ -239,10 +239,12 @@ tooltip label {
   color: @blue;
 }
 
+/*
 #clock,
 #clock-calender {
   color: @sapphire;
 }
+*/
 
 #backlight-slider slider,
 #pulseaudio-slider slider {

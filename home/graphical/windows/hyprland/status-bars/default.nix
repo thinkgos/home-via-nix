@@ -27,17 +27,18 @@
 
         modules-left = [
           "hyprland/workspaces"
+          "group/monitor"
           "hyprland/window"
-          "cpu"
-          "memory"
-          "disk"
         ];
         modules-center = [
           "clock"
+          "custom/weather"
+          "backlight"
         ];
         modules-right = [
           "tray"
           "network"
+          "temperature"
           "bluetooth"
           "pulseaudio"
           "battery"
@@ -46,7 +47,7 @@
 
         # 左侧模块
 
-        # 工作区
+        # 工作区 ✅
         "hyprland/workspaces" = {
           format = "{icon}";
           format-icons = {
@@ -63,13 +64,26 @@
           on-scroll-up = "hyprctl dispatch workspace e-1";
           on-scroll-down = "hyprctl dispatch workspace e+1";
         };
-        # 窗口
+        # 窗口 ✅
         "hyprland/window" = {
           format = "👉 {}";
           max-length = 40;
           separate-outputs = true;
         };
-        # cpu
+
+        # 监控组 ✅
+        "group/monitor" = {
+          orientation = "horizontal";
+          modules = [
+            "cpu"
+            "memory"
+            "disk"
+            "disk#home"
+            "custom/gpu"
+          ];
+        };
+
+        # 监控组 - cpu ✅
         cpu = {
           interval = 10;
           tooltip = true;
@@ -84,58 +98,102 @@
             "<span color='#ff9977'>▇</span>" # orange
             "<span color='#dd532e'>█</span>" # red
           ];
+          on-click-right = "missioncenter";
         };
+        # 监控组 - 内存 ✅
         memory = {
           interval = 30;
-          format = "󰍛 {percentage}%";
+          format = " {percentage}%";
           states = {
             warning = 70;
             critical = 90;
           };
           tooltip = true;
           tooltip-format = "{used:0.1f}GB / {total:0.1f}GB\nAvail: {avail:0.1f}GB";
-          # on-click = "ghostty -e htop";
+          on-click-right = "missioncenter";
         };
+        # 监控组 - 硬盘 ✅
         disk = {
           interval = 300;
           format = "󰋊 {percentage_used}%";
           path = "/";
           tooltip = true;
           tooltip-format = "{used} / {total}\nAvail: {free} ({percentage_free}%)";
+          on-click-right = "missioncenter";
+        };
+        # 监控组 - 硬盘 - home ✅
+        "disk#home" = {
+          interval = 300;
+          format = "󰋊 Home {percentage_used}%";
+          path = "/home";
+          tooltip = true;
+          tooltip-format = "{used} / {total}\nAvail: {free} ({percentage_free}%)";
+          on-click-right = "missioncenter";
+        };
+        # 监控组 - GPU ✅
+        "custom/gpu" = {
+          exec = "blast-gpu-name";
+          tooltip = true;
+          tooltip-format = "Click For More Info 👀";
+          on-click-right = "missioncenter";
         };
 
         # 中间模块
 
-        # 时钟
+        # 时钟 ✅
         clock = {
-          "format" = "{:%H:%M}  ";
-          "format-alt" = "{:%A, %B %d, %Y (%R)}  ";
-          "tooltip-format" = "<tt><small>{calendar}</small></tt>";
-          "calendar" = {
-            "mode" = "year";
-            "mode-mon-col" = 3;
-            "weeks-pos" = "right";
-            "on-scroll" = 1;
-            "format" = {
-              "months" = "<span color='#ffead3'><b>{}</b></span>";
-              "days" = "<span color='#ecc6d9'><b>{}</b></span>";
-              "weeks" = "<span color='#99ffdd'><b>W{}</b></span>";
-              "weekdays" = "<span color='#ffcc66'><b>{}</b></span>";
-              "today" = "<span color='#ff6699'><b><u>{}</u></b></span>";
+          interval = 60;
+          format = " {:%m月%d日 %H:%M - %a}";
+          format-alt = " {:%Y年%m月%d日 %H:%M - %A}";
+          tooltip-format = "<tt><small>{calendar}</small></tt>";
+          calendar = {
+            mode = "month";
+            mode-mon-col = 3;
+            on-scroll = 1;
+            format = {
+              months = "<span color='#ffead3'><b>{}</b></span>";
+              days = "<span color='#ecc6d9'><b>{}</b></span>";
+              weeks = "<span color='#99ffdd'><b>W{}</b></span>";
+              weekdays = "<span color='#ffcc66'><b>{}</b></span>";
+              today = "<span color='#ff6699'><b><u>{}</u></b></span>";
             };
           };
-          "actions" = {
-            "on-click-right" = "mode";
-            "on-scroll-up" = "tz_up";
-            "on-scroll-down" = "tz_down";
-            # "on-scroll-up" = "shift_up";
-            # "on-scroll-down" = "shift_down";
+          actions = {
+            on-click-right = "mode";
+            on-scroll-up = "shift_down";
+            on-scroll-down = "shift_up";
           };
+        };
+
+        # 天气 ✅
+        "custom/weather" = {
+          interval = "3600";
+          exec = "wttrbar --lang=zh --location Fuzhou";
+          format = "Weather {} ";
+          return-type = "json";
+          on-click-right = "google-chrome https://wttr.in";
+        };
+
+        backlight = {
+          # device = "intel_backlight";
+          format = "{icon} {percent}% ";
+          format-icons = [
+            "󱩎 "
+            "󱩏 "
+            "󱩑 "
+            "󱩒 "
+            "󱩓 "
+            "󱩔 "
+            "󱩖 "
+          ];
+          scroll-step = 0.15;
+          # on-click = "brightnessctl set 5%+";
+          # on-click-right = "brightnessctl set 5%-";
         };
 
         # 左侧模块
 
-        # 托盘
+        # 托盘 ✅
         tray = {
           spacing = 8;
         };
@@ -163,7 +221,7 @@
             "󰤥"
             "󰤨"
           ];
-          "on-click-right" = "nm-connection-editor";
+          on-click-right = "nm-connection-editor";
         };
         # "network#speed" = {
         #   "interval" = 1;
@@ -186,6 +244,14 @@
         #     "󰤨"
         #   ];
         # };
+        # 温度
+        temperature = {
+          interval = 10;
+          hwmon-path = [ "/sys/class/hwmon/hwmon2/temp1_input" ];
+          critical-threshold = 80;
+          format-critical = " {temperatureC}°C";
+          format = " {temperatureC}°C";
+        };
         bluetooth = {
           format = " {status}";
           format-connected = " {device_alias}";

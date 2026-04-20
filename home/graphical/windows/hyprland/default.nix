@@ -28,6 +28,7 @@
     qalculate-gtk # 计算器
     # nautilus # 文件管理器
     nemo-with-extensions # 文件管理器
+    wttrbar # 天气栏
   ];
 
   home.sessionVariables = {

@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
 #* ubuntu server 安装wayland
-# sudo apt purge xdg-desktop-portal-kde xwaylandvideobridge
+
+# 设置时区
+sudo timedatectl set-timezone Asia/Shanghai
 
 # 必装系统软件:
 sudo apt install -y \
@@ -14,7 +16,12 @@ sudo apt install -y \
     libnotify-bin \
     thermald \
     power-profiles-daemon \
-    gnome-keyring
+    gnome-keyring \
+    language-pack-zh-hans
+
+# 设置中文语言(注意: 重启后生效)
+sudo locale-gen zh_CN.UTF-8
+sudo update-locale LANG=zh_CN.UTF-8
 
 # sddm桌面登录
 SESSION_FILE="/usr/share/wayland-sessions/hyprland.desktop"
