@@ -94,6 +94,7 @@
       home = [ "<Super>e" ]; # 启动文件管理器
 
       screensaver = [ "<Super>l" ]; # 锁屏
+      reboot = [ "<Alt><Super>m" ];
       # 自定义截图快捷键
       custom-keybindings = [
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"

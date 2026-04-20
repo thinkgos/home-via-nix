@@ -34,7 +34,14 @@
         multiplier = 3;
       };
       font = {
-
+        normal = {
+          family = "JetBrainsMono Nerd Font Mono";
+          style = "Regular";
+        };
+        size = 10;
+      };
+      cursor = {
+        style = "Block";
       };
     };
   };
