@@ -7,29 +7,6 @@
 {
   # https://github.com/catppuccin
   # https://wiki.hypr.land/Useful-Utilities/Must-have/
-  # 必装系统软件:
-  # sudo apt install -y \
-  #       pipewire pipewire-pulse pipewire-alsa wireplumber \
-  #       brightnessctl bluez playerctl \
-  #       qt6-wayland \
-  #       fonts-noto-core fonts-noto-cjk \
-  #       gvfs \
-  #       network-manager \
-  #       libnotify-bin \
-  #       thermald \
-  #       power-profiles-daemon \
-  #       gnome-keyring
-  # sddm桌面登录
-  # sudo apt install sddm
-  # sudo apt purge xdg-desktop-portal-kde xwaylandvideobridge
-  # sudo bash -c 'cat > /usr/share/wayland-sessions/hyprland.desktop << EOF
-  # [Desktop Entry]
-  # Name=Hyprland
-  # Comment=Hyprland managed by Home Manager
-  # Exec=/home/cors/.nix-profile/bin/start-hyprland
-  # Type=Application
-  # DesktopNames=Hyprland
-  # EOF'
   imports = [
     ./hypr-config # Hyprland配置
     ./settings-center # 设置中心
