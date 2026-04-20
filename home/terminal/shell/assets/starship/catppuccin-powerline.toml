@@ -1,9 +1,9 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-[░▒▓](sky)\
-[ 🎶♪♩♫♬¶♩§♭∮♬♪♩♫🎶 ](bg:sapphire fg:sky)\
-[](bg:maroon fg:sapphire)\
+[░▒▓](#40a7ea)\
+[ 🎶♪♩♫♬¶♩§♭∮♬♪♩♫🎶 ](bg:#2cc7dc fg:#4a201b)\
+[](bg:maroon fg:#2cc7dc)\
 $os\
 $username\
 [](bg:peach fg:maroon)\
