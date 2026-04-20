@@ -8,7 +8,7 @@ let
   fromTomlFile = filename: builtins.fromTOML (builtins.readFile filename);
   # 配置文件路径
   configPath = {
-    starship = ./assets/starship/gruvbox-rainbow.toml;
+    starship = ./assets/starship/catppuccin-powerline.toml;
     zellij = ./assets/zellij.kdl;
   };
 in
@@ -54,6 +54,7 @@ in
       enable = true;
       enableZshIntegration = true;
       enableNushellIntegration = true;
+      presets = [ "nerd-font-symbols" ];
       settings = fromTomlFile configPath.starship;
     };
 
