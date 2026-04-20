@@ -30,6 +30,11 @@
     nemo-with-extensions # 文件管理器
   ];
 
+  home.sessionVariables = {
+    XDG_SESSION_DESKTOP = "Hyprland";
+    XDG_CURRENT_DESKTOP = "Hyprland";
+  };
+
   # XDG portal config for Hyprland
   xdg.portal = {
     enable = true;

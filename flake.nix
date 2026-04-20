@@ -32,37 +32,36 @@
           legacyPackages.homeConfigurations =
             let
               mkHome =
-                { ... }@customize:
+                {
+                  graphics ? true,
+                  attributes ? null,
+                  ...
+                }@args:
                 inputs.home-manager.lib.homeManagerConfiguration {
                   inherit pkgs;
                   modules = [ ./home ];
                   # Optionally use extraSpecialArgs
                   # to pass through arguments to home.nix
-                  extraSpecialArgs = { inherit customize; };
+                  extraSpecialArgs = {
+                    customize = args // {
+                      inherit graphics attributes;
+                    };
+                  };
                 };
             in
             {
               thinkgo-fedora43 = mkHome {
                 username = "thinkgo";
-                graphics = true;
                 window = "gnome";
                 window-version = "gnome-49";
               };
               thinkgo-ubuntu25_10 = mkHome {
                 username = "thinkgo";
-                graphics = true;
-                window = "gnome";
-                window-version = "gnome-49";
-              };
-              journey-ubuntu25_10 = mkHome {
-                username = "journey";
-                graphics = true;
                 window = "gnome";
                 window-version = "gnome-49";
               };
               cors-ubuntu25_10 = mkHome {
                 username = "cors";
-                graphics = true;
                 window = "hyprland";
                 window-version = "hyprland";
               };
