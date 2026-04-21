@@ -1,0 +1,59 @@
+github_apps:
+  # examples
+  # - name: "example"
+  #   description: ""
+  #   repo: "owner/repo"
+  #   version: 0.1.x
+  #   tag_prefix: "v" # optional, default is "v"
+  #   package_name: "example"
+  #   debian_pattern: "__VERSION__.deb"
+  #   redhat_pattern: "__VERSION__.rpm"
+  #   binary_name: ""
+  #   version_arg: "--version" # optional, default is "--version"
+  #   binaries: []
+  #   binary_pattern: ""
+
+  - name: "clash-verge-rev"
+    description: "clash代理"
+    repo: "clash-verge-rev/clash-verge-rev"
+    version: 2.4.7
+    package_name: "clash-verge"
+    debian_pattern: "Clash.Verge___VERSION___amd64.deb"
+    redhat_pattern: "Clash.Verge-__VERSION__-1.x86_64.rpm"
+
+  - name: "cc-switch"
+    description: "cc-switch"
+    repo: "farion1231/cc-switch"
+    version: 3.13.0
+    package_name: "cc-switch"
+    debian_pattern: "CC-Switch-v__VERSION__-Linux-x86_64.deb"
+    redhat_pattern: "CC-Switch-v__VERSION__-Linux-x86_64.rpm"
+
+  - name: "task"
+    description: "task manager written in Go"
+    repo: "go-task/task"
+    version: 3.50.0
+    package_name: "task"
+    debian_pattern: "task___VERSION___linux_amd64.deb"
+    redhat_pattern: "task___VERSION___linux_amd64.rpm"
+
+  - name: "opencode"
+    description: "code agent"
+    repo: "anomalyco/opencode"
+    version: 1.14.19
+    binary_name: "opencode"
+    binary_pattern: "opencode-linux-x64.tar.gz"
+
+  - name: "goup"
+    description: "an elegant Go version manager write in rust"
+    repo: "thinkgos/goup-rs"
+    version: 0.16.10
+    binary_name: "goup"
+    binary_pattern: "goup-x86_64-unknown-linux-musl.tar.gz"
+
+  - name: "skim"
+    description: "Fuzzy Finder in rust!"
+    repo: "skim-rs/skim"
+    version: 4.6.0
+    binary_name: "sk"
+    binary_pattern: "skim-x86_64-unknown-linux-musl.tar.xz"

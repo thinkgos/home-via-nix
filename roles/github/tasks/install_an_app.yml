@@ -1,0 +1,124 @@
+- name: "Prepare fact: {{ app.name }}"
+  block:
+    - name: "Prepare variables: {{ app.name }}"
+      ansible.builtin.set_fact:
+        final_tag: "{{ (app.tag_prefix | default('v')) ~ (app.version | string | regex_replace('^v', '')) }}"
+
+    - name: "Determine install strategy: {{ app.name }}"
+      ansible.builtin.set_fact:
+        install_strategy: "{{ 'package' if ( (ansible_facts['os_family'] == 'Debian' and app.debian_pattern | default('')) or (ansible_facts['os_family'] == 'RedHat' and app.redhat_pattern | default('')) ) else 'binary' }}"
+
+    - name: "Prepare final asset name: {{ app.name }}"
+      ansible.builtin.set_fact:
+        final_asset_name: "{{ (app.redhat_pattern if ansible_facts['os_family'] == 'RedHat' else app.debian_pattern) | replace('__VERSION__', app.version) if install_strategy | trim == 'package' else app.binary_pattern | replace('__VERSION__', app.version) }}"
+
+    - name: "Check if package is installed: {{ app.name }}"
+      when: install_strategy == 'package'
+      ansible.builtin.set_fact:
+        is_installed: >-
+          {{
+            app.package_name in ansible_facts.packages and
+            app.version in (ansible_facts.packages[app.package_name] | map(attribute='version') | list)
+          }}
+
+    - name: "Check if binary is installed and version matches: {{ app.name }}"
+      when: install_strategy == 'binary'
+      block:
+        - name: "Get current binary version: {{ app.name }}"
+          ansible.builtin.shell: "{{ app.binary_name }} {{ app.version_arg | default('--version') }}"
+          register: bin_v_result
+          failed_when: false
+          changed_when: false
+          check_mode: false
+
+        - name: "Compare binary version: {{ app.name }}"
+          ansible.builtin.set_fact:
+            is_installed: >-
+              {{
+                bin_v_result.rc == 0 and
+                app.version in (bin_v_result.stdout + bin_v_result.stderr)
+              }}
+
+- name: "Execute Installation if not installed: {{ app.name }}"
+  block:
+    - name: "Download final asset: {{ app.name }}"
+      when: not is_installed
+      ansible.builtin.get_url:
+        url: "https://github.com/{{ app.repo }}/releases/download/{{ final_tag }}/{{ final_asset_name }}"
+        dest: "/tmp/{{ final_asset_name }}"
+        mode: "0644"
+      register: download_result
+
+    - name: "Install on Debian/Ubuntu: {{ app.name }}"
+      when:
+        - not is_installed
+        - ansible_facts['os_family'] == "Debian"
+        - install_strategy == 'package'
+      ansible.builtin.apt:
+        deb: "/tmp/{{ final_asset_name }}"
+        state: present
+
+    - name: "Install on Fedora: {{ app.name }}"
+      when:
+        - not is_installed
+        - ansible_facts['os_family'] == "RedHat"
+        - install_strategy == 'package'
+      ansible.builtin.dnf:
+        name: "/tmp/{{ final_asset_name }}"
+        state: present
+        disable_gpg_check: true
+      become: true
+
+    - name: "Install Binary: {{ app.name }}"
+      when:
+        - not is_installed
+        - install_strategy == 'binary'
+      block:
+        - name: Determine if asset is an archive
+          ansible.builtin.set_fact:
+            is_archive: "{{ final_asset_name is regex('\\.(tar\\.gz|zip|tgz|bz2)$', ignorecase=True) }}"
+
+        - name: "Plain binary: {{ app.name }}"
+          when: not is_archive
+          ansible.builtin.copy:
+            src: "/tmp/{{ final_asset_name }}"
+            dest: "/usr/local/bin/{{ app.binary_name }}"
+            mode: "0755"
+            remote_src: true
+
+        - name: "Archive binary: {{ app.name }}"
+          when: is_archive
+          block:
+            - name: "Create a temporary directory for extraction"
+              ansible.builtin.file:
+                path: "/tmp/{{ app.name }}_extract"
+                state: directory
+                mode: "0755"
+
+            - name: "Unarchive binary: {{ app.name }}"
+              ansible.builtin.unarchive:
+                src: "/tmp/{{ final_asset_name }}"
+                dest: "/tmp/{{ app.name }}_extract"
+                remote_src: true
+                list_files: true
+              register: unarchive_result
+
+            - name: "Move binaries to /usr/local/bin: {{ app.name }}"
+              ansible.builtin.shell: |
+                find "/tmp/{{ app.name }}_extract" -type f -name "{{ item }}" -exec cp -af {} /usr/local/bin/ \;
+                chmod +x "/usr/local/bin/{{ item }}"
+              loop: "{{ app.binaries | default([app.binary_name]) }}"
+              when: item is defined
+
+            - name: "Cleanup extraction directory: {{ app.name }}"
+              ansible.builtin.file:
+                path: "/tmp/{{ app.name }}_extract"
+                state: absent
+
+    - name: "Cleanup temporary file: {{ app.name }}"
+      when:
+        - not is_installed
+        - download_result.changed
+      ansible.builtin.file:
+        path: "/tmp/{{ final_asset_name }}"
+        state: absent

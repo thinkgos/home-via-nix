@@ -1,0 +1,2 @@
+- name: 安装 GitHub 软件
+  ansible.builtin.include_tasks: install.yml

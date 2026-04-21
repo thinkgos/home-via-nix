@@ -1,0 +1,2 @@
+- name: 安装系统软件
+  ansible.builtin.include_tasks: install.yml

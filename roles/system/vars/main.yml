@@ -1,0 +1,10 @@
+system_main_packages:
+  - curl
+  - zip
+  - unzip
+  - tar
+  - gcc
+  - clang
+  - llvm
+  - shfmt
+  - openssl

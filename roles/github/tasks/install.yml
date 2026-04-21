@@ -1,0 +1,12 @@
+- name: Gather the package facts
+  ansible.builtin.package_facts:
+    manager: auto
+
+- name: Load github variables
+  ansible.builtin.include_vars: vars/main.yml
+
+- name: Process Github installations
+  ansible.builtin.include_tasks: install_an_app.yml
+  loop: "{{ github_apps }}"
+  loop_control:
+    loop_var: app

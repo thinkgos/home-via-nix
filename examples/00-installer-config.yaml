@@ -1,0 +1,26 @@
+# This is the network config written by 'subiquity'
+network:
+  ethernets:
+    enp2s0:
+      optional: true
+      addresses:
+      - {IP}/22
+      match:
+        macaddress: {MAC}
+      nameservers:
+        addresses:
+        - 114.114.114.114
+        search: []
+      routes:
+      - to: default
+        via: {RouteIp}
+      set-name: enp2s0
+  version: 2
+  renderer: NetworkManager
+  wifis:
+    wlp3s0:
+      optional: true
+      dhcp4: true
+      access-points: 
+        CMCC-608-5G:
+          password: "{WifiPassword}"

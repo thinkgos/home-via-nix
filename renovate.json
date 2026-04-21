@@ -1,0 +1,25 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended"
+  ],
+  "regexManagers": [
+    {
+      "fileMatch": [
+        "^roles/github/vars/main\\.yml$"
+      ],
+      "matchStrings": [
+        "repo:\\s+[\"']?(?<depName>[\\w\\-\\.]+\\/[\\w\\-\\.]+)[\"']?\\s+version:\\s+[\"']?(?<currentValue>[\\d\\.]+)[\"']?"
+      ],
+      "datasourceTemplate": "github-releases"
+    }
+  ],
+  "packageRules": [
+    {
+      "matchDatasources": [
+        "github-releases"
+      ],
+      "extractVersion": "^v?(?<version>.*)$"
+    }
+  ]
+}

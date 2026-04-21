@@ -1,0 +1,23 @@
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
+  # Hyprland 窗口
+  wayland.windowManager.hyprland.settings = {
+    layerrule = [
+      "blur on, match:namespace wofi"
+      "ignore_alpha 0.5, match:namespace wofi"
+    ];
+    windowrule = [
+      # 计算器/网络/蓝牙/音频
+      "float on, size 750 480, move (monitor_w-750)*0.5 160, match:class ^(qalculate-gtk|nm-connection-editor|.blueman-manager-wrapped|org.pulseaudio.pavucontrol|org.fcitx.)$"
+      # 文件/监控
+      "float on, size monitor_w*0.6 monitor_h*0.6, center on, match:class ^(nemo|io.missioncenter.MissionCenter)$"
+      # 下拉式终端窗口规则
+      "float on,  size 100% 40%, move 0 0, rounding 0, workspace special:dropdown-terminal, match:class ^(dropdown-terminal)$"
+    ];
+  };
+}

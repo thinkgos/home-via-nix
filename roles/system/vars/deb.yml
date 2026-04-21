@@ -1,0 +1,5 @@
+system_deb_packages:
+  - build-essential
+  - libclang-dev
+  - libssl-dev
+  - libopencv-dev
