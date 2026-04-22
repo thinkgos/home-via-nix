@@ -20,6 +20,7 @@
       listener = [
         {
           timeout = 300; # 5min.
+          # BUG: 键盘背光没法控制, 没有找到设备名.
           on-timeout = "brightnessctl -s set 0"; # turn off keyboard backlight.
           on-resume = "brightnessctl -r"; # turn on keyboard backlight.
         }

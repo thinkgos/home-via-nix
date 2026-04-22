@@ -111,6 +111,10 @@
       "$mod, mouse:272, movewindow" # Super + 左键 拖拽窗口
       "$mod, mouse:273, resizewindow" # Super + 右键 缩放窗口
     ];
+    bindl = [
+      # 声音关闭/打开
+      ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+    ];
     # 持续性操作 (如音量、亮度调节) 需brightnessctl,wireplumber
     bindel = [
       # 声音调整

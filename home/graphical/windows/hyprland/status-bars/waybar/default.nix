@@ -41,7 +41,6 @@ in
         modules-center = [
           "clock"
           "custom/weather"
-          "backlight"
         ];
         modules-right = [
           "wlr/taskbar"
@@ -55,6 +54,7 @@ in
           "pulseaudio"
           # "pulseaudio/slider"
           "battery"
+          "backlight"
           "privacy"
           "custom/power"
         ];
@@ -192,23 +192,6 @@ in
           on-click = "google-chrome https://wttr.in";
         };
 
-        backlight = {
-          # device = "intel_backlight";
-          format = "{icon} {percent}% ";
-          format-icons = [
-            "󱩎 "
-            "󱩏 "
-            "󱩑 "
-            "󱩒 "
-            "󱩓 "
-            "󱩔 "
-            "󱩖 "
-          ];
-          scroll-step = 0.15;
-          # on-click = "brightnessctl set 5%+";
-          # on-click-right = "brightnessctl set 5%-";
-        };
-
         # 左侧模块
 
         # 任务栏 ✅
@@ -307,6 +290,21 @@ in
           min = 0;
           max = 100;
           orientation = "horizontal";
+        };
+        # 显示器背光 ✅
+        backlight = {
+          # device = "intel_backlight";
+          format = "{icon} {percent}% ";
+          format-icons = [
+            "󱩎 "
+            "󱩏 "
+            "󱩑 "
+            "󱩒 "
+            "󱩓 "
+            "󱩔 "
+            "󱩖 "
+          ];
+          scroll-step = 1.0;
         };
         # 电量
         battery = {
