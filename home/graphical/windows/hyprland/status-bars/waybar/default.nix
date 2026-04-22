@@ -2,8 +2,12 @@
   config,
   lib,
   pkgs,
+  customize,
   ...
 }:
+let
+  attrs = customize.graphics.attrs;
+in
 {
   # 状态栏
   # https://wiki.hypr.land/Useful-Utilities/Status-Bars/
@@ -23,6 +27,9 @@
         mode = "dock";
         height = 32;
         spacing = 8;
+        output = lib.optional (
+          attrs.monitor-primary != null && attrs.monitor-primary != ""
+        ) attrs.monitor-primary;
         # margin = "0";
 
         modules-left = [
@@ -143,7 +150,7 @@
         "disk#home" = {
           interval = 300;
           format = "󰋊 Home {percentage_used}%";
-          path = "/home";
+          path = "/home/";
           tooltip = true;
           tooltip-format = "{used} / {total}\nAvail: {free} ({percentage_free}%)";
           on-click = "missioncenter";

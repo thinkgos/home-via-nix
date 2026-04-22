@@ -34,7 +34,6 @@
               mkHome =
                 {
                   graphics ? null,
-                  attributes ? null,
                   ...
                 }@args:
                 inputs.home-manager.lib.homeManagerConfiguration {
@@ -44,7 +43,7 @@
                   # to pass through arguments to home.nix
                   extraSpecialArgs = {
                     customize = args // {
-                      inherit graphics attributes;
+                      inherit graphics;
                     };
                   };
                 };
@@ -55,6 +54,10 @@
                 graphics = {
                   window = "hyprland";
                   window-version = "hyprland";
+                  attrs = {
+                    monitor-primary = "eDP-1";
+                    monitor-secondary = "";
+                  };
                 };
               };
               cors-ubuntu25_10 = mkHome {
@@ -62,6 +65,10 @@
                 graphics = {
                   window = "hyprland";
                   window-version = "hyprland";
+                  attrs = {
+                    monitor-primary = "";
+                    monitor-secondary = "";
+                  };
                 };
               };
               thinkgo-ubuntu25_10 = mkHome {
