@@ -17,12 +17,12 @@
           identity = true;
         }
         {
-          time = "18:30";
+          time = "20:30";
           temperature = 4500;
           gamma = 1.0;
         }
         {
-          time = "21:00";
+          time = "22:00";
           temperature = 3500;
           gamma = 0.9;
         }
