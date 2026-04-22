@@ -21,7 +21,7 @@
       # 截图标注
       "float on, size monitor_w*0.8 monitor_h*0.8, center on, match:class ^(com.gabm.satty)$"
       # 下拉式终端窗口规则
-      "float on,  size 100% 40%, move 0 0, rounding 0, workspace special:dropdown-terminal, match:class ^(dropdown-terminal)$"
+      "float on,  size monitor_w monitor_h*0.4, move 0 0, rounding 0, workspace special:dropdown-terminal, match:class ^(dropdown-terminal)$"
     ];
   };
 }
