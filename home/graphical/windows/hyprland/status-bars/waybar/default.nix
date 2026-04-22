@@ -251,7 +251,8 @@
           format-critical = " {temperatureC}°C";
           format = " {temperatureC}°C";
         };
-        # 蓝牙
+        # 蓝牙 ✅
+        # BUG: 耳机连接成功, 但鼠标连不上!!
         bluetooth = {
           format = " {status}";
           format-connected = " {device_alias}";

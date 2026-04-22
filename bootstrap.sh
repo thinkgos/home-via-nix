@@ -2,12 +2,9 @@
 
 #* ubuntu server 安装wayland
 
-# 设置时区
-sudo timedatectl set-timezone Asia/Shanghai
-
-# 必装系统软件:
+echo "安装必需的系统软件..."
 sudo apt install -y \
-    pipewire pipewire-pulse pipewire-alsa wireplumber \
+    pipewire pipewire-pulse pipewire-alsa wireplumber pipewire-audio-client-libraries libspa-0.2-bluetooth \
     brightnessctl bluez playerctl \
     qt6-wayland \
     fonts-noto-core fonts-noto-cjk \
@@ -19,11 +16,11 @@ sudo apt install -y \
     gnome-keyring \
     language-pack-zh-hans
 
-# 设置中文语言(注意: 重启后生效)
+echo "设置中文语言(注意: 重启后生效)..."
 sudo locale-gen zh_CN.UTF-8
 sudo update-locale LANG=zh_CN.UTF-8
 
-# sddm桌面登录
+echo "安装sddm桌面登录..."
 SESSION_FILE="/usr/share/wayland-sessions/hyprland.desktop"
 sudo apt install -y --no-install-recommends sddm sddm-theme-breeze
 sudo mkdir -p $(dirname "$SESSION_FILE")
@@ -37,12 +34,10 @@ DesktopNames=Hyprland
 EOF
 sudo chmod 644 "$SESSION_FILE"
 
-# 解决网络一直等待连接超时问题
 echo "配置网络启动等待时间..."
-
 NETWORKD_WAIT_ONLINE_CONF="/etc/systemd/system/systemd-networkd-wait-online.service.d/override.conf"
 sudo mkdir -p $(dirname "$NETWORKD_WAIT_ONLINE_CONF")
-sudo tee "$NETWORKD_WAIT_ONLINE_CONF" > /dev/null <<EOF
+sudo tee "$NETWORKD_WAIT_ONLINE_CONF" >/dev/null <<EOF
 [Service]
 ExecStart=
 ExecStart=/usr/lib/systemd/systemd-networkd-wait-online --any --timeout=10
@@ -52,6 +47,12 @@ echo "配置网络启动等待时间已生效！"
 echo "当前网络启动等待时间配置内容："
 systemctl cat "$NETWORKD_WAIT_ONLINE_CONF" | grep ExecStart
 
+echo "设置时区..."
+sudo timedatectl set-timezone Asia/Shanghai
+
 echo "配置brightnessctl权限..."
 # TODO: ...
-sudo usermod -aG video $USER
+# sudo usermod -aG video $USER
+
+echo "清理不需要的软件..."
+sudo apt remove -y needrestart
