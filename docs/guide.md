@@ -20,7 +20,7 @@
 sudo sed -i 's/^SELINUX=.*/SELINUX=disabled/' /etc/selinux/config
 ```
 
-## 临时关闭 - 无需重启, 但重后会失效
+### 临时关闭 - 无需重启, 但重后会失效
 
 ```shell
 sudo setenforce 0
