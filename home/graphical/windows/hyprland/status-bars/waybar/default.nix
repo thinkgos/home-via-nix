@@ -45,6 +45,7 @@
           "temperature"
           "bluetooth"
           "pulseaudio"
+          # "pulseaudio/slider"
           "battery"
           "privacy"
           "custom/power"
@@ -261,11 +262,11 @@
           tooltip-format-enumerate-connected-battery = "{device_alias}\t{device_address}\t{device_battery_percentage}%";
           on-click = "blueman-manager";
         };
-        # 音量
+        # 音量 ✅
         pulseaudio = {
           format = "{icon} {volume}%";
           format-bluetooth = "󰂰 {volume}%";
-          format-muted = "󰝟 Mute";
+          format-muted = "󰸈 Mute";
           format-icons = {
             headphone = "";
             hands-free = "󱡒";
@@ -279,10 +280,16 @@
               "󰕾"
             ];
           };
-          scroll-step = 5;
+          scroll-step = 3;
           ignored-sinks = [ "Easy Effects Sink" ];
           on-click = "pavucontrol";
-          # on-click = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+          on-click-right = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+        };
+        # 音量滑块 ✅
+        "pulseaudio/slider" = {
+          min = 0;
+          max = 100;
+          orientation = "horizontal";
         };
         # 电量
         battery = {

@@ -18,19 +18,6 @@
         "type": "github"
       }
     },
-    "home-assets": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1776779187,
-        "narHash": "sha256-Pcl6N58v++M0tJkQ7nOJwQgX5ZHzyhh0ldcrhAQT0Jg=",
-        "type": "tarball",
-        "url": "https://github.com/thinkgos/home-via-nix-assets/archive/main.tar.gz"
-      },
-      "original": {
-        "type": "tarball",
-        "url": "https://github.com/thinkgos/home-via-nix-assets/archive/main.tar.gz"
-      }
-    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -85,7 +72,6 @@
     "root": {
       "inputs": {
         "flake-parts": "flake-parts",
-        "home-assets": "home-assets",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs"
       }

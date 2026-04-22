@@ -9,11 +9,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # 纯资源库
-    home-assets = {
-      url = "https://github.com/thinkgos/home-via-nix-assets/archive/main.tar.gz";
-      flake = false;
-    };
   };
 
   outputs =
@@ -48,7 +43,6 @@
                   # Optionally use extraSpecialArgs
                   # to pass through arguments to home.nix
                   extraSpecialArgs = {
-                    inherit (inputs) home-assets;
                     customize = args // {
                       inherit graphics attributes;
                     };
