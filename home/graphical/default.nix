@@ -12,6 +12,7 @@
     ./pointer-cursor.nix
     ./i18n.nix
     ./password-store.nix
+    ./accouts.nix
     ./email.nix
     ./screenshot.nix
     ./assets
