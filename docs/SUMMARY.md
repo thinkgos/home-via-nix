@@ -2,6 +2,7 @@
 
 [Introduction](./README.md)
 
+- [指南](./guide.md)
 - [系统](./system/README.md)
   - [手动安装](./system/manual-install.md)
   - [按键绑定](./system/keybinding.md)
