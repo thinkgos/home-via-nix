@@ -50,7 +50,7 @@
 ## 常用工作流指南
 
 ### Home Manager 管理
-- 切换到用户配置：`home-manager switch --flake .#thinkgo-fedora43` (或 `thinkgo-ubuntu25_10`, `cors-ubuntu25_10`)
+- 切换到用户配置：`home-manager switch --flake .#thinkgo-laptop` (具体查看 `flake.nix`)
 - 仅构建配置（不切换）：`home-manager build --flake .#thinkgo-ubuntu25_10`
 - 查看生成的配置：`home-manager generations`
 

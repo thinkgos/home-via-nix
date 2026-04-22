@@ -41,9 +41,11 @@ sudo setenforce 0
 
 ```shell
 # username: thinkgos, system: ubuntu25_10
+home-manager switch --flake .#thinkgo-laptop
+# username: cors, system: ubuntu25_10
+home-manager switch --flake .#cors-ubuntu25_10
+# username: thinkgos, system: ubuntu25_10
 home-manager switch --flake .#thinkgo-ubuntu25_10
-# username: journey, system: ubuntu25_10
-home-manager switch --flake .#journey-ubuntu25_10
 # username: thinkgo, system: fedora-43
 home-manager switch --flake .#thinkgo-fedora43
 ```

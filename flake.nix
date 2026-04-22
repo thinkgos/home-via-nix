@@ -50,25 +50,25 @@
                 };
             in
             {
-              thinkgo-fedora43 = mkHome {
+              thinkgo-laptop = mkHome {
                 username = "thinkgo";
-                window = "gnome";
-                window-version = "gnome-49";
-              };
-              thinkgo-ubuntu25_10 = mkHome {
-                username = "thinkgo";
-                window = "gnome";
-                window-version = "gnome-49";
+                window = "hyprland";
+                window-version = "hyprland";
               };
               cors-ubuntu25_10 = mkHome {
                 username = "cors";
                 window = "hyprland";
                 window-version = "hyprland";
               };
-              thinkgo-laptop = mkHome {
+              thinkgo-ubuntu25_10 = mkHome {
                 username = "thinkgo";
-                window = "hyprland";
-                window-version = "hyprland";
+                window = "gnome";
+                window-version = "gnome-49";
+              };
+              thinkgo-fedora43 = mkHome {
+                username = "thinkgo";
+                window = "gnome";
+                window-version = "gnome-49";
               };
             };
 
