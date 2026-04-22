@@ -21,13 +21,13 @@ full)
     grim "$file" || do_error
     ;;
 region)
-    region=$(slurp) || do_error
+    region=$(slurp -w 1 -c '#ff0000ff') || do_error
     grim -g "$region" "$file" || do_error
     ;;
 annotate)
-    region=$(slurp) || do_error
-    grim -g "$region" - | satty --filename - || do_error
-    return
+    region=$(slurp -w 1 -c '#ff0000ff') || do_error
+    grim -g "$region" - | satty --filename - --output-filename "$file" || do_error
+    exit 0
     ;;
 esac
 

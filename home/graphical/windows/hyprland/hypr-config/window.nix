@@ -16,6 +16,8 @@
       "float on, size 750 480, move (monitor_w-750)*0.5 160, match:class ^(qalculate-gtk|nm-connection-editor|.blueman-manager-wrapped|org.pulseaudio.pavucontrol|org.fcitx.)$"
       # 文件/监控
       "float on, size monitor_w*0.6 monitor_h*0.6, center on, match:class ^(nemo|io.missioncenter.MissionCenter)$"
+      # 截图标注
+      "float on, size monitor_w*0.8 monitor_h*0.8, center on, match:class ^(com.gabm.satty)$"
       # 下拉式终端窗口规则
       "float on,  size 100% 40%, move 0 0, rounding 0, workspace special:dropdown-terminal, match:class ^(dropdown-terminal)$"
     ];
