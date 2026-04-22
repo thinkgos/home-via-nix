@@ -65,6 +65,11 @@
                 window = "hyprland";
                 window-version = "hyprland";
               };
+              thinkgo-laptop = mkHome {
+                username = "thinkgo";
+                window = "hyprland";
+                window-version = "hyprland";
+              };
             };
 
           devShells.default = pkgs.mkShell {
