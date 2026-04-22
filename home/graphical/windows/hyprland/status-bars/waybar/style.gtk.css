@@ -198,8 +198,7 @@ tooltip label {
 }
 
 #idle_inhibitor {
-  color: @pink;
-  border-bottom: 8px solid rgba(0, 0, 0, 0.2);
+  color: @text;
 }
 
 #mpris {

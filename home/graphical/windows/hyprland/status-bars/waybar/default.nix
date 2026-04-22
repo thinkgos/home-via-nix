@@ -41,6 +41,7 @@
           "custom/separator"
           "tray"
           "custom/separator"
+          "idle_inhibitor"
           "network"
           "temperature"
           "bluetooth"
@@ -214,6 +215,14 @@
         # 托盘 ✅
         tray = {
           spacing = 8;
+        };
+        # 空闲抑制器 ✅
+        idle_inhibitor = {
+          format = "{icon}";
+          format-icons = {
+            activated = "☕️";
+            deactivated = "🫗";
+          };
         };
         # 网络 ✅
         network = {
