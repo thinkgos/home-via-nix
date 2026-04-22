@@ -33,7 +33,7 @@
             let
               mkHome =
                 {
-                  graphics ? true,
+                  graphics ? null,
                   attributes ? null,
                   ...
                 }@args:
@@ -52,23 +52,31 @@
             {
               thinkgo-laptop = mkHome {
                 username = "thinkgo";
-                window = "hyprland";
-                window-version = "hyprland";
+                graphics = {
+                  window = "hyprland";
+                  window-version = "hyprland";
+                };
               };
               cors-ubuntu25_10 = mkHome {
                 username = "cors";
-                window = "hyprland";
-                window-version = "hyprland";
+                graphics = {
+                  window = "hyprland";
+                  window-version = "hyprland";
+                };
               };
               thinkgo-ubuntu25_10 = mkHome {
                 username = "thinkgo";
-                window = "gnome";
-                window-version = "gnome-49";
+                graphics = {
+                  window = "gnome";
+                  window-version = "gnome-49";
+                };
               };
               thinkgo-fedora43 = mkHome {
                 username = "thinkgo";
-                window = "gnome";
-                window-version = "gnome-49";
+                graphics = {
+                  window = "gnome";
+                  window-version = "gnome-49";
+                };
               };
             };
 

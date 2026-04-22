@@ -4,9 +4,9 @@
   become: true
   gather_facts: false
   environment:
-    http_proxy: "http://10.110.18.12:7890"
-    https_proxy: "http://10.110.18.12:7890"
-    socks5_proxy: "socks5://10.110.18.12:7890"
+    http_proxy: "http://127.0.0.1:7890"
+    https_proxy: "http://127.0.0.1:7890"
+    socks5_proxy: "socks5://127.0.0.1:7890"
 
   pre_tasks:
     - name: Ping

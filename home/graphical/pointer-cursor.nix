@@ -13,6 +13,6 @@
     size = 24;
     gtk.enable = true;
     x11.enable = true;
-    hyprcursor.enable = customize.window == "hyprland";
+    hyprcursor.enable = customize.graphics.window == "hyprland";
   };
 }

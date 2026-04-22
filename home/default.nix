@@ -26,16 +26,17 @@
     options = "--delete-older-than 3d";
   };
 
-  imports = [
-    ./systemd.nix
-    ./fonts.nix
-    ./programs.nix
-    ./terminal
-  ]
-  ++ lib.optionals customize.graphics [
-    ./graphical
-    ./fun
-  ];
+  imports =
+    [
+      ./systemd.nix
+      ./fonts.nix
+      ./programs.nix
+      ./terminal
+    ]
+    ++ lib.optionals customize.graphics != null [
+      ./graphical
+      ./fun
+    ];
 
   targets.genericLinux = {
     enable = true;
