@@ -22,6 +22,18 @@
       "float on, size monitor_w*0.8 monitor_h*0.8, center on, match:class ^(com.gabm.satty)$"
       # 下拉式终端窗口规则
       "float on,  size monitor_w monitor_h*0.4, move 0 0, rounding 0, workspace special:dropdown-terminal, match:class ^(dropdown-terminal)$"
+
+      # 全屏时, 关闭屏幕休眠, 启用不透明.
+      # NOTE:
+      # 目前不支持同时满足全屏和指定应用的规则
+      # match:fullscreen 这个最大化和全屏都认为是fullscreen.
+      # 全屏时, 进入空闲抑制
+      "idle_inhibit fullscreen, match:fullscreen_state_client 2"
+      "idle_inhibit fullscreen, match:fullscreen_state_internal 2"
+
+      # 浏览器, 在全屏时启用不透明
+      "opaque on, match:fullscreen_state_client 2, match:class ^(google-chrome|firefox)$"
+      "opaque on, match:fullscreen_state_internal 2, match:class ^(google-chrome|firefox)$"
     ];
   };
 }

@@ -17,6 +17,8 @@
         after_sleep_cmd = " hyprctl dispatch dpms on"; # turn of screen after sleep (not strictly necessary, but just in case)
         # 是否忽略来自 Firefox/Steam 等应用的"禁止休眠"请求
         ignore_dbus_inhibit = false;
+        ignore_systemd_inhibit = false;
+        ignore_wayland_inhibit = false;
       };
       listener = [
         {
