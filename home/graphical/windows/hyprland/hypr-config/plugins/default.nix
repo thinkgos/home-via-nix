@@ -19,7 +19,7 @@
     ];
     settings.plugin = {
       split-monitor-workspaces = {
-        count = 9;
+        count = 5;
         keep_focused = 0;
         enable_screen_sharing = 1;
         enable_notifications = 0;

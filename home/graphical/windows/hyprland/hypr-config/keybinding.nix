@@ -75,37 +75,69 @@
 
       # 工作区管理
       # 工作区切换
-      "$mod, mouse_down, workspace, e-1" # 鼠标滚轮
-      "$mod, mouse_up, workspace, e+1" # 鼠标滚轮
-      "$mod, Prior, workspace, e-1" # Prior = PageUp 切换到上一个工作区
-      "$mod, Next, workspace, e+1" # Next = PageDown 切换到下一个工作区
-      "$mod, Home, workspace, 1"
+      # "$mod, mouse_down, workspace, e-1" # 鼠标滚轮
+      # "$mod, mouse_up, workspace, e+1" # 鼠标滚轮
+      # "$mod, Prior, workspace, e-1" # Prior = PageUp 切换到上一个工作区
+      # "$mod, Next, workspace, e+1" # Next = PageDown 切换到下一个工作区
+      # "$mod, Home, workspace, 1"
+      # "$mod, End, exec, hyprctl dispatch workspace $(hyprctl workspaces | grep 'workspace ID' | awk '{print $3}' | sort -n | tail -n 1)"
+      "$mod, mouse_down, split-workspace, e-1" # 鼠标滚轮
+      "$mod, mouse_up, split-workspace, e+1" # 鼠标滚轮
+      "$mod, Prior, split-workspace, e-1" # Prior = PageUp 切换到上一个工作区
+      "$mod, Next, split-workspace, e+1" # Next = PageDown 切换到下一个工作区
+      "$mod, Home, split-workspace, 1"
       "$mod, End, exec, hyprctl dispatch workspace $(hyprctl workspaces | grep 'workspace ID' | awk '{print $3}' | sort -n | tail -n 1)"
       # 切换到工作区 (Mod+1-9 — same as niri)
-      "$mod, 1, workspace, 1"
-      "$mod, 2, workspace, 2"
-      "$mod, 3, workspace, 3"
-      "$mod, 4, workspace, 4"
-      "$mod, 5, workspace, 5"
-      "$mod, 6, workspace, 6"
-      "$mod, 7, workspace, 7"
-      "$mod, 8, workspace, 8"
-      "$mod, 9, workspace, 9"
+      # "$mod, 1, workspace, 1"
+      # "$mod, 2, workspace, 2"
+      # "$mod, 3, workspace, 3"
+      # "$mod, 4, workspace, 4"
+      # "$mod, 5, workspace, 5"
+      # "$mod, 6, workspace, 6"
+      # "$mod, 7, workspace, 7"
+      # "$mod, 8, workspace, 8"
+      # "$mod, 9, workspace, 9"
+      # "$mod, 0, workspace, 0"
+      "$mod, 1, split-workspace, 1"
+      "$mod, 2, split-workspace, 2"
+      "$mod, 3, split-workspace, 3"
+      "$mod, 4, split-workspace, 4"
+      "$mod, 5, split-workspace, 5"
+      "$mod, 6, split-workspace, 6"
+      "$mod, 7, split-workspace, 7"
+      "$mod, 8, split-workspace, 8"
+      "$mod, 9, split-workspace, 9"
+      "$mod, 0, split-workspace, 0"
       # 工作区移动
-      "$mod SHIFT, Prior, movetoworkspace, e-1" # Prior = PageUp 移动到上一个工作区
-      "$mod SHIFT, Next, movetoworkspace, e+1" # Next = PageDown 移动到下一个工作区
-      "$mod SHIFT, Home, movetoworkspace, 1"
+      # "$mod SHIFT, Prior, movetoworkspace, e-1" # Prior = PageUp 移动到上一个工作区
+      # "$mod SHIFT, Next, movetoworkspace, e+1" # Next = PageDown 移动到下一个工作区
+      # "$mod SHIFT, Home, movetoworkspace, 1"
+      # "$mod SHIFT, End, exec, hyprctl dispatch movetoworkspace $(hyprctl workspaces | grep 'workspace ID' | awk '{print $3}' | sort -n | tail -n 1)"
+      "$mod SHIFT, Prior, split-movetoworkspace, e-1" # Prior = PageUp 移动到上一个工作区
+      "$mod SHIFT, Next, split-movetoworkspace, e+1" # Next = PageDown 移动到下一个工作区
+      "$mod SHIFT, Home, split-movetoworkspace, 1"
       "$mod SHIFT, End, exec, hyprctl dispatch movetoworkspace $(hyprctl workspaces | grep 'workspace ID' | awk '{print $3}' | sort -n | tail -n 1)"
       # 移动到工作区 (Mod+Shift+1-9 — same as niri)
-      "$mod SHIFT, 1, movetoworkspace, 1"
-      "$mod SHIFT, 2, movetoworkspace, 2"
-      "$mod SHIFT, 3, movetoworkspace, 3"
-      "$mod SHIFT, 4, movetoworkspace, 4"
-      "$mod SHIFT, 5, movetoworkspace, 5"
-      "$mod SHIFT, 6, movetoworkspace, 6"
-      "$mod SHIFT, 7, movetoworkspace, 7"
-      "$mod SHIFT, 8, movetoworkspace, 8"
-      "$mod SHIFT, 9, movetoworkspace, 9"
+      # "$mod SHIFT, 1, movetoworkspace, 1"
+      # "$mod SHIFT, 2, movetoworkspace, 2"
+      # "$mod SHIFT, 3, movetoworkspace, 3"
+      # "$mod SHIFT, 4, movetoworkspace, 4"
+      # "$mod SHIFT, 5, movetoworkspace, 5"
+      # "$mod SHIFT, 6, movetoworkspace, 6"
+      # "$mod SHIFT, 7, movetoworkspace, 7"
+      # "$mod SHIFT, 8, movetoworkspace, 8"
+      # "$mod SHIFT, 9, movetoworkspace, 9"
+      # "$mod SHIFT, 0, movetoworkspace, 0"
+      "$mod SHIFT, 1, split-movetoworkspace, 1"
+      "$mod SHIFT, 2, split-movetoworkspace, 2"
+      "$mod SHIFT, 3, split-movetoworkspace, 3"
+      "$mod SHIFT, 4, split-movetoworkspace, 4"
+      "$mod SHIFT, 5, split-movetoworkspace, 5"
+      "$mod SHIFT, 6, split-movetoworkspace, 6"
+      "$mod SHIFT, 7, split-movetoworkspace, 7"
+      "$mod SHIFT, 8, split-movetoworkspace, 8"
+      "$mod SHIFT, 9, split-movetoworkspace, 9"
+      "$mod SHIFT, 0, split-movetoworkspace, 0"
     ];
     bindm = [
       "$mod, mouse:272, movewindow" # Super + 左键 拖拽窗口

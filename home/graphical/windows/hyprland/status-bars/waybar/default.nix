@@ -91,8 +91,10 @@ in
               "*" = 4;
             };
             on-click = "activate";
-            on-scroll-up = "hyprctl dispatch workspace e-1";
-            on-scroll-down = "hyprctl dispatch workspace e+1";
+            # on-scroll-up = "hyprctl dispatch workspace e-1";
+            # on-scroll-down = "hyprctl dispatch workspace e+1";
+            on-scroll-up = "hyprctl dispatch split-workspace e-1";
+            on-scroll-down = "hyprctl dispatch split-workspace e+1";
           };
           # 窗口 ✅
           "hyprland/window" = {
