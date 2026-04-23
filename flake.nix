@@ -66,7 +66,7 @@
                   window = "hyprland";
                   window-version = "hyprland";
                   attrs = {
-                    monitor-primary = "";
+                    monitor-primary = "HDMI-A-1";
                     monitor-secondary = "";
                   };
                 };
