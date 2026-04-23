@@ -9,9 +9,8 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    split-monitor-workspaces = {
-      url = "github:zjeffer/split-monitor-workspaces";
-    };
+    split-monitor-workspaces.url = "github:zjeffer/split-monitor-workspaces";
+    lan-mouse.url = "github:feschber/lan-mouse";
   };
 
   outputs =
@@ -30,7 +29,7 @@
         "aarch64-darwin"
       ];
       perSystem =
-        { pkgs, ... }:
+        { pkgs, system, ... }:
         {
           legacyPackages.homeConfigurations =
             let
@@ -41,7 +40,12 @@
                 }@args:
                 inputs.home-manager.lib.homeManagerConfiguration {
                   inherit pkgs;
-                  modules = [ ./home ];
+                  modules = [
+                    ./home
+
+                    # Add the Home Manager module
+                    inputs.lan-mouse.homeManagerModules.default
+                  ];
                   # Optionally use extraSpecialArgs
                   # to pass through arguments to home.nix
                   extraSpecialArgs = {
@@ -49,7 +53,8 @@
                       inherit graphics;
                     };
                     extra-pkgs = {
-                      split-monitor-workspaces = inputs.split-monitor-workspaces.packages.${pkgs.system}.default;
+                      split-monitor-workspaces = inputs.split-monitor-workspaces.packages.${system}.default;
+                      lan-mouse = inputs.lan-mouse.packages.${system}.default;
                     };
                   };
                 };

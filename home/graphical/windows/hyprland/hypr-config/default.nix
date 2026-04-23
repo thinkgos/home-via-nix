@@ -14,13 +14,6 @@
     ./animations # 动画
   ];
   wayland.windowManager.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-    systemd = {
-      enableXdgAutostart = true;
-      variables = [ "--all" ];
-    };
-
     settings = {
       "$font" = "FiraCode Nerd Font Mono";
       exec-once = [ ];

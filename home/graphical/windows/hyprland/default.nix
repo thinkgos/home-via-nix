@@ -42,9 +42,9 @@
   xdg.portal = {
     enable = true;
     xdgOpenUsePortal = true;
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-gtk
-      xdg-desktop-portal-hyprland
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-hyprland
     ];
     config.common.default = [
       "hyprland"
@@ -52,6 +52,18 @@
     ];
     configPackages = [ pkgs.hyprland ];
   };
+
+  wayland.windowManager.hyprland = {
+    package = pkgs.hyprland;
+    portalPackage = pkgs.xdg-desktop-portal-hyprland;
+    enable = true;
+    xwayland.enable = true;
+    systemd = {
+      enableXdgAutostart = true;
+      variables = [ "--all" ];
+    };
+  };
+
   # BUG: https://github.com/nix-community/home-manager/issues/4922
   systemd.user.tmpfiles.rules = [
     "L+ %h/.config/systemd/user/xdg-desktop-portal.service - - - - %h/.nix-profile/share/systemd/user/xdg-desktop-portal.service"

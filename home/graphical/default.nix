@@ -19,6 +19,7 @@
     ./shell
     ./editor
     ./devtools
+    ./programs
     ./windows
   ];
 
