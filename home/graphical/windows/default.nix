@@ -6,11 +6,10 @@
   ...
 }:
 {
-  imports = [
-    # ./wayvnc.nix
-  ]
-  ++ lib.optional (customize.graphics.window == "gnome") ./gnome
-  ++ lib.optional (customize.graphics.window == "hyprland") ./hyprland;
+  imports =
+    [ ]
+    ++ lib.optional (customize.graphics.window == "gnome") ./gnome
+    ++ lib.optional (customize.graphics.window == "hyprland") ./hyprland;
 
   home.sessionVariables = {
     NIXOS_OZONE_WL = 1; # Chromium 内核应用 使用 Wayland
@@ -32,5 +31,4 @@
     BAT_PAGER = "less -r";
     TMPDIR = "$HOME/.cache/tmp";
   };
-
 }

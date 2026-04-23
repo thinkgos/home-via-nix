@@ -48,7 +48,9 @@
                     customize = args // {
                       inherit graphics;
                     };
-                    split-monitor-workspaces = inputs.split-monitor-workspaces.packages.${pkgs.system}.default;
+                    extra-pkgs = {
+                      split-monitor-workspaces = inputs.split-monitor-workspaces.packages.${pkgs.system}.default;
+                    };
                   };
                 };
             in

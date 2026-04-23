@@ -2,7 +2,7 @@
   config,
   lib,
   pkgs,
-  split-monitor-workspaces,
+  extra-pkgs,
   ...
 }:
 {
@@ -12,8 +12,8 @@
   # https://github.com/zjeffer/split-monitor-workspaces
 
   # 插件与hyprland版本不一致
-  wayland.windowManager.hyprland.plugins = with pkgs; [
+  wayland.windowManager.hyprland.plugins = [
     # hyprlandPlugins.hyprexpo
-    split-monitor-workspaces
+    extra-pkgs.split-monitor-workspaces
   ];
 }
