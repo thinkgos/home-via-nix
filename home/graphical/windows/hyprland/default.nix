@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  extra-pkgs,
   ...
 }:
 {
@@ -57,18 +58,18 @@
     xdgOpenUsePortal = true;
     extraPortals = [
       pkgs.xdg-desktop-portal-gtk
-      pkgs.xdg-desktop-portal-hyprland
+      extra-pkgs.xdg-desktop-portal-hyprland
     ];
     config.common.default = [
       "hyprland"
       "gtk"
     ];
-    configPackages = [ pkgs.hyprland ];
+    configPackages = [ extra-pkgs.hyprland ];
   };
 
   wayland.windowManager.hyprland = {
-    package = pkgs.hyprland;
-    portalPackage = pkgs.xdg-desktop-portal-hyprland;
+    package = extra-pkgs.hyprland;
+    portalPackage = extra-pkgs.xdg-desktop-portal-hyprland;
     enable = true;
     xwayland.enable = true;
     systemd = {

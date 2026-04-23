@@ -9,7 +9,11 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    split-monitor-workspaces.url = "github:zjeffer/split-monitor-workspaces";
+    hyprland.url = "github:hyprwm/Hyprland";
+    split-monitor-workspaces = {
+      url = "github:zjeffer/split-monitor-workspaces";
+      inputs.hyprland.follows = "hyprland";
+    };
     lan-mouse.url = "github:feschber/lan-mouse";
   };
 
@@ -53,6 +57,8 @@
                       inherit graphics;
                     };
                     extra-pkgs = {
+                      hyprland = inputs.hyprland.packages.${system}.hyprland;
+                      xdg-desktop-portal-hyprland = inputs.hyprland.packages.${system}.xdg-desktop-portal-hyprland;
                       split-monitor-workspaces = inputs.split-monitor-workspaces.packages.${system}.default;
                       lan-mouse = inputs.lan-mouse.packages.${system}.default;
                     };

@@ -6,7 +6,7 @@
 }:
 {
   imports = [
-    # ./plugins # 插件
+    ./plugins # 插件
     ./keybinding.nix # 按键绑定
     ./monitor.nix # 显示器
     ./workspace.nix # 工作空间

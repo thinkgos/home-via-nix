@@ -22,10 +22,11 @@ in
     };
     settings = {
       mainBar =
-        lib.optionalAttrs (attrs.monitor-primary != "") {
-          output = attrs.monitor-primary;
-        }
-        // {
+        # lib.optionalAttrs (attrs.monitor-primary != "") {
+        #   output = attrs.monitor-primary;
+        # }
+        # //
+        {
           layer = "top";
           position = "top";
           mode = "dock";
@@ -78,9 +79,11 @@ in
           "hyprland/workspaces" = {
             format = "{icon}";
             format-icons = {
-              active = "⊛";
-              default = "○";
               urgent = "◉";
+              active = "⊛";
+              visible = "";
+              default = "○";
+              empty = "○";
             };
             active-only = false;
             all-outputs = true;
