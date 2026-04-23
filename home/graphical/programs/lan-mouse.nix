@@ -12,14 +12,14 @@
     systemd = true;
     package = extra-pkgs.lan-mouse;
     # Optional configuration in nix syntax, see config.toml for available options
-    # settings = {
-    #   release_bind = [
-    #     "KeyA"
-    #     "KeyS"
-    #     "KeyD"
-    #     "KeyF"
-    #   ];
-    #   port = 4242;
-    # };
+    # settings = { };
   };
+
+  home.activation.create-lan-mouse-default-config = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    file=${config.xdg.configHome}/lan-mouse/config.toml
+    if [ ! -f "$file" ]; then
+      mkdir -p "$(dirname "$file")"
+      touch "$file"
+    fi
+  '';
 }
