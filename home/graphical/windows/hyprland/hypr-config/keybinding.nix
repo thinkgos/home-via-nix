@@ -16,7 +16,7 @@
     "$launchBrowser" = "xdg-open https://google.com";
     "$launchIde" = "code";
     "$appLauncher" = "pkill wofi || wofi";
-    "$lockScreen" = "hyprlock";
+    "$lockScreen" = "blast-lock-screen";
     "$pickColor" = "hyprpicker -a -n -s 5 -u 60";
     # NOTE:
     # `Super` + `A`: 显示工作区和应用启动器概览(hyprshell支持)
@@ -121,8 +121,8 @@
       ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
       ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
       # 亮度调整
-      ", XF86MonBrightnessUp, exec, brightnessctl set 5%+"
-      ", XF86MonBrightnessDown, exec, brightnessctl set 5%-"
+      ", XF86MonBrightnessUp, exec, brightnessctl -d *backlight* set 5%+"
+      ", XF86MonBrightnessDown, exec, brightnessctl -d *backlight* set 5%-"
       # 蓝光调整
       # ", XF86MonBrightnessDown, exec, hyprctl hyprsunset gamma -10"
       # ", XF86MonBrightnessUp, exec, hyprctl hyprsunset gamma +10"

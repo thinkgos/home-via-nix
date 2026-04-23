@@ -11,7 +11,7 @@
     layout = [
       {
         label = "lock";
-        action = "hyprlock";
+        action = "blast-lock-screen";
         text = "锁屏 (L)";
         keybind = "l";
       }

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 screenshotDir=$HOME/Pictures/screenshots
 mkdir -p "${screenshotDir}"

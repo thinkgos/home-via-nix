@@ -32,6 +32,8 @@
       general = {
         grace = 3;
         hide_cursor = false;
+        ignore_empty_input = true;
+        text_trim = true;
       };
       # uncomment to enable fingerprint authentication
       # auth = {

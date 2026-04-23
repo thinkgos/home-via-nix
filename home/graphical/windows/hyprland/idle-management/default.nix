@@ -26,9 +26,9 @@
         }
         {
           timeout = 600; # 10m
-          # BUG: 键盘背光没法控制, 没有找到设备名.
-          on-timeout = "brightnessctl -s set 10"; # turn down screen backlight.
-          on-resume = "brightnessctl -r"; # resume screen backlight.
+          # BUG: 键盘背光没法控制, 没有找到设备名. HDMI 不能用此方式, 需要用ddcutil
+          on-timeout = "brightnessctl -s -d *backlight* set 10"; # turn down screen backlight.
+          on-resume = "brightnessctl -r -d *backlight*"; # resume screen backlight.
         }
         {
           timeout = 900; # 15m
@@ -38,7 +38,7 @@
         {
           timeout = 930; # 15m30s
           on-timeout = "hyprctl dispatch dpms off"; # screen off when timeout has passed
-          on-resume = "hyprctl dispatch dpms on && brightnessctl -r"; # screen on when activity is detected after timeout has fired.
+          on-resume = "hyprctl dispatch dpms on && brightnessctl -r -d *backlight*"; # screen on when activity is detected after timeout has fired.
         }
         # 默认不挂起
         # {

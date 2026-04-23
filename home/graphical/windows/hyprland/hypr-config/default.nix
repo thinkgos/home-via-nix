@@ -22,6 +22,7 @@
     };
 
     settings = {
+      "$font" = "FiraCode Nerd Font Mono";
       exec-once = [ ];
       # General
       # https://wiki.hypr.land/Configuring/Variables/#general
@@ -41,6 +42,12 @@
         fullscreen_opacity = 0.92;
         dim_modal = true;
         # dim_inactive = true;
+      };
+      misc = {
+        disable_splash_rendering = true;
+        font_family = "$font";
+        mouse_move_enables_dpms = true;
+        key_press_enables_dpms = true;
       };
     };
     extraConfig = ''
