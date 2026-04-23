@@ -3,7 +3,7 @@
 
 ## 1. 桌面端启动器找不到相关程序
 
-`XDG_DATA_DIRS` 没有Nix对应路径
+`XDG_DATA_DIRS` 没有Nix对应路径, 有时 `/etc/environment` 中被写死了, 需要手动删除.
 
 ```shell
 systemctl --user show-environment | grep XDG_DATA_DIRS
@@ -32,13 +32,7 @@ systemctl --user show-environment | grep XDG_DATA_DIRS
 - [systemd/systemd#32423](https://github.com/systemd/systemd/issues/32423#issuecomment-2907893187)
 - [pr 7949](https://github.com/nix-community/home-manager/pull/7949)
 
-## 3. 禁用用户级IBus
-
-```shell
-systemctl --user mask org.freedesktop.IBus.session.GNOME.service
-```
-
-## 4. code出现sandbox权限问题
+## 3. code出现sandbox权限问题
 
 放开`AppArmor`权限
 
@@ -46,13 +40,21 @@ systemctl --user mask org.freedesktop.IBus.session.GNOME.service
 echo "kernel.apparmor_restrict_unprivileged_userns=0" | sudo tee /etc/sysctl.d/60-apparmor-namespace.conf
 ```
 
-### 5. 用户目录名称改成英文
+### 4. 用户目录名称改成英文
 
 ```shell
 LANG=C xdg-user-dirs-gtk-update
 ```
 
-### 6. 远程桌面在无显示器时无法使用
+## GNOME
+
+### 1. 禁用用户级IBus
+
+```shell
+systemctl --user mask org.freedesktop.IBus.session.GNOME.service
+```
+
+### 2. 远程桌面在无显示器时无法使用
 
 ```shell
 gsettings set org.gnome.desktop.remote-desktop.rdp screen-share-mode 'extend'
@@ -80,7 +82,7 @@ systemctl --user list-unit-files | grep videobridge
 sudo apt purge xdg-desktop-portal-kde xwaylandvideobridge
 ```
 
-### hyprlock锁屏后无法登陆
+### 2. hyprlock锁屏后无法登陆
 
 权限和共享库问题, `Hyprlock` 没有权限通过 PAM 验证你的密码.
 

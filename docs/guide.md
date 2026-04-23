@@ -12,7 +12,11 @@
 - [`ansible`](https://www.ansible.com) 管理系统包和github应用
 - 其它商业或特殊软件使用手动安装[Manual Install](system/manual-install.md).
 
-## 1. 关闭SELINUX
+## 1. ubuntu server(可选)
+
+安装 `hyprland` 要从 `ubuntu server` 开始, 需要执行 [bootstrap](../bootstrap.sh).
+
+## 2. 关闭SELINUX
 
 ### 永久关闭 - 需重启
 
@@ -26,14 +30,14 @@ sudo sed -i 's/^SELINUX=.*/SELINUX=disabled/' /etc/selinux/config
 sudo setenforce 0
 ```
 
-## 2. 安装nix
+## 3. 安装nix
 
 - [Install Nix](https://nixos.org/download/#download-nix)
 - 添加channel, `nix-channel --add https://nixos.org/channels/nixos-unstable nixpkgs`
 - 更新channel, `nix-channel --update`
 - 添加相关help文档, `nix-env -i nix`.
 
-## 3. 安装home-manager
+## 4. 安装home-manager
 
 [Install home-manager via nix flakes](https://nix-community.github.io/home-manager/index.xhtml#ch-nix-flakes)
 
@@ -50,14 +54,14 @@ home-manager switch --flake .#thinkgo-ubuntu25_10
 home-manager switch --flake .#thinkgo-fedora43
 ```
 
-## 4. 设置默认shell为zsh
+## 5. 设置默认shell为zsh
 
 ```shell
 # 设置默认shell为zsh
 sudo chsh -s ~/.nix-profile/bin/zsh $USER
 ```
 
-## 5. 安装软件
+## 6. 安装软件
 
 ansible playbook 标签:
 
