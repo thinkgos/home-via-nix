@@ -11,5 +11,6 @@
     (pkgs.writeShellScriptBin "blast-lock-screen" (builtins.readFile ./lock-screen.sh))
     (pkgs.writeShellScriptBin "blast-gpu-name" (builtins.readFile ./gpu-name.sh))
     (pkgs.writeShellScriptBin "blast-dropdown-terminal" (builtins.readFile ./dropdown-terminal.sh))
+    (pkgs.writeShellScriptBin "blast-switch-workspace" (builtins.readFile ./switch-workspace.sh))
   ];
 }
