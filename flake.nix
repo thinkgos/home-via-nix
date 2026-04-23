@@ -9,6 +9,9 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    split-monitor-workspaces = {
+      url = "github:zjeffer/split-monitor-workspaces";
+    };
   };
 
   outputs =
@@ -45,6 +48,7 @@
                     customize = args // {
                       inherit graphics;
                     };
+                    split-monitor-workspaces = inputs.split-monitor-workspaces.packages.${pkgs.system}.default;
                   };
                 };
             in
