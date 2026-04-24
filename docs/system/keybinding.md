@@ -62,7 +62,7 @@
 
 | 功能 | Gnome | Gnome(调整) | Status | Hyprland | Status |
 | ------ | ----------- | ------- | ---------- | ---------- | ---------- |
-| 启动帮助浏览器 | `Super` + `F1` | | ◻️ | | ◻️ |
+| 启动帮助 | `Super` + `F1` | `Super` + `F1` | ✅ | `Super` + `F1` | ✅(按键帮助) |
 | 启动计算器 | 🚫 | `Super` + `C` | ✅ | `Super` + `C` | ✅ |
 | 启动网页浏览器 | 🚫 | `Super` + `B` | ✅ | `Super` + `B` | ✅ |
 | 启动邮件客户端 | 🚫 | | ◻️ | | ◻️ |
@@ -83,6 +83,7 @@
 | 将窗口下移一个显示器 | `Super` + `Shift` + `Down` | ❌ | ✅ | | ◻️ |
 | 将窗口左移一个显示器 | `Super` + `Shift` + `Left` | ❌ | ✅ | | ◻️ |
 | 将窗口右移一个显示器 | `Super` + `Shift` + `Right` | ❌ | ✅ | | ◻️ |
+| 孤儿窗口回收 | ❌ | ❌ | ✅ | `SUPER` + `0` | ✅(hyprsplit) |
 | 将窗口移至工作区1 | `Super` + `Shift` + `Home` | `Super` + `Shift` + `1`<br />`Super` + `Shift` + `Home` | ✅ | `Super` + `Shift` + `1`<br />`Super` + `Shift` + `Home` | ✅ |
 | 将窗口移至工作区2 | 🚫 | `Super` + `Shift` + `2` | ✅ | `Super` + `Shift` + `2` | ✅ |
 | 将窗口移至工作区3 | 🚫 | `Super` + `Shift` + `3` | ✅ | `Super` + `Shift` + `3` | ✅ |

@@ -15,6 +15,7 @@
       inputs.hyprland.follows = "hyprland";
     };
     lan-mouse.url = "github:feschber/lan-mouse";
+    hypr-kcs.url = "github:kosa12/hyprKCS";
   };
 
   outputs =
@@ -61,6 +62,7 @@
                       xdg-desktop-portal-hyprland = inputs.hyprland.packages.${system}.xdg-desktop-portal-hyprland;
                       hyprsplit = inputs.hyprsplit.packages.${system}.default;
                       lan-mouse = inputs.lan-mouse.packages.${system}.default;
+                      hypr-kcs = inputs.hypr-kcs.packages.${system}.default;
                     };
                   };
                 };

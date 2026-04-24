@@ -25,14 +25,20 @@
     ./scripts # 脚本配置
   ];
 
-  home.packages = with pkgs; [
-    hyprpicker # 颜色拾取器
-    qalculate-gtk # 计算器
-    # nautilus # 文件管理器
-    nemo-with-extensions # 文件管理器
-    wttrbar # 天气栏
-    gpu-usage-waybar # GPU使用率栏
-  ];
+  home.packages =
+    with pkgs;
+    [
+      hyprpicker # 颜色拾取器
+      qalculate-gtk # 计算器
+      # nautilus # 文件管理器
+      nemo-with-extensions # 文件管理器
+      wttrbar # 天气栏
+      gpu-usage-waybar # GPU使用率栏
+
+    ]
+    ++ [
+      extra-pkgs.hypr-kcs # hyprcs
+    ];
 
   home.sessionVariables = {
     NIXOS_OZONE_WL = 1; # Chromium 内核应用 使用 Wayland

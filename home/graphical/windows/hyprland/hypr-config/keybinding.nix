@@ -18,6 +18,11 @@
     "$appLauncher" = "pkill wofi || wofi";
     "$lockScreen" = "blast-lock-screen";
     "$pickColor" = "hyprpicker -a -n -s 5 -u 60";
+    "$helpKeybinding" = "hyprkcs";
+    binds = {
+      drag_threshold = 10;
+    };
+
     # NOTE:
     # `Super` + `A`: 显示工作区和应用启动器概览(hyprshell支持)
     # `Alt` + `Tab`: 切换应用程序(hyprshell支持)
@@ -51,6 +56,7 @@
       "$mod, Return, exec, $launchDropdownTerminal"
       "$mod, slash, exec, $appLauncher" # 启动应用启动器
       "$mod ALT, C, exec, $pickColor" # 启动提取颜色
+      "$mod, F1, exec, $helpKeybinding" # 启动帮助按键绑定
 
       # 布局
       "$mod, bracketleft, layoutmsg, cycleprev" # 切换到上一个窗口
