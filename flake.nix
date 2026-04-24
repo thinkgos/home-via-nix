@@ -10,8 +10,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprland.url = "github:hyprwm/Hyprland";
-    split-monitor-workspaces = {
-      url = "github:zjeffer/split-monitor-workspaces";
+    hyprsplit = {
+      url = "github:shezdy/hyprsplit";
       inputs.hyprland.follows = "hyprland";
     };
     lan-mouse.url = "github:feschber/lan-mouse";
@@ -59,7 +59,7 @@
                     extra-pkgs = {
                       hyprland = inputs.hyprland.packages.${system}.hyprland;
                       xdg-desktop-portal-hyprland = inputs.hyprland.packages.${system}.xdg-desktop-portal-hyprland;
-                      split-monitor-workspaces = inputs.split-monitor-workspaces.packages.${system}.default;
+                      hyprsplit = inputs.hyprsplit.packages.${system}.default;
                       lan-mouse = inputs.lan-mouse.packages.${system}.default;
                     };
                   };

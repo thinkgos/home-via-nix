@@ -77,28 +77,28 @@ in
           };
           # 工作区 ✅
           "hyprland/workspaces" = {
-            format = "{icon}";
-            format-icons = {
-              urgent = "◉";
-              active = "⊛";
-              visible = "";
-              default = "○";
-              # empty = "○";
-            };
+            format = "{}";
+            # format-icons = {
+            # urgent = "◉";
+            # active = "⊛";
+            # visible = "";
+            # default = "○";
+            # empty = "○";
+            # };
             active-only = false;
-            all-outputs = true;
+            all-outputs = false;
             persistent-workspaces = {
-              "*" = 4;
+              "*" = 2;
             };
             on-click = "activate";
-            on-scroll-up = "hyprctl dispatch split-workspace -1";
-            on-scroll-down = "hyprctl dispatch split-workspace +1";
+            on-scroll-up = "hyprctl dispatch split:workspace r-1";
+            on-scroll-down = "hyprctl dispatch split:workspace r+1";
             # on-scroll-up = "hyprctl dispatch workspace e-1";
             # on-scroll-down = "hyprctl dispatch workspace e+1";
           };
           # 窗口 ✅
           "hyprland/window" = {
-            format = "👉 {}";
+            format = "💥 {}";
             max-length = 10;
             separate-outputs = true;
           };

@@ -15,6 +15,7 @@
     # settings = { };
   };
 
+  # 创建默认配置文件，如果不存在
   home.activation.create-lan-mouse-default-config = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     file=${config.xdg.configHome}/lan-mouse/config.toml
     if [ ! -f "$file" ]; then
