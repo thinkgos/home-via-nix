@@ -1,6 +1,7 @@
 #!/bin/bash
 
 mode="$1"
+action="$2"
 
 lastWorkspaceId=$(hyprctl workspaces -j | jq 'max_by(.id).id')
 activeMonitor=$(hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .name')

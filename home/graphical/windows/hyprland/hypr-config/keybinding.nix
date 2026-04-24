@@ -81,8 +81,8 @@
       "$mod, mouse_up, split:workspace, r+1" # 鼠标滚轮
       "$mod, Prior, split:workspace, r-1" # Prior = PageUp 切换到上一个工作区
       "$mod, Next, split:workspace, r+1" # Next = PageDown 切换到下一个工作区
-      "$mod, Home, workspace, 1"
-      "$mod, End, exec, blast-switch-workspace split-workspace"
+      "$mod, Home, split:workspace, 1"
+      "$mod, End, exec, blast-switch-last-workspace split-workspace"
       # 切换到工作区 (Mod+1-9 — same as niri)
       "$mod, 1, split:workspace, 1"
       "$mod, 2, split:workspace, 2"
@@ -96,8 +96,8 @@
       # 工作区移动
       "$mod SHIFT, Prior, split:movetoworkspace, r-1" # Prior = PageUp 移动到上一个工作区
       "$mod SHIFT, Next, split:movetoworkspace, r+1" # Next = PageDown 移动到下一个工作区
-      "$mod SHIFT, Home, movetoworkspace, 1"
-      "$mod SHIFT, End, exec, blast-switch-workspace split-movetoworkspace"
+      "$mod SHIFT, Home, split:movetoworkspace, 1"
+      "$mod SHIFT, End, exec, blast-switch-last-workspace split-movetoworkspace"
       # 移动到工作区 (Mod+Shift+1-9 — same as niri)
       "$mod SHIFT, 1, split:movetoworkspace, 1"
       "$mod SHIFT, 2, split:movetoworkspace, 2"
@@ -117,7 +117,7 @@
           "$mod, Prior, workspace, e-1" # Prior = PageUp 切换到上一个工作区
           "$mod, Next, workspace, e+1" # Next = PageDown 切换到下一个工作区
           "$mod, Home, workspace, 1"
-          "$mod, End, exec, blast-switch-workspace workspace"
+          "$mod, End, exec, blast-switch-last-workspace workspace"
         # 切换到工作区 (Mod+1-9 — same as niri)
           "$mod, 1, workspace, 1"
           "$mod, 2, workspace, 2"
@@ -132,7 +132,7 @@
           "$mod SHIFT, Prior, movetoworkspace, e-1" # Prior = PageUp 移动到上一个工作区
           "$mod SHIFT, Next, movetoworkspace, e+1" # Next = PageDown 移动到下一个工作区
           "$mod SHIFT, Home, movetoworkspace, 1"
-          "$mod SHIFT, End, exec, blast-switch-workspace movetoworkspace"
+          "$mod SHIFT, End, exec, blast-switch-last-workspace movetoworkspace"
         # 移动到工作区 (Mod+Shift+1-9 — same as niri)
           "$mod SHIFT, 1, movetoworkspace, 1"
           "$mod SHIFT, 2, movetoworkspace, 2"
