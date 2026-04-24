@@ -40,7 +40,7 @@ github_apps:
   - name: "opencode"
     description: "code agent"
     repo: "anomalyco/opencode"
-    version: 1.14.20
+    version: 1.14.22
     binary_name: "opencode"
     binary_pattern: "opencode-linux-x64.tar.gz"
 
