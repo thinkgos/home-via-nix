@@ -246,7 +246,7 @@ tooltip label {
 
 
 #custom-weather {
-  color: @blue;
+  color: @text;
   border-radius: 15px;
   background-color: transparent;
 }

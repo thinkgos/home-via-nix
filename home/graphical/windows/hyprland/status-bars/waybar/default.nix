@@ -77,14 +77,23 @@ in
           };
           # 工作区 ✅
           "hyprland/workspaces" = {
-            format = "{}";
-            # format-icons = {
-            # urgent = "◉";
-            # active = "⊛";
-            # visible = "";
-            # default = "○";
-            # empty = "○";
-            # };
+            format = "{icon}";
+            format-icons = {
+              "1" = "❶";
+              "2" = "❷";
+              "3" = "❸";
+              "4" = "❹";
+              "5" = "❺";
+              "6" = "❻";
+              "7" = "❼";
+              "8" = "❽";
+              "9" = "❾";
+              # urgent = "◉";
+              # active = "⊛";
+              # visible = "";
+              # default = "○";
+              # empty = "○";
+            };
             active-only = false;
             all-outputs = false;
             persistent-workspaces = {
