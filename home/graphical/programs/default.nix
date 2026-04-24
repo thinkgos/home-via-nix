@@ -6,7 +6,7 @@
 }:
 {
   imports = [
-    # ./wayvnc.nix
+    ./vnc.nix
     ./lan-mouse.nix
   ];
 }
