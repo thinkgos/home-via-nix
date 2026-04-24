@@ -32,15 +32,13 @@
       cp = "cp -i";
       rm = "trash -v";
     };
-    initContent =
-      let
-        zshConfigEarlyInit = lib.mkOrder 500 "";
-        zshConfigLast = lib.mkOrder 1500 (builtins.readFile ./sh/zsh-latest.sh);
-      in
-      lib.mkMerge [
-        zshConfigEarlyInit
-        zshConfigLast
-      ];
+    initContent = lib.mkMerge [
+      # (lib.mkOrder 100 "zmodload zsh/zprof") # 测试
+      # (lib.mkOrder 500 "")
+      # (lib.mkOrder 550 "zstyle ':completion:*' check-path false")
+      (lib.mkOrder 1500 (builtins.readFile ./sh/zsh-latest.sh))
+      # (lib.mkOrder 2000 "zprof") # 测试
+    ];
     history = {
       ignorePatterns = [
         "exit"
