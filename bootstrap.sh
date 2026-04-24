@@ -2,6 +2,9 @@
 
 #* ubuntu server 安装wayland
 
+#* ubuntu 26.04没有xorg xserver-xorg, 导致sddm起不来. 补一下.
+# sudo apt install xorg xserver-xorg
+
 source ./scripts/required_sys_software.sh
 source ./scripts/wayland_session.sh
 source ./scripts/network_wait_online.sh
