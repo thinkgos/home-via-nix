@@ -7,7 +7,7 @@
 {
   programs.wlogout = {
     enable = true;
-    # BUG: 注销导致hyprland起不来.
+    # BUG: 这里注销导致hyprland起不来(但是快捷键里注销时面正常时而不正常).
     layout = [
       {
         label = "lock";
@@ -18,7 +18,8 @@
       {
         label = "logout";
         # action = "hyprctl dispatch exit";
-        action = "notify-send '注销有BUG!'";
+        action = "hyprctl dispatch exec \"hyprshutdown\"";
+        # action = "notify-send '注销有BUG!'";
         text = "注销 (E)";
         keybind = "e";
       }
