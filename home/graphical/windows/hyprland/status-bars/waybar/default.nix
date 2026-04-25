@@ -28,6 +28,8 @@ in
         # //
         {
           layer = "top";
+          exclusive = true;
+          passthrough = true;
           position = "top";
           mode = "dock";
           height = 32;

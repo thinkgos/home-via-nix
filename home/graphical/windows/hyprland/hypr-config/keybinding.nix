@@ -19,6 +19,7 @@
     "$lockScreen" = "blast-lock-screen";
     "$pickColor" = "hyprpicker -a -n -s 5 -u 60";
     "$helpKeybinding" = "hyprkcs";
+    "$toggleWaybar" = "blast-toggle-waybar";
     binds = {
       drag_threshold = 10;
     };
@@ -27,10 +28,13 @@
     # `Super` + `A`: 显示工作区和应用启动器概览(hyprshell支持)
     # `Alt` + `Tab`: 切换应用程序(hyprshell支持)
     bind = [
-      # 系统 注销中
-      "$mod, L, exec, $lockScreen" # 锁定屏幕
       "CTRL ALT, Delete, exec, blast-shutdown logout" # 注销当前用户会话/退出桌面
       "$mod ALT, M, exec, blast-shutdown reboot" # 重启系统
+      "$mod ALT, C, exec, $pickColor" # 启动提取颜色
+
+      # 系统
+      "$mod, L, exec, $lockScreen" # 锁定屏幕
+      "$mod, H, exec, $toggleWaybar" # 隐藏/显示waybar
       # "$mod, P, pseudo" # Dwindle: 伪平铺
       # "$mod, J, togglesplit" # Dwindle: 切换横纵分割
       # "$mod, G, togglegroup" # 窗口成组
@@ -55,7 +59,6 @@
       # "$mod, Return, global, com.mitchellh.ghostty:toggle_quick_terminal" # 切换到下拉终端
       "$mod, Return, exec, $launchDropdownTerminal"
       "$mod, slash, exec, $appLauncher" # 启动应用启动器
-      "$mod ALT, C, exec, $pickColor" # 启动提取颜色
       "$mod, F1, exec, $helpKeybinding" # 启动帮助按键绑定
 
       # 布局
