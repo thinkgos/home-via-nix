@@ -7,7 +7,7 @@
 {
   programs.wlogout = {
     enable = true;
-    # BUG: 注销导致hyprland起不来, 休眠导致关机.
+    # BUG: 注销导致hyprland起不来.
     layout = [
       {
         label = "lock";
@@ -35,9 +35,10 @@
         keybind = "r";
       }
       {
+        # 休眠是写到swap文件(swap空间必须大于内存), 需要主板与BIOS/UEFI支持(主板必须支持ACPI S4状态)
         label = "hibernate";
         # action = "systemctl hibernate";
-        action = "notify-send '休眠有BUG!'";
+        action = "notify-send '系统暂不支持休眠(hibernate)!'";
         text = "休眠 (H)";
         keybind = "h";
       }
