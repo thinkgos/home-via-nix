@@ -15,5 +15,6 @@
       builtins.readFile ./switch-last-workspace.sh
     ))
     (pkgs.writeShellScriptBin "blast-toggle-waybar" (builtins.readFile ./toggle-waybar.sh))
+    (pkgs.writeShellScriptBin "blast-clipboard" (builtins.readFile ./clipboard.sh))
   ];
 }

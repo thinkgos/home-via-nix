@@ -23,6 +23,9 @@
       # 下拉式终端窗口规则
       "float on,  size monitor_w monitor_h*0.4, move 0 0, rounding 0, workspace special:dropdown-terminal, match:class ^(dropdown-terminal)$"
 
+      # 在终端使用ueberzugpp显示图片, 不支持kitty图片显示协议的终端.
+      "float on, no_focus on, match:class ^(ueberzugpp_.*)$"
+
       # NOTE:
       # 目前不支持同时满足全屏和指定应用的规则
       # match:fullscreen 这个最大化和全屏都认为是fullscreen.

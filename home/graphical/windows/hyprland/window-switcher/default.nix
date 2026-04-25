@@ -87,6 +87,22 @@
                       icon = "system-restart";
                     };
                   }
+                  {
+                    custom = {
+                      names = [ "Clipboard History Overview" ];
+                      details = "Clipboard History Overview";
+                      command = "blast-clipboard history";
+                      icon = "system";
+                    };
+                  }
+                  {
+                    custom = {
+                      names = [ "Clipboard History Wipe" ];
+                      details = "Clipboard History Wipe";
+                      command = "blast-clipboard history-wipe";
+                      icon = "system";
+                    };
+                  }
                 ];
               };
             };

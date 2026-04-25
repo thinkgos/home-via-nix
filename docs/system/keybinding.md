@@ -9,6 +9,12 @@
 
 **NOTE**: 由于GNOME不是平铺, 某些按键绑定不能完全一致.
 
+## 自定义
+
+| 功能 | Gnome | Gnome(调整) | Status | Hyprland | Status |
+| ------ | ----------- | ------- | ---------- | ---------- | ---------- |
+| 顶栏隐藏/显示 | ❌ | ❌ | ❌ | `SUPER` + `H` | ✅ |
+
 ## 系统
 
 | 功能 | Gnome | Gnome(调整) | Status | Hyprland | Status |
