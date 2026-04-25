@@ -211,6 +211,10 @@ tooltip label {
   border-radius: 15px 0 0 15px;
 }
 
+#battery.warning:not(.charging) {
+  color: orange;
+}
+
 @keyframes blink {
   to {
     background-color: #ffffff;

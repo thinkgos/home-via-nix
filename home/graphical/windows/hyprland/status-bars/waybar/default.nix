@@ -310,42 +310,65 @@ in
           backlight = {
             # device = "intel_backlight";
             format = "{icon} {percent}% ";
-            # format-icons = [
-            #   "🌑"
-            #   "🌒"
-            #   "🌓"
-            #   "🌔"
-            #   "🌕"
-            # ];
             format-icons = [
-              "󱩎 "
-              "󱩏 "
-              "󱩑 "
-              "󱩒 "
-              "󱩓 "
-              "󱩔 "
-              "󱩖 "
+              "🌑"
+              "🌒"
+              "🌓"
+              "🌔"
+              "🌕"
             ];
+            # format-icons = [
+            #   "󱩎 "
+            #   "󱩏 "
+            #   "󱩑 "
+            #   "󱩒 "
+            #   "󱩓 "
+            #   "󱩔 "
+            #   "󱩖 "
+            # ];
             scroll-step = 1.0;
           };
-          # 电量
+          # 电量 ✅
           battery = {
+            interval = 30;
             states = {
-              good = 95;
-              warning = 30;
-              critical = 15;
+              good = 90;
+              warning = 40;
+              critical = 20;
             };
             format = "{icon} {capacity}%";
-            format-charging = " {capacity}%";
-            format-plugged = " {capacity}%";
-            format-alt = "{icon} {time}";
-            format-icons = [
-              ""
-              ""
-              ""
-              ""
-              ""
-            ];
+            # format-charging = " {capacity}%";
+            # format-plugged = " {capacity}%";
+            format-alt = "{icon} {capacity}% {time}";
+            format-icons = {
+              default = [
+                "󰂎"
+                "󰁺"
+                "󰁻"
+                "󰁼"
+                "󰁽"
+                "󰁾"
+                "󰁿"
+                "󰂀"
+                "󰂁"
+                "󰂂"
+                "󰁹"
+              ];
+              charging = [
+                "󰢟"
+                "󰢜"
+                "󰂆"
+                "󰂇"
+                "󰂈"
+                "󰢝"
+                "󰂉"
+                "󰢞"
+                "󰂊"
+                "󰂋"
+                "󰂅"
+              ];
+            };
+            tooltip = true;
             tooltip-format = "{timeTo}";
           };
 
