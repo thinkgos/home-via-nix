@@ -54,6 +54,6 @@ github_apps:
   - name: "skim"
     description: "Fuzzy Finder in rust!"
     repo: "skim-rs/skim"
-    version: 4.6.0
+    version: 4.6.1
     binary_name: "sk"
     binary_pattern: "skim-x86_64-unknown-linux-musl.tar.xz"
