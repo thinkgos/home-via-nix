@@ -129,7 +129,7 @@ in
           cpu = {
             interval = 15;
             tooltip = true;
-            format = " {icon} {load}%";
+            format = " {icon} {usage}%";
             format-icons = [
               "<span color='#69ff94'>▁</span>" # green
               "<span color='#2aa9ff'>▂</span>" # blue
@@ -144,7 +144,7 @@ in
           };
           # 监控组 - 内存 ✅
           memory = {
-            interval = 15;
+            interval = 10;
             format = " {percentage}%";
             states = {
               warning = 70;

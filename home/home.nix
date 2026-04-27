@@ -44,6 +44,11 @@
   xdg = {
     enable = true;
     mime.enable = true;
+    # add to XDG_DATA_DIRS
+    systemDirs.data = [
+      "/var/lib/flatpak/exports/share"
+      "$HOME/.local/share/flatpak/exports/share"
+    ];
     userDirs = {
       enable = true;
       createDirectories = true;

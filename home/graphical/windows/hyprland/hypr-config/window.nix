@@ -14,8 +14,8 @@
     windowrule = [
       # 计算器/网络/蓝牙/音频
       "float on, size 750 480, move (monitor_w-750)*0.5 160, match:class ^(qalculate-gtk|nm-connection-editor|.blueman-manager-wrapped|org.pulseaudio.pavucontrol|org.fcitx.)$"
-      # 文件/邮件/监控/vlc/cc-switch/clash-verge
-      "float on, size monitor_w*0.6 monitor_h*0.6, center on, match:class ^(nemo|thunderbird|io.missioncenter.MissionCenter|vlc|cc-switch|clash-verge)$"
+      # 文件/邮件/监控/vlc/cc-switch/clash-verge/磁盘/磁盘分析工具
+      "float on, size monitor_w*0.6 monitor_h*0.6, center on, match:class ^(nemo|thunderbird|io.missioncenter.MissionCenter|vlc|cc-switch|clash-verge|gnome-disks|org.gnome.baobab)$"
       # LocalSend
       "float on, size 720 800, move (monitor_w-720)*0.5 100, match:class ^(localsend_app)$"
       # 截图标注
