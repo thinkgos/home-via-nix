@@ -4,6 +4,7 @@ mode="$1"
 case "$mode" in
 logout)
     zenity --question --text="确定要登出 $USER 吗？" && hyprshutdown -t "注销中..."
+    # zenity --question --text="确定要登出 $USER 吗？" && hyprshutdown -t "注销中..." --post-cmd "loginctl terminate-user $USER"
     ;;
 reboot)
     zenity --question --text="确定要重启吗？" && hyprshutdown -t "重启中..." --post-cmd "systemctl reboot"

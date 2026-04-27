@@ -79,8 +79,12 @@
     enable = true;
     xwayland.enable = true;
     systemd = {
+      enable = true;
       enableXdgAutostart = true;
       variables = [ "--all" ];
+      # extraCommands = [
+      #   # "systemctl --user start hyprland-session.target"
+      # ];
     };
   };
 
