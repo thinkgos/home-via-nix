@@ -6,6 +6,6 @@
 }:
 {
   imports = [
-    ./wofi # 应用启动器
+    ./waybar/waybar.nix
   ];
 }

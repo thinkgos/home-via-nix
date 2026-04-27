@@ -6,13 +6,14 @@
 }:
 {
   imports = [
-    ./plugins # 插件
+    ./animations/animations.nix # 动画
+    ./plugins/plugins.nix # 插件
     ./keybinding.nix # 按键绑定
     ./monitor.nix # 显示器
     ./workspace.nix # 工作空间
     ./window.nix # 窗口
-    ./animations # 动画
   ];
+
   wayland.windowManager.hyprland = {
     settings = {
       "$font" = "FiraCode Nerd Font Mono";

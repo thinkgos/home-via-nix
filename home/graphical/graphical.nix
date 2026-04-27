@@ -15,12 +15,12 @@
     ./accouts.nix
     ./email.nix
     ./screenshot.nix
-    ./assets
-    ./shell
-    ./editor
-    ./devtools
-    ./programs
-    ./windows
+    ./assets.nix
+    ./shell/shell.nix
+    ./editor/editor.nix
+    ./devtools/devtools.nix
+    ./programs/programs.nix
+    ./windows/windows.nix
   ];
 
   nixpkgs.config = {

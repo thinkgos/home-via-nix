@@ -46,7 +46,7 @@
                 inputs.home-manager.lib.homeManagerConfiguration {
                   inherit pkgs;
                   modules = [
-                    ./home
+                    ./home/home.nix
 
                     # Add the Home Manager module
                     inputs.lan-mouse.homeManagerModules.default

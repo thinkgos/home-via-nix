@@ -6,10 +6,11 @@
 }:
 {
   imports = [
-    ./shell
-    ./devtools
-    ./editor
-    ./ai
+    ./shell/shell.nix
+    ./devtools/devtools.nix
+    ./editor/editor.nix
+    ./ai/ai.nix
+    ./fun/func.nix
     ./password-store.nix
     ./git.nix
     ./github.nix

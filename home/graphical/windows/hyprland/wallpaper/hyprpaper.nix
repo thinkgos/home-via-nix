@@ -19,7 +19,7 @@
           monitor = "";
           path = "${config.xdg.dataHome}/wallpapers/dynamic";
           fit_mode = "cover"; # contain|cover|tile|fill
-          timeout = 180; # 3min
+          timeout = 600; # 10min
           # order = "random"; # 暂不支持
           # recursive = true; # 暂不支持
         }

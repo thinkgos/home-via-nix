@@ -5,7 +5,8 @@
   ...
 }:
 {
+  # 应用启动器
   imports = [
-    ./waybar
+    ./wofi/wofi.nix
   ];
 }

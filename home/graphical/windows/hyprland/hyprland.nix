@@ -9,20 +9,20 @@
   # https://github.com/catppuccin
   # https://wiki.hypr.land/Useful-Utilities/Must-have/
   imports = [
-    ./hypr-config # Hyprland配置
-    ./settings-center # 设置中心
-    ./authentication-agent # 身份验证代理
-    ./app-launchers # 应用启动器
-    ./status-bars # 状态栏
-    ./notification-center # 通知中心
-    ./idle-management # 空闲管理
-    ./screen-lock # 屏幕锁定
-    ./wallpaper # 壁纸
-    ./sunset # 蓝光保护
-    ./clipboard # 剪贴板
-    ./window-switcher # 窗口切换器
-    ./logout # 登出配置
-    ./scripts # 脚本配置
+    ./hypr-config/hypr-config.nix # Hyprland配置
+    ./settings-center/settings-center.nix # 设置中心
+    ./authentication-agent/authentication-agent.nix # 身份验证代理
+    ./app-launchers/app-launchers.nix # 应用启动器
+    ./status-bars/status-bars.nix # 状态栏
+    ./notification-center/notification-center.nix # 通知中心
+    ./idle-management/idle-management.nix # 空闲管理
+    ./screen-lock/screen-lock.nix # 屏幕锁定
+    ./wallpaper/wallpaper.nix # 壁纸
+    ./sunset/sunset.nix # 蓝光保护
+    ./clipboard/clipboard.nix # 剪贴板
+    ./window-switcher/window-switcher.nix # 窗口切换器
+    ./logout/logout.nix # 登出配置
+    ./scripts/scripts.nix # 脚本配置
   ];
 
   home.packages =

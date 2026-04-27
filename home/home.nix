@@ -30,11 +30,10 @@
     ./systemd.nix
     ./fonts.nix
     ./programs.nix
-    ./terminal
+    ./terminal/terminal.nix
   ]
   ++ (lib.optionals (customize.graphics != null)) [
-    ./graphical
-    ./fun
+    ./graphical/graphical.nix
   ];
 
   targets.genericLinux = {
