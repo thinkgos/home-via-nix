@@ -10,8 +10,8 @@
     shellAliases = {
 
     };
-    configFile.source = ./nushell/config.nu;
-    envFile.source = ./nushell/env.nu;
+    configFile.source = ./config.nu;
+    envFile.source = ./env.nu;
     plugins = with pkgs; [
       nushellPlugins.polars # Polars plugin for Nushell
       nushellPlugins.gstat # Git status plugin for Nushell

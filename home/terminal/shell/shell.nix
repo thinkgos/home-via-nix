@@ -4,19 +4,14 @@
   pkgs,
   ...
 }:
-let
-  fromTomlFile = filename: builtins.fromTOML (builtins.readFile filename);
-  # 配置文件路径
-  configPath = {
-    starship = ./assets/starship/catppuccin-powerline.toml;
-    zellij = ./assets/zellij.kdl;
-  };
-in
 {
   imports = [
     ./zsh.nix
-    ./nushell.nix
+    ./nushell/nushell.nix
     # ./bash.nix
+
+    ./zellij/zellij.nix
+    ./starship/starship.nix
   ];
 
   home.packages = with pkgs; [
@@ -50,14 +45,6 @@ in
       enableNushellIntegration = true;
     };
 
-    starship = {
-      enable = true;
-      enableZshIntegration = true;
-      enableNushellIntegration = true;
-      presets = [ "nerd-font-symbols" ];
-      settings = fromTomlFile configPath.starship;
-    };
-
     direnv = {
       enable = true;
       enableZshIntegration = true;
@@ -88,11 +75,6 @@ in
         "--preview 'tree -C -L 3 {}'"
       ];
       defaultCommand = "fd --hidden";
-    };
-
-    zellij = {
-      enable = true;
-      extraConfig = builtins.readFile configPath.zellij;
     };
 
     yazi = {
