@@ -9,7 +9,7 @@ let
   home-assets = builtins.fetchGit {
     url = "git@github.com:thinkgos/home-via-nix-assets.git";
     ref = "main";
-    rev = "2842139186278f332497dc7dd105714a698b6af2";
+    rev = "71f346c1e13a0b6279409bcef1371338a4628487";
     lfs = true;
   };
 in
@@ -18,7 +18,7 @@ in
     pkgs.papirus-icon-theme # Pixel perfect icon theme for Linux
   ];
   home.file = {
-    # 壁纸: https://wallhaven.cc/ (资源来自外部 home-assets 仓库)
+    # 壁纸 (资源来自外部 home-assets 仓库)
     "${config.xdg.dataHome}/wallpapers" = {
       source = "${home-assets}/wallpapers";
       recursive = true;
