@@ -25,7 +25,7 @@
     settings = {
       "$font" = "FiraCode Nerd Font Mono";
       "$splash" = "echo $(hyprctl splash)";
-      "$wallpaper" = "${config.xdg.dataHome}/wallpapers/scenery1.png";
+      "$wallpaper" = "${config.xdg.dataHome}/wallpapers/scenery1.jpg";
       "$greet" =
         ''echo "Good $(date +%H | awk '{if ($1 < 10) print "morning"; else if ($1 < 13) print "noon"; else if ($1 < 18) print "afternoon"; else if ($1 < 22) print "evening"; else print "night"}'), $(echo ''${USER})"'';
 
