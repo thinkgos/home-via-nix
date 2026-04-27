@@ -19,7 +19,5 @@
     ./lan-mouse.nix
     ./obs-studio.nix
   ]
-  ++ lib.optional (customize.graphics.window == "hyprland") [
-    ./vnc.nix
-  ];
+  ++ lib.optional (customize.graphics.window == "hyprland") ./vnc.nix;
 }
