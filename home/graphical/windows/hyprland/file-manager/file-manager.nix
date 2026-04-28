@@ -12,7 +12,7 @@
   ];
 
   xdg.dataFile = {
-    "nautilus/actions/open-in-kitty".text = ''
+    "nemo/actions/open-in-kitty.nemo_action".text = ''
       [Nemo Action]
       Name=Open in Kitty
       Comment=Open Kitty terminal in the selected directory
@@ -21,7 +21,7 @@
       Selection=any
       Extensions=dir;none;
     '';
-    "nautilus/actions/open-in-ghostty".text = ''
+    "nemo/actions/open-in-ghostty.nemo_action".text = ''
       [Nemo Action]
       Name=Open in Ghostty
       Comment=Open Ghostty terminal in the selected directory
