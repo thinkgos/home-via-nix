@@ -30,7 +30,7 @@
       ls = "eza";
       mv = "mv -i";
       cp = "cp -i";
-      rm = "trash -v";
+      rm = "trash";
     };
     initContent = lib.mkMerge [
       # (lib.mkOrder 100 "zmodload zsh/zprof") # 测试

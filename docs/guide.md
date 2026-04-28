@@ -9,7 +9,7 @@
 **NOTE**:
 
 - `home-manager`通过`nix flakes`方式管理用户级配置.
-- [`ansible`](https://www.ansible.com) 管理系统包和github应用
+- [`ansible`](https://www.ansible.com) 管理系统包,github,flathub应用
 - 其它商业或特殊软件使用手动安装[Manual Install](system/manual-install.md).
 
 ## 1. ubuntu server(可选)

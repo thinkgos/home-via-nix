@@ -29,14 +29,6 @@ github_apps:
     debian_pattern: "CC-Switch-v__VERSION__-Linux-x86_64.deb"
     redhat_pattern: "CC-Switch-v__VERSION__-Linux-x86_64.rpm"
 
-  - name: "task"
-    description: "task manager written in Go"
-    repo: "go-task/task"
-    version: 3.50.0
-    package_name: "task"
-    debian_pattern: "task___VERSION___linux_amd64.deb"
-    redhat_pattern: "task___VERSION___linux_amd64.rpm"
-
   - name: "opencode"
     description: "code agent"
     repo: "anomalyco/opencode"

@@ -34,6 +34,7 @@
     aria2 # 高速下载工具
     trash-cli # 回收站
     parallel # 并行执行命令
+    go-task # 任务管理器
   ];
 
   programs = {
