@@ -12,9 +12,14 @@
     settings = {
       embed-thumbnail = true;
       embed-subs = true;
-      sub-langs = "all";
+      write-subs = true;
+      write-auto-subs = true;
+      limit-rate = "2M";
+      sleep-subtitles = 5;
+      sub-langs = "en,zh-Hans";
       downloader = "aria2c";
-      downloader-args = "aria2c:'-c -x8 -s8 -k1M'";
+      downloader-args = "aria2c:'-c -x6 -s6 -k10M'";
+      user-agent = "\"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36\"";
     };
     # extraConfig = "";
   };
