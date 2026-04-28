@@ -17,13 +17,13 @@ in
   home.packages = [
     pkgs.papirus-icon-theme # Pixel perfect icon theme for Linux
   ];
-  home.file = {
+  xdg.dataFile = {
     # 壁纸 (资源来自外部 home-assets 仓库)
-    "${config.xdg.dataHome}/wallpapers" = {
+    "wallpapers" = {
       source = "${home-assets}/wallpapers";
       recursive = true;
     };
-    "${config.xdg.dataHome}/backgrounds" = {
+    "backgrounds" = {
       source = "${home-assets}/wallpapers";
       recursive = true;
     };

@@ -29,7 +29,7 @@
   imports = [
     ./systemd.nix
     ./fonts.nix
-    ./programs.nix
+    ./programs/programs.nix
     ./terminal/terminal.nix
   ]
   ++ (lib.optionals (customize.graphics != null)) [

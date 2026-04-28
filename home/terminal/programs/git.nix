@@ -12,25 +12,23 @@
 
   # Home Manager is pretty good at managing dotfiles.
   # The primary way to manage plain files is through 'home.file'.
-  home.file = {
-    "${config.xdg.configHome}/git/.gitmessage".text = ''
+  xdg.configFile."git/.gitmessage".text = ''
 
-      # head: <type>(<scope>): <subject>
-      # - type: feat, fix, doc, perf, style, refactor, test, chore, security, revert
-      # - scope: can be empty (eg. if the change is a global or difficult to assign to a single component)
-      # - subject: start with verb (such as 'change'), 50-character line
+    # head: <type>(<scope>): <subject>
+    # - type: feat, fix, doc, perf, style, refactor, test, chore, security, revert
+    # - scope: can be empty (eg. if the change is a global or difficult to assign to a single component)
+    # - subject: start with verb (such as 'change'), 50-character line
 
-      # body: 72-character wrapped.
-      # This should answer:              
-      # * Why was this change necessary?
-      # * How does it address the problem?
-      # * Are there any side effects?
+    # body: 72-character wrapped.
+    # This should answer:              
+    # * Why was this change necessary?
+    # * How does it address the problem?
+    # * Are there any side effects?
 
-      # footer:
-      # - Include a link to the ticket, if any.
-      # - BREAKING CHANGE
-    '';
-  };
+    # footer:
+    # - Include a link to the ticket, if any.
+    # - BREAKING CHANGE
+  '';
 
   programs = {
     git = {
