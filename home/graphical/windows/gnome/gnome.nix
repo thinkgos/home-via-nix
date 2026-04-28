@@ -8,6 +8,7 @@
   imports = [
     ./gnome-dconf.nix
     ./gnome-shell-extensions.nix
+    ./file-manager.nix
   ];
   home.sessionVariables = {
     NIXOS_OZONE_WL = 1; # Chromium 内核应用 使用 Wayland

@@ -30,6 +30,7 @@
   programs.password-store = {
     enable = true;
     settings = {
+      # 位置: ~/.local/share/password-store
       PASSWORD_STORE_DIR = "${config.xdg.dataHome}/password-store";
     };
   };

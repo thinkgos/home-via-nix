@@ -21,6 +21,7 @@
     ./sunset/sunset.nix # 蓝光保护
     ./clipboard/clipboard.nix # 剪贴板
     ./window-switcher/window-switcher.nix # 窗口切换器
+    ./file-manager/file-manager.nix # 文件管理器
     ./logout/logout.nix # 登出配置
     ./scripts/scripts.nix # 脚本配置
   ];
@@ -30,11 +31,8 @@
     [
       hyprpicker # 颜色拾取器
       qalculate-gtk # 计算器
-      # nautilus # 文件管理器
-      nemo-with-extensions # 文件管理器
       wttrbar # 天气栏
       gpu-usage-waybar # GPU使用率栏
-
     ]
     ++ [
       extra-pkgs.hypr-kcs # hyprcs
