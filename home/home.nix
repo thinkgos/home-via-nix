@@ -58,11 +58,13 @@
       download = "${config.home.homeDirectory}/Downloads";
       music = "${config.home.homeDirectory}/Music";
       pictures = "${config.home.homeDirectory}/Pictures";
+      projects = "${config.home.homeDirectory}/Projects";
       publicShare = "${config.home.homeDirectory}/Public";
       templates = "${config.home.homeDirectory}/Templates";
       videos = "${config.home.homeDirectory}/Videos";
       extraConfig = {
         program = "${config.home.homeDirectory}/Programs";
+        tmp = "${config.home.homeDirectory}/Tmp";
       };
     };
   };

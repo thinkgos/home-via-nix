@@ -13,6 +13,7 @@
   dconf.settings = with lib.hm.gvariant; {
     # 查看相关配置： gsettings list-recursively org.gnome.xxx.xx
     # 导出路径具体的配置： dconf dump /org/xx/xx > xx.settings
+    # 监听配置变化: dconf watch /org/xx/xx
 
     "org/gnome/desktop/privacy" = {
       remember-recent-files = true; # 文件历史记录
@@ -20,6 +21,23 @@
       remove-old-temp-files = true; # 自动清空临时文件
       remove-old-trash-files = true; # 自动清空回收站
       old-files-age = mkUint32 7; # 自动清空周期
+    };
+    "org/gnome/desktop/background" = {
+      color-shading-type = "solid";
+      picture-options = "zoom";
+      picture-uri = "file:///${config.xdg.dataHome}/backgrounds/dynamic/scenery2.png";
+      picture-uri-dark = "file:///${config.xdg.dataHome}/backgrounds/dynamic/scenery2.png";
+      primary-color = "#000000000000";
+      secondary-color = "#000000000000";
+    };
+    "org/gnome/desktop/screensaver" = {
+      color-shading-type = "solid";
+      lock-delay = mkUint32 300;
+      lock-enabled = true;
+      picture-options = "zoom";
+      picture-uri = "file:///${config.xdg.dataHome}/backgrounds/scenery1.jpg";
+      primary-color = "#000000000000";
+      secondary-color = "#000000000000";
     };
     "org/gnome/desktop/peripherals/mouse" = {
       speed = 0.325;
@@ -36,6 +54,7 @@
     # 主题
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
+      accent-color = "green";
       cursor-theme = "WhiteSur-cursors";
       gtk-theme = "WhiteSur-Dark";
       icon-theme = "WhiteSur-dark";

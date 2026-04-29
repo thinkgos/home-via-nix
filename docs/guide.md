@@ -33,9 +33,17 @@ sudo setenforce 0
 ## 3. 安装nix
 
 - [Install Nix](https://nixos.org/download/#download-nix)
+- 启用flakes和nix-command实验功能：
+
+```shell
+mkdir -p /etc/nix/nix.conf
+echo "experimental-features = nix-command flakes" >> /etc/nix/nix.conf
+```
+
 - 添加channel, `nix-channel --add https://nixos.org/channels/nixos-unstable nixpkgs`
 - 更新channel, `nix-channel --update`
 - 添加相关help文档, `nix-env -i nix`.
+
 
 ## 4. 安装home-manager
 
@@ -52,6 +60,10 @@ home-manager switch --flake .#cors-ubuntu25_10
 home-manager switch --flake .#thinkgo-ubuntu25_10
 # username: thinkgo, system: fedora-43
 home-manager switch --flake .#thinkgo-fedora43
+# 仅构建配置（不切换，用于测试）
+home-manager build --flake .#<配置名>
+# 查看配置生成历史
+home-manager generations
 ```
 
 ## 5. 设置默认shell为zsh

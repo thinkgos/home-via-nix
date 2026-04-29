@@ -8,7 +8,7 @@ sudo mkdir -p $(dirname "$NETWORKD_WAIT_ONLINE_CONF")
 sudo tee "$NETWORKD_WAIT_ONLINE_CONF" >/dev/null <<EOF
 [Service]
 ExecStart=
-ExecStart=/usr/lib/systemd/systemd-networkd-wait-online --any --timeout=10
+ExecStart=/usr/lib/systemd/systemd-networkd-wait-online --any --timeout=5
 EOF
 sudo systemctl daemon-reload
 echo "配置网络启动等待时间已生效！"
