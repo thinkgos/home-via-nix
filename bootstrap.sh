@@ -7,7 +7,6 @@
 
 source ./scripts/required_sys_software.sh
 source ./scripts/wayland_session.sh
-source ./scripts/network_wait_online.sh
 
 echo "设置中文语言(注意: 重启后生效)..."
 sudo locale-gen zh_CN.UTF-8
