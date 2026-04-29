@@ -28,7 +28,6 @@
         showStartupLaunchMessage = false;
         disabledTrayIcon = false;
         autoCloseIdleDaemon = true;
-        useGrimAdapter = false;
         contrastOpacity = 188;
       };
     };

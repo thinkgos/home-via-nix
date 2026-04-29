@@ -130,7 +130,6 @@
     };
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
       name = "flameshot";
-      # command =  "sh -c 'flameshot gui --raw | wl-copy'";
       command = "sh -c 'flameshot gui < /dev/null'";
       binding = "<Super>Print";
     };
