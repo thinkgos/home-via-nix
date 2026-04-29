@@ -37,8 +37,8 @@
       "$mod, H, exec, $toggleWaybar" # 隐藏/显示waybar
       # "$mod, P, pseudo" # Dwindle: 伪平铺
       # "$mod, J, togglesplit" # Dwindle: 切换横纵分割
-      # "$mod, G, togglegroup" # 窗口成组
-      # "$mod, L, lockactivegroup, toggle" # 锁定组
+      "$mod, G, togglegroup" # 窗口成组
+      "$mod, Y, lockactivegroup, toggle" # 锁定组
 
       # 截图
       # 活动窗口截图
