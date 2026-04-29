@@ -36,7 +36,15 @@
       # (lib.mkOrder 100 "zmodload zsh/zprof") # 测试
       # (lib.mkOrder 500 "")
       # (lib.mkOrder 550 "zstyle ':completion:*' check-path false")
-      (lib.mkOrder 1500 (builtins.readFile ./sh/zsh-latest.sh))
+      (lib.mkOrder 1500 ''
+        autoload -U +X bashcompinit && bashcompinit
+        if [[ "$TERM" == "xterm-kitty" ]] && ! infocmp "$TERM" >/dev/null 2>&1; then 
+        export TERM=xterm-256color 
+        fi
+        if [[ "$TERM" == "xterm-ghostty" ]] && ! infocmp "$TERM" >/dev/null 2>&1; then 
+        export TERM=xterm-256color 
+        fi
+      '')
       # (lib.mkOrder 2000 "zprof") # 测试
     ];
     history = {
@@ -152,7 +160,17 @@
         	gitsub-command-cc "git fetch origin ''${branch}:''${branch}"
       '';
     };
-
+    syntaxHighlighting = {
+      enable = false; # 禁用语法高亮, 使用fast-syntax-highlighting
+      package = pkgs.zsh-syntax-highlighting;
+    };
+    autosuggestion.enable = true;
+    plugins = [
+      {
+        name = "fast-syntax-highlighting";
+        src = "${pkgs.zsh-fast-syntax-highlighting}/share/zsh/plugins/fast-syntax-highlighting";
+      }
+    ];
     autocd = true;
     # https://github.com/ohmyzsh/ohmyzsh/wiki
     oh-my-zsh = {
