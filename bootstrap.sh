@@ -18,6 +18,7 @@ sudo timedatectl set-timezone Asia/Shanghai
 echo "配置brightnessctl(自带udev规则)权限(注意: 重启后生效))..."
 sudo usermod -aG video $USER
 sudo usermod -aG input $USER
+sudo usermod -aG render $USER
 
 echo "清理不需要的软件..."
-sudo apt remove -y needrestart
+source ./scripts/cleanup_unnecessary.sh

@@ -2,7 +2,7 @@
 
 # 清理一些不需要的软件包
 
-sudo apt autoremove -y --purge snapd cloud-init open-iscsi apport modemmanager unattended-upgrades rsyslog
+sudo apt autoremove -y --purge snapd cloud-init open-iscsi apport modemmanager unattended-upgrades rsyslog needrestart
 
 # 不需要的服务端服务
 sudo systemctl disable --now multipathd
