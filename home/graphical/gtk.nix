@@ -5,6 +5,9 @@
   ...
 }:
 {
+  home.packages = with pkgs; [
+    gtk-engine-murrine # theme engine
+  ];
   gtk = {
     enable = true;
     colorScheme = "dark";

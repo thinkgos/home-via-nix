@@ -14,6 +14,7 @@
       embed-subs = true;
       write-subs = true;
       write-auto-subs = true;
+      convert-subs = "srt";
       limit-rate = "2M";
       sleep-subtitles = 5;
       sub-langs = "en,zh-Hans";

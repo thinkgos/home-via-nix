@@ -12,6 +12,8 @@
       package = [
         pkgs.qadwaitadecorations
         pkgs.qadwaitadecorations-qt6
+        pkgs.adwaita-qt
+        pkgs.adwaita-qt6
       ];
       name = "adwaita";
     };
