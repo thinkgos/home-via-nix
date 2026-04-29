@@ -16,6 +16,7 @@
           realName = "thinkgo";
           userName = "thinkgo@aliyun.com";
           address = "thinkgo@aliyun.com";
+          flavor = "plain";
           imap = {
             authentication = "login";
             host = "imap.aliyun.com";
@@ -46,8 +47,9 @@
           realName = "thinkgo";
           userName = "thinkgo510@gmail.com";
           address = "thinkgo510@gmail.com";
+          flavor = "gmail.com";
           imap = {
-            authentication = "oauth2";
+            # authentication = "oauth2";
             host = "imap.gmail.com";
             port = 993;
             tls = {
@@ -56,7 +58,7 @@
             };
           };
           smtp = {
-            authentication = "oauth2";
+            # authentication = "oauth2";
             host = "smtp.gmail.com";
             port = 465;
             tls = {
