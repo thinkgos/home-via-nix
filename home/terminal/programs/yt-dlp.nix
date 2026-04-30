@@ -2,11 +2,12 @@
   config,
   lib,
   pkgs,
+  customize,
   ...
 }:
 {
   # 视频下载工具
-  programs.yt-dlp = {
+  programs.yt-dlp = lib.mkIf (!customize.disable-long-build) {
     enable = true;
     # https://github.com/yt-dlp/yt-dlp#configuration
     settings = {

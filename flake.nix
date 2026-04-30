@@ -44,6 +44,7 @@
               mkHome =
                 {
                   graphics ? null,
+                  disable-long-build ? false, # 禁用长编译
                   ...
                 }@args:
                 inputs.home-manager.lib.homeManagerConfiguration {
@@ -59,6 +60,7 @@
                   extraSpecialArgs = {
                     customize = args // {
                       inherit graphics;
+                      inherit disable-long-build;
                     };
                     extra-pkgs = {
                       hyprland = inputs.hyprland.packages.${system}.hyprland;
@@ -73,6 +75,7 @@
             {
               thinkgo-laptop = mkHome {
                 username = "thinkgo";
+                disable-long-build = false;
                 graphics = {
                   window = "hyprland";
                   window-version = "hyprland";
@@ -82,8 +85,9 @@
                   };
                 };
               };
-              cors-ubuntu25_10 = mkHome {
+              cors-ubuntu26_04 = mkHome {
                 username = "cors";
+                disable-long-build = false;
                 graphics = {
                   window = "hyprland";
                   window-version = "hyprland";
@@ -95,13 +99,7 @@
               };
               thinkgo-ubuntu25_10 = mkHome {
                 username = "thinkgo";
-                graphics = {
-                  window = "gnome";
-                  window-version = "gnome-49";
-                };
-              };
-              thinkgo-fedora43 = mkHome {
-                username = "thinkgo";
+                disable-long-build = true;
                 graphics = {
                   window = "gnome";
                   window-version = "gnome-49";
