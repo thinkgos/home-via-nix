@@ -12,16 +12,16 @@
   ];
 
   # 截图工具
-  programs.satty = lib.mkIf (customize.graphics.window == "hyprland") {
-    enable = true;
+  programs.satty = {
+    enable = customize.graphics.window == "hyprland";
     # https://github.com/Satty-org/Satty
     settings = {
     };
   };
 
   # 截图工具
-  services.flameshot = lib.mkIf (customize.graphics.window == "gnome") {
-    enable = true;
+  services.flameshot = {
+    enable = customize.graphics.window == "gnome";
     # https://github.com/flameshot-org/flameshot/blob/master/flameshot.example.ini
     settings = {
       General = {

@@ -99,7 +99,7 @@
               };
               thinkgo-ubuntu25_10 = mkHome {
                 username = "thinkgo";
-                disable-long-build = true;
+                disable-long-build = false;
                 graphics = {
                   window = "gnome";
                   window-version = "gnome-49";

@@ -17,8 +17,8 @@
 
   # wayland vnc
   # BUG: Fetal error while capturing. Exiting...
-  services.wayvnc = lib.mkIf (customize.graphics.window == "hyprland") {
-    enable = true;
+  services.wayvnc = {
+    enable = customize.graphics.window == "hyprland";
     autoStart = true;
     settings = {
       address = "0.0.0.0";

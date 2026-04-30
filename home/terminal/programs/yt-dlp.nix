@@ -7,8 +7,8 @@
 }:
 {
   # 视频下载工具
-  programs.yt-dlp = lib.mkIf (!customize.disable-long-build) {
-    enable = true;
+  programs.yt-dlp = {
+    enable = !customize.disable-long-build;
     # https://github.com/yt-dlp/yt-dlp#configuration
     settings = {
       embed-thumbnail = true;
