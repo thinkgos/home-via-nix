@@ -31,6 +31,7 @@
     tokei # 统计代码行数
     glow # markdown预览器
     bottom # 图形化进程/系统监控器
+    btop # 图形化进程/系统监控器
     typos # 检查拼写错误
     mdbook # 从markdown文档生成book
     trash-cli # 回收站

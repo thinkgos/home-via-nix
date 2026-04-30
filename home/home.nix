@@ -30,6 +30,7 @@
     ./systemd.nix
     ./fonts.nix
     ./programs/programs.nix
+    ./scripts/scripts.nix
     ./terminal/terminal.nix
   ]
   ++ (lib.optionals (customize.graphics != null)) [
