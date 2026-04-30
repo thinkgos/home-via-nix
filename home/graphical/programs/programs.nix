@@ -2,7 +2,6 @@
   config,
   lib,
   pkgs,
-  customize,
   ...
 }:
 {
@@ -26,6 +25,6 @@
   imports = [
     ./lan-mouse.nix
     ./obs-studio.nix
-  ]
-  ++ lib.optional (customize.graphics.window == "hyprland") ./vnc.nix;
+    ./remote-desktop.nix
+  ];
 }
