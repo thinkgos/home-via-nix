@@ -4,3 +4,5 @@ flathub_apps:
     state: latest # 可选值latest, present
   - name: com.tencent.WeChat
     description: 微信
+  - name: com.redis.RedisInsight
+    description: redis insight

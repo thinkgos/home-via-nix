@@ -14,8 +14,5 @@
       # sqlitebrowser # sqlite browser
       mqttx # MQTT 客户端
       kdePackages.kcachegrind # 性能分析工具
-    ]
-    ++ lib.optionals (!customize.disable-long-build) [
-      redisinsight # redis 可视化工具
     ];
 }
