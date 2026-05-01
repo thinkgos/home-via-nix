@@ -44,7 +44,6 @@
               mkHome =
                 {
                   desktop ? null,
-                  disable-long-build ? false, # 禁用长编译
                   ...
                 }@args:
                 inputs.home-manager.lib.homeManagerConfiguration {
@@ -60,7 +59,6 @@
                   extraSpecialArgs = {
                     customize = args // {
                       inherit desktop;
-                      inherit disable-long-build;
                     };
                     extra-pkgs = {
                       hyprland = inputs.hyprland.packages.${system}.hyprland;
@@ -73,6 +71,7 @@
                 };
             in
             {
+              # 可选apps列表: yt-dlp, wayvnc, sunshine
               thinkgo-laptop = mkHome {
                 username = "thinkgo";
                 disable-long-build = false;
@@ -84,6 +83,7 @@
                     monitor-secondary = "";
                   };
                 };
+                apps = [ ];
               };
               cors-ubuntu26_04 = mkHome {
                 username = "cors";
@@ -96,6 +96,11 @@
                     monitor-secondary = "";
                   };
                 };
+                apps = [
+                  "yt-dlp"
+                  "wayvnc"
+                  "sunshine"
+                ];
               };
               thinkgo-ubuntu25_10 = mkHome {
                 username = "thinkgo";
@@ -105,6 +110,7 @@
                   window-version = "gnome-49";
                 };
               };
+              apps = [ ];
             };
 
           devShells.default = pkgs.mkShell {

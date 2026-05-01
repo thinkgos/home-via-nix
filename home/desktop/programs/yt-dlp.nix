@@ -8,7 +8,7 @@
 {
   # 视频下载工具
   programs.yt-dlp = {
-    enable = false;
+    enable = builtins.elem "yt-dlp" customize.apps;
     # https://github.com/yt-dlp/yt-dlp#configuration
     settings = {
       embed-thumbnail = true;

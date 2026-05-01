@@ -13,12 +13,12 @@
       # tigervnc
       moonlight-qt
     ]
-    ++ lib.optional (customize.desktop.window == "hyprland") sunshine;
+    ++ lib.optional (builtins.elem "sunshine" customize.apps) sunshine;
 
   # wayland vnc
   # BUG: Fetal error while capturing. Exiting...
   services.wayvnc = {
-    enable = customize.desktop.window == "hyprland";
+    enable = builtins.elem "wayvnc" customize.apps;
     autoStart = true;
     settings = {
       address = "0.0.0.0";
@@ -27,7 +27,7 @@
   };
   # https://app.lizardbyte.dev/Sunshine/?lng=zh-CN
   systemd.user.services = {
-    sunshine = lib.mkIf (customize.desktop.window == "hyprland") {
+    sunshine = lib.mkIf (builtins.elem "sunshine" customize.apps) {
       Unit = {
         Description = "Sunshine Game Stream Server";
         StartLimitIntervalSec = 500;
