@@ -9,6 +9,7 @@
     ./remote-desktop.nix
     ./lan-mouse.nix
     ./obs-studio.nix
+    ./yt-dlp.nix
   ];
   home.packages = with pkgs; [
     # 从系统安装

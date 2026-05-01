@@ -12,7 +12,6 @@
     ./github.nix
     ./ansible.nix
     ./tldr.nix
-    ./yt-dlp.nix
   ];
   home.packages = with pkgs; [
     resvg # svg rendering

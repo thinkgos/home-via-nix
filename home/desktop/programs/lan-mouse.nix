@@ -6,7 +6,6 @@
   ...
 }:
 {
-
   programs.lan-mouse = {
     enable = true;
     systemd = true;
