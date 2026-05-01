@@ -109,8 +109,8 @@
                   window = "gnome";
                   window-version = "gnome-49";
                 };
+                apps = [ ];
               };
-              apps = [ ];
             };
 
           devShells.default = pkgs.mkShell {
