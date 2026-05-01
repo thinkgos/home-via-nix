@@ -13,7 +13,7 @@
 
   # 截图工具
   programs.satty = {
-    enable = customize.graphics.window == "hyprland";
+    enable = customize.desktop.window == "hyprland";
     # https://github.com/Satty-org/Satty
     settings = {
     };
@@ -21,7 +21,7 @@
 
   # 截图工具
   services.flameshot = {
-    enable = customize.graphics.window == "gnome";
+    enable = customize.desktop.window == "gnome";
     # https://github.com/flameshot-org/flameshot/blob/master/flameshot.example.ini
     settings = {
       General = {

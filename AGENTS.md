@@ -37,7 +37,7 @@
 - 为每个用户-系统组合定义 `legacyPackages.homeConfigurations`。
 - 每个配置通过 `mkHome` 函数创建，传递以下参数：
   - `username`：主目录所有者
-  - `graphics`：启用图形模块的布尔值
+  - `desktop`：启用图形模块的布尔值
     - `window`：窗口管理器类型（"gnome" 或 "hyprland"）
     - `window-version`：版本标识符（如 "gnome-49"）
 - 支持的系统：x86_64-linux、aarch64-linux、x86_64-darwin、aarch64-darwin。

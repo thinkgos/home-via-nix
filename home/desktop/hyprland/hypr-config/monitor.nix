@@ -6,7 +6,7 @@
   ...
 }:
 let
-  attrs = customize.graphics.attrs;
+  attrs = customize.desktop.attrs;
 in
 {
   # Hyprland 窗口

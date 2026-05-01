@@ -29,12 +29,21 @@
   imports = [
     ./systemd.nix
     ./fonts.nix
-    ./programs/programs.nix
-    ./scripts/scripts.nix
+    ./password-store.nix
+    ./accounts.nix
+    ./assets.nix
     ./terminal/terminal.nix
+    ./shell/shell.nix
+    ./editor/editor.nix
+    ./devtools/devtools.nix
+    ./programs/programs.nix
+    ./fun/fun.nix
+    ./scripts/scripts.nix
+    ./ai/ai.nix
+
   ]
-  ++ (lib.optionals (customize.graphics != null)) [
-    ./graphical/graphical.nix
+  ++ (lib.optionals (customize.desktop != null)) [
+    ./desktop/desktop.nix
   ];
 
   targets.genericLinux = {
@@ -70,11 +79,52 @@
     };
   };
 
+  nixpkgs.config = {
+    allowUnfreePredicate =
+      pkg:
+      builtins.elem (lib.getName pkg) [
+        "albert"
+      ];
+  };
+
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    #! terminal 统一管理终端应用
-    #! graphical 统一管理图形化应用
+    #! 基础工具
+    tree # 目录树
+    nmap # 网络扫描工具
+    netcat-openbsd # nc 网络工具
+    curl # 网络请求工具
+    wget # 网络下载工具
+    tmux # 终端多路复用工具
+    jq # json美化过滤
+    yq # yaml美化过滤
+    fastfetch # 系统信息查看工具
+    chezmoi # 管理dotfiles
+
+    #! 命令行替代工具
+    eza # 替代ls
+    ripgrep # 替代grep
+    fd # 替代find
+    dust # 替代du
+    bat # 替代cat
+
+    #! 通用工具
+    tokei # 统计代码行数
+    glow # markdown预览器
+    bottom # 图形化进程/系统监控器
+    btop # 图形化进程/系统监控器
+    typos # 检查拼写错误
+    mdbook # 从markdown文档生成book
+    trash-cli # 回收站
+    parallel # 并行执行命令
+
+    nixd
+    nil
+    nixfmt
+    nixfmt-tree
+
+    #! desktop 统一管理图形化应用
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.

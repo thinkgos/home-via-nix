@@ -5,12 +5,14 @@
   ...
 }:
 {
+  home.sessionVariables = {
+    TERMINFO_DIRS = "${pkgs.ghostty}/share/terminfo:${pkgs.kitty.terminfo}/share/terminfo:$TERMINFO_DIRS";
+  };
+
   imports = [
-    ./shell/shell.nix
-    ./programs/programs.nix
-    ./devtools/devtools.nix
-    ./editor/editor.nix
-    ./ai/ai.nix
-    ./fun/fun.nix
+    ./alacritty.nix
+    ./kitty.nix
+    ./ghostty.nix
+    ./wezterm/wezterm.nix
   ];
 }

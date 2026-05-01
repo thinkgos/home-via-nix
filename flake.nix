@@ -43,7 +43,7 @@
             let
               mkHome =
                 {
-                  graphics ? null,
+                  desktop ? null,
                   disable-long-build ? false, # 禁用长编译
                   ...
                 }@args:
@@ -59,7 +59,7 @@
                   # to pass through arguments to home.nix
                   extraSpecialArgs = {
                     customize = args // {
-                      inherit graphics;
+                      inherit desktop;
                       inherit disable-long-build;
                     };
                     extra-pkgs = {
@@ -76,7 +76,7 @@
               thinkgo-laptop = mkHome {
                 username = "thinkgo";
                 disable-long-build = false;
-                graphics = {
+                desktop = {
                   window = "hyprland";
                   window-version = "hyprland";
                   attrs = {
@@ -88,7 +88,7 @@
               cors-ubuntu26_04 = mkHome {
                 username = "cors";
                 disable-long-build = false;
-                graphics = {
+                desktop = {
                   window = "hyprland";
                   window-version = "hyprland";
                   attrs = {
@@ -100,7 +100,7 @@
               thinkgo-ubuntu25_10 = mkHome {
                 username = "thinkgo";
                 disable-long-build = false;
-                graphics = {
+                desktop = {
                   window = "gnome";
                   window-version = "gnome-49";
                 };

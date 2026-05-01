@@ -5,36 +5,81 @@
   ...
 }:
 {
-  # imports = [ ];
-
-  home.packages = with pkgs; [
-    #! 基础工具
-    tree # 目录树
-    nmap # 网络扫描工具
-    netcat-openbsd # nc 网络工具
-    curl # 网络请求工具
-    wget # 网络下载工具
-    tmux # 终端多路复用工具
-    jq # json美化过滤
-    yq # yaml美化过滤
-    fastfetch # 系统信息查看工具
-    chezmoi # 管理dotfiles
-
-    #! 命令行替代工具
-    eza # 替代ls
-    ripgrep # 替代grep
-    fd # 替代find
-    dust # 替代du
-    bat # 替代cat
-
-    #! 通用工具
-    tokei # 统计代码行数
-    glow # markdown预览器
-    bottom # 图形化进程/系统监控器
-    btop # 图形化进程/系统监控器
-    typos # 检查拼写错误
-    mdbook # 从markdown文档生成book
-    trash-cli # 回收站
-    parallel # 并行执行命令
+  imports = [
+    ./zellij/zellij.nix
+    ./starship/starship.nix
+    ./git.nix
+    ./github.nix
+    ./ansible.nix
+    ./tldr.nix
+    ./yt-dlp.nix
   ];
+  home.packages = with pkgs; [
+    resvg # svg rendering
+    poppler # pdf rendering
+    _7zz # 7-zip archiver utility
+    imagemagick # image suite
+    ueberzugpp # hack image for terminal emulators
+
+    # zsh                     # zsh
+    # zsh-autosuggestions     # zsh命令自动建议
+    # zsh-syntax-highlighting # zsh语法高亮
+    # starship                # 提示工具
+    # direnv                  # shell扩展用于管理环境变量
+    # zoxide                  # 替代z, 快速跳转目录
+    # atuin                   # 命令历史记录
+    # fzf                     # 模糊查找工具
+    # zellij                  # 终端多路复用工具
+    # yazi                    # 终端文件管理
+    go-task # 任务管理器
+    aria2 # 高速下载工具
+  ];
+
+  programs = {
+    carapace = {
+      enable = true;
+      enableZshIntegration = true;
+      enableNushellIntegration = true;
+    };
+
+    direnv = {
+      enable = true;
+      enableZshIntegration = true;
+      enableNushellIntegration = true;
+      silent = false;
+      mise.enable = true;
+      nix-direnv.enable = true;
+    };
+
+    zoxide = {
+      enable = true;
+      enableZshIntegration = true;
+      enableNushellIntegration = true;
+    };
+
+    atuin = {
+      enable = true;
+      enableZshIntegration = true;
+      enableNushellIntegration = true;
+      flags = [ "--disable-up-arrow" ];
+    };
+
+    fzf = {
+      enable = true;
+      enableZshIntegration = true;
+      changeDirWidgetOptions = [
+        "--walker-skip .git,node_modules,target"
+        "--preview 'tree -C -L 3 {}'"
+      ];
+      defaultCommand = "fd --hidden";
+    };
+
+    yazi = {
+      enable = true;
+      enableZshIntegration = true;
+      enableNushellIntegration = true;
+      shellWrapperName = "y";
+      extraPackages = with pkgs; [ glow ];
+    };
+  };
 }

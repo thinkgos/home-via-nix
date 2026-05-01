@@ -8,7 +8,7 @@
 {
   # 视频下载工具
   programs.yt-dlp = {
-    enable = !customize.disable-long-build;
+    enable = false;
     # https://github.com/yt-dlp/yt-dlp#configuration
     settings = {
       embed-thumbnail = true;
