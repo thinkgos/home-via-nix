@@ -2,11 +2,12 @@
   config,
   lib,
   pkgs,
+  customize,
   ...
 }:
 {
   programs.nushell = {
-    enable = true;
+    enable = false;
     shellAliases = {
 
     };
