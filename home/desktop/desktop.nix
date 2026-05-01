@@ -14,6 +14,8 @@
     ./password-store.nix
     ./email.nix
     ./screenshot.nix
+    ./terminal/terminal.nix
+    ./editor/editor.nix
     ./programs/programs.nix
   ]
   ++ lib.optional (customize.desktop.window == "gnome") ./gnome/gnome.nix

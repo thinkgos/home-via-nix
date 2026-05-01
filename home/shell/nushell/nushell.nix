@@ -7,7 +7,7 @@
 }:
 {
   programs.nushell = {
-    enable = false;
+    enable = builtins.elem "nushell" customize.apps;
     shellAliases = {
 
     };

@@ -6,7 +6,6 @@
 }:
 {
   imports = [
-    ./vim.nix
-    ./neovim.nix
+    ./zed.nix
   ];
 }

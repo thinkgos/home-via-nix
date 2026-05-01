@@ -71,7 +71,7 @@
                 };
             in
             {
-              # 可选apps列表: yt-dlp, wayvnc, sunshine
+              # 可选apps列表: nushell, yt-dlp, wayvnc, sunshine
               thinkgo-laptop = mkHome {
                 username = "thinkgo";
                 disable-long-build = false;
@@ -97,6 +97,7 @@
                   };
                 };
                 apps = [
+                  "nushell"
                   "yt-dlp"
                   "wayvnc"
                   "sunshine"

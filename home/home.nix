@@ -32,15 +32,13 @@
     ./password-store.nix
     ./accounts.nix
     ./assets.nix
-    ./terminal/terminal.nix
+    ./scripts/scripts.nix
     ./shell/shell.nix
     ./editor/editor.nix
     ./devtools/devtools.nix
     ./programs/programs.nix
     ./fun/fun.nix
-    ./scripts/scripts.nix
     ./ai/ai.nix
-
   ]
   ++ (lib.optionals (customize.desktop != null)) [
     ./desktop/desktop.nix
