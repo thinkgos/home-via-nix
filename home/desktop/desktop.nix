@@ -13,6 +13,7 @@
     ./i18n.nix
     ./password-store.nix
     ./email.nix
+    ./screen-recorder.nix
     ./screenshot.nix
     ./terminal/terminal.nix
     ./editor/editor.nix

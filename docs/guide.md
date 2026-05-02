@@ -44,7 +44,6 @@ echo "experimental-features = nix-command flakes" >> /etc/nix/nix.conf
 - 更新channel, `nix-channel --update`
 - 添加相关help文档, `nix-env -i nix`.
 
-
 ## 4. 安装home-manager
 
 [Install home-manager via nix flakes](https://nix-community.github.io/home-manager/index.xhtml#ch-nix-flakes)

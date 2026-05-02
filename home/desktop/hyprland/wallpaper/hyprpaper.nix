@@ -10,7 +10,7 @@
   services.hyprpaper = {
     enable = true;
     settings = {
-      splash = true;
+      splash = false;
       splash_offset = 20;
       splash_opacity = 0.8;
       ipc = true;

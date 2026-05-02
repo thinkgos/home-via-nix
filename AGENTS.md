@@ -14,17 +14,25 @@
 
 ```text
 ├── flake.nix                 # Home Manager 主配置入口点
+├── docs/                     # 文档目录，包含项目说明、配置说明等
 ├── home/                     # Home Manager 主配置目录
-│   ├── default.nix           # 基础配置，导入 systemd、fonts、programs、terminal，可选 graphical
-│   ├── terminal/             # 终端特定模块（shell、editors、devtools、git、github、ai、ansible）
-│   ├── graphical/            # 图形界面模块（窗口管理器、桌面环境、shell、editor）
-│   ├── programs.nix          # CLI 工具（eza、ripgrep、bat、fzf 等）
+│   ├── home.nix              # 基础配置，导入 systemd、fonts、programs、terminal，可选 graphical
+│   ├── desktop/              # 桌面系统模块(gnome/hyprland等以及通用配置)
+│   ├── ai/                   # CLI AI工具模块
+│   ├── devtool/              # CLI 开发工具模块
+│   ├── programs/             # CLI 工具（eza、ripgrep、bat、fzf 等）
+│   ├── accounts.nix          # 账户配置
+│   ├── assets.nix            # 资源配置
 │   ├── fonts.nix             # 字体配置，包括 Nerd Fonts 和 CJK 支持
+│   ├── password-store.nix    # 密码存储配置
 │   └── systemd.nix           # 用户会话 PATH 和环境变量
 ├── roles/                    # 用于外部工具安装的 Ansible roles
 │   ├── system/               # 系统包角色, 包含发行版特定变量
 │   │   ├── task/             # 系统包角色任务
 │   │   └── vars/             # 系统包角色变量
+│   ├── flathub/              # Flathub包角色
+│   │   ├── task/             # Flathub包角色任务
+│   │   └── vars/             # Flathub包角色变量
 │   └── github/               # GitHub应用角色，支持版本跟踪和包/二进制策略
 │       ├── task/             # GitHub应用角色任务
 │       └── vars/             # GitHub应用角色变量

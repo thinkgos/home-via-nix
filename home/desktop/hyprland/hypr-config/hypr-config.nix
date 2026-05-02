@@ -38,13 +38,19 @@
         # dim_inactive = true;
       };
       misc = {
-        disable_splash_rendering = true;
+        disable_hyprland_logo = false;
+        disable_splash_rendering = false;
+        disable_scale_notification = false;
+        force_default_wallpaper = true;
+        animate_manual_resizes = true;
+        animate_mouse_windowdragging = true;
         font_family = "$font";
         mouse_move_enables_dpms = true;
         key_press_enables_dpms = true;
       };
       debug = {
-        disable_logs = false;
+        disable_logs = true;
+        disable_time = true;
       };
     };
     extraConfig = ''
