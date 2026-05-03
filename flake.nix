@@ -9,6 +9,9 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    lan-mouse.url = "github:feschber/lan-mouse";
+
+    # hyprland
     hyprland = {
       url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -17,8 +20,14 @@
       url = "github:shezdy/hyprsplit";
       inputs.hyprland.follows = "hyprland";
     };
-    lan-mouse.url = "github:feschber/lan-mouse";
     hypr-kcs.url = "github:kosa12/hyprKCS";
+
+    # niri
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
   outputs =
@@ -53,6 +62,7 @@
 
                     # Add the Home Manager module
                     inputs.lan-mouse.homeManagerModules.default
+                    inputs.niri.homeModules.niri
                   ];
                   # Optionally use extraSpecialArgs
                   # to pass through arguments to home.nix
@@ -61,11 +71,14 @@
                       inherit desktop;
                     };
                     extra-pkgs = {
+                      lan-mouse = inputs.lan-mouse.packages.${system}.default;
+                      #  hyprland
                       hyprland = inputs.hyprland.packages.${system}.hyprland;
                       xdg-desktop-portal-hyprland = inputs.hyprland.packages.${system}.xdg-desktop-portal-hyprland;
                       hyprsplit = inputs.hyprsplit.packages.${system}.default;
-                      lan-mouse = inputs.lan-mouse.packages.${system}.default;
                       hypr-kcs = inputs.hypr-kcs.packages.${system}.default;
+                      #  niri
+                      niri = inputs.niri.packages.${system}.niri-unstable;
                     };
                   };
                 };
