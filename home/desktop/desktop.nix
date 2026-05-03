@@ -2,7 +2,6 @@
   config,
   lib,
   pkgs,
-  customize,
   ...
 }:
 {
@@ -18,7 +17,6 @@
     ./terminal/terminal.nix
     ./editor/editor.nix
     ./programs/programs.nix
-  ]
-  ++ lib.optional (customize.desktop.window == "gnome") ./gnome/gnome.nix
-  ++ lib.optional (customize.desktop.window == "hyprland") ./hyprland/hyprland.nix;
+    ./de/de.nix
+  ];
 }
