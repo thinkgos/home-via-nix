@@ -2,9 +2,7 @@
 
 SESSION_FILE="/usr/share/wayland-sessions/hyprland.desktop"
 
-echo "安装sddm桌面登录..."
-
-sudo apt install -y --no-install-recommends sddm sddm-theme-breeze
+echo "安装Hyprland会话..."
 
 sudo mkdir -p $(dirname "$SESSION_FILE")
 cat <<EOF | sudo tee "$SESSION_FILE" >/dev/null

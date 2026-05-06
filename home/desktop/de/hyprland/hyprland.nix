@@ -56,7 +56,7 @@
     # QT_QPA_PLATFORMTHEME = "qt5ct";
   };
 
-  # XDG portal config for Hyprland
+  # XDG portal config
   xdg.portal = {
     enable = true;
     xdgOpenUsePortal = true;
