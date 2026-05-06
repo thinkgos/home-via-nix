@@ -12,7 +12,7 @@
     ./obs-studio.nix
     ./yt-dlp.nix
   ]
-  ++ lib.optional (customize.desktop.attrs.enable-video-clip) ./video-clip.nix;
+  ++ lib.optional (builtins.elem "video-clip" customize.components) ./video-clip.nix;
   home.packages = with pkgs; [
     zenity # 用于命令行或脚本弹出对话框
     slurp # wayland区域选择

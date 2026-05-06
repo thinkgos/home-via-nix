@@ -6,9 +6,6 @@
   customize,
   ...
 }:
-let
-  attrs = customize.desktop.attrs;
-in
 {
   # https://wiki.hypr.land/Plugins/Using-Plugins/
   # https://hypr.land/plugins/
@@ -22,7 +19,11 @@ in
     settings.plugin = {
       hyprsplit = {
         num_workspaces = 4;
-        monitor_priority = "${attrs.monitor-primary}" + lib.optionalString (attrs.monitor-secondary != "") ", ${attrs.monitor-secondary}";
+        monitor_priority =
+          "${customize.desktop.monitor-primary}"
+          + lib.optionalString (
+            customize.desktop.monitor-secondary != ""
+          ) ", ${customize.desktop.monitor-secondary}";
       };
     };
   };

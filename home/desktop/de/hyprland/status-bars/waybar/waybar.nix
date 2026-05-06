@@ -5,9 +5,6 @@
   customize,
   ...
 }:
-let
-  attrs = customize.desktop.attrs;
-in
 {
   # 状态栏
   # https://wiki.hypr.land/Useful-Utilities/Status-Bars/
@@ -22,8 +19,8 @@ in
     };
     settings = {
       mainBar =
-        # lib.optionalAttrs (attrs.monitor-primary != "") {
-        #   output = attrs.monitor-primary;
+        # lib.optionalAttrs (customize.desktop.monitor-primary != "") {
+        #   output = customize.desktop.monitor-primary;
         # }
         # //
         {

@@ -31,7 +31,6 @@
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
   };
 
   outputs =
@@ -95,12 +94,10 @@
                 desktop = {
                   window = "hyprland";
                   window-version = "hyprland";
-                  attrs = {
-                    monitor-primary = "eDP-1";
-                    monitor-secondary = "";
-                    enable-video-clip = false;
-                  };
+                  monitor-primary = "eDP-1";
+                  monitor-secondary = "";
                 };
+                components = [ ];
                 apps = [ ];
               };
               cors-ubuntu26_04 = mkHome {
@@ -108,12 +105,12 @@
                 desktop = {
                   window = "hyprland";
                   window-version = "hyprland";
-                  attrs = {
-                    monitor-primary = "HDMI-A-1";
-                    monitor-secondary = "";
-                    enable-video-clip = true;
-                  };
+                  monitor-primary = "HDMI-A-1";
+                  monitor-secondary = "";
                 };
+                components = [
+                  "video-clip"
+                ];
                 apps = [
                   "nushell"
                   "yt-dlp"
@@ -126,12 +123,10 @@
                 desktop = {
                   window = "hyprland";
                   window-version = "hyprland";
-                  attrs = {
-                    monitor-primary = "HDMI-A-1";
-                    monitor-secondary = "DP-1";
-                    enable-video-clip = false;
-                  };
+                  monitor-primary = "HDMI-A-1";
+                  monitor-secondary = "DP-1";
                 };
+                components = [ ];
                 apps = [ ];
               };
             };
