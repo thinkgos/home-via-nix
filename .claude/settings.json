@@ -1,0 +1,33 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(* --version)",
+      "Bash(* --help *)",
+      "Bash(date *)",
+      "Bash(echo *)",
+      "Bash(cat *)",
+      "Bash(ls *)",
+      "Bash(mkdir *)",
+      "Bash(wc *)",
+      "Bash(head *)",
+      "Bash(tail *)",
+      "Bash(sort *)",
+      "Bash(grep *)",
+      "Bash(tr *)",
+      "Bash(git add *)",
+      "Bash(git status *)",
+      "Bash(git log *)",
+      "Bash(git diff *)",
+      "Bash(git show *)",
+      "Bash(git branch *)"
+    ],
+    "ask": [
+      "Bash(git commit *)",
+      "Bash(git tag *)",
+      "Bash(git push *)"
+    ]
+  },
+  "enabledPlugins": {
+    "code-simplifier@claude-plugins-official": true
+  }
+}
