@@ -9,6 +9,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     lan-mouse.url = "github:feschber/lan-mouse";
 
     # hyprland
@@ -61,6 +65,7 @@
                     ./home/home.nix
 
                     # Add the Home Manager module
+                    inputs.stylix.homeModules.stylix
                     inputs.lan-mouse.homeManagerModules.default
                     inputs.niri.homeModules.niri
                   ];
