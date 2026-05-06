@@ -51,14 +51,8 @@ echo "experimental-features = nix-command flakes" >> /etc/nix/nix.conf
 ### home manager 切换
 
 ```shell
-# username: thinkgos, system: ubuntu25_10
-home-manager switch --flake .#thinkgo-laptop
-# username: cors, system: ubuntu25_10
-home-manager switch --flake .#cors-ubuntu25_10
-# username: thinkgos, system: ubuntu25_10
-home-manager switch --flake .#thinkgo-ubuntu25_10
-# username: thinkgo, system: fedora-43
-home-manager switch --flake .#thinkgo-fedora43
+# 切换对应配置, <配置名> 为flake.nix中定义的配置名
+home-manager switch --flake .#<配置名>
 # 仅构建配置（不切换，用于测试）
 home-manager build --flake .#<配置名>
 # 查看配置生成历史
@@ -78,7 +72,8 @@ ansible playbook 标签:
 
 - `system`: 安装系统包
 - `github`: 安装github应用
+- `flathub`: 安装flathub应用
 
 ```shell
-ansible-playbook site.yml -u <username> --tags system,github -K
+ansible-playbook site.yml -u <username> --tags system,github,flathub -K
 ```

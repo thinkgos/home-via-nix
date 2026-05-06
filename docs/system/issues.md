@@ -3,7 +3,7 @@
 
 ## 1. 桌面端启动器找不到相关程序
 
-`XDG_DATA_DIRS` 没有Nix对应路径, 有时 `/etc/environment` 中被写死了, 需要手动删除.
+`XDG_DATA_DIRS` 没有Nix对应路径, 有时 `/etc/environment` 中被写死了引起的, 可能手动删除.
 
 ```shell
 systemctl --user show-environment | grep XDG_DATA_DIRS

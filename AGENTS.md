@@ -45,7 +45,7 @@
 - 为每个用户-系统组合定义 `legacyPackages.homeConfigurations`。
 - 每个配置通过 `mkHome` 函数创建，传递以下参数：
   - `username`：主目录所有者
-  - `desktop`：启用图形模块的布尔值
+  - `desktop`：启用图形模块的配置
     - `window`：窗口管理器类型（"gnome" 或 "hyprland"）
     - `window-version`：版本标识符（如 "gnome-49"）
 - 支持的系统：x86_64-linux、aarch64-linux、x86_64-darwin、aarch64-darwin。
@@ -54,24 +54,26 @@
 
 - `roles/system`：系统包角色, 包含发行版特定变量, 其中vars文件, `main.yml`为通用包, `deb.yml`和`rpm.yml`为发行版特定包。
 - `roles/github`： GitHub应用角色, 管理 GitHub 应用的安装。
+- `roles/flathub`： Flathub包角色, 管理 Flathub 应用的安装。
 
 ## 常用工作流指南
 
 ### Home Manager 管理
 - 切换到用户配置：`home-manager switch --flake .#thinkgo-laptop` (具体查看 `flake.nix`)
-- 仅构建配置（不切换）：`home-manager build --flake .#thinkgo-ubuntu25_10`
+- 仅构建配置（不切换）：`home-manager build --flake .#thinkgo-laptop`
 - 查看生成的配置：`home-manager generations`
 
 ### Nix Flake 命令
 - 更新所有 flake：`nix flake update`
 - 显示可用的 flake 输出：`nix flake show`
-- 构建特定配置：`nix build .#thinkgo-fedora43`
+- 构建特定配置：`nix build .#thinkgo-laptop`
 
 ### Ansible 系统包管理
 - 前置条件: `home-manager` 已经切换到用户配置, 它包含了 `ansible`.
-- 运行完整 playbook (system + github)：`ansible-playbook site.yml -u <用户名> -K`
+- 运行完整 playbook (system + github + flathub)：`ansible-playbook site.yml -u <用户名> -K`
 - 仅安装系统包：`ansible-playbook site.yml -u <用户名> --tags system -K`
-- 仅安装 GitHub 应用：`ansible-playbook site.yml -u <用户名> --tags github -K`
+- 仅安装 GitHub 应用：`ansible-playbook site.yml -u <用户名> --tags github -K`  
+- 仅安装 Flathub 应用：`ansible-playbook site.yml -u <用户名> --tags flathub -K`  
 
 ## 设计模式
 
