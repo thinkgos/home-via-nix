@@ -116,12 +116,16 @@
                   "sunshine"
                 ];
               };
-              thinkgo-ubuntu25_10 = mkHome {
+              thinkgo-ubuntu26_04 = mkHome {
                 username = "thinkgo";
                 disable-long-build = false;
                 desktop = {
-                  window = "gnome";
-                  window-version = "gnome-49";
+                  window = "hyprland";
+                  window-version = "hyprland";
+                  attrs = {
+                    monitor-primary = "eDP-1";
+                    monitor-secondary = "";
+                  };
                 };
                 apps = [ ];
               };

@@ -7,7 +7,7 @@
 let
   # https://noogle.dev/f/builtins/fetchGit/
   home-assets = builtins.fetchGit {
-    url = "git@github.com:thinkgos/home-via-nix-assets.git";
+    url = "https://github.com/thinkgos/home-via-nix-assets.git";
     ref = "main";
     rev = "71f346c1e13a0b6279409bcef1371338a4628487";
     lfs = true;
