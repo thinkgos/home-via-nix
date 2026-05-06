@@ -8,6 +8,7 @@
   imports = [
     ./gtk.nix
     ./qt.nix
+    ./stylix.nix
     ./pointer-cursor.nix
     ./i18n.nix
     ./password-store.nix

@@ -27,7 +27,7 @@
     font = {
       package = pkgs.inter;
       name = "Inter";
-      size = 11;
+      size = 10;
     };
   };
 }

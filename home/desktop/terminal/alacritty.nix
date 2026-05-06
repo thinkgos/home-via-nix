@@ -35,10 +35,10 @@
       };
       font = {
         normal = {
-          family = "JetBrainsMono Nerd Font Mono";
+          family = "FiraCode Nerd Font Mono";
           style = "Regular";
         };
-        size = 10;
+        size = 11;
       };
       selection = {
         save_to_clipboard = true;

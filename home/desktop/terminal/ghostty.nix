@@ -78,8 +78,8 @@ in
       # theme = "Dracula+";
 
       # font
-      font-family = "JetBrainsMono Nerd Font Mono";
-      font-size = 10;
+      font-family = "FiraCode Nerd Font Mono";
+      font-size = 11;
       font-thicken = true;
       adjust-cell-height = 2;
 
@@ -98,7 +98,7 @@ in
       gtk-wide-tabs = false;
 
       # background
-      background-opacity = 0.90;
+      background-opacity = 0.85;
 
       # cursor
       cursor-style = "bar";

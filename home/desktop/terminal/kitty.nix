@@ -14,12 +14,11 @@
     enable = true;
     shellIntegration.mode = "no-rc";
     font = {
-      name = "JetBrainsMono Nerd Font Mono";
-      size = 10.0;
+      name = "FiraCode Nerd Font Mono";
+      size = 11.0;
     };
-    # themeFile = "Catppuccin-Mocha";
-    themeFile = "Monokai_Soda";
-    # themeFile = "tokyo_night_night";
+    themeFile = "Catppuccin-Mocha";
+    # themeFile = "Monokai_Soda";
     # themeFile = "noirbuddy-oxide";
     keybindings = {
       # font size
@@ -81,7 +80,7 @@
       # tab_powerline_style = "angled";
 
       # background
-      background_opacity = 0.90;
+      background_opacity = 0.85;
       background_blur = 64;
       remember_window_size = "yes";
 
