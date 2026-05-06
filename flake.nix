@@ -87,26 +87,26 @@
               # 可选apps列表: nushell, yt-dlp, wayvnc, sunshine
               thinkgo-laptop = mkHome {
                 username = "thinkgo";
-                disable-long-build = false;
                 desktop = {
                   window = "hyprland";
                   window-version = "hyprland";
                   attrs = {
                     monitor-primary = "eDP-1";
                     monitor-secondary = "";
+                    enable-video-clip = false;
                   };
                 };
                 apps = [ ];
               };
               cors-ubuntu26_04 = mkHome {
                 username = "cors";
-                disable-long-build = false;
                 desktop = {
                   window = "hyprland";
                   window-version = "hyprland";
                   attrs = {
                     monitor-primary = "HDMI-A-1";
                     monitor-secondary = "";
+                    enable-video-clip = true;
                   };
                 };
                 apps = [
@@ -116,15 +116,15 @@
                   "sunshine"
                 ];
               };
-              thinkgo-ubuntu26_04 = mkHome {
+              thinkgo-work = mkHome {
                 username = "thinkgo";
-                disable-long-build = false;
                 desktop = {
                   window = "hyprland";
                   window-version = "hyprland";
                   attrs = {
-                    monitor-primary = "eDP-1";
+                    monitor-primary = "DP-1";
                     monitor-secondary = "";
+                    enable-video-clip = false;
                   };
                 };
                 apps = [ ];
