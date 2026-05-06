@@ -13,8 +13,8 @@ sudo systemctl disable --now apport.service
 sudo systemctl mask apport.service
 sudo systemctl disable --now ModemManager.service
 sudo systemctl mask ModemManager.service
-sudo systemctl disable --now systemd-networkd networkd-dispatcher
-sudo systemctl mask systemd-networkd networkd-dispatcher
+# sudo systemctl disable --now systemd-networkd networkd-dispatcher
+# sudo systemctl mask systemd-networkd networkd-dispatcher
 
 sudo rm -rf /etc/cloud/ /var/lib/cloud/
 
