@@ -122,8 +122,8 @@
                   window = "hyprland";
                   window-version = "hyprland";
                   attrs = {
-                    monitor-primary = "DP-1";
-                    monitor-secondary = "";
+                    monitor-primary = "HDMI-A-1";
+                    monitor-secondary = "DP-1";
                     enable-video-clip = false;
                   };
                 };
