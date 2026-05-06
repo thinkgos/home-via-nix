@@ -1,10 +1,9 @@
 #!/bin/bash
 
-# 清理一些不需要的软件包
-
+echo "清理不需要的软件..."
 sudo apt autoremove -y --purge snapd cloud-init open-iscsi apport modemmanager unattended-upgrades rsyslog needrestart
 
-# 不需要的服务端服务
+echo "清理不需要的服务端服务..."
 sudo systemctl disable --now multipathd
 sudo systemctl mask multipathd
 sudo systemctl disable --now lvm2-monitor.service lvm2-lvmpolld.socket
