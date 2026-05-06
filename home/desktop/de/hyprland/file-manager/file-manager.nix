@@ -21,6 +21,15 @@
       Selection=any
       Extensions=dir;none;
     '';
+    "nemo/actions/open-in-alacritty.nemo_action".text = ''
+      [Nemo Action]
+      Name=Open in Alacritty
+      Comment=Open Alacritty terminal in the selected directory
+      Exec=alacritty --working-directory %P
+      Icon-Name=alacritty
+      Selection=any
+      Extensions=dir;none;
+    '';
     "nemo/actions/open-in-ghostty.nemo_action".text = ''
       [Nemo Action]
       Name=Open in Ghostty
