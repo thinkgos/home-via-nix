@@ -10,6 +10,9 @@ let
   enableLanMouse = builtins.any (c: c == "lan-mouse" || c == "lan-mouse-daemon") customize.components;
 in
 {
+  # TODO: deskflow等ISSUE合, 目前暂不支持.
+  # https://github.com/deskflow/deskflow/discussions/7499
+  # https://github.com/hyprwm/xdg-desktop-portal-hyprland/issues/259
   home.packages = [ ] ++ lib.optional (builtins.elem "deskflow" customize.components) pkgs.deskflow;
 
   # 键鼠共享

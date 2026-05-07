@@ -114,7 +114,7 @@
                 };
                 components = [
                   "video-clip"
-                  "deskflow"
+                  "lan-mouse"
                 ];
                 apps = [
                   "nushell"
@@ -132,7 +132,7 @@
                   monitor-secondary = "DP-1";
                 };
                 components = [
-                  "deskflow"
+                  "lan-mouse-client"
                 ];
                 apps = [ ];
               };
