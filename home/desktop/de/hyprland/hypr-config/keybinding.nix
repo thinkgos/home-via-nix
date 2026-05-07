@@ -56,8 +56,8 @@
       "$mod, C, exec, $launchCalculator" # 启动计算器
       "$mod, B, exec, $launchBrowser" # 启动浏览器
       "$mod, P, exec, $launchIde" # 启动IDE
-      # "$mod, Return, global, com.mitchellh.ghostty:toggle_quick_terminal" # 切换到下拉终端
-      "$mod, Return, exec, $launchDropdownTerminal"
+      # "$mod, grave, global, com.mitchellh.ghostty:toggle_quick_terminal" # 切换到下拉终端
+      "$mod, grave, exec, $launchDropdownTerminal"
       "$mod, slash, exec, $appLauncher" # 启动应用启动器
       "$mod, F1, exec, $helpKeybinding" # 启动帮助按键绑定
 
