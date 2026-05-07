@@ -93,6 +93,7 @@
               # components:
               #   视频剪辑: video-clip
               #   键鼠共享: deskflow, lan-mouse-client, lan-mouse
+              #   截图标注: flameshot
               thinkgo-laptop = mkHome {
                 username = "thinkgo";
                 desktop = {
@@ -101,7 +102,9 @@
                   monitor-primary = "eDP-1";
                   monitor-secondary = "";
                 };
-                components = [ ];
+                components = [
+                  "flameshot"
+                ];
                 apps = [ ];
               };
               cors-ubuntu26_04 = mkHome {
@@ -113,6 +116,7 @@
                   monitor-secondary = "";
                 };
                 components = [
+                  "flameshot"
                   "video-clip"
                   "lan-mouse"
                 ];
@@ -132,6 +136,7 @@
                   monitor-secondary = "DP-1";
                 };
                 components = [
+                  "flameshot"
                   "lan-mouse-client"
                 ];
                 apps = [ ];

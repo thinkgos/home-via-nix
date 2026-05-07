@@ -18,13 +18,16 @@
       "float on, size monitor_w*0.6 monitor_h*0.6, center on, match:class ^(nemo|io.missioncenter.MissionCenter|vlc|cc-switch|clash-verge|gnome-disks|org.gnome.baobab|com.github.tchx84.Flatseal)$"
       # LocalSend
       "float on, size 720 800, move (monitor_w-720)*0.5 100, match:class ^(localsend_app)$"
-      # 截图标注
-      "float on, size monitor_w*0.8 monitor_h*0.8, center on, match:class ^(com.gabm.satty)$"
+      # 图片预览/截图标注
+      "float on, size monitor_w*0.8 monitor_h*0.8, center on, match:class ^(com.gabm.satty|org.kde.gwenview)$"
       # 下拉式终端窗口规则
       "float on,  size monitor_w monitor_h*0.4, move 0 0, rounding 0, workspace special:dropdown-terminal, match:class ^(dropdown-terminal)$"
 
       # 在终端使用ueberzugpp显示图片, 不支持kitty图片显示协议的终端.
       "float on, no_focus on, match:class ^(ueberzugpp_.*)$"
+
+      #
+      "float on, match:initial_title ^(flameshot)$"
 
       # NOTE:
       # 目前不支持同时满足全屏和指定应用的规则

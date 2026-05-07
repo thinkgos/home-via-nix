@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  customize,
   ...
 }:
 {
@@ -38,7 +39,7 @@
       # "$mod, P, pseudo" # Dwindle: 伪平铺
       # "$mod, J, togglesplit" # Dwindle: 切换横纵分割
       "$mod, G, togglegroup" # 窗口成组
-      "$mod, Y, lockactivegroup, toggle" # 锁定组
+      "$mod, Y, lockactivegroup, toggle" # 锁定窗口组
 
       # 截图
       # 活动窗口截图
@@ -48,7 +49,15 @@
       # 交互式截图
       ", Print, exec, blast-screenshot region"
       # 交互式截图+标注
-      "$mod, Print, exec, blast-screenshot annotate"
+      (
+        "$mod, Print, exec, "
+        + (
+          if (builtins.elem "flameshot" customize.components) then
+            "flameshot gui"
+          else
+            "blast-screenshot annotate"
+        )
+      )
 
       # 应用
       "$mod, T, exec, $launchTerminal" # 启动终端

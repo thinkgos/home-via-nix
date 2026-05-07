@@ -23,6 +23,7 @@
     baobab # 磁盘占用分析工具
     gnome-disk-utility # 磁盘管理工具
     kdePackages.okular # pdf viewer
+    kdePackages.gwenview # image viewer
     localsend # 局域网文件传输工具
     drawy # 画布工具
   ];
