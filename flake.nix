@@ -88,7 +88,11 @@
                 };
             in
             {
-              # 可选apps列表: nushell, yt-dlp, wayvnc, sunshine
+              # apps:
+              #   nushell, yt-dlp, wayvnc, sunshine
+              # components:
+              #   视频剪辑: video-clip
+              #   键鼠共享: deskflow, lan-mouse-client, lan-mouse
               thinkgo-laptop = mkHome {
                 username = "thinkgo";
                 desktop = {
@@ -110,6 +114,7 @@
                 };
                 components = [
                   "video-clip"
+                  "deskflow"
                 ];
                 apps = [
                   "nushell"
@@ -126,7 +131,9 @@
                   monitor-primary = "HDMI-A-1";
                   monitor-secondary = "DP-1";
                 };
-                components = [ ];
+                components = [
+                  "deskflow"
+                ];
                 apps = [ ];
               };
             };

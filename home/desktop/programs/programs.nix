@@ -7,8 +7,8 @@
 }:
 {
   imports = [
-    ./remote-desktop.nix
-    ./lan-mouse.nix
+    ./share-desktop.nix
+    ./share-input.nix
     ./obs-studio.nix
     ./yt-dlp.nix
   ]
