@@ -9,7 +9,7 @@ let
   home-assets = builtins.fetchGit {
     url = "https://github.com/thinkgos/home-via-nix-assets.git";
     ref = "main";
-    rev = "71f346c1e13a0b6279409bcef1371338a4628487";
+    rev = "2b4cf01561f3c73463ec683b2b12970986836d81";
     lfs = true;
   };
 in
