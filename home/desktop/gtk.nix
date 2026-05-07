@@ -29,5 +29,9 @@
       name = "Inter";
       size = 10;
     };
+    gtk4 = {
+      enable = true;
+      theme = null;
+    };
   };
 }
