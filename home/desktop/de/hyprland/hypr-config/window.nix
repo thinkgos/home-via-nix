@@ -8,8 +8,7 @@
   # Hyprland 窗口
   wayland.windowManager.hyprland.settings = {
     layerrule = [
-      "blur on, match:namespace wofi"
-      "ignore_alpha 0.5, match:namespace wofi"
+      "blur on, ignore_alpha 0.5, match:namespace wofi"
     ];
     windowrule = [
       # 计算器/网络/蓝牙/音频

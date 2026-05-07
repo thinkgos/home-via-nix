@@ -47,8 +47,8 @@
 
 window#waybar {
 	transition-property: background-color;
-  	transition-duration: 0.5s;
-  	background-color: alpha(@base, 0.4);
+  transition-duration: 0.5s;
+  background-color: alpha(@base, 0.6);
 }
 
 tooltip {
