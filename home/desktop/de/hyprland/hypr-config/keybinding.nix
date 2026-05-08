@@ -32,6 +32,7 @@
       "CTRL ALT, Delete, exec, blast-shutdown logout" # 注销当前用户会话/退出桌面
       "$mod ALT, M, exec, blast-shutdown reboot" # 重启系统
       "$mod ALT, C, exec, $pickColor" # 启动提取颜色
+      "$mod ALT, T, exec, warp-terminal" # 启动wrap终端
 
       # 系统
       "$mod, L, exec, $lockScreen" # 锁定屏幕
