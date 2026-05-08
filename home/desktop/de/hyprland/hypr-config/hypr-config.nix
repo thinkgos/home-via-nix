@@ -100,7 +100,7 @@
     };
     extraConfig = ''
       # window resize
-      bind = $mod ALT, R, submap, resize
+      bindd = $mod ALT, R, 缩放窗口, submap, resize
 
       submap = resize
       binde = , Up, resizeactive, 0 -20
