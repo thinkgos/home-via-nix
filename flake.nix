@@ -102,6 +102,18 @@
               #   截图标注: flameshot
               thinkgo-laptop = mkHome {
                 username = "thinkgo";
+                theme = {
+                  name = "WhiteSur-Dark";
+                  package = pkgs.whitesur-gtk-theme;
+                };
+                cursor = {
+                  name = "WhiteSur-cursors";
+                  package = pkgs.whitesur-cursors;
+                };
+                icon = {
+                  name = "WhiteSur-dark";
+                  package = pkgs.whitesur-icon-theme;
+                };
                 desktop = {
                   window = "hyprland";
                   window-version = "hyprland";

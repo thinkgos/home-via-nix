@@ -26,8 +26,8 @@
       # - user-themes 用户主题
       # - auto-move-windows 自动移动窗口
       theme = {
-        name = "WhiteSur-Dark";
-        package = pkgs.whitesur-gtk-theme;
+        name = customize.theme.name;
+        package = customize.theme.package;
       };
       extensions = with pkgs; [
         # 自动移动窗口
@@ -89,7 +89,7 @@
       # show-screen-recording-ui = ["<Ctrl><Shift><Alt>R"]; # 交互式屏幕录制, 默认： <Ctrl><Shift><Alt>R
     };
     "org/gnome/shell/extensions/user-theme" = {
-      name = "WhiteSur-Dark";
+      name = customize.theme.name;
     };
 
     "org/gnome/shell/extensions/auto-move-windows" = {

@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  customize,
   ...
 }:
 {
@@ -55,9 +56,9 @@
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
       accent-color = "green";
-      cursor-theme = "WhiteSur-cursors";
-      gtk-theme = "WhiteSur-Dark";
-      icon-theme = "WhiteSur-dark";
+      gtk-theme = customize.theme.name;
+      cursor-theme = customize.cursor.name;
+      icon-theme = customize.icon.name;
       font-name = "Inter 11";
       document-font-name = "Inter 11";
       monospace-font-name = "JetBrainsMono Nerd Font Mono 11";

@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  customize,
   ...
 }:
 {
@@ -41,9 +42,9 @@
     };
     icons = {
       enable = false;
-      package = pkgs.whitesur-icon-theme;
-      dark = "WhiteSur-dark";
-      light = "WhiteSur-light";
+      package = customize.icon.package;
+      dark = customize.icon.name;
+      light = customize.icon.name;
     };
     # see ./pointer-cursor.nix
     cursor = null;
