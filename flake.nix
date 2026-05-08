@@ -14,6 +14,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     lan-mouse.url = "github:feschber/lan-mouse";
+    goup-rs = {
+      url = "github:thinkgos/goup-rs";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # hyprland
     hyprland = {
@@ -76,6 +80,8 @@
                     };
                     extra-pkgs = {
                       lan-mouse = inputs.lan-mouse.packages.${system}.default;
+                      goup-rs = inputs.goup-rs.packages.${system}.default;
+
                       #  hyprland
                       hyprland = inputs.hyprland.packages.${system}.hyprland;
                       xdg-desktop-portal-hyprland = inputs.hyprland.packages.${system}.xdg-desktop-portal-hyprland;
