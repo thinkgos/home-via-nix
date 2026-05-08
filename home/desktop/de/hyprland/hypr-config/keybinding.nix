@@ -16,6 +16,7 @@
     "$launchCalculator" = "pkill qalculate-gtk || qalculate-gtk";
     "$launchBrowser" = "google-chrome";
     "$launchIde" = "code";
+    "$launchScreenRecorder" = "pkill kooha || flatpak run io.github.seadve.Kooha";
     "$appLauncher" = "pkill wofi || wofi";
     "$lockScreen" = "blast-lock-screen";
     "$pickColor" = "hyprpicker -a -n -s 5 -u 60";
@@ -42,7 +43,8 @@
       "$mod, G, togglegroup" # 窗口成组
       "$mod, Y, lockactivegroup, toggle" # 锁定窗口组
 
-      # 截图
+      # 截图/录屏
+      "$mod, R, exec, $launchScreenRecorder" # 交互式录屏
       # 活动窗口截图
       "ALT, Print, exec, blast-screenshot active"
       # 全屏截图

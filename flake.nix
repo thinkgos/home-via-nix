@@ -89,7 +89,7 @@
             in
             {
               # apps:
-              #   nushell, yt-dlp, wayvnc, sunshine
+              #   nushell, yt-dlp, wayvnc, sunshine, obs-studio
               # components:
               #   视频剪辑: video-clip
               #   键鼠共享: deskflow, lan-mouse-client, lan-mouse
@@ -105,7 +105,9 @@
                 components = [
                   "flameshot"
                 ];
-                apps = [ ];
+                apps = [
+                  "obs-studio"
+                ];
               };
               cors-ubuntu26_04 = mkHome {
                 username = "cors";
@@ -139,7 +141,9 @@
                   "flameshot"
                   "lan-mouse-client"
                 ];
-                apps = [ ];
+                apps = [
+                  "obs-studio"
+                ];
               };
             };
 

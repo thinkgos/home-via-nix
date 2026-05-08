@@ -25,8 +25,11 @@
       # 在终端使用ueberzugpp显示图片, 不支持kitty图片显示协议的终端.
       "float on, no_focus on, match:class ^(ueberzugpp_.*)$"
 
-      #
+      # 截图标注
       "float on, match:initial_title ^(flameshot)$"
+
+      # 交互式录屏
+      "size 230 230, move monitor_w-260 60, match:class ^(io.github.seadve.Kooha)$"
 
       # NOTE:
       # 目前不支持同时满足全屏和指定应用的规则

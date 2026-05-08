@@ -100,7 +100,7 @@
     };
     extraConfig = ''
       # window resize
-      bind = $mod, R, submap, resize
+      bind = $mod ALT, R, submap, resize
 
       submap = resize
       binde = , Up, resizeactive, 0 -20

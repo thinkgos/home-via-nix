@@ -8,3 +8,5 @@ flathub_apps:
     description: redis insight
   - name: org.nickvision.tubeconverter
     description: yt-dlp frontend (Parabolic)
+  - name: io.github.seadve.Kooha
+    description: Kooha屏幕录制
