@@ -94,6 +94,10 @@
                 };
             in
             {
+              # theme/icon/cursor packages:
+              # ls $(nix build nixpkgs#orchis-theme --no-link --print-out-paths)/share/themes
+              # ls $(nix build nixpkgs#catppuccin-cursors.mochaDark --no-link --print-out-paths)/share/icons
+              # ls $(nix build nixpkgs#tela-icon-theme --no-link --print-out-paths)/share/icons
               # apps:
               #   nushell, yt-dlp, wayvnc, sunshine, obs-studio
               # components:
@@ -106,13 +110,16 @@
                   name = "WhiteSur-Dark";
                   package = pkgs.whitesur-gtk-theme;
                 };
-                cursor = {
-                  name = "WhiteSur-cursors";
-                  package = pkgs.whitesur-cursors;
-                };
                 icon = {
                   name = "WhiteSur-dark";
                   package = pkgs.whitesur-icon-theme;
+                };
+                cursor = {
+                  # https://github.com/ful1e5/Bibata_Cursor
+                  # name = "Bibata-Original-Amber";
+                  # package = pkgs.bibata-cursors;
+                  name = "catppuccin-mocha-maroon-cursors";
+                  package = pkgs.catppuccin-cursors.mochaMaroon;
                 };
                 desktop = {
                   window = "hyprland";
@@ -129,6 +136,18 @@
               };
               cors-ubuntu26_04 = mkHome {
                 username = "cors";
+                theme = {
+                  name = "WhiteSur-Dark";
+                  package = pkgs.whitesur-gtk-theme;
+                };
+                icon = {
+                  name = "WhiteSur-dark";
+                  package = pkgs.whitesur-icon-theme;
+                };
+                cursor = {
+                  name = "catppuccin-mocha-maroon-cursors";
+                  package = pkgs.catppuccin-cursors.mochaMaroon;
+                };
                 desktop = {
                   window = "hyprland";
                   window-version = "hyprland";
@@ -149,6 +168,18 @@
               };
               thinkgo-work = mkHome {
                 username = "thinkgo";
+                theme = {
+                  name = "WhiteSur-Dark";
+                  package = pkgs.whitesur-gtk-theme;
+                };
+                icon = {
+                  name = "WhiteSur-dark";
+                  package = pkgs.whitesur-icon-theme;
+                };
+                cursor = {
+                  name = "catppuccin-mocha-maroon-cursors";
+                  package = pkgs.catppuccin-cursors.mochaMaroon;
+                };
                 desktop = {
                   window = "hyprland";
                   window-version = "hyprland";

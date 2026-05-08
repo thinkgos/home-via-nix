@@ -14,9 +14,6 @@ let
   };
 in
 {
-  home.packages = [
-    pkgs.papirus-icon-theme # Pixel perfect icon theme for Linux
-  ];
   xdg.dataFile = {
     # 壁纸 (资源来自外部 home-assets 仓库)
     "wallpapers" = {
