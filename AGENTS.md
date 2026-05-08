@@ -13,6 +13,7 @@
 ### 项目结构
 
 ```text
+├── bootstrap.sh              # ubuntu server 安装wm初始化脚本.
 ├── flake.nix                 # Home Manager 主配置入口点
 ├── docs/                     # 文档目录，包含项目说明、配置说明等
 ├── home/                     # Home Manager 主配置目录
@@ -48,6 +49,8 @@
   - `desktop`：启用图形模块的配置
     - `window`：窗口管理器类型（"gnome" 或 "hyprland"）
     - `window-version`：版本标识符（如 "gnome-49"）
+  - `components`: 组件配置
+  - `apps`: 应用配置
 - 支持的系统：x86_64-linux、aarch64-linux、x86_64-darwin、aarch64-darwin。
 
 ### `ansible` 结构
@@ -77,7 +80,7 @@
 
 ## 设计模式
 
-1. **模块化导入**：Nix 模块按领域（terminal、graphical、devtools）结构化，并条件性导入。
+1. **模块化导入**：Nix 模块按领域结构化，并条件性导入。
 2. **多用户/多发行版**：单个 flake 通过参数化配置支持多个用户名和发行版。
 3. **Ansible + Nix 混合**：Nix 管理用户级包和配置；Ansible 管理系统级包和从 GitHub 发行的二进制安装。
 4. **安装策略模式**：GitHub 应用可根据发行版和发行资产安装为 `.deb`/`.rpm` 包或二进制文件。
@@ -94,14 +97,13 @@
 ### 更新`home-manager`配置依赖时
 - 对于 Nix flake 输入：`nix flake update` 然后审查 `flake.lock`。
 
-### 添加新 GitHub 应用时
-1. 在 `roles/github/vars/main.yml` 中添加条目，包含必需字段（name、repo、version、tag_prefix）。
-2. 确定安装策略：为包提供 `package_name`/`debian_pattern`/`redhat_pattern`，或为二进制提供 `version_arg`/`binaries`/`binary_name`/`binary_pattern`。
-3. 运行 `ansible-playbook site.yml --tags github -K` 进行部署。
-
 ### 添加新 System 包时
 1. 通用包在 `roles/system/vars/main.yml` 中添加条目，发行版特定则在 `roles/system/vars/deb.yml` 或 `roles/system/vars/rpm.yml` 中添加。 
-2. 运行 `ansible-playbook site.yml --tags github -K` 进行部署。
+2. 运行 `ansible-playbook site.yml -u <用户名> --tags system -K` 进行部署。
+
+### 添加新 Flathub 应用时
+1. 在 `roles/flathub/vars/main.yml` 中添加条目，包含必需字段（name、repo、version、tag_prefix）。
+2. 运行 `ansible-playbook site.yml -u <用户名> --tags flathub -K` 进行部署。
 
 ### 调试问题时
 1. 查看 `docs/system/issues.md` 了解已知问题（SELinux、PATH、XDG_DATA_DIRS、IBus、AppArmor 等）。

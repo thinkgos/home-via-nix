@@ -12,6 +12,9 @@
     enableAutoUpdates = true;
     # https://tealdeer-rs.github.io/tealdeer/config.html
     settings = {
+      display = {
+        compact = true;
+      };
       updates = {
         auto_update = true;
         auto_update_interval_hours = 72;
