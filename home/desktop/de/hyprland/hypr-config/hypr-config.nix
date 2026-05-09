@@ -110,6 +110,16 @@
       bind = , escape, submap, reset
       bind = , catchall, submap, reset
       submap = reset
+
+      source = ~/.config/hypr/hyprland-extra.conf
     '';
   };
+  # 创建默认配置文件，如果不存在
+  home.activation.create-hyprland-config-extra = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    file=${config.xdg.configHome}/hypr/hyprland-extra.conf
+    if [ ! -f "$file" ]; then
+      mkdir -p "$(dirname "$file")"
+      touch "$file"
+    fi
+  '';
 }
