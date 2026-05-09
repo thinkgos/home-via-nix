@@ -7,7 +7,7 @@
   ...
 }:
 let
-  enableLanMouse = builtins.any (c: c == "lan-mouse" || c == "lan-mouse-daemon") customize.components;
+  enableLanMouse = builtins.any (c: c == "lan-mouse-client" || c == "lan-mouse") customize.components;
 in
 {
   # TODO: deskflow等ISSUE合, 目前暂不支持.
@@ -18,7 +18,7 @@ in
   # 键鼠共享
   programs.lan-mouse = {
     enable = enableLanMouse;
-    systemd = builtins.elem "lan-mouse-daemon" customize.components;
+    systemd = builtins.elem "lan-mouse" customize.components;
     package = extra-pkgs.lan-mouse;
     # Optional configuration in nix syntax, see config.toml for available options
     # settings = { };
