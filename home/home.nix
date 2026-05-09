@@ -73,6 +73,7 @@
       extraConfig = {
         program = "${config.home.homeDirectory}/Programs";
         tmp = "${config.home.homeDirectory}/Tmp";
+        screenshots = "${config.home.homeDirectory}/Pictures/screenshots";
       };
     };
   };
