@@ -23,7 +23,7 @@
       '';
     });
     settings = {
-      "$font" = "FiraCode Nerd Font Mono";
+      "$font" = "JetBrainsMono Nerd Font Mono";
       "$splash" = "echo $(hyprctl splash)";
       "$wallpaper" = "${config.xdg.dataHome}/wallpapers/scenery1.jpg";
       "$greet" =

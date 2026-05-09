@@ -53,15 +53,17 @@
         "aarch64-darwin"
       ];
       perSystem =
-        { pkgs, system, ... }:
+        {
+          lib,
+          pkgs,
+          system,
+          ...
+        }:
         {
           legacyPackages.homeConfigurations =
             let
               mkHome =
-                {
-                  desktop ? null,
-                  ...
-                }@args:
+                customize:
                 inputs.home-manager.lib.homeManagerConfiguration {
                   inherit pkgs;
                   modules = [
@@ -75,9 +77,7 @@
                   # Optionally use extraSpecialArgs
                   # to pass through arguments to home.nix
                   extraSpecialArgs = {
-                    customize = args // {
-                      inherit desktop;
-                    };
+                    inherit customize;
                     extra-pkgs = {
                       lan-mouse = inputs.lan-mouse.packages.${system}.default;
                       goup-rs = inputs.goup-rs.packages.${system}.default;
@@ -94,106 +94,24 @@
                 };
             in
             {
-              # theme/icon/cursor packages:
-              # ls $(nix build nixpkgs#orchis-theme --no-link --print-out-paths)/share/themes
-              # ls $(nix build nixpkgs#catppuccin-cursors.mochaDark --no-link --print-out-paths)/share/icons
-              # ls $(nix build nixpkgs#tela-icon-theme --no-link --print-out-paths)/share/icons
-              # apps:
-              #   nushell, yt-dlp, wayvnc, sunshine, obs-studio
-              # components:
-              #   视频剪辑: video-clip
-              #   键鼠共享: deskflow, lan-mouse-client, lan-mouse
-              #   截图标注: flameshot
-              thinkgo-laptop = mkHome {
-                username = "thinkgo";
-                theme = {
-                  name = "WhiteSur-Dark";
-                  package = pkgs.whitesur-gtk-theme;
-                };
-                icon = {
-                  name = "WhiteSur-dark";
-                  package = pkgs.whitesur-icon-theme;
-                };
-                cursor = {
-                  # https://github.com/ful1e5/Bibata_Cursor
-                  # name = "Bibata-Original-Amber";
-                  # package = pkgs.bibata-cursors;
-                  name = "catppuccin-mocha-maroon-cursors";
-                  package = pkgs.catppuccin-cursors.mochaMaroon;
-                };
-                desktop = {
-                  window = "hyprland";
-                  window-version = "hyprland";
-                  monitor-primary = "eDP-1";
-                  monitor-secondary = "";
-                };
-                components = [
-                  "flameshot"
-                ];
-                apps = [
-                  "obs-studio"
-                ];
-              };
-              cors-ubuntu26_04 = mkHome {
-                username = "cors";
-                theme = {
-                  name = "WhiteSur-Dark";
-                  package = pkgs.whitesur-gtk-theme;
-                };
-                icon = {
-                  name = "WhiteSur-dark";
-                  package = pkgs.whitesur-icon-theme;
-                };
-                cursor = {
-                  name = "catppuccin-mocha-maroon-cursors";
-                  package = pkgs.catppuccin-cursors.mochaMaroon;
-                };
-                desktop = {
-                  window = "hyprland";
-                  window-version = "hyprland";
-                  monitor-primary = "HDMI-A-1";
-                  monitor-secondary = "";
-                };
-                components = [
-                  "flameshot"
-                  "video-clip"
-                  "lan-mouse"
-                ];
-                apps = [
-                  "nushell"
-                  "yt-dlp"
-                  "wayvnc"
-                  "sunshine"
-                ];
-              };
-              thinkgo-work = mkHome {
-                username = "thinkgo";
-                theme = {
-                  name = "WhiteSur-Dark";
-                  package = pkgs.whitesur-gtk-theme;
-                };
-                icon = {
-                  name = "WhiteSur-dark";
-                  package = pkgs.whitesur-icon-theme;
-                };
-                cursor = {
-                  name = "catppuccin-mocha-maroon-cursors";
-                  package = pkgs.catppuccin-cursors.mochaMaroon;
-                };
-                desktop = {
-                  window = "hyprland";
-                  window-version = "hyprland";
-                  monitor-primary = "HDMI-A-1";
-                  monitor-secondary = "DP-1";
-                };
-                components = [
-                  "flameshot"
-                  "lan-mouse-client"
-                ];
-                apps = [
-                  "obs-studio"
-                ];
-              };
+              thinkgo-laptop = mkHome (
+                import ./hosts/thinkgo-laptop.nix {
+                  inherit lib;
+                  inherit pkgs;
+                }
+              );
+              cors-beelink = mkHome (
+                import ./hosts/cors-beelink.nix {
+                  inherit lib;
+                  inherit pkgs;
+                }
+              );
+              thinkgo-work = mkHome (
+                import ./hosts/thinkgo-work.nix {
+                  inherit lib;
+                  inherit pkgs;
+                }
+              );
             };
 
           devShells.default = pkgs.mkShell {

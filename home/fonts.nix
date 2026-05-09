@@ -28,9 +28,9 @@
     defaultFonts = {
       emoji = [ "Noto Color Emoji" ];
       monospace = [
-        "FiraCode Nerd Font Mono"
         "JetBrainsMono Nerd Font Mono"
         "MesloLGL Nerd Font Mono"
+        "FiraCode Nerd Font Mono"
         "Hack Nerd Font"
         "MesloLGS NF"
         "Noto Sans Mono CJK SC"
@@ -41,7 +41,7 @@
         "Noto Sans CJK SC"
       ];
       serif = [
-        "Adwaita Sans"
+        "Noto Serif"
         "Noto Serif CJK SC"
       ];
     };

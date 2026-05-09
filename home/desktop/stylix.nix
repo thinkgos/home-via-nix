@@ -18,16 +18,16 @@
     fonts = {
       # packages = [ ];
       serif = {
-        package = pkgs.adwaita-fonts;
-        name = "Adwaita Sans";
+        package = pkgs.noto-fonts;
+        name = "Noto Serif";
       };
       sansSerif = {
         package = pkgs.inter;
         name = "Inter";
       };
       monospace = {
-        package = pkgs.fira-code;
-        name = "FiraCode Nerd Font Mono";
+        package = pkgs.nerd-fonts.jetbrains-mono;
+        name = "JetBrainsMono Nerd Font Mono";
       };
       emoji = {
         package = pkgs.noto-fonts-color-emoji;

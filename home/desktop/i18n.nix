@@ -69,9 +69,9 @@
             classicui.globalSection = {
               "Vertical Candidate List" = "False"; # 垂直候选列表
               WheelForPaging = "True"; # 使用鼠标滚轮翻页
-              Font = "FiraCode Nerd Font Mono 12"; # 字体
-              MenuFont = "FiraCode Nerd Font Mono 12"; # 菜单字体
-              TrayFont = "FiraCode Nerd Font Mono 12"; # 托盘字体
+              Font = "JetBrainsMono Nerd Font Mono 11"; # 字体
+              MenuFont = "JetBrainsMono Nerd Font Mono 11"; # 菜单字体
+              TrayFont = "JetBrainsMono Nerd Font Mono 11"; # 托盘字体
               TrayOutlineColor = "#1f1f1f"; # 托盘标签轮廓颜色
               TrayTextColor = "#ffffff"; # 托盘标签文本颜色
               PreferTextIcon = "False"; # 优先使用文字图标

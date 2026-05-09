@@ -78,7 +78,7 @@ in
       # theme = "Dracula+";
 
       # font
-      font-family = "FiraCode Nerd Font Mono";
+      font-family = "JetBrainsMono Nerd Font Mono";
       font-size = 11;
       font-thicken = true;
       adjust-cell-height = 2;

@@ -14,7 +14,7 @@
     enable = true;
     shellIntegration.mode = "no-rc";
     font = {
-      name = "FiraCode Nerd Font Mono";
+      name = "JetBrainsMono Nerd Font Mono";
       size = 11.0;
     };
     themeFile = "Catppuccin-Mocha";

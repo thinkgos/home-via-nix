@@ -16,7 +16,7 @@
 
   wayland.windowManager.hyprland = {
     settings = {
-      "$font" = "FiraCode Nerd Font Mono";
+      "$font" = "JetBrainsMono Nerd Font Mono";
       exec-once = [ ];
       # General
       # https://wiki.hypr.land/Configuring/Variables/#general

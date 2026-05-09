@@ -18,7 +18,7 @@
     # Catppuccin Mocha 配色
     # 注意, 颜色不支持rgba格式, 只能使用hex格式
     settings = {
-      font = ''"FiraCode Nerd Font Mono" 11''; # 字体
+      font = ''"JetBrainsMono Nerd Font Mono" 11''; # 字体
 
       layer = "overlay"; # 通知显示层
       anchor = "top-center"; # 屏幕位置
