@@ -1,5 +1,5 @@
-# Preset host configuration.
-# Hosts can override any field; objects are deep-merged, arrays are replaced.
+# 预设主机配置
+#! NOTE: 对象会深度合并，数组会被替换.
 
 # theme/icon/cursor:
 # ls $(nix build nixpkgs#orchis-theme --no-link --print-out-paths)/share/[themes/icons/cursors]
@@ -24,6 +24,12 @@
     name = "catppuccin-latte-mauve-cursors";
     package = pkgs.catppuccin-cursors.latteMauve;
   };
+  # desktop = {
+  #   window = "";
+  #   window-version = "";
+  #   monitor-primary = "";
+  #   monitor-secondary = "";
+  # };
   desktop = null;
   components = [ ];
   apps = [ ];
