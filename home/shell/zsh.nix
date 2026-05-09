@@ -176,6 +176,7 @@
     oh-my-zsh = {
       enable = true;
       plugins = [
+        "vi-mode"
         "git" # git client
         "cp"
         "extract"
