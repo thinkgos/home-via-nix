@@ -28,7 +28,7 @@
     font = {
       package = pkgs.inter;
       name = "Inter";
-      size = 10;
+      size = 11;
     };
     gtk4 = {
       enable = true;
