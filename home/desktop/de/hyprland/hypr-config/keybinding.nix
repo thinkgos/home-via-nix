@@ -38,8 +38,8 @@
       # 系统
       "$mod, L, 锁定屏幕, exec, $lockScreen"
       "$mod, H, 隐藏/显示waybar, exec, $toggleWaybar"
-      # "$mod, P, 伪平铺, pseudo" # Dwindle
-      # "$mod, J, 切换横纵分割, togglesplit" # Dwindle
+      # "$mod, J, 伪平铺, pseudo" # Dwindle
+      # "$mod, J, 切换横纵分割, layoutmsg, togglesplit" # Dwindle
       "$mod, G, 窗口成组, togglegroup,"
       "$mod, Y, 锁定窗口组, lockactivegroup, toggle"
 

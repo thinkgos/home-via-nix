@@ -107,8 +107,10 @@
           # 窗口 ✅
           "hyprland/window" = {
             format = "💥 {}";
-            max-length = 10;
+            max-length = 20;
             separate-outputs = true;
+            on-click = "hyprctl dispatch fullscreen 1";
+            on-click-right = "hyprctl dispatch layoutmsg togglesplit"; # Dwindle切换横纵分割
           };
 
           # 监控组 ✅

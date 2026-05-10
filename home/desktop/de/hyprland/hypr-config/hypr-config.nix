@@ -37,6 +37,9 @@
         dim_modal = true;
         # dim_inactive = true;
       };
+      input = {
+        follow_mouse = 0;
+      };
       group = {
         auto_group = true;
         insert_after_current = true;
@@ -96,6 +99,10 @@
       debug = {
         disable_logs = true;
         disable_time = true;
+      };
+      dwindle = {
+        preserve_split = true;
+        smart_split = true;
       };
     };
     extraConfig = ''
