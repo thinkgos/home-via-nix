@@ -52,7 +52,7 @@ window#waybar {
 }
 
 tooltip {
-  background:  alpha(@base, 0.85);
+  background: alpha(@base, 0.85);
   opacity: 1;
   border: 2px solid @sapphire;
   border-radius: 10px;
@@ -162,7 +162,6 @@ tooltip label {
 #custom-lock,
 #custom-hint,
 #custom-hypridle,
-#custom-menu,
 #custom-playerctl,
 #custom-power_vertical,
 #custom-power,
@@ -174,8 +173,8 @@ tooltip label {
 #custom-tty,
 #custom-updater,
 #custom-hyprpicker,
+#custom-screenshot,
 #custom-weather,
-#custom-weather2,
 #custom-weather.clearNight,
 #custom-weather.cloudyFoggyDay,
 #custom-weather.cloudyFoggyNight,
@@ -255,10 +254,6 @@ tooltip label {
   background-color: transparent;
 }
 
-#custom-menu {
-  color: #89b4fa;
-}
-
 #pulseaudio {
   background-color: transparent;
 }
@@ -298,4 +293,19 @@ window#waybar.bottombar #pulseaudio-slider trough {
   min-width: 5px;
   border-radius: 5px;
   background-color: @blue;
+}
+
+menu {
+  background: alpha(@base, 0.85);
+  opacity: 1;
+  border: 2px solid @sapphire;
+  border-radius: 10px;
+  padding: 6px; 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  margin-top: 10px;
+}
+menuitem {
+  padding: 6px 6px;
+  border-radius: 10px;
+  transition: all 0.2s ease;
 }

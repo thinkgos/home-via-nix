@@ -49,7 +49,7 @@
       "Shift, Print, 全屏截图, exec, blast-screenshot full"
       ", Print, 交互式截图, exec, blast-screenshot region"
       (
-        "$mod, Print, 交互式截图&标注, exec, "
+        "$mod, Print, 交互式截图标注, exec, "
         + (
           if (builtins.elem "flameshot" customize.components) then
             "flameshot gui"

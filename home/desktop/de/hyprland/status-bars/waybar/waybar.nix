@@ -47,6 +47,7 @@
             "custom/separator"
             "tray"
             "custom/separator"
+            "custom/screenshot"
             "idle_inhibitor"
             "network"
             "bluetooth"
@@ -444,8 +445,27 @@
             # on-click = "wlogout -b 2";
             tooltip = false;
           };
+          "custom/screenshot" = {
+            format = "🎯 ";
+            tooltip = false;
+            menu = "on-click";
+            menu-file = "${config.xdg.configHome}/waybar/popup-screenshot-toolbox.xml";
+            menu-actions = {
+              "pick-color" = "notify-send 'a0'";
+              "ocr" = "notify-send 'a1'";
+              "window" = "notify-send 'a2'";
+              "fullscreen" = "notify-send 'a3'";
+              "region" = "notify-send 'a4'";
+              "window-annotate" = "notify-send 'a5'";
+              "fullscreen-annotate" = "notify-send 'a6'";
+              "region-annotate" = "notify-send 'a7'";
+              "pixel-measure" = "notify-send 'a8'";
+            };
+          };
         };
     };
     style = builtins.readFile ./style.gtk.css;
   };
+  # create the config file for the screenshot toolbox menu
+  xdg.configFile."waybar/popup-screenshot-toolbox.xml".source = ./popup-screenshot-toolbox.xml;
 }
