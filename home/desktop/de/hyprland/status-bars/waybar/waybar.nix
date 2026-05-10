@@ -108,12 +108,13 @@
             max-length = 30;
             separate-outputs = true;
             rewrite = {
-              "(.*) - Google Chrome" = " $1";
-              "(.*) - Visual Studio Code" = " $1";
-              "(.*) - vim" = " $1";
-              "(.*) - kitty" = " $1";
-              "(.*) - ghostty" = " $1";
-              "(.*) - alacritty" = " $1";
+              "💥 (.*) - Google Chrome" = " $1";
+              "💥 (.*) - Visual Studio Code" = " $1";
+              "💥 (.*) - vim" = " $1";
+              "💥 (.*) - Kitty" = " $1";
+              "💥 (.*) - Ghostty" = " $1";
+              "💥 (.*) - Alacritty" = " $1";
+              "💥 (.*) - zsh" = "󰆍 $1";
             };
             on-click = "hyprctl dispatch fullscreen 1";
             on-click-right = "hyprctl dispatch layoutmsg togglesplit"; # Dwindle切换横纵分割
