@@ -40,8 +40,7 @@
             "hyprland/window"
           ];
           modules-center = [
-            "clock"
-            "custom/weather"
+            "group/clock-drawer"
           ];
           modules-right = [
             "wlr/taskbar"
@@ -50,7 +49,6 @@
             "custom/separator"
             "idle_inhibitor"
             "network"
-            "temperature"
             "bluetooth"
             "pulseaudio"
             # "pulseaudio/slider"
@@ -118,6 +116,7 @@
             orientation = "horizontal";
             modules = [
               "cpu"
+              "temperature"
               "memory"
               "disk"
               "disk#home"
@@ -140,6 +139,19 @@
               "<span color='#dd532e'>█</span>" # red
             ];
             on-click = "missioncenter";
+          };
+          # 温度
+          temperature = {
+            interval = 5;
+            tooltip = true;
+            hwmon-path = [
+              "/sys/class/hwmon/hwmon1/temp1_input"
+              "/sys/class/thermal/thermal_zone0/temp"
+            ];
+            critical-threshold = 80;
+            format-critical = "󰸁 {temperatureC}°C";
+            format = " {temperatureC}°C";
+            tooltip-format = " {temperatureC}°C";
           };
           # 监控组 - 内存 ✅
           memory = {
@@ -165,21 +177,33 @@
           # 监控组 - 硬盘 - home ✅
           "disk#home" = {
             interval = 300;
-            format = "󰋊 Home {percentage_used}%";
-            path = "/home/";
+            format = "󰋊 Affix {percentage_used}%";
+            path = "/mms";
             tooltip = true;
             tooltip-format = "{used} / {total}\nAvail: {free} ({percentage_free}%)";
             on-click = "missioncenter";
           };
 
           # 中间模块
+          "group/clock-drawer" = {
+            orientation = "inherit";
+            drawer = {
+              transition-duration = 500;
+              children-class = "not-clock";
+              transition-left-to-right = true;
+            };
+            modules = [
+              "clock"
+              "custom/weather"
+            ];
+          };
 
           # 时钟 ✅
           clock = {
             interval = 60;
-            format = " {:%m月%d日 %H:%M - %a}";
-            format-alt = " {:%Y年%m月%d日 %H:%M - %A}";
-            tooltip-format = "<tt><small>{calendar}</small></tt>";
+            format = " {:%m月%d日 %H:%M}";
+            format-alt = " {:%Y年%m月%d日 %H:%M}";
+            tooltip-format = " {:%Y年%m月%d日\n %H:%M %A}\n\n<tt><small>{calendar}</small></tt>";
             calendar = {
               mode = "month";
               mode-mon-col = 3;
@@ -258,14 +282,6 @@
             on-click = "nm-connection-editor";
           };
 
-          # 温度
-          temperature = {
-            interval = 30;
-            hwmon-path = [ "/sys/class/hwmon/hwmon2/temp1_input" ];
-            critical-threshold = 80;
-            format-critical = " {temperatureC}°C";
-            format = " {temperatureC}°C";
-          };
           # 蓝牙 ✅
           # BUG: 耳机连接成功, 但鼠标连不上!!
           bluetooth = {
