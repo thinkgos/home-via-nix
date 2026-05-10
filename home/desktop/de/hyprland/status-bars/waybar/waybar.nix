@@ -36,7 +36,7 @@
           modules-left = [
             "hyprland/windowcount"
             "hyprland/workspaces"
-            "group/monitor"
+            "group/monitor-drawer"
             "hyprland/window"
           ];
           modules-center = [
@@ -105,21 +105,46 @@
           # 窗口 ✅
           "hyprland/window" = {
             format = "💥 {}";
-            max-length = 20;
+            max-length = 30;
             separate-outputs = true;
+            rewrite = {
+              "(.*) - Google Chrome" = " $1";
+              "(.*) - Visual Studio Code" = " $1";
+              "(.*) - vim" = " $1";
+              "(.*) - kitty" = " $1";
+              "(.*) - ghostty" = " $1";
+              "(.*) - alacritty" = " $1";
+            };
             on-click = "hyprctl dispatch fullscreen 1";
             on-click-right = "hyprctl dispatch layoutmsg togglesplit"; # Dwindle切换横纵分割
           };
 
           # 监控组 ✅
+          "group/monitor-drawer" = {
+            orientation = "horizontal";
+            drawer = {
+              transition-duration = 500;
+              children-class = "not-clock";
+              transition-left-to-right = true;
+            };
+            modules = [
+              "group/monitor"
+              "group/monitor#expand"
+            ];
+          };
           "group/monitor" = {
             orientation = "horizontal";
             modules = [
               "cpu"
-              "temperature"
               "memory"
+            ];
+          };
+          "group/monitor#expand" = {
+            orientation = "horizontal";
+            modules = [
               "disk"
               "disk#home"
+              "temperature"
             ];
           };
 
@@ -174,10 +199,10 @@
             tooltip-format = "{used} / {total}\nAvail: {free} ({percentage_free}%)";
             on-click = "missioncenter";
           };
-          # 监控组 - 硬盘 - home ✅
+          # 监控组 - 硬盘数据卷 ✅
           "disk#home" = {
             interval = 300;
-            format = "󰋊 Affix {percentage_used}%";
+            format = "󱘲 {percentage_used}%";
             path = "/mms";
             tooltip = true;
             tooltip-format = "{used} / {total}\nAvail: {free} ({percentage_free}%)";
@@ -203,7 +228,7 @@
             interval = 60;
             format = " {:%m月%d日 %H:%M}";
             format-alt = " {:%Y年%m月%d日 %H:%M}";
-            tooltip-format = " {:%Y年%m月%d日\n %H:%M %A}\n\n<tt><small>{calendar}</small></tt>";
+            tooltip-format = "{:%Y年%m月%d日 %A}\n\n<tt><small>{calendar}</small></tt>";
             calendar = {
               mode = "month";
               mode-mon-col = 3;
