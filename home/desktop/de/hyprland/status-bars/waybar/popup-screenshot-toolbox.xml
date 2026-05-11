@@ -7,6 +7,11 @@
             </object>
         </child>
         <child>
+            <object class="GtkMenuItem" id="screen-color-chooser">
+                <property name="label"> 颜色选择</property>
+            </object>
+        </child>
+        <child>
             <object class="GtkMenuItem" id="screen-recorder">
                 <property name="label">📹 交互录屏</property>
             </object>

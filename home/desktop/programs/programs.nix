@@ -26,6 +26,7 @@
     gnome-disk-utility # 磁盘管理工具
     kdePackages.okular # pdf viewer
     kdePackages.gwenview # image viewer
+    kdePackages.kcolorchooser # 颜色选择器
     localsend # 局域网文件传输工具
     drawy # 画布工具
   ];
