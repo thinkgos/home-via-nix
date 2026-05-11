@@ -455,13 +455,14 @@
               "screen-color-chooser" = "pkill kcolorchooser || kcolorchooser";
               "screen-recorder" = "pkill kooha || flatpak run io.github.seadve.Kooha";
               "ocr" = "blast-screen ocr";
+              "screen-pixel-measure" = "blast-screen pixel-measure";
               "screenshot-window" = "blast-screen window";
               "screenshot-fullscreen" = "blast-screen fullscreen";
               "screenshot-region" = "blast-screen region";
               "screenshot-window-annotate" = "blast-screen window-annotate";
               "screenshot-fullscreen-annotate" = "blast-screen fullscreen-annotate";
               "screenshot-region-annotate" = "blast-screen region-annotate";
-              "screen-pixel-measure" = "blast-screen pixel-measure";
+
             };
           };
         };

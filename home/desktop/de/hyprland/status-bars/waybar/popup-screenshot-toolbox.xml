@@ -22,6 +22,11 @@
             </object>
         </child>
         <child>
+            <object class="GtkMenuItem" id="screen-pixel-measure">
+                <property name="label">📏 像素测量</property>
+            </object>
+        </child>
+        <child>
             <object class="GtkMenuItem" id="screenshot-window">
                 <property name="label">🪟 窗口截图</property>
             </object>
@@ -49,11 +54,6 @@
         <child>
             <object class="GtkMenuItem" id="screenshot-region-annotate">
                 <property name="label">✂️ 选框截图📝</property>
-            </object>
-        </child>
-        <child>
-            <object class="GtkMenuItem" id="screen-pixel-measure">
-                <property name="label">📏 像素测量</property>
             </object>
         </child>
     </object>
