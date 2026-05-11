@@ -254,7 +254,7 @@
           "custom/weather" = {
             interval = 3600;
             exec = "wttrbar --lang=zh --location Fuzhou";
-            format = "Weather {} ";
+            format = "{} ";
             return-type = "json";
             on-click = "google-chrome https://wttr.in";
           };
