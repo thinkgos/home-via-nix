@@ -8,7 +8,7 @@
         </child>
         <child>
             <object class="GtkMenuItem" id="screen-recorder">
-                <property name="label">📹 录屏</property>
+                <property name="label">📹 交互录屏</property>
             </object>
         </child>
         <child>

@@ -453,7 +453,7 @@
             menu-actions = {
               "screen-pick-color" = "hyprpicker -a -n -s 5 -u 60";
               "screen-recorder" = "pkill kooha || flatpak run io.github.seadve.Kooha";
-              "ocr" = "notify-send 'ocr'";
+              "ocr" = "blast-screen ocr";
               "screenshot-window" = "blast-screen window";
               "screenshot-fullscreen" = "blast-screen fullscreen";
               "screenshot-region" = "blast-screen region";
