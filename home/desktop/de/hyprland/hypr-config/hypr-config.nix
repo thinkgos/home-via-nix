@@ -38,6 +38,8 @@
         # dim_inactive = true;
       };
       input = {
+        sensitivity = 0.5;
+        accel_profile = "adaptive";
         follow_mouse = 0;
       };
       group = {
