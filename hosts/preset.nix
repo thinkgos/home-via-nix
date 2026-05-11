@@ -8,7 +8,6 @@
 # components:
 #   视频剪辑: video-clip
 #   键鼠共享: deskflow, lan-mouse, lan-mouse-client
-#   截图标注: flameshot
 { lib, pkgs }:
 {
   username = "";

@@ -13,7 +13,6 @@ lib.recursiveUpdate
       monitor-secondary = "DP-1";
     };
     components = [
-      "flameshot"
       "lan-mouse-client"
     ];
     apps = [

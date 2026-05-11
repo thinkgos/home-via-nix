@@ -2,48 +2,53 @@
 <interface>
     <object class="GtkMenu" id="menu">
         <child>
-            <object class="GtkMenuItem" id="pick-color">
-                <property name="label">󰈋 颜色拾取</property>
+            <object class="GtkMenuItem" id="screen-pick-color">
+                <property name="label">🧪 颜色拾取</property>
+            </object>
+        </child>
+        <child>
+            <object class="GtkMenuItem" id="screen-recorder">
+                <property name="label">📹 录屏</property>
             </object>
         </child>
         <child>
             <object class="GtkMenuItem" id="ocr">
-                <property name="label">󰍔 OCR识别</property>
+                <property name="label">📄 OCR识别</property>
             </object>
         </child>
         <child>
-            <object class="GtkMenuItem" id="window">
+            <object class="GtkMenuItem" id="screenshot-window">
                 <property name="label">🪟 窗口截图</property>
             </object>
         </child>
         <child>
-            <object class="GtkMenuItem" id="fullscreen">
+            <object class="GtkMenuItem" id="screenshot-fullscreen">
                 <property name="label">🖥️ 全屏截图</property>
             </object>
         </child>
         <child>
-            <object class="GtkMenuItem" id="region">
-                <property name="label">🎯 选框截图</property>
+            <object class="GtkMenuItem" id="screenshot-region">
+                <property name="label">✂️ 选框截图</property>
             </object>
         </child>
         <child>
-            <object class="GtkMenuItem" id="window-annotate">
-                <property name="label">🪟 窗口截图标注</property>
+            <object class="GtkMenuItem" id="screenshot-window-annotate">
+                <property name="label">🪟 窗口截图📝</property>
             </object>
         </child>
         <child>
-            <object class="GtkMenuItem" id="fullscreen-annotate">
-                <property name="label">🖥️ 全屏截图标注</property>
+            <object class="GtkMenuItem" id="screenshot-fullscreen-annotate">
+                <property name="label">🖥️ 全屏截图📝</property>
             </object>
         </child>
         <child>
-            <object class="GtkMenuItem" id="region-annotate">
-                <property name="label">🎯 选框截图标注</property>
+            <object class="GtkMenuItem" id="screenshot-region-annotate">
+                <property name="label">✂️ 选框截图📝</property>
             </object>
         </child>
         <child>
-            <object class="GtkMenuItem" id="pixel-measure">
-                <property name="label">󰆊 像素测量</property>
+            <object class="GtkMenuItem" id="screen-pixel-measure">
+                <property name="label">📏 像素测量</property>
             </object>
         </child>
     </object>

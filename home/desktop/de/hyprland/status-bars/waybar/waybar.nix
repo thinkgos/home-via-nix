@@ -451,15 +451,16 @@
             menu = "on-click";
             menu-file = "${config.xdg.configHome}/waybar/popup-screenshot-toolbox.xml";
             menu-actions = {
-              "pick-color" = "notify-send 'a0'";
-              "ocr" = "notify-send 'a1'";
-              "window" = "notify-send 'a2'";
-              "fullscreen" = "notify-send 'a3'";
-              "region" = "notify-send 'a4'";
-              "window-annotate" = "notify-send 'a5'";
-              "fullscreen-annotate" = "notify-send 'a6'";
-              "region-annotate" = "notify-send 'a7'";
-              "pixel-measure" = "notify-send 'a8'";
+              "screen-pick-color" = "hyprpicker -a -n -s 5 -u 60";
+              "screen-recorder" = "pkill kooha || flatpak run io.github.seadve.Kooha";
+              "ocr" = "notify-send 'ocr'";
+              "screenshot-window" = "blast-screen window";
+              "screenshot-fullscreen" = "blast-screen fullscreen";
+              "screenshot-region" = "blast-screen region";
+              "screenshot-window-annotate" = "blast-screen window-annotate";
+              "screenshot-fullscreen-annotate" = "blast-screen fullscreen-annotate";
+              "screenshot-region-annotate" = "blast-screen region-annotate";
+              "screen-pixel-measure" = "blast-screen pixel-measure";
             };
           };
         };

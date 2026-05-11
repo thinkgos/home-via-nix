@@ -19,7 +19,7 @@
   };
 
   services.flameshot = {
-    enable = builtins.elem "flameshot" customize.components;
+    enable = true;
     # https://github.com/flameshot-org/flameshot/blob/master/flameshot.example.ini
     settings = {
       General = {

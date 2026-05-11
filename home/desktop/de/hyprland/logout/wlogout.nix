@@ -11,7 +11,7 @@
     layout = [
       {
         label = "lock";
-        action = "blast-lock-screen";
+        action = "blast-screen-lock";
         text = "锁屏 (L)";
         keybind = "l";
       }

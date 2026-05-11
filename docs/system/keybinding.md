@@ -52,11 +52,11 @@
 
 | 功能 | Gnome | Gnome(调整) | Status | Hyprland | Status |
 | ------ | ----------- | ------- | ------- | ------- | ------- |
-| 对窗口进行截图 | `Alt` + `PrtSc` | `Alt` + `PrtSc` | ✅ | `Alt` + `Print` | ✅ |
-| 交互式截图 | `PrtSc` | `PrtSc` | ✅ | `Print` | ✅ |
-| 交互式录屏 | `Alt` + `Shift` + `Tab` | | ◻️ | `SUPER` + `R` | ✅ |
-| 截图 | `Shift` + `PrtSc` | `Shift` + `PrtSc` | ✅ | `Shift` + `Print` | ✅ |
-| 交互式截图+标注 | ❌ | `Super` + `PrtSc` | ✅ | `Super` + `Print` | ✅ |
+| 窗口截图 | `Alt` + `PrtSc` | `Alt` + `PrtSc` | ✅ | `Alt` + `Print` | ✅ |
+| 选框截图 | `PrtSc` | `PrtSc` | ✅ | `Print` | ✅ |
+| 交互录屏 | `Alt` + `Shift` + `Tab` | | ◻️ | `SUPER` + `R` | ✅ |
+| 全屏截图 | `Shift` + `PrtSc` | `Shift` + `PrtSc` | ✅ | `Shift` + `Print` | ✅ |
+| 选框截图标注 | ❌ | `Super` + `PrtSc` | ✅ | `Super` + `Print` | ✅ |
 
 ## 打字
 
@@ -78,7 +78,6 @@
 | 主目录(启动文件管理器) | 🚫 | `Super` + `E` | ✅ | `Super` + `E` | ✅ |
 | 启动终端 | ❌ | `Super` + `T` | ✅ | `Super` + `T` | ✅ |
 | 启动应用启动器 | ❌ | `Super` + `slash` | ✅ | `Super` + `slash` | ✅ |
-| 启动提取颜色 | ❌ | | ◻️ | `Super` + `Alt` + `C` | ✅ |
 
 ## 工作区和窗口
 

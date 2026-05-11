@@ -31,14 +31,10 @@
 @define-color flamingo  #f2cdcd;
 @define-color rosewater #f5e0dc;
 
-/*
- 参考: https://github.com/LinuxBeginnings/Hyprland-Dots/tree/main/config/waybar/style
-*/
-
 * {
 	font-family: "JetBrainsMono Nerd Font Mono";
 	font-weight: bold;
-	font-size: 13px;
+	font-size: 11px;
 	min-height: 0;
 	border: none;
   border-radius: 0;
@@ -296,16 +292,18 @@ window#waybar.bottombar #pulseaudio-slider trough {
 }
 
 menu {
+  color: @text;
   background: alpha(@base, 0.85);
   opacity: 1;
   border: 2px solid @sapphire;
-  border-radius: 10px;
-  padding: 6px; 
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
   margin-top: 10px;
+  padding: 6px 6px;
 }
 menuitem {
-  padding: 6px 6px;
-  border-radius: 10px;
+  border-radius: 6px;
   transition: all 0.2s ease;
+  padding: 6px 6px;
 }
+

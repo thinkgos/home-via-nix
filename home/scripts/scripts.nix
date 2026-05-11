@@ -6,6 +6,6 @@
 }:
 {
   # home.packages = [
-  #   (pkgs.writeShellScriptBin "blast-screenshot" (builtins.readFile ./screenshot.sh))
+  #   (pkgs.writeShellScriptBin "blast-screen" (builtins.readFile ./screenshot.sh))
   # ];
 }

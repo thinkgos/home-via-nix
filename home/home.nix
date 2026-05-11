@@ -117,6 +117,7 @@
     mdbook # 从markdown文档生成book
     trash-cli # 回收站
     parallel # 并行执行命令
+    imagemagick # 图片处理工具集
 
     nixd
     nil

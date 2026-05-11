@@ -12,9 +12,7 @@ lib.recursiveUpdate
       monitor-primary = "eDP-1";
       monitor-secondary = "";
     };
-    components = [
-      "flameshot"
-    ];
+    components = [ ];
     apps = [
       "obs-studio"
     ];

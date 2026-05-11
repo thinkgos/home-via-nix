@@ -18,8 +18,7 @@
     "$launchIde" = "code";
     "$launchScreenRecorder" = "pkill kooha || flatpak run io.github.seadve.Kooha";
     "$appLauncher" = "pkill wofi || wofi";
-    "$lockScreen" = "blast-lock-screen";
-    "$pickColor" = "hyprpicker -a -n -s 5 -u 60";
+    "$lockScreen" = "blast-screen-lock";
     "$helpKeybinding" = "hyprkcs";
     "$toggleWaybar" = "blast-toggle-waybar";
     binds = {
@@ -32,7 +31,6 @@
     bindd = [
       "CTRL ALT, Delete, 注销当前用户会话/退出桌面, exec, blast-shutdown logout"
       "$mod ALT, M, 重启系统, exec, blast-shutdown reboot"
-      "$mod ALT, C, 提取颜色, exec, $pickColor"
       "$mod ALT, T, 启动wrap终端, exec, warp-terminal"
 
       # 系统
@@ -45,18 +43,10 @@
 
       # 截图/录屏
       "$mod, R, 交互式录屏, exec, $launchScreenRecorder"
-      "ALT, Print, 活动窗口截图, exec, blast-screenshot active"
-      "Shift, Print, 全屏截图, exec, blast-screenshot full"
-      ", Print, 交互式截图, exec, blast-screenshot region"
-      (
-        "$mod, Print, 交互式截图标注, exec, "
-        + (
-          if (builtins.elem "flameshot" customize.components) then
-            "flameshot gui"
-          else
-            "blast-screenshot annotate"
-        )
-      )
+      "ALT, Print, 窗口截图, exec, blast-screen window"
+      "Shift, Print, 全屏截图, exec, blast-screen fullscreen"
+      ", Print, 选框截图, exec, blast-screen region"
+      "$mod, Print, 选框截图标注, exec, flameshot gui"
 
       # 应用
       "$mod, T, 启动终端, exec, $launchTerminal"

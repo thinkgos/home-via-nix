@@ -13,7 +13,6 @@ lib.recursiveUpdate
       monitor-secondary = "";
     };
     components = [
-      "flameshot"
       "video-clip"
       "lan-mouse"
     ];

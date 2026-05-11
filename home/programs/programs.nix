@@ -2,7 +2,6 @@
   config,
   lib,
   pkgs,
-  extra-pkgs,
   ...
 }:
 {
@@ -14,20 +13,14 @@
     ./ansible.nix
     ./tldr.nix
   ];
-  home.packages =
-    with pkgs;
-    [
-      resvg # svg rendering
-      poppler # pdf rendering
-      _7zz # 7-zip archiver utility
-      imagemagick # image suite
-      ueberzugpp # hack image for terminal emulators
-      go-task # 任务管理器
-      aria2 # 高速下载工具
-    ]
-    ++ [
-      extra-pkgs.goup-rs
-    ];
+  home.packages = with pkgs; [
+    resvg # svg rendering
+    poppler # pdf rendering
+    _7zz # 7-zip archiver utility
+    ueberzugpp # hack image for terminal emulators
+    go-task # 任务管理器
+    aria2 # 高速下载工具
+  ];
 
   programs = {
     carapace = {
