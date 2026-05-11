@@ -3,7 +3,7 @@
 mode="$1"
 
 case "$mode" in
-history)
+history-overview)
     cliphist list | wofi --dmenu | cliphist decode | wl-copy
     ;;
 history-wipe)

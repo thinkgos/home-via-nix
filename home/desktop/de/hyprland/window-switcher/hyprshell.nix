@@ -91,7 +91,7 @@
                     custom = {
                       names = [ "Clipboard History Overview" ];
                       details = "Clipboard History Overview";
-                      command = "blast-clipboard history";
+                      command = "blast-clipboard history-overview";
                       icon = "system";
                     };
                   }

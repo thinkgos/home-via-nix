@@ -36,18 +36,20 @@
           modules-left = [
             "hyprland/windowcount"
             "hyprland/workspaces"
-            "group/monitor-drawer"
+            "group/monitor#drawer"
             "hyprland/window"
           ];
           modules-center = [
-            "group/clock-drawer"
+            "group/clock#drawer"
           ];
           modules-right = [
             "wlr/taskbar"
             "custom/separator"
             "tray"
             "custom/separator"
-            "custom/screenshot"
+            "custom/screen#toolbox"
+            "custom/clipboard"
+            "custom/separator"
             "idle_inhibitor"
             "network"
             "bluetooth"
@@ -122,7 +124,7 @@
           };
 
           # 监控组 ✅
-          "group/monitor-drawer" = {
+          "group/monitor#drawer" = {
             orientation = "horizontal";
             drawer = {
               transition-duration = 500;
@@ -212,7 +214,7 @@
           };
 
           # 中间模块
-          "group/clock-drawer" = {
+          "group/clock#drawer" = {
             orientation = "inherit";
             drawer = {
               transition-duration = 500;
@@ -445,8 +447,8 @@
             # on-click = "wlogout -b 2";
             tooltip = false;
           };
-          "custom/screenshot" = {
-            format = "🎯 ";
+          "custom/screen#toolbox" = {
+            format = "🎯";
             tooltip = false;
             menu = "on-click";
             menu-file = "${config.xdg.configHome}/waybar/popup-screenshot-toolbox.xml";
@@ -466,10 +468,23 @@
               "screenshot-scroll-preview" = "blast-screen scroll-preview";
             };
           };
+          "custom/clipboard" = {
+            format = "📋";
+            tooltip = false;
+            menu = "on-click";
+            menu-file = "${config.xdg.configHome}/waybar/popup-clipboard.xml";
+            menu-actions = {
+              "clipboard-history-overview" = "blast-clipboard history-overview";
+              "clipboard-history-wipe" = "blast-clipboard history-wipe";
+            };
+          };
         };
     };
     style = builtins.readFile ./style.gtk.css;
   };
   # create the config file for the screenshot toolbox menu
-  xdg.configFile."waybar/popup-screenshot-toolbox.xml".source = ./popup-screenshot-toolbox.xml;
+  xdg.configFile = {
+    "waybar/popup-screenshot-toolbox.xml".source = ./popup-screenshot-toolbox.xml;
+    "waybar/popup-clipboard.xml".source = ./popup-clipboard.xml;
+  };
 }

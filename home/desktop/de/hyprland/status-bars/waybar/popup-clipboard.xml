@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+    <object class="GtkMenu" id="menu">
+        <child>
+            <object class="GtkMenuItem" id="clipboard-history-overview">
+                <property name="label">🗒️ 查看记录</property>
+            </object>
+        </child>
+        <child>
+            <object class="GtkMenuItem" id="clipboard-history-wipe">
+                <property name="label">🧹 清除历史</property>
+            </object>
+        </child>
+    </object>
+</interface>
