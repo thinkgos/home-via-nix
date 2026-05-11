@@ -71,6 +71,11 @@ region-annotate)
     ;;
 scroll)
     # 滚动截图
+    # BUG: 无预览窗口时, 无法停止!
+    wayscrollshot --no-preview
+    ;;
+scroll-preview)
+    # 滚动截图 - 带预览窗口
     wayscrollshot
     ;;
 esac
