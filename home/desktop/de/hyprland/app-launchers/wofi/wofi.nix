@@ -14,8 +14,8 @@
       show = "drun";
       location = "center";
       anchor = "center";
-      width = "40%";
-      height = "40%";
+      width = "30%";
+      height = "55%";
       halign = "fill";
       orientation = "vertical";
       content_halign = "fill";
