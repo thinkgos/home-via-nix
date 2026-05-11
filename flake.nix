@@ -18,6 +18,10 @@
       url = "github:thinkgos/goup-rs";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    wayscrollshot = {
+      url = "github:thinkgos/wayscrollshot";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # hyprland
     hyprland = {
@@ -81,6 +85,7 @@
                     extra-pkgs = {
                       lan-mouse = inputs.lan-mouse.packages.${system}.default;
                       goup-rs = inputs.goup-rs.packages.${system}.default;
+                      wayscrollshot = inputs.wayscrollshot.packages.${system}.default;
 
                       #  hyprland
                       hyprland = inputs.hyprland.packages.${system}.hyprland;

@@ -56,5 +56,10 @@
                 <property name="label">✂️ 选框截图📝</property>
             </object>
         </child>
+        <child>
+            <object class="GtkMenuItem" id="screenshot-scroll">
+                <property name="label">🎞️ 滚动截图</property>
+            </object>
+        </child>
     </object>
 </interface>

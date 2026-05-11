@@ -462,7 +462,7 @@
               "screenshot-window-annotate" = "blast-screen window-annotate";
               "screenshot-fullscreen-annotate" = "blast-screen fullscreen-annotate";
               "screenshot-region-annotate" = "blast-screen region-annotate";
-
+              "screenshot-scroll" = "blast-screen scroll";
             };
           };
         };

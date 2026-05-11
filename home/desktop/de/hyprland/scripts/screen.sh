@@ -21,6 +21,18 @@ do_screenshot_success() {
 }
 
 case "$mode" in
+pixel-measure)
+    # 像素测量
+    slurp -d | awk '{print $2}' | wl-copy || do_error "像素测量"
+    do_success "像素测量"
+    ;;
+ocr)
+    # ocr识别
+    region=$(slurp -w 1 -c '#ff0000ff') || do_error "截图"
+    grim -g "$region" - |
+        tesseract - stdout -l chi_sim+eng | wl-copy || do_error "ocr识别"
+    do_success "ocr识别"
+    ;;
 window)
     # 窗口截图
     hyprctl -j activewindow |
@@ -57,17 +69,9 @@ region-annotate)
     grim -g "$region" - |
         satty --filename - --output-filename "$file" || do_error "截图"
     ;;
-pixel-measure)
-    # 像素测量
-    slurp -d | awk '{print $2}' | wl-copy || do_error "像素测量"
-    do_success "像素测量"
-    ;;
-ocr)
-    # ocr识别
-    region=$(slurp -w 1 -c '#ff0000ff') || do_error "截图"
-    grim -g "$region" - |
-        tesseract - stdout -l chi_sim+eng | wl-copy || do_error "ocr识别"
-    do_success "ocr识别"
+scroll)
+    # 滚动截图
+    wayscrollshot
     ;;
 esac
 
