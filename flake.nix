@@ -19,7 +19,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     wayscrollshot = {
-      url = "github:thinkgos/wayscrollshot";
+      url = "github:jswysnemc/wayscrollshot";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

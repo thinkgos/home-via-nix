@@ -1112,15 +1112,15 @@
         "rust-overlay": "rust-overlay_3"
       },
       "locked": {
-        "lastModified": 1778489194,
+        "lastModified": 1778508754,
         "narHash": "sha256-u3xbSlDpiu8ZZ+Apb2rNB9+OfINGOZKxz7NdsLWSLCw=",
-        "owner": "thinkgos",
+        "owner": "jswysnemc",
         "repo": "wayscrollshot",
-        "rev": "97993ccea2548967ae4d17b40b9a363ce8e54d30",
+        "rev": "c4e7cffac3ce5cc81449ab8ad500b5ae939feae5",
         "type": "github"
       },
       "original": {
-        "owner": "thinkgos",
+        "owner": "jswysnemc",
         "repo": "wayscrollshot",
         "type": "github"
       }

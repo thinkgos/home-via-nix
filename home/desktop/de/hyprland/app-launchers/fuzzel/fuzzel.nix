@@ -11,8 +11,14 @@
     settings = {
       # man 5 fuzzel.ini
       main = {
-        terminal = "alacritty";
+        anchor = "center";
         layer = "overlay";
+        horizontal-pad = 16;
+        vertical-pad = 8;
+        font = "JetBrainsMono Nerd Font Mono:size=13";
+        terminal = "alacritty -e";
+        prompt = ''" "'';
+        placeholder = "Search...";
       };
       # Catppuccin Mocha
       # https://github.com/catppuccin/fuzzel
