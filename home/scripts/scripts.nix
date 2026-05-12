@@ -5,7 +5,8 @@
   ...
 }:
 {
-  # home.packages = [
-  #   (pkgs.writeShellScriptBin "blast-screen" (builtins.readFile ./screenshot.sh))
-  # ];
+  home.packages = [
+    (pkgs.writeShellScriptBin "fzf-preview" (builtins.readFile ./fzf-preview.sh))
+    (pkgs.writeShellScriptBin "git-submodule" (builtins.readFile ./git-submodule.sh))
+  ];
 }
