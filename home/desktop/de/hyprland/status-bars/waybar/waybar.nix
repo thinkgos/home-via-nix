@@ -42,6 +42,7 @@
           "idle_inhibitor"
           "custom/screen#toolbox"
           "custom/clipboard"
+          "custom/terminal"
           "custom/separator"
           "tray"
           "custom/separator"
@@ -470,6 +471,18 @@
             "clipboard-history-wipe" = "blast-clipboard history-wipe";
           };
         };
+        "custom/terminal" = {
+          format = "⚡";
+          tooltip = false;
+          menu = "on-click";
+          menu-file = "${config.xdg.configHome}/waybar/popup-terminal.xml";
+          menu-actions = {
+            "alacritty" = "alacritty";
+            "kitty" = "kitty";
+            "ghostty" = "ghostty";
+            "warp" = "warp-terminal";
+          };
+        };
       };
     };
     style = builtins.readFile ./style.gtk.css;
@@ -478,5 +491,6 @@
   xdg.configFile = {
     "waybar/popup-screenshot-toolbox.xml".source = ./popup-screenshot-toolbox.xml;
     "waybar/popup-clipboard.xml".source = ./popup-clipboard.xml;
+    "waybar/popup-terminal.xml".source = ./popup-terminal.xml;
   };
 }
