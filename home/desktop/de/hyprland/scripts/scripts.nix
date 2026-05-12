@@ -17,5 +17,6 @@
     ))
     (pkgs.writeShellScriptBin "blast-toggle-waybar" (builtins.readFile ./toggle-waybar.sh))
     (pkgs.writeShellScriptBin "blast-clipboard" (builtins.readFile ./clipboard.sh))
+    (pkgs.writeShellScriptBin "blast-flatpak" (builtins.readFile ./flatpak.sh))
   ];
 }

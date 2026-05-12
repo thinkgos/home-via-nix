@@ -448,7 +448,7 @@
           menu-actions = {
             "screen-pick-color" = "hyprpicker -a -n -s 5 -u 60";
             "screen-color-chooser" = "pkill kcolorchooser || kcolorchooser";
-            "screen-recorder" = "pkill kooha || flatpak run io.github.seadve.Kooha";
+            "screen-recorder" = "blast-flatpak io.github.seadve.Kooha";
             "ocr" = "blast-screen ocr";
             "screen-pixel-measure" = "blast-screen pixel-measure";
             "screenshot-window" = "blast-screen window";
