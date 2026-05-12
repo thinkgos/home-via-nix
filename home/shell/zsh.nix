@@ -59,17 +59,19 @@
     };
     siteFunctions = {
       # 指定路径进行fzf搜索
-      # ff [path]
-      ff = "fd . $1 | fzf";
-      # 指定路径进行fzf搜索, 并bat进行预览文件内容
-      # fb [path]
-      fb = ''fd . --type file $1 | fzf --preview "bat --style=plain --color=always {-1}"'';
-      # 指定路径进行fzf搜索, 并bat进行预览文件内容, 选中回车进行vim编辑或ctrl+o开新窗口进行vim编辑
-      # fbv [path]
-      fbv = ''fd . --type file $1 | fzf --preview "bat --style=plain --color=always {}" --bind "enter:become(vim {-1})" --bind "ctrl-o:execute:vim {-1}"'';
-      # 指定路径使用fzf提供交互窗口进行rg搜索, 并bat进行预览文件内容, 选中回车进行vim编辑或ctrl+o开新窗口进行vim编辑
-      # frv [path]
-      frv = ''
+      # fzf-walker [path]
+      fzf-walker = "fd . $1 | fzf";
+      # 指定路径进行fzf搜索, 并bat预览文件内容
+      # fzf-preview [path]
+      fzf-preview = ''fd . --type file $1 | fzf --preview "bat --style=plain --color=always {-1}"'';
+      # 指定路径进行fzf搜索, 并bat预览文件内容
+      # 选中回车进行vim编辑或ctrl+o开新窗口进行vim编辑
+      # fzf-preview-editable [path]
+      fzf-preview-editable = ''fd . --type file $1 | fzf --preview "bat --style=plain --color=always {}" --bind "enter:become(vim {-1})" --bind "ctrl-o:execute:vim {-1}"'';
+      # 指定路径使用fzf提供交互窗口对文件内容采用rg搜索, 并bat进行预览文件内容
+      # 选中回车进行vim编辑或ctrl+o开新窗口进行vim编辑
+      # fzf-content-preview-editable [path]
+      fzf-content-preview-editable = ''
         local target_dir=$1
         local RELOAD="reload:rg --column --color=always --smart-case {q} $target_dir || :"
         fzf \
