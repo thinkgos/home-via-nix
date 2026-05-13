@@ -28,6 +28,7 @@
       # here specific to zsh
       mkdir = "mkdir -p";
       ls = "eza";
+      cls = "clear";
       mv = "mv -i";
       cp = "cp -i";
       rm-trash = "trash -v";

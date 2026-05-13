@@ -99,24 +99,9 @@
                 };
             in
             {
-              thinkgo-laptop = mkHome (
-                import ./hosts/thinkgo-laptop.nix {
-                  inherit lib;
-                  inherit pkgs;
-                }
-              );
-              cors-beelink = mkHome (
-                import ./hosts/cors-beelink.nix {
-                  inherit lib;
-                  inherit pkgs;
-                }
-              );
-              thinkgo-work = mkHome (
-                import ./hosts/thinkgo-work.nix {
-                  inherit lib;
-                  inherit pkgs;
-                }
-              );
+              thinkgo-laptop = mkHome (import ./hosts/thinkgo-laptop.nix { inherit lib pkgs; });
+              cors-beelink = mkHome (import ./hosts/cors-beelink.nix { inherit lib pkgs; });
+              thinkgo-work = mkHome (import ./hosts/thinkgo-work.nix { inherit lib pkgs; });
             };
 
           devShells.default = pkgs.mkShell {

@@ -1,9 +1,6 @@
 { lib, pkgs }:
 lib.recursiveUpdate
-  (import ./preset.nix {
-    inherit lib;
-    inherit pkgs;
-  })
+  (import ./preset.nix { inherit lib pkgs; })
   {
     username = "thinkgo";
     desktop = {
