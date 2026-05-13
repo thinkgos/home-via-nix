@@ -6,7 +6,7 @@
 usage() {
     echo "Usage: $0 [-m|--mode mode] [-h|--help] [path...]"
     echo ""
-    echo "  -m, --mode <mode>   模式(walker|preview|content), 默认: preview"
+    echo "  -m, --mode <mode>   模式(walker|preview|content|stdin|stdin-jq), 默认: preview"
     echo "  -h, --help          显示帮助"
     echo ""
     echo "Example:"
@@ -76,6 +76,12 @@ content)
         --delimiter : \
         --preview "bat --style=plain --color=always --highlight-line {2} {1}" \
         --preview-window "~4,+{2}+4/3,<80(up)"
+    ;;
+stdin)
+    fzf --preview "echo {} | bat --style=plain --color=always" </dev/stdin
+    ;;
+stdin-jq)
+    fzf --preview "echo {} | jq -C ." </dev/stdin
     ;;
 *)
     log::error "不支持的模式 -$MODE"
