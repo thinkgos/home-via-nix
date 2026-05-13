@@ -16,6 +16,6 @@
     QT_QPA_PLATFORM = "wayland;xcb";
   };
   home.packages = with pkgs; [
-    albert # 启动器(可选替代ulauncher)
+    albert # 启动器
   ];
 }

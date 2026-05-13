@@ -78,10 +78,16 @@ content)
         --preview-window "~4,+{2}+4/3,<80(up)"
     ;;
 stdin)
-    fzf --preview "echo {} | bat --style=plain --color=always" </dev/stdin
+    fzf \
+        --preview "echo {} | bat --style=plain --color=always" \
+        --bind "ctrl-y:execute-silent(echo {-1} | wl-copy)" \
+        </dev/stdin
     ;;
 stdin-jq)
-    fzf --preview "echo {} | jq -C ." </dev/stdin
+    fzf \
+        --preview "echo {} | jq -C ." \
+        --bind "ctrl-y:execute-silent(echo {-1} | wl-copy)" \
+        </dev/stdin
     ;;
 *)
     log::error "不支持的模式 -$MODE"
