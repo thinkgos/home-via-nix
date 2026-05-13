@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
   <object class="GtkMenu" id="menu">
+
     <child>
-      <object class="GtkMenuItem" id="alacritty">
+      <object class="GtkMenuItem" id="warp">
         <child>
           <object class="GtkBox">
             <property name="visible">True</property>
@@ -10,14 +11,39 @@
             <child>
               <object class="GtkImage">
                 <property name="visible">True</property>
-                <property name="icon-name">alacritty</property>
+                <property name="icon-name">dev.warp.Warp</property>
                 <property name="icon-size">1</property>
               </object>
             </child>
             <child>
               <object class="GtkLabel">
                 <property name="visible">True</property>
-                <property name="label">Alacritty</property>
+                <property name="label">Warp</property>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+
+
+    <child>
+      <object class="GtkMenuItem" id="ghostty">
+        <child>
+          <object class="GtkBox">
+            <property name="visible">True</property>
+            <property name="spacing">6</property>
+            <child>
+              <object class="GtkImage">
+                <property name="visible">True</property>
+                <property name="icon-name">com.mitchellh.ghostty</property>
+                <property name="icon-size">1</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="visible">True</property>
+                <property name="label">Ghostty</property>
               </object>
             </child>
           </object>
@@ -50,7 +76,7 @@
     </child>
 
     <child>
-      <object class="GtkMenuItem" id="ghostty">
+      <object class="GtkMenuItem" id="alacritty">
         <child>
           <object class="GtkBox">
             <property name="visible">True</property>
@@ -58,14 +84,14 @@
             <child>
               <object class="GtkImage">
                 <property name="visible">True</property>
-                <property name="icon-name">com.mitchellh.ghostty</property>
+                <property name="icon-name">alacritty</property>
                 <property name="icon-size">1</property>
               </object>
             </child>
             <child>
               <object class="GtkLabel">
                 <property name="visible">True</property>
-                <property name="label">Ghostty</property>
+                <property name="label">Alacritty</property>
               </object>
             </child>
           </object>
@@ -73,28 +99,5 @@
       </object>
     </child>
 
-    <child>
-      <object class="GtkMenuItem" id="warp">
-        <child>
-          <object class="GtkBox">
-            <property name="visible">True</property>
-            <property name="spacing">6</property>
-            <child>
-              <object class="GtkImage">
-                <property name="visible">True</property>
-                <property name="icon-name">dev.warp.Warp</property> 
-                <property name="icon-size">1</property>
-              </object>
-            </child>
-            <child>
-              <object class="GtkLabel">
-                <property name="visible">True</property>
-                <property name="label">Warp</property>
-              </object>
-            </child>
-          </object>
-        </child>
-      </object>
-    </child>
   </object>
 </interface>
