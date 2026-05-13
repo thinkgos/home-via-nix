@@ -10,5 +10,6 @@
     ./wofi/wofi.nix
     ./fuzzel/fuzzel.nix
     ./raffi/raffi.nix
+    ./rofi/rofi.nix
   ];
 }

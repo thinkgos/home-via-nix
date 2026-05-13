@@ -9,8 +9,5 @@
   # https://davatorium.github.io/rofi/
   programs.rofi = {
     enable = true;
-    settings = {
-
-    };
   };
 }
