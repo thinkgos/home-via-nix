@@ -125,6 +125,7 @@ tooltip label {
 #bluetooth,
 #clock,
 #cpu,
+#cava,
 #custom-gpu,
 #disk,
 #idle_inhibitor,
@@ -147,7 +148,6 @@ tooltip label {
 #custom-backlight,
 #custom-nightlight,
 #custom-browser,
-#custom-cava_mviz,
 #custom-cycle_wall,
 #custom-dot_update,
 #custom-file_manager,
@@ -195,6 +195,10 @@ tooltip label {
 
 #idle_inhibitor {
   color: @text;
+}
+
+#cava {
+  color: @green;
 }
 
 #mpris {
@@ -307,4 +311,3 @@ menuitem {
   transition: all 0.2s ease;
   padding: 6px 6px;
 }
-

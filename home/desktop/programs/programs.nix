@@ -10,6 +10,7 @@
   imports = [
     ./share-desktop.nix
     ./share-input.nix
+    ./cava/cava.nix
     ./obs-studio.nix
     ./yt-dlp.nix
   ]

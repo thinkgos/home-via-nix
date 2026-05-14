@@ -37,6 +37,7 @@
         ];
         modules-center = [
           "group/clock#drawer"
+          "cava"
         ];
         modules-right = [
           "idle_inhibitor"
@@ -263,6 +264,28 @@
           return-type = "json";
           on-click = "google-chrome https://wttr.in";
         };
+        # 音频模拟器
+        cava = {
+          # 更多配置 查看 cava.nix 配置
+          cava_config = "${config.xdg.configHome}/cava/waybar-cava-raw.conf";
+          # cava_config = "${config.xdg.configHome}/cava/waybar-cava-3.conf"; # BUG, SDL
+          input_delay = 2;
+          sleep_timer = 5;
+          hide_on_silence = true;
+          format-icons = [
+            "▁"
+            "▂"
+            "▃"
+            "▄"
+            "▅"
+            "▆"
+            "▇"
+            "█"
+          ];
+          actions = {
+            on-click-right = "mode";
+          };
+        };
 
         # 托盘 ✅
         tray = {
@@ -444,7 +467,7 @@
           format = "🎯";
           tooltip = false;
           menu = "on-click";
-          menu-file = "${config.xdg.configHome}/waybar/popup-screenshot-toolbox.xml";
+          menu-file = "${config.xdg.configHome}/waybar/popup/screenshot-toolbox.xml";
           menu-actions = {
             "screen-pick-color" = "hyprpicker -a -n -s 5 -u 60";
             "screen-color-chooser" = "pkill kcolorchooser || kcolorchooser";
@@ -465,7 +488,7 @@
           format = "📋";
           tooltip = false;
           menu = "on-click";
-          menu-file = "${config.xdg.configHome}/waybar/popup-clipboard.xml";
+          menu-file = "${config.xdg.configHome}/waybar/popup/clipboard.xml";
           menu-actions = {
             "clipboard-history-overview" = "blast-clipboard history-overview";
             "clipboard-history-wipe" = "blast-clipboard history-wipe";
@@ -475,7 +498,7 @@
           format = "⚡";
           tooltip = false;
           menu = "on-click";
-          menu-file = "${config.xdg.configHome}/waybar/popup-terminal.xml";
+          menu-file = "${config.xdg.configHome}/waybar/popup/terminal.xml";
           menu-actions = {
             "alacritty" = "alacritty";
             "kitty" = "kitty";
@@ -487,10 +510,11 @@
     };
     style = builtins.readFile ./style.gtk.css;
   };
-  # create the config file for the screenshot toolbox menu
+  # create the config file for the toolbox menu
   xdg.configFile = {
-    "waybar/popup-screenshot-toolbox.xml".source = ./popup-screenshot-toolbox.xml;
-    "waybar/popup-clipboard.xml".source = ./popup-clipboard.xml;
-    "waybar/popup-terminal.xml".source = ./popup-terminal.xml;
+    "waybar/popup" = {
+      source = ./popup;
+      recursive = true;
+    };
   };
 }
