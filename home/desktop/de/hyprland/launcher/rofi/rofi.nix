@@ -5,9 +5,7 @@
   ...
 }:
 {
-  # rofi 
+  # rofi
   # https://davatorium.github.io/rofi/
-  programs.rofi = {
-    enable = true;
-  };
+  home.packages = [ pkgs.rofi ];
 }
