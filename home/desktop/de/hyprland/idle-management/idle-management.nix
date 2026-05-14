@@ -7,7 +7,7 @@
 {
   # 空闲管理
   imports = [
-    ./hypridle.nix
-    # ./swayidle.nix
+    # ./hypridle.nix
+    ./swayidle.nix
   ];
 }
