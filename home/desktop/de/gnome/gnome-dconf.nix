@@ -26,8 +26,8 @@
     "org/gnome/desktop/background" = {
       color-shading-type = "solid";
       picture-options = "zoom";
-      picture-uri = "file:///${config.xdg.dataHome}/backgrounds/dynamic/scenery2.png";
-      picture-uri-dark = "file:///${config.xdg.dataHome}/backgrounds/dynamic/scenery2.png";
+      picture-uri = "file:///${config.xdg.dataHome}/backgrounds/scenery/2.png";
+      picture-uri-dark = "file:///${config.xdg.dataHome}/backgrounds/scenery/2.png";
       primary-color = "#000000000000";
       secondary-color = "#000000000000";
     };
@@ -36,7 +36,7 @@
       lock-delay = mkUint32 300;
       lock-enabled = true;
       picture-options = "zoom";
-      picture-uri = "file:///${config.xdg.dataHome}/backgrounds/scenery1.jpg";
+      picture-uri = "file:///${config.xdg.dataHome}/backgrounds/scenery/1.png";
       primary-color = "#000000000000";
       secondary-color = "#000000000000";
     };
