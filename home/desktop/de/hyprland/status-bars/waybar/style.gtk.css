@@ -40,7 +40,6 @@
   border-radius: 0;
 }
 
-
 window#waybar {
 	transition-property: background-color;
   transition-duration: 0.5s;
@@ -48,7 +47,7 @@ window#waybar {
 }
 
 tooltip {
-  background: alpha(@base, 0.85);
+  background: alpha(@base, 0.80);
   opacity: 1;
   border: 2px solid @sapphire;
   border-radius: 10px;
@@ -63,10 +62,8 @@ tooltip label {
   color: @overlay2;
   box-shadow: none;
   text-shadow: none;
-  padding: 0px;
-  border-radius: 9px;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding: 0px 2px;
+  border-radius: 10px;
   animation: gradient_f 20s ease-in infinite;
   transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.682);
 }
@@ -75,9 +72,8 @@ tooltip label {
 #workspaces button:hover {
 	color: @peach;
 	background-color: @surface1;
+ 	padding: 0px 6px;
 	border-radius: 10px;
- 	padding-left: 2px;
-  padding-right: 2px;
   animation: gradient_f 20s ease-in infinite;
   transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
 }
@@ -168,7 +164,6 @@ tooltip label {
 #custom-swaync,
 #custom-tty,
 #custom-updater,
-#custom-hyprpicker,
 #custom-screen,
 #custom-clipboard,
 #custom-weather,
@@ -183,14 +178,7 @@ tooltip label {
 #custom-weather.snowyIcyNight,
 #custom-weather.sunnyDay {
   opacity: 1;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-right: 5px;
-  padding-left: 5px;
-}
-
-#custom-separator {
-  color: @overlay1;
+  padding: 5px;
 }
 
 #idle_inhibitor {
@@ -231,14 +219,6 @@ tooltip label {
   animation-direction: alternate;
 }
 
-#custom-lock,
-#custom-power {
-  color: @red;
-  border-radius: 15px;
-  font-weight: bolder;
-  padding-left: 1px;
-}
-
 #network {
   background-color: transparent;
   color: @text;
@@ -248,23 +228,14 @@ tooltip label {
   color: @flamingo;
 }
 
-
-#custom-weather {
-  color: @text;
-  border-radius: 15px;
-  background-color: transparent;
-}
-
 #pulseaudio {
   background-color: transparent;
 }
-
 
 #clock,
 #clock-calender {
   color: @text;
 }
-
 
 #backlight-slider slider,
 #pulseaudio-slider slider {
@@ -310,4 +281,22 @@ menuitem {
   border-radius: 6px;
   transition: all 0.2s ease;
   padding: 6px 6px;
+}
+
+#custom-separator {
+  color: @overlay1;
+}
+
+#custom-lock,
+#custom-power {
+  color: @red;
+  border-radius: 15px;
+  font-weight: bolder;
+  padding-left: 1px;
+}
+
+#custom-weather {
+  color: @text;
+  border-radius: 15px;
+  background-color: transparent;
 }
