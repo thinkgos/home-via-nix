@@ -1,13 +1,16 @@
 #!/bin/bash
+
+# 壁纸选择器
+
 WALLPAPER_DIR="${1:-$HOME/.local/share/wallpapers}"
 TRANSITION="random"
 FPS=60
 STEP=20
 
-# 所有路径存入数组
+# 路径列表存入数组
 mapfile -t PATHS < <(find -L "$WALLPAPER_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" -o -iname "*.webp" -o -iname "*.avif" \))
 
-# 构建传给 rofi 的显示内容（显示文件名，携带图标）
+# 构建传给 rofi 的显示内容(显示文件名，携带图标)
 INDEX=$(
     for p in "${PATHS[@]}"; do
         echo -en "$(basename "$p")\0icon\x1f$p\n"

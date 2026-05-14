@@ -41,9 +41,10 @@
         ];
         modules-right = [
           "idle_inhibitor"
-          "custom/screen#toolbox"
-          "custom/clipboard"
           "custom/terminal"
+          "custom/clipboard"
+          "custom/screen#toolbox"
+          "custom/settings"
           "custom/separator"
           "tray"
           "custom/separator"
@@ -463,6 +464,28 @@
           # on-click = "wlogout -b 2";
           tooltip = false;
         };
+        "custom/terminal" = {
+          format = "⚡";
+          tooltip = false;
+          menu = "on-click";
+          menu-file = "${config.xdg.configHome}/waybar/popup/terminal.xml";
+          menu-actions = {
+            "alacritty" = "alacritty";
+            "kitty" = "kitty";
+            "ghostty" = "ghostty";
+            "warp" = "warp-terminal";
+          };
+        };
+        "custom/clipboard" = {
+          format = "📋";
+          tooltip = false;
+          menu = "on-click";
+          menu-file = "${config.xdg.configHome}/waybar/popup/clipboard.xml";
+          menu-actions = {
+            "clipboard-history-overview" = "blast-clipboard history-overview";
+            "clipboard-history-wipe" = "blast-clipboard history-wipe";
+          };
+        };
         "custom/screen#toolbox" = {
           format = "🎯";
           tooltip = false;
@@ -484,26 +507,13 @@
             "screenshot-scroll-preview" = "blast-screen scroll-preview";
           };
         };
-        "custom/clipboard" = {
-          format = "📋";
+        "custom/settings" = {
+          format = "⚙️";
           tooltip = false;
           menu = "on-click";
-          menu-file = "${config.xdg.configHome}/waybar/popup/clipboard.xml";
+          menu-file = "${config.xdg.configHome}/waybar/popup/settings.xml";
           menu-actions = {
-            "clipboard-history-overview" = "blast-clipboard history-overview";
-            "clipboard-history-wipe" = "blast-clipboard history-wipe";
-          };
-        };
-        "custom/terminal" = {
-          format = "⚡";
-          tooltip = false;
-          menu = "on-click";
-          menu-file = "${config.xdg.configHome}/waybar/popup/terminal.xml";
-          menu-actions = {
-            "alacritty" = "alacritty";
-            "kitty" = "kitty";
-            "ghostty" = "ghostty";
-            "warp" = "warp-terminal";
+            "picker-wallpaper" = "bs-picker-wallpaper";
           };
         };
       };
