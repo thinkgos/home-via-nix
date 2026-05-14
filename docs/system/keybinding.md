@@ -77,7 +77,7 @@
 | 搜索 | 🚫 | | ◻️ | | ◻️ |
 | 主目录(启动文件管理器) | 🚫 | `Super` + `E` | ✅ | `Super` + `E` | ✅ |
 | 启动终端 | ❌ | `Super` + `T` | ✅ | `Super` + `T` | ✅ |
-| 启动应用启动器 | ❌ | `Super` + `slash` | ✅ | `Super` + `slash` | ✅ |
+| 启动应用启动器 | ❌ | `Super` + `Return` | ✅ | `Super` + `Return` | ✅ |
 
 ## 工作区和窗口
 

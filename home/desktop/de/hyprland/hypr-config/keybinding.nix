@@ -17,7 +17,7 @@
     "$launchBrowser" = "google-chrome";
     "$launchIde" = "code";
     "$launchScreenRecorder" = "pkill kooha || flatpak run io.github.seadve.Kooha";
-    "$appLauncher" = "pkill wofi || wofi";
+    "$appLauncher" = "pkill rofi || rofi -show drun";
     "$lockScreen" = "blast-screen-lock";
     "$helpKeybinding" = "hyprkcs";
     "$toggleWaybar" = "blast-toggle-waybar";
@@ -56,7 +56,7 @@
       "$mod, P, 启动IDE, exec, $launchIde"
       # "$mod, grave, global, 切换到下拉终端, com.mitchellh.ghostty:toggle_quick_terminal"
       "$mod, grave, 切换到下拉终端, exec, $launchDropdownTerminal"
-      "$mod, slash, 启动应用启动器, exec, $appLauncher"
+      "$mod, Return, 启动应用启动器, exec, $appLauncher"
       "$mod, F1, 启动帮助按键绑定, exec, $helpKeybinding"
 
       # 布局
