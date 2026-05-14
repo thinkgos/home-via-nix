@@ -16,5 +16,6 @@
       recursive = true;
     };
     "rofi/config.rasi".source = ./config.rasi;
+    "rofi/config-wallpaper.rasi".source = ./config-wallpaper.rasi;
   };
 }

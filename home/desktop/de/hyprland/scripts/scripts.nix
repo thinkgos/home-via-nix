@@ -9,6 +9,7 @@
     (pkgs.writeShellScriptBin "blast-screen" (builtins.readFile ./screen.sh))
     (pkgs.writeShellScriptBin "blast-screen-lock" (builtins.readFile ./screen-lock.sh))
     (pkgs.writeShellScriptBin "blast-picker-color" (builtins.readFile ./picker-color.sh))
+    (pkgs.writeShellScriptBin "blast-picker-wallpaper" (builtins.readFile ./picker-wallpaper.sh))
     (pkgs.writeShellScriptBin "blast-shutdown" (builtins.readFile ./shutdown.sh))
     (pkgs.writeShellScriptBin "blast-gpu-name" (builtins.readFile ./gpu-name.sh))
     (pkgs.writeShellScriptBin "blast-dropdown-terminal" (builtins.readFile ./dropdown-terminal.sh))
