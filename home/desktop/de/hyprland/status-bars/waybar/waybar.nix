@@ -37,9 +37,9 @@
         ];
         modules-center = [
           "group/clock#drawer"
-          "cava"
         ];
         modules-right = [
+          "cava"
           "idle_inhibitor"
           "custom/terminal"
           "custom/clipboard"
@@ -334,6 +334,9 @@
           format = " {status}";
           format-connected = " {device_alias}";
           format-connected-battery = " {device_alias} {device_battery_percentage}%";
+          format-disabled = "󰂲 disabled";
+          format-off = "󰂲 off";
+          format-no-controller = "";
           tooltip-format = "{controller_alias}\t{controller_address}\n\n{num_connections} connected";
           tooltip-format-connected = "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}";
           tooltip-format-enumerate-connected = "{device_alias}\t{device_address}";
