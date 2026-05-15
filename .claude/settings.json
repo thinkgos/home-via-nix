@@ -19,7 +19,11 @@
       "Bash(git log *)",
       "Bash(git diff *)",
       "Bash(git show *)",
-      "Bash(git branch *)"
+      "Bash(git branch *)",
+      "Bash(rtk *)",
+      "WebSearch",
+      "WebFetch(domain:nix-community.github.io)",
+      "WebFetch(domain:wiki.hypr.land)"
     ],
     "ask": [
       "Bash(git commit *)",

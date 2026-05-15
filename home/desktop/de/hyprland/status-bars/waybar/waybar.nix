@@ -519,6 +519,7 @@
       };
     };
     style = builtins.readFile ./style.gtk.css;
+    # style = null;
   };
   # create the config file for the toolbox menu
   xdg.configFile = {
