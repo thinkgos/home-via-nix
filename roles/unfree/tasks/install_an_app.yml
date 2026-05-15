@@ -1,0 +1,30 @@
+- name: "Check already installed: {{ app.name }}"
+  ansible.builtin.command: "which {{ app.binary_name }}"
+  register: unfree_which_result
+  failed_when: false
+  changed_when: false
+  check_mode: false
+
+- name: "Determine install strategy: {{ app.name }}"
+  when: unfree_which_result.rc != 0
+  ansible.builtin.set_fact:
+    unfree_install_strategy: "{{ 'script' if (app.script_url | default('') or app.script | default('')) else 'package' if ((ansible_facts['os_family'] == 'Debian' and app.debian_url | default('')) or (ansible_facts['os_family'] == 'RedHat' and app.redhat_url | default(''))) else 'url' }}"
+
+- name: "Resolve download URL: {{ app.name }}"
+  when:
+    - unfree_which_result.rc != 0
+    - unfree_install_strategy != 'script'
+  ansible.builtin.set_fact:
+    unfree_download_url: "{{ app.debian_url if (ansible_facts['os_family'] == 'Debian' and app.debian_url | default('')) else app.redhat_url if (ansible_facts['os_family'] == 'RedHat' and app.redhat_url | default('')) else app.url }}"
+
+- name: "Install via url/package: {{ app.name }}"
+  when:
+    - unfree_which_result.rc != 0
+    - unfree_install_strategy != 'script'
+  ansible.builtin.include_tasks: install_via_url.yml
+
+- name: "Install via script: {{ app.name }}"
+  when:
+    - unfree_which_result.rc != 0
+    - unfree_install_strategy == 'script'
+  ansible.builtin.include_tasks: install_via_script.yml

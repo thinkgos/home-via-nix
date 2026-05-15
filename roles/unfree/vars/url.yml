@@ -1,0 +1,15 @@
+unfree_url_apps:
+  # debian/redhat 策略: 分发行版提供不同安装包 URL
+  # - name: "example-pkg"
+  #   description: "示例安装包"
+  #   debian_url: "https://example.com/example_amd64.deb"
+  #   redhat_url: "https://example.com/example_x86_64.rpm"
+  #   binary_name: "example"
+
+  # url 策略: 通用下载(压缩包/二进制)
+  # - name: "example-app"
+  #   description: "示例应用"
+  #   url: "https://example.com/example-linux-x64.tar.gz"
+  #   binary_name: "example"
+  #   # 可选: 压缩包中要提取的二进制列表, 默认 [binary_name]
+  #   binaries: ["example", "example-helper"]

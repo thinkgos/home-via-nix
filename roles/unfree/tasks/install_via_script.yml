@@ -1,0 +1,24 @@
+- name: "Download install script: {{ app.name }}"
+  when: app.script_url | default('')
+  ansible.builtin.get_url:
+    url: "{{ app.script_url }}"
+    dest: "/tmp/unfree_{{ app.name }}_install.sh"
+    mode: "0755"
+
+- name: "Write inline script: {{ app.name }}"
+  when: app.script | default('')
+  ansible.builtin.copy:
+    content: "{{ app.script }}"
+    dest: "/tmp/unfree_{{ app.name }}_install.sh"
+    mode: "0755"
+
+- name: "Execute install script: {{ app.name }}"
+  ansible.builtin.command: "/tmp/unfree_{{ app.name }}_install.sh {{ app.script_args | default('') }}"
+  environment:
+    http_proxy: "{{ lookup('env', 'http_proxy') | default('') }}"
+    https_proxy: "{{ lookup('env', 'https_proxy') | default('') }}"
+
+- name: "Cleanup install script: {{ app.name }}"
+  ansible.builtin.file:
+    path: "/tmp/unfree_{{ app.name }}_install.sh"
+    state: absent

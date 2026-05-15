@@ -1,0 +1,11 @@
+- name: Load unfree variables
+  ansible.builtin.include_vars: "{{ item }}"
+  with_items:
+    - vars/url.yml
+    - vars/script.yml
+
+- name: Process unfree installations
+  ansible.builtin.include_tasks: install_an_app.yml
+  loop: "{{ unfree_url_apps + unfree_script_apps }}"
+  loop_control:
+    loop_var: app

@@ -1,0 +1,15 @@
+unfree_script_apps:
+  # script_url 策略: 远程安装脚本
+  # - name: "example-script"
+  #   description: "通过远程脚本安装"
+  #   script_url: "https://example.com/install.sh"
+  #   binary_name: "example-script"
+  #   script_args: "--prefix /usr/local" # 可选: 传给脚本的参数
+
+  # script 策略: 内联脚本
+  # - name: "example-inline"
+  #   description: "通过内联脚本安装"
+  #   script: |
+  #     #!/bin/bash
+  #     curl -fsSL https://example.com/install.sh | sh
+  #   binary_name: "example-inline"

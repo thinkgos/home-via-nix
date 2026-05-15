@@ -1,0 +1,67 @@
+- name: "Download: {{ app.name }}"
+  ansible.builtin.get_url:
+    url: "{{ unfree_download_url }}"
+    dest: "/tmp/unfree_{{ app.name }}"
+    mode: "0644"
+  register: unfree_download_result
+
+- name: "Set asset filename: {{ app.name }}"
+  ansible.builtin.set_fact:
+    unfree_asset_filename: "{{ unfree_download_url | basename }}"
+
+- name: "Install deb package: {{ app.name }}"
+  when: unfree_asset_filename is regex('\.deb$', ignorecase=True)
+  ansible.builtin.apt:
+    deb: "/tmp/unfree_{{ app.name }}"
+    state: present
+
+- name: "Install rpm package: {{ app.name }}"
+  when: unfree_asset_filename is regex('\.rpm$', ignorecase=True)
+  ansible.builtin.dnf:
+    name: "/tmp/unfree_{{ app.name }}"
+    state: present
+    disable_gpg_check: true
+
+- name: "Install plain binary: {{ app.name }}"
+  when:
+    - unfree_asset_filename is not regex('\.(deb|rpm)$', ignorecase=True)
+    - unfree_asset_filename is not regex('\.(tar\.gz|zip|tgz|bz2|tar\.xz)$', ignorecase=True)
+  ansible.builtin.copy:
+    src: "/tmp/unfree_{{ app.name }}"
+    dest: "/usr/local/bin/{{ app.binary_name }}"
+    mode: "0755"
+    remote_src: true
+
+- name: "Install from archive: {{ app.name }}"
+  when:
+    - unfree_asset_filename is not regex('\.(deb|rpm)$', ignorecase=True)
+    - unfree_asset_filename is regex('\.(tar\.gz|zip|tgz|bz2|tar\.xz)$', ignorecase=True)
+  block:
+    - name: "Create extraction directory: {{ app.name }}"
+      ansible.builtin.file:
+        path: "/tmp/unfree_{{ app.name }}_extract"
+        state: directory
+        mode: "0755"
+
+    - name: "Extract archive: {{ app.name }}"
+      ansible.builtin.unarchive:
+        src: "/tmp/unfree_{{ app.name }}"
+        dest: "/tmp/unfree_{{ app.name }}_extract"
+        remote_src: true
+
+    - name: "Move binaries to /usr/local/bin: {{ app.name }}"
+      ansible.builtin.shell: |
+        find "/tmp/unfree_{{ app.name }}_extract" -type f -name "{{ item }}" -exec cp -af {} /usr/local/bin/ \;
+        chmod +x "/usr/local/bin/{{ item }}"
+      loop: "{{ app.binaries | default([app.binary_name]) }}"
+
+    - name: "Cleanup extraction directory: {{ app.name }}"
+      ansible.builtin.file:
+        path: "/tmp/unfree_{{ app.name }}_extract"
+        state: absent
+
+- name: "Cleanup downloaded file: {{ app.name }}"
+  when: unfree_download_result is defined and unfree_download_result.changed
+  ansible.builtin.file:
+    path: "/tmp/unfree_{{ app.name }}"
+    state: absent
