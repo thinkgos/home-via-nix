@@ -22,7 +22,6 @@
       };
       listener = [
         {
-          # timeout = 10; # 10s 测试
           timeout = 300; # 5m
           on-timeout = ''/bin/notify-send " You are idle!"'';
           on-resume = ''/bin/notify-send " Welcome Back" " Enjoy !!!"'';

@@ -17,7 +17,6 @@
     };
     timeouts = [
       {
-        # timeout = 10; # 10s 测试
         timeout = 300; # 5m
         command = ''/bin/notify-send " You are idle!"'';
         resumeCommand = ''/bin/notify-send " Welcome Back" " Enjoy !!!"'';

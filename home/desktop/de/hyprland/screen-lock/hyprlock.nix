@@ -100,7 +100,7 @@
         # DATE
         {
           monitor = "";
-          text = "cmd[update:60000] date +'%Y-%m-%d %A'";
+          text = "cmd[update:60000] /bin/date +'%Y-%m-%d %A'";
           color = "rgba(122,131,194,0.9)";
           font_size = 40;
           font_family = "$font";
@@ -111,7 +111,7 @@
         # DAY
         # {
         #   monitor = "";
-        #   text = "cmd[update:60000] date +'%A'";
+        #   text = "cmd[update:60000] /bin/date +'%A'";
         #   color = "rgba(100,87,143,0.9)";
         #   font_size = 40;
         #   font_family = "$font";
