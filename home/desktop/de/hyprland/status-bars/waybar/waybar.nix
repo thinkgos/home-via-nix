@@ -37,9 +37,9 @@
         ];
         modules-center = [
           "group/clock#drawer"
+          "cava"
         ];
         modules-right = [
-          "cava"
           "idle_inhibitor"
           "custom/terminal"
           "custom/clipboard"
@@ -447,7 +447,7 @@
               tooltip-icon-size = 24;
             }
             {
-              type = "audio-in";
+              type = "audio-out";
               tooltip = true;
               tooltip-icon-size = 24;
             }
@@ -458,7 +458,16 @@
             }
           ];
           ignore-monitor = true;
-          ignore = [ ];
+          ignore = [
+            {
+              type = "audio-in";
+              name = "cava";
+            }
+            {
+              type = "screenshare";
+              name = "obs";
+            }
+          ];
         };
         # 电源 ✅
         "custom/power" = {
@@ -496,7 +505,8 @@
           menu-file = "${config.xdg.configHome}/waybar/popup/screenshot-toolbox.xml";
           menu-actions = {
             "screen-pick-color" = "${pkgs.hyprpicker}/bin/hyprpicker -a -n -s 5 -u 60";
-            "screen-color-chooser" = "/bin/pkill kcolorchooser || ${pkgs.kdePackages.kcolorchooser}/bin/kcolorchooser";
+            "screen-color-chooser" =
+              "/bin/pkill kcolorchooser || ${pkgs.kdePackages.kcolorchooser}/bin/kcolorchooser";
             "screen-recorder" = "blast-flatpak io.github.seadve.Kooha";
             "ocr" = "blast-screen ocr";
             "screen-pixel-measure" = "blast-screen pixel-measure";
