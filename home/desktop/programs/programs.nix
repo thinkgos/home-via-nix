@@ -34,5 +34,6 @@
       localsend # 局域网文件传输工具
       drawy # 画布工具
       wayscrollshot # 滚动截图工具
+      cage # wayland的kiosk
     ];
 }

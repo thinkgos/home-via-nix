@@ -2,47 +2,68 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   # 屏幕锁定
   # https://github.com/swaywm/swaylock
+  # BUG: 没调试成功
   programs.swaylock = {
     enable = true;
-    package = pkgs.swaylock;
+    package = pkgs.swaylock-effects;
     settings = {
-      # 基本设置
-      font = "JetBrainsMono Nerd Font Mono";
       ignore-empty-password = true;
-      show-failed-attempts = true;
-      grace = 3;
-      grace-no-mouse = true;
-      grace-no-touch = true;
+      disable-caps-lock-text = true;
+      font = "MonaspaceArgon NF";
+      grace = 300;
 
-      # 背景 (从 hyprlock background 转换)
+      clock = true;
+      timestr = "%R";
+      datestr = "%a, %e of %B";
+
       image = "${config.xdg.dataHome}/wallpapers/scenery/5.jpg";
 
-      # 锁定指示器 (从 hyprlock input-field 转换)
-      indicator-radius = 100;
-      indicator-thickness = 3;
-      inside-color = "000000E6";          # rgba(0,0,0,0.9)
-      inside-clear-color = "000000E6";
-      inside-ver-color = "000000E6";
-      inside-wrong-color = "000000E6";
-      key-hl-color = "00FF99EE";          # rgba(00ff99ee)
-      bs-hl-color = "FF6633EE";           # rgba(ff6633ee)
-      ring-color = "33CCFFEE";            # rgba(33ccffee)
-      ring-clear-color = "FF6633EE";      # rgba(ff6633ee)
-      ring-ver-color = "33CCFFEE";
-      ring-wrong-color = "FF0066EE";      # rgba(ff0066ee)
-      line-color = "00000000";
-      separator-color = "00000000";
-      text-color = "FFFFFFE6";            # rgba(255,255,255,0.9)
-      text-clear-color = "FFFFFFE6";
-      text-ver-color = "FFFFFFE6";
-      text-wrong-color = "FFFFFFE6";
+      fade-in = "0.2";
 
-      # 布局
-      clock = true;
+      effect-blur = "10x2";
+      effect-scale = "0.1";
+
+      indicator = true;
+      indicator-radius = 240;
+      indicator-thickness = 20;
       indicator-caps-lock = true;
+
+      key-hl-color = "#8aadf4";
+      bs-hl-color = "#ed8796";
+      caps-lock-key-hl-color = "#f5a97f";
+      caps-lock-bs-hl-color = "#ed8796";
+
+      separator-color = "#181926";
+
+      inside-color = "#24273a";
+      inside-clear-color = "#24273a";
+      inside-caps-lock-color = "#24273a";
+      inside-ver-color = "#24273a";
+      inside-wrong-color = "#24273a";
+
+      ring-color = "#1e2030";
+      ring-clear-color = "#8aadf4";
+      ring-caps-lock-color = "231f20D9";
+      ring-ver-color = "#1e2030";
+      ring-wrong-color = "#ed8796";
+
+      line-color = "#8aadf4";
+      line-clear-color = "#8aadf4";
+      line-caps-lock-color = "#f5a97f";
+      line-ver-color = "#181926";
+      line-wrong-color = "#ed8796";
+
+      text-color = "#8aadf4";
+      text-clear-color = "#24273a";
+      text-caps-lock-color = "#f5a97f";
+      text-ver-color = "#24273a";
+      text-wrong-color = "#24273a";
+
+      debug = false;
     };
   };
 }
