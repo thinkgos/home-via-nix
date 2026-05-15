@@ -26,7 +26,7 @@
           hide_filtered = false;
           exclude_special_workspaces = "";
           launcher = {
-            default_terminal = "${pkgs.alacritty}/bin/alacritty";
+            default_terminal = "alacritty";
             launch_modifier = "ctrl";
             width = 650;
             max_items = 5;
