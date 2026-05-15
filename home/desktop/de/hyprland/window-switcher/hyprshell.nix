@@ -26,7 +26,7 @@
           hide_filtered = false;
           exclude_special_workspaces = "";
           launcher = {
-            default_terminal = "alacritty";
+            default_terminal = "${pkgs.alacritty}/bin/alacritty";
             launch_modifier = "ctrl";
             width = 650;
             max_items = 5;
@@ -83,7 +83,7 @@
                     custom = {
                       names = [ "Reload Hyprshell" ];
                       details = "Reload Hyprshell";
-                      command = "sleep 1; hyprshell socat '\"Restart\"'";
+                      command = "/bin/sleep 1; ${pkgs.hyprshell}/bin/hyprshell socat '\"Restart\"'";
                       icon = "system-restart";
                     };
                   }

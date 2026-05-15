@@ -16,7 +16,7 @@
         horizontal-pad = 16;
         vertical-pad = 8;
         font = "JetBrainsMono Nerd Font Mono:size=13";
-        terminal = "alacritty -e";
+        terminal = "${pkgs.alacritty}/bin/alacritty -e";
         prompt = ''" "'';
         placeholder = "Search...";
       };

@@ -25,8 +25,8 @@
       {
         timeout = 600; # 10m
         # BUG: 键盘背光没法控制, 没有找到设备名. HDMI 不能用此方式, 需要用ddcutil
-        command = "/bin/brightnessctl -s -d *backlight* set 10"; # turn down screen backlight.
-        resumeCommand = "/bin/brightnessctl -r -d *backlight*"; # resume screen backlight.
+        command = "${pkgs.brightnessctl}/bin/brightnessctl -s -d *backlight* set 10"; # turn down screen backlight.
+        resumeCommand = "${pkgs.brightnessctl}/bin/brightnessctl -r -d *backlight*"; # resume screen backlight.
       }
       {
         timeout = 900; # 15m
@@ -36,7 +36,7 @@
       {
         timeout = 930; # 15m30s
         command = "${pkgs.hyprland}/bin/hyprctl dispatch dpms off"; # screen off when timeout has passed
-        resumeCommand = "${pkgs.hyprland}/bin/hyprctl dispatch dpms on && /bin/brightnessctl -r -d *backlight*"; # screen on when activity is detected after timeout has fired.
+        resumeCommand = "${pkgs.hyprland}/bin/hyprctl dispatch dpms on && ${pkgs.brightnessctl}/bin/brightnessctl -r -d *backlight*"; # screen on when activity is detected after timeout has fired.
       }
       # 默认不挂起
       # {

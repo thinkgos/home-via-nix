@@ -96,8 +96,8 @@
             "*" = 2;
           };
           on-click = "activate";
-          on-scroll-up = "hyprctl dispatch split:workspace r-1";
-          on-scroll-down = "hyprctl dispatch split:workspace r+1";
+          on-scroll-up = "${pkgs.hyprland}/bin/hyprctl dispatch split:workspace r-1";
+          on-scroll-down = "${pkgs.hyprland}/bin/hyprctl dispatch split:workspace r+1";
           # on-scroll-up = "hyprctl dispatch workspace e-1";
           # on-scroll-down = "hyprctl dispatch workspace e+1";
         };
@@ -115,8 +115,8 @@
             "💥 (.*) - Alacritty" = " $1";
             "💥 (.*) - zsh" = "󰆍 $1";
           };
-          on-click = "hyprctl dispatch fullscreen 1";
-          on-click-right = "hyprctl dispatch layoutmsg togglesplit"; # Dwindle切换横纵分割
+          on-click = "${pkgs.hyprland}/bin/hyprctl dispatch fullscreen 1";
+          on-click-right = "${pkgs.hyprland}/bin/hyprctl dispatch layoutmsg togglesplit"; # Dwindle切换横纵分割
         };
 
         # 任务栏 ✅
@@ -172,7 +172,7 @@
             "<span color='#ff9977'>▇</span>" # orange
             "<span color='#dd532e'>█</span>" # red
           ];
-          on-click = "missioncenter";
+          on-click = "${pkgs.mission-center}/bin/missioncenter";
         };
         # 温度
         temperature = {
@@ -197,7 +197,7 @@
           };
           tooltip = true;
           tooltip-format = "{used:0.1f}GB / {total:0.1f}GB\nAvail: {avail:0.1f}GB";
-          on-click = "missioncenter";
+          on-click = "${pkgs.mission-center}/bin/missioncenter";
         };
         # 监控组 - 硬盘 ✅
         disk = {
@@ -206,7 +206,7 @@
           path = "/";
           tooltip = true;
           tooltip-format = "{used} / {total}\nAvail: {free} ({percentage_free}%)";
-          on-click = "missioncenter";
+          on-click = "${pkgs.mission-center}/bin/missioncenter";
         };
         # 监控组 - 硬盘数据卷 ✅
         "disk#home" = {
@@ -215,7 +215,7 @@
           path = "/mms";
           tooltip = true;
           tooltip-format = "{used} / {total}\nAvail: {free} ({percentage_free}%)";
-          on-click = "missioncenter";
+          on-click = "${pkgs.mission-center}/bin/missioncenter";
         };
 
         # 时钟组 ✅
@@ -260,7 +260,7 @@
         # 天气 ✅
         "custom/weather" = {
           interval = 3600;
-          exec = "wttrbar --lang=zh --location Fuzhou";
+          exec = "${pkgs.wttrbar}/bin/wttrbar --lang=zh --location Fuzhou";
           format = "{} ";
           return-type = "json";
           on-click = "google-chrome https://wttr.in";
@@ -325,7 +325,7 @@
             "󰤥"
             "󰤨"
           ];
-          on-click = "nm-connection-editor";
+          on-click = "${pkgs.networkmanagerapplet}/bin/nm-connection-editor";
         };
 
         # 蓝牙 ✅
@@ -338,7 +338,7 @@
           tooltip-format-connected = "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}";
           tooltip-format-enumerate-connected = "{device_alias}\t{device_address}";
           tooltip-format-enumerate-connected-battery = "{device_alias}\t{device_address}\t{device_battery_percentage}%";
-          on-click = "blueman-manager";
+          on-click = "${pkgs.blueman}/bin/blueman-manager";
         };
         # 音量 ✅
         pulseaudio = {
@@ -360,8 +360,8 @@
           };
           scroll-step = 3;
           ignored-sinks = [ "Easy Effects Sink" ];
-          on-click = "pavucontrol";
-          on-click-right = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+          on-click = "${pkgs.pavucontrol}/bin/pavucontrol";
+          on-click-right = "${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
         };
         # 音量滑块 ✅
         "pulseaudio/slider" = {
@@ -460,7 +460,7 @@
         # 电源 ✅
         "custom/power" = {
           format = "⏻";
-          on-click = "wlogout -b 3";
+          on-click = "${pkgs.wlogout}/bin/wlogout -b 3";
           # on-click = "wlogout -b 2";
           tooltip = false;
         };
@@ -470,9 +470,9 @@
           menu = "on-click";
           menu-file = "${config.xdg.configHome}/waybar/popup/terminal.xml";
           menu-actions = {
-            "alacritty" = "alacritty";
-            "kitty" = "kitty";
-            "ghostty" = "ghostty";
+            "alacritty" = "${pkgs.alacritty}/bin/alacritty";
+            "kitty" = "${pkgs.kitty}/bin/kitty";
+            "ghostty" = "${pkgs.ghostty}/bin/ghostty";
             "warp" = "warp-terminal";
           };
         };
@@ -492,8 +492,8 @@
           menu = "on-click";
           menu-file = "${config.xdg.configHome}/waybar/popup/screenshot-toolbox.xml";
           menu-actions = {
-            "screen-pick-color" = "hyprpicker -a -n -s 5 -u 60";
-            "screen-color-chooser" = "/bin/pkill kcolorchooser || kcolorchooser";
+            "screen-pick-color" = "${pkgs.hyprpicker}/bin/hyprpicker -a -n -s 5 -u 60";
+            "screen-color-chooser" = "/bin/pkill kcolorchooser || ${pkgs.kdePackages.kcolorchooser}/bin/kcolorchooser";
             "screen-recorder" = "blast-flatpak io.github.seadve.Kooha";
             "ocr" = "blast-screen ocr";
             "screen-pixel-measure" = "blast-screen pixel-measure";

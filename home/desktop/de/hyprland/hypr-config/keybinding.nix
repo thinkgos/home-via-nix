@@ -10,14 +10,14 @@
   # https://wiki.hypr.land/Configuring/Binds/
   wayland.windowManager.hyprland.settings = {
     "$mod" = "SUPER";
-    "$launchTerminal" = "alacritty";
+    "$launchTerminal" = "${pkgs.alacritty}/bin/alacritty";
     "$launchDropdownTerminal" = "blast-dropdown-terminal";
-    "$launchFileManager" = "nemo";
-    "$launchCalculator" = "/bin/pkill qalculate-gtk || qalculate-gtk";
+    "$launchFileManager" = "${pkgs.nemo}/bin/nemo";
+    "$launchCalculator" = "/bin/pkill qalculate-gtk || ${pkgs.qalculate-gtk}/bin/qalculate-gtk";
     "$launchBrowser" = "google-chrome";
     "$launchIde" = "code";
     "$launchScreenRecorder" = "/bin/pkill kooha || flatpak run io.github.seadve.Kooha";
-    "$appLauncher" = "/bin/pkill rofi || rofi -show drun";
+    "$appLauncher" = "/bin/pkill rofi || ${pkgs.rofi}/bin/rofi -show drun";
     "$lockScreen" = "blast-screen-lock";
     "$helpKeybinding" = "hyprkcs";
     "$toggleWaybar" = "blast-toggle-waybar";
@@ -46,7 +46,7 @@
       "ALT, Print, 窗口截图, exec, blast-screen window"
       "Shift, Print, 全屏截图, exec, blast-screen fullscreen"
       ", Print, 选框截图, exec, blast-screen region"
-      "$mod, Print, 选框截图标注, exec, flameshot gui"
+      "$mod, Print, 选框截图标注, exec, ${pkgs.flameshot}/bin/flameshot gui"
 
       # 应用
       "$mod, T, 启动终端, exec, $launchTerminal"
@@ -157,16 +157,16 @@
       "$mod, mouse:273, 缩放窗口, resizewindow" # Super + 右键
     ];
     binddl = [
-      ", XF86AudioMute, 声音关闭/打开, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+      ", XF86AudioMute, 声音关闭/打开, exec, ${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
     ];
     # 持续性操作 (如音量、亮度调节) 需brightnessctl,wireplumber
     binddle = [
       # 声音调整
-      ", XF86AudioRaiseVolume, 音量增加, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
-      ", XF86AudioLowerVolume, 音量减少, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+      ", XF86AudioRaiseVolume, 音量增加, exec, ${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
+      ", XF86AudioLowerVolume, 音量减少, exec, ${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
       # 亮度调整
-      ", XF86MonBrightnessUp, 亮度增加, exec, brightnessctl -d *backlight* set 5%+"
-      ", XF86MonBrightnessDown, 亮度减少, exec, brightnessctl -d *backlight* set 5%-"
+      ", XF86MonBrightnessUp, 亮度增加, exec, ${pkgs.brightnessctl}/bin/brightnessctl -d *backlight* set 5%+"
+      ", XF86MonBrightnessDown, 亮度减少, exec, ${pkgs.brightnessctl}/bin/brightnessctl -d *backlight* set 5%-"
       # 蓝光调整
       # ", XF86MonBrightnessDown, 蓝光减少, exec, hyprctl hyprsunset gamma -10"
       # ", XF86MonBrightnessUp, 蓝光增加, exec, hyprctl hyprsunset gamma +10"

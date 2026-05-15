@@ -22,7 +22,7 @@
 
         # 调用 kitty 在该目录下打开
         # --hold 参数的作用是：即使命令执行完了，窗口也不会立即关闭
-        kitty --directory "$TARGET_DIR"
+        ${pkgs.kitty}/bin/kitty --directory "$TARGET_DIR"
       '';
     };
 
@@ -41,7 +41,7 @@
         fi
 
         # 调用 ghostty 在该目录下打开
-        ghostty --working-directory="$TARGET_DIR"
+        ${pkgs.ghostty}/bin/ghostty --working-directory="$TARGET_DIR"
       '';
     };
   };

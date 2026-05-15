@@ -126,22 +126,22 @@
     # 自定义快捷键
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
       name = "terminal";
-      command = "ghostty";
+      command = "${pkgs.ghostty}/bin/ghostty";
       binding = "<Super>t";
     };
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
       name = "flameshot";
-      command = "sh -c 'flameshot gui < /dev/null'";
+      command = "/bin/sh -c '${pkgs.flameshot}/bin/flameshot gui < /dev/null'";
       binding = "<Super>Print";
     };
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
       name = "albert";
-      command = "albert toggle";
+      command = "${pkgs.albert}/bin/albert toggle";
       binding = "<Super>Return";
     };
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3" = {
       name = "ide";
-      command = "sh -c 'code'";
+      command = "/bin/sh -c 'code'";
       binding = "<Super>p";
     };
   };
