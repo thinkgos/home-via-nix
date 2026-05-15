@@ -2,7 +2,6 @@
   config,
   lib,
   pkgs,
-  extra-pkgs,
   ...
 }:
 {
@@ -33,9 +32,7 @@
       qalculate-gtk # 计算器
       wttrbar # 天气栏
       gpu-usage-waybar # GPU使用率栏
-    ]
-    ++ [
-      extra-pkgs.hypr-kcs # hyprcs
+      hypr-kcs # hyprcs
     ];
 
   home.sessionVariables = {
@@ -62,18 +59,18 @@
     xdgOpenUsePortal = true;
     extraPortals = [
       pkgs.xdg-desktop-portal-gtk
-      extra-pkgs.xdg-desktop-portal-hyprland
+      pkgs.xdg-desktop-portal-hyprland
     ];
     config.common.default = [
       "hyprland"
       "gtk"
     ];
-    configPackages = [ extra-pkgs.hyprland ];
+    configPackages = [ pkgs.hyprland ];
   };
 
   wayland.windowManager.hyprland = {
-    package = extra-pkgs.hyprland;
-    portalPackage = extra-pkgs.xdg-desktop-portal-hyprland;
+    package = pkgs.hyprland;
+    portalPackage = pkgs.xdg-desktop-portal-hyprland;
     enable = true;
     xwayland.enable = true;
     systemd = {

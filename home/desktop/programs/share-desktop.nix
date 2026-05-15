@@ -45,7 +45,7 @@
 
         # 注意：这里的变量需要根据你实际的 Sunshine 路径或脚本进行替换
         ExecStart = "${pkgs.sunshine}/bin/sunshine";
-        ExecStop = "pkill sunshine";
+        ExecStop = "/bin/pkill sunshine";
         Restart = "on-failure";
         RestartSec = "5s";
       };

@@ -2,7 +2,6 @@
   config,
   lib,
   pkgs,
-  extra-pkgs,
   ...
 }:
 # gotools,gopls的modernize冲突
@@ -30,8 +29,6 @@ in
       goreleaser # Deliver Go binaries as fast and easily as possible
       wire # 依赖注入
       go-swag # swag
-    ]
-    ++ [
-      extra-pkgs.goup-rs
+      goup-rs
     ];
 }

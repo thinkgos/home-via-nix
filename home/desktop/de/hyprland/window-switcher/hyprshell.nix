@@ -75,7 +75,7 @@
                         "Stop"
                       ];
                       details = "Kill or stop a process by name";
-                      command = ''pkill "{}" && notify-send hyprshell "stopped {}"'';
+                      command = ''/bin/pkill "{}" && /bin/notify-send hyprshell "stopped {}"'';
                       icon = "remove";
                     };
                   }

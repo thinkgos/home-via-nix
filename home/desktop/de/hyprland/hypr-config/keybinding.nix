@@ -13,11 +13,11 @@
     "$launchTerminal" = "alacritty";
     "$launchDropdownTerminal" = "blast-dropdown-terminal";
     "$launchFileManager" = "nemo";
-    "$launchCalculator" = "pkill qalculate-gtk || qalculate-gtk";
+    "$launchCalculator" = "/bin/pkill qalculate-gtk || qalculate-gtk";
     "$launchBrowser" = "google-chrome";
     "$launchIde" = "code";
-    "$launchScreenRecorder" = "pkill kooha || flatpak run io.github.seadve.Kooha";
-    "$appLauncher" = "pkill rofi || rofi -show drun";
+    "$launchScreenRecorder" = "/bin/pkill kooha || flatpak run io.github.seadve.Kooha";
+    "$appLauncher" = "/bin/pkill rofi || rofi -show drun";
     "$lockScreen" = "blast-screen-lock";
     "$helpKeybinding" = "hyprkcs";
     "$toggleWaybar" = "blast-toggle-waybar";

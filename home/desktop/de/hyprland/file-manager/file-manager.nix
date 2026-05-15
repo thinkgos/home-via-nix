@@ -16,7 +16,7 @@
       [Nemo Action]
       Name=Open in Kitty
       Comment=Open Kitty terminal in the selected directory
-      Exec=kitty --directory %P
+      Exec=${pkgs.kitty}/bin/kitty --directory %P
       Icon-Name=kitty
       Selection=any
       Extensions=dir;none;
@@ -25,7 +25,7 @@
       [Nemo Action]
       Name=Open in Alacritty
       Comment=Open Alacritty terminal in the selected directory
-      Exec=alacritty --working-directory %P
+      Exec=${pkgs.alacritty}/bin/alacritty --working-directory %P
       Icon-Name=alacritty
       Selection=any
       Extensions=dir;none;
@@ -34,7 +34,7 @@
       [Nemo Action]
       Name=Open in Ghostty
       Comment=Open Ghostty terminal in the selected directory
-      Exec=ghostty --working-directory=%P
+      Exec=${pkgs.ghostty}/bin/ghostty --working-directory=%P
       Icon-Name=com.mitchellh.ghostty
       Selection=any
       Extensions=dir;none;

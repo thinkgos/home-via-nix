@@ -2,7 +2,6 @@
   config,
   lib,
   pkgs,
-  extra-pkgs,
   customize,
   ...
 }:
@@ -34,8 +33,6 @@
       kdePackages.kcolorchooser # 颜色选择器
       localsend # 局域网文件传输工具
       drawy # 画布工具
-    ]
-    ++ (with extra-pkgs; [
       wayscrollshot # 滚动截图工具
-    ]);
+    ];
 }

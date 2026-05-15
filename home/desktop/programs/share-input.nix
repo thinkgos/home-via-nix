@@ -2,7 +2,6 @@
   config,
   lib,
   pkgs,
-  extra-pkgs,
   customize,
   ...
 }:
@@ -19,7 +18,7 @@ in
   programs.lan-mouse = {
     enable = enableLanMouse;
     systemd = builtins.elem "lan-mouse" customize.components;
-    package = extra-pkgs.lan-mouse;
+    package = pkgs.lan-mouse;
     # Optional configuration in nix syntax, see config.toml for available options
     # settings = { };
   };

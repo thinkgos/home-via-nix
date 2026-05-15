@@ -3,12 +3,11 @@
   lib,
   pkgs,
   customize,
-  extra-pkgs,
   ...
 }:
 {
   programs.niri = {
-    package = extra-pkgs.niri;
+    package = pkgs.niri;
     enable = true;
     settings = {
 

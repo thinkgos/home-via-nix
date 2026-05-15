@@ -76,24 +76,41 @@
                     inputs.stylix.homeModules.stylix
                     inputs.lan-mouse.homeManagerModules.default
                     inputs.niri.homeModules.niri
+
+                    # Overlay extra packages into pkgs
+                    {
+                      nixpkgs.overlays = [
+                        (final: prev: {
+                          lan-mouse = inputs.lan-mouse.packages.${system}.default;
+                          goup-rs = inputs.goup-rs.packages.${system}.default;
+                          wayscrollshot = inputs.wayscrollshot.packages.${system}.default;
+
+                          # hyprland
+                          hyprland = inputs.hyprland.packages.${system}.hyprland;
+                          xdg-desktop-portal-hyprland = inputs.hyprland.packages.${system}.xdg-desktop-portal-hyprland;
+                          hyprsplit = inputs.hyprsplit.packages.${system}.default;
+                          hypr-kcs = inputs.hypr-kcs.packages.${system}.default;
+                          hyprlock = pkgs.hyprlock.overrideAttrs (oldAttrs: {
+                            nativeBuildInputs = oldAttrs.nativeBuildInputs ++ [ pkgs.patchelf ];
+                            postFixup = ''
+                              file="$out/bin/hyprlock"
+                              patchelf --replace-needed libpam.so.0 /usr/lib/x86_64-linux-gnu/libpam.so.0 "$file"
+                              patchelf --add-needed /usr/lib/x86_64-linux-gnu/libaudit.so.1 "$file"
+                              patchelf --add-needed /usr/lib/x86_64-linux-gnu/libcap-ng.so.0 "$file"
+                              patchelf --add-needed /usr/lib/x86_64-linux-gnu/libcrypt.so.1 "$file"
+                              patchelf --add-needed /usr/lib/x86_64-linux-gnu/libpam_misc.so.0 "$file"
+                              patchelf --add-needed /usr/lib/x86_64-linux-gnu/libcap.so.2 "$file"
+                            '';
+                          });
+
+                          # niri
+                          niri = inputs.niri.packages.${system}.niri-unstable;
+                        })
+                      ];
+                    }
                   ];
-                  # Optionally use extraSpecialArgs
-                  # to pass through arguments to home.nix
                   extraSpecialArgs = {
                     inherit customize;
-                    extra-pkgs = {
-                      lan-mouse = inputs.lan-mouse.packages.${system}.default;
-                      goup-rs = inputs.goup-rs.packages.${system}.default;
-                      wayscrollshot = inputs.wayscrollshot.packages.${system}.default;
-
-                      #  hyprland
-                      hyprland = inputs.hyprland.packages.${system}.hyprland;
-                      xdg-desktop-portal-hyprland = inputs.hyprland.packages.${system}.xdg-desktop-portal-hyprland;
-                      hyprsplit = inputs.hyprsplit.packages.${system}.default;
-                      hypr-kcs = inputs.hypr-kcs.packages.${system}.default;
-                      #  niri
-                      niri = inputs.niri.packages.${system}.niri-unstable;
-                    };
                   };
                 };
             in

@@ -10,18 +10,7 @@
   # https://github.com/mahaveergurjar/Hyprlock-Dots
   programs.hyprlock = {
     enable = true;
-    package = pkgs.hyprlock.overrideAttrs (oldAttrs: {
-      nativeBuildInputs = oldAttrs.nativeBuildInputs ++ [ pkgs.patchelf ];
-      postFixup = ''
-        file="$out/bin/hyprlock"
-        patchelf --replace-needed libpam.so.0 /usr/lib/x86_64-linux-gnu/libpam.so.0 "$file"
-        patchelf --add-needed /usr/lib/x86_64-linux-gnu/libaudit.so.1 "$file"
-        patchelf --add-needed /usr/lib/x86_64-linux-gnu/libcap-ng.so.0 "$file"
-        patchelf --add-needed /usr/lib/x86_64-linux-gnu/libcrypt.so.1 "$file"
-        patchelf --add-needed /usr/lib/x86_64-linux-gnu/libpam_misc.so.0 "$file"
-        patchelf --add-needed /usr/lib/x86_64-linux-gnu/libcap.so.2 "$file"
-      '';
-    });
+    package = pkgs.hyprlock;
     settings = {
       "$font" = "JetBrainsMono Nerd Font Mono";
       "$splash" = "echo $(hyprctl splash)";

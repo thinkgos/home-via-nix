@@ -2,7 +2,6 @@
   config,
   lib,
   pkgs,
-  extra-pkgs,
   customize,
   ...
 }:
@@ -14,7 +13,7 @@
   wayland.windowManager.hyprland = {
     plugins = [
       # hyprlandPlugins.hyprexpo
-      extra-pkgs.hyprsplit
+      pkgs.hyprsplit
     ];
     settings.plugin = {
       hyprsplit = {

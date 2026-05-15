@@ -10,3 +10,5 @@ flathub_apps:
     description: yt-dlp frontend (Parabolic)
   - name: io.github.seadve.Kooha
     description: Kooha屏幕录制
+  - name: com.github.gmg137.netease-cloud-music-gtk
+    description: 网易云音乐GTK客户端

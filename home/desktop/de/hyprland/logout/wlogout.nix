@@ -17,35 +17,35 @@
       }
       {
         label = "logout";
-        # action = "hyprctl dispatch exit";
-        # action = "hyprctl dispatch exec \"hyprshutdown\"";
-        action = "notify-send -u critical '注销有BUG(logout)!'";
+        # action = "${pkgs.hyprland}/bin/hyprctl dispatch exit";
+        # action = "${pkgs.hyprland}/bin/hyprctl dispatch exec \"hyprshutdown\"";
+        action = "/bin/notify-send -u critical '注销有BUG(logout)!'";
         text = "注销 (E)";
         keybind = "e";
       }
       {
         label = "shutdown";
-        action = "systemctl poweroff";
+        action = "/bin/systemctl poweroff";
         text = "关机 (S)";
         keybind = "s";
       }
       {
         label = "reboot";
-        action = "systemctl reboot";
+        action = "/bin/systemctl reboot";
         text = "重启 (R)";
         keybind = "r";
       }
       {
         # 休眠是写到swap文件(swap空间必须大于内存), 需要主板与BIOS/UEFI支持(主板必须支持ACPI S4状态)
         label = "hibernate";
-        # action = "systemctl hibernate";
-        action = "notify-send -u critical '系统暂不支持休眠(hibernate)!'";
+        # action = "/bin/systemctl hibernate";
+        action = "/bin/notify-send -u critical '系统暂不支持休眠(hibernate)!'";
         text = "休眠 (H)";
         keybind = "h";
       }
       {
         label = "suspend";
-        action = "systemctl suspend";
+        action = "/bin/systemctl suspend";
         text = "挂起 (U)";
         keybind = "u";
       }
