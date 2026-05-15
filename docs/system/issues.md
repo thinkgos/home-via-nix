@@ -105,7 +105,7 @@ home-manager 配置:
 ```nix
   programs.hyprlock = {
     enable = true;
-        package = pkgs.hyprlock.overrideAttrs (oldAttrs: {
+      package = pkgs.hyprlock.overrideAttrs (oldAttrs: {
       nativeBuildInputs = oldAttrs.nativeBuildInputs ++ [ pkgs.patchelf ];
       postFixup = ''
         file="$out/bin/hyprlock"

@@ -15,3 +15,11 @@ echo "配置brightnessctl(自带udev规则)/sunshine权限(注意: 重启后生�
 sudo usermod -aG video $USER
 sudo usermod -aG input $USER
 sudo usermod -aG render $USER
+
+echo "配置hyprlock的pam配置..."
+cat >/etc/pam.d/hyprlock <<EOF
+#%PAM-1.0
+auth    required        pam_unix.so
+@include common-account
+@include common-session
+EOF
