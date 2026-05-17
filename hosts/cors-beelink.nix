@@ -10,13 +10,18 @@ lib.recursiveUpdate
       monitor-secondary = "";
     };
     components = [
-      "video-clip"
       "lan-mouse"
     ];
     apps = [
-      "nushell"
+      # "nushell"
       "yt-dlp"
       "wayvnc"
       "sunshine"
+      "obs-studio"
+      "aegisub"
+      "subtitlecomposer"
+      # "subtitleedit"
+      "ffsubsync"
+      "python313Packages.subliminal"
     ];
   }

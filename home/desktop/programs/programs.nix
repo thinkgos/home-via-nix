@@ -12,9 +12,9 @@
     ./cava/cava.nix
     ./obs-studio.nix
     ./yt-dlp.nix
+    ./video-clip.nix
   ]
-  ++ lib.optional (builtins.elem "obs-studio" customize.apps) ./obs-studio.nix
-  ++ lib.optional (builtins.elem "video-clip" customize.components) ./video-clip.nix;
+  ++ lib.optional (builtins.elem "obs-studio" customize.apps) ./obs-studio.nix;
 
   home.packages =
     with pkgs;

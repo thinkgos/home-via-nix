@@ -5,8 +5,8 @@
 # ls $(nix build nixpkgs#orchis-theme --no-link --print-out-paths)/share/[themes/icons/cursors]
 # apps:
 #   nushell, yt-dlp, wayvnc, sunshine, obs-studio
+#   视频剪辑: aegisub, subtitlecomposer, subtitleedit, ffsubsync, python313Packages.subliminal
 # components:
-#   视频剪辑: video-clip
 #   键鼠共享: deskflow, lan-mouse, lan-mouse-client
 { lib, pkgs }:
 {
