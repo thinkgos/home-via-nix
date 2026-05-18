@@ -80,6 +80,7 @@
                     inputs.stylix.homeModules.stylix
                     inputs.lan-mouse.homeManagerModules.default
                     inputs.niri.homeModules.niri
+                    inputs.hyprshell.homeModules.default
 
                     # Overlay extra packages into pkgs
                     {

@@ -15,7 +15,7 @@
     };
     # https://github.com/H3rmt/hyprshell/blob/hyprshell-release/docs/CONFIGURE.md#config-options
     settings = {
-      version = 3;
+      version = 4;
       windows = {
         scale = 8.5;
         items_per_row = 5;
@@ -23,8 +23,7 @@
           modifier = "super";
           key = "a";
           filter_by = [ ];
-          hide_filtered = false;
-          exclude_special_workspaces = "";
+          exclude_workspaces = "";
           launcher = {
             default_terminal = "alacritty";
             launch_modifier = "ctrl";
@@ -113,7 +112,7 @@
           key = "Tab";
           filter_by = [ "current_monitor" ];
           switch_workspaces = false;
-          exclude_special_workspaces = "";
+          exclude_workspaces = "";
         };
         switch_2 = null;
       };
