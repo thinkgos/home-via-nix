@@ -29,7 +29,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprsplit = {
-      url = "github:shezdy/hyprsplit";
+      # url = "github:shezdy/hyprsplit";
+      url = "github:thinkgos/hyprsplit";
       inputs.hyprland.follows = "hyprland";
     };
     hyprshell = {

@@ -72,7 +72,7 @@
     package = pkgs.hyprland;
     portalPackage = pkgs.xdg-desktop-portal-hyprland;
     enable = true;
-    configType = "hyprlang";
+    configType = "lua";
     xwayland.enable = true;
     systemd = {
       enable = true;

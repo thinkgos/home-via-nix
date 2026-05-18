@@ -96,10 +96,10 @@
             "*" = 2;
           };
           on-click = "activate";
-          on-scroll-up = "${pkgs.hyprland}/bin/hyprctl dispatch split:workspace r-1";
-          on-scroll-down = "${pkgs.hyprland}/bin/hyprctl dispatch split:workspace r+1";
-          # on-scroll-up = "hyprctl dispatch workspace e-1";
-          # on-scroll-down = "hyprctl dispatch workspace e+1";
+          on-scroll-up = ''${pkgs.hyprland}/bin/hyprctl dispatch "hl.plugin.hyprsplit.dsp.focus({ workspace = 'r-1' })"'';
+          on-scroll-down = ''${pkgs.hyprland}/bin/hyprctl dispatch "hl.plugin.hyprsplit.dsp.focus({ workspace = 'r+1' })"'';
+          # on-scroll-up = ''${pkgs.hyprland}/bin/hyprctl dispatch "hl.dsp.focus({ workspace = "e-1" })"'';
+          # on-scroll-down = ''${pkgs.hyprland}/bin/hyprctl dispatch "hl.dsp.focus({ workspace = "e+1" })"'';
         };
         # 窗口 ✅
         "hyprland/window" = {
@@ -115,8 +115,8 @@
             "💥 (.*) - Alacritty" = " $1";
             "💥 (.*) - zsh" = "󰆍 $1";
           };
-          on-click = "${pkgs.hyprland}/bin/hyprctl dispatch fullscreen 1";
-          on-click-right = "${pkgs.hyprland}/bin/hyprctl dispatch layoutmsg togglesplit"; # Dwindle切换横纵分割
+          on-click = ''${pkgs.hyprland}/bin/hyprctl dispatch "hl.dsp.window.fullscreen({ mode = 'maximized', action = 'toggle' })"'';
+          on-click-right = ''${pkgs.hyprland}/bin/hyprctl dispatch "hl.dsp.layout('togglesplit')"''; # Dwindle切换横纵分割
         };
 
         # 任务栏 ✅

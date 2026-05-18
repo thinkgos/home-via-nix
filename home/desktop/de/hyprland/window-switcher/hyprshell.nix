@@ -148,7 +148,6 @@
 
       [Service]
       ExecStartPre=/bin/sh -c '[ "$XDG_CURRENT_DESKTOP" = "Hyprland" ] || exit 0'
-      Restart=
       Restart=always
       RestartSec=2
       TimeoutStopSec=5
