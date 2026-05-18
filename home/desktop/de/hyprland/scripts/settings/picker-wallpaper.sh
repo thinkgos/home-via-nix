@@ -15,7 +15,7 @@ INDEX=$(
     for p in "${PATHS[@]}"; do
         echo -en "$(basename "$p")\0icon\x1f$p\n"
     done |
-        rofi -dmenu -format i -config "~/.config/rofi/config-wallpaper.rasi"
+        rofi -dmenu -format i -config "$HOME/.config/rofi/config-wallpaper.rasi"
 )
 
 # 没选则退出
@@ -28,4 +28,4 @@ awww img \
     --transition-type "$TRANSITION" \
     --transition-fps "$FPS" \
     --transition-step "$STEP" \
-    $FULL_PATH
+    "$FULL_PATH"
