@@ -32,6 +32,10 @@
       url = "github:shezdy/hyprsplit";
       inputs.hyprland.follows = "hyprland";
     };
+    hyprshell = {
+      url = "github:H3rmt/hyprshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     hypr-kcs.url = "github:kosa12/hyprKCS";
 
     # niri
@@ -89,6 +93,7 @@
                           hyprland = inputs.hyprland.packages.${system}.hyprland;
                           xdg-desktop-portal-hyprland = inputs.hyprland.packages.${system}.xdg-desktop-portal-hyprland;
                           hyprsplit = inputs.hyprsplit.packages.${system}.default;
+                          hyprshell = inputs.hyprshell.packages.${system}.default;
                           hypr-kcs = inputs.hypr-kcs.packages.${system}.default;
                           hyprlock = pkgs.hyprlock.overrideAttrs (oldAttrs: {
                             nativeBuildInputs = oldAttrs.nativeBuildInputs ++ [ pkgs.patchelf ];
