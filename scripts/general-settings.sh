@@ -17,9 +17,9 @@ sudo usermod -aG input $USER
 sudo usermod -aG render $USER
 
 echo "配置hyprlock的pam配置..."
-cat >/etc/pam.d/hyprlock <<EOF
+sudo tee /etc/pam.d/hyprlock <<EOF
 #%PAM-1.0
-auth    required        pam_unix.so
+auth      required      pam_unix.so
 @include common-account
 @include common-session
 EOF
