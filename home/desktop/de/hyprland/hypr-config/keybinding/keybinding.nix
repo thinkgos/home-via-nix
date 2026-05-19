@@ -24,7 +24,7 @@ in
   # https://wiki.hypr.land/Configuring/Binds/
   wayland.windowManager.hyprland = {
     # NOTE:
-    # `Super` + `A`: 显示工作区和应用启动器概览(hyprshell支持)
+    # `Super` + `W`: 显示工作区和应用启动器概览(hyprshell支持)
     # `Alt` + `Tab`: 切换应用程序(hyprshell支持)
     settings = {
       # local variable

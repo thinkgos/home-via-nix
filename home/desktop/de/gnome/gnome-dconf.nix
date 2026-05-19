@@ -137,7 +137,7 @@
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
       name = "albert";
       command = "${pkgs.albert}/bin/albert toggle";
-      binding = "<Super>Return";
+      binding = "<Super>a";
     };
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3" = {
       name = "ide";

@@ -25,7 +25,7 @@
 | 还原键盘快捷键 | `Super` + `Esc` | | ◻️ | | ◻️ |
 | 聚焦到活动通知 | `Super` + `N` | | ◻️ | | ◻️ |
 | 锁定屏幕 | `Super` + `L` | `Super` + `L` | ✅ | `Super` + `L` | ✅ |
-| 显示概览 | 🚫 (`Super`) | `Super`(系统级)<br />`Super` + `A` | ✅ | `Super` + `A` | ✅ (`hyprshell`) |
+| 显示概览 | 🚫 (`Super`) | `Super`(系统级)<br />`Super` + `A` | ✅ | `Super` + `W` | ✅ (`hyprshell`) |
 | 显示全部应用 | `Super` + `A` | 🚫 | ✅ | ❌ | ❌ |
 | 显示通知列表 | `Super` + `V` | 🚫 | ✅ | ❌ | ❌ |
 | 显示运行命令提示符 | `Alt` + `F2` | | ◻️ | | ◻️ |
@@ -77,7 +77,7 @@
 | 搜索 | 🚫 | | ◻️ | | ◻️ |
 | 主目录(启动文件管理器) | 🚫 | `Super` + `E` | ✅ | `Super` + `E` | ✅ |
 | 启动终端 | ❌ | `Super` + `T` | ✅ | `Super` + `T` | ✅ |
-| 启动应用启动器 | ❌ | `Super` + `Return` | ✅ | `Super` + `Return` | ✅ |
+| 启动应用启动器 | ❌ | `Super` + `Return` | ✅ | `Super` + `A` | ✅ |
 
 ## 工作区和窗口
 

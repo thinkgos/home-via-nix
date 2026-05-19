@@ -63,7 +63,7 @@ in
       }
       {
         _args = [
-          (mkLuaInline ''mod .. " + Return"'')
+          (mkLuaInline ''mod .. " + A"'')
           (mkLuaInline "hl.dsp.exec_cmd(popupAppLauncher)")
           { description = "启动应用启动器"; }
         ];
