@@ -28,9 +28,18 @@ in
           gaps_in = 1;
           gaps_out = 2;
           float_gaps = 5;
-          "col.inactive_border" = "rgba(595959aa)";
-          # "col.active_border" = "rgba(33ccffee) rgba(6c71ffee) rgba(00ff99ee) 45deg"; # 天蓝/靛紫色/翠绿
-          "col.active_border" = "rgba(00ff99ee)"; # 翠绿
+          col = {
+            inactive_border = "#595959aa";
+            # 天蓝/靛紫色/翠绿
+            active_border = {
+              colors = [
+                "#33ccffee"
+                "#6c71ffee"
+                "#00ff99ee"
+              ];
+              angle = 45;
+            };
+          };
           layout = "dwindle";
         };
         decoration = {
@@ -55,12 +64,26 @@ in
           merge_groups_on_groupbar = true;
           merge_floated_into_tiled_on_groupbar = false;
           group_on_movetoworkspace = false;
-          # "col.border_active" = "rgba(b4befeee) rgba(cba6f7ee) rgba(6c71ffee) 45deg";
-          "col.border_active" = "rgba(b4befeee)";
-          "col.border_inactive" = "rgba(313244aa)";
-          # "col.border_locked_active" = "rgba(f9e2afee) rgba(fab387ee) rgba(f38ba8ee) 45deg";
-          "col.border_locked_active" = "rgba(f9e2afee)";
-          "col.border_locked_inactive" = "rgba(45475aaa)";
+          col = {
+            border_inactive = "#313244aa";
+            border_active = {
+              colors = [
+                "#b4befeee"
+                "#cba6f7ee"
+                "#6c71ffee"
+              ];
+              angle = 45;
+            };
+            border_locked_inactive = "#45475aaa";
+            border_locked_active = {
+              colors = [
+                "#f9e2afee"
+                "#fab387ee"
+                "#f38ba8ee"
+              ];
+              angle = 45;
+            };
+          };
           groupbar = {
             enabled = true;
             font_family = font;
@@ -82,11 +105,13 @@ in
             gradient_rounding_power = 2.0;
             round_only_edges = true;
             gradient_round_only_edges = true;
-            text_color = "rgba(cdd6f4ee)";
-            "col.active" = "rgba(89b4faee)";
-            "col.inactive" = "rgba(1e1e2eaa)";
-            "col.locked_active" = "rgba(89b4faee)";
-            "col.locked_inactive" = "rgba(1e1e2eaa)";
+            text_color = "#cdd6f4ee";
+            col = {
+              active = "#89b4faee";
+              inactive = "#1e1e2eaa";
+              locked_active = "#89b4faee";
+              locked_inactive = "#1e1e2eaa";
+            };
             gaps_in = 2;
             gaps_out = 2;
             keep_upper_gap = true;
