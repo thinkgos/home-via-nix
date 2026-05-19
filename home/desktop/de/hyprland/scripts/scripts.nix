@@ -3,7 +3,8 @@
   lib,
   pkgs,
   ...
-}:let
+}:
+let
   lib' = import ../../../../lib/lib.nix { inherit config lib pkgs; };
   mkShell =
     name: src:
@@ -26,6 +27,6 @@ in
     (mkShell "blast-switch-last-workspace" ./switch-last-workspace.sh)
     (pkgs.writeShellScriptBin "blast-toggle-waybar" (builtins.readFile ./toggle-waybar.sh))
     (pkgs.writeShellScriptBin "blast-clipboard" (builtins.readFile ./clipboard.sh))
-    (pkgs.writeShellScriptBin "blast-flatpak" (builtins.readFile ./flatpak.sh)) 
+    (pkgs.writeShellScriptBin "blast-flatpak" (builtins.readFile ./flatpak.sh))
   ];
 }

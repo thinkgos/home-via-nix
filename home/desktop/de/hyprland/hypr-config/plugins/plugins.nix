@@ -56,7 +56,7 @@ in
   };
 
   xdg.configFile = {
-    "hypr/hyprsplit"   = {
+    "hypr/hyprsplit" = {
       source = "${pkgs.hyprsplit}/share/hyprsplit";
       recursive = true;
     };
