@@ -3,7 +3,8 @@
   lib,
   pkgs,
   ...
-}:{
+}:
+{
   # 通知中心
   # mako 极简通知中心
   # https://github.com/emersion/mako/blob/master/doc/mako.5.scd

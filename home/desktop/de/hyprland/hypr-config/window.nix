@@ -5,46 +5,132 @@
   ...
 }:
 {
-  # Hyprland 窗口
+  # Hyprland 窗口规则和层规则
   wayland.windowManager.hyprland.settings = {
-    layerrule = [
-      "blur on, ignore_alpha 0.5, match:namespace wofi"
-      "blur on, ignore_alpha 0.5, match:namespace rofi"
+    # 层规则
+    layer_rule = [
+      {
+        match.namespace = "wofi";
+        blur = true;
+        ignore_alpha = 0.5;
+      }
+      {
+        match.namespace = "rofi";
+        blur = true;
+        ignore_alpha = 0.5;
+      }
     ];
-    windowrule = [
+
+    # 窗口规则
+    window_rule = [
       # 计算器/网络/蓝牙/音频
-      "float on, size 750 480, move (monitor_w-750)*0.5 160, match:class ^(qalculate-gtk|nm-connection-editor|.blueman-manager-wrapped|org.pulseaudio.pavucontrol|org.fcitx.)$"
+      {
+        match.class = "^(qalculate-gtk|nm-connection-editor|.blueman-manager-wrapped|org.pulseaudio.pavucontrol|org.fcitx.)$";
+        float = true;
+        size = [
+          750
+          480
+        ];
+        move = [
+          "(monitor_w-750)*0.5"
+          160
+        ];
+      }
       # 文件/邮件/监控/vlc/cc-switch/clash-verge/磁盘/磁盘分析工具
-      "float on, size monitor_w*0.6 monitor_h*0.6, center on, match:class ^(nemo|io.missioncenter.MissionCenter|vlc|cc-switch|clash-verge|gnome-disks|org.gnome.baobab|com.github.tchx84.Flatseal)$"
+      {
+        match.class = "^(nemo|io.missioncenter.MissionCenter|vlc|cc-switch|clash-verge|gnome-disks|org.gnome.baobab|com.github.tchx84.Flatseal)$";
+        float = true;
+        size = [
+          "monitor_w*0.6"
+          "monitor_h*0.6"
+        ];
+        center = true;
+      }
       # LocalSend
-      "float on, size 720 800, move (monitor_w-720)*0.5 100, match:class ^(localsend_app)$"
+      {
+        match.class = "^(localsend_app)$";
+        float = true;
+        size = [
+          720
+          800
+        ];
+        move = [
+          "(monitor_w-720)*0.5"
+          100
+        ];
+      }
       # 图片预览/截图标注
-      "float on, size monitor_w*0.8 monitor_h*0.8, center on, match:class ^(com.gabm.satty|org.kde.gwenview)$"
+      {
+        match.class = "^(com.gabm.satty|org.kde.gwenview)$";
+        float = true;
+        size = [
+          "monitor_w*0.8"
+          "monitor_h*0.8"
+        ];
+        center = true;
+      }
       # 下拉式终端窗口规则
-      "float on,  size monitor_w monitor_h*0.4, move 0 0, rounding 0, workspace special:dropdown-terminal, match:class ^(dropdown-terminal)$"
-
+      {
+        match.class = "^(dropdown-terminal)$";
+        float = true;
+        size = [
+          "monitor_w"
+          "monitor_h*0.4"
+        ];
+        move = [
+          0
+          0
+        ];
+        rounding = 0;
+        workspace = "special:dropdown-terminal";
+      }
       # 在终端使用ueberzugpp显示图片, 不支持kitty图片显示协议的终端.
-      "float on, no_focus on, match:class ^(ueberzugpp_.*)$"
-
+      {
+        match.class = "^(ueberzugpp_.*)$";
+        float = true;
+        no_focus = true;
+      }
       # 截图标注
-      "float on, match:initial_title ^(flameshot)$"
-
+      {
+        match.initial_title = "^(flameshot)$";
+        float = true;
+      }
       # 交互式录屏
-      "size 230 230, move monitor_w-260 60, match:class ^(io.github.seadve.Kooha)$"
-
-      # NOTE:
-      # 目前不支持同时满足全屏和指定应用的规则
-      # match:fullscreen 这个最大化和全屏都认为是fullscreen.
-
-      # 空闲抑制规则
-
-      # 全屏时, 进入空闲抑制
-      "idle_inhibit fullscreen, match:fullscreen_state_client 2"
-      "idle_inhibit fullscreen, match:fullscreen_state_internal 2"
-
+      {
+        match.class = "^(io.github.seadve.Kooha)$";
+        size = [
+          230
+          230
+        ];
+        move = [
+          "(monitor_w-260)*0.5"
+          60
+        ];
+      }
+      # 空闲抑制规则 - 全屏时, 进入空闲抑制
+      {
+        match.fullscreen_state_client = 2;
+        idle_inhibit = "fullscreen";
+      }
+      {
+        match.fullscreen_state_internal = 2;
+        idle_inhibit = "fullscreen";
+      }
       # 浏览器, 在全屏时启用不透明
-      "opaque on, match:fullscreen_state_client 2, match:class ^(google-chrome|firefox)$"
-      "opaque on, match:fullscreen_state_internal 2, match:class ^(google-chrome|firefox)$"
+      {
+        match = {
+          fullscreen_state_client = 2;
+          class = "^(google-chrome|firefox)$";
+        };
+        opaque = true;
+      }
+      {
+        match = {
+          fullscreen_state_internal = 2;
+          class = "^(google-chrome|firefox)$";
+        };
+        opaque = true;
+      }
     ];
   };
 }

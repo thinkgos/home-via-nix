@@ -5,10 +5,19 @@
   ...
 }:
 {
-  # Hyprland 工作空间
-  wayland.windowManager.hyprland.settings.workspace = [
-    "r[1-2], layout:scrolling"
-    "3, layout:dwindle"
-    "4, on-created-empty:$launchTerminal"
+  # Hyprland 工作空间 ✅
+  wayland.windowManager.hyprland.settings.workspace_rule = [
+    {
+      workspace = "r[1-2]";
+      layout = "scrolling";
+    }
+    {
+      workspace = "3";
+      layout = "dwindle";
+    }
+    {
+      workspace = "4";
+      on_created_empty = "${pkgs.alacritty}/bin/alacritty";
+    }
   ];
 }

@@ -9,6 +9,6 @@
   # https://codeberg.org/LGFae/awww
   services.awww = {
     enable = true;
-    extraArgs = [];
+    extraArgs = [ ];
   };
 }

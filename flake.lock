@@ -595,20 +595,18 @@
     },
     "hyprsplit": {
       "inputs": {
-        "hyprland": [
-          "hyprland"
-        ]
+        "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1778458863,
-        "narHash": "sha256-VeVHk55Vg9+0BfUS+GleE7vZfa7ssb4yM+p+noJ349w=",
-        "owner": "shezdy",
+        "lastModified": 1779158334,
+        "narHash": "sha256-f/cznOCRcuTS94EppeHO8uBDE/rQdZ0cnH0D2Yie0gY=",
+        "owner": "thinkgos",
         "repo": "hyprsplit",
-        "rev": "ea230fc65b4bd591451d2305140a2e3fbce894ca",
+        "rev": "fe88faa42b7b98c0169d5b407cf261e26e52b018",
         "type": "github"
       },
       "original": {
-        "owner": "shezdy",
+        "owner": "thinkgos",
         "repo": "hyprsplit",
         "type": "github"
       }
@@ -746,7 +744,7 @@
     },
     "lan-mouse": {
       "inputs": {
-        "nixpkgs": "nixpkgs_2",
+        "nixpkgs": "nixpkgs_3",
         "rust-overlay": "rust-overlay_2"
       },
       "locked": {
@@ -900,6 +898,22 @@
     },
     "nixpkgs_2": {
       "locked": {
+        "lastModified": 1778869304,
+        "narHash": "sha256-30sZNZoA1cqF5JNO9fVX+wgiQYjB7HJqqJ4ztCDeBZE=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "d233902339c02a9c334e7e593de68855ad26c4cb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_3": {
+      "locked": {
         "lastModified": 1772963539,
         "narHash": "sha256-9jVDGZnvCckTGdYT53d/EfznygLskyLQXYwJLKMPsZs=",
         "owner": "nixos",
@@ -914,7 +928,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_3": {
+    "nixpkgs_4": {
       "locked": {
         "lastModified": 1778869304,
         "narHash": "sha256-30sZNZoA1cqF5JNO9fVX+wgiQYjB7HJqqJ4ztCDeBZE=",
@@ -989,7 +1003,7 @@
         "hyprsplit": "hyprsplit",
         "lan-mouse": "lan-mouse",
         "niri": "niri",
-        "nixpkgs": "nixpkgs_3",
+        "nixpkgs": "nixpkgs_4",
         "stylix": "stylix",
         "wayscrollshot": "wayscrollshot"
       }
