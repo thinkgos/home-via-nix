@@ -17,8 +17,8 @@
       }
       {
         label = "logout";
-        # action = "${pkgs.hyprland}/bin/hyprctl dispatch exit";
-        # action = "${pkgs.hyprland}/bin/hyprctl dispatch exec \"hyprshutdown\"";
+        # action = "${pkgs.hyprland}/bin/hyprctl dispatch 'hl.dsp.exit()'";
+        # action = ''${pkgs.hyprland}/bin/hyprctl dispatch  'hl.dsp.exec_cmd("hyprshutdown")'';
         action = "/bin/notify-send -u critical '注销有BUG(logout)!'";
         text = "注销 (E)";
         keybind = "e";

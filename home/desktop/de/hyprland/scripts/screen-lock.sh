@@ -2,4 +2,4 @@
 
 # 锁屏并关闭屏幕
 hyprlock &
-sleep 1 && hyprctl dispatch dpms off
+sleep 1 && hyprctl dispatch 'hl.dsp.dpms({ action = "disable" })'

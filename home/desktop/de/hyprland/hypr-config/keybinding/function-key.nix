@@ -22,6 +22,16 @@ in
           }
         ];
       }
+      {
+        _args = [
+          "XF86AudioMicMute"
+          (mkLuaInline ''hl.dsp.exec_cmd("${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle")'')
+          {
+            locked = true;
+            description = "麦克风关闭/打开";
+          }
+        ];
+      }
       # 持续性操作 (如音量、亮度调节) 需brightnessctl,wireplumber
       # 声音调整 ✅
       {
@@ -69,6 +79,11 @@ in
           }
         ];
       }
+      # -- Requires playerctl
+      # hl.bind("XF86AudioNext",  hl.dsp.exec_cmd("playerctl next"),       { locked = true })
+      # hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
+      # hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
+      # hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
     ];
   };
 }
