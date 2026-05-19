@@ -31,7 +31,6 @@
     hyprsplit = {
       # url = "github:shezdy/hyprsplit";
       url = "github:thinkgos/hyprsplit";
-      inputs.hyprland.follows = "hyprland";
     };
     hyprshell = {
       url = "github:H3rmt/hyprshell";
@@ -87,6 +86,11 @@
                     {
                       nixpkgs.overlays = [
                         (final: prev: {
+                          ohshell = import ./packages/ohshell/ohshell.nix {
+                            inherit lib;
+                            pkgs = prev;
+                          };
+
                           lan-mouse = inputs.lan-mouse.packages.${system}.default;
                           goup-rs = inputs.goup-rs.packages.${system}.default;
                           wayscrollshot = inputs.wayscrollshot.packages.${system}.default;

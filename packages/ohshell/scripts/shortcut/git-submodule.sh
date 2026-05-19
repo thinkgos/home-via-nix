@@ -26,6 +26,7 @@ git-submodule-command() {
         return 1
     fi
     if [[ $PARALLEL == true ]]; then
+        # shellcheck disable=SC2016
         git submodule foreach --quiet --recursive 'echo $path' |
             parallel -j 8 --keep-order "cd {} && echo '进入 {}' && $command"
     else
@@ -34,6 +35,7 @@ git-submodule-command() {
 }
 
 PARSED=$(getopt -o m:b:c:nh --long mode:,branch:,command:,no-parallel,help -n "$0" -- "$@")
+# shellcheck disable=SC2181
 if [ $? -ne 0 ]; then
     usage
 fi

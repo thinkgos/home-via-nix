@@ -18,6 +18,7 @@ usage() {
 MODE="preview"
 
 PARSED=$(getopt -o m:h --long mode:,help -n "$0" -- "$@")
+# shellcheck disable=SC2181
 if [ $? -ne 0 ]; then
     usage
 fi
@@ -64,7 +65,7 @@ content)
     # 回车vim编辑
     # ctrl+o开新窗口进行vim编辑
     # ctrl+y复制文件内容到剪贴板
-    RELOAD="reload:rg --column --color=always --smart-case {q} ${PATHS[@]} || :"
+    RELOAD="reload:rg --column --color=always --smart-case {q} ${PATHS[*]} || :"
     fzf \
         --disabled \
         --ansi \
