@@ -18,7 +18,6 @@ usage() {
 MODE="preview"
 
 PARSED=$(getopt -o m:h --long mode:,help -n "$0" -- "$@")
-# shellcheck disable=SC2181
 if [ $? -ne 0 ]; then
     usage
 fi

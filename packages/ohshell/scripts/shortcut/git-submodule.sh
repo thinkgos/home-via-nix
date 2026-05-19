@@ -35,7 +35,6 @@ git-submodule-command() {
 }
 
 PARSED=$(getopt -o m:b:c:nh --long mode:,branch:,command:,no-parallel,help -n "$0" -- "$@")
-# shellcheck disable=SC2181
 if [ $? -ne 0 ]; then
     usage
 fi

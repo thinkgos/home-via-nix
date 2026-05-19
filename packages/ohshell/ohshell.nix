@@ -25,7 +25,10 @@ in
       source ${log4sh}/lib/shell/log4sh.sh
       ${builtins.readFile ./scripts/shortcut/fzf-preview.sh}
     '';
-    excludeShellChecks = [ "SC1091" ];
+    excludeShellChecks = [
+      "SC1091"
+      "SC2181"
+    ];
     runtimeInputs = with pkgs; [
       fzf
       fd
@@ -43,7 +46,10 @@ in
       source ${log4sh}/lib/shell/log4sh.sh
       ${builtins.readFile ./scripts/shortcut/git-submodule.sh}
     '';
-    excludeShellChecks = [ "SC1091" ];
+    excludeShellChecks = [
+      "SC1091"
+      "SC2181"
+    ];
     runtimeInputs = with pkgs; [
       git
       parallel
