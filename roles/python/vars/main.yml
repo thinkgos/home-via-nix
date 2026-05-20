@@ -11,6 +11,11 @@
 python_manager: ~/.nix-profile/bin/uv
 python_app_prune: true # 是否移除不在列表里的已装工具(相当于 --prune)
 python_app:
+  # 各类文件转换成 markdown 格式
+  # https://github.com/microsoft/markitdown
   - name: markitdown
-    python: "3.14"
+    extras: ["all"]
+  # mysql 客户端
+  # https://github.com/dbcli/mycli
+  - name: mycli
     extras: ["all"]
