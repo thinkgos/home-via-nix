@@ -4,15 +4,6 @@
   pkgs,
   ...
 }:
-let
-  # 光标动画: https://github.com/sahaj-b/ghostty-cursor-shaders
-  cursorTrailShader = pkgs.fetchFromGitHub {
-    owner = "sahaj-b";
-    repo = "ghostty-cursor-shaders";
-    rev = "main";
-    hash = "sha256-ruhEqXnWRCYdX5mRczpY3rj1DTdxyY3BoN9pdlDOKrE=";
-  };
-in
 {
   programs.ghostty = {
     enable = true;
@@ -106,7 +97,7 @@ in
       cursor-opacity = 0.8;
 
       # custom shader
-      custom-shader = "${cursorTrailShader}/cursor_tail.glsl";
+      custom-shader = "${pkgs.ghostty-cursor-shaders}/cursor_tail.glsl";
 
       # 下拉终端(Quake 风格)
       # quick-terminal-position = "top";

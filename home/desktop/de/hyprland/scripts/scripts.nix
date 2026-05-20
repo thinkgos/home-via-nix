@@ -8,7 +8,7 @@ let
   mkShell =
     name: src:
     pkgs.writeShellScriptBin name ''
-      source ${pkgs.ohshell.log4sh}/lib/shell/log4sh.sh
+      source ${pkgs.ohlib.log4sh}/lib/shell/log4sh.sh
       ${builtins.readFile src}
     '';
 in

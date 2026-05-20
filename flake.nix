@@ -86,9 +86,21 @@
                     {
                       nixpkgs.overlays = [
                         (final: prev: {
-                          ohshell = import ./packages/ohshell/ohshell.nix {
+                          ohlib = import ./packages/ohlib {
                             inherit lib;
-                            pkgs = prev;
+                            pkgs = final;
+                          };
+                          ohshell = import ./packages/ohshell {
+                            inherit lib;
+                            pkgs = final;
+                          };
+                          home-assets = import ./packages/home-assets {
+                            inherit lib;
+                            pkgs = final;
+                          };
+                          ghostty-cursor-shaders = import ./packages/ghostty-cursor-shaders {
+                            inherit lib;
+                            pkgs = final;
                           };
 
                           lan-mouse = inputs.lan-mouse.packages.${system}.default;

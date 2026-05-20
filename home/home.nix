@@ -119,6 +119,7 @@
     parallel # 并行执行命令
     imagemagick # 图片处理工具集
 
+    nix
     nixd
     nil
     nixfmt
