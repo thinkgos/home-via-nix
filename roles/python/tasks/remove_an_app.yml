@@ -1,0 +1,4 @@
+- name: "移除工具: {{ app.name }}"
+  ansible.builtin.command:
+    cmd: "{{ python_manager }} tool uninstall {{ app.name }}"
+  changed_when: true

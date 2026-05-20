@@ -1,0 +1,16 @@
+# 声明要安装的工具列表
+# 每个 entry 支持以下字段:
+#   name:    工具名(必填)
+#   package: PyPI 包名(默认同 name)
+#   version: 版本约束，如 ">=0.4"
+#   python:  指定 Python 版本，如 "3.12"
+#   with:    注入同一环境的额外包列表
+#   extras:  安装 extras，如 ["default"]
+#   state:   present(默认) | absent
+
+python_manager: ~/.nix-profile/bin/uv
+python_app_prune: true # 是否移除不在列表里的已装工具(相当于 --prune)
+python_app:
+  - name: markitdown
+    python: "3.14"
+    extras: ["all"]

@@ -1,0 +1,2 @@
+- name: 安装/升级 Python 应用
+  ansible.builtin.include_tasks: install.yml

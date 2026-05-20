@@ -1,0 +1,23 @@
+- name: "安装/升级工具: {{ app.name }}"
+  vars:
+    _pkg: >-
+      {{
+        (app.package | default(app.name))
+        + (('[' + (app.extras | join(',')) + ']') if app.extras is defined else '')
+        + (app.version | default(''))
+      }}
+    _with_args: >-
+      {{
+        (app.with | default([]))
+        | map('regex_replace', '^(.+)$', '--with \1')
+        | join(' ')
+      }}
+    _python_arg: "{{ ('--python ' + app.python) if app.python is defined else '' }}"
+    _cmd: "{{ python_manager }} tool install {{ _pkg }} --upgrade {{ _with_args }} {{ _python_arg }}"
+  ansible.builtin.command:
+    cmd: "{{ _cmd | trim }}"
+  register: python_install_result
+  changed_when: >-
+    'Installed' in python_install_result.stdout or
+    'Updated' in python_install_result.stdout or
+    'Reinstalled' in python_install_result.stdout

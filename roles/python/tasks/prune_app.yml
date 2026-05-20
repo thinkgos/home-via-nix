@@ -1,0 +1,8 @@
+- name: "Prune: 移除不在声明列表中的工具"
+  vars:
+    declared_names: "{{ python_app | map(attribute='name') | list }}"
+    to_remove: "{{ python_installed_tools | difference(declared_names) }}"
+  ansible.builtin.command:
+    cmd: "{{ python_manager }} tool uninstall {{ item }}"
+  loop: "{{ to_remove }}"
+  changed_when: true

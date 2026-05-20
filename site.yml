@@ -1,7 +1,6 @@
-# ansible-playbook site.yml -u <username> --tags system,github,flathub,unfree -K
+# ansible-playbook site.yml -u <username> --tags system,github,flathub,unfree --become -K
 - name: 通用软件管理
   hosts: 127.0.0.1
-  become: true
   gather_facts: false
   environment:
     http_proxy: "http://127.0.0.1:7890"
@@ -27,6 +26,9 @@
 
     - role: flathub
       tags: "flathub"
+
+    - role: python
+      tags: "python"
 
     - role: unfree
       tags: "unfree"

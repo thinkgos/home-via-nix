@@ -1,0 +1,44 @@
+- name: 加载python变量
+  ansible.builtin.include_vars: vars/main.yml
+
+- name: 收集uv安装的工具
+  ansible.builtin.command:
+    cmd: "{{ python_manager }} tool list --show-version-specifiers"
+  register: python_tool_list_raw
+  changed_when: false
+
+- name: 解析已安装工具名列表
+  ansible.builtin.set_fact:
+    python_installed_tools: >-
+      {{
+        python_tool_list_raw.stdout_lines
+        | reject('match', '^\s*-')
+        | reject('match', '^\s*$')
+        | map('split')
+        | map(attribute=0)
+        | select('match', '^[a-zA-Z0-9]')
+        | list
+      }}
+
+- name: 安装/升级工具
+  ansible.builtin.include_tasks: install_an_app.yml
+  loop: "{{ python_app | selectattr('state', 'undefined') | list
+          + python_app | selectattr('state', 'defined') | selectattr('state', 'eq', 'present') | list }}"
+  loop_control:
+    loop_var: app
+
+- name: 移除标记为 absent 的工具
+  ansible.builtin.include_tasks: remove_an_app.yml
+  loop: "{{ python_app | selectattr('state', 'defined') | selectattr('state', 'eq', 'absent') | list }}"
+  loop_control:
+    loop_var: app
+  when: app.name in python_installed_tools
+
+- name: Prune:移除不在声明列表中的工具
+  ansible.builtin.include_tasks: prune_app.yml
+  when: python_app_prune | bool
+
+- name: "工具执行路径加入PATH"
+  ansible.builtin.command:
+    cmd: "{{ python_manager }} tool update-shell"
+  changed_when: false
