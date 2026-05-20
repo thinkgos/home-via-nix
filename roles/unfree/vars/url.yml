@@ -1,4 +1,4 @@
-unfree_url_apps:
+unfree_url_apps: []
   # debian/redhat 策略: 分发行版提供不同安装包 URL
   # - name: "example-pkg"
   #   description: "示例安装包"

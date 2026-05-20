@@ -13,13 +13,14 @@ github_apps:
   #   binaries: []
   #   binary_pattern: ""
 
-  - name: "clash-verge-rev"
-    description: "clash代理"
-    repo: "clash-verge-rev/clash-verge-rev"
-    version: 2.5.1
-    package_name: "clash-verge"
-    debian_pattern: "Clash.Verge___VERSION___amd64.deb"
-    redhat_pattern: "Clash.Verge-__VERSION__-1.x86_64.rpm"
+  # BUG: 报Breaks existing package 'clash-verge' conflict: clash-verge ( )
+  # - name: "clash-verge-rev"
+  #   description: "clash代理"
+  #   repo: "clash-verge-rev/clash-verge-rev"
+  #   version: 2.5.1
+  #   package_name: "clash-verge"
+  #   debian_pattern: "Clash.Verge___VERSION___amd64.deb"
+  #   redhat_pattern: "Clash.Verge-__VERSION__-1.x86_64.rpm"
 
   - name: "cc-switch"
     description: "cc-switch"

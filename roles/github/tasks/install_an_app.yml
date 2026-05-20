@@ -76,7 +76,7 @@
       block:
         - name: Determine if asset is an archive
           ansible.builtin.set_fact:
-            is_archive: "{{ final_asset_name is regex('\\.(tar\\.gz|zip|tgz|bz2)$', ignorecase=True) }}"
+            is_archive: "{{ final_asset_name is regex('\\.(tar\\.gz|zip|tgz|bz2|xz)$', ignorecase=True) }}"
 
         - name: "Plain binary: {{ app.name }}"
           when: not is_archive

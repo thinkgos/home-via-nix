@@ -13,3 +13,10 @@ unfree_script_apps:
   #     #!/bin/bash
   #     curl -fsSL https://example.com/install.sh | sh
   #   binary_name: "example-inline"
+
+  - name: "claude"
+    description: "claude terminal"
+    script: |
+      #!/bin/bash
+      curl -fsSL https://claude.ai/install.sh | bash
+    binary_name: "claude"
