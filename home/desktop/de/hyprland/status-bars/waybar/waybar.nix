@@ -494,8 +494,8 @@
           menu = "on-click";
           menu-file = "${config.xdg.configHome}/waybar/popup/clipboard.xml";
           menu-actions = {
-            "clipboard-history-overview" = "blast-clipboard history-overview";
-            "clipboard-history-wipe" = "blast-clipboard history-wipe";
+            "clipboard-history-overview" = "bt-popup-clipboard -m history-overview";
+            "clipboard-history-wipe" = "bt-popup-clipboard -m history-wipe";
           };
         };
         "custom/screen#toolbox" = {
@@ -526,7 +526,7 @@
           menu = "on-click";
           menu-file = "${config.xdg.configHome}/waybar/popup/settings.xml";
           menu-actions = {
-            "picker-wallpaper" = "bs-picker-wallpaper";
+            "picker-wallpaper" = "bt-picker-wallpaper";
           };
         };
       };

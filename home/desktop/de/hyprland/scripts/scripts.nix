@@ -14,7 +14,9 @@ let
 in
 {
   imports = [
-    ./settings/settings.nix
+    ./control/control.nix
+    ./popup/popup.nix
+    ./picker/picker.nix
   ];
 
   home.packages = [
@@ -22,10 +24,8 @@ in
     (pkgs.writeShellScriptBin "blast-screen-lock" (builtins.readFile ./screen-lock.sh))
     (pkgs.writeShellScriptBin "blast-shutdown" (builtins.readFile ./shutdown.sh))
     (pkgs.writeShellScriptBin "blast-gpu-name" (builtins.readFile ./gpu-name.sh))
-    (pkgs.writeShellScriptBin "blast-dropdown-terminal" (builtins.readFile ./dropdown-terminal.sh))
     (mkShell "blast-switch-last-workspace" ./switch-last-workspace.sh)
     (pkgs.writeShellScriptBin "blast-toggle-waybar" (builtins.readFile ./toggle-waybar.sh))
-    (pkgs.writeShellScriptBin "blast-clipboard" (builtins.readFile ./clipboard.sh))
     (pkgs.writeShellScriptBin "blast-flatpak" (builtins.readFile ./flatpak.sh))
   ];
 }

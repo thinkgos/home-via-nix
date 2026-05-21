@@ -5,10 +5,10 @@
   ...
 }:
 {
-  # 设置相关脚本
+  # 设置脚本
   home.packages = [
     (pkgs.writeShellApplication {
-      name = "bs-picker-wallpaper";
+      name = "bt-picker-wallpaper";
       text = ''
         source ${pkgs.ohlib.log4sh}/lib/shell/log4sh.sh
         builtins.readFile ./picker-wallpaper.sh
@@ -22,6 +22,6 @@
         awww
       ];
     })
-    (pkgs.writeShellScriptBin "bs-picker-color" (builtins.readFile ./picker-color.sh))
+    (pkgs.writeShellScriptBin "bt-picker-color" (builtins.readFile ./picker-color.sh))
   ];
 }

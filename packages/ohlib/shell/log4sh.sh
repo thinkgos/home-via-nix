@@ -31,22 +31,22 @@ _log() {
 log::set_level() {
     local level="$1"
     case "$level" in
-        DEBUG|INFO|WARN|ERROR|FATAL)
-            _LOG_LEVEL=$(for i in "${!_LOG_LEVEL_NAMES[@]}"; do
-                [[ "${_LOG_LEVEL_NAMES[$i]}" == "$level" ]] && echo "$i" && break
-            done)
-            ;;
-        [0-4])
-            _LOG_LEVEL="$level"
-            ;;
-        *)
-            _log "ERROR" "$_CLR_ERROR" "$_CLR_MSG_ERROR" "无效的日志级别: $level (支持: DEBUG|INFO|WARN|ERROR|FATAL|0-4)"
-            ;;
+    DEBUG | INFO | WARN | ERROR | FATAL)
+        _LOG_LEVEL=$(for i in "${!_LOG_LEVEL_NAMES[@]}"; do
+            [[ "${_LOG_LEVEL_NAMES[$i]}" == "$level" ]] && echo "$i" && break
+        done)
+        ;;
+    [0-4])
+        _LOG_LEVEL="$level"
+        ;;
+    *)
+        _log "WARN" "$_CLR_WARN" "$_CLR_MSG_WARN" "无效的日志级别: $level (支持: DEBUG|INFO|WARN|ERROR|FATAL|0-4)"
+        ;;
     esac
 }
 
-log::debug() { [[ $_LOG_LEVEL -le 0 ]] && _log "DEBUG" "$_CLR_DEBUG" "$_CLR_MSG_DEBUG" "$*"; }
-log::info()  { [[ $_LOG_LEVEL -le 1 ]] && _log "INFO " "$_CLR_INFO" "$_CLR_MSG_INFO" "$*"; }
-log::warn()  { [[ $_LOG_LEVEL -le 2 ]] && _log "WARN " "$_CLR_WARN" "$_CLR_MSG_WARN" "$*"; }
-log::error() { [[ $_LOG_LEVEL -le 3 ]] && _log "ERROR" "$_CLR_ERROR" "$_CLR_MSG_ERROR" "$*"; }
-log::fatal() { [[ $_LOG_LEVEL -le 4 ]] && _log "FATAL" "$_CLR_FATAL" "$_CLR_MSG_FATAL" "$*"; }
+log::debug() { [[ $_LOG_LEVEL -le 0 ]] && _log "DEBUG" "$_CLR_DEBUG" "$_CLR_MSG_DEBUG" "$*" || true; }
+log::info() { [[ $_LOG_LEVEL -le 1 ]] && _log "INFO " "$_CLR_INFO" "$_CLR_MSG_INFO" "$*" || true; }
+log::warn() { [[ $_LOG_LEVEL -le 2 ]] && _log "WARN " "$_CLR_WARN" "$_CLR_MSG_WARN" "$*" || true; }
+log::error() { [[ $_LOG_LEVEL -le 3 ]] && _log "ERROR" "$_CLR_ERROR" "$_CLR_MSG_ERROR" "$*" || true; }
+log::fatal() { [[ $_LOG_LEVEL -le 4 ]] && _log "FATAL" "$_CLR_FATAL" "$_CLR_MSG_FATAL" "$*" || true; }
