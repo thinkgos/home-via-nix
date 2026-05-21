@@ -25,6 +25,7 @@
     mpv # 多媒体播放器
     uget # 下载工具
     baobab # 磁盘占用分析工具
+    qalculate-gtk # 计算器
     gnome-disk-utility # 磁盘管理工具
     kdePackages.okular # pdf viewer
     kdePackages.gwenview # image viewer

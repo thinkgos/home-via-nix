@@ -9,12 +9,10 @@
   # https://wiki.hypr.land/Useful-Utilities/Must-have/
   imports = [
     ./hypr-config/hypr-config.nix # Hyprland配置
-    ./settings-center/settings-center.nix # 设置中心
     ./authentication-agent/authentication-agent.nix # 身份验证代理
     ./status-bars/status-bars.nix # 状态栏
     ./idle-management/idle-management.nix # 空闲管理
     ./screen-lock/screen-lock.nix # 屏幕锁定
-    ./sunset/sunset.nix # 蓝光保护
     ./window-switcher/window-switcher.nix # 窗口切换器
     ./logout/logout.nix # 登出配置
     ./scripts/scripts.nix # 脚本配置
@@ -22,10 +20,11 @@
 
   home.packages = with pkgs; [
     hyprpicker # 颜色拾取器
-    qalculate-gtk # 计算器
-    wttrbar # 天气栏
-    gpu-usage-waybar # GPU使用率栏
     hypr-kcs # hyprcs
+    hyprpwcenter # pipewire控制中心
+    hyprshutdown # 关机工具
+    hyprsysteminfo # 系统信息工具
+    gpu-usage-waybar # GPU使用率栏
   ];
 
   home.sessionVariables = {

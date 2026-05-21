@@ -7,6 +7,7 @@
 {
   # 蓝光保护
   imports = [
-    ./hyprsunset.nix
+    # ./hyprsunset.nix
+    ./wlsunset.nix
   ];
 }
