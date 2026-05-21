@@ -1,7 +1,11 @@
 #!/bin/bash
 
-# 配合swayosd的swayosd-libinput-backend systemd服务
-# 需要dbus规则
+# https://github.com/ErikReider/SwayOSD
+# swayosd 由home-manager管理
+
+# 系统级
+# swayosd-libinput-backend systemd服务
+# 配置dbus, udev规则
 
 sudo tee /usr/lib/systemd/system/swayosd-libinput-backend.service >/dev/null <<EOF
 [Unit]
@@ -44,10 +48,11 @@ EOF
 
 # 配置swayosd的udev规则
 sudo tee /etc/udev/rules.d/99-swayosd.rules >/dev/null <<EOF
-ACTION=="add", SUBSYSTEM=="backlight", RUN+="/bin/chgrp video /sys/class/backlight/intel_backlight/brightness"
-ACTION=="add", SUBSYSTEM=="backlight", RUN+="/bin/chmod g+w /sys/class/backlight/intel_backlight/brightness"
+ACTION=="add", SUBSYSTEM=="backlight", RUN+="/bin/chgrp video /sys/class/backlight/%k/brightness"
+ACTION=="add", SUBSYSTEM=="backlight", RUN+="/bin/chmod g+w /sys/class/backlight/%k/brightness"
 EOF
 
+sudo udevadm control --reload-rules && sudo udevadm trigger
 sudo systemctl reload dbus
 sudo systemctl enable swayosd-libinput-backend.service
 sudo systemctl start swayosd-libinput-backend.service

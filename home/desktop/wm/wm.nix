@@ -8,7 +8,12 @@
 {
   imports =
     [ ]
-    ++ lib.optional (
-      customize.desktop.window == "hyprland" || customize.desktop.window == "niri"
-    ) ./assist/assist.nix;
+    ++ lib.optionals (customize.desktop.window == "hyprland" || customize.desktop.window == "niri") [
+      ./notification-center/notification-center.nix # 通知中心
+      ./clipboard/clipboard.nix # 剪贴板
+      ./file-manager/file-manager.nix # 文件管理器
+      ./wallpaper/wallpaper.nix # 壁纸
+      ./launcher/launcher.nix # 应用启动器
+      ./assist/assist.nix # 辅助
+    ];
 }
