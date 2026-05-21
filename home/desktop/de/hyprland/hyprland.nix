@@ -9,7 +9,6 @@
   # https://wiki.hypr.land/Useful-Utilities/Must-have/
   imports = [
     ./hypr-config/hypr-config.nix # Hyprland配置
-    ./authentication-agent/authentication-agent.nix # 身份验证代理
     ./status-bars/status-bars.nix # 状态栏
     ./idle-management/idle-management.nix # 空闲管理
     ./screen-lock/screen-lock.nix # 屏幕锁定

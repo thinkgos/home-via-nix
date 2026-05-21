@@ -7,6 +7,7 @@
 {
   # 身份验证代理
   imports = [
-    ./hyprpolkitagent.nix
+    # ./hyprpolkitagent.nix
+    ./polkit-gnome.nix
   ];
 }
