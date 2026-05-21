@@ -52,7 +52,7 @@ in
       # {
       #   _args = [
       #     (mkLuaInline ''mod .. " + End"'')
-      #     (mkLuaInlineViaExecCmd "blast-switch-last-workspace -m workspace")
+      #     (mkLuaInlineViaExecCmd "bt-focus-last-workspace -m workspace")
       #     { description = "聚焦到最后一个工作区"; }
       #   ];
       # }

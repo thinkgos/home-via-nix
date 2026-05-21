@@ -5,7 +5,7 @@
   ...
 }:
 {
-  # 弹窗脚本
+  # 弹窗
   home.packages = [
     (pkgs.writeShellApplication {
       name = "bt-popup-clipboard";

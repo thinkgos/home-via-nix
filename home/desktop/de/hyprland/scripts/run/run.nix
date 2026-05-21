@@ -5,23 +5,19 @@
   ...
 }:
 {
-  # 选择器
+  # 运行脚本
   home.packages = [
     (pkgs.writeShellApplication {
-      name = "bt-picker-wallpaper";
+      name = "bt-run-flatpak";
       text = ''
         source ${pkgs.ohlib.log4sh}/lib/shell/log4sh.sh
-        builtins.readFile ./picker-wallpaper.sh
+        ${builtins.readFile ./flatpak.sh}
       '';
       excludeShellChecks = [
         "SC1091"
         "SC2181"
       ];
-      runtimeInputs = with pkgs; [
-        rofi
-        awww
-      ];
+      # runtimeInputs = with pkgs; [ ];
     })
-    (pkgs.writeShellScriptBin "bt-picker-color" (builtins.readFile ./picker-color.sh))
   ];
 }

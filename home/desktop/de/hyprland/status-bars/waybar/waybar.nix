@@ -507,17 +507,17 @@
             "screen-pick-color" = "${pkgs.hyprpicker}/bin/hyprpicker -a -n -s 5 -u 60";
             "screen-color-chooser" =
               "/bin/pkill kcolorchooser || ${pkgs.kdePackages.kcolorchooser}/bin/kcolorchooser";
-            "screen-recorder" = "blast-flatpak io.github.seadve.Kooha";
-            "ocr" = "blast-screen ocr";
-            "screen-pixel-measure" = "blast-screen pixel-measure";
-            "screenshot-window" = "blast-screen window";
-            "screenshot-fullscreen" = "blast-screen fullscreen";
-            "screenshot-region" = "blast-screen region";
-            "screenshot-window-annotate" = "blast-screen window-annotate";
-            "screenshot-fullscreen-annotate" = "blast-screen fullscreen-annotate";
-            "screenshot-region-annotate" = "blast-screen region-annotate";
-            "screenshot-scroll" = "blast-screen scroll";
-            "screenshot-scroll-preview" = "blast-screen scroll-preview";
+            "screen-recorder" = "bt-run-flatpak io.github.seadve.Kooha";
+            "ocr" = "bt-action-screenshot ocr";
+            "screen-pixel-measure" = "bt-action-screenshot pixel-measure";
+            "screenshot-window" = "bt-action-screenshot window";
+            "screenshot-fullscreen" = "bt-action-screenshot fullscreen";
+            "screenshot-region" = "bt-action-screenshot region";
+            "screenshot-window-annotate" = "bt-action-screenshot window-annotate";
+            "screenshot-fullscreen-annotate" = "bt-action-screenshot fullscreen-annotate";
+            "screenshot-region-annotate" = "bt-action-screenshot region-annotate";
+            "screenshot-scroll" = "bt-action-screenshot scroll";
+            "screenshot-scroll-preview" = "bt-action-screenshot scroll-preview";
           };
         };
         "custom/settings" = {

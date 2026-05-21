@@ -1,29 +1,29 @@
 #!/bin/bash
 
 screenshotDir=$HOME/Pictures/screenshots
-mkdir -p "${screenshotDir}"
+/bin/mkdir -p "${screenshotDir}"
 
 mode="$1"
-file="${screenshotDir}/$(date +'%Y%m%d%H%M%S').png"
+file="${screenshotDir}/$(/bin/date +'%Y%m%d%H%M%S').png"
 
 do_error() {
-    notify-send "$1取消" "操作已取消或发生错误" -i dialog-information
+    /bin/notify-send "$1取消" "操作已取消或发生错误" -i dialog-information
     exit 1
 }
 
 do_success() {
-    notify-send "已获取$1" "你可以从剪贴板粘贴$1" -i camera-photo
+    /bin/notify-send "已获取$1" "你可以从剪贴板粘贴$1" -i camera-photo
 }
 
 do_screenshot_success() {
     wl-copy -t image/png <"$file"
-    do_success $1
+    do_success "$1"
 }
 
 case "$mode" in
 pixel-measure)
     # 像素测量
-    slurp -d | awk '{print $2}' | wl-copy || do_error "像素测量"
+    slurp -d | /bin/awk '{print $2}' | wl-copy || do_error "像素测量"
     do_success "像素测量"
     ;;
 ocr)

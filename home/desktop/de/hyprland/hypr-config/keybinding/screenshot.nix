@@ -22,21 +22,21 @@ in
       {
         _args = [
           "ALT + Print"
-          (mkLuaInline ''hl.dsp.exec_cmd("blast-screen window")'')
+          (mkLuaInline ''hl.dsp.exec_cmd("bt-action-screenshot window")'')
           { description = "窗口截图"; }
         ];
       }
       {
         _args = [
           "SHIFT + Print"
-          (mkLuaInline ''hl.dsp.exec_cmd("blast-screen fullscreen")'')
+          (mkLuaInline ''hl.dsp.exec_cmd("bt-action-screenshot fullscreen")'')
           { description = "全屏截图"; }
         ];
       }
       {
         _args = [
           "Print"
-          (mkLuaInline ''hl.dsp.exec_cmd("blast-screen region")'')
+          (mkLuaInline ''hl.dsp.exec_cmd("bt-action-screenshot region")'')
           { description = "选框截图"; }
         ];
       }
