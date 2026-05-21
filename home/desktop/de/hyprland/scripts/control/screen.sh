@@ -1,9 +1,48 @@
 #!/bin/bash
 
-screenshotDir=$HOME/Pictures/screenshots
-/bin/mkdir -p "${screenshotDir}"
+usage() {
+    echo "Usage: $0 [-m|--mode mode] [-h|--help]"
+    echo ""
+    echo "  -m, --mode <mode>   模式(pixel-measure|ocr|window|fullscreen|region|window-annotate|fullscreen-annotate|region-annotate|scroll|scroll-preview)"
+    echo "  -h, --help          显示帮助"
+    echo ""
+    echo "Example:"
+    echo "  $0 -m fullscreen"
+    echo "  $0 --mode region"
+    exit 1
+}
 
-mode="$1"
+MODE=""
+
+PARSED=$(getopt -o m:h --long mode:,help -n "$0" -- "$@")
+if [ $? -ne 0 ]; then
+    usage
+fi
+eval set -- "$PARSED"
+while true; do
+    case "$1" in
+    -m | --mode)
+        MODE="$2"
+        shift 2
+        ;;
+    -h | --help)
+        usage
+        ;;
+    --)
+        shift
+        break
+        ;;
+    *)
+        usage
+        ;;
+    esac
+done
+
+if [ -z "$MODE" ]; then
+    usage
+fi
+
+screenshotDir=$HOME/Pictures/screenshots
 file="${screenshotDir}/$(/bin/date +'%Y%m%d%H%M%S').png"
 
 do_error() {
@@ -20,7 +59,9 @@ do_screenshot_success() {
     do_success "$1"
 }
 
-case "$mode" in
+/bin/mkdir -p "${screenshotDir}"
+
+case "$MODE" in
 pixel-measure)
     # 像素测量
     slurp -d | /bin/awk '{print $2}' | wl-copy || do_error "像素测量"
@@ -77,6 +118,10 @@ scroll)
 scroll-preview)
     # 滚动截图 - 带预览窗口
     wayscrollshot
+    ;;
+*)
+    echo "不支持的模式: $MODE"
+    usage
     ;;
 esac
 

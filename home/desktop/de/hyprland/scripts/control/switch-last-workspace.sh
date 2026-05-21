@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #* 仅限本地测试使用
-# source $(cd "$(dirname "${BASH_SOURCE[0]}")/../../../../lib/" && pwd)/log4sh.sh
+# source "$(cd "$(dirname "${BASH_SOURCE[0]}")/../../../../../../packages/ohlib/shell" && pwd)/log4sh.sh"
 
 usage() {
     echo "Usage: $0 [-m|--mode mode] [-h|--help]"

@@ -49,10 +49,10 @@
     })
     # 关机
     (pkgs.writeShellApplication {
-      name = "bt-action-shutdown";
+      name = "bt-action-power";
       text = ''
         source ${pkgs.ohlib.log4sh}/lib/shell/log4sh.sh
-        ${builtins.readFile ./shutdown.sh}
+        ${builtins.readFile ./power.sh}
       '';
       excludeShellChecks = [
         "SC1091"

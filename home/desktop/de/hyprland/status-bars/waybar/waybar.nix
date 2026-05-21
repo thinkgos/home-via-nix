@@ -508,16 +508,16 @@
             "screen-color-chooser" =
               "/bin/pkill kcolorchooser || ${pkgs.kdePackages.kcolorchooser}/bin/kcolorchooser";
             "screen-recorder" = "bt-run-flatpak io.github.seadve.Kooha";
-            "ocr" = "bt-action-screenshot ocr";
-            "screen-pixel-measure" = "bt-action-screenshot pixel-measure";
-            "screenshot-window" = "bt-action-screenshot window";
-            "screenshot-fullscreen" = "bt-action-screenshot fullscreen";
-            "screenshot-region" = "bt-action-screenshot region";
-            "screenshot-window-annotate" = "bt-action-screenshot window-annotate";
-            "screenshot-fullscreen-annotate" = "bt-action-screenshot fullscreen-annotate";
-            "screenshot-region-annotate" = "bt-action-screenshot region-annotate";
-            "screenshot-scroll" = "bt-action-screenshot scroll";
-            "screenshot-scroll-preview" = "bt-action-screenshot scroll-preview";
+            "ocr" = "bt-action-screenshot -m ocr";
+            "screen-pixel-measure" = "bt-action-screenshot -m pixel-measure";
+            "screenshot-window" = "bt-action-screenshot -m window";
+            "screenshot-fullscreen" = "bt-action-screenshot -m fullscreen";
+            "screenshot-region" = "bt-action-screenshot -m region";
+            "screenshot-window-annotate" = "bt-action-screenshot -m window-annotate";
+            "screenshot-fullscreen-annotate" = "bt-action-screenshot -m fullscreen-annotate";
+            "screenshot-region-annotate" = "bt-action-screenshot -m region-annotate";
+            "screenshot-scroll" = "bt-action-screenshot -m scroll";
+            "screenshot-scroll-preview" = "bt-action-screenshot -m scroll-preview";
           };
         };
         "custom/settings" = {
