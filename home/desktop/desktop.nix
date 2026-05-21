@@ -18,6 +18,7 @@
     ./terminal/terminal.nix
     ./editor/editor.nix
     ./programs/programs.nix
+    ./wm/wm.nix
     ./de/de.nix
   ];
 }
