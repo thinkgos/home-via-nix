@@ -33,5 +33,6 @@
     drawy # 画布工具
     wayscrollshot # 滚动截图工具
     cage # wayland的kiosk
+    wooz # 缩放/放大镜工具
   ];
 }
