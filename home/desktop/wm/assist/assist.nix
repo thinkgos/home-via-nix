@@ -7,6 +7,6 @@
 }:
 {
   imports = [
-    # ./swayosd/swayosd.nix
+    ./swayosd/swayosd.nix
   ];
 }
