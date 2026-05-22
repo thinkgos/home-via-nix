@@ -50,37 +50,9 @@
         keybind = "u";
       }
     ];
+    # https://github.com/catppuccin/wlogout
     style = ''
-      * {
-          background-image: none;
-          box-shadow: none;
-      }
-
-      window {
-          background-color: rgba(30, 30, 46, 0.9); /* Mocha Crust/Base with transparency */
-      }
-
-      button {
-          color: #cdd6f4;           /* Mocha Text */
-          background-color: #313244; /* Mocha Surface0 */
-          border: 2px solid #89b4fa; /* Mocha Blue */
-          border-radius: 20px;
-          
-          margin: 50px;
-          background-repeat: no-repeat;
-          background-position: center;
-          background-size: 25%;      /* 调整这个百分比来缩小图标 */
-          min-width: 100px;          /* 限制按钮最小宽度 */
-          min-height: 100px;         /* 限制按钮最小高度 */
-          transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
-      }
-
-      button:focus, button:active, button:hover {
-          background-color: #45475a; /* Mocha Surface1 */
-          border-color: #f5c2e7;     /* Mocha Pink */
-          outline-style: none;
-      }
-
+      ${builtins.readFile ./style.gtk.css}
       /* 图标路径引用 */
       #lock { background-image: image(url("${pkgs.wlogout}/share/wlogout/icons/lock.png")); }
       #logout { background-image: image(url("${pkgs.wlogout}/share/wlogout/icons/logout.png")); }

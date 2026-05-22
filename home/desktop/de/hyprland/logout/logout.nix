@@ -6,6 +6,7 @@
 }:
 {
   imports = [
-    ./wlogout.nix
+    ./wlogout/wlogout.nix
+    ./wleave/wleave.nix
   ];
 }

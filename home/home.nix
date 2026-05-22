@@ -100,6 +100,7 @@
     yq # yaml美化过滤
     fastfetch # 系统信息查看工具
     chezmoi # 管理dotfiles
+    net-tools # 网络工具集
 
     #! 命令行替代工具
     eza # 替代ls
