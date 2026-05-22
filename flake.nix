@@ -62,6 +62,9 @@
           system,
           ...
         }:
+        let
+          sources = import ./npins;
+        in
         {
           legacyPackages.homeConfigurations =
             let
@@ -94,14 +97,8 @@
                             inherit lib;
                             pkgs = final;
                           };
-                          ghostty-cursor-shaders = import ./packages/ghostty-cursor-shaders {
-                            inherit lib;
-                            pkgs = final;
-                          };
-                          hyprsplit = import ./packages/hyprsplit {
-                            inherit lib;
-                            pkgs = final;
-                          };
+                          ghostty-cursor-shaders = sources.ghostty-cursor-shaders;
+                          hyprsplit = sources.hyprsplit;
 
                           lan-mouse = inputs.lan-mouse.packages.${system}.default;
                           goup-rs = inputs.goup-rs.packages.${system}.default;

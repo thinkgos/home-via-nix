@@ -124,6 +124,7 @@
     nil
     nixfmt
     nixfmt-tree
+    npins
 
     #! desktop 统一管理图形化应用
 

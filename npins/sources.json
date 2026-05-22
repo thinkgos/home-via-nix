@@ -1,0 +1,37 @@
+{
+  "pins": {
+    "ghostty-cursor-shaders": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "sahaj-b",
+        "repo": "ghostty-cursor-shaders"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "06d4e90fb5410e9c4d0b3131584060adddf89406",
+      "url": "https://github.com/sahaj-b/ghostty-cursor-shaders/archive/06d4e90fb5410e9c4d0b3131584060adddf89406.tar.gz",
+      "hash": "sha256-G/UIr1bKnxn1AcHl/4FL/jou6b7M2VeREslYVELxdmw="
+    },
+    "hyprsplit": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "shezdy",
+        "repo": "hyprsplit"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "0fc01e7930625ecb3e069f5dc8e1d61eab929f3b",
+      "url": "https://github.com/shezdy/hyprsplit/archive/0fc01e7930625ecb3e069f5dc8e1d61eab929f3b.tar.gz",
+      "hash": "sha256-XpwuFhwnfwPbzImZeUWWns///UEpoKNkpl1hN90C3Ag="
+    },
+    "nixpkgs": {
+      "type": "Channel",
+      "name": "nixpkgs-unstable",
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.05pre1001117.d99b013d5d19/nixexprs.tar.xz",
+      "hash": "sha256-AyKVLJihBA4molWFBpbk2+ruMFlkL1ONA8eNShZithw="
+    }
+  },
+  "version": 7
+}
