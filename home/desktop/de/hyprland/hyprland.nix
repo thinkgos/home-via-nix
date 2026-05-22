@@ -12,7 +12,6 @@
     ./status-bars/status-bars.nix # 状态栏
     ./screen-lock/screen-lock.nix # 屏幕锁定
     ./window-switcher/window-switcher.nix # 窗口切换器
-    ./logout/logout.nix # 登出配置
     ./scripts/scripts.nix # 脚本配置
   ];
 

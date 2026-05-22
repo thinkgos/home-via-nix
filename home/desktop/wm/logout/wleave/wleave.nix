@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  wme,
   ...
 }:
 {
@@ -22,42 +23,42 @@
       buttons = [
         {
           label = "lock";
-          action = "bt-action-screen-lock";
+          action = wme.power.lock;
           text = "锁屏";
           keybind = "l";
           icon = "${pkgs.wleave}/share/wleave/icons/lock.svg";
         }
         {
           label = "logout";
-          action = "/bin/notify-send -u critical '注销有BUG(logout)!'";
+          action = wme.power.logout;
           text = "注销";
           keybind = "e";
           icon = "${pkgs.wleave}/share/wleave/icons/logout.svg";
         }
         {
           label = "shutdown";
-          action = "/bin/systemctl poweroff";
+          action = wme.power.shutdown;
           text = "关机";
           keybind = "s";
           icon = "${pkgs.wleave}/share/wleave/icons/shutdown.svg";
         }
         {
           label = "reboot";
-          action = "/bin/systemctl reboot";
+          action = wme.power.reboot;
           text = "重启";
           keybind = "r";
           icon = "${pkgs.wleave}/share/wleave/icons/reboot.svg";
         }
         {
           label = "hibernate";
-          action = "/bin/notify-send -u critical '系统暂不支持休眠(hibernate)!'";
+          action = wme.power.hibernate;
           text = "休眠";
           keybind = "h";
           icon = "${pkgs.wleave}/share/wleave/icons/hibernate.svg";
         }
         {
           label = "suspend";
-          action = "/bin/systemctl suspend";
+          action = wme.power.suspend;
           text = "挂起";
           keybind = "u";
           icon = "${pkgs.wleave}/share/wleave/icons/suspend.svg";

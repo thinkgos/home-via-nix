@@ -2,50 +2,46 @@
   config,
   lib,
   pkgs,
+  wme,
   ...
 }:
 {
   programs.wlogout = {
     enable = true;
-    # BUG: 这里注销导致hyprland起不来(但是快捷键里注销时面正常时而不正常).
     layout = [
       {
         label = "lock";
-        action = "bt-action-screen-lock";
+        action = wme.power.lock;
         text = "锁屏 (L)";
         keybind = "l";
       }
       {
         label = "logout";
-        # action = "${pkgs.hyprland}/bin/hyprctl dispatch 'hl.dsp.exit()'";
-        # action = ''${pkgs.hyprland}/bin/hyprctl dispatch  'hl.dsp.exec_cmd("hyprshutdown")'';
-        action = "/bin/notify-send -u critical '注销有BUG(logout)!'";
+        action = wme.power.logout;
         text = "注销 (E)";
         keybind = "e";
       }
       {
         label = "shutdown";
-        action = "/bin/systemctl poweroff";
+        action = wme.power.shutdown;
         text = "关机 (S)";
         keybind = "s";
       }
       {
         label = "reboot";
-        action = "/bin/systemctl reboot";
+        action = wme.power.reboot;
         text = "重启 (R)";
         keybind = "r";
       }
       {
-        # 休眠是写到swap文件(swap空间必须大于内存), 需要主板与BIOS/UEFI支持(主板必须支持ACPI S4状态)
         label = "hibernate";
-        # action = "/bin/systemctl hibernate";
-        action = "/bin/notify-send -u critical '系统暂不支持休眠(hibernate)!'";
+        action = wme.power.hibernate;
         text = "休眠 (H)";
         keybind = "h";
       }
       {
         label = "suspend";
-        action = "/bin/systemctl suspend";
+        action = wme.power.suspend;
         text = "挂起 (U)";
         keybind = "u";
       }

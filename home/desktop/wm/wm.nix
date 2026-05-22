@@ -5,7 +5,16 @@
   customize,
   ...
 }:
+let
+  wme = import ./wme { inherit config lib pkgs; };
+in
 {
+  _module.args =
+    lib.mkIf (customize.desktop.window == "hyprland" || customize.desktop.window == "niri")
+      {
+        wme = wme.${customize.desktop.window};
+      };
+
   imports =
     [ ]
     ++ lib.optionals (customize.desktop.window == "hyprland" || customize.desktop.window == "niri") [
@@ -14,6 +23,7 @@
       ./sunset/sunset.nix # 蓝光保护
       ./polkit-agent/polkit-agent.nix # 身份验证代理
       ./idle-manager/idle-manager.nix # 空闲管理
+      ./logout/logout.nix # 登出配置
       ./clipboard/clipboard.nix # 剪贴板
       ./file-manager/file-manager.nix # 文件管理器
       ./wallpaper/wallpaper.nix # 壁纸
