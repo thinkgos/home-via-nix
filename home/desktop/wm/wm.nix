@@ -13,6 +13,7 @@
       ./notification-center/notification-center.nix # 通知中心
       ./sunset/sunset.nix # 蓝光保护
       ./polkit-agent/polkit-agent.nix # 身份验证代理
+      ./idle-manager/idle-manager.nix # 空闲管理
       ./clipboard/clipboard.nix # 剪贴板
       ./file-manager/file-manager.nix # 文件管理器
       ./wallpaper/wallpaper.nix # 壁纸

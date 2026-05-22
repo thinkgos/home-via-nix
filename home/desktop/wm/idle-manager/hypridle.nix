@@ -23,22 +23,26 @@
       listener = [
         {
           timeout = 300; # 5m
+          # timeout = 30; # 30s(测试)
           on-timeout = ''/bin/notify-send " You are idle!"'';
           on-resume = ''/bin/notify-send " Welcome Back" " Enjoy !!!"'';
         }
         {
           timeout = 600; # 10m
+          # timeout = 45; # 45s(测试)
           # BUG: 键盘背光没法控制, 没有找到设备名. HDMI 不能用此方式, 需要用ddcutil
           on-timeout = "${pkgs.brightnessctl}/bin/brightnessctl -s -d *backlight* set 10"; # turn down screen backlight.
           on-resume = "${pkgs.brightnessctl}/bin/brightnessctl -r -d *backlight*"; # resume screen backlight.
         }
         {
           timeout = 900; # 15m
+          # timeout = 60; # 60s(测试)
           on-timeout = "/bin/loginctl lock-session"; # lock screen when timeout has passed
           # on-resume = ''/bin/notify-send " System Unlocked!"'';
         }
         {
           timeout = 930; # 15m30s
+          # timeout = 75; # 75s(测试)
           on-timeout = "${pkgs.hyprland}/bin/hyprctl dispatch 'hl.dsp.dpms({ action = \"disable\" })'"; # screen off when timeout has passed
           on-resume = "${pkgs.hyprland}/bin/hyprctl dispatch 'hl.dsp.dpms({ action = \"enable\" })' && ${pkgs.brightnessctl}/bin/brightnessctl -r -d *backlight*"; # screen on when activity is detected after timeout has fired.
         }
