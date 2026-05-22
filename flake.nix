@@ -28,11 +28,6 @@
       url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprsplit = {
-      # url = "github:shezdy/hyprsplit";
-      url = "github:thinkgos/hyprsplit";
-      inputs.hyprland.follows = "hyprland";
-    };
     hyprshell = {
       url = "github:H3rmt/hyprshell";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -103,6 +98,10 @@
                             inherit lib;
                             pkgs = final;
                           };
+                          hyprsplit = import ./packages/hyprsplit {
+                            inherit lib;
+                            pkgs = final;
+                          };
 
                           lan-mouse = inputs.lan-mouse.packages.${system}.default;
                           goup-rs = inputs.goup-rs.packages.${system}.default;
@@ -111,7 +110,6 @@
                           # hyprland
                           hyprland = inputs.hyprland.packages.${system}.hyprland;
                           xdg-desktop-portal-hyprland = inputs.hyprland.packages.${system}.xdg-desktop-portal-hyprland;
-                          hyprsplit = inputs.hyprsplit.packages.${system}.hyprsplitlua;
                           hyprshell = inputs.hyprshell.packages.${system}.default;
                           hypr-kcs = inputs.hypr-kcs.packages.${system}.default;
                           hyprlock = pkgs.hyprlock.overrideAttrs (oldAttrs: {

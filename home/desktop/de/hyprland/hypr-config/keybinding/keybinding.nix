@@ -112,9 +112,6 @@ in
     );
   };
   xdg.configFile = {
-    "hypr/hyprsplit" = {
-      source = "${pkgs.hyprsplit}/share/hyprsplit";
-      recursive = true;
-    };
+    "hypr/hyprsplit/init.lua".source = "${pkgs.hyprsplit}/init.lua";
   };
 }
