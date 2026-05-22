@@ -473,6 +473,7 @@
         "custom/power" = {
           format = "⏻";
           on-click = "${pkgs.wlogout}/bin/wlogout -b 3";
+          # on-click = "${pkgs.wleave}/bin/wleave";
           # on-click = "wlogout -b 2";
           tooltip = false;
         };

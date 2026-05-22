@@ -12,12 +12,13 @@
     # https://github.com/AMNatty/wleave#configuration
     settings = {
       margin = 200;
-      column-spacing = "20px";
-      row-spacing = "20px";
+      column-spacing = "30px";
+      row-spacing = "30px";
       buttons-per-row = "1/2";
       delay-command-ms = 100;
       close-on-lost-focus = true;
       show-keybinds = true;
+      no-version-info = true;
       buttons = [
         {
           label = "lock";
