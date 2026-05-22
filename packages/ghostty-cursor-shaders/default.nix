@@ -8,5 +8,5 @@ pkgs.fetchFromGitHub {
   owner = "sahaj-b";
   repo = "ghostty-cursor-shaders";
   rev = "main";
-  hash = "sha256-ruhEqXnWRCYdX5mRczpY3rj1DTdxyY3BoN9pdlDOKrE=";
+  hash = "sha256-G/UIr1bKnxn1AcHl/4FL/jou6b7M2VeREslYVELxdmw=";
 }
