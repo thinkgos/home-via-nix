@@ -595,14 +595,17 @@
     },
     "hyprsplit": {
       "inputs": {
+        "hyprland": [
+          "hyprland"
+        ],
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1779158334,
-        "narHash": "sha256-f/cznOCRcuTS94EppeHO8uBDE/rQdZ0cnH0D2Yie0gY=",
+        "lastModified": 1779410069,
+        "narHash": "sha256-sRx1fQo3/HOlMOeWNCqaBEuDeIL7MA4cih1bj7l0svE=",
         "owner": "thinkgos",
         "repo": "hyprsplit",
-        "rev": "fe88faa42b7b98c0169d5b407cf261e26e52b018",
+        "rev": "f1995625dfc5ac3fd9523ecc074690e05cb7abf2",
         "type": "github"
       },
       "original": {
