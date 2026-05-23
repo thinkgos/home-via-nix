@@ -19,9 +19,6 @@
     ./terminal/terminal.nix
     ./editor/editor.nix
     ./programs/programs.nix
-  ]
-  ++ lib.optional (customize.desktop.window == "gnome") ./de/de.nix
-  ++ lib.optional (
-    customize.desktop.window == "hyprland" || customize.desktop.window == "niri"
-  ) ./wm/wm.nix;
+    ./wm/wm.nix
+  ];
 }

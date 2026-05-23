@@ -14,8 +14,10 @@ in
   };
 
   imports = [
-    ./components/components.nix # 组件库
+    # hyprland, niri, gnome(Deprecated)
+    ./${customize.desktop.window}
   ]
-  ++ lib.optional (customize.desktop.window == "hyprland") ./hyprland/hyprland.nix
-  ++ lib.optional (customize.desktop.window == "niri") ./niri/niri.nix;
+  ++ lib.optional (
+    customize.desktop.window == "hyprland" || customize.desktop.window == "niri"
+  ) ./components/components.nix; # 组件库
 }
