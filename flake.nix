@@ -57,6 +57,7 @@
       ];
       perSystem =
         {
+          config,
           lib,
           pkgs,
           system,
@@ -84,19 +85,8 @@
                     # Overlay extra packages into pkgs
                     {
                       nixpkgs.overlays = [
+                        (import ./packages { inherit config lib; })
                         (final: prev: {
-                          ohlib = import ./packages/ohlib {
-                            inherit lib;
-                            pkgs = final;
-                          };
-                          ohshell = import ./packages/ohshell {
-                            inherit lib;
-                            pkgs = final;
-                          };
-                          home-assets = import ./packages/home-assets {
-                            inherit lib;
-                            pkgs = final;
-                          };
                           ghostty-cursor-shaders = sources.ghostty-cursor-shaders;
                           hyprsplit = sources.hyprsplit;
 

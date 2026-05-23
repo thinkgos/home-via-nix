@@ -3,7 +3,7 @@
 # 壁纸选择器
 
 # 仅本地测试使用
-# source "$(cd "$(dirname "${BASH_SOURCE[0]}")/../../../../../../packages/ohlib/shell" && pwd)/log4sh.sh"
+source "$(cd "$(dirname "${BASH_SOURCE[0]}")/../../ohlib/shell" && pwd)/log4sh.sh"
 
 usage() {
     echo "Usage: $0 [options] [wallpaper_dir]"
@@ -66,7 +66,7 @@ while true; do
 done
 
 # 如果有位置参数，覆盖壁纸目录
-[ -n "$1" ] && WALLPAPER_DIR="$1"
+[ -n "${1:-}" ] && WALLPAPER_DIR="$1"
 
 log::debug "壁纸目录: $WALLPAPER_DIR"
 log::debug "过渡类型: $TRANSITION, 帧率: $FPS, 步数: $STEP"

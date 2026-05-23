@@ -38,7 +38,7 @@ in
         _var = "${pkgs.alacritty}/bin/alacritty";
       };
       launchDropdownTerminal = {
-        _var = "bt-popup-dropdown-terminal";
+        _var = "${pkgs.hwn}/bin/bt-popup-dropdown-terminal";
       };
       launchFileManager = {
         _var = "${pkgs.nemo}/bin/nemo";

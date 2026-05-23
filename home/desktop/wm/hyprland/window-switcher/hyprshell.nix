@@ -90,7 +90,7 @@
                     custom = {
                       names = [ "Clipboard History Overview" ];
                       details = "Clipboard History Overview";
-                      command = "bt-popup-clipboard -m history-overview";
+                      command = "${pkgs.hwn}/bin/bt-popup-clipboard -m history-overview";
                       icon = "system";
                     };
                   }
@@ -98,7 +98,7 @@
                     custom = {
                       names = [ "Clipboard History Wipe" ];
                       details = "Clipboard History Wipe";
-                      command = "bt-popup-clipboard -m history-wipe";
+                      command = "${pkgs.hwn}/bin/bt-popup-clipboard -m history-wipe";
                       icon = "system";
                     };
                   }
