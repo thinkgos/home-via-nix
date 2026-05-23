@@ -21,4 +21,13 @@
     trash = "trash -v";
     cco = "claude";
   };
+
+  # Create TMPDIR if it doesn't exist
+  home.activation.createTmpDir = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    mkdir -p "$HOME/.cache/tmp"
+  '';
+
+  home.sessionPath = [
+    "$HOME/.local/bin"
+  ];
 }
