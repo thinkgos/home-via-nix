@@ -63,9 +63,7 @@
           system,
           ...
         }:
-        let
-          sources = import ./npins;
-        in
+
         {
           legacyPackages.homeConfigurations =
             let
@@ -85,11 +83,9 @@
                     # Overlay extra packages into pkgs
                     {
                       nixpkgs.overlays = [
-                        (import ./packages { inherit config lib; })
+                        (import ./overlays/packages { inherit config lib; })
+                        (import ./overlays/npins { inherit config lib; })
                         (final: prev: {
-                          ghostty-cursor-shaders = sources.ghostty-cursor-shaders;
-                          hyprsplit = sources.hyprsplit;
-
                           lan-mouse = inputs.lan-mouse.packages.${system}.default;
                           goup-rs = inputs.goup-rs.packages.${system}.default;
                           wayscrollshot = inputs.wayscrollshot.packages.${system}.default;

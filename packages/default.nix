@@ -1,11 +1,14 @@
-{ config, lib, ... }:
-final: prev:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
   mkImport =
     path:
     import path {
-      inherit config lib;
-      pkgs = final;
+      inherit config lib pkgs;
     };
 in
 {
