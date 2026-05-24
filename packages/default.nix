@@ -4,16 +4,9 @@
   pkgs,
   ...
 }:
-let
-  mkImport =
-    path:
-    import path {
-      inherit config lib pkgs;
-    };
-in
 {
-  ohlib = mkImport ./ohlib;
-  ohshell = mkImport ./ohshell;
-  home-assets = mkImport ./home-assets;
-  hwn = mkImport ./hwn;
+  ohlib = pkgs.callPackage ./ohlib { };
+  ohshell = pkgs.callPackage ./ohshell { };
+  home-assets = pkgs.callPackage ./home-assets { };
+  hwn = pkgs.callPackage ./hwn { };
 }
