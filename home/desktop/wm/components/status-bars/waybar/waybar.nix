@@ -508,7 +508,7 @@
             "screen-pick-color" = "${pkgs.hyprpicker}/bin/hyprpicker -a -n -s 5 -u 60";
             "screen-color-chooser" =
               "/bin/pkill kcolorchooser || ${pkgs.kdePackages.kcolorchooser}/bin/kcolorchooser";
-            "screen-recorder" = "bt-run-flatpak io.github.seadve.Kooha";
+            "screen-recorder" = "${pkgs.hwn}/bin/bt-runner-flatpak io.github.seadve.Kooha";
             "ocr" = "bt-action-screenshot -m ocr";
             "screen-pixel-measure" = "bt-action-screenshot -m pixel-measure";
             "screenshot-window" = "bt-action-screenshot -m window";

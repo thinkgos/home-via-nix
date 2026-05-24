@@ -62,7 +62,7 @@ in
         _var = "hyprkcs";
       };
       actionToggleWaybar = {
-        _var = "bt-toggle-waybar";
+        _var = "${pkgs.hwn}/bin/bt-toggle-waybar";
       };
       actionLockScreen = {
         _var = "bt-action-screen-lock";

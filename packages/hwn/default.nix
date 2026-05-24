@@ -10,6 +10,7 @@ in
 pkgs.symlinkJoin {
   name = "hwn";
   paths = [
+    # popup
     (pkgs.writeShellApplication {
       name = "bt-popup-clipboard";
       text = ''
@@ -51,5 +52,24 @@ pkgs.symlinkJoin {
         awww
       ];
     })
+
+    # runner
+    (pkgs.writeShellApplication {
+      name = "bt-runner-flatpak";
+      text = ''
+        source ${pkgs.ohlib.log4sh}/lib/shell/log4sh.sh
+        ${builtins.readFile ./runner/flatpak.sh}
+      '';
+      excludeShellChecks = [
+        "SC1091"
+        "SC2181"
+      ];
+      # runtimeInputs = with pkgs; [ ];
+    })
+
+    # control
+    # 隐藏/显示waybar
+    (pkgs.writeShellScriptBin "bt-toggle-waybar" (builtins.readFile ./control/toggle-waybar.sh))
+
   ];
 }

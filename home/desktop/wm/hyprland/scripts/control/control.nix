@@ -7,8 +7,6 @@
 {
   # 控制
   home.packages = [
-    # 隐藏/显示waybar
-    (pkgs.writeShellScriptBin "bt-toggle-waybar" (builtins.readFile ./toggle-waybar.sh))
     # 屏幕锁定
     (pkgs.writeShellApplication {
       name = "bt-action-screen-lock";
