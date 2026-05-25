@@ -9,7 +9,6 @@
   # https://wiki.hypr.land/Useful-Utilities/Must-have/
   imports = [
     ./hypr-config/hypr-config.nix # Hyprland配置
-    ./window-switcher/window-switcher.nix # 窗口切换器
   ];
 
   home.packages = with pkgs; [

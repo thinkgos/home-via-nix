@@ -19,6 +19,7 @@
     ./launcher/launcher.nix # 应用启动器
     ./status-bars/status-bars.nix # 状态栏
     ./wallpaper/wallpaper.nix # 壁纸
+    ./window-overview/window-overview.nix # 窗口概览
     ./assist/assist.nix # 辅助
   ];
 }
