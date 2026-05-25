@@ -8,11 +8,11 @@ let
   mkImport = path: import path { inherit config lib pkgs; };
 in
 pkgs.symlinkJoin {
-  name = "hwn";
+  name = "hvn";
   paths = [
     # popup
     (pkgs.writeShellApplication {
-      name = "bt-popup-clipboard";
+      name = "hvn-popup-clipboard";
       text = ''
         source ${pkgs.ohlib.log4sh}/lib/shell/log4sh.sh
         ${builtins.readFile ./popup/clipboard.sh}
@@ -29,7 +29,7 @@ pkgs.symlinkJoin {
     })
 
     (pkgs.writeShellApplication {
-      name = "bt-popup-dropdown-terminal";
+      name = "hvn-popup-dropdown-terminal";
       text = builtins.readFile ./popup/dropdown-terminal.sh;
       excludeShellChecks = [
         "SC1091"
@@ -38,7 +38,7 @@ pkgs.symlinkJoin {
     })
 
     (pkgs.writeShellApplication {
-      name = "bt-picker-wallpaper";
+      name = "hvn-picker-wallpaper";
       text = ''
         source ${pkgs.ohlib.log4sh}/lib/shell/log4sh.sh
         ${builtins.readFile ./picker/picker-wallpaper.sh}
@@ -55,7 +55,7 @@ pkgs.symlinkJoin {
 
     # runner
     (pkgs.writeShellApplication {
-      name = "bt-runner-flatpak";
+      name = "hvn-runner-flatpak";
       text = ''
         source ${pkgs.ohlib.log4sh}/lib/shell/log4sh.sh
         ${builtins.readFile ./runner/flatpak.sh}
@@ -69,7 +69,6 @@ pkgs.symlinkJoin {
 
     # control
     # 隐藏/显示waybar
-    (pkgs.writeShellScriptBin "bt-toggle-waybar" (builtins.readFile ./control/toggle-waybar.sh))
-
+    (pkgs.writeShellScriptBin "hvn-toggle-waybar" (builtins.readFile ./control/toggle-waybar.sh))
   ];
 }

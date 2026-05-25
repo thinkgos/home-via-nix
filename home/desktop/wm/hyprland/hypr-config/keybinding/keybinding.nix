@@ -38,7 +38,7 @@ in
         _var = "${pkgs.alacritty}/bin/alacritty";
       };
       launchDropdownTerminal = {
-        _var = "${pkgs.hwn}/bin/bt-popup-dropdown-terminal";
+        _var = "${pkgs.hvn}/bin/hvn-popup-dropdown-terminal";
       };
       launchFileManager = {
         _var = "${pkgs.nemo}/bin/nemo";
@@ -62,7 +62,7 @@ in
         _var = "hyprkcs";
       };
       actionToggleWaybar = {
-        _var = "${pkgs.hwn}/bin/bt-toggle-waybar";
+        _var = "${pkgs.hvn}/bin/hvn-toggle-waybar";
       };
       actionLockScreen = {
         _var = "bt-action-screen-lock";

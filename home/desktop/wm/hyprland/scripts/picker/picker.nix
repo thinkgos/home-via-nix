@@ -7,7 +7,7 @@
 {
   # 选择器
   home.packages = [
-    pkgs.hwn
+    pkgs.hvn
     (pkgs.writeShellScriptBin "bt-picker-color" (builtins.readFile ./picker-color.sh))
   ];
 }

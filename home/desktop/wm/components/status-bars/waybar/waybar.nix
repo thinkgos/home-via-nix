@@ -495,8 +495,8 @@
           menu = "on-click";
           menu-file = "${config.xdg.configHome}/waybar/popup/clipboard.xml";
           menu-actions = {
-            "clipboard-history-overview" = "${pkgs.hwn}/bin/bt-popup-clipboard -m history-overview";
-            "clipboard-history-wipe" = "${pkgs.hwn}/bin/bt-popup-clipboard -m history-wipe";
+            "clipboard-history-overview" = "${pkgs.hvn}/bin/hvn-popup-clipboard -m history-overview";
+            "clipboard-history-wipe" = "${pkgs.hvn}/bin/hvn-popup-clipboard -m history-wipe";
           };
         };
         "custom/screen#toolbox" = {
@@ -508,7 +508,7 @@
             "screen-pick-color" = "${pkgs.hyprpicker}/bin/hyprpicker -a -n -s 5 -u 60";
             "screen-color-chooser" =
               "/bin/pkill kcolorchooser || ${pkgs.kdePackages.kcolorchooser}/bin/kcolorchooser";
-            "screen-recorder" = "${pkgs.hwn}/bin/bt-runner-flatpak io.github.seadve.Kooha";
+            "screen-recorder" = "${pkgs.hvn}/bin/hvn-runner-flatpak io.github.seadve.Kooha";
             "ocr" = "bt-action-screenshot -m ocr";
             "screen-pixel-measure" = "bt-action-screenshot -m pixel-measure";
             "screenshot-window" = "bt-action-screenshot -m window";
@@ -527,7 +527,7 @@
           menu = "on-click";
           menu-file = "${config.xdg.configHome}/waybar/popup/settings.xml";
           menu-actions = {
-            "picker-wallpaper" = "${pkgs.hwn}/bin/bt-picker-wallpaper";
+            "picker-wallpaper" = "${pkgs.hvn}/bin/hvn-picker-wallpaper";
           };
         };
       };
