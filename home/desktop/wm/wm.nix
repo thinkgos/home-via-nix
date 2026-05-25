@@ -6,7 +6,7 @@
   ...
 }:
 let
-  wme = import ./wme { inherit config lib pkgs; };
+  wme = pkgs.callPackage ./wme { };
 in
 {
   _module.args = {

@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  wme,
   customize,
   ...
 }:
@@ -22,21 +23,21 @@ in
       {
         _args = [
           "ALT + Print"
-          (mkLuaInline ''hl.dsp.exec_cmd("bt-action-screenshot -m window")'')
+          (mkLuaInline ''hl.dsp.exec_cmd("${wme.pkgs.screenshot}/bin/wme-screenshot -m window")'')
           { description = "窗口截图"; }
         ];
       }
       {
         _args = [
           "SHIFT + Print"
-          (mkLuaInline ''hl.dsp.exec_cmd("bt-action-screenshot -m fullscreen")'')
+          (mkLuaInline ''hl.dsp.exec_cmd("${wme.pkgs.screenshot}/bin/wme-screenshot -m fullscreen")'')
           { description = "全屏截图"; }
         ];
       }
       {
         _args = [
           "Print"
-          (mkLuaInline ''hl.dsp.exec_cmd("bt-action-screenshot -m region")'')
+          (mkLuaInline ''hl.dsp.exec_cmd("${wme.pkgs.screenshot}/bin/wme-screenshot -m region")'')
           { description = "选框截图"; }
         ];
       }

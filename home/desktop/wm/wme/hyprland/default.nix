@@ -4,9 +4,12 @@
   pkgs,
   ...
 }:
+let
+  wmepkgs = pkgs.callPackage ./packages { };
+in
 {
   power = {
-    lock = "bt-action-screen-lock";
+    lock = "${wmepkgs.screen-lock}/bin/wme-screen-lock";
     # BUG: 这里注销导致hyprland起不来(但是快捷键里注销时面正常时而不正常).
     # logout = "${pkgs.hyprland}/bin/hyprctl dispatch 'hl.dsp.exit()'";
     # logout = ''${pkgs.hyprland}/bin/hyprctl dispatch  'hl.dsp.exec_cmd("hyprshutdown")'';
@@ -18,4 +21,5 @@
     hibernate = "/bin/notify-send -u critical '系统暂不支持休眠(hibernate)!'";
     suspend = "/bin/systemctl suspend";
   };
+  pkgs = wmepkgs;
 }

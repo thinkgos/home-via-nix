@@ -15,4 +15,5 @@
     hibernate = "/bin/notify-send -u critical '系统暂不支持休眠(hibernate)!'";
     suspend = "/bin/systemctl suspend";
   };
+  pkgs = { };
 }

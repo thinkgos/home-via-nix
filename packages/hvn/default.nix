@@ -29,15 +29,6 @@ pkgs.symlinkJoin {
     })
 
     (pkgs.writeShellApplication {
-      name = "hvn-popup-dropdown-terminal";
-      text = builtins.readFile ./popup/dropdown-terminal.sh;
-      excludeShellChecks = [
-        "SC1091"
-        "SC2181"
-      ];
-    })
-
-    (pkgs.writeShellApplication {
       name = "hvn-picker-wallpaper";
       text = ''
         source ${pkgs.ohlib.log4sh}/lib/shell/log4sh.sh

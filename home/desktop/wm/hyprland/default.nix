@@ -10,7 +10,6 @@
   imports = [
     ./hypr-config/hypr-config.nix # Hyprland配置
     ./window-switcher/window-switcher.nix # 窗口切换器
-    ./scripts/scripts.nix # 脚本配置
   ];
 
   home.packages = with pkgs; [
