@@ -39,7 +39,7 @@ in
         _var = "${pkgs.alacritty}/bin/alacritty";
       };
       launchDropdownTerminal = {
-        _var = "${wme.pkgs.dropdown-terminal}/bin/wme-dropdown-terminal";
+        _var = wme.misc.dropdown-terminal;
       };
       launchFileManager = {
         _var = "${pkgs.nemo}/bin/nemo";
@@ -66,7 +66,7 @@ in
         _var = "${pkgs.hvn}/bin/hvn-toggle-waybar";
       };
       actionLockScreen = {
-        _var = "${wme.pkgs.screen-lock}/bin/wme-screen-lock";
+        _var = wme.power.lock;
       };
 
       bind = [ ];
@@ -90,7 +90,7 @@ in
        hl.bind(mod .. "+ Prior", hs.dsp.focus({ workspace = "r-1" }))
        hl.bind(mod .. "+ Next", hs.dsp.focus({ workspace = "r+1" }))
        hl.bind(mod .. "+ Home", hs.dsp.focus({ workspace = 1 }))
-       hl.bind(mod .. "+ End", hl.dsp.exec_cmd("${wme.pkgs.focus-last-workspace}/bin/wme-focus-last-workspace -m split-workspace"))
+       hl.bind(mod .. "+ End", hl.dsp.exec_cmd("${wme.misc.focus-last-workspace} -m split-workspace"))
        -- 聚焦工作区 (Mod+1-9 — same as niri)
        for i = 1, settingsNumWorkspaces do
          hl.bind(mod .. "+ " .. i, hs.dsp.focus({ workspace = i }))
@@ -99,7 +99,7 @@ in
        hl.bind(mod .. "+ SHIFT + Prior", hs.dsp.window.move({ workspace = "r-1" }))
        hl.bind(mod .. "+ SHIFT + Next", hs.dsp.window.move({ workspace = "r+1" }))
        hl.bind(mod .. "+ SHIFT + Home", hs.dsp.window.move({ workspace = 1 }))
-       hl.bind(mod .. "+ SHIFT + End", hl.dsp.exec_cmd("${wme.pkgs.focus-last-workspace}/bin/wme-focus-last-workspace -m split-window-move-workspace"))
+       hl.bind(mod .. "+ SHIFT + End", hl.dsp.exec_cmd("${wme.misc.focus-last-workspace} -m split-window-move-workspace"))
       -- 工作区中移动窗口 (Mod+Shift+1-9 — same as niri)
        for i = 1, settingsNumWorkspaces do
          hl.bind(mod .. "+ SHIFT + " .. i, hs.dsp.window.move({ workspace = i }))

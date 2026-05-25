@@ -16,14 +16,14 @@ in
       {
         _args = [
           (mkLuaInline ''mod .. " + ALT + Delete"'')
-          (mkLuaInline ''hl.dsp.exec_cmd("${wme.pkgs.power}/bin/wme-power -m logout")'')
+          (mkLuaInline ''hl.dsp.exec_cmd("${wme.misc.interactive-power} -m logout")'')
           { description = "注销当前用户会话/退出桌面"; }
         ];
       }
       {
         _args = [
           (mkLuaInline ''mod .. " + ALT + M"'')
-          (mkLuaInline ''hl.dsp.exec_cmd("${wme.pkgs.power}/bin/wme-power -m reboot")'')
+          (mkLuaInline ''hl.dsp.exec_cmd("${wme.misc.interactive-power} -m reboot")'')
           { description = "重启系统"; }
         ];
       }

@@ -145,7 +145,7 @@ in
       # {
       #   _args = [
       #     (mkLuaInline ''mod .. " + SHIFT + End"'')
-      #     (mkLuaInline ''hl.dsp.exec_cmd("${wme.pkgs.focus-last-workspace}/bin/wme-focus-last-workspace -m split-window-move-workspace")'')
+      #     (mkLuaInline ''hl.dsp.exec_cmd("${wme.misc.focus-last-workspace} -m split-window-move-workspace")'')
       #     { description = "移动窗口到最后一个工作区"; }
       #   ];
       # }

@@ -5,11 +5,11 @@
   ...
 }:
 let
-  wmepkgs = pkgs.callPackage ./packages { };
+  localpkgs = pkgs.callPackage ./packages { };
 in
 {
   power = {
-    lock = "${wmepkgs.screen-lock}/bin/wme-screen-lock";
+    lock = "${localpkgs.screen-lock}/bin/wme-screen-lock";
     # BUG: 这里注销导致hyprland起不来(但是快捷键里注销时面正常时而不正常).
     # logout = "${pkgs.hyprland}/bin/hyprctl dispatch 'hl.dsp.exit()'";
     # logout = ''${pkgs.hyprland}/bin/hyprctl dispatch  'hl.dsp.exec_cmd("hyprshutdown")'';
@@ -21,5 +21,10 @@ in
     hibernate = "/bin/notify-send -u critical '系统暂不支持休眠(hibernate)!'";
     suspend = "/bin/systemctl suspend";
   };
-  pkgs = wmepkgs;
+  misc = {
+    dropdown-terminal = "${localpkgs.dropdown-terminal}/bin/wme-dropdown-terminal";
+    screenshot = "${localpkgs.screenshot}/bin/wme-screenshot";
+    interactive-power = "${localpkgs.power}/bin/wme-power";
+    focus-last-workspace = "${localpkgs.focus-last-workspace}/bin/wme-focus-last-workspace";
+  };
 }

@@ -510,17 +510,16 @@
             "screen-color-chooser" =
               "/bin/pkill kcolorchooser || ${pkgs.kdePackages.kcolorchooser}/bin/kcolorchooser";
             "screen-recorder" = "${pkgs.hvn}/bin/hvn-runner-flatpak io.github.seadve.Kooha";
-            "ocr" = "${wme.pkgs.screenshot}/bin/wme-screenshot -m ocr";
-            "screen-pixel-measure" = "${wme.pkgs.screenshot}/bin/wme-screenshot -m pixel-measure";
-            "screenshot-window" = "${wme.pkgs.screenshot}/bin/wme-screenshot -m window";
-            "screenshot-fullscreen" = "${wme.pkgs.screenshot}/bin/wme-screenshot -m fullscreen";
-            "screenshot-region" = "${wme.pkgs.screenshot}/bin/wme-screenshot -m region";
-            "screenshot-window-annotate" = "${wme.pkgs.screenshot}/bin/wme-screenshot -m window-annotate";
-            "screenshot-fullscreen-annotate" =
-              "${wme.pkgs.screenshot}/bin/wme-screenshot -m fullscreen-annotate";
-            "screenshot-region-annotate" = "${wme.pkgs.screenshot}/bin/wme-screenshot -m region-annotate";
-            "screenshot-scroll" = "${wme.pkgs.screenshot}/bin/wme-screenshot -m scroll";
-            "screenshot-scroll-preview" = "${wme.pkgs.screenshot}/bin/wme-screenshot -m scroll-preview";
+            "ocr" = "${wme.misc.screenshot} -m ocr";
+            "screen-pixel-measure" = "${wme.misc.screenshot} -m pixel-measure";
+            "screenshot-window" = "${wme.misc.screenshot} -m window";
+            "screenshot-fullscreen" = "${wme.misc.screenshot} -m fullscreen";
+            "screenshot-region" = "${wme.misc.screenshot} -m region";
+            "screenshot-window-annotate" = "${wme.misc.screenshot} -m window-annotate";
+            "screenshot-fullscreen-annotate" = "${wme.misc.screenshot} -m fullscreen-annotate";
+            "screenshot-region-annotate" = "${wme.misc.screenshot} -m region-annotate";
+            "screenshot-scroll" = "${wme.misc.screenshot} -m scroll";
+            "screenshot-scroll-preview" = "${wme.misc.screenshot} -m scroll-preview";
           };
         };
         "custom/settings" = {
