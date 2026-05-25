@@ -13,3 +13,6 @@ sudo apt install -y \
     power-profiles-daemon \
     gnome-keyring \
     language-pack-zh-hans
+
+sudo apt install -y \
+    gvfs-backends gvfs-fuse smbclient cifs-utils
