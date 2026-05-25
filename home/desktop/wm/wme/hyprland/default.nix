@@ -21,10 +21,21 @@ in
     hibernate = "/bin/notify-send -u critical '系统暂不支持休眠(hibernate)!'";
     suspend = "/bin/systemctl suspend";
   };
+  workspace = {
+    focus-cycle-prev = ''${pkgs.hyprland}/bin/hyprctl dispatch "hl.plugin.hyprsplit.dsp.focus({ workspace = 'r-1' })"'';
+    focus-cycle-next = ''${pkgs.hyprland}/bin/hyprctl dispatch "hl.plugin.hyprsplit.dsp.focus({ workspace = 'r+1' })"'';
+    focus-last = "${localpkgs.focus-last-workspace}/bin/wme-focus-last-workspace";
+  };
+  window = {
+    toggle-maximized = ''${pkgs.hyprland}/bin/hyprctl dispatch "hl.dsp.window.fullscreen({ mode = 'maximized', action = 'toggle' })"'';
+    move-to-last-workspace = "${localpkgs.window-move-to-last-workspace}/bin/wme-window-move-to-last-workspace";
+  };
+  layout = {
+    toggle-split = ''${pkgs.hyprland}/bin/hyprctl dispatch "hl.dsp.layout('togglesplit')"''; # Dwindle切换横纵分割
+  };
   misc = {
     dropdown-terminal = "${localpkgs.dropdown-terminal}/bin/wme-dropdown-terminal";
     screenshot = "${localpkgs.screenshot}/bin/wme-screenshot";
     interactive-power = "${localpkgs.power}/bin/wme-power";
-    focus-last-workspace = "${localpkgs.focus-last-workspace}/bin/wme-focus-last-workspace";
   };
 }

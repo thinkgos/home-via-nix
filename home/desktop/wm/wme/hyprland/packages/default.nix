@@ -73,7 +73,24 @@
     name = "wme-focus-last-workspace";
     text = ''
       source ${pkgs.ohlib.log4sh}/lib/shell/log4sh.sh
-      ${builtins.readFile ./control/switch-last-workspace.sh}
+      ${builtins.readFile ./control/focus-last-workspace.sh}
+    '';
+    excludeShellChecks = [
+      "SC1091"
+      "SC2181"
+    ];
+    runtimeInputs = with pkgs; [
+      hyprland
+      jq
+    ];
+  };
+
+  # 移动窗口到最后工作区
+  window-move-to-last-workspace = pkgs.writeShellApplication {
+    name = "wme-window-move-to-last-workspace";
+    text = ''
+      source ${pkgs.ohlib.log4sh}/lib/shell/log4sh.sh
+      ${builtins.readFile ./control/window-move-to-last-workspace.sh}
     '';
     excludeShellChecks = [
       "SC1091"

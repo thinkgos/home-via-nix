@@ -52,7 +52,7 @@ in
       # {
       #   _args = [
       #     (mkLuaInline ''mod .. " + End"'')
-      #     (mkLuaInlineViaExecCmd "${wme.misc.focus-last-workspace} -m workspace")
+      #     (mkLuaInlineViaExecCmd "${wme.workspace.focus-last}")
       #     { description = "聚焦到最后一个工作区"; }
       #   ];
       # }

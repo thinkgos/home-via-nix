@@ -8,10 +8,7 @@
 }:
 {
   # 状态栏
-  # https://wiki.hypr.land/Useful-Utilities/Status-Bars/
-
   # https://github.com/Alexays/Waybar/wiki
-  # https://github.com/Alexays/Waybar/wiki/Module:-Hyprland
   # https://github.com/Alexays/Waybar/wiki/Configuration
   programs.waybar = {
     enable = true;
@@ -97,10 +94,8 @@
             "*" = 2;
           };
           on-click = "activate";
-          on-scroll-up = ''${pkgs.hyprland}/bin/hyprctl dispatch "hl.plugin.hyprsplit.dsp.focus({ workspace = 'r-1' })"'';
-          on-scroll-down = ''${pkgs.hyprland}/bin/hyprctl dispatch "hl.plugin.hyprsplit.dsp.focus({ workspace = 'r+1' })"'';
-          # on-scroll-up = ''${pkgs.hyprland}/bin/hyprctl dispatch "hl.dsp.focus({ workspace = "e-1" })"'';
-          # on-scroll-down = ''${pkgs.hyprland}/bin/hyprctl dispatch "hl.dsp.focus({ workspace = "e+1" })"'';
+          on-scroll-up = wme.workspace.focus-cycle-prev;
+          on-scroll-down = wme.workspace.focus-cycle-next;
         };
         # 窗口 ✅
         "hyprland/window" = {
@@ -116,8 +111,8 @@
             "💥 (.*) - Alacritty" = " $1";
             "💥 (.*) - zsh" = "󰆍 $1";
           };
-          on-click = ''${pkgs.hyprland}/bin/hyprctl dispatch "hl.dsp.window.fullscreen({ mode = 'maximized', action = 'toggle' })"'';
-          on-click-right = ''${pkgs.hyprland}/bin/hyprctl dispatch "hl.dsp.layout('togglesplit')"''; # Dwindle切换横纵分割
+          on-click = wme.window.toggle-maximized;
+          on-click-right = wme.layout.toggle-split;
         };
 
         # 任务栏 ✅
