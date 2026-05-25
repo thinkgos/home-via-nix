@@ -2,10 +2,12 @@
   config,
   lib,
   pkgs,
-  system,
   inputs,
   ...
 }:
+let
+  system = pkgs.stdenv.hostPlatform.system;
+in
 {
   nixpkgs.overlays = [
     (import ../overlays/packages { inherit config lib; })

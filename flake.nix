@@ -60,7 +60,6 @@
           config,
           lib,
           pkgs,
-          system,
           ...
         }:
         {

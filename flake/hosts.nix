@@ -3,7 +3,6 @@
   lib,
   pkgs,
   inputs,
-  system,
   ...
 }:
 let
@@ -19,7 +18,6 @@ let
             lib
             pkgs
             inputs
-            system
             ;
         })
 
