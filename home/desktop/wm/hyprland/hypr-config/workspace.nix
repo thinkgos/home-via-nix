@@ -9,7 +9,7 @@
   wayland.windowManager.hyprland.settings.workspace_rule = [
     {
       workspace = "r[1-2]";
-      layout = "scrolling";
+      layout = "dwindle";
     }
     {
       workspace = "3";
