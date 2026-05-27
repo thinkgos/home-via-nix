@@ -6,6 +6,8 @@
 }:
 {
   imports = [
+    ./system.nix
+    ./nix.nix
     ./zellij/zellij.nix
     ./starship/starship.nix
     ./git.nix

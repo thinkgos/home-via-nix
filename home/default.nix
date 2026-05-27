@@ -27,7 +27,6 @@
   };
 
   imports = [
-    ./system.nix
     ./systemd.nix
     ./fonts.nix
     ./password-store.nix
@@ -132,12 +131,23 @@
   #
   #  /etc/profiles/per-user/${USER}/etc/profile.d/hm-session-vars.sh
   #
-  home.sessionVariables = { };
+  home.sessionVariables = {
+    BAT_PAGER = "less -r";
+    TMPDIR = "$HOME/.cache/tmp";
+  };
 
-  home.sessionPath = [ ];
+  home.sessionPath = [
+    "$HOME/.local/bin"
+  ];
 
   programs = {
     # Let Home Manager install and manage itself.
     home-manager.enable = true;
   };
+
+  # activation phase
+  # Create TMPDIR if it doesn't exist
+  home.activation.createTmpDir = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    mkdir -p "$HOME/.cache/tmp"
+  '';
 }

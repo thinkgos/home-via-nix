@@ -2,7 +2,7 @@
 
 #* ubuntu server 安装wayland
 
-source ./scripts/required-system.sh
+source ./scripts/packages.sh
 source ./scripts/wayland-session.sh
 source ./scripts/wayland-session-hyprland.sh
 source ./scripts/general-settings.sh
