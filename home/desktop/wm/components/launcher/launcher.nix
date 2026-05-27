@@ -11,5 +11,6 @@
     ./fuzzel/fuzzel.nix
     ./raffi/raffi.nix
     ./rofi/rofi.nix
+    ./vicinae/vicinae.nix
   ];
 }

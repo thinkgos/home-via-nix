@@ -70,6 +70,13 @@ in
       }
       {
         _args = [
+          (mkLuaInline ''mod .. " + Space"'')
+          (mkLuaInline ''hl.dsp.exec_cmd("${pkgs.vicinae}/bin/vicinae toggle")'')
+          { description = "启动应用启动器"; }
+        ];
+      }
+      {
+        _args = [
           (mkLuaInline ''mod .. " + F1"'')
           (mkLuaInline "hl.dsp.exec_cmd(popupKeybindingHelp)")
           { description = "启动帮助按键绑定"; }

@@ -19,6 +19,11 @@
         blur = true;
         ignore_alpha = 0.5;
       }
+      {
+        match.namespace = "vicinae";
+        blur = true;
+        ignore_alpha = 0;
+      }
     ];
 
     # 窗口规则
