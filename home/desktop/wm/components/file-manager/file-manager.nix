@@ -8,7 +8,14 @@
   # 文件管理器
   home.packages = with pkgs; [
     # nautilus
-    nemo-with-extensions
+    (nemo-with-extensions.override {
+      extensions = with pkgs; [
+        nemo-fileroller
+        nemo-preview
+        nemo-seahorse
+        nemo-emblems
+      ];
+    })
   ];
 
   xdg.dataFile = {

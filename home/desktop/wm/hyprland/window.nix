@@ -23,6 +23,17 @@
 
     # 窗口规则
     window_rule = [
+      # 截图标注/压缩工具
+      {
+        match.initial_title = "^(flameshot|org.kde.ark)$";
+        float = true;
+      }
+      # 在终端使用ueberzugpp显示图片, 不支持kitty图片显示协议的终端.
+      {
+        match.class = "^(ueberzugpp_.*)$";
+        float = true;
+        no_focus = true;
+      }
       # 计算器/网络/蓝牙/音频
       {
         match.class = "^(qalculate-gtk|nm-connection-editor|.blueman-manager-wrapped|org.pulseaudio.pavucontrol|org.fcitx.)$";
@@ -83,17 +94,6 @@
         ];
         rounding = 0;
         workspace = "special:dropdown-terminal";
-      }
-      # 在终端使用ueberzugpp显示图片, 不支持kitty图片显示协议的终端.
-      {
-        match.class = "^(ueberzugpp_.*)$";
-        float = true;
-        no_focus = true;
-      }
-      # 截图标注
-      {
-        match.initial_title = "^(flameshot)$";
-        float = true;
       }
       # 交互式录屏
       {

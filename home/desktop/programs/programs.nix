@@ -30,6 +30,7 @@
     kdePackages.okular # pdf viewer
     kdePackages.gwenview # image viewer
     kdePackages.kcolorchooser # 颜色选择器
+    kdePackages.ark # 压缩工具
     localsend # 局域网文件传输工具
     drawy # 画布工具
     wayscrollshot # 滚动截图工具
