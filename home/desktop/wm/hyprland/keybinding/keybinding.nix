@@ -57,7 +57,7 @@ in
         _var = "/bin/pkill kooha || flatpak run io.github.seadve.Kooha";
       };
       popupAppLauncher = {
-        _var = "/bin/pkill rofi || ${pkgs.rofi}/bin/rofi -show drun";
+        _var = "/bin/pkill anyrun || ${pkgs.anyrun}/bin/anyrun";
       };
       popupFunctionalLauncher = {
         _var = "${pkgs.vicinae}/bin/vicinae toggle";

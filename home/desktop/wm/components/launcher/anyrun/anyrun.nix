@@ -15,10 +15,10 @@
         fraction = 0.5;
       };
       y = {
-        fraction = 0.2;
+        fraction = 0.1;
       };
       width = {
-        fraction = 0.3;
+        absolute = 680;
       };
       height = {
         absolute = 1;
