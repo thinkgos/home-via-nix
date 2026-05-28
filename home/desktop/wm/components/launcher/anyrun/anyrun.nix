@@ -37,6 +37,7 @@
         "${pkgs.anyrun}/lib/libsymbols.so"
         "${pkgs.anyrun}/lib/libwebsearch.so"
         "${pkgs.anyrun}/lib/libtranslate.so"
+        "${pkgs.anyrun}/lib/libaction.so"
       ];
     };
 

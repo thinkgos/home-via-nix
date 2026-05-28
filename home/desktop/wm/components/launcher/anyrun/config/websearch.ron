@@ -9,23 +9,23 @@ Config(
     ),
     Custom(
       name: "Github Repositories",
-      url: "https://github.com/search?q={}&type=repositories",
+      url: "github.com/search?q={}&type=repositories",
     ),
     Custom(
       name: "NixOS Packages",
-      url: "https://search.nixos.org/packages?channel=unstable&query={}",
+      url: "search.nixos.org/packages?channel=unstable&query={}",
     ),
     Custom(
       name: "Flathub Apps",
-      url: "https://flathub.org/zh-Hans/apps/search?q={}",
+      url: "flathub.org/zh-Hans/apps/search?q={}",
     ),
     Custom(
       name: "Rust Crates",
-      url: "https://crates.io/search?q={}",
+      url: "crates.io/search?q={}",
     ),
     Custom(
       name: "Rust Docs",
-      url: "https://docs.rs/releases/search?query={}",
+      url: "docs.rs/releases/search?query={}",
     ),
   ],
 )
