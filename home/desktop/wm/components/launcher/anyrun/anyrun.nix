@@ -11,10 +11,18 @@
   programs.anyrun = {
     enable = true;
     config = {
-      x.fraction = 0.5;
-      y.fraction = 0.3;
-      width.fraction = 0.3;
-      height.fraction = null;
+      x = {
+        fraction = 0.5;
+      };
+      y = {
+        fraction = 0.2;
+      };
+      width = {
+        fraction = 0.3;
+      };
+      height = {
+        absolute = 1;
+      };
       hideIcons = false;
       ignoreExclusiveZones = false;
       layer = "overlay";
@@ -22,7 +30,6 @@
       closeOnClick = false;
       showResultsImmediately = false;
       maxEntries = null;
-
       plugins = [
         "${pkgs.anyrun}/lib/libapplications.so"
         "${pkgs.anyrun}/lib/librink.so"
@@ -33,7 +40,7 @@
       ];
     };
 
-    extraCss = builtins.readFile ./style.gtk.css;
+    extraCss = builtins.readFile ./config/style.css;
     extraConfigFiles = {
       "shell.ron".source = ./config/shell.ron;
       "symbols.ron".source = ./config/symbols.ron;

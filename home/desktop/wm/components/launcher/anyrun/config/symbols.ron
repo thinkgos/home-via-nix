@@ -1,5 +1,5 @@
 Config(
-  prefix: ":e",
+  prefix: ":sy",
   symbols: {
     // "name": "text to be copied"
   },
