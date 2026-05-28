@@ -1,0 +1,19 @@
+Config(
+  // Set to false to disable built-in power actions (default: true).
+  enable_power_actions: true,
+  // Add your own custom actions here.
+  custom_actions: [
+    (
+      // Required.
+      title: "Open Browser",
+      // Required. The command is passed through shell.
+      command: "xdg-open https://example.com",
+      // Optional.
+      description: "Launch the default web browser",
+      // Optional.
+      icon: "web-browser",
+      // Optional (default: false).
+      confirm: false,
+    ),
+  ],
+)

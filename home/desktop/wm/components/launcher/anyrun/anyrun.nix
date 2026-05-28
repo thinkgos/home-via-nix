@@ -47,6 +47,7 @@
       "symbols.ron".source = ./config/symbols.ron;
       "websearch.ron".source = ./config/websearch.ron;
       "translate.ron".source = ./config/translate.ron;
+      "action.ron".source = ./config/action.ron;
     };
   };
 }
