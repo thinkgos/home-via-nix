@@ -1,5 +1,18 @@
 {
   "pins": {
+    "extensions": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "vicinaehq",
+        "repo": "extensions"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "c7a8d7d2e3fa599922c4964a94315c55c9bfe80b",
+      "url": "https://github.com/vicinaehq/extensions/archive/c7a8d7d2e3fa599922c4964a94315c55c9bfe80b.tar.gz",
+      "hash": "sha256-M2hmGokQXbvoKUEvkgF2IIxOUGCF5v7bXyjPzpSQIJw="
+    },
     "ghostty-cursor-shaders": {
       "type": "Git",
       "repository": {

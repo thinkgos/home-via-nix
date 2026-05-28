@@ -14,7 +14,6 @@
       enable = true;
       autoStart = true;
     };
-    extensions = [ ];
     settings = {
       close_on_focus_loss = false;
       consider_preedit = true;
@@ -46,5 +45,38 @@
       };
     };
     # themes = {};
+    # dummy npmDepsHash sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
+    extensions = [
+      (config.lib.vicinae.mkExtension {
+        name = "nix";
+        npmDepsHash = "sha256-HPWNUznCWVPz39PlPEBR7GpgbC0DuIAvVBdB2GAs47A=";
+        src = pkgs.vicinae-extensions + "/extensions/nix";
+      })
+      (config.lib.vicinae.mkExtension {
+        name = "github";
+        npmDepsHash = "sha256-7E/dbV6LQaLChriVxP0bvopZpxof5UGrrRBU5lXI9eU=";
+        src = pkgs.vicinae-extensions + "/extensions/github";
+      })
+      # (config.lib.vicinae.mkExtension {
+      #   name = "flathub-search";
+      #   npmDepsHash = "sha256-kni3hWwg0N3LxypkcAGNqfCZn34WJKthS71W2Df+kgc=";
+      #   src = pkgs.vicinae-extensions + "/extensions/flathub-search";
+      # })
+      (config.lib.vicinae.mkExtension {
+        name = "nerdfont-search";
+        npmDepsHash = "sha256-SRWqwrWLsBvONOW/mbvxEa0gvoS8qWT4ZDEilGGdG/Y=";
+        src = pkgs.vicinae-extensions + "/extensions/nerdfont-search";
+      })
+      (config.lib.vicinae.mkExtension {
+        name = "pass";
+        npmDepsHash = "sha256-fKpnxTn38WHo3oyrr3dXnEuVOQvj7oJyRn1Pf0uVN3Y=";
+        src = pkgs.vicinae-extensions + "/extensions/pass";
+      })
+      (config.lib.vicinae.mkExtension {
+        name = "color-converter";
+        npmDepsHash = "sha256-EYvMY+NoCm8NaU3pEV5QUYEUkYZZiYXx7eCDD20TzrM=";
+        src = pkgs.vicinae-extensions + "/extensions/color-converter";
+      })
+    ];
   };
 }
