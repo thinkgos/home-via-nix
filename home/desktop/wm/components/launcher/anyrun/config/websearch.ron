@@ -1,0 +1,11 @@
+Config(
+  prefix: "?",
+  // Options: Google, Ecosia, Bing, DuckDuckGo, Custom
+  engines: [
+    Google,
+    Custom(
+      name: "Baidu",
+      url: "www.baidu.com/s?wd={}",
+    ),
+  ],
+)

@@ -12,5 +12,6 @@
     ./raffi/raffi.nix
     ./rofi/rofi.nix
     ./vicinae/vicinae.nix
+    ./anyrun/anyrun.nix
   ];
 }
