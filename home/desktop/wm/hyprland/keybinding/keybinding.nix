@@ -59,6 +59,12 @@ in
       popupAppLauncher = {
         _var = "/bin/pkill rofi || ${pkgs.rofi}/bin/rofi -show drun";
       };
+      popupFunctionalLauncher = {
+        _var = "${pkgs.vicinae}/bin/vicinae toggle";
+      };
+      popupShortcutLauncher = {
+        _var = "${pkgs.hvn}/bin/hvn-popup-shortcut";
+      };
       popupKeybindingHelp = {
         _var = "hyprkcs";
       };

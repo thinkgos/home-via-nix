@@ -39,10 +39,7 @@
         ];
         modules-right = [
           "idle_inhibitor"
-          "custom/terminal"
-          "custom/clipboard"
           "custom/screen#toolbox"
-          "custom/settings"
           "custom/separator"
           "tray"
           "custom/separator"
@@ -473,28 +470,6 @@
           # on-click = "wlogout -b 2";
           tooltip = false;
         };
-        "custom/terminal" = {
-          format = "⚡";
-          tooltip = false;
-          menu = "on-click";
-          menu-file = "${config.xdg.configHome}/waybar/popup/terminal.xml";
-          menu-actions = {
-            "alacritty" = "${pkgs.alacritty}/bin/alacritty";
-            "kitty" = "${pkgs.kitty}/bin/kitty";
-            "ghostty" = "${pkgs.ghostty}/bin/ghostty";
-            "warp" = "warp-terminal";
-          };
-        };
-        "custom/clipboard" = {
-          format = "📋";
-          tooltip = false;
-          menu = "on-click";
-          menu-file = "${config.xdg.configHome}/waybar/popup/clipboard.xml";
-          menu-actions = {
-            "clipboard-history-overview" = "${pkgs.hvn}/bin/hvn-popup-clipboard -m history-overview";
-            "clipboard-history-wipe" = "${pkgs.hvn}/bin/hvn-popup-clipboard -m history-wipe";
-          };
-        };
         "custom/screen#toolbox" = {
           format = "🎯";
           tooltip = false;
@@ -515,15 +490,6 @@
             "screenshot-region-annotate" = "${wme.misc.screenshot} -m region-annotate";
             "screenshot-scroll" = "${wme.misc.screenshot} -m scroll";
             "screenshot-scroll-preview" = "${wme.misc.screenshot} -m scroll-preview";
-          };
-        };
-        "custom/settings" = {
-          format = "⚙️";
-          tooltip = false;
-          menu = "on-click";
-          menu-file = "${config.xdg.configHome}/waybar/popup/settings.xml";
-          menu-actions = {
-            "picker-wallpaper" = "${pkgs.hvn}/bin/hvn-picker-wallpaper";
           };
         };
       };

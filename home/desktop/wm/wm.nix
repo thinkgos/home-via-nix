@@ -20,4 +20,8 @@ in
   ++ lib.optional (
     customize.desktop.window == "hyprland" || customize.desktop.window == "niri"
   ) ./components/components.nix; # 组件库
+
+  home.packages = with pkgs; [
+    hvn
+  ];
 }

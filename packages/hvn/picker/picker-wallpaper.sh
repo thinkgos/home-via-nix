@@ -11,30 +11,36 @@ usage() {
     echo "  wallpaper_dir    壁纸目录, 默认: ~/.local/share/wallpapers"
     echo ""
     echo "Options:"
-    echo "  -t, --transition <type>  过渡类型, 默认: random"
-    echo "  -f, --fps <num>           过渡帧率, 默认: 60"
-    echo "  -s, --step <num>          过渡步数, 默认: 20"
+    echo "  -m, --mode <type>         选择器模式, 默认: normal"
+    echo "  -t, --transition <type>   awww过渡类型, 默认: random"
+    echo "  -f, --fps <num>           awww过渡帧率, 默认: 60"
+    echo "  -s, --step <num>          awww过渡步数, 默认: 20"
     echo "  -l, --log-level <level>   日志级别 (DEBUG|INFO|WARN|ERROR|FATAL|0-4), 默认: WARN"
     echo "  -h, --help                显示帮助"
     echo ""
     echo "Example:"
     echo "  $0 ~/.local/share/wallpapers"
-    echo "  $0 -t fade -f 30 -s 10 ~/pictures/wallpapers"
+    echo "  $0 -m rofi -t fade -f 30 ~/pictures/wallpapers"
     exit 1
 }
 
 WALLPAPER_DIR="$HOME/.local/share/wallpapers"
+MODE="normal"
 TRANSITION="random"
 FPS=60
 STEP=20
 
-PARSED=$(getopt -o t:f:s:l:h --long transition:,fps:,step:,log-level:,help -n "$0" -- "$@")
+PARSED=$(getopt -o m:t:f:s:l:h --long mode:,transition:,fps:,step:,log-level:,help -n "$0" -- "$@")
 if [ $? -ne 0 ]; then
     usage
 fi
 eval set -- "$PARSED"
 while true; do
     case "$1" in
+    -m | --mode)
+        MODE="$2"
+        shift 2
+        ;;
     -t | --transition)
         TRANSITION="$2"
         shift 2
@@ -68,7 +74,7 @@ done
 # 如果有位置参数，覆盖壁纸目录
 [ -n "${1:-}" ] && WALLPAPER_DIR="$1"
 
-log::debug "壁纸目录: $WALLPAPER_DIR"
+log::debug "模式: $MODE, 壁纸目录: $WALLPAPER_DIR"
 log::debug "过渡类型: $TRANSITION, 帧率: $FPS, 步数: $STEP"
 
 # 路径列表存入数组
@@ -78,19 +84,33 @@ mapfile -t PATHS < <(find -L "$WALLPAPER_DIR" -type f \( -iname "*.jpg" -o -inam
 
 log::debug "找到 ${#PATHS[@]} 张图片"
 
-# 构建传给 rofi 的显示内容(显示文件名，携带图标)
-INDEX=$(
-    for p in "${PATHS[@]}"; do
-        echo -en "$(basename "$p")\0icon\x1f$p\n"
-    done |
-        rofi -dmenu -format i -config "$HOME/.config/rofi/config-wallpaper.rasi"
-)
+FULL_PATH=""
 
-# 没选则退出
-[ -z "$INDEX" ] && log::debug "用户取消选择" && exit 0
+case "$MODE" in
+side)
+    # 构建传给 picker 的显示内容(显示文件名，携带图标)
+    INDEX=$(
+        for p in "${PATHS[@]}"; do
+            echo -en "$(basename "$p")\0icon\x1f$p\n"
+        done |
+            rofi -dmenu -format i -config "$HOME/.config/rofi/config-wallpaper.rasi"
+    )
+    # 没选则退出
+    [ -z "$INDEX" ] && log::debug "用户取消选择" && exit 0
+    # 根据索引获取完整路径
+    FULL_PATH="${PATHS[$INDEX]}"
+    ;;
+normal)
+    FULL_PATH=$(printf '%s\n' "${PATHS[@]}" | vicinae dmenu -p 'Pick a wallpaper...' -W 980 -H 600 --no-footer)
+    ;;
+*)
+    log::error "未知模式: $MODE"
+    exit 1
+    ;;
+esac
 
-# 根据索引获取完整路径
-FULL_PATH="${PATHS[$INDEX]}"
+[ -z "$FULL_PATH" ] && log::debug "用户未选择壁纸" && exit 0
+
 log::debug "设置壁纸: $(basename "$FULL_PATH")"
 
 # 设置壁纸

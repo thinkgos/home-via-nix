@@ -15,7 +15,8 @@
       source = ./themes;
       recursive = true;
     };
-    "rofi/config.rasi".source = ./config.rasi;
-    "rofi/config-wallpaper.rasi".source = ./config-wallpaper.rasi;
+    "rofi/config.rasi".source = ./config/config.rasi;
+    "rofi/config-wallpaper.rasi".source = ./config/config-wallpaper.rasi;
+    "rofi/config-shortcut.rasi".source = ./config/config-shortcut.rasi;
   };
 }

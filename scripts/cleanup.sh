@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "清理不需要的软件..."
+echo "清理..."
 sudo apt autoremove -y --purge snapd cloud-init open-iscsi apport modemmanager unattended-upgrades rsyslog needrestart
 
 echo "清理不需要的服务端服务..."

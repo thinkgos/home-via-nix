@@ -12,19 +12,17 @@ pkgs.symlinkJoin {
   paths = [
     # popup
     (pkgs.writeShellApplication {
-      name = "hvn-popup-clipboard";
+      name = "hvn-popup-shortcut";
       text = ''
         source ${pkgs.ohlib.log4sh}/lib/shell/log4sh.sh
-        ${builtins.readFile ./popup/clipboard.sh}
+        ${builtins.readFile ./popup/shortcut.sh}
       '';
       excludeShellChecks = [
         "SC1091"
         "SC2181"
       ];
       runtimeInputs = with pkgs; [
-        cliphist
-        fuzzel
-        wl-clipboard
+        vicinae
       ];
     })
 

@@ -71,8 +71,15 @@ in
       {
         _args = [
           (mkLuaInline ''mod .. " + Space"'')
-          (mkLuaInline ''hl.dsp.exec_cmd("${pkgs.vicinae}/bin/vicinae toggle")'')
-          { description = "启动应用启动器"; }
+          (mkLuaInline "hl.dsp.exec_cmd(popupFunctionalLauncher)")
+          { description = "启动多功能启动器"; }
+        ];
+      }
+      {
+        _args = [
+          (mkLuaInline ''mod .. " + O"'')
+          (mkLuaInline "hl.dsp.exec_cmd(popupShortcutLauncher)")
+          { description = "启动快捷方式启动器"; }
         ];
       }
       {
