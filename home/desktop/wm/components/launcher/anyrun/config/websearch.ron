@@ -2,29 +2,32 @@ Config(
   prefix: "?",
   // Options: Google, Ecosia, Bing, DuckDuckGo, Custom
   engines: [
-    Google,
     Custom(
-      name: "Baidu",
+      name: " Google",
+      url: "www.google.com/search?q={}",
+    ),
+    Custom(
+      name: "󰖟 Baidu",
       url: "www.baidu.com/s?wd={}",
     ),
     Custom(
-      name: "Github Repositories",
+      name: " Github Repositories",
       url: "github.com/search?q={}&type=repositories",
     ),
     Custom(
-      name: "NixOS Packages",
+      name: " NixOS Packages",
       url: "search.nixos.org/packages?channel=unstable&query={}",
     ),
     Custom(
-      name: "Flathub Apps",
+      name: " Flathub Apps",
       url: "flathub.org/zh-Hans/apps/search?q={}",
     ),
     Custom(
-      name: "Rust Crates",
+      name: "󱘗 Rust Crates",
       url: "crates.io/search?q={}",
     ),
     Custom(
-      name: "Rust Docs",
+      name: " Rust Docs",
       url: "docs.rs/releases/search?query={}",
     ),
   ],

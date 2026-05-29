@@ -43,6 +43,7 @@
 
     extraCss = builtins.readFile ./config/style.css;
     extraConfigFiles = {
+      "applications.ron".source = ./config/applications.ron;
       "shell.ron".source = ./config/shell.ron;
       "symbols.ron".source = ./config/symbols.ron;
       "websearch.ron".source = ./config/websearch.ron;
