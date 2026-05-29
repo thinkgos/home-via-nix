@@ -37,7 +37,7 @@
         "${pkgs.anyrun}/lib/libsymbols.so"
         "${pkgs.anyrun}/lib/libwebsearch.so"
         "${pkgs.anyrun}/lib/libtranslate.so"
-        "${pkgs.anyrun}/lib/libaction.so"
+        "${pkgs.anyrun}/lib/libactions.so"
       ];
     };
 
@@ -47,7 +47,7 @@
       "symbols.ron".source = ./config/symbols.ron;
       "websearch.ron".source = ./config/websearch.ron;
       "translate.ron".source = ./config/translate.ron;
-      "action.ron".source = ./config/action.ron;
+      "actions.ron".source = ./config/actions.ron;
     };
   };
 }
