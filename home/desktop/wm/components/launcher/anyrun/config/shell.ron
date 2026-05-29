@@ -1,5 +1,5 @@
 Config(
   prefix: ">",
   // Override the shell used to launch the command
-  shell: None,
+  shell: Some("/bin/bash"),
 )

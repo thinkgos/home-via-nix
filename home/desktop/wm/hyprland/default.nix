@@ -77,6 +77,16 @@ in
     };
 
     settings = {
+      on = {
+        _args = [
+          "hyprland.start"
+          (lib.generators.mkLuaInline ''
+            function ()
+              hl.exec_cmd("${pkgs.anyrun}/bin/anyrun daemon")
+            end
+          '')
+        ];
+      };
       # General / Decoration / Input / Dwindle
       # https://wiki.hypr.land/Configuring/Variables/#general
       config = {
