@@ -20,6 +20,8 @@
   # release notes.
   home.stateVersion = "26.05"; # Please read the comment before changing.
 
+  home.enableNixpkgsReleaseCheck = false;
+
   nix.gc = {
     automatic = true;
     dates = "daily";
