@@ -12,6 +12,7 @@
     enable = true;
     autoEnable = false;
     polarity = "dark";
+    enableReleaseChecks = false;
     # https://github.com/tinted-theming/schemes
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
     # see ../fonts.nix
