@@ -8,7 +8,7 @@
         </child>
         <child>
             <object class="GtkMenuItem" id="screen-color-history">
-                <property name="label">🧪 颜色历史</property>
+                <property name="label"> 颜色历史</property>
             </object>
         </child>
         <child>
