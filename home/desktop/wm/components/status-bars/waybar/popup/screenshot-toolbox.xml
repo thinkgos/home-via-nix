@@ -2,13 +2,18 @@
 <interface>
     <object class="GtkMenu" id="menu">
         <child>
-            <object class="GtkMenuItem" id="screen-pick-color">
+            <object class="GtkMenuItem" id="screen-color-picker">
                 <property name="label">🧪 颜色拾取</property>
             </object>
         </child>
         <child>
+            <object class="GtkMenuItem" id="screen-color-history">
+                <property name="label">🧪 颜色历史</property>
+            </object>
+        </child>
+        <child>
             <object class="GtkMenuItem" id="screen-color-chooser">
-                <property name="label"> 颜色选择</property>
+                <property name="label">🎨 颜色选择</property>
             </object>
         </child>
         <child>

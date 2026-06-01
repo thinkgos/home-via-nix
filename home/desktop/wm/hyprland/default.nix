@@ -20,7 +20,6 @@ in
   ];
 
   home.packages = with pkgs; [
-    hyprpicker # 颜色拾取器
     hypr-kcs # hyprcs
     hyprpwcenter # pipewire控制中心
     hyprshutdown # 关机工具

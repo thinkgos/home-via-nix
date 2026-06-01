@@ -31,6 +31,7 @@
   imports = [
     ./systemd.nix
     ./fonts.nix
+    ./autostart.nix
     ./password-store.nix
     ./accounts.nix
     ./assets.nix

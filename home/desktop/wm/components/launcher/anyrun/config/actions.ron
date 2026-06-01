@@ -7,7 +7,7 @@ Config(
       // Required.
       title: "Open Browser",
       // Required. The command is passed through shell.
-      command: "xdg-open https://example.com",
+      command: "xdg-open https://www.google.com",
       // Optional.
       description: "Launch the default web browser",
       // Optional.

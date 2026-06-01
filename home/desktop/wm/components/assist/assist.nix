@@ -8,6 +8,7 @@
 {
   imports = [
     ./swayosd/swayosd.nix
+    ./ie-r.nix
     # ./wluma.nix
   ];
 }

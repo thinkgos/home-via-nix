@@ -14,6 +14,14 @@
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    anyrun = {
+      url = "github:anyrun-org/anyrun";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    ie-r = {
+      url = "github:miaupaw/ie-r";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     lan-mouse.url = "github:feschber/lan-mouse";
     goup-rs = {
       url = "github:thinkgos/goup-rs";

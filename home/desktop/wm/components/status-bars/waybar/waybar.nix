@@ -476,7 +476,8 @@
           menu = "on-click";
           menu-file = "${config.xdg.configHome}/waybar/popup/screenshot-toolbox.xml";
           menu-actions = {
-            "screen-pick-color" = "${pkgs.hyprpicker}/bin/hyprpicker -a -n -s 5 -u 60";
+            "screen-color-picker" = "/bin/pkill -SIGUSR1 ie-r";
+            "screen-color-history" = "/bin/pkill -SIGUSR2 ie-r";
             "screen-color-chooser" =
               "/bin/pkill kcolorchooser || ${pkgs.kdePackages.kcolorchooser}/bin/kcolorchooser";
             "screen-recorder" = "${pkgs.hvn}/bin/hvn-runner-flatpak io.github.seadve.Kooha";
