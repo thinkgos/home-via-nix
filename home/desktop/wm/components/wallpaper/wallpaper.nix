@@ -7,7 +7,6 @@
 {
   # 壁纸
   imports = [
-    # ./hyprpaper.nix
     ./awww.nix
   ];
 }

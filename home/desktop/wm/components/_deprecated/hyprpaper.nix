@@ -5,7 +5,6 @@
   ...
 }:
 {
-  # 弃用
   # 壁纸
   # https://wiki.hypr.land/Hypr-Ecosystem/hyprpaper/
   services.hyprpaper = {
