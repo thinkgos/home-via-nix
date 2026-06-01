@@ -23,7 +23,6 @@ in
       # hyprland
       hyprland = inputs.hyprland.packages.${system}.hyprland;
       xdg-desktop-portal-hyprland = inputs.hyprland.packages.${system}.xdg-desktop-portal-hyprland;
-      hyprshell = inputs.hyprshell.packages.${system}.default;
       hypr-kcs = inputs.hypr-kcs.packages.${system}.default;
       hyprlock = pkgs.hyprlock.overrideAttrs (oldAttrs: {
         nativeBuildInputs = oldAttrs.nativeBuildInputs ++ [ pkgs.patchelf ];

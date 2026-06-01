@@ -25,7 +25,6 @@ let
         inputs.stylix.homeModules.stylix
         inputs.lan-mouse.homeManagerModules.default
         inputs.niri.homeModules.niri
-        inputs.hyprshell.homeModules.default
       ];
       extraSpecialArgs = {
         inherit customize;

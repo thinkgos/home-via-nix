@@ -36,5 +36,6 @@
     wayscrollshot # 滚动截图工具
     cage # wayland的kiosk
     wooz # 缩放/放大镜工具
+    wlrctl # wayland扩展命令行工具
   ];
 }

@@ -37,10 +37,6 @@
       url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprshell = {
-      url = "github:H3rmt/hyprshell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     hypr-kcs.url = "github:kosa12/hyprKCS";
 
     # niri
