@@ -13,7 +13,7 @@ in
     bind = [
       {
         _args = [
-          (mkLuaInline ''"ALT + Tab"'')
+          "ALT + Tab"
           (mkLuaInline ''hl.dsp.exec_cmd("${pkgs.vicinae}/bin/vicinae vicinae://launch/wm/switch-windows")'')
           { description = "切换窗口"; }
         ];
