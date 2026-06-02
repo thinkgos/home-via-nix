@@ -135,8 +135,8 @@
   #  /etc/profiles/per-user/${USER}/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    BAT_PAGER = "less -r";
     TMPDIR = "$HOME/.cache/tmp";
+    PKG_CONFIG_PATH = "/usr/lib/x86_64-linux-gnu/pkgconfig:$PKG_CONFIG_PATH";
   };
 
   home.sessionPath = [

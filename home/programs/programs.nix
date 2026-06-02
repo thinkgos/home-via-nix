@@ -15,6 +15,11 @@
     ./ansible.nix
     ./tldr.nix
   ];
+
+  home.sessionVariables = {
+    BAT_PAGER = "less -r";
+  };
+
   home.packages = with pkgs; [
     resvg # svg rendering
     poppler # pdf rendering
