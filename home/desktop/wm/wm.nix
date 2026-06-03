@@ -22,6 +22,9 @@ in
   ) ./components/components.nix; # 组件库
 
   home.packages = with pkgs; [
+    wlrctl # wayland扩展命令行工具
+    wlopm # wayland电源管理工具
+
     hvn
   ];
 }
