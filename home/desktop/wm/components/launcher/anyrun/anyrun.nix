@@ -38,6 +38,7 @@
         "${pkgs.anyrun}/lib/libwebsearch.so"
         "${pkgs.anyrun}/lib/libtranslate.so"
         "${pkgs.anyrun}/lib/libactions.so"
+        "${pkgs.anyrun-plugins}/lib/libssh_pattern.so"
       ];
     };
 
@@ -50,6 +51,7 @@
       "websearch.ron".source = ./config/websearch.ron;
       "translate.ron".source = ./config/translate.ron;
       "actions.ron".source = ./config/actions.ron;
+      "ssh-pattern.ron".source = ./config/ssh-pattern.ron;
     };
   };
 }

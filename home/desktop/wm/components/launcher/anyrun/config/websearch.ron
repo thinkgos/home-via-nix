@@ -23,6 +23,10 @@ Config(
       url: "flathub.org/zh-Hans/apps/search?q={}",
     ),
     Custom(
+      name: "󱘗 Rust std",
+      url: "doc.rust-lang.org/std/index.html?search={}",
+    ),
+    Custom(
       name: "󱘗 Rust Crates",
       url: "crates.io/search?q={}",
     ),

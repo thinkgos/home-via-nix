@@ -15,6 +15,7 @@ in
     (final: prev: {
       fast-nix-gc = inputs.fast-nix-gc.packages.${system}.default;
       anyrun = inputs.anyrun.packages.${system}.anyrun-with-all-plugins;
+      anyrun-plugins = inputs.anyrun-plugins.packages.${system}.anyrun-plugins;
       ie-r = inputs.ie-r.packages.${system}.default;
       lan-mouse = inputs.lan-mouse.packages.${system}.default;
       goup-rs = inputs.goup-rs.packages.${system}.default;

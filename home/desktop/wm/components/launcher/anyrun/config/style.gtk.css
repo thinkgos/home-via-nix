@@ -34,7 +34,7 @@
 * {
   transition: 200ms ease;
   font-family: JetBrainsMono Nerd Font Mono;
-  font-size: 11px;
+  font-size: 14px;
 }
 
 /* Main window */
@@ -65,7 +65,7 @@ label.match {
 }
 
 label.match.description {
-  font-size: 9px;
+  font-size: 11px;
   color: @subtext0;
 }
 
