@@ -9,10 +9,11 @@ let
 in
 {
   power = {
-    lock = "${localpkgs.screen-lock}/bin/wme-screen-lock";
+    lock = "/bin/loginctl lock-session && sleep 1 && ${pkgs.hyprland}/bin/hyprctl dispatch 'hl.dsp.dpms({ action = \"disable\" })'";
     # BUG: 这里注销导致hyprland起不来(但是快捷键里注销时面正常时而不正常).
     # logout = "${pkgs.hyprland}/bin/hyprctl dispatch 'hl.dsp.exit()'";
     # logout = ''${pkgs.hyprland}/bin/hyprctl dispatch  'hl.dsp.exec_cmd("hyprshutdown")'';
+    # logout = "loginctl terminate-session $XDG_SESSION_ID";
     logout = "/bin/notify-send -u critical '注销有BUG(logout)!'";
     shutdown = "/bin/systemctl poweroff";
     reboot = "/bin/systemctl reboot";

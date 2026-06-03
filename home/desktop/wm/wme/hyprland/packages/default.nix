@@ -14,22 +14,6 @@
     ];
   };
 
-  # 屏幕锁定
-  screen-lock = pkgs.writeShellApplication {
-    name = "wme-screen-lock";
-    text = ''
-      source ${pkgs.ohlib.log4sh}/lib/shell/log4sh.sh
-      ${builtins.readFile ./control/screen-lock.sh}
-    '';
-    excludeShellChecks = [
-      "SC1091"
-      "SC2181"
-    ];
-    runtimeInputs = with pkgs; [
-      hyprlock
-      hyprland
-    ];
-  };
   # 截图
   screenshot = pkgs.writeShellApplication {
     name = "wme-screenshot";

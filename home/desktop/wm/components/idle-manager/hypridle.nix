@@ -41,10 +41,10 @@
           # on-resume = ''/bin/notify-send " System Unlocked!"'';
         }
         {
-          timeout = 930; # 15m30s
+          timeout = 910; # 15m10s
           # timeout = 75; # 75s(测试)
           on-timeout = "${pkgs.hyprland}/bin/hyprctl dispatch 'hl.dsp.dpms({ action = \"disable\" })'"; # screen off when timeout has passed
-          on-resume = "${pkgs.hyprland}/bin/hyprctl dispatch 'hl.dsp.dpms({ action = \"enable\" })' && ${pkgs.brightnessctl}/bin/brightnessctl -r -d *backlight*"; # screen on when activity is detected after timeout has fired.
+          on-resume = "${pkgs.hyprland}/bin/hyprctl dispatch 'hl.dsp.dpms({ action = \"enable\" })'"; # screen on when activity is detected after timeout has fired.
         }
         # 默认不挂起
         # {
