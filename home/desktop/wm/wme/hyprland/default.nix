@@ -37,6 +37,5 @@ in
   misc = {
     dropdown-terminal = "${localpkgs.dropdown-terminal}/bin/wme-dropdown-terminal";
     screenshot = "${localpkgs.screenshot}/bin/wme-screenshot";
-    interactive-power = "${localpkgs.power}/bin/wme-power";
   };
 }
