@@ -59,6 +59,10 @@ do_screenshot_success() {
     do_success "$1"
 }
 
+wl-active-window() {
+    hyprctl -j activewindow | jq -r '"\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])"'
+}
+
 /bin/mkdir -p "${screenshotDir}"
 
 case "$MODE" in
@@ -76,8 +80,7 @@ ocr)
     ;;
 window)
     # 窗口截图
-    hyprctl -j activewindow |
-        jq -r '"\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])"' |
+    wl-active-window |
         grim -g - "$file" || do_error "截图"
     do_screenshot_success "截图"
     ;;
@@ -94,8 +97,7 @@ region)
     ;;
 window-annotate)
     # 窗口截图标注
-    hyprctl -j activewindow |
-        jq -r '"\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])"' |
+    wl-active-window |
         grim -g - - |
         satty --filename - --output-filename "$file" || do_error "截图"
     ;;
