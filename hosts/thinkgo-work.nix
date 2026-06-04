@@ -13,4 +13,10 @@ lib.recursiveUpdate (import ./preset.nix { inherit lib pkgs; }) {
   apps = [
     "obs-studio"
   ];
+  lang = [
+    "go"
+    "rust"
+    "python"
+    "cpp"
+  ];
 }

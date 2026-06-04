@@ -22,4 +22,10 @@ lib.recursiveUpdate (import ./preset.nix { inherit lib pkgs; }) {
     "ffsubsync"
     "python313Packages.subliminal"
   ];
+  lang = [
+    "go"
+    "rust"
+    "python"
+    "cpp"
+  ];
 }

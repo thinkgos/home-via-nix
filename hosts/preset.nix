@@ -32,4 +32,7 @@
   desktop = null;
   components = [ ];
   apps = [ ];
+  # lang:
+  #   go, rust, python, cpp
+  lang = [ ];
 }

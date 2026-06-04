@@ -6,12 +6,12 @@
   ...
 }:
 {
-  imports = [
-    ./rust.nix
-    ./go.nix
-    ./cpp.nix
-    ./python.nix
-  ];
+  imports =
+    [ ]
+    ++ lib.optional (builtins.elem "rust" customize.lang) ./rust.nix
+    ++ lib.optional (builtins.elem "go" customize.lang) ./go.nix
+    ++ lib.optional (builtins.elem "cpp" customize.lang) ./cpp.nix
+    ++ lib.optional (builtins.elem "python" customize.lang) ./python.nix;
 
   home.packages = with pkgs; [
     # mise    # 管理开发环境, 软件多版本管理

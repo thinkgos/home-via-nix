@@ -6,8 +6,8 @@
 }:
 {
   power = {
-    lock = "/bin/notify-send -u critical '待实现'";
-    logout = "/bin/notify-send -u critical '注销有BUG(logout)!'";
+    lock = "/bin/notify-send -u critical 'TODO: 待实现'";
+    logout = "/bin/notify-send -u critical 'TODO: 待实现'";
     shutdown = "/bin/systemctl poweroff";
     reboot = "/bin/systemctl reboot";
     # 休眠是写到swap文件(swap空间必须大于内存), 需要主板与BIOS/UEFI支持(主板必须支持ACPI S4状态)
