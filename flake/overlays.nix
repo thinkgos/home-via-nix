@@ -18,6 +18,7 @@ in
       anyrun-plugins = inputs.anyrun-plugins.packages.${system}.anyrun-plugins;
       ie-r = inputs.ie-r.packages.${system}.default;
       lan-mouse = inputs.lan-mouse.packages.${system}.default;
+      kache = inputs.kache.packages.${system}.default;
       goup-rs = inputs.goup-rs.packages.${system}.default;
       wayscrollshot = inputs.wayscrollshot.packages.${system}.default;
 

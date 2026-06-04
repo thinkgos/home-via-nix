@@ -27,6 +27,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     lan-mouse.url = "github:feschber/lan-mouse";
+    kache = {
+      url = "github:kunobi-ninja/kache";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     goup-rs = {
       url = "github:thinkgos/goup-rs";
       inputs.nixpkgs.follows = "nixpkgs";

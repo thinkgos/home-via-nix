@@ -25,6 +25,7 @@
     cmake # 跨平台构建工具
     pkg-config # 库的配置工具
     sccache # 缓存编译结果
+    kache # 缓存编译结果
     mold # 快速编译链接器
     upx # 二进制压缩工具
     valgrind # 调试和分析工具

@@ -9,7 +9,7 @@
   imports = [
     ./swayosd/swayosd.nix
     ./ie-r.nix
-    ./ianny.nix
+    ./ianny/ianny.nix
     # ./wluma.nix
   ];
 }

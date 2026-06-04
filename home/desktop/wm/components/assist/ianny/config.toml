@@ -1,0 +1,17 @@
+[timer]
+# Enabling this will only consider user input alone for idle state, e.g. you will not have breaks when watching videos or playing music without any user input.
+ignore_idle_inhibitors = false
+# Time specified in seconds
+# Timer will stop and reset when you are idle for this amount of seconds.
+idle_timeout = 300
+# Active duration that activates a break.
+short_break_timeout = 1800
+long_break_timeout = 3600
+# Breaks duration.
+short_break_duration = 180
+long_break_duration = 360
+
+[notification]
+show_progress_bar = true
+# Minimum delay of updating the progress bar (lower than 1s may return an error).
+minimum_update_delay = 1
