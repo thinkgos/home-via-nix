@@ -23,8 +23,8 @@
       control-center-margin-bottom = 0;
       control-center-margin-right = 0;
       control-center-margin-left = 0;
-      control-center-height = 600;
-      control-center-width = 500;
+      control-center-height = 400;
+      control-center-width = 600;
       control-center-layer = "none";
       control-center-exclusive-zone = true;
       # control-center-preferred-output = "";
@@ -100,6 +100,6 @@
       #   };
       # };
     };
-    # style = builtins.readFile ./style.gtk.css;
+    style = builtins.readFile ./style.gtk.css;
   };
 }
