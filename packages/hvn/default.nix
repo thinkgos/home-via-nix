@@ -12,7 +12,7 @@ pkgs.symlinkJoin {
   paths = [
     (pkgs.writeShellApplication {
       name = "hvn-floating-terminal";
-      text = ''kitty --class floating-terminal --title "floating-terminal"'';
+      text = ''alacritty --class floating-terminal --title "floating-terminal"'';
       excludeShellChecks = [
         "SC1091"
         "SC2181"
