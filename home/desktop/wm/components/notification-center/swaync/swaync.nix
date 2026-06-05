@@ -100,6 +100,6 @@
       #   };
       # };
     };
-    style = builtins.readFile ./style.gtk.css;
+    # style = builtins.readFile ./style.gtk.css;
   };
 }
