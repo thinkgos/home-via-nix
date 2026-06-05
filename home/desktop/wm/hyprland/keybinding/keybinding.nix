@@ -38,6 +38,9 @@ in
       launchDropdownTerminal = {
         _var = wme.misc.dropdown-terminal;
       };
+      launchFloatingTerminal = {
+        _var = "${pkgs.hvn}/bin/hvn-floating-terminal";
+      };
       launchFileManager = {
         _var = "${pkgs.nemo}/bin/nemo";
       };

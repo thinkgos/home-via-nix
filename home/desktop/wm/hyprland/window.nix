@@ -100,6 +100,19 @@
         rounding = 0;
         workspace = "special:dropdown-terminal";
       }
+      # 浮动终端窗口规则
+      {
+        match.class = "^(floating-terminal)$";
+        float = true;
+        size = [
+          "500"
+          "400"
+        ];
+        move = [
+          "monitor_w - 500 - 20"
+          "40"
+        ];
+      }
       # 交互式录屏
       {
         match.class = "^(io.github.seadve.Kooha)$";

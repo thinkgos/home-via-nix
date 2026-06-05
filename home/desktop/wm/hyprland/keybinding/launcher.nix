@@ -28,16 +28,16 @@ in
       }
       {
         _args = [
-          (mkLuaInline ''mod .. " + E"'')
-          (mkLuaInline "hl.dsp.exec_cmd(launchFileManager)")
-          { description = "启动文件管理器"; }
+          (mkLuaInline ''mod .. " + C"'')
+          (mkLuaInline "hl.dsp.exec_cmd(launchFloatingTerminal)")
+          { description = "启动浮动终端"; }
         ];
       }
       {
         _args = [
-          (mkLuaInline ''mod .. " + C"'')
-          (mkLuaInline "hl.dsp.exec_cmd(launchCalculator)")
-          { description = "启动计算器"; }
+          (mkLuaInline ''mod .. " + E"'')
+          (mkLuaInline "hl.dsp.exec_cmd(launchFileManager)")
+          { description = "启动文件管理器"; }
         ];
       }
       {

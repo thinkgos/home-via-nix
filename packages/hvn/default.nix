@@ -10,6 +10,14 @@ in
 pkgs.symlinkJoin {
   name = "hvn";
   paths = [
+    (pkgs.writeShellApplication {
+      name = "hvn-floating-terminal";
+      text = ''kitty --class floating-terminal --title "floating-terminal"'';
+      excludeShellChecks = [
+        "SC1091"
+        "SC2181"
+      ];
+    })
     # popup
     (pkgs.writeShellApplication {
       name = "hvn-popup-shortcut";
