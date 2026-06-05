@@ -7,7 +7,6 @@
 {
   # 通知中心
   imports = [
-    ./mako.nix
-    # ./swaync.nix
+    ./swaync/swaync.nix
   ];
 }

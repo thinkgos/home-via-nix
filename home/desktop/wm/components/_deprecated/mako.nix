@@ -17,7 +17,7 @@
       font = ''"JetBrainsMono Nerd Font Mono" 11''; # 字体
 
       layer = "overlay"; # 通知显示层
-      anchor = "top-center"; # 屏幕位置
+      anchor = "top-right"; # 屏幕位置
       margin = 10; # 通知与屏幕边框的间距
       markup = true; # 是否启用Pango markup
       actions = true; # 是否启用关联操作

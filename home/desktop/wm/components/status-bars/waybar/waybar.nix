@@ -35,6 +35,7 @@
         ];
         modules-center = [
           "group/clock#drawer"
+          "custom/notification"
           "cava"
         ];
         modules-right = [
@@ -257,6 +258,26 @@
           format = "{} ";
           return-type = "json";
           on-click = "google-chrome https://wttr.in";
+        };
+        "custom/notification" = {
+          tooltip = true;
+          format = "<span size='16pt'>{icon}</span>";
+          format-icons = {
+            notification = "󱅫";
+            none = "󰂜";
+            dnd-notification = "󰂠";
+            dnd-none = "󰪓";
+            inhibited-notification = "󰂛";
+            inhibited-none = "󰪑";
+            dnd-inhibited-notification = "󰂛";
+            dnd-inhibited-none = "󰪑";
+          };
+          return-type = "json";
+          exec-if = "${pkgs.which}/bin/which swaync-client";
+          exec = "${pkgs.swaynotificationcenter}/bin/swaync-client -swb";
+          on-click = "${pkgs.swaynotificationcenter}/bin/swaync-client -t -sw";
+          on-click-right = "${pkgs.swaynotificationcenter}/bin/swaync-client -d -sw";
+          escape = true;
         };
         # 音频模拟器
         cava = {
