@@ -502,16 +502,16 @@
             "screen-color-chooser" =
               "/bin/pkill kcolorchooser || ${pkgs.kdePackages.kcolorchooser}/bin/kcolorchooser";
             "screen-recorder" = "${pkgs.hvn}/bin/hvn-runner-flatpak io.github.seadve.Kooha";
-            "ocr" = "${wme.misc.screenshot} -m ocr";
-            "screen-pixel-measure" = "${wme.misc.screenshot} -m pixel-measure";
-            "screenshot-window" = "${wme.misc.screenshot} -m window";
-            "screenshot-fullscreen" = "${wme.misc.screenshot} -m fullscreen";
-            "screenshot-region" = "${wme.misc.screenshot} -m region";
-            "screenshot-window-annotate" = "${wme.misc.screenshot} -m window-annotate";
-            "screenshot-fullscreen-annotate" = "${wme.misc.screenshot} -m fullscreen-annotate";
-            "screenshot-region-annotate" = "${wme.misc.screenshot} -m region-annotate";
-            "screenshot-scroll" = "${wme.misc.screenshot} -m scroll";
-            "screenshot-scroll-preview" = "${wme.misc.screenshot} -m scroll-preview";
+            "ocr" = "${pkgs.hvn}/bin/hvn-screen -m ocr";
+            "screen-pixel-measure" = "${pkgs.hvn}/bin/hvn-screen -m pixel-measure";
+            "screenshot-window" = "${pkgs.hvn}/bin/hvn-screen -m window";
+            "screenshot-fullscreen" = "${pkgs.hvn}/bin/hvn-screen -m fullscreen";
+            "screenshot-region" = "${pkgs.hvn}/bin/hvn-screen -m region";
+            "screenshot-window-annotate" = "${pkgs.hvn}/bin/hvn-screen -m window-annotate";
+            "screenshot-fullscreen-annotate" = "${pkgs.hvn}/bin/hvn-screen -m fullscreen-annotate";
+            "screenshot-region-annotate" = "${pkgs.hvn}/bin/hvn-screen -m region-annotate";
+            "screenshot-scroll" = "${pkgs.hvn}/bin/hvn-screen -m scroll";
+            "screenshot-scroll-preview" = "${pkgs.hvn}/bin/hvn-screen -m scroll-preview";
           };
         };
       };

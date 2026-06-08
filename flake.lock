@@ -32,11 +32,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1780475446,
-        "narHash": "sha256-iW7RApZTYZwJ2fi6U2eY3vLs3AQmCW2hM9b79Hf+zJc=",
+        "lastModified": 1780888102,
+        "narHash": "sha256-Nl9sBax/t51vzdRWNgg2KVWZ6hVSmy61dRXx0aM2aTs=",
         "owner": "thinkgos",
         "repo": "anyrun-plugins",
-        "rev": "2d2987218976e926b615a38e5d8cbb94b4459076",
+        "rev": "33a4f3f23f6d8799d3ec4cb5f5952391d9b77ab6",
         "type": "github"
       },
       "original": {

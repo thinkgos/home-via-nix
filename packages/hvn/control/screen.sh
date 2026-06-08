@@ -59,10 +59,6 @@ do_screenshot_success() {
     do_success "$1"
 }
 
-wl-active-window() {
-    hyprctl -j activewindow | jq -r '"\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])"'
-}
-
 /bin/mkdir -p "${screenshotDir}"
 
 case "$MODE" in

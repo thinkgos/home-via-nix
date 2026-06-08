@@ -10,29 +10,7 @@ in
 pkgs.symlinkJoin {
   name = "hvn";
   paths = [
-    (pkgs.writeShellApplication {
-      name = "hvn-floating-terminal";
-      text = ''alacritty --class floating-terminal --title "floating-terminal"'';
-      excludeShellChecks = [
-        "SC1091"
-        "SC2181"
-      ];
-    })
     # popup
-    (pkgs.writeShellApplication {
-      name = "hvn-popup-shortcut";
-      text = ''
-        source ${pkgs.ohlib.log4sh}/lib/shell/log4sh.sh
-        ${builtins.readFile ./popup/shortcut.sh}
-      '';
-      excludeShellChecks = [
-        "SC1091"
-        "SC2181"
-      ];
-      runtimeInputs = with pkgs; [
-        vicinae
-      ];
-    })
 
     (pkgs.writeShellApplication {
       name = "hvn-picker-wallpaper";
@@ -65,6 +43,26 @@ pkgs.symlinkJoin {
     })
 
     # control
+    # 截图
+    (pkgs.writeShellApplication {
+      name = "hvn-screen";
+      text = ''
+        source ${pkgs.ohlib.log4sh}/lib/shell/log4sh.sh
+        ${builtins.readFile ./control/screen.sh}
+      '';
+      excludeShellChecks = [
+        "SC1091"
+        "SC2181"
+      ];
+      runtimeInputs = with pkgs; [
+        slurp
+        grim
+        satty
+        wayscrollshot
+        wl-clipboard
+        tesseract
+      ];
+    })
     # 隐藏/显示waybar
     (pkgs.writeShellScriptBin "hvn-toggle-waybar" (builtins.readFile ./control/toggle-waybar.sh))
   ];

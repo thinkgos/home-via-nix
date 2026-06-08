@@ -36,6 +36,8 @@ in
   };
   misc = {
     dropdown-terminal = "${localpkgs.dropdown-terminal}/bin/wme-dropdown-terminal";
-    screenshot = "${localpkgs.screenshot}/bin/wme-screenshot";
+  };
+  pkgs = {
+    wl-active-window = localpkgs.wl-active-window;
   };
 }

@@ -1,0 +1,164 @@
+// <Anyrun config dir>/menu-bar.ron
+Config(
+  // The prefix that triggers the plugin
+  prefix: ":m",
+  // The delimiter to select the menu item
+  delimiter: '/',
+  // Maximum number of entries to return
+  max_entries: 10,
+  // The terminal used for running terminal based menu items
+  // If left as None, the plugin auto-detects from:
+  // alacritty, kitty, ghostty, wezterm, foot, wterm
+  terminal: Some(Terminal(
+    // The main terminal command
+    command: "alacritty",
+    // What arguments should be passed to the terminal process to run the command correctly
+    // {} is replaced with the command in the desktop entry
+    args: "-e {}",
+  )),
+  // The menus defined in the plugin
+  menus: [
+    Menu(
+      title: "Window Management",
+      key: 'w',
+      description: Some("窗口管理"),
+      children: [
+        MenuItem(
+          title: "🪟 Window Switch",
+          description: Some("窗口切换"),
+          exec: "vicinae vicinae://launch/wm/switch-windows",
+        ),
+      ],
+    ),
+    Menu(
+      title: "Symbol",
+      key: 'b',
+      description: Some("符号表情"),
+      children: [
+        MenuItem(
+          title: "😀 Search Emoji",
+          description: Some("搜索Emoji"),
+          exec: "vicinae vicinae://launch/core/search-emojis",
+        ),
+      ],
+    ),
+    Menu(
+      title: "Wallpaper Picker",
+      key: 'p',
+      description: Some("壁纸选择器"),
+      children: [
+        MenuItem(
+          title: "🖼️ Wallpaper Picker",
+          description: Some("设置壁纸"),
+          exec: "hvn-picker-wallpaper -m normal",
+        ),
+        MenuItem(
+          title: "🖼️ Wallpaper Picker Side",
+          description: Some("设置壁纸（侧边栏）"),
+          exec: "hvn-picker-wallpaper -m side",
+        ),
+      ],
+    ),
+    Menu(
+      title: "Color Tools",
+      key: 'c',
+      description: Some("颜色工具"),
+      children: [
+        MenuItem(
+          title: "🧪 Color Picker",
+          description: Some("颜色拾取"),
+          exec: "pkill -SIGUSR1 ie-r",
+        ),
+        MenuItem(
+          title: " Color History",
+          description: Some("颜色历史"),
+          exec: "pkill -SIGUSR2 ie-r",
+        ),
+        MenuItem(
+          title: "🎨 Color Chooser",
+          description: Some("颜色选择器"),
+          exec: "pkill kcolorchooser || kcolorchooser",
+        ),
+      ],
+    ),
+    Menu(
+      title: "Screen Tools",
+      key: 's',
+      description: Some("截图与录屏工具"),
+      children: [
+        MenuItem(
+          title: "📹 Screen Recorder",
+          description: Some("交互录屏"),
+          exec: "flatpak run io.github.seadve.Kooha",
+        ),
+        MenuItem(
+          title: "📄 OCR",
+          description: Some("OCR识别"),
+          exec: "hvn-screen -m ocr",
+        ),
+        MenuItem(
+          title: "📏 Screen Pixel Measure",
+          description: Some("像素测量"),
+          exec: "hvn-screen -m pixel-measure",
+        ),
+        MenuItem(
+          title: "🪟 Window Screenshot",
+          description: Some("窗口截图"),
+          exec: "hvn-screen -m window",
+        ),
+        MenuItem(
+          title: "🖥️ Fullscreen Screenshot",
+          description: Some("全屏截图"),
+          exec: "hvn-screen -m fullscreen",
+        ),
+        MenuItem(
+          title: "✂️ Region Screenshot",
+          description: Some("选框截图"),
+          exec: "hvn-screen -m region",
+        ),
+        MenuItem(
+          title: "🪟 Window Screenshot📝",
+          description: Some("窗口截图📝"),
+          exec: "hvn-screen -m window-annotate",
+        ),
+        MenuItem(
+          title: "🖥️ Fullscreen Screenshot📝",
+          description: Some("全屏截图📝"),
+          exec: "echo 'TODO: screenshot fullscreen + annotate'",
+        ),
+        MenuItem(
+          title: "✂️ Region Screenshot📝",
+          description: Some("选框截图📝"),
+          exec: "hvn-screen -m region-annotate",
+        ),
+        MenuItem(
+          title: "🎞️ Scroll Screenshot",
+          description: Some("滚动截图"),
+          exec: "hvn-screen -m scroll",
+        ),
+        MenuItem(
+          title: "🎞️ Scroll Screenshot Preview🔍",
+          description: Some("滚动截图并预览"),
+          exec: "hvn-screen -m scroll-preview",
+        ),
+      ],
+    ),
+    Menu(
+      title: "Clipboard History",
+      key: 'b',
+      description: Some("剪贴板历史"),
+      children: [
+        MenuItem(
+          title: "🗒️ Clipboard History Overview",
+          description: Some("剪贴板历史记录概览"),
+          exec: "vicinae vicinae://launch/clipboard/history",
+        ),
+        MenuItem(
+          title: "🧹 Clipboard History Wipe",
+          description: Some("清除剪贴板历史记录"),
+          exec: "vicinae vicinae://launch/clipboard/clear-history",
+        ),
+      ],
+    ),
+  ],
+)

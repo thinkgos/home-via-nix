@@ -5,6 +5,20 @@
   ...
 }:
 {
+  # 截图
+  wl-active-window = pkgs.writeShellApplication {
+    name = "wl-active-window";
+    text = builtins.readFile ./control/wl-active-window.sh;
+    excludeShellChecks = [
+      "SC1091"
+      "SC2181"
+    ];
+    runtimeInputs = with pkgs; [
+      jq
+      hyprland
+    ];
+  };
+
   dropdown-terminal = pkgs.writeShellApplication {
     name = "wme-dropdown-terminal";
     text = builtins.readFile ./popup/dropdown-terminal.sh;
@@ -14,28 +28,6 @@
     ];
   };
 
-  # 截图
-  screenshot = pkgs.writeShellApplication {
-    name = "wme-screenshot";
-    text = ''
-      source ${pkgs.ohlib.log4sh}/lib/shell/log4sh.sh
-      ${builtins.readFile ./control/screen.sh}
-    '';
-    excludeShellChecks = [
-      "SC1091"
-      "SC2181"
-    ];
-    runtimeInputs = with pkgs; [
-      slurp
-      grim
-      jq
-      satty
-      wayscrollshot
-      wl-clipboard
-      tesseract
-      hyprland
-    ];
-  };
   # 聚焦到最后一个工作区
   focus-last-workspace = pkgs.writeShellApplication {
     name = "wme-focus-last-workspace";

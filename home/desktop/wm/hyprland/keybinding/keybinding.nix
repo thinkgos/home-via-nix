@@ -39,7 +39,7 @@ in
         _var = wme.misc.dropdown-terminal;
       };
       launchFloatingTerminal = {
-        _var = "${pkgs.hvn}/bin/hvn-floating-terminal";
+        _var = ''alacritty --class floating-terminal --title "floating-terminal"'';
       };
       launchFileManager = {
         _var = "${pkgs.nemo}/bin/nemo";
@@ -61,9 +61,6 @@ in
       };
       popupFunctionalLauncher = {
         _var = "${pkgs.vicinae}/bin/vicinae toggle";
-      };
-      popupShortcutLauncher = {
-        _var = "${pkgs.hvn}/bin/hvn-popup-shortcut";
       };
       popupKeybindingHelp = {
         _var = "hyprkcs";

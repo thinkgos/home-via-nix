@@ -77,13 +77,6 @@ in
       }
       {
         _args = [
-          (mkLuaInline ''mod .. " + S"'')
-          (mkLuaInline "hl.dsp.exec_cmd(popupShortcutLauncher)")
-          { description = "启动快捷方式启动器"; }
-        ];
-      }
-      {
-        _args = [
           (mkLuaInline ''mod .. " + F1"'')
           (mkLuaInline "hl.dsp.exec_cmd(popupKeybindingHelp)")
           { description = "启动帮助按键绑定"; }
