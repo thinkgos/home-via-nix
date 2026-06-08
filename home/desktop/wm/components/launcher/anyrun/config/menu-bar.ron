@@ -5,7 +5,7 @@ Config(
   // The delimiter to select the menu item
   delimiter: '/',
   // Maximum number of entries to return
-  max_entries: 10,
+  max_entries: 16,
   // The terminal used for running terminal based menu items
   // If left as None, the plugin auto-detects from:
   // alacritty, kitty, ghostty, wezterm, foot, wterm
@@ -145,7 +145,7 @@ Config(
     ),
     Menu(
       title: "Clipboard History",
-      key: 'b',
+      key: 'h',
       description: Some("剪贴板历史"),
       children: [
         MenuItem(
