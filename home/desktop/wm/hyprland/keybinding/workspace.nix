@@ -16,20 +16,6 @@ in
       # 聚焦工作区
       # {
       #   _args = [
-      #     (mkLuaInline ''mod .. " + mouse_down"'')
-      #     (mkLuaInline "hl.dsp.focus({ workspace = 'r-1' })")
-      #     { description = "鼠标滚轮-聚焦上一个工作区"; }
-      #   ];
-      # }
-      # {
-      #   _args = [
-      #     (mkLuaInline ''mod .. " + mouse_up"'')
-      #     (mkLuaInline "hl.dsp.focus({ workspace = 'r+1' })")
-      #     { description = "鼠标滚轮-聚焦下一个工作区"; }
-      #   ];
-      # }
-      # {
-      #   _args = [
       #     (mkLuaInline ''mod .. " + Prior"'')
       #     (mkLuaInline "hl.dsp.focus({ workspace = 'r-1' })")
       #     { description = "聚焦到上一个工作区"; }
@@ -46,7 +32,7 @@ in
       #   _args = [
       #     (mkLuaInline ''mod .. " + Home"'')
       #     (mkLuaInline "hl.dsp.focus({ workspace = 1 })")
-      #     { description = "聚焦到工作区1"; }
+      #     { description = "聚焦到第一个工作区"; }
       #   ];
       # }
       # {

@@ -17,7 +17,7 @@
         # GNOME 不支持wlr-layer-shell
         # BUG: hyprland中, 暂时有bug, 目前ghostty这边非全局按键下正常, hyprland按键也是正常, 就是消息发不过来.
         # warning(winproto_wayland): your compositor does not support the wlr-layer-shell protocol; disabling quick terminal
-        # "global:super+enter=toggle_quick_terminal"
+        # "global:super+backquote=toggle_quick_terminal"
 
         # font size
         "ctrl+shift+minus=decrease_font_size:2" # 减少字体大小

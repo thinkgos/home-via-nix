@@ -52,6 +52,10 @@
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    niri-scratchpad = {
+      url = "github:argosnothing/niri-scratchpad";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =

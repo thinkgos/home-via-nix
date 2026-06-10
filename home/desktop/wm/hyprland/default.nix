@@ -15,6 +15,7 @@ in
     ./plugins/plugins.nix # 插件
     ./keybinding/keybinding.nix # 按键绑定
     ./monitor.nix # 显示器
+    ./layout.nix # 层规则
     ./workspace.nix # 工作空间
     ./window.nix # 窗口
   ];
@@ -24,7 +25,6 @@ in
     hyprpwcenter # pipewire控制中心
     hyprshutdown # 关机工具
     hyprsysteminfo # 系统信息工具
-    gpu-usage-waybar # GPU使用率栏
   ];
 
   home.sessionVariables = {

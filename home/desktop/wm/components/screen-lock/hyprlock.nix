@@ -13,7 +13,7 @@
     package = pkgs.hyprlock;
     settings = {
       "$font" = "JetBrainsMono Nerd Font Mono";
-      "$splash" = "echo $(${pkgs.hyprland}/bin/hyprctl splash)";
+      "$splash" = "echo $(${pkgs.fortune}/bin/fortune -s)";
       "$wallpaper" = "${config.xdg.dataHome}/wallpapers/scenery/5.jpg";
       "$greet" =
         ''echo "Good $(/bin/date +%H | /bin/awk '{if ($1 < 10) print "morning"; else if ($1 < 13) print "noon"; else if ($1 < 18) print "afternoon"; else if ($1 < 22) print "evening"; else print "night"}'), $(echo ''${USER})"'';

@@ -50,7 +50,7 @@ in
           "XF86AudioLowerVolume"
           (mkLuaInline ''hl.dsp.exec_cmd("${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-")'')
           {
-            # locked = true;
+            locked = true;
             repeating = true;
             description = "音量减少";
           }
@@ -79,11 +79,46 @@ in
           }
         ];
       }
-      # -- Requires playerctl
-      # hl.bind("XF86AudioNext",  hl.dsp.exec_cmd("playerctl next"),       { locked = true })
-      # hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
-      # hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
-      # hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
+      {
+        _args = [
+          "XF86AudioPrev"
+          (mkLuaInline ''hl.dsp.exec_cmd("${pkgs.playerctl}/bin/playerctl previous")'')
+          {
+            locked = true;
+            description = "上-首";
+          }
+        ];
+      }
+      {
+        _args = [
+          "XF86AudioNext"
+          (mkLuaInline ''hl.dsp.exec_cmd("${pkgs.playerctl}/bin/playerctl next")'')
+          {
+            locked = true;
+            description = "下一首";
+          }
+        ];
+      }
+      {
+        _args = [
+          "XF86AudioPlay"
+          (mkLuaInline ''hl.dsp.exec_cmd("${pkgs.playerctl}/bin/playerctl play")'')
+          {
+            locked = true;
+            description = "播放";
+          }
+        ];
+      }
+      {
+        _args = [
+          "XF86AudioPause"
+          (mkLuaInline ''hl.dsp.exec_cmd("${pkgs.playerctl}/bin/playerctl pause")'')
+          {
+            locked = true;
+            description = "暂停";
+          }
+        ];
+      }
     ];
   };
 }

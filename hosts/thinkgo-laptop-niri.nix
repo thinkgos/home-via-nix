@@ -2,8 +2,8 @@
 lib.recursiveUpdate (import ./preset.nix { inherit lib pkgs; }) {
   username = "thinkgo";
   desktop = {
-    window = "hyprland";
-    window-version = "hyprland";
+    window = "niri";
+    window-version = "niri";
     monitor-primary = "eDP-1";
     monitor-secondary = "HDMI-A-1";
   };

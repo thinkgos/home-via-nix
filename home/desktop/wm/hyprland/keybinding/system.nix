@@ -29,15 +29,15 @@ in
       }
       {
         _args = [
-          (mkLuaInline ''mod .. " + L"'')
+          (mkLuaInline ''mod .. " + ALT + L"'')
           (mkLuaInline "hl.dsp.exec_cmd(actionLockScreen)")
           { description = "锁定屏幕"; }
         ];
       }
       {
         _args = [
-          (mkLuaInline ''mod .. " + H"'')
-          (mkLuaInline "hl.dsp.exec_cmd(actionToggleWaybar)")
+          (mkLuaInline ''mod .. " + ALT + H"'')
+          (mkLuaInline ''hl.dsp.exec_cmd("${pkgs.hvn}/bin/hvn-toggle-waybar")'')
           { description = "隐藏/显示waybar"; }
         ];
       }

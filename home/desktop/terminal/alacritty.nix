@@ -19,7 +19,7 @@
         decorations = "None";
         opacity = 0.85;
         blur = true;
-        startup_mode = "Maximized";
+        startup_mode = "Windowed";
         position = {
           x = 8;
           y = 8;

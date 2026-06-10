@@ -8,10 +8,23 @@ lib.recursiveUpdate (import ./preset.nix { inherit lib pkgs; }) {
     monitor-secondary = "DP-1";
   };
   components = [
+    # 键鼠共享
+    # "deskflow"
+    # "lan-mouse"
     "lan-mouse-client"
   ];
   apps = [
+    # "nushell"
+    # "yt-dlp"
+    # "wayvnc"
+    # "sunshine"
     "obs-studio"
+    # 视频剪辑
+    # "aegisub"
+    # "subtitlecomposer"
+    # "subtitleedit"
+    # "ffsubsync"
+    # "python313Packages.subliminal"
   ];
   lang = [
     "go"

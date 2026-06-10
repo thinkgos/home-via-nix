@@ -13,13 +13,13 @@ in
   wayland.windowManager.hyprland.settings = {
     bind = [
       # 截图/录屏
-      {
-        _args = [
-          (mkLuaInline ''mod .. " + R"'')
-          (mkLuaInline "hl.dsp.exec_cmd(launchScreenRecorder)")
-          { description = "交互式录屏"; }
-        ];
-      }
+      # {
+      #   _args = [
+      #     (mkLuaInline ''mod .. " + ALT + R"'')
+      #     (mkLuaInline ''hl.dsp.exec_cmd("/bin/pkill kooha || flatpak run io.github.seadve.Kooha")'')
+      #     { description = "交互式录屏"; }
+      #   ];
+      # }
       {
         _args = [
           "ALT + Print"

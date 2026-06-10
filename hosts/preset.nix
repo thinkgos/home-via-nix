@@ -3,11 +3,6 @@
 
 # theme/icon/cursor:
 # ls $(nix build nixpkgs#orchis-theme --no-link --print-out-paths)/share/[themes/icons/cursors]
-# apps:
-#   nushell, yt-dlp, wayvnc, sunshine, obs-studio
-#   视频剪辑: aegisub, subtitlecomposer, subtitleedit, ffsubsync, python313Packages.subliminal
-# components:
-#   键鼠共享: deskflow, lan-mouse, lan-mouse-client
 { lib, pkgs }:
 {
   username = "";
@@ -30,9 +25,29 @@
   #   monitor-secondary = "";
   # };
   desktop = null;
-  components = [ ];
-  apps = [ ];
-  # lang:
-  #   go, rust, python, cpp
-  lang = [ ];
+  components = [
+    # 键鼠共享
+    # "deskflow"
+    # "lan-mouse"
+    # "lan-mouse-client"
+  ];
+  apps = [
+    # "nushell"
+    # "yt-dlp"
+    # "wayvnc"
+    # "sunshine"
+    # "obs-studio"
+    # 视频剪辑
+    # "aegisub"
+    # "subtitlecomposer"
+    # "subtitleedit"
+    # "ffsubsync"
+    # "python313Packages.subliminal"
+  ];
+  lang = [
+    # "go"
+    # "rust"
+    # "python"
+    # "cpp"
+  ];
 }

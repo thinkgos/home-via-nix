@@ -35,4 +35,6 @@ in
   thinkgo-laptop = mkHome (pkgs.callPackage ../hosts/thinkgo-laptop.nix { });
   cors-beelink = mkHome (pkgs.callPackage ../hosts/cors-beelink.nix { });
   thinkgo-work = mkHome (pkgs.callPackage ../hosts/thinkgo-work.nix { });
+  thinkgo-laptop-niri = mkHome (pkgs.callPackage ../hosts/thinkgo-laptop-niri.nix { });
+  cors-beelink-niri = mkHome (pkgs.callPackage ../hosts/cors-beelink-niri.nix { });
 }

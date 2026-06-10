@@ -14,7 +14,7 @@
       lock = "/bin/pidof hyprlock || ${pkgs.hyprlock}/bin/hyprlock"; # avoid starting multiple hyprlock instances.
       # unlock = "loginctl unlock-session"; # kills hyprlock when unlocking (this is always run when "loginctl unlock-session" is called)
       before-sleep = "/bin/loginctl lock-session"; # ensures that the session is locked before going to sleep
-      after-resume = "${pkgs.hyprland}/bin/hyprctl dispatch 'hl.dsp.dpms({ action = \"enable\" })'"; # turn on screen after sleep (not strictly necessary, but just in case)
+      after-resume = "${pkgs.niri-unstable}/bin/niri msg action power-on-monitors"; # turn on screen after sleep (not strictly necessary, but just in case)
     };
     timeouts = [
       {
@@ -37,10 +37,10 @@
         resumeCommand = ''/bin/notify-send " Welcome" " Enjoy !!!"'';
       }
       {
-        timeout = 930; # 15m30s
+        timeout = 910; # 15m10s
         # timeout = 75; # 75s(测试)
-        command = "${pkgs.hyprland}/bin/hyprctl dispatch 'hl.dsp.dpms({ action = \"disable\" })'"; # screen off when timeout has passed
-        resumeCommand = "${pkgs.hyprland}/bin/hyprctl dispatch 'hl.dsp.dpms({ action = \"enable\" })' && ${pkgs.brightnessctl}/bin/brightnessctl -r -d *backlight*"; # screen on when activity is detected after timeout has fired.
+        command = "${pkgs.niri-unstable}/bin/niri msg action power-off-monitors"; # screen off when timeout has passed
+        resumeCommand = "${pkgs.niri-unstable}/bin/niri msg action power-on-monitors && ${pkgs.brightnessctl}/bin/brightnessctl -r -d *backlight*"; # screen on when activity is detected after timeout has fired.
       }
       # 默认不挂起
       # {

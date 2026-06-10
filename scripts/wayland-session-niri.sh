@@ -8,8 +8,8 @@ sudo mkdir -p $(dirname "$SESSION_FILE")
 cat <<EOF | sudo tee "$SESSION_FILE" >/dev/null
 [Desktop Entry]
 Name=niri
-Comment=niri managed by Home Manager
-Exec=/home/$USER/.nix-profile/bin/niri
+Comment=A scrollable-tiling Wayland compositor managed by Home Manager
+Exec=/home/$USER/.nix-profile/bin/niri-session
 Type=Application
 DesktopNames=niri
 EOF

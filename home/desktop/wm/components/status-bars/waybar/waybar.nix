@@ -2,7 +2,6 @@
   config,
   lib,
   pkgs,
-  wme,
   customize,
   ...
 }:
@@ -26,13 +25,26 @@
         spacing = 8;
         # margin = "0";
 
-        modules-left = [
-          "hyprland/windowcount"
-          "hyprland/workspaces"
-          "group/monitor#drawer"
-          "wlr/taskbar"
-          "hyprland/window"
-        ];
+        modules-left =
+          if customize.desktop.window == "hyprland" then
+            [
+              "hyprland/windowcount"
+              "hyprland/workspaces"
+              "group/monitor#drawer"
+              "wlr/taskbar"
+              "hyprland/window"
+            ]
+          else if customize.desktop.window == "niri" then
+            [
+              "niri/workspaces"
+              "group/monitor#drawer"
+              "wlr/taskbar"
+              "niri/window"
+            ]
+          else
+            [
+
+            ];
         modules-center = [
           "group/clock#drawer"
           "custom/notification"
@@ -57,60 +69,6 @@
         "custom/separator" = {
           format = "|";
           tooltip = false;
-        };
-
-        # 当前工作区窗口数 ✅
-        "hyprland/windowcount" = {
-          format = "󱂬 {}";
-          format-empty = "󱂬 x";
-          # format-windowed = "[T]";
-          # format-fullscreen= "[{}]";
-          separate-outputs = true;
-        };
-        # 工作区 ✅
-        "hyprland/workspaces" = {
-          format = "{icon}";
-          format-icons = {
-            "1" = "❶";
-            "2" = "❷";
-            "3" = "❸";
-            "4" = "❹";
-            "5" = "❺";
-            "6" = "❻";
-            "7" = "❼";
-            "8" = "❽";
-            "9" = "❾";
-            # urgent = "◉";
-            # active = "⊛";
-            # visible = "";
-            # default = "○";
-            # empty = "○";
-          };
-          active-only = false;
-          all-outputs = false;
-          persistent-workspaces = {
-            "*" = 2;
-          };
-          on-click = "activate";
-          on-scroll-up = wme.workspace.focus-cycle-prev;
-          on-scroll-down = wme.workspace.focus-cycle-next;
-        };
-        # 窗口 ✅
-        "hyprland/window" = {
-          format = "💥 {}";
-          max-length = 30;
-          separate-outputs = true;
-          rewrite = {
-            "💥 (.*) - Google Chrome" = " $1";
-            "💥 (.*) - Visual Studio Code" = " $1";
-            "💥 (.*) - vim" = " $1";
-            "💥 (.*) - Kitty" = " $1";
-            "💥 (.*) - Ghostty" = " $1";
-            "💥 (.*) - Alacritty" = " $1";
-            "💥 (.*) - zsh" = "󰆍 $1";
-          };
-          on-click = wme.window.toggle-maximized;
-          on-click-right = wme.layout.toggle-split;
         };
 
         # 任务栏 ✅
@@ -513,6 +471,109 @@
             "screenshot-scroll" = "${pkgs.hvn}/bin/hvn-screen -m scroll";
             "screenshot-scroll-preview" = "${pkgs.hvn}/bin/hvn-screen -m scroll-preview";
           };
+        };
+      }
+      // lib.optionalAttrs (customize.desktop.window == "hyprland") {
+        # 当前工作区窗口数 ✅
+        "hyprland/windowcount" = {
+          format = "󱂬 {}";
+          format-empty = "󱂬 x";
+          # format-windowed = "[T]";
+          # format-fullscreen= "[{}]";
+          separate-outputs = true;
+        };
+        # 工作区 ✅
+        "hyprland/workspaces" = {
+          format = "{icon}";
+          format-icons = {
+            "1" = "❶";
+            "2" = "❷";
+            "3" = "❸";
+            "4" = "❹";
+            "5" = "❺";
+            "6" = "❻";
+            "7" = "❼";
+            "8" = "❽";
+            "9" = "❾";
+            # urgent = "◉";
+            # active = "⊛";
+            # visible = "";
+            # default = "○";
+            # empty = "○";
+          };
+          active-only = false;
+          all-outputs = false;
+          persistent-workspaces = {
+            "*" = 2;
+          };
+          on-click = "activate";
+          on-scroll-up = ''${pkgs.hyprland}/bin/hyprctl dispatch "hl.plugin.hyprsplit.dsp.focus({ workspace = 'r-1' })"'';
+          on-scroll-down = ''${pkgs.hyprland}/bin/hyprctl dispatch "hl.plugin.hyprsplit.dsp.focus({ workspace = 'r+1' })"'';
+        };
+        # 窗口 ✅
+        "hyprland/window" = {
+          format = "💥 {}";
+          max-length = 30;
+          separate-outputs = true;
+          rewrite = {
+            "💥 (.*) - Google Chrome" = " $1";
+            "💥 (.*) - Visual Studio Code" = " $1";
+            "💥 (.*) - vim" = " $1";
+            "💥 (.*) - Kitty" = " $1";
+            "💥 (.*) - Ghostty" = " $1";
+            "💥 (.*) - Alacritty" = " $1";
+            "💥 (.*) - zsh" = "󰆍 $1";
+          };
+          on-click = ''${pkgs.hyprland}/bin/hyprctl dispatch "hl.dsp.window.fullscreen({ mode = 'maximized', action = 'toggle' })"'';
+          on-click-right = ''${pkgs.hyprland}/bin/hyprctl dispatch "hl.dsp.layout('togglesplit')"''; # Dwindle切换横纵分割
+        };
+      }
+      // lib.optionalAttrs (customize.desktop.window == "niri") {
+        # 工作区 ✅
+        "niri/workspaces" = {
+          format = "{icon}";
+          format-icons = {
+            "1" = "❶";
+            "2" = "❷";
+            "3" = "❸";
+            "4" = "❹";
+            "5" = "❺";
+            "6" = "❻";
+            "7" = "❼";
+            "8" = "❽";
+            "9" = "❾";
+            # urgent = "◉";
+            # active = "⊛";
+            # visible = "";
+            # default = "○";
+            # empty = "○";
+          };
+
+          all-outputs = false;
+          disable-click = false;
+          disable-markup = false;
+          current-only = false;
+          hide-empty = false;
+          on-click = "activate";
+          on-scroll-up = "${pkgs.niri-unstable}/bin/niri msg action focus-workspace-up";
+          on-scroll-down = "${pkgs.niri-unstable}/bin/niri msg action focus-workspace-down";
+        };
+        # 窗口 ✅
+        "niri/window" = {
+          format = "💥 {}";
+          max-length = 30;
+          separate-outputs = true;
+          rewrite = {
+            "💥 (.*) - Google Chrome" = " $1";
+            "💥 (.*) - Visual Studio Code" = " $1";
+            "💥 (.*) - vim" = " $1";
+            "💥 (.*) - Kitty" = " $1";
+            "💥 (.*) - Ghostty" = " $1";
+            "💥 (.*) - Alacritty" = " $1";
+            "💥 (.*) - zsh" = "󰆍 $1";
+          };
+          on-click = "${pkgs.niri-unstable}/bin/niri msg action maximize-column";
+          # on-click-right = "${pkgs.niri-unstable}/bin/niri msg action ";
         };
       };
     };

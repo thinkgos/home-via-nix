@@ -26,6 +26,11 @@
       "SC1091"
       "SC2181"
     ];
+    runtimeInputs = with pkgs; [
+      jq
+      kitty
+      hyprland
+    ];
   };
 
   # 聚焦到最后一个工作区

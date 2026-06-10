@@ -21,8 +21,10 @@ in
       kache = inputs.kache.packages.${system}.default;
       goup-rs = inputs.goup-rs.packages.${system}.default;
       wayscrollshot = inputs.wayscrollshot.packages.${system}.default;
+    })
 
-      # hyprland
+    # hyprland
+    (final: prev: {
       hyprland = inputs.hyprland.packages.${system}.hyprland;
       xdg-desktop-portal-hyprland = inputs.hyprland.packages.${system}.xdg-desktop-portal-hyprland;
       hypr-kcs = inputs.hypr-kcs.packages.${system}.default;
@@ -38,9 +40,11 @@ in
           patchelf --add-needed /usr/lib/x86_64-linux-gnu/libcap.so.2 "$file"
         '';
       });
-
-      # niri
-      niri = inputs.niri.packages.${system}.niri-unstable;
+    })
+    # niri
+    inputs.niri.overlays.niri
+    (final: prev: {
+      niri-scratchpad = inputs.niri-scratchpad.packages.${system}.default;
     })
   ];
 }

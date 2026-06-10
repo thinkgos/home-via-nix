@@ -13,12 +13,12 @@ in
     bind = [
       {
         _args = [
-          "ALT + Tab"
+          (mkLuaInline ''mod .. " + A"'')
           (mkLuaInline ''hl.dsp.exec_cmd("${pkgs.vicinae}/bin/vicinae vicinae://launch/wm/switch-windows")'')
-          { description = "切换窗口"; }
+          { description = "视图预览"; }
         ];
       }
-      # 窗口组
+      # 窗口标签组
       {
         _args = [
           (mkLuaInline ''mod .. " + G"'')
@@ -43,6 +43,13 @@ in
       }
       {
         _args = [
+          (mkLuaInline ''mod .. " + V"'')
+          (mkLuaInline "hl.dsp.window.float()")
+          { description = "切换浮动窗口"; }
+        ];
+      }
+      {
+        _args = [
           (mkLuaInline ''mod .. " + F"'')
           (mkLuaInline ''hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" })'')
           { description = "切换全屏模式(不保留状态栏)"; }
@@ -52,14 +59,7 @@ in
         _args = [
           (mkLuaInline ''mod .. " + M"'')
           (mkLuaInline ''hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" })'')
-          { description = "切换最大化模式(保留状态栏)"; }
-        ];
-      }
-      {
-        _args = [
-          (mkLuaInline ''mod .. " + V"'')
-          (mkLuaInline "hl.dsp.window.float()")
-          { description = "切换浮动窗口"; }
+          { description = "切换最大化模式"; }
         ];
       }
       {
@@ -69,7 +69,21 @@ in
           { description = "聚焦下一个窗口"; }
         ];
       }
-      # 聚焦窗口 (Mod+Arrow — same as niri) ✅
+      {
+        _args = [
+          (mkLuaInline ''mod .. " + mouse_down"'')
+          (mkLuaInline "hl.dsp.focus({ direction = 'l' })")
+          { description = "聚焦左边窗口 - 鼠标滚轮"; }
+        ];
+      }
+      {
+        _args = [
+          (mkLuaInline ''mod .. " + mouse_up"'')
+          (mkLuaInline "hl.dsp.focus({ direction = 'r' })")
+          { description = "聚焦右边窗口 - 鼠标滚轮"; }
+        ];
+      }
+      # 聚焦窗口 (Mod+Arrow) ✅
       {
         _args = [
           (mkLuaInline ''mod .. " + Left"'')
@@ -98,7 +112,36 @@ in
           { description = "聚焦下方窗口"; }
         ];
       }
-      # 移动窗口 (Mod+Shift+Arrow — same as niri) ✅
+      # 聚焦窗口 (Mod+<HJKL>)
+      {
+        _args = [
+          (mkLuaInline ''mod .. " + H"'')
+          (mkLuaInline "hl.dsp.focus({ direction = 'l' })")
+          { description = "聚焦左边窗口"; }
+        ];
+      }
+      {
+        _args = [
+          (mkLuaInline ''mod .. " + L"'')
+          (mkLuaInline "hl.dsp.focus({ direction = 'r' })")
+          { description = "聚焦右边窗口"; }
+        ];
+      }
+      {
+        _args = [
+          (mkLuaInline ''mod .. " + K"'')
+          (mkLuaInline "hl.dsp.focus({ direction = 'u' })")
+          { description = "聚焦上方窗口"; }
+        ];
+      }
+      {
+        _args = [
+          (mkLuaInline ''mod .. " + J"'')
+          (mkLuaInline "hl.dsp.focus({ direction = 'd' })")
+          { description = "聚焦下方窗口"; }
+        ];
+      }
+      # 移动窗口 (Mod+Shift+Arrow) ✅
       {
         _args = [
           (mkLuaInline ''mod .. " + SHIFT + Left"'')
@@ -146,7 +189,7 @@ in
       #   _args = [
       #     (mkLuaInline ''mod .. " + SHIFT + Home"'')
       #     (mkLuaInline "hl.dsp.move({ workspace = '1' })")
-      #     { description = "移动窗口到工作区1"; }
+      #     { description = "移动窗口到第一个工作区"; }
       #   ];
       # }
       # {
@@ -156,7 +199,7 @@ in
       #     { description = "移动窗口到最后一个工作区"; }
       #   ];
       # }
-      # # 工作区中移动窗口 (Mod+Shift+1-9 — same as niri)
+      # # 工作区中移动窗口 (Mod+Shift+1-9)
       # {
       #   _args = [
       #     (mkLuaInline ''mod .. " + SHIFT + 1"'')
