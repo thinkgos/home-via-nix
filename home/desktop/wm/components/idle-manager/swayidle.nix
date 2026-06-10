@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  customize,
   ...
 }:
 {
@@ -11,10 +12,25 @@
     enable = true;
     # extraArgs = [];
     events = {
-      lock = "/bin/pidof hyprlock || ${pkgs.hyprlock}/bin/hyprlock & /bin/sleep 1 && ${pkgs.niri-unstable}/bin/niri msg action power-off-monitors"; # avoid starting multiple hyprlock instances.
-      unlock = "/bin/loginctl unlock-session"; # kills hyprlock when unlocking (this is always run when "loginctl unlock-session" is called)
-      before-sleep = "/bin/loginctl lock-session"; # ensures that the session is locked before going to sleep
-      after-resume = "${pkgs.niri-unstable}/bin/niri msg action power-on-monitors"; # turn on screen after sleep (not strictly necessary, but just in case)
+      lock =
+        "/bin/pidof hyprlock || ${pkgs.hyprlock}/bin/hyprlock & /bin/sleep 1 && "
+        + (
+          if (customize.desktop.window == "hyprland") then
+            "${pkgs.hyprland}/bin/hyprctl dispatch 'hl.dsp.dpms({ action = \"disable\" })'"
+          else if (customize.desktop.window == "niri") then
+            "${pkgs.niri-unstable}/bin/niri msg action power-off-monitors"
+          else
+            ''/bin/notify-send "[swayidle] lock not supported"''
+        );
+      unlock = "/bin/loginctl unlock-session";
+      before-sleep = "/bin/loginctl lock-session";
+      after-resume =
+        if (customize.desktop.window == "hyprland") then
+          "${pkgs.hyprland}/bin/hyprctl dispatch 'hl.dsp.dpms({ action = \"enable\" })'"
+        else if (customize.desktop.window == "niri") then
+          "${pkgs.niri-unstable}/bin/niri msg action power-on-monitors"
+        else
+          ''/bin/notify-send "[swayidle] after-resume not supported"'';
     };
     timeouts = [
       {
@@ -34,7 +50,7 @@
         timeout = 900; # 15m
         # timeout = 45; # 45s(测试)
         command = "/bin/loginctl lock-session"; # lock screen when timeout has passed
-        # resumeCommand = "${pkgs.niri-unstable}/bin/niri msg action power-on-monitors";
+        # resumeCommand = "";
       }
     ];
   };

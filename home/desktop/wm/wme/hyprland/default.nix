@@ -9,7 +9,7 @@ let
 in
 {
   power = {
-    lock = "/bin/loginctl lock-session && sleep 1 && ${pkgs.hyprland}/bin/hyprctl dispatch 'hl.dsp.dpms({ action = \"disable\" })'";
+    lock = "/bin/loginctl lock-session";
     # BUG: 这里注销导致hyprland起不来(但是快捷键里注销时面正常时而不正常).
     # logout = "${pkgs.hyprland}/bin/hyprctl dispatch 'hl.dsp.exit()'";
     # logout = ''${pkgs.hyprland}/bin/hyprctl dispatch  'hl.dsp.exec_cmd("hyprshutdown")'';
