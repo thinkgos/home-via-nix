@@ -13,10 +13,10 @@
     #   name = "";
     #   open-on-output = "";
     # };
-    # "1" = { };
-    # "2" = { };
-    # "3" = { };
-    # "4" = { };
+    "primary" = { };
+    "secondary" = { };
+    "flexible" = { };
+    "terminal" = { };
     # stash for niri-scratchpad
     # https://github.com/argosnothing/niri-scratchpad-rs
     # https://github.com/niri-wm/niri/pull/2997
