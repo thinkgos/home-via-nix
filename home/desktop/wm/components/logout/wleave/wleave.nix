@@ -23,42 +23,44 @@
       buttons = [
         {
           label = "lock";
-          action = wme.power.lock;
+          action = "/bin/loginctl lock-session";
           text = "锁屏";
           keybind = "l";
           icon = "${pkgs.wleave}/share/wleave/icons/lock.svg";
         }
         {
           label = "logout";
-          action = wme.power.logout;
+          action = "/bin/notify-send -u critical '注销有BUG(logout)!'";
           text = "注销";
           keybind = "e";
           icon = "${pkgs.wleave}/share/wleave/icons/logout.svg";
         }
         {
           label = "shutdown";
-          action = wme.power.shutdown;
+          action = "/bin/systemctl poweroff";
           text = "关机";
           keybind = "s";
           icon = "${pkgs.wleave}/share/wleave/icons/shutdown.svg";
         }
         {
           label = "reboot";
-          action = wme.power.reboot;
+          action = "/bin/systemctl reboot";
           text = "重启";
           keybind = "r";
           icon = "${pkgs.wleave}/share/wleave/icons/reboot.svg";
         }
         {
+          # 休眠是写到swap文件(swap空间必须大于内存), 需要主板与BIOS/UEFI支持(主板必须支持ACPI S4状态)
           label = "hibernate";
-          action = wme.power.hibernate;
+          # action = "/bin/systemctl hibernate";
+          action = "/bin/notify-send -u critical '系统暂不支持休眠(hibernate)!'";
           text = "休眠";
           keybind = "h";
           icon = "${pkgs.wleave}/share/wleave/icons/hibernate.svg";
         }
         {
           label = "suspend";
-          action = wme.power.suspend;
+          action = "/bin/systemctl suspend";
           text = "挂起";
           keybind = "u";
           icon = "${pkgs.wleave}/share/wleave/icons/suspend.svg";

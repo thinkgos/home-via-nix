@@ -24,9 +24,8 @@
     };
     "Mod+Alt+L" = {
       action.spawn = [
-        "sh"
-        "-c"
-        "${wme.power.lock}"
+        "/bin/loginctl"
+        "lock-session"
       ];
       repeat = false;
       hotkey-overlay.title = "锁定屏幕";

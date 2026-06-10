@@ -30,7 +30,7 @@ in
       {
         _args = [
           (mkLuaInline ''mod .. " + ALT + L"'')
-          (mkLuaInline "hl.dsp.exec_cmd(actionLockScreen)")
+          (mkLuaInline ''hl.dsp.exec_cmd("/bin/loginctl lock-session")'')
           { description = "锁定屏幕"; }
         ];
       }

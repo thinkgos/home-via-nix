@@ -32,9 +32,6 @@ in
       mod = {
         _var = "SUPER";
       };
-      actionLockScreen = {
-        _var = wme.power.lock;
-      };
       bind = [ ];
     };
     # https://github.com/shezdy/hyprsplit
