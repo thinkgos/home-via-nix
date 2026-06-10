@@ -24,8 +24,11 @@
       };
       # hot-corner = ["top-left"];
     };
+
+  }
+  // lib.optionalAttrs (customize.desktop.monitor-secondary != "") {
     "${customize.desktop.monitor-secondary}" = {
-      enable = customize.desktop.monitor-primary != "";
+      enable = true;
       # mode = lib.mkDefault { };
       scale = 1.0;
       position = {

@@ -14,7 +14,7 @@ in
     ./animations/animations.nix # 动画
     ./plugins/plugins.nix # 插件
     ./keybinding/keybinding.nix # 按键绑定
-    ./monitor.nix # 显示器
+    ./output.nix # 显示器
     ./layout.nix # 层规则
     ./workspace.nix # 工作空间
     ./window.nix # 窗口

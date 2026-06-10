@@ -157,18 +157,18 @@
       };
     }
     # 浏览器, 在全屏时启用不透明
-    {
-      matches = [
-        {
-          app-id = "^google-chrome$";
-          is-focused = true;
-        }
-        {
-          app-id = "^firefox$";
-          is-focused = true;
-        }
-      ];
-      opacity = 1.0;
-    }
+    # {
+    #   matches = [
+    #     {
+    #       app-id = "^google-chrome$";
+    #       is-focused = true;
+    #     }
+    #     {
+    #       app-id = "^firefox$";
+    #       is-focused = true;
+    #     }
+    #   ];
+    #   opacity = 1.0;
+    # }
   ];
 }
