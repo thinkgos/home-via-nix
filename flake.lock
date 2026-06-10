@@ -1183,6 +1183,26 @@
         "type": "github"
       }
     },
+    "piri": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1780633160,
+        "narHash": "sha256-0yqHUnLDmKPRdqW+cgt24uxcH3pAcsgVauYq0VivB+E=",
+        "owner": "Asthestarsfalll",
+        "repo": "piri",
+        "rev": "b3479a53586f48b09b5ab70835fe55565d0df0b9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Asthestarsfalll",
+        "repo": "piri",
+        "type": "github"
+      }
+    },
     "pre-commit-hooks": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -1223,6 +1243,7 @@
         "niri-scratchpad": "niri-scratchpad",
         "nixpkgs": "nixpkgs_6",
         "phonto": "phonto",
+        "piri": "piri",
         "stylix": "stylix",
         "wayscrollshot": "wayscrollshot"
       }

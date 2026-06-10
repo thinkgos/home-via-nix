@@ -60,6 +60,10 @@
       url = "github:argosnothing/niri-scratchpad";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    piri = {
+      url = "github:Asthestarsfalll/piri";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =

@@ -16,6 +16,7 @@
     ./workspace.nix # 工作空间
     ./window.nix # 窗口
     ./overview.nix # 概览
+    ./extensions/extensions.nix # 扩展
   ];
 
   home.sessionVariables = {
@@ -64,6 +65,13 @@
           argv = [
             "${pkgs.anyrun}/bin/anyrun"
             "daemon"
+          ];
+        }
+        {
+          argv = [
+            "sh"
+            "-c"
+            "${pkgs.piri}/bin/piri daemon > /dev/null 2>&1 &"
           ];
         }
       ];
