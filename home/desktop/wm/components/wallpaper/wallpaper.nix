@@ -8,5 +8,6 @@
   # 壁纸
   imports = [
     ./awww.nix
+    ./phonto.nix
   ];
 }

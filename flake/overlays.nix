@@ -14,6 +14,7 @@ in
     (import ../overlays/npins { inherit config lib; })
     (final: prev: {
       fast-nix-gc = inputs.fast-nix-gc.packages.${system}.default;
+      phonto = inputs.phonto.packages.${system}.default;
       anyrun = inputs.anyrun.packages.${system}.anyrun-with-all-plugins;
       anyrun-plugins = inputs.anyrun-plugins.packages.${system}.anyrun-plugins;
       ie-r = inputs.ie-r.packages.${system}.default;
