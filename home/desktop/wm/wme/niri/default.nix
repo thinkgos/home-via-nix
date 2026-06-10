@@ -9,7 +9,7 @@ let
 in
 {
   power = {
-    lock = "/bin/loginctl lock-session && sleep 1 && ${pkgs.niri-unstable}/bin/niri msg action power-off-monitors";
+    lock = "/bin/loginctl lock-session";
     logout = "/bin/notify-send -u critical '注销有BUG(logout)!'";
     shutdown = "/bin/systemctl poweroff";
     reboot = "/bin/systemctl reboot";
