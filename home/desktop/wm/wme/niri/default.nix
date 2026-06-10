@@ -18,9 +18,6 @@ in
     hibernate = "/bin/notify-send -u critical '系统暂不支持休眠(hibernate)!'";
     suspend = "/bin/systemctl suspend";
   };
-  misc = {
-    dropdown-terminal = "${localpkgs.dropdown-terminal}/bin/wme-dropdown-terminal";
-  };
   pkgs = {
     wl-active-window = localpkgs.wl-active-window;
   };
