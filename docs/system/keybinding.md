@@ -142,3 +142,5 @@
 | 缩放窗口(鼠标右键) | `Super` + `mouse:273` | ✅ | `Super` + `mouse:273` | ✅ |
 | 聚焦左边窗口(鼠标滚轮向上) | `Super` + `WheelScrollUp` | ✅ | `Super` + `WheelScrollUp` | ✅ |
 | 聚焦右边窗口(鼠标滚轮向下) | `Super` + `WheelScrollDown` | ✅ | `Super` + `WheelScrollDown` | ✅ |
+| 移到窗口到左边(鼠标滚轮向上) | `Super` + `Shift` + `WheelScrollUp` | ✅ | `Super` + `Shift` + `WheelScrollUp` | ✅ |
+| 移到窗口到右边(鼠标滚轮向下) | `Super` + `Shift` + `WheelScrollDown` | ✅ | `Super` + `Shift` + `WheelScrollDown` | ✅ |

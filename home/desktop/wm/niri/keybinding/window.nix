@@ -2,7 +2,6 @@
   config,
   lib,
   pkgs,
-  customize,
   ...
 }:
 {
@@ -196,7 +195,7 @@
       repeat = false;
       # hotkey-overlay.title = "移动窗口到工作空间9";
     };
-    # 列宽调整
+    # 窗口宽度调整
     "Mod+C" = {
       action.center-column = { };
       repeat = false;

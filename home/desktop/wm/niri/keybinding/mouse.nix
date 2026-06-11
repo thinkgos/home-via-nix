@@ -23,5 +23,17 @@
       cooldown-ms = 300;
       # hotkey-overlay.title = "聚焦右边窗口 - 鼠标滚轮向下";
     };
+    "Mod+Shift+WheelScrollUp" = {
+      action.move-column-left = { };
+      repeat = true;
+      cooldown-ms = 300;
+      # hotkey-overlay.title = "聚焦左边窗口 - 鼠标滚轮向上";
+    };
+    "Mod+Shift+WheelScrollDown" = {
+      action.move-column-right = { };
+      repeat = true;
+      cooldown-ms = 300;
+      # hotkey-overlay.title = "聚焦右边窗口 - 鼠标滚轮向下";
+    };
   };
 }

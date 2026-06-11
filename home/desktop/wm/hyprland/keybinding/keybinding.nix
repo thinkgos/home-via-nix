@@ -2,13 +2,8 @@
   config,
   lib,
   pkgs,
-  wme,
-  customize,
   ...
 }:
-let
-  mkLuaInline = lib.generators.mkLuaInline;
-in
 {
   imports = [
     ./system.nix
@@ -26,54 +21,10 @@ in
   wayland.windowManager.hyprland = {
     settings = {
       # local variable
-      settingsNumWorkspaces = {
-        _var = 4; # 最大9
-      };
       mod = {
         _var = "SUPER";
       };
       bind = [ ];
     };
-    # https://github.com/shezdy/hyprsplit
-    # hyprsplit 插件配置通过 extraConfig 设置
-    extraConfig = ''
-       -- hyprsplit 插件配置
-       hl.plugin.hyprsplit = require("hyprsplit")
-
-       local hs = hl.plugin.hyprsplit
-
-       -- 配置工作空间数量
-       hs.config( { num_workspaces = settingsNumWorkspaces } )
-
-       -- 收集孤立窗口
-       hl.bind(mod .. "+ 0", hs.dsp.grab_rogue_windows())
-       -- 聚焦工作空间
-       hl.bind(mod .. "+ Prior", hs.dsp.focus({ workspace = "r-1" }))
-       hl.bind(mod .. "+ Next", hs.dsp.focus({ workspace = "r+1" }))
-       hl.bind(mod .. "+ Home", hs.dsp.focus({ workspace = 1 }))
-       hl.bind(mod .. "+ End", hl.dsp.exec_cmd("${wme.workspace.focus-last}"))
-       -- 聚焦工作空间 (Mod+1-9)
-       for i = 1, settingsNumWorkspaces do
-         hl.bind(mod .. "+ " .. i, hs.dsp.focus({ workspace = i }))
-       end
-       -- 工作空间中移动窗口
-       hl.bind(mod .. "+ SHIFT + Prior", hs.dsp.window.move({ workspace = "r-1" }))
-       hl.bind(mod .. "+ SHIFT + Next", hs.dsp.window.move({ workspace = "r+1" }))
-       hl.bind(mod .. "+ SHIFT + Home", hs.dsp.window.move({ workspace = 1 }))
-       hl.bind(mod .. "+ SHIFT + End", hl.dsp.exec_cmd("${wme.window.move-to-last-workspace}"))
-      -- 工作空间中移动窗口 (Mod+Shift+1-9)
-       for i = 1, settingsNumWorkspaces do
-         hl.bind(mod .. "+ SHIFT + " .. i, hs.dsp.window.move({ workspace = i }))
-       end
-    ''
-    + (
-      if customize.desktop.monitor-secondary != "" then
-        ''hs.monitor_priority({ "${customize.desktop.monitor-primary}", "${customize.desktop.monitor-secondary}" })''
-      else
-        ''hs.monitor_priority({ "${customize.desktop.monitor-primary}" })''
-    );
-  };
-  xdg.configFile = {
-    "hypr/hyprsplit/init.lua".source = "${pkgs.hyprsplit}/init.lua";
   };
 }

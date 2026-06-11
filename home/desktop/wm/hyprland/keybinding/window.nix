@@ -2,7 +2,7 @@
   config,
   lib,
   pkgs,
-  customize,
+  wme,
   ...
 }:
 let
@@ -11,6 +11,13 @@ in
 {
   wayland.windowManager.hyprland.settings = {
     bind = [
+      {
+        _args = [
+          (mkLuaInline ''mod .. " + 0"'')
+          (mkLuaInline "hl.plugin.hyprsplit.dsp.grab_rogue_windows()")
+          { description = "收集孤立窗口"; }
+        ];
+      }
       # 窗口标签组
       {
         _args = [
@@ -178,99 +185,111 @@ in
           { description = "移动窗口到下方"; }
         ];
       }
-      # # 工作空间中移动窗口
-      # {
-      #   _args = [
-      #     (mkLuaInline ''mod .. " + SHIFT + Prior"'')
-      #     (mkLuaInline "hl.dsp.move({ workspace = 'r-1' })")
-      #     { description = "移动窗口到上一个工作空间"; }
-      #   ];
-      # }
-      # {
-      #   _args = [
-      #     (mkLuaInline ''mod .. " + SHIFT + Next"'')
-      #     (mkLuaInline "hl.dsp.move({ workspace = 'r+1' })")
-      #     { description = "移动窗口到下一个工作空间"; }
-      #   ];
-      # }
-      # {
-      #   _args = [
-      #     (mkLuaInline ''mod .. " + SHIFT + Home"'')
-      #     (mkLuaInline "hl.dsp.move({ workspace = '1' })")
-      #     { description = "移动窗口到第一个工作空间"; }
-      #   ];
-      # }
-      # {
-      #   _args = [
-      #     (mkLuaInline ''mod .. " + SHIFT + End"'')
-      #     (mkLuaInline ''hl.dsp.exec_cmd("${wme.window.move-to-last-workspace}")'')
-      #     { description = "移动窗口到最后一个工作空间"; }
-      #   ];
-      # }
-      # # 工作空间中移动窗口 (Mod+Shift+1-9)
-      # {
-      #   _args = [
-      #     (mkLuaInline ''mod .. " + SHIFT + 1"'')
-      #     (mkLuaInline "hl.dsp.window.move({ workspace = 1 })")
-      #     { description = "移动窗口到工作空间1"; }
-      #   ];
-      # }
-      # {
-      #   _args = [
-      #     (mkLuaInline ''mod .. " + SHIFT + 2"'')
-      #     (mkLuaInline "hl.dsp.window.move({ workspace = 2 })")
-      #     { description = "移动窗口到工作空间2"; }
-      #   ];
-      # }
-      # {
-      #   _args = [
-      #     (mkLuaInline ''mod .. " + SHIFT + 3"'')
-      #     (mkLuaInline "hl.dsp.window.move({ workspace = 3 })")
-      #     { description = "移动窗口到工作空间3"; }
-      #   ];
-      # }
-      # {
-      #   _args = [
-      #     (mkLuaInline ''mod .. " + SHIFT + 4"'')
-      #     (mkLuaInline "hl.dsp.window.move({ workspace = 4 })")
-      #     { description = "移动窗口到工作空间4"; }
-      #   ];
-      # }
-      # {
-      #   _args = [
-      #     (mkLuaInline ''mod .. " + SHIFT + 5"'')
-      #     (mkLuaInline "hl.dsp.window.move({ workspace = 5 })")
-      #     { description = "移动窗口到工作空间5"; }
-      #   ];
-      # }
-      # {
-      #   _args = [
-      #     (mkLuaInline ''mod .. " + SHIFT + 6"'')
-      #     (mkLuaInline "hl.dsp.window.move({ workspace = 6 })")
-      #     { description = "移动窗口到工作空间6"; }
-      #   ];
-      # }
-      # {
-      #   _args = [
-      #     (mkLuaInline ''mod .. " + SHIFT + 7"'')
-      #     (mkLuaInline "hl.dsp.window.move({ workspace = 7 })")
-      #     { description = "移动窗口到工作空间7"; }
-      #   ];
-      # }
-      # {
-      #   _args = [
-      #     (mkLuaInline ''mod .. " + SHIFT + 8"'')
-      #     (mkLuaInline "hl.dsp.window.move({ workspace = 8 })")
-      #     { description = "移动窗口到工作空间8"; }
-      #   ];
-      # }
-      # {
-      #   _args = [
-      #     (mkLuaInline ''mod .. " + SHIFT + 9"'')
-      #     (mkLuaInline "hl.dsp.window.move({ workspace = 9 })")
-      #     { description = "移动窗口到工作空间9"; }
-      #   ];
-      # }
+      # 工作空间中移动窗口
+      {
+        _args = [
+          (mkLuaInline ''mod .. " + SHIFT + Prior"'')
+          # (mkLuaInline "hl.dsp.move({ workspace = 'r-1' })")
+          (mkLuaInline ''hl.plugin.hyprsplit.dsp.window.move({ workspace = "r-1" })'')
+          { description = "移动窗口到上一个工作空间"; }
+        ];
+      }
+      {
+        _args = [
+          (mkLuaInline ''mod .. " + SHIFT + Next"'')
+          # (mkLuaInline "hl.dsp.move({ workspace = 'r+1' })")
+          (mkLuaInline ''hl.plugin.hyprsplit.dsp.window.move({ workspace = "r+1" })'')
+          { description = "移动窗口到下一个工作空间"; }
+        ];
+      }
+      {
+        _args = [
+          (mkLuaInline ''mod .. " + SHIFT + Home"'')
+          # (mkLuaInline "hl.dsp.move({ workspace = '1' })")
+          (mkLuaInline "hl.plugin.hyprsplit.dsp.window.move({ workspace = 1 })")
+          { description = "移动窗口到第一个工作空间"; }
+        ];
+      }
+      {
+        _args = [
+          (mkLuaInline ''mod .. " + SHIFT + End"'')
+          (mkLuaInline ''hl.dsp.exec_cmd("${wme.window.move-to-last-workspace}")'')
+          { description = "移动窗口到最后一个工作空间"; }
+        ];
+      }
+      # 工作空间中移动窗口 (Mod+Shift+1-9)
+      {
+        _args = [
+          (mkLuaInline ''mod .. " + SHIFT + 1"'')
+          # (mkLuaInline "hl.dsp.window.move({ workspace = 1 })")
+          (mkLuaInline "hl.plugin.hyprsplit.dsp.window.move({ workspace = 1 })")
+          { description = "移动窗口到工作空间1"; }
+        ];
+      }
+      {
+        _args = [
+          (mkLuaInline ''mod .. " + SHIFT + 2"'')
+          # (mkLuaInline "hl.dsp.window.move({ workspace = 2 })")
+          (mkLuaInline "hl.plugin.hyprsplit.dsp.window.move({ workspace = 2 })")
+          { description = "移动窗口到工作空间2"; }
+        ];
+      }
+      {
+        _args = [
+          (mkLuaInline ''mod .. " + SHIFT + 3"'')
+          # (mkLuaInline "hl.dsp.window.move({ workspace = 3 })")
+          (mkLuaInline "hl.plugin.hyprsplit.dsp.window.move({ workspace = 3 })")
+          { description = "移动窗口到工作空间3"; }
+        ];
+      }
+      {
+        _args = [
+          (mkLuaInline ''mod .. " + SHIFT + 4"'')
+          # (mkLuaInline "hl.dsp.window.move({ workspace = 4 })")
+          (mkLuaInline "hl.plugin.hyprsplit.dsp.window.move({ workspace = 4 })")
+          { description = "移动窗口到工作空间4"; }
+        ];
+      }
+      {
+        _args = [
+          (mkLuaInline ''mod .. " + SHIFT + 5"'')
+          # (mkLuaInline "hl.dsp.window.move({ workspace = 5 })")
+          (mkLuaInline "hl.plugin.hyprsplit.dsp.window.move({ workspace = 5 })")
+          { description = "移动窗口到工作空间5"; }
+        ];
+      }
+      {
+        _args = [
+          (mkLuaInline ''mod .. " + SHIFT + 6"'')
+          # (mkLuaInline "hl.dsp.window.move({ workspace = 6 })")
+          (mkLuaInline "hl.plugin.hyprsplit.dsp.window.move({ workspace = 6 })")
+          { description = "移动窗口到工作空间6"; }
+        ];
+      }
+      {
+        _args = [
+          (mkLuaInline ''mod .. " + SHIFT + 7"'')
+          # (mkLuaInline "hl.dsp.window.move({ workspace = 7 })")
+          (mkLuaInline "hl.plugin.hyprsplit.dsp.window.move({ workspace = 7 })")
+          { description = "移动窗口到工作空间7"; }
+        ];
+      }
+      {
+        _args = [
+          (mkLuaInline ''mod .. " + SHIFT + 8"'')
+          # (mkLuaInline "hl.dsp.window.move({ workspace = 8 })")
+          (mkLuaInline "hl.plugin.hyprsplit.dsp.window.move({ workspace = 8 })")
+          { description = "移动窗口到工作空间8"; }
+        ];
+      }
+      {
+        _args = [
+          (mkLuaInline ''mod .. " + SHIFT + 9"'')
+          # (mkLuaInline "hl.dsp.window.move({ workspace = 9 })")
+          (mkLuaInline "hl.plugin.hyprsplit.dsp.window.move({ workspace = 9 })")
+          { description = "移动窗口到工作空间9"; }
+        ];
+      }
       # 窗口宽度调整
       {
         _args = [

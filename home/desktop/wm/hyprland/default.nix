@@ -2,10 +2,12 @@
   config,
   lib,
   pkgs,
+  customize,
   ...
 }:
 let
   font = "JetBrainsMono Nerd Font Mono";
+  numWorkspaces = 4;
 in
 {
   # https://github.com/catppuccin
@@ -209,12 +211,31 @@ in
         };
       };
     };
-
+    extraLuaFiles = {
+      # https://github.com/shezdy/hyprsplit
+      "hyprsplit/init" = {
+        autoLoad = false;
+        content = builtins.readFile "${pkgs.hyprsplit}/init.lua";
+      };
+      "hyprload" = {
+        autoLoad = true;
+        content = ''
+          hl.plugin.hyprsplit = require("hyprsplit")
+          -- 配置工作空间数量
+          hl.plugin.hyprsplit.config( { num_workspaces = ${toString numWorkspaces} } )  
+        ''
+        + (
+          if customize.desktop.monitor-secondary != "" then
+            ''hl.plugin.hyprsplit.monitor_priority({ "${customize.desktop.monitor-primary}", "${customize.desktop.monitor-secondary}" })''
+          else
+            ''hl.plugin.hyprsplit.monitor_priority({ "${customize.desktop.monitor-primary}" })''
+        );
+      };
+    };
     extraConfig = ''
       -- refers to $XDG_CONFIG_HOME/hypr/hyprland-extra.lua
       require("hyprland-extra")
     '';
-
   };
 
   # BUG: https://github.com/nix-community/home-manager/issues/4922
@@ -226,7 +247,7 @@ in
     "L+ %h/.config/systemd/user/xdg-desktop-portal-gtk.service - - - - %h/.nix-profile/share/systemd/user/xdg-desktop-portal-gtk.service"
   ];
 
-  # 创建默认配置文件，如果不存在
+  # 创建扩展配置文件，如果不存在
   home.activation.create-hyprland-config-extra = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     file=${config.xdg.configHome}/hypr/hyprland-extra.lua
     if [ ! -f "$file" ]; then
