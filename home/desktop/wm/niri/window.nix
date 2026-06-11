@@ -10,7 +10,7 @@
   programs.niri.settings.window-rules = [
     # 所有窗口规则
     {
-      opacity = 0.95;
+      opacity = 0.97;
       geometry-corner-radius = {
         top-left = 10.0;
         top-right = 10.0;

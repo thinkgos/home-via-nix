@@ -81,7 +81,7 @@
 
       # background
       background_opacity = 0.85;
-      background_blur = 64;
+      background_blur = 0;
       remember_window_size = "yes";
 
       # cursor

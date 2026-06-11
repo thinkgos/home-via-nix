@@ -31,8 +31,8 @@
     # Empty plugin: executes commands when switching to empty workspaces
     [empty.terminal]
     command = "${pkgs.alacritty}/bin/alacritty"
-    [empty.main]
-    command = "google-chrome-stable"
+    [empty.primary]
+    command = "google-chrome-stable; code"
 
     # Scratchpads configuration
     [piri.scratchpad]
