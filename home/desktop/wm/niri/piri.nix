@@ -39,7 +39,7 @@
     default_size = "40% 60%"
     default_margin = 50
     # Optional: move hidden scratchpads to a specific workspace
-    # move_to_workspace = "stash"
+    move_to_workspace = "stash"
 
     [scratchpads.dropdown-terminal]
     direction = "fromTop"
@@ -47,6 +47,5 @@
     app_id = "dropdown-terminal"
     size = "100% 40%"
     margin = 0
-    move_to_workspace = "stash"
   '';
 }

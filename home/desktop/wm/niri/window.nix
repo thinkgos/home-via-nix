@@ -107,7 +107,6 @@
         { app-id = "^dropdown-terminal$"; }
       ];
       open-floating = true;
-      open-on-output = "current";
       default-column-width = {
         proportion = 1.0;
       };
