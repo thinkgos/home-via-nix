@@ -166,7 +166,7 @@ in
       }
       {
         _args = [
-          (mkLuaInline ''mod .. " + SHIFT + JK"'')
+          (mkLuaInline ''mod .. " + SHIFT + K"'')
           (mkLuaInline "hl.dsp.window.move({ direction = 'u' })")
           { description = "移动窗口到上方"; }
         ];
