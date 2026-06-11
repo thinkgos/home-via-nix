@@ -474,7 +474,7 @@
         };
       }
       // lib.optionalAttrs (customize.desktop.window == "hyprland") {
-        # 当前工作区窗口数 ✅
+        # 当前工作空间窗口数 ✅
         "hyprland/windowcount" = {
           format = "󱂬 {}";
           format-empty = "󱂬 x";
@@ -482,7 +482,7 @@
           # format-fullscreen= "[{}]";
           separate-outputs = true;
         };
-        # 工作区 ✅
+        # 工作空间 ✅
         "hyprland/workspaces" = {
           format = "{icon}";
           format-icons = {
@@ -529,7 +529,7 @@
         };
       }
       // lib.optionalAttrs (customize.desktop.window == "niri") {
-        # 工作区 ✅
+        # 工作空间 ✅
         "niri/workspaces" = {
           format = "{icon}";
           format-icons = {

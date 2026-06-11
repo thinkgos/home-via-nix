@@ -22,6 +22,13 @@ in
       }
       {
         _args = [
+          (mkLuaInline ''mod .. " + grave"'')
+          (mkLuaInline ''hl.dsp.exec_cmd("${wme.misc.dropdown-terminal}")'')
+          { description = "启动下拉终端"; }
+        ];
+      }
+      {
+        _args = [
           (mkLuaInline ''mod .. " + N"'')
           (mkLuaInline ''hl.dsp.exec_cmd('"${pkgs.alacritty}/bin/alacritty" --class floating-terminal --title "floating-terminal"')'')
           { description = "启动浮动终端"; }
@@ -53,13 +60,6 @@ in
           (mkLuaInline ''mod .. " + P"'')
           (mkLuaInline ''hl.dsp.exec_cmd("code")'')
           { description = "启动IDE"; }
-        ];
-      }
-      {
-        _args = [
-          (mkLuaInline ''mod .. " + grave"'')
-          (mkLuaInline ''hl.dsp.exec_cmd("${wme.misc.dropdown-terminal}")'')
-          { description = "启动下拉终端"; }
         ];
       }
       {

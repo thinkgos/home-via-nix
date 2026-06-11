@@ -11,13 +11,6 @@ in
 {
   wayland.windowManager.hyprland.settings = {
     bind = [
-      {
-        _args = [
-          (mkLuaInline ''mod .. " + A"'')
-          (mkLuaInline ''hl.dsp.exec_cmd("${pkgs.vicinae}/bin/vicinae vicinae://launch/wm/switch-windows")'')
-          { description = "视图预览"; }
-        ];
-      }
       # 窗口标签组
       {
         _args = [
@@ -52,7 +45,7 @@ in
         _args = [
           (mkLuaInline ''mod .. " + F"'')
           (mkLuaInline ''hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" })'')
-          { description = "切换全屏模式(不保留状态栏)"; }
+          { description = "切换全屏模式"; }
         ];
       }
       {
@@ -67,20 +60,6 @@ in
           (mkLuaInline ''mod .. " + Tab"'')
           (mkLuaInline "hl.dsp.window.cycle_next()")
           { description = "聚焦下一个窗口"; }
-        ];
-      }
-      {
-        _args = [
-          (mkLuaInline ''mod .. " + mouse_down"'')
-          (mkLuaInline "hl.dsp.focus({ direction = 'l' })")
-          { description = "聚焦左边窗口 - 鼠标滚轮"; }
-        ];
-      }
-      {
-        _args = [
-          (mkLuaInline ''mod .. " + mouse_up"'')
-          (mkLuaInline "hl.dsp.focus({ direction = 'r' })")
-          { description = "聚焦右边窗口 - 鼠标滚轮"; }
         ];
       }
       # 聚焦窗口 (Mod+Arrow) ✅
@@ -170,97 +149,126 @@ in
           { description = "移动窗口到下方"; }
         ];
       }
-      # # 工作区中移动窗口
+      # 移动窗口 (Mod+Shift+[HJKL])
+      {
+        _args = [
+          (mkLuaInline ''mod .. " + SHIFT + H"'')
+          (mkLuaInline "hl.dsp.window.move({ direction = 'l' })")
+          { description = "移动窗口到左边"; }
+        ];
+      }
+      {
+        _args = [
+          (mkLuaInline ''mod .. " + SHIFT + L"'')
+          (mkLuaInline "hl.dsp.window.move({ direction = 'r' })")
+          { description = "移动窗口到右边"; }
+        ];
+      }
+      {
+        _args = [
+          (mkLuaInline ''mod .. " + SHIFT + JK"'')
+          (mkLuaInline "hl.dsp.window.move({ direction = 'u' })")
+          { description = "移动窗口到上方"; }
+        ];
+      }
+      {
+        _args = [
+          (mkLuaInline ''mod .. " + SHIFT + J"'')
+          (mkLuaInline "hl.dsp.window.move({ direction = 'd' })")
+          { description = "移动窗口到下方"; }
+        ];
+      }
+      # # 工作空间中移动窗口
       # {
       #   _args = [
       #     (mkLuaInline ''mod .. " + SHIFT + Prior"'')
       #     (mkLuaInline "hl.dsp.move({ workspace = 'r-1' })")
-      #     { description = "移动窗口到上一个工作区"; }
+      #     { description = "移动窗口到上一个工作空间"; }
       #   ];
       # }
       # {
       #   _args = [
       #     (mkLuaInline ''mod .. " + SHIFT + Next"'')
       #     (mkLuaInline "hl.dsp.move({ workspace = 'r+1' })")
-      #     { description = "移动窗口到下一个工作区"; }
+      #     { description = "移动窗口到下一个工作空间"; }
       #   ];
       # }
       # {
       #   _args = [
       #     (mkLuaInline ''mod .. " + SHIFT + Home"'')
       #     (mkLuaInline "hl.dsp.move({ workspace = '1' })")
-      #     { description = "移动窗口到第一个工作区"; }
+      #     { description = "移动窗口到第一个工作空间"; }
       #   ];
       # }
       # {
       #   _args = [
       #     (mkLuaInline ''mod .. " + SHIFT + End"'')
       #     (mkLuaInline ''hl.dsp.exec_cmd("${wme.window.move-to-last-workspace}")'')
-      #     { description = "移动窗口到最后一个工作区"; }
+      #     { description = "移动窗口到最后一个工作空间"; }
       #   ];
       # }
-      # # 工作区中移动窗口 (Mod+Shift+1-9)
+      # # 工作空间中移动窗口 (Mod+Shift+1-9)
       # {
       #   _args = [
       #     (mkLuaInline ''mod .. " + SHIFT + 1"'')
       #     (mkLuaInline "hl.dsp.window.move({ workspace = 1 })")
-      #     { description = "移动窗口到工作区1"; }
+      #     { description = "移动窗口到工作空间1"; }
       #   ];
       # }
       # {
       #   _args = [
       #     (mkLuaInline ''mod .. " + SHIFT + 2"'')
       #     (mkLuaInline "hl.dsp.window.move({ workspace = 2 })")
-      #     { description = "移动窗口到工作区2"; }
+      #     { description = "移动窗口到工作空间2"; }
       #   ];
       # }
       # {
       #   _args = [
       #     (mkLuaInline ''mod .. " + SHIFT + 3"'')
       #     (mkLuaInline "hl.dsp.window.move({ workspace = 3 })")
-      #     { description = "移动窗口到工作区3"; }
+      #     { description = "移动窗口到工作空间3"; }
       #   ];
       # }
       # {
       #   _args = [
       #     (mkLuaInline ''mod .. " + SHIFT + 4"'')
       #     (mkLuaInline "hl.dsp.window.move({ workspace = 4 })")
-      #     { description = "移动窗口到工作区4"; }
+      #     { description = "移动窗口到工作空间4"; }
       #   ];
       # }
       # {
       #   _args = [
       #     (mkLuaInline ''mod .. " + SHIFT + 5"'')
       #     (mkLuaInline "hl.dsp.window.move({ workspace = 5 })")
-      #     { description = "移动窗口到工作区5"; }
+      #     { description = "移动窗口到工作空间5"; }
       #   ];
       # }
       # {
       #   _args = [
       #     (mkLuaInline ''mod .. " + SHIFT + 6"'')
       #     (mkLuaInline "hl.dsp.window.move({ workspace = 6 })")
-      #     { description = "移动窗口到工作区6"; }
+      #     { description = "移动窗口到工作空间6"; }
       #   ];
       # }
       # {
       #   _args = [
       #     (mkLuaInline ''mod .. " + SHIFT + 7"'')
       #     (mkLuaInline "hl.dsp.window.move({ workspace = 7 })")
-      #     { description = "移动窗口到工作区7"; }
+      #     { description = "移动窗口到工作空间7"; }
       #   ];
       # }
       # {
       #   _args = [
       #     (mkLuaInline ''mod .. " + SHIFT + 8"'')
       #     (mkLuaInline "hl.dsp.window.move({ workspace = 8 })")
-      #     { description = "移动窗口到工作区8"; }
+      #     { description = "移动窗口到工作空间8"; }
       #   ];
       # }
       # {
       #   _args = [
       #     (mkLuaInline ''mod .. " + SHIFT + 9"'')
       #     (mkLuaInline "hl.dsp.window.move({ workspace = 9 })")
-      #     { description = "移动窗口到工作区9"; }
+      #     { description = "移动窗口到工作空间9"; }
       #   ];
       # }
       # 窗口宽度调整

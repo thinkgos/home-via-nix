@@ -20,57 +20,57 @@
     "Mod+Home" = {
       action.focus-workspace = 1;
       repeat = false;
-      # hotkey-overlay.title = "聚焦到第一个工作区";
+      # hotkey-overlay.title = "聚焦到第一个工作空间";
     };
     "Mod+End" = {
       action.focus-workspace = 9;
       repeat = false;
-      # hotkey-overlay.title = "聚焦到最后一个工作区";
+      # hotkey-overlay.title = "聚焦到最后一个工作空间";
     };
     "Mod+1" = {
       action.focus-workspace = 1;
       repeat = false;
-      # hotkey-overlay.title = "聚焦到工作区1";
+      # hotkey-overlay.title = "聚焦到工作空间1";
     };
     "Mod+2" = {
       action.focus-workspace = 2;
       repeat = false;
-      # hotkey-overlay.title = "聚焦到工作区2";
+      # hotkey-overlay.title = "聚焦到工作空间2";
     };
     "Mod+3" = {
       action.focus-workspace = 3;
       repeat = false;
-      # hotkey-overlay.title = "聚焦到工作区3";
+      # hotkey-overlay.title = "聚焦到工作空间3";
     };
     "Mod+4" = {
       action.focus-workspace = 4;
       repeat = false;
-      # hotkey-overlay.title = "聚焦到工作区4";
+      # hotkey-overlay.title = "聚焦到工作空间4";
     };
     "Mod+5" = {
       action.focus-workspace = 5;
       repeat = false;
-      # hotkey-overlay.title = "聚焦到工作区5";
+      # hotkey-overlay.title = "聚焦到工作空间5";
     };
     "Mod+6" = {
       action.focus-workspace = 6;
       repeat = false;
-      # hotkey-overlay.title = "聚焦到工作区6";
+      # hotkey-overlay.title = "聚焦到工作空间6";
     };
     "Mod+7" = {
       action.focus-workspace = 7;
       repeat = false;
-      # hotkey-overlay.title = "聚焦到工作区7";
+      # hotkey-overlay.title = "聚焦到工作空间7";
     };
     "Mod+8" = {
       action.focus-workspace = 8;
       repeat = false;
-      # hotkey-overlay.title = "聚焦到工作区8";
+      # hotkey-overlay.title = "聚焦到工作空间8";
     };
     "Mod+9" = {
       action.focus-workspace = 9;
       repeat = false;
-      # hotkey-overlay.title = "聚焦到工作区9";
+      # hotkey-overlay.title = "聚焦到工作空间9";
     };
   };
 }

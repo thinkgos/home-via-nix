@@ -33,7 +33,7 @@
     ];
   };
 
-  # 聚焦到最后一个工作区
+  # 聚焦到最后一个工作空间
   focus-last-workspace = pkgs.writeShellApplication {
     name = "wme-focus-last-workspace";
     text = ''
@@ -50,7 +50,7 @@
     ];
   };
 
-  # 移动窗口到最后工作区
+  # 移动窗口到最后工作空间
   window-move-to-last-workspace = pkgs.writeShellApplication {
     name = "wme-window-move-to-last-workspace";
     text = ''

@@ -42,26 +42,26 @@ in
 
        local hs = hl.plugin.hyprsplit
 
-       -- 配置工作区数量
+       -- 配置工作空间数量
        hs.config( { num_workspaces = settingsNumWorkspaces } )
 
        -- 收集孤立窗口
        hl.bind(mod .. "+ 0", hs.dsp.grab_rogue_windows())
-       -- 聚焦工作区
+       -- 聚焦工作空间
        hl.bind(mod .. "+ Prior", hs.dsp.focus({ workspace = "r-1" }))
        hl.bind(mod .. "+ Next", hs.dsp.focus({ workspace = "r+1" }))
        hl.bind(mod .. "+ Home", hs.dsp.focus({ workspace = 1 }))
        hl.bind(mod .. "+ End", hl.dsp.exec_cmd("${wme.workspace.focus-last}"))
-       -- 聚焦工作区 (Mod+1-9)
+       -- 聚焦工作空间 (Mod+1-9)
        for i = 1, settingsNumWorkspaces do
          hl.bind(mod .. "+ " .. i, hs.dsp.focus({ workspace = i }))
        end
-       -- 工作区中移动窗口
+       -- 工作空间中移动窗口
        hl.bind(mod .. "+ SHIFT + Prior", hs.dsp.window.move({ workspace = "r-1" }))
        hl.bind(mod .. "+ SHIFT + Next", hs.dsp.window.move({ workspace = "r+1" }))
        hl.bind(mod .. "+ SHIFT + Home", hs.dsp.window.move({ workspace = 1 }))
        hl.bind(mod .. "+ SHIFT + End", hl.dsp.exec_cmd("${wme.window.move-to-last-workspace}"))
-      -- 工作区中移动窗口 (Mod+Shift+1-9)
+      -- 工作空间中移动窗口 (Mod+Shift+1-9)
        for i = 1, settingsNumWorkspaces do
          hl.bind(mod .. "+ SHIFT + " .. i, hs.dsp.window.move({ workspace = i }))
        end

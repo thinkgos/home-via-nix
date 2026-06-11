@@ -13,6 +13,16 @@
       repeat = false;
       hotkey-overlay.title = "启动终端";
     };
+    "Mod+Grave" = {
+      action.spawn = [
+        "${pkgs.piri}/bin/piri"
+        "scratchpads"
+        "dropdown-terminal"
+        "toggle"
+      ];
+      repeat = false;
+      hotkey-overlay.title = "启动下拉终端";
+    };
     "Mod+N" = {
       action.spawn = [
         "${pkgs.alacritty}/bin/alacritty"
@@ -43,16 +53,6 @@
       action.spawn = [ "code" ];
       repeat = false;
       hotkey-overlay.title = "启动IDE";
-    };
-    "Mod+Grave" = {
-      action.spawn = [
-        "${pkgs.piri}/bin/piri"
-        "scratchpads"
-        "dropdown-terminal"
-        "toggle"
-      ];
-      repeat = false;
-      hotkey-overlay.title = "启动下拉终端";
     };
     "Mod+D" = {
       action.spawn = [

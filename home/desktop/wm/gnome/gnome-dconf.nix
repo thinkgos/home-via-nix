@@ -44,8 +44,8 @@
       speed = 0.325;
     };
     "org/gnome/mutter" = {
-      dynamic-workspaces = false; # 动态工作区 - 禁用
-      workspaces-only-on-primary = true; # 工作区只作用于主屏目
+      dynamic-workspaces = false; # 动态工作空间 - 禁用
+      workspaces-only-on-primary = true; # 工作空间只作用于主屏目
     };
     "org/gnome/mutter/keybindings" = {
       # toggle-tiled-left = mkEmptyArray type.string; # 分屏到左侧平铺窗口(tiling-shell覆盖)
@@ -103,7 +103,7 @@
       move-to-workspace-right = [ "<Shift><Super>Page_Down" ];
     };
     "org/gnome/desktop/wm/preferences" = {
-      num-workspaces = 4; # 工作区数量
+      num-workspaces = 4; # 工作空间数量
       button-layout = "close,minimize,maximize:appmenu"; # 窗口按钮布局
     };
 
