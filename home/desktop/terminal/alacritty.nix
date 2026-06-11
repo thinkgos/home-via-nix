@@ -35,7 +35,7 @@
       };
       font = {
         normal = {
-          family = "JetBrainsMono Nerd Font Mono";
+          family = "Maple Mono NF CN";
           style = "Regular";
         };
         size = 11;

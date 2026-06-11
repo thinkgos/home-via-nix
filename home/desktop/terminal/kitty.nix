@@ -61,6 +61,8 @@
 
     };
     settings = {
+      font_features = "JetBrainsMono-Regular +zero +cv02 +cv04 +cv05 +cv12 +cv14 +cv20 +ss02";
+
       term = "xterm-kitty";
 
       # layout

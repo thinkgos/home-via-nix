@@ -66,12 +66,24 @@
 
       # theme
       theme = "Catppuccin Mocha";
-      # theme = "Dracula+";
 
       # font
       font-family = "JetBrainsMono Nerd Font Mono";
+      font-family-italic = "JetBrainsMono Nerd Font Mono Italic";
+      font-family-bold = "JetBrainsMono Nerd Font Mono Bold";
+      font-family-bold-italic = "JetBrainsMono Nerd Font Mono Bold Italic";
       font-size = 11;
       font-thicken = true;
+      font-feature = [
+        "+zero"
+        "+cv02"
+        "+cv04"
+        "+cv05"
+        "+cv12"
+        "+cv14"
+        "+cv20"
+        "+ss02"
+      ];
       adjust-cell-height = 2;
 
       # window
@@ -82,7 +94,7 @@
       window-padding-x = 8;
       window-padding-y = 8;
       window-save-state = "always";
-      maximize = true;
+      maximize = false;
       macos-titlebar-style = "transparent";
 
       # tab bar

@@ -19,9 +19,10 @@
     nerd-fonts.jetbrains-mono
     nerd-fonts.fira-code
     nerd-fonts.hack
-    nerd-fonts.meslo-lg
 
     font-awesome
+
+    maple-mono.NF-CN
   ];
   fonts.fontconfig = {
     enable = true;
@@ -29,10 +30,9 @@
       emoji = [ "Noto Color Emoji" ];
       monospace = [
         "JetBrainsMono Nerd Font Mono"
-        "MesloLGL Nerd Font Mono"
         "FiraCode Nerd Font Mono"
         "Hack Nerd Font"
-        "MesloLGS NF"
+        "Maple Mono NF CN"
         "Noto Sans Mono CJK SC"
       ];
       sansSerif = [

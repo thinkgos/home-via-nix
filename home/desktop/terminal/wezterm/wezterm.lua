@@ -7,9 +7,8 @@ config.color_scheme = "iTerm2 Dark Background"
 config.font = wezterm.font("JetBrains Mono")
 config.font = wezterm.font_with_fallback({
 	"JetBrains Mono",
-	"Hack Nerd Font",
-	"MesloLGS NF",
 	"FiraCode Nerd Font",
+	"Hack Nerd Font",
 	"Noto Sans CJK SC",
 })
 config.font_size = 10.0;
