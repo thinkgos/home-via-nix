@@ -5,20 +5,6 @@
   ...
 }:
 {
-  # 截图
-  wl-active-window = pkgs.writeShellApplication {
-    name = "wl-active-window";
-    text = builtins.readFile ./control/wl-active-window.sh;
-    excludeShellChecks = [
-      "SC1091"
-      "SC2181"
-    ];
-    runtimeInputs = with pkgs; [
-      jq
-      hyprland
-    ];
-  };
-
   dropdown-terminal = pkgs.writeShellApplication {
     name = "wme-dropdown-terminal";
     text = builtins.readFile ./popup/dropdown-terminal.sh;
@@ -51,11 +37,11 @@
   };
 
   # 移动窗口到最后工作空间
-  window-move-to-last-workspace = pkgs.writeShellApplication {
-    name = "wme-window-move-to-last-workspace";
+  move-window-to-last-workspace = pkgs.writeShellApplication {
+    name = "wme-move-window-to-last-workspace";
     text = ''
       source ${pkgs.ohlib.log4sh}/lib/shell/log4sh.sh
-      ${builtins.readFile ./control/window-move-to-last-workspace.sh}
+      ${builtins.readFile ./control/move-window-to-last-workspace.sh}
     '';
     excludeShellChecks = [
       "SC1091"

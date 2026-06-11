@@ -8,6 +8,10 @@
   # Hyprland 层规则
   wayland.windowManager.hyprland.settings.layer_rule = [
     {
+      match.namespace = "waybar";
+      blur = true;
+    }
+    {
       match.namespace = "wofi";
       blur = true;
       ignore_alpha = 0.5;

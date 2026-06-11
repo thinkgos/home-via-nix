@@ -22,7 +22,7 @@ in
       {
         _args = [
           (mkLuaInline ''mod .. " + grave"'')
-          (mkLuaInline ''hl.dsp.exec_cmd("${wme.misc.dropdown-terminal}")'')
+          (mkLuaInline ''hl.dsp.exec_cmd("${wme.dropdown-terminal}/bin/wme-dropdown-terminal")'')
           { description = "启动下拉终端"; }
         ];
       }

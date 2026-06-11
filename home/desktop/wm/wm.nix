@@ -6,13 +6,9 @@
   ...
 }:
 let
-  wme = (pkgs.callPackage ./wme { }).${customize.desktop.window};
+  wmpkgs = pkgs.callPackage ./packages { inherit customize; };
 in
 {
-  _module.args = {
-    wme = wme;
-  };
-
   imports = [
     # hyprland, niri, gnome(Deprecated)
     ./${customize.desktop.window}
@@ -29,7 +25,7 @@ in
 
       hvn
     ]
-    ++ (with wme.pkgs; [
+    ++ (with wmpkgs; [
       wl-active-window
     ]);
 }

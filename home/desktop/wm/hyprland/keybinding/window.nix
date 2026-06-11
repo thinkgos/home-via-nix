@@ -213,7 +213,7 @@ in
       {
         _args = [
           (mkLuaInline ''mod .. " + SHIFT + End"'')
-          (mkLuaInline ''hl.dsp.exec_cmd("${wme.window.move-to-last-workspace}")'')
+          (mkLuaInline ''hl.dsp.exec_cmd("${wme.move-window-to-last-workspace}/bin/wme-move-window-to-last-workspace")'')
           { description = "移动窗口到最后一个工作空间"; }
         ];
       }

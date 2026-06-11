@@ -6,10 +6,14 @@
   ...
 }:
 let
+  wme = pkgs.callPackage ./packages { };
   font = "JetBrainsMono Nerd Font Mono";
   numWorkspaces = 4;
 in
 {
+  _module.args = {
+    wme = wme;
+  };
   # https://github.com/catppuccin
   # https://wiki.hypr.land/Useful-Utilities/Must-have/
   imports = [
@@ -17,7 +21,7 @@ in
     ./plugins/plugins.nix # 插件
     ./keybinding/keybinding.nix # 按键绑定
     ./output.nix # 显示器
-    ./layout.nix # 层规则
+    ./layer.nix # 层规则
     ./workspace.nix # 工作空间
     ./window.nix # 窗口
   ];

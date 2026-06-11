@@ -12,7 +12,8 @@
     ./animations/animations.nix # 动画
     ./input.nix # 输入
     ./output.nix # 输出
-    ./layout.nix # 层规则
+    ./layout.nix # 布局规则
+    ./layer.nix # 层规则
     ./workspace.nix # 工作空间
     ./window.nix # 窗口
     ./overview.nix # 概览

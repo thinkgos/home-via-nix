@@ -41,7 +41,7 @@ in
       {
         _args = [
           (mkLuaInline ''mod .. " + End"'')
-          (mkLuaInline ''hl.dsp.exec_cmd("${wme.workspace.focus-last}")'')
+          (mkLuaInline ''hl.dsp.exec_cmd("${wme.focus-last-workspace}/bin/wme-focus-last-workspace")'')
           { description = "聚焦最后一个工作空间"; }
         ];
       }
