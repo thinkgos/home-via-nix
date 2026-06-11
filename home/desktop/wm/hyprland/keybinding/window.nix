@@ -263,29 +263,47 @@ in
       #     { description = "移动窗口到工作区9"; }
       #   ];
       # }
-      # 窗口 resize 子映射
+      # 窗口宽度调整
       {
         _args = [
-          (mkLuaInline ''mod .. " + ALT + R"'')
-          (mkLuaInline ''hl.dsp.submap("resize")'')
+          (mkLuaInline ''mod .. " + Minus"'')
+          (mkLuaInline "hl.dsp.window.resize({ x = -20, y = 0, relative = true })")
+          {
+            repeating = true;
+            description = "调整窗口宽度-20";
+          }
+        ];
+      }
+      {
+        _args = [
+          (mkLuaInline ''mod .. " + Equal"'')
+          (mkLuaInline "hl.dsp.window.resize({ x = 20, y = 0, relative = true })")
+          {
+            repeating = true;
+            description = "调整窗口宽度+20";
+          }
+        ];
+      }
+      {
+        _args = [
+          (mkLuaInline ''mod .. " + ALT + Minus"'')
+          (mkLuaInline "hl.dsp.window.resize({ x = 0, y = -20, relative = true })")
+          {
+            repeating = true;
+            description = "调整窗口高度-20";
+          }
+        ];
+      }
+      {
+        _args = [
+          (mkLuaInline ''mod .. " + ALT + Equal"'')
+          (mkLuaInline "hl.dsp.window.resize({ x = 0, y = 20, relative = true })")
+          {
+            repeating = true;
+            description = "调整窗口高度+20";
+          }
         ];
       }
     ];
-    # 窗口 resize 子映射
-    define_submap = {
-      _args = [
-        "resize"
-        (lib.generators.mkLuaInline ''
-          function()
-            hl.bind("Up", hl.dsp.window.resize({ x = 0, y = -20, relative = true }), { repeating = true })
-            hl.bind("Down", hl.dsp.window.resize({ x = 0, y = 20, relative = true }), { repeating = true })
-            hl.bind("Left", hl.dsp.window.resize({ x = -20, y = 0, relative = true }), { repeating = true })
-            hl.bind("Right", hl.dsp.window.resize({ x = 20, y = 0, relative = true }), { repeating = true })
-            hl.bind("escape", hl.dsp.submap("reset"))
-            hl.bind("catchall", hl.dsp.submap("reset"))
-          end
-        '')
-      ];
-    };
   };
 }

@@ -4,8 +4,10 @@ lib.recursiveUpdate (import ./preset.nix { inherit lib pkgs; }) {
   desktop = {
     window = "hyprland";
     window-version = "hyprland";
-    monitor-primary = "HDMI-A-1";
-    monitor-secondary = "DP-1";
+    # monitor-primary = "HDMI-A-1";
+    # monitor-secondary = "DP-1";
+    monitor-primary = "DP-1";
+    monitor-secondary = "";
   };
   components = [
     # 键鼠共享
