@@ -45,7 +45,6 @@ in
     # niri
     inputs.niri.overlays.niri
     (final: prev: {
-      niri-scratchpad = inputs.niri-scratchpad.packages.${system}.default;
       piri = inputs.piri.packages.${system}.default;
     })
   ];

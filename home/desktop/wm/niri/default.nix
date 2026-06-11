@@ -16,6 +16,7 @@
     ./workspace.nix # 工作空间
     ./window.nix # 窗口
     ./overview.nix # 概览
+    ./piri.nix # Piri
     ./extensions/extensions.nix # 扩展
   ];
 

@@ -215,7 +215,7 @@
           exec = "${pkgs.wttrbar}/bin/wttrbar --lang=zh --location Fuzhou";
           format = "{} ";
           return-type = "json";
-          on-click = "google-chrome https://wttr.in";
+          on-click = "google-chrome-stable https://wttr.in";
         };
         "custom/notification" = {
           tooltip = true;

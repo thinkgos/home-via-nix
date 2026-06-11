@@ -9,25 +9,28 @@
   # Niri 工作空间
   # https://github.com/sodiboo/niri-flake/blob/main/docs.md#programsnirisettingsworkspaces
   programs.niri.settings.workspaces = {
-    "primary" = {
+    "1" = {
+      name = "primary";
       open-on-output = customize.desktop.monitor-primary;
     };
-    "secondary" = {
+    "2" = {
+      name = "secondary";
       open-on-output = customize.desktop.monitor-primary;
     };
-    "flexible" = {
+    "3" = {
+      name = "flexible";
       open-on-output = customize.desktop.monitor-primary;
     };
-    "terminal" = {
+    "4" = {
+      name = "terminal";
       open-on-output = customize.desktop.monitor-primary;
     };
-    "standby" = {
+    "5" = {
+      name = "standby";
       open-on-output = customize.desktop.monitor-primary;
     };
-    # stash for niri-scratchpad
-    # https://github.com/argosnothing/niri-scratchpad-rs
-    # https://github.com/niri-wm/niri/pull/2997
     "stash" = {
+      name = "stash";
       open-on-output = customize.desktop.monitor-primary;
     };
   };

@@ -44,7 +44,7 @@ in
       {
         _args = [
           (mkLuaInline ''mod .. " + B"'')
-          (mkLuaInline ''hl.dsp.exec_cmd("google-chrome")'')
+          (mkLuaInline ''hl.dsp.exec_cmd("google-chrome-stable")'')
           { description = "启动浏览器"; }
         ];
       }

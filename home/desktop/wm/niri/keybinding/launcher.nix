@@ -35,7 +35,7 @@
       hotkey-overlay.title = "启动文件管理器";
     };
     "Mod+B" = {
-      action.spawn = [ "google-chrome" ];
+      action.spawn = [ "google-chrome-stable" ];
       repeat = false;
       hotkey-overlay.title = "启动浏览器";
     };
@@ -46,12 +46,10 @@
     };
     "Mod+Grave" = {
       action.spawn = [
-        "${pkgs.niri-scratchpad}/bin/niri-scratchpad"
-        "target"
-        "--spawn"
-        ''kitty --class dropdown-terminal -o tab_bar_edge=bottom --title "quake"''
-        "appid"
+        "${pkgs.piri}/bin/piri"
+        "scratchpads"
         "dropdown-terminal"
+        "toggle"
       ];
       repeat = false;
       hotkey-overlay.title = "启动下拉终端";

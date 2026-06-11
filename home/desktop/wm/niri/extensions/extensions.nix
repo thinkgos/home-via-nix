@@ -6,7 +6,5 @@
   ...
 }:
 {
-  imports = [
-    ./piri/piri.nix # 扩展配置
-  ];
+  imports = [ ];
 }
