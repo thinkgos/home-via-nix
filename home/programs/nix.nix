@@ -12,6 +12,6 @@
     nixfmt
     nixfmt-tree
     npins
-    fast-nix-gc
+    # fast-nix-gc
   ];
 }

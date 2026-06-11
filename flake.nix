@@ -9,7 +9,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    fast-nix-gc.url = "github:Mic92/fast-nix-gc";
     phonto = {
       url = "github:museslabs/phonto";
       inputs.nixpkgs.follows = "nixpkgs";
