@@ -120,7 +120,7 @@
 | 将窗口移至工作空间7 | `Super` + `Shift` + `7` | ✅ | `Super` + `Shift` + `7` | ✅ |
 | 将窗口移至工作空间8 | `Super` + `Shift` + `8` | ✅ | `Super` + `Shift` + `8` | ✅ |
 | 将窗口移至工作空间9 | `Super` + `Shift` + `9` | ✅ | `Super` + `Shift` + `9` | ✅ |
-| 窗口居中 | `Super` + `C` | ✅ | ❌ | ❌ |
+| 窗口居中 | `Super` + `C` | ✅ | `Super` + `C` | ✅ |
 | 切换预设窗口宽度 | `Super` + `R` | ✅ | ❌ | ❌ |
 | 窗口宽度减小 | `Super` + `Minus` | ✅ | `Super` + `Minus` | ✅ |
 | 窗口宽度增大 | `Super` + `Equal` | ✅ | `Super` + `Equal` | ✅ |

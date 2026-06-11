@@ -32,9 +32,10 @@ let
     };
 in
 {
-  thinkgo-laptop = mkHome (pkgs.callPackage ../hosts/thinkgo-laptop.nix { });
-  cors-beelink = mkHome (pkgs.callPackage ../hosts/cors-beelink.nix { });
-  thinkgo-work = mkHome (pkgs.callPackage ../hosts/thinkgo-work.nix { });
+  thinkgo-laptop-hyprland = mkHome (pkgs.callPackage ../hosts/thinkgo-laptop-hyprland.nix { });
+  cors-beelink-hyprland = mkHome (pkgs.callPackage ../hosts/cors-beelink-hyprland.nix { });
+  thinkgo-work-hyprland = mkHome (pkgs.callPackage ../hosts/thinkgo-work-hyprland.nix { });
   thinkgo-laptop-niri = mkHome (pkgs.callPackage ../hosts/thinkgo-laptop-niri.nix { });
   cors-beelink-niri = mkHome (pkgs.callPackage ../hosts/cors-beelink-niri.nix { });
+  thinkgo-work-niri = mkHome (pkgs.callPackage ../hosts/thinkgo-work-niri.nix { });
 }

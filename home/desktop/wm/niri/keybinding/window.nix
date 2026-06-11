@@ -195,12 +195,12 @@
       repeat = false;
       # hotkey-overlay.title = "移动窗口到工作空间9";
     };
-    # 窗口宽度调整
     "Mod+C" = {
       action.center-column = { };
       repeat = false;
       hotkey-overlay.title = "窗口居中";
     };
+    # 窗口宽度调整
     "Mod+R" = {
       action.switch-preset-column-width = { };
       repeat = false;

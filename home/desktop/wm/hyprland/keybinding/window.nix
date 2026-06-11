@@ -290,6 +290,16 @@ in
           { description = "移动窗口到工作空间9"; }
         ];
       }
+      {
+        _args = [
+          (mkLuaInline ''mod .. " + C"'')
+          (mkLuaInline "hl.dsp.window.center()")
+          {
+            repeating = true;
+            description = "窗口居中";
+          }
+        ];
+      }
       # 窗口宽度调整
       {
         _args = [
