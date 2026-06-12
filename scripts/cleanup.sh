@@ -1,9 +1,11 @@
 #!/bin/bash
 
-echo "清理..."
+source $(cd "$(dirname "${BASH_SOURCE[0]}")/lib/" && pwd)/log4sh.sh
+
+log::info "清理..."
 sudo apt autoremove -y --purge snapd cloud-init open-iscsi apport modemmanager unattended-upgrades rsyslog needrestart
 
-echo "清理不需要的服务端服务..."
+log::info "清理不需要的服务端服务..."
 sudo systemctl disable --now multipathd
 sudo systemctl mask multipathd
 sudo systemctl disable --now lvm2-monitor.service lvm2-lvmpolld.socket

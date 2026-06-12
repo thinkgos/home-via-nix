@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source $(cd "$(dirname "${BASH_SOURCE[0]}")/lib/" && pwd)/log4sh.sh
+
 # swapon --show 查看当前swap配置
 OLD_SWAP_FILE="/swap.img"
 NEW_SWAP_FILE="/swapfile"
@@ -27,5 +29,5 @@ else
     echo "$FSTAB_LINE" | sudo tee -a /etc/fstab >/dev/null
 fi
 
-echo "Swap 配置完成"
+log::info "Swap 配置完成"
 swapon --show
