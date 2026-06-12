@@ -1,5 +1,5 @@
 Config(
-  prefix: ":t",
+  prefix: "/t",
   language_delimiter: ">",
   max_entries: 3,
 )

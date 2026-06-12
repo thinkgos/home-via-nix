@@ -1,7 +1,7 @@
 // <Anyrun config dir>/menu-bar.ron
 Config(
   // The prefix that triggers the plugin
-  prefix: ":m",
+  prefix: "/m",
   // The delimiter to select the menu item
   delimiter: '/',
   // Maximum number of entries to return
