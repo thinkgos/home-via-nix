@@ -41,7 +41,7 @@
       matches = [
         { app-id = "^qalculate-gtk$"; }
         { app-id = "^nm-connection-editor$"; }
-        { app-id = "^blueman-manager-wrapped$"; }
+        { app-id = ''^\.blueman-manager-wrapped$''; }
         { app-id = ''^org\.pulseaudio\.pavucontrol$''; }
         { app-id = ''^org\.fcitx$''; }
       ];
