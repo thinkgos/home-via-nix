@@ -37,6 +37,9 @@
     mysql84 # mysql数据库工具
     duckdb # 嵌入式分析数据库
 
+    # gpu
+    pkgs.glslang
+
     #! grpc
     grpcurl
     grpcui
