@@ -24,8 +24,8 @@
   ];
   fonts.fontconfig = {
     enable = true;
-    hinting = null;
-    subpixelRendering = null;
+    hinting = "slight";
+    subpixelRendering = "rgb";
     defaultFonts = {
       emoji = [ "Noto Color Emoji" ];
       monospace = [
