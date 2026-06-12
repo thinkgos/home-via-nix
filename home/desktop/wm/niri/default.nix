@@ -55,12 +55,12 @@
       "org.freedesktop.impl.portal.Notification" = [ "gtk" ];
       "org.freedesktop.impl.portal.Secret" = [ "gnome-keyring" ];
     };
-    configPackages = [ pkgs.niri-unstable ];
+    configPackages = [ pkgs.niri ];
   };
 
   programs.niri = {
     enable = true;
-    package = pkgs.niri-unstable;
+    package = pkgs.niri;
     settings = {
       spawn-at-startup = [
         {

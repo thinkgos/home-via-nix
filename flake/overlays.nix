@@ -44,6 +44,8 @@ in
     # niri
     inputs.niri.overlays.niri
     (final: prev: {
+      niri = final.niri-unstable;
+      # niri = final.niri-stable;
       piri = inputs.piri.packages.${system}.default;
     })
   ];

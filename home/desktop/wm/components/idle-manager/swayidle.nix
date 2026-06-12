@@ -18,7 +18,7 @@
           if (customize.desktop.window == "hyprland") then
             "${pkgs.hyprland}/bin/hyprctl dispatch 'hl.dsp.dpms({ action = \"disable\" })'"
           else if (customize.desktop.window == "niri") then
-            "${pkgs.niri-unstable}/bin/niri msg action power-off-monitors"
+            "${pkgs.niri}/bin/niri msg action power-off-monitors"
           else
             ''/bin/notify-send "[swayidle] lock not supported"''
         );
@@ -28,7 +28,7 @@
         if (customize.desktop.window == "hyprland") then
           "${pkgs.hyprland}/bin/hyprctl dispatch 'hl.dsp.dpms({ action = \"enable\" })'"
         else if (customize.desktop.window == "niri") then
-          "${pkgs.niri-unstable}/bin/niri msg action power-on-monitors"
+          "${pkgs.niri}/bin/niri msg action power-on-monitors"
         else
           ''/bin/notify-send "[swayidle] after-resume not supported"'';
     };

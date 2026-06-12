@@ -558,8 +558,8 @@
           current-only = false;
           hide-empty = false;
           on-click = "activate";
-          on-scroll-up = "${pkgs.niri-unstable}/bin/niri msg action focus-workspace-up";
-          on-scroll-down = "${pkgs.niri-unstable}/bin/niri msg action focus-workspace-down";
+          on-scroll-up = "${pkgs.niri}/bin/niri msg action focus-workspace-up";
+          on-scroll-down = "${pkgs.niri}/bin/niri msg action focus-workspace-down";
         };
         # 窗口 ✅
         "niri/window" = {
@@ -575,8 +575,8 @@
             "💥 (.*) - Alacritty" = " $1";
             "💥 (.*) - zsh" = "󰆍 $1";
           };
-          on-click = "${pkgs.niri-unstable}/bin/niri msg action maximize-column";
-          # on-click-right = "${pkgs.niri-unstable}/bin/niri msg action ";
+          on-click = "${pkgs.niri}/bin/niri msg action maximize-column";
+          # on-click-right = "${pkgs.niri}/bin/niri msg action ";
         };
       };
     };
