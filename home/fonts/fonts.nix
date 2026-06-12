@@ -21,18 +21,17 @@
     nerd-fonts.hack
 
     font-awesome
-
-    maple-mono.NF-CN
   ];
   fonts.fontconfig = {
     enable = true;
+    hinting = null;
+    subpixelRendering = null;
     defaultFonts = {
       emoji = [ "Noto Color Emoji" ];
       monospace = [
         "JetBrainsMono Nerd Font Mono"
         "FiraCode Nerd Font Mono"
         "Hack Nerd Font"
-        "Maple Mono NF CN"
         "Noto Sans Mono CJK SC"
       ];
       sansSerif = [
@@ -44,6 +43,14 @@
         "Noto Serif"
         "Noto Serif CJK SC"
       ];
+    };
+    configFile = {
+      "jetbrains-mono-nerd-font-mono.conf" = {
+        enable = true;
+        label = "jetbrains-mono-nerd-font-mono-feature.conf";
+        priority = 90;
+        source = ./jetbrains-mono-nerd-font-mono.conf;
+      };
     };
   };
 }
