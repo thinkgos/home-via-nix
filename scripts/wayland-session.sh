@@ -83,11 +83,11 @@ hyprland)
     sudo mkdir -p $(dirname "$SESSION_FILE")
     cat <<EOF | sudo tee "$SESSION_FILE" >/dev/null
 [Desktop Entry]
-Name=Hyprland
+Name=hyprland
 Comment=Hyprland managed by Home Manager
 Exec=/home/$USER/.nix-profile/bin/start-hyprland
 Type=Application
-DesktopNames=Hyprland
+DesktopNames=hyprland
 EOF
 
     sudo chmod 644 "$SESSION_FILE"
