@@ -336,7 +336,10 @@
           scroll-step = 3;
           ignored-sinks = [ "Easy Effects Sink" ];
           on-click = "${pkgs.pavucontrol}/bin/pavucontrol";
-          on-click-right = "${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+          # on-click-right = "${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+          on-scroll-up = "${pkgs.swayosd}/bin/swayosd-client --output-volume raise";
+          on-scroll-down = "${pkgs.swayosd}/bin/swayosd-client --output-volume lower";
+          on-click-right = "${pkgs.swayosd}/bin/swayosd-client --output-volume mute-toggle";
         };
         # 音量滑块 ✅
         "pulseaudio/slider" = {
