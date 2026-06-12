@@ -63,18 +63,25 @@ in
       }
       {
         _args = [
-          (mkLuaInline ''mod .. " + D"'')
+          (mkLuaInline ''mod .. " + A"'')
           (mkLuaInline ''hl.dsp.exec_cmd("${pkgs.anyrun}/bin/anyrun close || ${pkgs.anyrun}/bin/anyrun")'')
           { description = "启动应用启动器"; }
         ];
       }
       {
         _args = [
-          (mkLuaInline ''mod .. " + Space"'')
+          (mkLuaInline ''mod .. " + D"'')
           (mkLuaInline ''hl.dsp.exec_cmd("${pkgs.vicinae}/bin/vicinae toggle")'')
           { description = "启动多功能启动器"; }
         ];
       }
+      # {
+      #   _args = [
+      #     (mkLuaInline ''mod .. " + Space"'')
+      #     (mkLuaInline ''hl.dsp.exec_cmd("${pkgs.hexecute}/bin/hexecute")'')
+      #     { description = "启动施法器"; }
+      #   ];
+      # }
       {
         _args = [
           (mkLuaInline ''mod .. " + F1"'')

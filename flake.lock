@@ -426,6 +426,26 @@
         "type": "github"
       }
     },
+    "hexecute": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1778089142,
+        "narHash": "sha256-hiLMu/3QznCgKcfhS1E4JzbIe3XP2/c90eWssum3qhE=",
+        "owner": "ThatOtherAndrew",
+        "repo": "Hexecute",
+        "rev": "df00365964ed2f7144f364ee1bdbefec81334583",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ThatOtherAndrew",
+        "repo": "Hexecute",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -1161,6 +1181,7 @@
         "anyrun-plugins": "anyrun-plugins",
         "flake-parts": "flake-parts_3",
         "goup-rs": "goup-rs",
+        "hexecute": "hexecute",
         "home-manager": "home-manager",
         "hypr-kcs": "hypr-kcs",
         "hyprland": "hyprland",

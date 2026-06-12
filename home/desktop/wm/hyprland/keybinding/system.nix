@@ -13,7 +13,7 @@ in
       # 系统
       {
         _args = [
-          (mkLuaInline ''mod .. " + A"'')
+          (mkLuaInline ''mod .. " + Tab"'')
           (mkLuaInline ''hl.dsp.exec_cmd("${pkgs.vicinae}/bin/vicinae vicinae://launch/wm/switch-windows")'')
           { description = "视图预览"; }
         ];

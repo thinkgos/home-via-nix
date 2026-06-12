@@ -39,11 +39,6 @@
       repeat = false;
       hotkey-overlay.title = "切换最大化模式";
     };
-    "Mod+Tab" = {
-      action.focus-column-right = { };
-      repeat = false;
-      hotkey-overlay.title = "聚焦下一个窗口";
-    };
     # 聚焦窗口 (Mod+Arrow)
     "Mod+Left" = {
       action.focus-column-left = { };

@@ -42,6 +42,10 @@
       url = "github:jswysnemc/wayscrollshot";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hexecute = {
+      url = "github:ThatOtherAndrew/Hexecute";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # hyprland
     hyprland = {

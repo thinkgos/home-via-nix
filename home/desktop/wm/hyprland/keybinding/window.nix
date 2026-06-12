@@ -62,13 +62,6 @@ in
           { description = "切换最大化模式"; }
         ];
       }
-      {
-        _args = [
-          (mkLuaInline ''mod .. " + Tab"'')
-          (mkLuaInline "hl.dsp.window.cycle_next()")
-          { description = "聚焦下一个窗口"; }
-        ];
-      }
       # 聚焦窗口 (Mod+Arrow) ✅
       {
         _args = [

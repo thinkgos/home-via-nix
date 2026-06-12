@@ -52,7 +52,7 @@
       repeat = false;
       hotkey-overlay.title = "启动IDE";
     };
-    "Mod+D" = {
+    "Mod+A" = {
       action.spawn = [
         "sh"
         "-c"
@@ -61,7 +61,7 @@
       repeat = false;
       hotkey-overlay.title = "启动应用启动器";
     };
-    "Mod+Space" = {
+    "Mod+D" = {
       action.spawn = [
         "${pkgs.vicinae}/bin/vicinae"
         "toggle"
@@ -69,6 +69,13 @@
       repeat = false;
       hotkey-overlay.title = "启动多功能启动器";
     };
+    # "Mod+Space" = {
+    #   action.spawn = [
+    #     "${pkgs.hexecute}/bin/hexecute"
+    #   ];
+    #   repeat = false;
+    #   hotkey-overlay.title = "启动施法器";
+    # };
     "Mod+F1" = {
       action.spawn = [ "${pkgs.nirimod}/bin/nirimod" ];
       repeat = false;

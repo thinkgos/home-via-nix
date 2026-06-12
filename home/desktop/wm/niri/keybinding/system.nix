@@ -6,7 +6,7 @@
 }:
 {
   programs.niri.settings.binds = {
-    "Mod+A" = {
+    "Mod+Tab" = {
       action.toggle-overview = { };
       repeat = false;
       hotkey-overlay.title = "视图预览";

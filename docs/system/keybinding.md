@@ -13,7 +13,7 @@
 
 | 功能 | Niri | Status | Hyprland | Status |
 | ------ | ------ | ------ | ---------- | ---------- |
-| 视图预览 | `Super` + `A` | ✅ | `Super` + `A` | ✅ |
+| 视图预览 | `Super` + `Tab` | ✅ | `Super` + `Tab` | ✅ |
 | 状态栏隐藏/显示 | `SUPER` + `ALT` + `H` | ✅ | `SUPER` + `ALT` + `H` | ✅ |
 | 锁定屏幕 | `Super` + `ALT` + `L` | ✅ | `Super` + `ALT` + `L` | ✅ |
 | 重启 | `Super` + `Alt` + `M` | ✅ | `Super` + `Alt` + `M` | ✅ |
@@ -64,10 +64,11 @@
 | 启动文件管理器 | `Super` + `E` | ✅ | `Super` + `E` | ✅ |
 | 启动网页浏览器 | `Super` + `B` | ✅ | `Super` + `B` | ✅ |
 | 启动应用IDE | `Super` + `P` | ✅ | `Super` + `P` | ✅ |
-| 启动应用启动器 | `Super` + `D` | ✅ | `Super` + `D` | ✅ |
-| 启动多功能启动器 | `Super` + `Space` | ✅ | `Super` + `Space` | ✅ |
+| 启动应用启动器 | `Super` + `A` | ✅ | `Super` + `A` | ✅ |
+| 启动多功能启动器 | `Super` + `D` | ✅ | `Super` + `D` | ✅ |
 | 启动配置视图 | `Super` + `F1` | ✅ | `Super` + `F1` | ✅ |
 | 启动Hotkey | `Super` + `Alt` + `Slash` | ✅ | ❌ | ❌ |
+| 启动施法器 | `Super` + `Space` | ✅ | `Super` + `Space` | ✅ |
 
 ## 工作空间
 
@@ -99,7 +100,6 @@
 | 切换浮动窗口 | `Super` + `V` | ✅ | `Super` + `V` | ✅ |
 | 切换全屏模式 | `Super` + `F` | ✅ | `Super` + `F` | ✅ |
 | 切换最大化状态 | `Super` + `M` | ✅ | `Super` + `M` | ✅ |
-| 聚焦下一个窗口 | `Super` + `Tab` | ✅ | `Super` + `Tab` | ✅ |
 | 聚焦左边窗口 | `Super` + `Left`/`H` | ✅ | `Super` + `Left`/`H` | ✅ |
 | 聚焦右边窗口 | `Super` + `Right`/`L` | ✅ | `Super` + `Right`/`L` | ✅ |
 | 聚焦上边窗口 | `Super` + `Up`/`K` | ✅ | `Super` + `Up`/`K` | ✅ |
