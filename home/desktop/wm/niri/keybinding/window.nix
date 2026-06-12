@@ -201,10 +201,15 @@
       hotkey-overlay.title = "窗口居中";
     };
     # 窗口宽度调整
-    "Mod+R" = {
+    "Mod+W" = {
       action.switch-preset-column-width = { };
       repeat = false;
-      hotkey-overlay.title = "切换预设窗口宽度";
+      hotkey-overlay.title = "切换预设窗口宽度-向前";
+    };
+    "Mod+Alt+W" = {
+      action.switch-preset-column-width-back = { };
+      repeat = false;
+      hotkey-overlay.title = "切换预设窗口宽度-向后";
     };
     "Mod+Minus" = {
       action.set-column-width = "-5%";
@@ -217,10 +222,15 @@
       hotkey-overlay.title = "窗口宽度增大";
     };
     # 窗口高度调整
-    "Mod+Alt+R" = {
+    "Mod+R" = {
       action.switch-preset-window-height = { };
       repeat = false;
-      hotkey-overlay.title = "切换预设窗口高度";
+      hotkey-overlay.title = "切换预设窗口高度-向前";
+    };
+    "Mod+Alt+R" = {
+      action.switch-preset-window-height-back = { };
+      repeat = false;
+      hotkey-overlay.title = "切换预设窗口高度-向后";
     };
     "Mod+Alt+Minus" = {
       action.set-window-height = "-5%";

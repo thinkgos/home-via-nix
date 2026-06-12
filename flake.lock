@@ -905,6 +905,26 @@
         "type": "github"
       }
     },
+    "nirimod": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1780161292,
+        "narHash": "sha256-k9LEaef54u+P2yJXLQP+GtRSXQRSXKEBmszkze7tOfg=",
+        "owner": "srinivasr",
+        "repo": "nirimod",
+        "rev": "f86518f7b2cd13b08591122bd49e770100808313",
+        "type": "github"
+      },
+      "original": {
+        "owner": "srinivasr",
+        "repo": "nirimod",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1767767207,
@@ -1148,6 +1168,7 @@
         "kache": "kache",
         "lan-mouse": "lan-mouse",
         "niri": "niri",
+        "nirimod": "nirimod",
         "nixpkgs": "nixpkgs_4",
         "phonto": "phonto",
         "piri": "piri",

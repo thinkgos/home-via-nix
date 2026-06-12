@@ -79,7 +79,7 @@ in
         _args = [
           (mkLuaInline ''mod .. " + F1"'')
           (mkLuaInline ''hl.dsp.exec_cmd("hyprkcs")'')
-          { description = "启动帮助按键绑定"; }
+          { description = "启动配置视图"; }
         ];
       }
     ];

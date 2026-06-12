@@ -70,9 +70,14 @@
       hotkey-overlay.title = "启动多功能启动器";
     };
     "Mod+F1" = {
+      action.spawn = [ "${pkgs.nirimod}/bin/nirimod" ];
+      repeat = false;
+      hotkey-overlay.title = "启动配置视图";
+    };
+    "Mod+Alt+Slash" = {
       action.show-hotkey-overlay = { };
       repeat = false;
-      hotkey-overlay.title = "启动帮助按键绑定";
+      hotkey-overlay.title = "启动Hotkey";
     };
   };
 }

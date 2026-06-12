@@ -66,7 +66,8 @@
 | 启动应用IDE | `Super` + `P` | ✅ | `Super` + `P` | ✅ |
 | 启动应用启动器 | `Super` + `D` | ✅ | `Super` + `D` | ✅ |
 | 启动多功能启动器 | `Super` + `Space` | ✅ | `Super` + `Space` | ✅ |
-| 启动按键示图 | `Super` + `F1` | ✅ | `Super` + `F1` | ✅ |
+| 启动配置视图 | `Super` + `F1` | ✅ | `Super` + `F1` | ✅ |
+| 启动Hotkey | `Super` + `Alt` + `Slash` | ✅ | ❌ | ❌ |
 
 ## 工作空间
 
@@ -121,10 +122,12 @@
 | 将窗口移至工作空间8 | `Super` + `Shift` + `8` | ✅ | `Super` + `Shift` + `8` | ✅ |
 | 将窗口移至工作空间9 | `Super` + `Shift` + `9` | ✅ | `Super` + `Shift` + `9` | ✅ |
 | 窗口居中 | `Super` + `C` | ✅ | `Super` + `C` | ✅ |
-| 切换预设窗口宽度 | `Super` + `R` | ✅ | ❌ | ❌ |
+| 切换预设窗口宽度-向前 | `Super` + `W` | ✅ | ❌ | ❌ |
+| 切换预设窗口宽度-向后 | `Super` + `Alt` + `W` | ✅ | ❌ | ❌ |
 | 窗口宽度减小 | `Super` + `Minus` | ✅ | `Super` + `Minus` | ✅ |
 | 窗口宽度增大 | `Super` + `Equal` | ✅ | `Super` + `Equal` | ✅ |
-| 切换预设窗口高度 | `Super` + `Alt` + `R` | ✅ | ❌ | ❌ |
+| 切换预设窗口高度-向前 | `Super` + `R` | ✅ | ❌ | ❌ |
+| 切换预设窗口高度-向后 | `Super` + `Alt` + `R` | ✅ | ❌ | ❌ |
 | 窗口高度减小 | `Super` + `Minus` | ✅ | `Super` + `Minus` | ✅ |
 | 窗口高度增大 | `Super` + `Equal` | ✅ | `Super` + `Equal` | ✅ |
 | 切换应用窗口 | `Alt` + `Tab` | ✅ | `Alt` + `Tab` | ✅ |

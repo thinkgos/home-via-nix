@@ -5,5 +5,7 @@
   ...
 }:
 {
-  imports = [ ];
+  imports = [
+    ./nirimod.nix
+  ];
 }

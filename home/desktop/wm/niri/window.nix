@@ -64,6 +64,7 @@
         { app-id = "^gnome-disks$"; }
         { app-id = ''^org\.gnome\.baobab$''; }
         { app-id = ''^com\.github\.tchx84\.Flatseal$''; }
+        { app-id = ''^io\.github\.nirimod$''; }
       ];
       open-floating = true;
       default-column-width = {
