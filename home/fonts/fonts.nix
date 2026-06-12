@@ -45,9 +45,9 @@
       ];
     };
     configFile = {
-      "jetbrains-mono-nerd-font-mono.conf" = {
+      "jetbrains-mono-nerd-font-mono" = {
         enable = true;
-        label = "jetbrains-mono-nerd-font-mono-feature.conf";
+        label = "jetbrains-mono-nerd-font-mono";
         priority = 90;
         source = ./jetbrains-mono-nerd-font-mono.conf;
       };
