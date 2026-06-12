@@ -75,13 +75,13 @@ in
           { description = "启动多功能启动器"; }
         ];
       }
-      # {
-      #   _args = [
-      #     (mkLuaInline ''mod .. " + Space"'')
-      #     (mkLuaInline ''hl.dsp.exec_cmd("${pkgs.hexecute}/bin/hexecute")'')
-      #     { description = "启动施法器"; }
-      #   ];
-      # }
+      {
+        _args = [
+          (mkLuaInline ''mod .. " + Space"'')
+          (mkLuaInline ''hl.dsp.exec_cmd("hexecute")'')
+          { description = "启动施法器"; }
+        ];
+      }
       {
         _args = [
           (mkLuaInline ''mod .. " + F1"'')
