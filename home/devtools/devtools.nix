@@ -38,7 +38,8 @@
     duckdb # 嵌入式分析数据库
 
     # gpu
-    pkgs.glslang
+    glslang
+    glslviewer
 
     #! grpc
     grpcurl
