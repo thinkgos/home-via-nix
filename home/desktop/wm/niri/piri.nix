@@ -31,7 +31,7 @@
     [empty.terminal]
     command = "${pkgs.alacritty}/bin/alacritty"
     [empty.primary]
-    command = "google-chrome-stable; code"
+    command = "code"
 
     # Scratchpads configuration
     [piri.scratchpad]
