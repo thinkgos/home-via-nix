@@ -24,17 +24,24 @@
 
 | 功能 | Niri | Status | Hyprland | Status |
 | ------ | ------ | ------ | ------- | ------- |
-| 播放（或播放/暂停） | | ◻️ | | ◻️ |
-| 减小音量 | | ◻️ | | ◻️ |
-| 麦克风静音/取消静音 | | ◻️ | | ◻️ |
+| 播放（或播放/暂停） | `XF86AudioPlay` | ✅ | `XF86AudioPlay` | ✅ |
+| 减小音量 | `XF86AudioLowerVolume` | ✅ | `XF86AudioLowerVolume` | ✅ |
+| 麦克风静音/取消静音 | `XF86AudioMicMute` | ✅ | `XF86AudioMicMute` | ✅ |
 | 启动媒体播放器 | | ◻️ | | ◻️ |
-| 上一曲目 | | ◻️ | | ◻️ |
+| 上一曲目 | `XF86AudioPrev` | ✅ | `XF86AudioPrev` | ✅ |
 | 弹出 | | ◻️ | | ◻️ |
 | 停止播放 | | ◻️ | | ◻️ |
-| 下一曲目 | | ◻️ | | ◻️ |
-| 音量静音/取消静音 | | ◻️ | | ◻️ |
-| 暂停播放 | | ◻️ | | ◻️ |
-| 增大音量 | | ◻️ | | ◻️ |
+| 下一曲目 | `XF86AudioNext` | ✅ | `XF86AudioNext` | ✅ |
+| 音量静音/取消静音 | `XF86AudioMute` | ✅ | `XF86AudioMute` | ✅ |
+| 暂停播放 | `XF86AudioPause` | ✅ | `XF86AudioPause` | ✅ |
+| 增大音量 | `XF86AudioRaiseVolume` | ✅ | `XF86AudioRaiseVolume` | ✅ |
+
+## 亮度
+
+| 功能 | Niri | Status | Hyprland | Status |
+| ------ | ------ | ------ | ------- | ------- |
+| 增大亮度 | `XF86MonBrightnessUp` | ✅ | `XF86MonBrightnessUp` | ✅ |
+| 减小亮度 | `XF86MonBrightnessDown` | ✅ | `XF86MonBrightnessDown` | ✅ |
 
 ## 截图
 
@@ -128,8 +135,8 @@
 | 窗口宽度增大 | `Super` + `Equal` | ✅ | `Super` + `Equal` | ✅ |
 | 切换预设窗口高度-向前 | `Super` + `R` | ✅ | ❌ | ❌ |
 | 切换预设窗口高度-向后 | `Super` + `Alt` + `R` | ✅ | ❌ | ❌ |
-| 窗口高度减小 | `Super` + `Minus` | ✅ | `Super` + `Minus` | ✅ |
-| 窗口高度增大 | `Super` + `Equal` | ✅ | `Super` + `Equal` | ✅ |
+| 窗口高度减小 | `Super` + `Alt` + `Minus` | ✅ | `Super` + `Alt` + `Minus` | ✅ |
+| 窗口高度增大 | `Super` + `Alt` + `Equal` | ✅ | `Super` + `Alt` + `Equal` | ✅ |
 | 切换应用窗口 | `Alt` + `Tab` | ✅ | `Alt` + `Tab` | ✅ |
 | 吞噬或驱逐窗口-左边 | `Super` + `bracketleft` | ✅ | ❌ | ❌ |
 | 吞噬或驱逐窗口-右边 | `Super` + `bracketright` | ✅ | ❌ | ❌ |
