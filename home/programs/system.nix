@@ -37,12 +37,5 @@
     parallel # 并行执行命令
     imagemagick # 图片处理工具集
     navi # 交互式命令行工具提示
-
-    nix
-    nixd
-    nil
-    nixfmt
-    nixfmt-tree
-    npins
   ];
 }

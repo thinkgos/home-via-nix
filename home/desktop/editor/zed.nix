@@ -24,7 +24,7 @@ in
     defaultEditor = false;
     extraPackages = with pkgs; [
       rustup
-      nil
+      nixd
     ];
     extensions = [
       "catppuccin-icons"
@@ -91,6 +91,11 @@ in
       autosave = {
         after_delay = {
           milliseconds = 1000;
+        };
+      };
+      languages = {
+        "Nix" = {
+          language_servers = ["nixd" "!nil"];
         };
       };
     };

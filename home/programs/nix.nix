@@ -8,7 +8,7 @@
   home.packages = with pkgs; [
     nix
     nixd
-    nil
+    # nil
     nixfmt
     nixfmt-tree
     npins
