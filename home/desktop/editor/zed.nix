@@ -95,7 +95,10 @@ in
       };
       languages = {
         "Nix" = {
-          language_servers = ["nixd" "!nil"];
+          language_servers = [
+            "nixd"
+            "!nil"
+          ];
         };
       };
     };
