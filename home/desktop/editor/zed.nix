@@ -65,7 +65,7 @@ in
         dock = "left";
       };
       agent = {
-        dock = "left";
+        dock = "right";
       };
       theme = {
         mode = "dark";
