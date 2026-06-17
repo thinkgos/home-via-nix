@@ -24,6 +24,7 @@ pkgs.symlinkJoin {
       ];
       runtimeInputs = with pkgs; [
         rofi
+        vicinae
         awww
       ];
     })
@@ -39,8 +40,8 @@ pkgs.symlinkJoin {
         "SC2181"
       ];
       runtimeInputs = with pkgs; [
-        rofi
-        awww
+        vicinae
+        phonto
       ];
     })
 

@@ -3,7 +3,7 @@
 # 视频壁纸选择器
 
 # 仅本地测试使用
-source "$(cd "$(dirname "${BASH_SOURCE[0]}")/../../ohlib/shell" && pwd)/log4sh.sh"
+# source "$(cd "$(dirname "${BASH_SOURCE[0]}")/../../ohlib/shell" && pwd)/log4sh.sh"
 
 usage() {
     echo "Usage: $0 [options] [wallpaper_dir]"
