@@ -9,7 +9,7 @@
   programs.niri.settings.layer-rules = [
     {
       # overview 壁纸
-      matches = [ { namespace = "^awww-daemon$"; } ];
+      matches = [ { namespace = "^wpaperd.*"; } ];
       place-within-backdrop = true;
     }
     # {

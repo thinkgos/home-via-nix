@@ -15,7 +15,7 @@ usage() {
 	echo "  -t, --transition <type>   awww过渡类型, 默认: random"
 	echo "  -f, --fps <num>           awww过渡帧率, 默认: 60"
 	echo "  -s, --step <num>          awww过渡步数, 默认: 20"
-	echo "  -b, --backend <backend>   壁纸后端 (awww|wpaperd), 默认: awww"
+	echo "  -b, --layer <layer>       壁纸层 (backgroud|backdrop), 默认: backgroud"
 	echo "  -l, --log-level <level>   日志级别 (DEBUG|INFO|WARN|ERROR|FATAL|0-4), 默认: WARN"
 	echo "  -h, --help                显示帮助"
 	echo ""
@@ -30,9 +30,9 @@ MODE="normal"
 TRANSITION="random"
 FPS=60
 STEP=20
-BACKEND="awww"
+LAYER="backgroud"
 
-PARSED=$(getopt -o m:b:t:f:s:l:h --long mode:,backend:,transition:,fps:,step:,log-level:,help -n "$0" -- "$@")
+PARSED=$(getopt -o m:t:f:s:l:h --long mode:,layer:,transition:,fps:,step:,log-level:,help -n "$0" -- "$@")
 if [ $? -ne 0 ]; then
 	usage
 fi
@@ -43,8 +43,8 @@ while true; do
 		MODE="$2"
 		shift 2
 		;;
-	-b | --backend)
-		BACKEND="$2"
+	--layer)
+		LAYER="$2"
 		shift 2
 		;;
 	-t | --transition)
@@ -120,19 +120,19 @@ esac
 log::debug "设置壁纸: $FULL_PATH"
 
 # 设置壁纸
-case "$BACKEND" in
-awww)
+case "$LAYER" in
+background)
 	awww img \
 		--transition-type "$TRANSITION" \
 		--transition-fps "$FPS" \
 		--transition-step "$STEP" \
 		"$FULL_PATH"
 	;;
-wpaperd)
+backdrop)
 	wpaperctl set "$FULL_PATH"
 	;;
 *)
-	log::error "未知模式: $MODE"
+	log::error "未知层: $MODE, 只支持(background|backdrop)"
 	exit 1
 	;;
 esac
