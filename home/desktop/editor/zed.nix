@@ -45,7 +45,6 @@ in
       "nix"
       "glsl"
     ];
-    # themes = {};
     # 用户debug配置(debug.json)可以被zed更新
     # https://zed.dev/docs/debugger
     mutableUserDebug = true;
@@ -61,18 +60,34 @@ in
       project_panel = {
         dock = "left";
       };
+      outline_panel = {
+        dock = "left";
+      };
       git_panel = {
+        dock = "left";
+      };
+      search = {
+        button = false;
+      };
+      diagnostics = {
         dock = "left";
       };
       agent = {
         dock = "right";
+      };
+      debugger = {
+        dock = "bottom";
       };
       theme = {
         mode = "dark";
         light = "One Light";
         dark = "One Dark Pro Night Flat";
       };
-      icon_theme = "Catppuccin Latte";
+      icon_theme = {
+        mode = "system";
+        light = "Catppuccin Latte";
+        dark = "Catppuccin Latte";
+      };
       ui_font_family = "JetBrainsMono Nerd Font";
       ui_font_size = 15.0;
       ui_font_features = font_feature;
@@ -82,10 +97,13 @@ in
       buffer_font_features = font_feature;
       # 终端配置
       terminal = {
-        copy_on_select = true;
         font_family = "JetBrainsMono Nerd Font Mono";
         font_size = 15.0;
+        line_height = "standard";
         font_features = font_feature;
+        cursor_shape = "bar";
+        blinking = "on";
+        copy_on_select = true;
       };
       colorize_brackets = true;
       autosave = {
@@ -105,5 +123,7 @@ in
     # 用户tasks配置(tasks.json)可以被zed更新
     mutableUserTasks = true;
     # userTasks = {};
+    # 自定义theme
+    # themes = {};
   };
 }
