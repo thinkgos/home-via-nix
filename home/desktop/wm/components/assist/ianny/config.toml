@@ -3,15 +3,15 @@
 ignore_idle_inhibitors = false
 # Time specified in seconds
 # Timer will stop and reset when you are idle for this amount of seconds.
-idle_timeout = 180
+idle_timeout = 120
 # Active duration that activates a break.
 short_break_timeout = 3600
 long_break_timeout = 7200
 # Breaks duration.
 short_break_duration = 300
-long_break_duration = 720
+long_break_duration = 600
 
 [notification]
 show_progress_bar = true
 # Minimum delay of updating the progress bar (lower than 1s may return an error).
-minimum_update_delay = 1
+minimum_update_delay = 2
