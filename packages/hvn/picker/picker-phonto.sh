@@ -68,10 +68,10 @@ FULL_PATH=$(printf '%s\n' "${PATHS[@]}" | vicinae dmenu -p 'Pick a video...' -W 
 
 [ -z "$FULL_PATH" ] && log::debug "用户未选择视频" && exit 0
 
-log::debug "设置视频壁纸: "$FULL_PATH""
+log::debug "设置视频壁纸: $FULL_PATH"
 
-/bin/pkill -x phonto
-# # 设置视频壁纸
-phonto "$FULL_PATH" 2>/tmp/phonto.log &
+/bin/pkill -f '^phonto '
+# 设置视频壁纸
+phonto "$FULL_PATH" &
 
 log::debug "视频壁纸设置完成"

@@ -77,7 +77,7 @@ Config(
         MenuItem(
           title: "🎨 Color Chooser",
           description: Some("颜色选择器"),
-          exec: "pkill -x kcolorchooser || kcolorchooser",
+          exec: "pkill kcolorchooser || kcolorchooser",
         ),
       ],
     ),

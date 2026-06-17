@@ -111,7 +111,7 @@ esac
 
 [ -z "$FULL_PATH" ] && log::debug "用户未选择壁纸" && exit 0
 
-log::debug "设置壁纸: "$FULL_PATH""
+log::debug "设置壁纸: $FULL_PATH"
 
 # 设置壁纸
 awww img \

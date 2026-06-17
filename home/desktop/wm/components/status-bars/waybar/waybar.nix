@@ -461,7 +461,7 @@
             "screen-color-picker" = "/bin/pkill -SIGUSR1 ie-r";
             "screen-color-history" = "/bin/pkill -SIGUSR2 ie-r";
             "screen-color-chooser" =
-              "/bin/pkill -x kcolorchooser || ${pkgs.kdePackages.kcolorchooser}/bin/kcolorchooser";
+              "/bin/pkill kcolorchooser || ${pkgs.kdePackages.kcolorchooser}/bin/kcolorchooser";
             "screen-recorder" = "${pkgs.hvn}/bin/hvn-runner-flatpak io.github.seadve.Kooha";
             "ocr" = "${pkgs.hvn}/bin/hvn-screen -m ocr";
             "screen-pixel-measure" = "${pkgs.hvn}/bin/hvn-screen -m pixel-measure";
