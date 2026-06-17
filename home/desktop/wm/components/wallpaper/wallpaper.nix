@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  customize,
   ...
 }:
 {
@@ -9,5 +10,6 @@
   imports = [
     ./awww.nix
     ./phonto.nix
-  ];
+  ]
+  ++ lib.optional (customize.desktop.window == "niri") ./wpaperd.nix;
 }
