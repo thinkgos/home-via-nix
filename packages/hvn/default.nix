@@ -26,6 +26,7 @@ pkgs.symlinkJoin {
         rofi
         vicinae
         awww
+        wpaperd
       ];
     })
 

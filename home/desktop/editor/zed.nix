@@ -128,6 +128,18 @@ in
             };
           };
         };
+        "Shell Script" = {
+          format_on_save = "on";
+          formatter = {
+            external = {
+              command = "shfmt";
+              arguments = [
+                "--filename"
+                "{buffer_path}"
+              ];
+            };
+          };
+        };
       };
     };
     # 用户tasks配置(tasks.json)可以被zed更新

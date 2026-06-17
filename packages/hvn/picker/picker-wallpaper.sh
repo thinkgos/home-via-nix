@@ -6,22 +6,23 @@
 # source "$(cd "$(dirname "${BASH_SOURCE[0]}")/../../ohlib/shell" && pwd)/log4sh.sh"
 
 usage() {
-    echo "Usage: $0 [options] [wallpaper_dir]"
-    echo ""
-    echo "  wallpaper_dir    壁纸目录, 默认: ~/.local/share/wallpapers"
-    echo ""
-    echo "Options:"
-    echo "  -m, --mode <type>         选择器模式, 默认: normal"
-    echo "  -t, --transition <type>   awww过渡类型, 默认: random"
-    echo "  -f, --fps <num>           awww过渡帧率, 默认: 60"
-    echo "  -s, --step <num>          awww过渡步数, 默认: 20"
-    echo "  -l, --log-level <level>   日志级别 (DEBUG|INFO|WARN|ERROR|FATAL|0-4), 默认: WARN"
-    echo "  -h, --help                显示帮助"
-    echo ""
-    echo "Example:"
-    echo "  $0 ~/.local/share/wallpapers"
-    echo "  $0 -m rofi -t fade -f 30 ~/pictures/wallpapers"
-    exit 1
+	echo "Usage: $0 [options] [wallpaper_dir]"
+	echo ""
+	echo "  wallpaper_dir    壁纸目录, 默认: ~/.local/share/wallpapers"
+	echo ""
+	echo "Options:"
+	echo "  -m, --mode <type>         选择器模式 (normal|side), 默认: normal"
+	echo "  -t, --transition <type>   awww过渡类型, 默认: random"
+	echo "  -f, --fps <num>           awww过渡帧率, 默认: 60"
+	echo "  -s, --step <num>          awww过渡步数, 默认: 20"
+	echo "  -b, --backend <backend>   壁纸后端 (awww|wpaperd), 默认: awww"
+	echo "  -l, --log-level <level>   日志级别 (DEBUG|INFO|WARN|ERROR|FATAL|0-4), 默认: WARN"
+	echo "  -h, --help                显示帮助"
+	echo ""
+	echo "Example:"
+	echo "  $0 ~/.local/share/wallpapers"
+	echo "  $0 -m rofi -t fade -f 30 ~/pictures/wallpapers"
+	exit 1
 }
 
 WALLPAPER_DIR="$HOME/.local/share/wallpapers"
@@ -29,46 +30,51 @@ MODE="normal"
 TRANSITION="random"
 FPS=60
 STEP=20
+BACKEND="awww"
 
-PARSED=$(getopt -o m:t:f:s:l:h --long mode:,transition:,fps:,step:,log-level:,help -n "$0" -- "$@")
+PARSED=$(getopt -o m:b:t:f:s:l:h --long mode:,backend:,transition:,fps:,step:,log-level:,help -n "$0" -- "$@")
 if [ $? -ne 0 ]; then
-    usage
+	usage
 fi
 eval set -- "$PARSED"
 while true; do
-    case "$1" in
-    -m | --mode)
-        MODE="$2"
-        shift 2
-        ;;
-    -t | --transition)
-        TRANSITION="$2"
-        shift 2
-        ;;
-    -f | --fps)
-        FPS="$2"
-        shift 2
-        ;;
-    -s | --step)
-        STEP="$2"
-        shift 2
-        ;;
-    -l | --log-level)
-        log::set_level "$2"
-        shift 2
-        ;;
-    -h | --help)
-        usage
-        ;;
-    --)
-        shift
-        break
-        ;;
-    *)
-        log::error "未知选项: $1"
-        usage
-        ;;
-    esac
+	case "$1" in
+	-m | --mode)
+		MODE="$2"
+		shift 2
+		;;
+	-b | --backend)
+		BACKEND="$2"
+		shift 2
+		;;
+	-t | --transition)
+		TRANSITION="$2"
+		shift 2
+		;;
+	-f | --fps)
+		FPS="$2"
+		shift 2
+		;;
+	-s | --step)
+		STEP="$2"
+		shift 2
+		;;
+	-l | --log-level)
+		log::set_level "$2"
+		shift 2
+		;;
+	-h | --help)
+		usage
+		;;
+	--)
+		shift
+		break
+		;;
+	*)
+		log::error "未知选项: $1"
+		usage
+		;;
+	esac
 done
 
 # 如果有位置参数，覆盖壁纸目录
@@ -88,25 +94,25 @@ FULL_PATH=""
 
 case "$MODE" in
 side)
-    # 构建传给 picker 的显示内容(显示文件名，携带图标)
-    INDEX=$(
-        for p in "${PATHS[@]}"; do
-            echo -en "$(basename "$p")\0icon\x1f$p\n"
-        done |
-            rofi -dmenu -format i -config "$HOME/.config/rofi/config-wallpaper.rasi"
-    )
-    # 没选则退出
-    [ -z "$INDEX" ] && log::debug "用户取消选择" && exit 0
-    # 根据索引获取完整路径
-    FULL_PATH="${PATHS[$INDEX]}"
-    ;;
+	# 构建传给 picker 的显示内容(显示文件名，携带图标)
+	INDEX=$(
+		for p in "${PATHS[@]}"; do
+			echo -en "$(basename "$p")\0icon\x1f$p\n"
+		done |
+			rofi -dmenu -format i -config "$HOME/.config/rofi/config-wallpaper.rasi"
+	)
+	# 没选则退出
+	[ -z "$INDEX" ] && log::debug "用户取消选择" && exit 0
+	# 根据索引获取完整路径
+	FULL_PATH="${PATHS[$INDEX]}"
+	;;
 normal)
-    FULL_PATH=$(printf '%s\n' "${PATHS[@]}" | vicinae dmenu -p 'Pick a wallpaper...' -W 980 -H 600 --no-footer)
-    ;;
+	FULL_PATH=$(printf '%s\n' "${PATHS[@]}" | vicinae dmenu -p 'Pick a wallpaper...' -W 980 -H 600 --no-footer)
+	;;
 *)
-    log::error "未知模式: $MODE"
-    exit 1
-    ;;
+	log::error "未知模式: $MODE"
+	exit 1
+	;;
 esac
 
 [ -z "$FULL_PATH" ] && log::debug "用户未选择壁纸" && exit 0
@@ -114,10 +120,21 @@ esac
 log::debug "设置壁纸: $FULL_PATH"
 
 # 设置壁纸
-awww img \
-    --transition-type "$TRANSITION" \
-    --transition-fps "$FPS" \
-    --transition-step "$STEP" \
-    "$FULL_PATH"
+case "$BACKEND" in
+awww)
+	awww img \
+		--transition-type "$TRANSITION" \
+		--transition-fps "$FPS" \
+		--transition-step "$STEP" \
+		"$FULL_PATH"
+	;;
+wpaperd)
+	wpaperctl set "$FULL_PATH"
+	;;
+*)
+	log::error "未知模式: $MODE"
+	exit 1
+	;;
+esac
 
 log::debug "壁纸设置完成"
