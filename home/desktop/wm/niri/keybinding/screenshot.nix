@@ -11,7 +11,7 @@
     #   action.spawn = [
     #     "sh"
     #     "-c"
-    #     "/bin/pkill kooha || flatpak run io.github.seadve.Kooha"
+    #     "/bin/pkill -x kooha || flatpak run io.github.seadve.Kooha"
     #   ];
     #   repeat = false;
     #   hotkey-overlay.title = "交互式录屏";

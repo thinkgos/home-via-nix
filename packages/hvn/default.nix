@@ -28,6 +28,22 @@ pkgs.symlinkJoin {
       ];
     })
 
+    (pkgs.writeShellApplication {
+      name = "hvn-picker-phonto";
+      text = ''
+        source ${pkgs.ohlib.log4sh}/lib/shell/log4sh.sh
+        ${builtins.readFile ./picker/picker-phonto.sh}
+      '';
+      excludeShellChecks = [
+        "SC1091"
+        "SC2181"
+      ];
+      runtimeInputs = with pkgs; [
+        rofi
+        awww
+      ];
+    })
+
     # runner
     (pkgs.writeShellApplication {
       name = "hvn-runner-flatpak";

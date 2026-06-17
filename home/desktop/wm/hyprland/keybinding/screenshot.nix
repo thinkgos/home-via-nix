@@ -14,7 +14,7 @@ in
       # {
       #   _args = [
       #     (mkLuaInline ''mod .. " + ALT + R"'')
-      #     (mkLuaInline ''hl.dsp.exec_cmd("/bin/pkill kooha || flatpak run io.github.seadve.Kooha")'')
+      #     (mkLuaInline ''hl.dsp.exec_cmd("/bin/pkill -x kooha || flatpak run io.github.seadve.Kooha")'')
       #     { description = "交互式录屏"; }
       #   ];
       # }
