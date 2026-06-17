@@ -58,7 +58,14 @@ in
         _args = [
           (mkLuaInline ''mod .. " + P"'')
           (mkLuaInline ''hl.dsp.exec_cmd("code")'')
-          { description = "启动IDE"; }
+          { description = "启动code"; }
+        ];
+      }
+      {
+        _args = [
+          (mkLuaInline ''mod .. " + ALT + P"'')
+          (mkLuaInline ''hl.dsp.exec_cmd("${pkgs.zed-editor}/bin/zeditor")'')
+          { description = "启动czed"; }
         ];
       }
       {

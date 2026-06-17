@@ -50,7 +50,12 @@
     "Mod+P" = {
       action.spawn = [ "code" ];
       repeat = false;
-      hotkey-overlay.title = "启动IDE";
+      hotkey-overlay.title = "启动code";
+    };
+    "Mod+Alt+P" = {
+      action.spawn = [ "${pkgs.zed-editor}/bin/zeditor" ];
+      repeat = false;
+      hotkey-overlay.title = "启动zed";
     };
     "Mod+A" = {
       action.spawn = [
