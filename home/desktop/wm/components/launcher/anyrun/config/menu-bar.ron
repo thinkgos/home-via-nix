@@ -57,6 +57,11 @@ Config(
           description: Some("设置壁纸（侧边栏）"),
           exec: "hvn-picker-wallpaper -m side",
         ),
+        MenuItem(
+          title: "🖼️ Wallpaper Picker for Backdrop",
+          description: Some("设置背景幕布"),
+          exec: "hvn-picker-wallpaper --layer backdrop",
+        ),
       ],
     ),
     Menu(
