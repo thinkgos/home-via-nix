@@ -17,6 +17,7 @@
     # mise    # 管理开发环境, 软件多版本管理
 
     #! 通用
+    taplo # toml 工具
     nfpm # a simple deb, rpm, apk, ipk, and arch linux packager
 
     #! 编译工具

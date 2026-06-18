@@ -6,6 +6,6 @@
 }:
 {
   imports = [
-    ./zed.nix
+    ./zed/zed.nix
   ];
 }
