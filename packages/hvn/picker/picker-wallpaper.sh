@@ -30,7 +30,7 @@ MODE="normal"
 TRANSITION="random"
 FPS=60
 STEP=20
-LAYER="backgroud"
+LAYER="background"
 
 PARSED=$(getopt -o m:t:f:s:l:h --long mode:,layer:,transition:,fps:,step:,log-level:,help -n "$0" -- "$@")
 if [ $? -ne 0 ]; then
@@ -132,7 +132,7 @@ backdrop)
 	wpaperctl set "$FULL_PATH"
 	;;
 *)
-	log::error "未知层: $MODE, 只支持(background|backdrop)"
+	log::error "未知层: $LAYER, 只支持(background|backdrop)"
 	exit 1
 	;;
 esac
