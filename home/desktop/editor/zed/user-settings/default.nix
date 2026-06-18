@@ -34,6 +34,9 @@ in
   };
   diagnostics = {
     dock = "left";
+    inline = {
+      enabled = true;
+    };
   };
   agent = {
     dock = "right";
