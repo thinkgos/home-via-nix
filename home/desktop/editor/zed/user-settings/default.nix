@@ -24,7 +24,7 @@ in
     dock = "left";
   };
   outline_panel = {
-    dock = "right";
+    dock = "left";
   };
   git_panel = {
     dock = "left";
