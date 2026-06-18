@@ -17,13 +17,14 @@ let
     "cv20" = true;
   };
   languages = import ./languages.nix { inherit config lib pkgs; };
+  lsp = import ./lsp.nix { inherit config lib pkgs; };
 in
 {
   project_panel = {
     dock = "left";
   };
   outline_panel = {
-    dock = "left";
+    dock = "right";
   };
   git_panel = {
     dock = "left";
@@ -73,5 +74,10 @@ in
       milliseconds = 1000;
     };
   };
+  inlay_hints = {
+    enabled = true;
+  };
+  code_lens = "on";
   languages = languages;
+  lsp = lsp;
 }
