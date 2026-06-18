@@ -22,9 +22,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "06d4e90fb5410e9c4d0b3131584060adddf89406",
-      "url": "https://github.com/sahaj-b/ghostty-cursor-shaders/archive/06d4e90fb5410e9c4d0b3131584060adddf89406.tar.gz",
-      "hash": "sha256-G/UIr1bKnxn1AcHl/4FL/jou6b7M2VeREslYVELxdmw="
+      "revision": "0a274beac8b93ee6ce6b94402b7313a0417b8e38",
+      "url": "https://github.com/sahaj-b/ghostty-cursor-shaders/archive/0a274beac8b93ee6ce6b94402b7313a0417b8e38.tar.gz",
+      "hash": "sha256-B7B6K7Ee4uJlW8zzLP3ILgddnbcIQyNimY+rVllzbR0="
     },
     "hyprsplit": {
       "type": "Git",
@@ -35,16 +35,17 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "8f0627b3f0380ce730d8d89f25680f4f601ecd33",
-      "url": "https://github.com/shezdy/hyprsplit/archive/8f0627b3f0380ce730d8d89f25680f4f601ecd33.tar.gz",
-      "hash": "sha256-n7jG8wF0lhiky3/jJr8lCFyUtqZEInYA0J0K9W6Bq3I="
+      "revision": "6b00b677d8905fb38779c91e12d6294e0e586a44",
+      "url": "https://github.com/shezdy/hyprsplit/archive/6b00b677d8905fb38779c91e12d6294e0e586a44.tar.gz",
+      "hash": "sha256-PaoUtmk+qIP/ESdxkxnY7mUMpMHjix88qu22R5GLQqE="
     },
     "nixpkgs": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1012902.8c3cede7ddc2/nixexprs.tar.xz",
-      "hash": "sha256-omq0piVC7vKHVxfJi9uIW1EHQLsFSnDhbkLeO2rkSyw="
+      "artifact": "nixexprs.tar.xz",
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1017567.3e41b24abd26/nixexprs.tar.xz",
+      "hash": "sha256-eM+l4TVD26SNoEjcxRcpispqZi5Qrqj/G0ZY4LfqwfM="
     }
   },
-  "version": 7
+  "version": 8
 }
