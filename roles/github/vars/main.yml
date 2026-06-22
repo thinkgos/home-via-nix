@@ -22,6 +22,14 @@ github_apps:
   #   debian_pattern: "Clash.Verge___VERSION___amd64.deb"
   #   redhat_pattern: "Clash.Verge-__VERSION__-1.x86_64.rpm"
 
+  - name: "chipmunk"
+    description: "a log analysis tool"
+    repo: "esrlabs/chipmunk"
+    version: 4.0.1
+    package_name: "chipmunk"
+    debian_pattern: "chipmunk@__VERSION__-linux-amd64.deb"
+    redhat_pattern: "chipmunk@__VERSION__-linux-x86_64.rpm"
+
   - name: "cc-switch"
     description: "cc-switch"
     repo: "farion1231/cc-switch"
@@ -36,10 +44,3 @@ github_apps:
     version: 1.17.9
     binary_name: "opencode"
     binary_pattern: "opencode-linux-x64.tar.gz"
-
-  - name: "skim"
-    description: "Fuzzy Finder in rust!"
-    repo: "skim-rs/skim"
-    version: 4.8.0
-    binary_name: "sk"
-    binary_pattern: "skim-x86_64-unknown-linux-musl.tar.xz"

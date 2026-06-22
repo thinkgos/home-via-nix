@@ -72,6 +72,10 @@
       defaultCommand = "fd --hidden";
     };
 
+    skim = {
+      enable = true;
+    };
+
     yazi = {
       enable = true;
       enableZshIntegration = true;
