@@ -82,7 +82,7 @@
     file=${config.xdg.configHome}/zsh/.zshrc-credentials
     if [ ! -f "$file" ]; then
       mkdir -p "$(dirname "$file")"
-      cat <<EOF > "$file"
+      cat <<'EOF' > "$file"
     ${builtins.readFile ./env-develop/template-credentials}
     EOF
     fi
