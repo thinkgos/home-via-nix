@@ -3,3 +3,6 @@ system_rpm_packages:
   - clang-devel
   - openssl-devel
   - opencv-devel
+  - fontconfig-devel
+  - libxkbcommon-devel
+  - libxkbcommon-x11-devel

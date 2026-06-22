@@ -4,3 +4,6 @@ system_deb_packages:
   - libssl-dev
   - libopencv-dev
   - pkg-config
+  - libfontconfig1-dev
+  - libxkbcommon-dev
+  - libxkbcommon-x11-dev
