@@ -1,0 +1,9 @@
+- name: "安装/升级工具: {{ app.name }}"
+  vars:
+    _pkg: "{{ app.package | default(app.name) }}"
+    _ver: "{{ app.version | default('') }}"
+    _cmd: "{{ npm_manager }} install -g {{ _pkg }}{{ _ver }}"
+  ansible.builtin.command:
+    cmd: "{{ _cmd | trim }}"
+  register: npm_install_result
+  changed_when: "'added' in npm_install_result.stdout or 'changed' in npm_install_result.stdout or 'updated' in npm_install_result.stdout"

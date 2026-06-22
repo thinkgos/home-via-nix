@@ -1,4 +1,4 @@
-unfree_script_apps:
+unfree_script_apps: []
   # script_url 策略: 远程安装脚本
   # - name: "example-script"
   #   description: "通过远程脚本安装"
@@ -13,10 +13,3 @@ unfree_script_apps:
   #     #!/bin/bash
   #     curl -fsSL https://example.com/install.sh | sh
   #   binary_name: "example-inline"
-
-  - name: "claude"
-    description: "claude terminal"
-    script: |
-      #!/bin/bash
-      curl -fsSL https://claude.ai/install.sh | bash
-    binary_name: "claude"

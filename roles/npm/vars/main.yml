@@ -1,0 +1,12 @@
+# 声明要安装的 npm 全局包列表
+# 每个 entry 支持以下字段:
+#   name:    工具名(必填)
+#   package: npm 包名(默认同 name)
+#   version: 版本约束，如 "@1.0.0"
+#   state:   present(默认) | absent
+
+npm_manager: npm
+npm_app_prune: false
+npm_apps:
+  - name: codegraph
+    package: "@colbymchenry/codegraph"

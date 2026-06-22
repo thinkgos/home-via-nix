@@ -60,6 +60,7 @@
 │   ├── github/               # GitHub 应用角色，支持版本跟踪和包/二进制策略
 │   ├── flathub/              # Flathub 应用角色
 │   ├── python/               # Python 工具角色（通过 uv 安装）
+│   ├── npm/                  # npm 全局包角色（通过 npm 安装）
 │   └── unfree/               # 商业/非自由软件角色（脚本/URL 安装）
 ├── overlays/                 # Nixpkgs overlays
 ├── packages/                 # Nix 包（hvn、ohlib、ohshell、home-assets）
@@ -95,6 +96,7 @@
 - `roles/github`：GitHub 应用角色，管理 GitHub 应用的安装。
 - `roles/flathub`：Flathub 应用角色，管理 Flathub 应用的安装。
 - `roles/python`：Python 工具角色，通过 uv 安装和管理 Python 包。
+- `roles/npm`：npm 全局包角色，通过 npm 安装和管理 Node.js 全局包。
 - `roles/unfree`：商业/非自由软件角色，支持脚本和 URL 两种安装方式。
 
 ## 常用工作流指南
@@ -111,11 +113,12 @@
 
 ### Ansible 系统包管理
 - 前置条件：`home-manager` 已经切换到用户配置，它包含了 `ansible`。
-- 运行完整 playbook：`ansible-playbook site.yml -u <用户名> --tags system,github,flathub,python,unfree -K`
+- 运行完整 playbook：`ansible-playbook site.yml -u <用户名> --tags system,github,flathub,python,npm,unfree -K`
 - 仅安装系统包：`ansible-playbook site.yml -u <用户名> --tags system -K`
 - 仅安装 GitHub 应用：`ansible-playbook site.yml -u <用户名> --tags github -K`
 - 仅安装 Flathub 应用：`ansible-playbook site.yml -u <用户名> --tags flathub -K`
 - 仅安装 Python 工具：`ansible-playbook site.yml -u <用户名> --tags python -K`
+- 仅安装 npm 全局包：`ansible-playbook site.yml -u <用户名> --tags npm -K`
 - 仅安装商业软件：`ansible-playbook site.yml -u <用户名> --tags unfree -K`
 
 ## 设计模式
@@ -150,6 +153,10 @@
 1. 在 `roles/python/vars/main.yml` 中添加条目。
 2. 运行 `ansible-playbook site.yml -u <用户名> --tags python -K` 进行部署。
 
+### 添加新 npm 全局包时
+1. 在 `roles/npm/vars/main.yml` 中添加条目。
+2. 运行 `ansible-playbook site.yml -u <用户名> --tags npm -K` 进行部署。
+
 ### 添加新商业/非自由软件时
 1. 在 `roles/unfree/vars/script.yml`（脚本安装）或 `roles/unfree/vars/url.yml`（URL 安装）中添加条目。
 2. 运行 `ansible-playbook site.yml -u <用户名> --tags unfree -K` 进行部署。
@@ -180,6 +187,7 @@
 | 安装/更新 GitHub 应用 | `ansible-playbook site.yml -u $USER --tags github -K` |
 | 安装/更新 Flathub 应用 | `ansible-playbook site.yml -u $USER --tags flathub -K` |
 | 安装/更新 Python 工具 | `ansible-playbook site.yml -u $USER --tags python -K` |
+| 安装/更新 npm 全局包 | `ansible-playbook site.yml -u $USER --tags npm -K` |
 | 安装/更新商业软件 | `ansible-playbook site.yml -u $USER --tags unfree -K` |
 | 仅构建配置 | `home-manager build --flake .#<配置名>` |
 | 列出可用配置 | `nix flake show` |

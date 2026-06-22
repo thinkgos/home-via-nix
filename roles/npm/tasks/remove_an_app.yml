@@ -1,0 +1,6 @@
+- name: "移除工具: {{ app.name }}"
+  vars:
+    _pkg: "{{ app.package | default(app.name) }}"
+  ansible.builtin.command:
+    cmd: "{{ npm_manager }} uninstall -g {{ _pkg }}"
+  changed_when: true

@@ -1,4 +1,4 @@
-# ansible-playbook site.yml -u <username> --tags system,github,flathub,unfree --become -K
+# ansible-playbook site.yml -u <username> --tags system,github,flathub,python,npm,unfree --become -K
 - name: 通用软件管理
   hosts: 127.0.0.1
   gather_facts: false
@@ -29,6 +29,9 @@
 
     - role: python
       tags: "python"
+
+    - role: npm
+      tags: "npm"
 
     - role: unfree
       tags: "unfree"

@@ -1,0 +1,14 @@
+- name: 计算声明的npm包名列表
+  ansible.builtin.set_fact:
+    _declared_pkgs: "{{ _declared_pkgs | default([]) + [item.package | default(item.name)] }}"
+  loop: "{{ npm_apps }}"
+  loop_control:
+    label: "{{ item.name }}"
+
+- name: "Prune: 移除不在声明列表中的工具"
+  vars:
+    to_remove: "{{ npm_installed_packages | difference(_declared_pkgs) }}"
+  ansible.builtin.command:
+    cmd: "{{ npm_manager }} uninstall -g {{ item }}"
+  loop: "{{ to_remove }}"
+  changed_when: true
