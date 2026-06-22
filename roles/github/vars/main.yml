@@ -26,6 +26,7 @@ github_apps:
     description: "a log analysis tool"
     repo: "esrlabs/chipmunk"
     version: 4.0.1
+    tag_prefix: ""
     package_name: "chipmunk"
     debian_pattern: "chipmunk@__VERSION__-linux-amd64.deb"
     redhat_pattern: "chipmunk@__VERSION__-linux-x86_64.rpm"
