@@ -21,10 +21,10 @@
   when:
     - unfree_which_result.rc != 0
     - unfree_install_strategy != 'script'
-  ansible.builtin.include_tasks: install_via_url.yml
+  ansible.builtin.include_tasks: install-via-url.yml
 
 - name: "Install via script: {{ app.name }}"
   when:
     - unfree_which_result.rc != 0
     - unfree_install_strategy == 'script'
-  ansible.builtin.include_tasks: install_via_script.yml
+  ansible.builtin.include_tasks: install-via-script.yml

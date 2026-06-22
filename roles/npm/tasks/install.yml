@@ -15,19 +15,19 @@
       }}
 
 - name: 安装/升级工具
-  ansible.builtin.include_tasks: install_an_app.yml
+  ansible.builtin.include_tasks: install-an-app.yml
   loop: "{{ npm_apps | selectattr('state', 'undefined') | list
           + npm_apps | selectattr('state', 'defined') | selectattr('state', 'eq', 'present') | list }}"
   loop_control:
     loop_var: app
 
 - name: 移除标记为 absent 的工具
-  ansible.builtin.include_tasks: remove_an_app.yml
+  ansible.builtin.include_tasks: remove-an-app.yml
   loop: "{{ npm_apps | selectattr('state', 'defined') | selectattr('state', 'eq', 'absent') | list }}"
   loop_control:
     loop_var: app
   when: (app.package | default(app.name)) in npm_installed_packages
 
 - name: Prune:移除不在声明列表中的工具
-  ansible.builtin.include_tasks: prune_app.yml
+  ansible.builtin.include_tasks: prune-app.yml
   when: npm_app_prune | bool

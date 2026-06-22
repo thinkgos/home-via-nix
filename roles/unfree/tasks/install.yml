@@ -5,7 +5,7 @@
     - vars/script.yml
 
 - name: Process unfree installations
-  ansible.builtin.include_tasks: install_an_app.yml
+  ansible.builtin.include_tasks: install-an-app.yml
   loop: "{{ unfree_url_apps + unfree_script_apps }}"
   loop_control:
     loop_var: app
