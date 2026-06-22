@@ -21,6 +21,7 @@ in
       kache = inputs.kache.packages.${system}.default;
       goup-rs = inputs.goup-rs.packages.${system}.default;
       wayscrollshot = inputs.wayscrollshot.packages.${system}.default;
+      CCometixLine = inputs.CCometixLine.packages.${system}.default;
     })
 
     # hyprland

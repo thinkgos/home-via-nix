@@ -58,7 +58,7 @@
   };
   statusLine = {
     type = "command";
-    command = "ccline";
+    command = "ccometixline";
     padding = 0;
   };
   enabledPlugins = {

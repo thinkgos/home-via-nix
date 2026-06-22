@@ -46,6 +46,11 @@
       url = "github:ThatOtherAndrew/Hexecute";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    CCometixLine = {
+      # url = "github:Haleclipse/CCometixLine";
+      url = "github:thinkgos/CCometixLine";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # hyprland
     hyprland = {
