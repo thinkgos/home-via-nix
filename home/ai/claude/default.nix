@@ -8,7 +8,7 @@
   # https://nix-community.github.io/home-manager/options/home-manager/programs/claude-code.html
   programs.claude-code = {
     enable = true;
-    enableMcpIntegration = false;
+    enableMcpIntegration = true;
     # configDir = "${config.home.homeDirectory}/.claude";
     marketplaces = import ./marketplaces.nix { inherit config lib pkgs; };
     plugins = import ./plugins.nix { inherit config lib pkgs; };

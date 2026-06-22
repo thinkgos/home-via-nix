@@ -23,7 +23,7 @@
 - name: 安装/升级工具
   ansible.builtin.include_tasks: install_an_app.yml
   loop: "{{ python_app | selectattr('state', 'undefined') | list
-          + python_app | selectattr('state', 'defined') | selectattr('state', 'eq', 'present') | list }}"
+    + python_app | selectattr('state', 'defined') | selectattr('state', 'eq', 'present') | list }}"
   loop_control:
     loop_var: app
 
@@ -37,8 +37,3 @@
 - name: Prune:移除不在声明列表中的工具
   ansible.builtin.include_tasks: prune_app.yml
   when: python_app_prune | bool
-
-- name: "工具执行路径加入PATH"
-  ansible.builtin.command:
-    cmd: "{{ python_manager }} tool update-shell"
-  changed_when: false

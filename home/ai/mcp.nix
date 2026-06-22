@@ -8,14 +8,19 @@
   programs.mcp = {
     enable = true;
     servers = {
-      # "" = {
-      #   enabled = true;
-      #   env = { };
-      #   headers = { };
-      #   url = "";
-      #   command = "";
-      #   args = [ ];
-      # };
+      codegraph = {
+        enabled = true;
+        command = "codegraph";
+        args = [
+          "serve"
+          "--mcp"
+        ];
+      };
+      drawio = {
+        enabled = true;
+        command = "drawio-mcp";
+        args = [ ];
+      };
     };
   };
 }

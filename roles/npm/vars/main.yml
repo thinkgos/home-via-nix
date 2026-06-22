@@ -10,3 +10,5 @@ npm_app_prune: false
 npm_apps:
   - name: codegraph
     package: "@colbymchenry/codegraph"
+  - name: drawio-mcp
+    package: "@drawio/mcp"

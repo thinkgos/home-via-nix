@@ -6,7 +6,7 @@
 }:
 {
   imports = [
-    # ./mcp.nix
+    ./mcp.nix
     ./claude
     # ./codex
   ];

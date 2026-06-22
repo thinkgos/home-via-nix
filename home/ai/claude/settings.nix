@@ -41,6 +41,7 @@
       "Bash(tr *)"
       "Bash(curl *)"
       "Bash(rtk *)"
+      "Bash(codegraph *)"
       "Bash(git add *)"
       "Bash(git status *)"
       "Bash(git log *)"
@@ -48,6 +49,16 @@
       "Bash(git show *)"
       "Bash(git branch *)"
       "WebSearch"
+
+      # mcp
+      "mcp__codegraph__codegraph_explore"
+      "mcp__codegraph__codegraph_search"
+      "mcp__codegraph__codegraph_node"
+      "mcp__codegraph__codegraph_callers"
+      "mcp__codegraph__codegraph_callees"
+      "mcp__codegraph__codegraph_impact"
+      "mcp__codegraph__codegraph_files"
+      "mcp__codegraph__codegraph_status"
     ];
     ask = [
       "Bash(git commit *)"

@@ -29,7 +29,7 @@ lib.recursiveUpdate (import ./preset.nix { inherit lib pkgs; }) {
   lang = [
     "go"
     "rust"
-    # "python"
-    # "cpp"
+    "python"
+    "cpp"
   ];
 }
