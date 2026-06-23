@@ -22,28 +22,26 @@
     # themeFile = "noirbuddy-oxide";
     keybindings = {
       # font size
-      "ctrl+shift+minus" = "change_font_size all -2.0"; # 减少字体大小
       "ctrl+-" = "change_font_size all -2.0"; # 减少字体大小
-      "ctrl+shift+plus" = "change_font_size all +2.0"; # 增加字体大小
       "ctrl+=" = "change_font_size all +2.0"; # 增加字体大小
       "ctrl+0" = "change_font_size all 0"; # 重置字体大小
 
       # 标签页管理
-      "ctrl+shift+t" = "new_tab"; # 创建标签页
-      "ctrl+shift+q" = "close_tab"; # 关闭标签页
-      "ctrl+page_up" = "prev_tab"; # 切换到上一个标签页
-      "ctrl+shift+," = "prev_tab"; # 切换到上一个标签页
-      "ctrl+page_down" = "next_tab"; # 切换到下一个标签页
-      "ctrl+shift+." = "next_tab"; # 切换到下一个标签页
-      "ctrl+1" = "goto_tab 1"; # 切换到第一个标签页
-      "ctrl+2" = "goto_tab 2"; # 切换到第二个标签页
-      "ctrl+3" = "goto_tab 3"; # 切换到第三个标签页
-      "ctrl+4" = "goto_tab 4"; # 切换到第四个标签页
-      "ctrl+5" = "goto_tab 5"; # 切换到第五个标签页
-      "ctrl+6" = "goto_tab 6"; # 切换到第六个标签页
-      "ctrl+7" = "goto_tab 7"; # 切换到第七个标签页
-      "ctrl+8" = "goto_tab 8"; # 切换到第八个标签页
-      "ctrl+9" = "goto_tab 9"; # 切换到第九个标签页
+      "ctrl+shift+t" = "new_tab"; # 新建标签页
+      "ctrl+shift+w" = "close_tab"; # 关闭标签页
+      "ctrl+page_up" = "prev_tab"; # 聚焦左边标签页
+      "ctrl+page_down" = "next_tab"; # 聚焦右边标签页
+      "ctrl+shift+tab" = "prev_tab"; # 聚焦左边标签页
+      "ctrl+tab" = "next_tab"; # 聚焦右边标签页
+      "ctrl+1" = "goto_tab 1"; # 聚焦标签页1
+      "ctrl+2" = "goto_tab 2"; # 聚焦标签页2
+      "ctrl+3" = "goto_tab 3"; # 聚焦标签页3
+      "ctrl+4" = "goto_tab 4"; # 聚焦标签页4
+      "ctrl+5" = "goto_tab 5"; # 聚焦标签页5
+      "ctrl+6" = "goto_tab 6"; # 聚焦标签页6
+      "ctrl+7" = "goto_tab 7"; # 聚焦标签页7
+      "ctrl+8" = "goto_tab 8"; # 聚焦标签页8
+      "ctrl+9" = "goto_tab 9"; # 聚焦标签页9
 
       # 窗口管理
       # 关闭窗口使用ctrl+d

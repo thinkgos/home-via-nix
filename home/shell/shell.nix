@@ -21,5 +21,4 @@
     trash = "trash -v";
     cco = "claude";
   };
-
 }
