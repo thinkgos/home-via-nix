@@ -63,6 +63,8 @@
 
       term = "xterm-kitty";
 
+      copy_on_select = "clipboard";
+
       # layout
       enabled_layouts = "splits";
 

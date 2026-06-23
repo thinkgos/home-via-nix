@@ -14,7 +14,8 @@
     ];
     runtimeInputs = with pkgs; [
       jq
-      kitty
+      # kitty
+      wezterm
       hyprland
     ];
   };

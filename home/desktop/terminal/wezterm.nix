@@ -23,16 +23,29 @@ in
         	"Noto Sans CJK SC",
         })
       '';
-      #
+      default_cursor_style = "BlinkingBar";
       window_decorations = "NONE";
       window_background_opacity = 0.85;
-      default_cursor_style = "BlinkingBar";
       window_padding = {
         left = 8;
         right = 8;
         top = 0;
         bottom = 0;
       };
+      window_frame = {
+        font_size = 11;
+        inactive_titlebar_fg = "#cccccc";
+        inactive_titlebar_bg = "#1e1e2e";
+        inactive_titlebar_border_bottom = "#1e1e2e";
+        active_titlebar_fg = "#cba6f7";
+        active_titlebar_bg = "#1e1e2e";
+        active_titlebar_border_bottom = "#1e1e2e";
+        button_fg = "#cccccc";
+        button_bg = "#1e1e2e";
+        button_hover_fg = "#cba6f7";
+        button_hover_bg = "#1e1e2e";
+      };
+      tab_bar_at_bottom = true;
       hide_tab_bar_if_only_one_tab = true;
       # key binding
       disable_default_key_bindings = true;

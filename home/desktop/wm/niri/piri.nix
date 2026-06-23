@@ -42,7 +42,8 @@
 
     [scratchpads.dropdown-terminal]
     direction = "fromTop"
-    command = "${pkgs.kitty}/bin/kitty --class dropdown-terminal -o tab_bar_edge=bottom --title \"quake\""
+    # command = "${pkgs.kitty}/bin/kitty --class dropdown-terminal -o tab_bar_edge=bottom --title \"quake\""
+    command = "${pkgs.wezterm}/bin/wezterm -e --class dropdown-terminal"
     app_id = "dropdown-terminal"
     size = "100% 40%"
     margin = 0
