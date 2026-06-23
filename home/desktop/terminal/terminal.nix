@@ -13,6 +13,6 @@
     ./alacritty.nix
     ./kitty.nix
     ./ghostty.nix
-    ./wezterm/wezterm.nix
+    ./wezterm.nix
   ];
 }
