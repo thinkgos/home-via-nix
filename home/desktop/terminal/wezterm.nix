@@ -111,9 +111,21 @@ in
           action = mkLuaInline "wezterm.action.ReloadConfiguration";
         }
         {
+          # 向上滚动一页
+          key = "PageUp";
+          mods = "NONE";
+          action = mkLuaInline "wezterm.action.ScrollByPage(-1)";
+        }
+        {
+          # 向下滚动一页
+          key = "PageDown";
+          mods = "NONE";
+          action = mkLuaInline "wezterm.action.ScrollByPage(1)";
+        }
+        {
           # 全屏
-          key = "Enter";
-          mods = "ALT";
+          key = "F11";
+          mods = "NONE";
           action = mkLuaInline "wezterm.action.ToggleFullScreen";
         }
 
