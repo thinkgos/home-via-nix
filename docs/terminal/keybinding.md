@@ -18,9 +18,9 @@
 | 新建 | | | `CTRL` + `SHITF` + `n` | | `CTRL` + `SHITF` + `n` |
 | 搜索 | | | `CTRL` + `SHITF` + `f` | | `CTRL` + `SHITF` + `f` |
 | 命令面板 | | | `CTRL` + `SHITF` + `p` | | `CTRL` + `SHITF` + `p` |
-| 重载配置 | | | `CTRL` + `SHITF` + `r` | | |
+| 重载配置 | | | `CTRL` + `SHITF` + `r` | | ❌ |
 | 向上滚动一页 | | | `PageUp` | | `PageUp` |
-| 向下滚动一页 | | | `PageUp` | | `PageUp` |
+| 向下滚动一页 | | | `PageDown` | | `PageDown` |
 | 全屏 | | | `F11` | | `F11` |
 
 ## 标签页管理
