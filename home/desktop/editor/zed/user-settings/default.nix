@@ -16,8 +16,6 @@ let
     "cv18" = true;
     "cv20" = true;
   };
-  languages = import ./languages.nix { inherit config lib pkgs; };
-  lsp = import ./lsp.nix { inherit config lib pkgs; };
 in
 {
   project_panel = {
@@ -81,6 +79,6 @@ in
     enabled = true;
   };
   code_lens = "on";
-  languages = languages;
-  lsp = lsp;
+  languages = import ./languages.nix { inherit config lib pkgs; };
+  lsp = import ./lsp.nix { inherit config lib pkgs; };
 }

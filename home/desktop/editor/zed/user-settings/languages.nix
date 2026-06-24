@@ -7,8 +7,8 @@
 {
   "Nix" = {
     language_servers = [
-      "nixd"
-      "!nil"
+      "!nixd"
+      "nil"
     ];
     format_on_save = "on";
     formatter = {
