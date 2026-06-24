@@ -4,9 +4,6 @@
   pkgs,
   ...
 }:
-let
-  user_settings = import ./user-settings { inherit config lib pkgs; };
-in
 {
   programs.zed-editor = {
     enable = true;
@@ -47,7 +44,7 @@ in
     # https://zed.dev/docs/reference/all-settings
     mutableUserSettings = true;
     # enableMcpIntegration = false;
-    userSettings = user_settings;
+    userSettings = import ./user-settings { inherit config lib pkgs; };
     # 用户tasks配置(tasks.json)可以被zed更新
     mutableUserTasks = true;
     # userTasks = {};

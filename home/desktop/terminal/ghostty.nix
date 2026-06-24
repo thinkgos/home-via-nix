@@ -19,20 +19,31 @@
         # warning(winproto_wayland): your compositor does not support the wlr-layer-shell protocol; disabling quick terminal
         # "global:super+backquote=toggle_quick_terminal"
 
-        # font size
-        "ctrl+shift+minus=decrease_font_size:2" # 减少字体大小
+        # 杂项
         "ctrl+-=decrease_font_size:2" # 减少字体大小
-        "ctrl+shift+plus=increase_font_size:2" # 增加字体大小
         "ctrl+==increase_font_size:2" # 增加字体大小
         "ctrl+0=reset_font_size" # 重置字体大小
+        "ctrl+shift+c=copy_to_clipboard:mixed" # 复制
+        "ctrl+shift+v=paste_from_clipboard" # 粘贴
+        "ctrl+shift+n=new_window" # 新建
+        "ctrl+shift+f=start_search" # 搜索
+        "ctrl+shift+p=toggle_command_palette" # 命令面板
+        "ctrl+shift+,=reload_config" # 重载配置
+        "home=scroll_to_top" # 滚动到顶部
+        "end=scroll_to_bottom" # 滚动到底部
+        "page_up=scroll_page_up" # 向上滚动一页
+        "page_down=scroll_page_down" # 向下滚动一页
+        "f11=toggle_fullscreen" # 全屏
 
         # 标签页管理
         "ctrl+shift+t=new_tab" # 创建标签页
-        "ctrl+shift+q=close_tab" # 关闭标签页
-        "ctrl+page_up=previous_tab" # 切换到上一个标签页
-        "ctrl+shift+,=previous_tab" # 切换到上一个标签页
-        "ctrl+page_down=next_tab" # 切换到下一个标签页
-        "ctrl+shift+.=next_tab" # 切换到下一个标签页
+        "ctrl+shift+w=close_tab" # 关闭标签页
+        "ctrl+page_up=previous_tab" # 聚焦左边标签页
+        "ctrl+page_down=next_tab" # 聚焦右边标签页
+        "ctrl+shift+tab=previous_tab" # 聚焦左边标签页
+        "ctrl+tab=next_tab" # 聚焦右边标签页
+        "ctrl+shift+page_up=move_tab:-1" # 移动标签页到左边
+        "ctrl+shift+page_down=move_tab:1" # 移动标签页到右边
         "ctrl+1=goto_tab:1" # 切换到第一个标签页
         "ctrl+2=goto_tab:2" # 切换到第二个标签页
         "ctrl+3=goto_tab:3" # 切换到第三个标签页
@@ -43,15 +54,15 @@
         "ctrl+8=goto_tab:8" # 切换到第八个标签页
         "ctrl+9=goto_tab:9" # 切换到第九个标签页
 
-        # 窗口管理
-        # 关闭窗口使用ctrl+d
+        # 窗格管理
+        # 关闭窗格使用ctrl+d
         "ctrl+shift+e=new_split:down" # 水平分割窗口
         "ctrl+shift+d=new_split:right" # 垂直分割窗口
-        "ctrl+shift+[=goto_split:previous" # 上一个窗口
-        "ctrl+shift+left=goto_split:previous" # 上一个窗口
-        "ctrl+shift+]=goto_split:next" # 下一个窗口
-        "ctrl+shift+right=goto_split:next" # 下一个窗口
-        # "ctrl+shift+r=resize_split:up:10" # 调整窗口大小
+        "ctrl+alt+up=goto_split:up" # 聚焦上方窗格
+        "ctrl+alt+down=goto_split:down" # 聚焦下方窗格
+        "ctrl+alt+left=goto_split:left" # 聚焦左方窗格
+        "ctrl+alt+right=goto_split:right" # 聚焦右方窗格
+        "ctrl+alt+z=toggle_split_zoom" # 切换窗口缩放
       ];
 
       # general

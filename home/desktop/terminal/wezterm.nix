@@ -102,11 +102,11 @@ in
           # 搜索
           key = "f";
           mods = "CTRL|SHIFT";
-          action = mkLuaInline ''wezterm.action.Search({ CaseSensitiveString = "" })'';
+          action = mkLuaInline ''wezterm.action.Search("CurrentSelectionOrEmptyString")'';
         }
         {
           # 重载配置
-          key = "r";
+          key = "mapped:<";
           mods = "CTRL|SHIFT";
           action = mkLuaInline "wezterm.action.ReloadConfiguration";
         }
