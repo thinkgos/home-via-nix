@@ -36,7 +36,7 @@ in
       # 窗口管理
       {
         _args = [
-          (mkLuaInline ''mod .. " + Q"'')
+          (mkLuaInline "ALT + F4")
           (mkLuaInline "hl.dsp.window.close()")
           { description = "关闭窗口"; }
         ];

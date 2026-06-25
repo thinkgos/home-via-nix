@@ -19,7 +19,7 @@
       hotkey-overlay.title = "吞噬或驱逐窗口-右边";
     };
     # 窗口管理
-    "Mod+Q" = {
+    "Alt+F4" = {
       action.close-window = { };
       repeat = false;
       hotkey-overlay.title = "关闭窗口";
