@@ -453,11 +453,11 @@
         "rust-overlay": "rust-overlay_3"
       },
       "locked": {
-        "lastModified": 1781218893,
-        "narHash": "sha256-fjgFcNx0l0tomDN7xDzvGON5hFarRdtXfUwTOq7V2cM=",
+        "lastModified": 1782397126,
+        "narHash": "sha256-qAcE3WN4P1x60ooc7E9rqm2q5ZA09nAz4qroFgzb4cY=",
         "owner": "thinkgos",
         "repo": "goup-rs",
-        "rev": "992e8ea4537beb2fef2277638d191932168834c6",
+        "rev": "a1c27f776bdd06114d3a5c3ebf90282846523eb1",
         "type": "github"
       },
       "original": {
