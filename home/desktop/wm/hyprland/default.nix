@@ -39,6 +39,7 @@ in
     GDK_BACKEND = "wayland,x11,*"; # GTK 框架应用 使用 Wayland
     SDL_VIDEODRIVER = "wayland"; # 游戏及多媒体应用 使用 Wayland
     CLUTTER_BACKEND = "wayland"; # Clutter 框架应用 使用 Wayland
+    ELECTRON_OZONE_PLATFORM_HINT = "auto"; # Electron 应用 使用 Wayland
     # xdg
     XDG_SESSION_TYPE = "wayland";
     XDG_SESSION_DESKTOP = "Hyprland";
@@ -226,7 +227,7 @@ in
         content = ''
           hl.plugin.hyprsplit = require("hyprsplit")
           -- 配置工作空间数量
-          hl.plugin.hyprsplit.config( { num_workspaces = ${toString numWorkspaces} } )  
+          hl.plugin.hyprsplit.config( { num_workspaces = ${toString numWorkspaces} } )
         ''
         + (
           if customize.desktop.monitor-secondary != "" then
