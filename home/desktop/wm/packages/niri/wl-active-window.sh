@@ -21,7 +21,8 @@ OUTPUT_Y=$(echo "$FOCUSED_OUTPUT" | jq '.logical.y')
 
 WINDOW_SIZE=$(echo "$FOCUSED_WINDOW" | jq -r '.layout.window_size | "\(.[0])x\(.[1])"')
 
-echo "workspace_id" $WORKSPACE_ID
-echo "window_size" $WINDOW_SIZE
-echo "output_x" $OUTPUT_X
-echo "output_y" $OUTPUT_Y
+echo "FOCUSED_WORKSPACE" "$FOCUSED_WORKSPACE"
+echo "workspace_id" "$WORKSPACE_ID"
+echo "window_size" "$WINDOW_SIZE"
+echo "output_x" "$OUTPUT_X"
+echo "output_y" "$OUTPUT_Y"
