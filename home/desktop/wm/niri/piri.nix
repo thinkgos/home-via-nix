@@ -30,8 +30,8 @@
     # Empty plugin: executes commands when switching to empty workspaces
     [empty.terminal]
     command = "${pkgs.alacritty}/bin/alacritty"
-    [empty.primary]
-    command = "code"
+    #[empty.primary]
+    #command = "code"
 
     # Scratchpads configuration
     [piri.scratchpad]
