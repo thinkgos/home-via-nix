@@ -52,6 +52,7 @@
 
       # mcp
       # codegraph
+      "plugin:claude-code-home-manager:codegraph"
       "mcp__plugin_claude-code-home-manager_codegraph__codegraph__explore"
       "mcp__plugin_claude-code-home-manager_codegraph__codegraph__search"
       "mcp__plugin_claude-code-home-manager_codegraph__codegraph__node"
