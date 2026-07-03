@@ -49,7 +49,7 @@
     extensions = [
       (config.lib.vicinae.mkExtension {
         name = "nix";
-        npmDepsHash = "sha256-HPWNUznCWVPz39PlPEBR7GpgbC0DuIAvVBdB2GAs47A=";
+        npmDepsHash = "sha256-TEyCCDjAtRYX2uH2TpLfe4/hTzyfMiyDhzVdyQXhEus=";
         src = pkgs.vicinae-extensions + "/extensions/nix";
       })
       (config.lib.vicinae.mkExtension {
@@ -69,7 +69,7 @@
       })
       (config.lib.vicinae.mkExtension {
         name = "pass";
-        npmDepsHash = "sha256-fKpnxTn38WHo3oyrr3dXnEuVOQvj7oJyRn1Pf0uVN3Y=";
+        npmDepsHash = "sha256-O+Wfka7rBaLZbGReOWen05M1Qvxd5IVNNC79y71zhmg=";
         src = pkgs.vicinae-extensions + "/extensions/pass";
       })
       (config.lib.vicinae.mkExtension {

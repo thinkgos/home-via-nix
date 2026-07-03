@@ -65,11 +65,18 @@
     fzf = {
       enable = true;
       enableZshIntegration = true;
-      changeDirWidgetOptions = [
-        "--walker-skip .git,node_modules,target"
-        "--preview 'tree -C -L 3 {}'"
-      ];
       defaultCommand = "fd --hidden";
+      changeDirWidget = {
+        command = "fd --hidden";
+        options = [
+          "--walker-skip .git,node_modules,target"
+          "--preview 'tree -C -L 3 {}'"
+        ];
+      };
+      historyWidget = {
+        command = "";
+        options = [ ];
+      };
     };
 
     skim = {

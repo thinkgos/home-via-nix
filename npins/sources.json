@@ -9,9 +9,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "27d2b04f9ce48bdc69c29cd25d91d854fc8a835f",
-      "url": "https://github.com/vicinaehq/extensions/archive/27d2b04f9ce48bdc69c29cd25d91d854fc8a835f.tar.gz",
-      "hash": "sha256-JUv1Hf0P0B3k/c8/PyaqMQn+1VOSPJrB7EP3Us8fyFo="
+      "revision": "afb84fe4b5253777ff82db8e19e6cc0c9b7f811f",
+      "url": "https://github.com/vicinaehq/extensions/archive/afb84fe4b5253777ff82db8e19e6cc0c9b7f811f.tar.gz",
+      "hash": "sha256-Non+frT3WG0TN60zCq63m8+d7yNmCCMaI363kZaDmPM="
     },
     "ghostty-cursor-shaders": {
       "type": "Git",
@@ -43,8 +43,8 @@
       "type": "Channel",
       "name": "nixpkgs-unstable",
       "artifact": "nixexprs.tar.xz",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1023798.e1c1b84752fb/nixexprs.tar.xz",
-      "hash": "sha256-Yf2TcFLw0r574fP/5eUN6N8el70HbYNdbDeeHpnK2eQ="
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1025900.e8273b29fe13/nixexprs.tar.xz",
+      "hash": "sha256-mFP086y1bNA1g9AsY/pCue3H3W2R7ayroHyRbZrcMf0="
     }
   },
   "version": 8
