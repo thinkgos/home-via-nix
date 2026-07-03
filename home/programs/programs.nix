@@ -10,8 +10,7 @@
     ./nix.nix
     ./zellij/zellij.nix
     ./starship/starship.nix
-    ./git.nix
-    ./github.nix
+    ./git/git.nix
     ./ansible.nix
     ./tldr.nix
   ];

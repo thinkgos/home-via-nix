@@ -5,9 +5,13 @@
   ...
 }:
 {
+  imports = [
+    ./git-hook/git-hook.nix
+    ./github.nix
+  ];
+
   home.packages = with pkgs; [
     gfold # 跟踪git仓库
-    pre-commit # git pre-commit hook
   ];
 
   # Home Manager is pretty good at managing dotfiles.
@@ -20,7 +24,7 @@
     # - subject: start with verb (such as 'change'), 50-character line
 
     # body: 72-character wrapped.
-    # This should answer:              
+    # This should answer:
     # * Why was this change necessary?
     # * How does it address the problem?
     # * Are there any side effects?
