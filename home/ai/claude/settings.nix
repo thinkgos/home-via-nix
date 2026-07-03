@@ -53,14 +53,14 @@
       # mcp
       # codegraph
       "Plugin:claude-code-home-manager:codegraph"
-      "mcp__plugin_claude-code-home-manager_codegraph__codegraph__explore"
-      "mcp__plugin_claude-code-home-manager_codegraph__codegraph__search"
-      "mcp__plugin_claude-code-home-manager_codegraph__codegraph__node"
-      "mcp__plugin_claude-code-home-manager_codegraph__codegraph__callers"
-      "mcp__plugin_claude-code-home-manager_codegraph__codegraph__callees"
-      "mcp__plugin_claude-code-home-manager_codegraph__codegraph__impact"
-      "mcp__plugin_claude-code-home-manager_codegraph__codegraph__files"
-      "mcp__plugin_claude-code-home-manager_codegraph__codegraph__status"
+      "mcp__plugin_claude-code-home-manager_codegraph__codegraph_explore"
+      "mcp__plugin_claude-code-home-manager_codegraph__codegraph_search"
+      "mcp__plugin_claude-code-home-manager_codegraph__codegraph_node"
+      "mcp__plugin_claude-code-home-manager_codegraph__codegraph_callers"
+      "mcp__plugin_claude-code-home-manager_codegraph__codegraph_callees"
+      "mcp__plugin_claude-code-home-manager_codegraph__codegraph_impact"
+      "mcp__plugin_claude-code-home-manager_codegraph__codegraph_files"
+      "mcp__plugin_claude-code-home-manager_codegraph__codegraph_status"
     ];
     ask = [
       "Bash(git commit *)"
