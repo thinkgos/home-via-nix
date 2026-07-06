@@ -46,6 +46,10 @@
     grpcurl
     grpcui
 
+    # protobuf
+    protobuf
+    buf
+
     #! nats
     natscli
     nkeys
