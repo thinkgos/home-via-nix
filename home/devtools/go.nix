@@ -25,8 +25,6 @@ in
     goperf # Tools and packages for analyzing Go benchmark results
     golangci-lint # Fast linters Runner for Go
     goreleaser # Deliver Go binaries as fast and easily as possible
-    wire # 依赖注入
-    go-swag # swag
     goup-rs
   ];
 }
