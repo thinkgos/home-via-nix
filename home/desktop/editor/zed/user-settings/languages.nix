@@ -45,4 +45,15 @@
       };
     };
   };
+
+  "Go" = {
+    format_on_save = "on";
+    formatter = "language_server";
+    code_actions_on_format = {
+      "source.organizeImports" = true;
+    };
+    language_servers = [
+      "gopls"
+    ];
+  };
 }

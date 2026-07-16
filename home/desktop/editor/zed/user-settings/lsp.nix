@@ -46,6 +46,34 @@
     };
   };
 
+  # go
+  gopls = {
+    initialization_options = {
+      hints = {
+        assignVariableTypes = true;
+        compositeLiteralFields = true;
+        compositeLiteralTypes = true;
+        constantValues = true;
+        functionTypeParameters = true;
+        parameterNames = true;
+        rangeVariableTypes = true;
+      };
+      codelenses = {
+        test = true;
+        generate = true;
+        regenerate_cgo = true;
+        tidy = true;
+        upgrade_dependency = true;
+        vendor = false;
+        vulncheck = true;
+      };
+      analyses = {
+        unusedparams = true;
+        shadow = true;
+      };
+    };
+  };
+
   # nixd
   nixd = {
     binary = {
