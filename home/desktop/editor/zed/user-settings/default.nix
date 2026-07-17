@@ -70,6 +70,9 @@ in
     blinking = "on";
     copy_on_select = true;
   };
+  preview_tabs = {
+    enabled = false;
+  };
   colorize_brackets = true;
   autosave = {
     after_delay = {
