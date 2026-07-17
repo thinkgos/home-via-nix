@@ -56,4 +56,15 @@
       "gopls"
     ];
   };
+
+  "Proto" = {
+    format_on_save = "on";
+    formatter = "language_server";
+    language_servers = [
+      "buf"
+      "!protols"
+      "!protobuf-language-server"
+      "..."
+    ];
+  };
 }

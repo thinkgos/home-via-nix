@@ -18,6 +18,7 @@ let
   };
 in
 {
+  # 默认配置: https://github.com/zed-industries/zed/blob/main/assets/settings/default.json
   project_panel = {
     dock = "left";
   };
