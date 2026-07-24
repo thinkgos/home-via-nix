@@ -6,7 +6,6 @@
 }:
 {
   # Niri 动画配置
-  # 风格: 基于 HYDE-dynamic, 使用 spring 物理弹簧动画
   # https://github.com/sodiboo/niri-flake/blob/main/docs.md#programsnirisettingsanimations
   programs.niri.settings.animations = {
     enable = true;
