@@ -9,6 +9,7 @@
   # https://github.com/kennylevinsen/wlsunset
   services.wlsunset = {
     enable = true;
+    duration = 1800;
     gamma = 1.0;
     output = null;
     # latitude = 26.07;
