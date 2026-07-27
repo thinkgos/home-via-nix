@@ -36,10 +36,10 @@
     # 用户debug配置(debug.json)可以被zed更新
     # https://zed.dev/docs/debugger
     mutableUserDebug = true;
-    # userDebug = {};
+    # userDebug = [];
     # 用户keymaps配置(keymaps.json)可以被zed更新
     mutableUserKeymaps = true;
-    # userKeymaps = {};
+    # userKeymaps = [];
     # 用户settings配置(settings.json)可以被zed更新
     # https://zed.dev/docs/reference/all-settings
     mutableUserSettings = true;
@@ -47,7 +47,7 @@
     userSettings = import ./user-settings { inherit config lib pkgs; };
     # 用户tasks配置(tasks.json)可以被zed更新
     mutableUserTasks = true;
-    # userTasks = {};
+    userTasks = import ./user-tasks { inherit config lib pkgs; };
     # 自定义theme
     # themes = {};
   };
