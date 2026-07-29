@@ -13,7 +13,7 @@
     # extraArgs = [];
     events = {
       lock =
-        "/bin/pidof swaylock || /bin/swaylock & /bin/sleep 1 && "
+        "/bin/pidof swaylock || GLYCIN_DISABLE_SANDBOX=1 /bin/swaylock & /bin/sleep 1 && "
         + (
           if (customize.desktop.window == "hyprland") then
             "${pkgs.hyprland}/bin/hyprctl dispatch 'hl.dsp.dpms({ action = \"disable\" })'"
@@ -53,5 +53,13 @@
         # resumeCommand = "";
       }
     ];
+  };
+
+  xdg.configFile."systemd/user/swayidle.service.d/override.conf" = {
+    enable = true;
+    text = ''
+      [Service]
+      Environment=PATH=${lib.makeBinPath [ pkgs.bash ]}:/bin:/usr/bin:/usr/local/bin
+    '';
   };
 }

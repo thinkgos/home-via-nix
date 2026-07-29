@@ -11,7 +11,7 @@
     font-size=20
     ignore-empty-password
     show-failed-attempts
-    image=${config.xdg.dataHome}/wallpapers/scenery/5.jpg
+    image=${pkgs.home-assets}/wallpapers/scenery/5.jpg
     indicator-radius=120
     indicator-thickness=20
     indicator-caps-lock
