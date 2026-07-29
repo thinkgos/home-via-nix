@@ -13,7 +13,7 @@
     # extraArgs = [];
     events = {
       lock =
-        "/bin/pidof swaylock || swaylock & /bin/sleep 1 && "
+        "/bin/pidof swaylock || /bin/swaylock & /bin/sleep 1 && "
         + (
           if (customize.desktop.window == "hyprland") then
             "${pkgs.hyprland}/bin/hyprctl dispatch 'hl.dsp.dpms({ action = \"disable\" })'"
