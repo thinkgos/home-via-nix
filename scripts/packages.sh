@@ -14,7 +14,8 @@ sudo apt install -y \
 	thermald \
 	power-profiles-daemon \
 	gnome-keyring seahorse \
-	language-pack-zh-hans
+	language-pack-zh-hans \
+	swaylock
 
 sudo apt install -y \
 	gvfs-backends gvfs-fuse smbclient cifs-utils

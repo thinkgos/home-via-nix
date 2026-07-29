@@ -11,8 +11,8 @@
     enable = true;
     settings = {
       general = {
-        lock_cmd = "/bin/pidof hyprlock || ${pkgs.hyprlock}/bin/hyprlock"; # avoid starting multiple hyprlock instances.
-        # unlock_cmd = "/bin/loginctl unlock-session"; # kills hyprlock when unlocking (this is always run when "/bin/loginctl unlock-session" is called)
+        lock_cmd = "/bin/pidof swaylock || swaylock"; # avoid starting multiple swaylock instances.
+        # unlock_cmd = "/bin/loginctl unlock-session"; # kills swaylock when unlocking (this is always run when "/bin/loginctl unlock-session" is called)
         before_sleep_cmd = "/bin/loginctl lock-session"; # ensures that the session is locked before going to sleep
         after_sleep_cmd = "${pkgs.hyprland}/bin/hyprctl dispatch 'hl.dsp.dpms({ action = \"enable\" })'"; # turn of screen after sleep (not strictly necessary, but just in case)
         # 是否忽略来自 Firefox/Steam 等应用的"禁止休眠"请求

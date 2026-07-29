@@ -7,7 +7,6 @@
 {
   # 屏幕锁定
   imports = [
-    ./hyprlock.nix
-    # ./swaylock.nix
+    ./swaylock.nix
   ];
 }

@@ -14,10 +14,10 @@ sudo usermod -aG video $USER
 sudo usermod -aG input $USER
 sudo usermod -aG render $USER
 
-log::info "配置hyprlock的pam配置..."
-sudo tee /etc/pam.d/hyprlock >/dev/null <<EOF
-#%PAM-1.0
-auth      required      pam_unix.so
-@include common-account
-@include common-session
-EOF
+# log::info "配置hyprlock的pam配置..."
+# sudo tee /etc/pam.d/hyprlock >/dev/null <<EOF
+# # PAM configuration file for hyprlock
+# # the 'login' configuration file (see /etc/pam.d/login)
+
+# auth        include     login
+# EOF

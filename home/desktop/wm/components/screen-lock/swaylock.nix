@@ -6,64 +6,50 @@
 {
   # 屏幕锁定
   # https://github.com/swaywm/swaylock
-  # BUG: 没调试成功
-  programs.swaylock = {
-    enable = true;
-    package = pkgs.swaylock-effects;
-    settings = {
-      ignore-empty-password = true;
-      disable-caps-lock-text = true;
-      font = "MonaspaceArgon NF";
-      grace = 300;
+  xdg.configFile."swaylock/config".text = ''
+    font=JetBrainsMono Nerd Font Mono
+    font-size=20
+    ignore-empty-password
+    show-failed-attempts
+    image=${config.xdg.dataHome}/wallpapers/scenery/5.jpg
+    indicator-radius=120
+    indicator-thickness=20
+    indicator-caps-lock
+    line-uses-inside
+    separator-color=#181926
 
-      clock = true;
-      timestr = "%R";
-      datestr = "%a, %e of %B";
+    # 默认状态(环: 浅蓝, 内部: 深紫半透明)
+    color=1e1e2eff
+    ring-color=b4befeff
+    inside-color=1111beee
+    key-hl-color=a6e3a1ff
+    bs-hl-color=f38ba8ee
+    disable-caps-lock-text
+    caps-lock-bs-hl-color=#ed8796
+    caps-lock-key-hl-color=#f5a97f
 
-      image = "${config.xdg.dataHome}/wallpapers/scenery/5.jpg";
+    # 输入验证中(验证状态: 蓝/青)
+    ring-ver-color=89b4faff
+    inside-ver-color=1111beee
 
-      fade-in = "0.2";
+    # 密码错误 (错误状态: 柔和红)
+    ring-wrong-color=f38ba8ff
+    inside-wrong-color=1111beee
 
-      effect-blur = "10x2";
-      effect-scale = "0.1";
+    # 清除输入(清除状态: 黄)
+    ring-clear-color=f9e2afff
+    inside-clear-color=1111beee
 
-      indicator = true;
-      indicator-radius = 240;
-      indicator-thickness = 20;
-      indicator-caps-lock = true;
+    # 大写锁定(Caps Lock: 橙)
+    ring-caps-lock-color=fab387ff
+    inside-caps-lock-color=1111beee
 
-      key-hl-color = "#8aadf4";
-      bs-hl-color = "#ed8796";
-      caps-lock-key-hl-color = "#f5a97f";
-      caps-lock-bs-hl-color = "#ed8796";
+    # 文字颜色
+    text-color=cdd6f4ff
+    text-clear-color=cdd6f4ff
+    text-caps-lock-color=fab387ff
+    text-ver-color=89b4faff
+    text-wrong-color=f38ba8ff
+  '';
 
-      separator-color = "#181926";
-
-      inside-color = "#24273a";
-      inside-clear-color = "#24273a";
-      inside-caps-lock-color = "#24273a";
-      inside-ver-color = "#24273a";
-      inside-wrong-color = "#24273a";
-
-      ring-color = "#1e2030";
-      ring-clear-color = "#8aadf4";
-      ring-caps-lock-color = "231f20D9";
-      ring-ver-color = "#1e2030";
-      ring-wrong-color = "#ed8796";
-
-      line-color = "#8aadf4";
-      line-clear-color = "#8aadf4";
-      line-caps-lock-color = "#f5a97f";
-      line-ver-color = "#181926";
-      line-wrong-color = "#ed8796";
-
-      text-color = "#8aadf4";
-      text-clear-color = "#24273a";
-      text-caps-lock-color = "#f5a97f";
-      text-ver-color = "#24273a";
-      text-wrong-color = "#24273a";
-
-      debug = false;
-    };
-  };
 }
