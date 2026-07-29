@@ -59,7 +59,12 @@
     enable = true;
     text = ''
       [Service]
-      Environment=PATH=${lib.makeBinPath [ pkgs.bash ]}:/bin:/usr/bin:/usr/local/bin
+      Environment=PATH=${
+        lib.makeBinPath [
+          pkgs.bash
+          pkgs.bubblewrap
+        ]
+      }
     '';
   };
 }
