@@ -8,7 +8,7 @@
   # https://github.com/swaywm/swaylock
   programs.swaylock = {
     enable = true;
-    package = null;
+    package = null; # NOTE: Non-NixOS 需从系统安装.
     settings = {
       font = "JetBrainsMono Nerd Font Mono";
       font-size = 20;
