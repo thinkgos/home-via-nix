@@ -25,24 +25,22 @@
 
     window-open = {
       enable = true;
-      # kind = {
-      #   easing = {
-      #     curve = "ease-out-quad";
-      #     duration-ms = 200;
-      #   };
-      # };
-      # duration-ms = 250;
-      # curve = "linear";
+      kind = {
+        easing = {
+          curve = "linear";
+          duration-ms = 250;
+        };
+      };
       custom-shader = builtins.readFile ./window-open.glsl;
     };
     window-close = {
       enable = true;
-      # kind = {
-      #   easing = {
-      #     curve = "ease-out-cubic";
-      #     duration-ms = 200;
-      #   };
-      # };
+      kind = {
+        easing = {
+          curve = "linear";
+          duration-ms = 250;
+        };
+      };
       custom-shader = builtins.readFile ./window-close.glsl;
     };
 

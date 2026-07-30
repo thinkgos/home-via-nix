@@ -1,8 +1,8 @@
 vec4 fall_and_rotate(vec3 coords_geo, vec3 size_geo) {
     float fall_distance = 1200.0;       // 下落像素距离
     float rotation_amplitude = 0.5;     // 旋转幅度系数
-    float fade_speed = 0.5;             // 淡出速度 (0.5-2.0)
-    float progress_curve = 2.0;         // 进度曲线指数 (1.0=线性, 2.0=二次)
+    float fade_speed = 1.8;             // 淡出速度 (0.5-2.0)
+    float progress_curve = 1.5;         // 进度曲线指数 (1.0=线性, 2.0=二次)
 
     // 进度曲线: 调整下落和旋转的加速度
     float progress = pow(niri_clamped_progress, progress_curve);
