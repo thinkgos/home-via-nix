@@ -15,7 +15,7 @@ sudo apt install -y \
 	power-profiles-daemon \
 	gnome-keyring seahorse \
 	language-pack-zh-hans \
-	swaylock
+	swaylock bubblewrap
 
 sudo apt install -y \
 	gvfs-backends gvfs-fuse smbclient cifs-utils
