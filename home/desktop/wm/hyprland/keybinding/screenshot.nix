@@ -42,7 +42,7 @@ in
       {
         _args = [
           (mkLuaInline ''mod .. " + Print"'')
-          (mkLuaInline ''hl.dsp.exec_cmd("${pkgs.flameshot}/bin/flameshot gui")'')
+          (mkLuaInline ''hl.dsp.exec_cmd("${pkgs.hvn}/bin/hvn-screen -m region-annotate")'')
           { description = "选框截图标注"; }
         ];
       }

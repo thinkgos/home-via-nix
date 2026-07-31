@@ -39,8 +39,9 @@
     };
     "Mod+Print" = {
       action.spawn = [
-        "${pkgs.flameshot}/bin/flameshot"
-        "gui"
+        "${pkgs.hvn}/bin/hvn-screen"
+        "-m"
+        "region-annotate"
       ];
       repeat = false;
       hotkey-overlay.title = "选框截图标注";
