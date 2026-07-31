@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  customize,
   ...
 }:
 {
@@ -17,8 +18,10 @@
     };
   };
 
+  # https://github.com/niri-wm/niri/issues/117
+  # https://github.com/flameshot-org/flameshot/issues/3605
   services.flameshot = {
-    enable = true;
+    enable = customize.desktop.window == "hyprland"; # BUG: 暂不支持niri
     # https://github.com/flameshot-org/flameshot/blob/master/flameshot.example.ini
     settings = {
       General = {
