@@ -9,6 +9,7 @@
     ./mcp.nix
     ./claude
     # ./codex
+    ./herdr/herdr.nix
   ];
 
   home.packages = with pkgs; [
