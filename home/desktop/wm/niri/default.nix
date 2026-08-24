@@ -85,7 +85,7 @@
       screenshot-path = "~/Pictures/screenshots/%Y%m%d%H%M%S.png";
       xwayland-satellite = {
         enable = true;
-        path = lib.getExe pkgs.xwayland-satellite-unstable;
+        path = lib.getExe pkgs.xwayland-satellite;
       };
       cursor = {
         theme = customize.cursor.name;

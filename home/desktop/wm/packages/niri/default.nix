@@ -15,7 +15,7 @@
     ];
     runtimeInputs = with pkgs; [
       jq
-      niri-unstable
+      niri
     ];
   };
 }
