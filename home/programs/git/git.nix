@@ -59,6 +59,7 @@
         diff.colorMoved = "default";
         credential.helper = "store";
         commit.template = "~/.config/git/.gitmessage";
+        init.defaultBranch = "main";
       };
     };
 
