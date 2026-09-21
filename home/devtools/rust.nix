@@ -20,7 +20,7 @@
     cargo-generate # 从模板生成Rust项目
     cargo-bloat # 检查二进制文件中的大依赖项
     cargo-binutils # llvm二进制工具
-    cargo-semver-checks # 检查crate是否符合语义版本规范
+    # cargo-semver-checks # 检查crate是否符合语义版本规范
     tokio-console # tokio任务调试工具
     rustup # rust版本管理
   ];
