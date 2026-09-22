@@ -8,7 +8,7 @@
   imports = [
     ./mcp.nix
     ./claude
-    # ./codex
+    ./codex
     ./herdr/herdr.nix
   ];
 
