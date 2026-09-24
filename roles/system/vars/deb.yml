@@ -7,3 +7,6 @@ system_deb_packages:
   - libfontconfig1-dev
   - libxkbcommon-dev
   - libxkbcommon-x11-dev
+  - musl
+  - musl-dev
+  - musl-tools
