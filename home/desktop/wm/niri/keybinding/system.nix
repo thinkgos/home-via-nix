@@ -12,7 +12,12 @@
       hotkey-overlay.title = "视图预览";
     };
     "Mod+Alt+H" = {
-      action.spawn = [ "${pkgs.hvn}/bin/hvn-toggle-waybar" ];
+      action.spawn = [
+        "/bin/pkill"
+        "-SIGUSR1"
+        "-f"
+        "waybar"
+      ];
       repeat = false;
       hotkey-overlay.title = "隐藏/显示waybar";
     };

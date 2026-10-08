@@ -21,7 +21,7 @@ in
       {
         _args = [
           (mkLuaInline ''mod .. " + ALT + H"'')
-          (mkLuaInline ''hl.dsp.exec_cmd("${pkgs.hvn}/bin/hvn-toggle-waybar")'')
+          (mkLuaInline ''hl.dsp.exec_cmd("/bin/pkill -SIGUSR1 -f waybar")'')
           { description = "隐藏/显示waybar"; }
         ];
       }
