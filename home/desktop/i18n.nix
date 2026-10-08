@@ -6,7 +6,7 @@
 }:
 {
   home.sessionVariables = {
-    GTK_IM_MODULE = "fcitx";
+    # GTK_IM_MODULE = "fcitx"; # https://fcitx-im.org/wiki/Using_Fcitx_5_on_Wayland/zh-cn
     QT_IM_MODULE = "fcitx";
     QT_IM_MODULES = "wayland;fcitx;ibus";
     XMODIFIERS = "@im=fcitx";
