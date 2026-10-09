@@ -98,7 +98,7 @@
       gtk-wide-tabs = false;
 
       # background
-      background-opacity = 0.85;
+      background-opacity = 0.90;
 
       # cursor
       cursor-style = "bar";

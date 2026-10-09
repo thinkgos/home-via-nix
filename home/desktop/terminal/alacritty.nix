@@ -17,7 +17,7 @@
       };
       window = {
         decorations = "None";
-        opacity = 0.85;
+        opacity = 0.90;
         blur = true;
         startup_mode = "Windowed";
         position = {

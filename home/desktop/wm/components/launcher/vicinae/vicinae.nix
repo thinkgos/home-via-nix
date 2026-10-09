@@ -38,7 +38,7 @@
         };
       };
       launcher_window = {
-        opacity = 0.85;
+        opacity = 0.90;
         layer_shell = {
           enabled = false;
         };

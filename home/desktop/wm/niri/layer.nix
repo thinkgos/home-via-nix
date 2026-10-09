@@ -12,18 +12,18 @@
       matches = [ { namespace = "^wpaperd.*"; } ];
       place-within-backdrop = true;
     }
-    # {
-    #   matches = [ { namespace = "^wofi$"; } ];
-    #   background-effect = {
-    #     blur = true;
-    #   };
-    # }
-    # {
-    #   matches = [ { namespace = "^rofi$"; } ];
-    #   background-effect = {
-    #     blur = true;
-    #   };
-    # }
+    {
+      matches = [ { namespace = "^waybar$"; } ];
+      background-effect = {
+        blur = true;
+      };
+    }
+    {
+      matches = [ { namespace = "^(rofi|wofi|fuzzel)$"; } ];
+      background-effect = {
+        blur = true;
+      };
+    }
     # {
     #   matches = [ { namespace = "^vicinae$"; } ];
     #   background-effect = {

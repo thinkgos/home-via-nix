@@ -49,7 +49,7 @@ log::debug "模式: $MODE"
 
 case "$MODE" in
 history-overview)
-    SELECTED=$(cliphist list | fuzzel --dmenu --anchor top-right --x-margin=220 --y-margin=0 --width 60 --mesg "📋 剪贴板" --config ~/.config/fuzzel/fuzzel.ini)
+    SELECTED=$(cliphist list | fuzzel --namespace fuzzel --dmenu --anchor top-right --x-margin=220 --y-margin=0 --width 60 --mesg "📋 剪贴板" --config ~/.config/fuzzel/fuzzel.ini)
     if [ -z "$SELECTED" ]; then
         log::debug "用户取消选择"
         exit 0

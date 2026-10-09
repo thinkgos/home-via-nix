@@ -25,7 +25,7 @@ in
       '';
       default_cursor_style = "BlinkingBar";
       window_decorations = "NONE";
-      window_background_opacity = 0.85;
+      window_background_opacity = 0.90;
       window_padding = {
         left = 8;
         right = 8;

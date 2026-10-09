@@ -124,6 +124,9 @@
         bottom-left = 0.0;
         bottom-right = 0.0;
       };
+      # background-effect = {
+      #   xray = true;
+      # };
     }
     # 浮动终端窗口规则
     {
@@ -142,6 +145,9 @@
         y = 40;
         relative-to = "top-right";
       };
+      # background-effect = {
+      #   xray = true;
+      # };
     }
     # 交互式录屏
     {
