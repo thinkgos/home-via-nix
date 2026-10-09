@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 
 source $(cd "$(dirname "${BASH_SOURCE[0]}")/lib/" && pwd)/log4sh.sh
 
