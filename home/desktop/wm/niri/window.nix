@@ -37,7 +37,7 @@
     # 开启blur+opacity
     {
       matches = [
-        { app-id = "google-chrome"; }
+        # { app-id = "google-chrome"; }
         { app-id = "com.microsoft.VSCode"; }
         { app-id = "dev.zed.Zed"; }
         { app-id = "DBeaver"; }
