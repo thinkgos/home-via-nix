@@ -19,8 +19,39 @@
       clip-to-geometry = true;
       draw-border-with-background = false;
     }
+    # 开启blur - 所有终端
+    {
+      matches = [
+        { app-id = "Alacritty"; }
+        { app-id = "kitty"; }
+        { app-id = "com.mitchellh.ghostty"; }
+        { app-id = "org.wezfurlong.wezterm"; }
+        { app-id = "dev.warp.Warp"; }
+        { app-id = "com.microsoft.VSCode"; }
+        { app-id = "dev.zed.Zed"; }
+      ];
+      background-effect = {
+        blur = true;
+      };
+    }
+    # 开启blur+opacity
+    {
+      matches = [
+        { app-id = "google-chrome"; }
+        { app-id = "com.microsoft.VSCode"; }
+        { app-id = "dev.zed.Zed"; }
+        { app-id = "DBeaver"; }
+        { app-id = "com.alibabainc.dingtalk"; }
+        { app-id = "wechat"; }
+        { app-id = "navop"; }
+      ];
+      opacity = 0.88;
+      background-effect = {
+        blur = true;
+      };
+    }
 
-    # 截图标注/压缩工具
+    # 开启浮动 - 截图标注/压缩工具
     {
       matches = [
         { app-id = "^flameshot.*"; }
@@ -125,7 +156,7 @@
         bottom-right = 0.0;
       };
       # background-effect = {
-      #   xray = true;
+      #   blur = true;
       # };
     }
     # 浮动终端窗口规则
@@ -146,7 +177,7 @@
         relative-to = "top-right";
       };
       # background-effect = {
-      #   xray = true;
+      #   blur = true;
       # };
     }
     # 交互式录屏

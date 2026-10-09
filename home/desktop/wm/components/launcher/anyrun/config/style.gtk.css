@@ -48,7 +48,7 @@ window {
   margin: 0px;
   background: alpha(@base, 0.85);
   border: 2px solid @surface1;
-  border-radius: 20px;
+  border-radius: 15px;
 }
 
 /* Entry text field */
@@ -56,7 +56,7 @@ text {
   padding: 5px;
   min-height: 30px;
   background: transparent;
-  border-radius: 20px;
+  border-radius: 15px;
   color: @text;
 }
 

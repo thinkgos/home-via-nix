@@ -95,7 +95,7 @@
       # tab_powerline_style = "angled";
 
       # background
-      background_opacity = 0.90;
+      background_opacity = 0.88;
       background_blur = 0;
       remember_window_size = "yes";
 
