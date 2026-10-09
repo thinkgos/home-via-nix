@@ -11,9 +11,9 @@
     dotDir = "${config.xdg.configHome}/zsh";
     envExtra = ''
       # develop tools
-      ${builtins.readFile ./env-develop/go}
-      ${builtins.readFile ./env-develop/cargo}
-      ${builtins.readFile ./env-develop/goup}
+      ${builtins.readFile ./templates/go}
+      ${builtins.readFile ./templates/cargo}
+      ${builtins.readFile ./templates/goup}
       source "${config.xdg.configHome}/zsh/.zshrc-credentials"
     '';
 
@@ -83,7 +83,7 @@
     if [ ! -f "$file" ]; then
       mkdir -p "$(dirname "$file")"
       cat <<'EOF' > "$file"
-    ${builtins.readFile ./env-develop/template-credentials}
+    ${builtins.readFile ./templates/credentials}
     EOF
     fi
   '';

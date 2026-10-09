@@ -9,7 +9,9 @@ sudo tee /etc/udev/rules.d/85-sunshine.rules >/dev/null <<EOF
 KERNEL=="uinput", GROUP="input", MODE="0660", OPTIONS+="static_node=uinput"
 EOF
 
-# codex 沙箱问题, codex打包了bubblewrap, 需要nix的apparmor规则
+# codex 沙箱问题, codex打包了bubblewrap, 需要nix中bubblewrap的apparmor规则
+log::info "配置bubblewrap apparmor规则..."
+
 sudo tee /etc/apparmor.d/local-nix-bwrap >/dev/null <<'EOF'
 abi <abi/4.0>,
 include <tunables/global>
