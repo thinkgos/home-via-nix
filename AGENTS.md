@@ -65,7 +65,7 @@
 ├── overlays/                 # Nixpkgs overlays
 ├── packages/                 # Nix 包（hvn、ohlib、ohshell、home-assets）
 ├── npins/                    # Nix pins 依赖管理
-├── scripts/                  # 系统脚本（bootstrap、wayland-session、udev-rules 等）
+├── scripts/                  # 系统脚本（bootstrap、wayland-session、rules 等）
 ├── docs/                     # 文档目录
 │   ├── system/               # 系统文档（issues、keybinding、manual-install）
 │   └── terminal/             # 终端文档（keybinding）

@@ -52,5 +52,5 @@ fi
 source ./scripts/packages.sh
 source ./scripts/wayland-session.sh -s $SESSION
 source ./scripts/general-settings.sh
-source ./scripts/udev-rules.sh
+source ./scripts/rules.sh
 source ./scripts/cleanup.sh

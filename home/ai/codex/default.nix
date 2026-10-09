@@ -5,7 +5,7 @@
   ...
 }:
 {
-  # https://code.claude.com/docs/zh-CN/settings
+  # https://learn.chatgpt.com/docs/configuration
   # https://nix-community.github.io/home-manager/options/home-manager/programs/codex.html
   programs.codex = {
     enable = true;
@@ -13,7 +13,9 @@
     marketplaces = import ./marketplaces.nix { inherit config lib pkgs; };
     plugins = import ./plugins.nix { inherit config lib pkgs; };
     #  https://github.com/openai/codex/blob/main/codex-rs/config.md
-    settings = null; # import ./settings.nix { inherit config lib pkgs; };
+    mutableSettings = true;
+    # settings = null;
+    settings = import ./settings.nix { inherit config lib pkgs; };
     # 全局上下文
     # context = ""; # CODEX_HOME/AGENTS.md
     # contextOverride = null; # CODEX_HOME/AGENTS.override.md

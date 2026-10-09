@@ -5,6 +5,7 @@
   ...
 }:
 {
+  # https://code.claude.com/docs/zh-CN/settings
   # https://nix-community.github.io/home-manager/options/home-manager/programs/claude-code.html
   programs.claude-code = {
     enable = true;
