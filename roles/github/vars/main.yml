@@ -34,7 +34,7 @@ github_apps:
   - name: "cc-switch"
     description: "cc-switch"
     repo: "farion1231/cc-switch"
-    version: 4.0.5
+    version: 4.0.8
     package_name: "cc-switch"
     debian_pattern: "CC-Switch-v__VERSION__-Linux-x86_64.deb"
     redhat_pattern: "CC-Switch-v__VERSION__-Linux-x86_64.rpm"
