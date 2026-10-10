@@ -5,6 +5,8 @@
   ...
 }:
 {
+  sandbox_mode = "workspace-write";
+  model_provider = "mimo";
   model_providers = {
     mimo = {
       name = "Xiaomi MiMo";
@@ -18,5 +20,11 @@
       wire_api = "responses";
       env_key = "AI_DEEPSEEK_API_KEY";
     };
+  };
+  # Extra settings used only when sandbox_mode = "workspace-write".
+  sandbox_workspace_write = {
+    network_access = true;
+    exclude_tmpdir_env_var = false;
+    exclude_slash_tmp = false;
   };
 }

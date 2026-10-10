@@ -11,7 +11,9 @@
     model = "mimo-v2.5-pro";
     model_reasoning_effort = "high";
     model_context_window = 1048576;
+    model_reasoning_summary = "none";
     approval_policy = "on-request";
+    approvals_reviewer = "auto_review";
     sandbox_mode = "workspace-write";
     web_search = "disabled";
     model_catalog_json = "model-catalog-mimo.json";
@@ -22,7 +24,9 @@
     model = "deepseek-flash";
     model_reasoning_effort = "high";
     model_context_window = 1048576;
+    model_reasoning_summary = "none";
     approval_policy = "on-request";
+    approvals_reviewer = "auto_review";
     sandbox_mode = "workspace-write";
     web_search = "disabled";
     model_catalog_json = "model-catalog-deepseek.json";
