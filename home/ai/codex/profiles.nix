@@ -11,12 +11,21 @@
     model = "mimo-v2.5-pro";
     model_reasoning_effort = "high";
     model_context_window = 1048576;
-    # 开启模型推理摘要，如果设置为false，即使设置了 model_reasoning_effort 也不会生效
-    model_supports_reasoning_summaries = true;
-    model_reasoning_summary = "none";
     approval_policy = "on-request";
     sandbox_mode = "workspace-write";
     web_search = "disabled";
     model_catalog_json = "model-catalog-mimo.json";
+  };
+  # https://api-docs.deepseek.com/zh-cn/quick_start/agent_integrations/codex
+  deepseek = {
+    model_provider = "deepseek";
+    model = "deepseek-flash";
+    model_reasoning_effort = "high";
+    model_context_window = 1048576;
+    approval_policy = "on-request";
+    sandbox_mode = "workspace-write";
+    web_search = "disabled";
+    model_catalog_json = "model-catalog-deepseek.json";
+    show_raw_agent_reasoning = true;
   };
 }
