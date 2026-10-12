@@ -125,7 +125,7 @@ in
         };
         input = {
           sensitivity = 0.5;
-          accel_profile = "adaptive";
+          accel_profile = "flat";
           follow_mouse = 0;
         };
         group = {
