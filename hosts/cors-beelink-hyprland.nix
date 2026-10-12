@@ -15,16 +15,16 @@ lib.recursiveUpdate (import ./preset.nix { inherit lib pkgs; }) {
   ];
   apps = [
     # "nushell"
-    "yt-dlp"
-    "wayvnc"
+    # "yt-dlp"
+    # "wayvnc"
     "sunshine"
-    "obs-studio"
+    # "obs-studio"
     # 视频剪辑
-    "aegisub"
-    "subtitlecomposer"
+    # "aegisub"
+    # "subtitlecomposer"
     # "subtitleedit"
-    "ffsubsync"
-    "python313Packages.subliminal"
+    # "ffsubsync"
+    # "python313Packages.subliminal"
   ];
   lang = [
     "go"
