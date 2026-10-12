@@ -19,3 +19,7 @@ python_app:
   # https://github.com/dbcli/mycli
   - name: mycli
     extras: ["all"]
+  # db 客户端
+  # http://github.com/clement-tourriere/dbcrust
+  - name: dbcrust
+    extras: ["all"]
