@@ -1,4 +1,4 @@
-unfree_url_apps: []
+unfree_url_apps:
   # debian/redhat 策略: 分发行版提供不同安装包 URL
   # - name: "example-pkg"
   #   description: "示例安装包"
@@ -13,3 +13,8 @@ unfree_url_apps: []
   #   binary_name: "example"
   #   # 可选: 压缩包中要提取的二进制列表, 默认 [binary_name]
   #   binaries: ["example", "example-helper"]
+  - name: "chatgpt"
+    description: "chatgpt desktop"
+    debian_url: "https://persistent.oaistatic.com/codex-app-prod/linux/deb/latest/chatgpt_amd64.deb"
+    redhat_url: "https://persistent.oaistatic.com/codex-app-prod/linux/rpm/latest/chatgpt.x86_64.rpm"
+    binary_name: "chatgpt"
