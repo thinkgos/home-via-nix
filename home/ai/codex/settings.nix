@@ -6,7 +6,6 @@
 }:
 {
   sandbox_mode = "workspace-write";
-  model_provider = "mimo";
   model_providers = {
     mimo = {
       name = "Xiaomi MiMo";
@@ -56,6 +55,20 @@
     worktree-auto-cleanup-enabled = true;
     worktree-upstream-refresh-mode = "best-effort";
     worktree-keep-count = 10;
+    appearanceDarkChromeTheme = {
+      accent = "#cba6f7";
+      accentSource = "custom";
+      contrast = 60;
+      ink = "#cdd6f4";
+      opaqueWindows = false;
+      surface = "#1e1e2e";
+      fonts = { };
+      semanticColors = {
+        diffAdded = "#a6e3a1";
+        diffRemoved = "#f38ba8";
+        skill = "#cba6f7";
+      };
+    };
   };
   features = {
     local_thread_store_compression = true;
