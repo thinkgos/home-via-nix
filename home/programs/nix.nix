@@ -6,7 +6,7 @@
 }:
 {
   home.packages = with pkgs; [
-    nix
+    # nix # use default nix
     nixd
     nil
     nixfmt
