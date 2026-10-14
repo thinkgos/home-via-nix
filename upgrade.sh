@@ -60,6 +60,11 @@ else
 fi
 export no_proxy="${no_proxy:-localhost,127.0.0.1,10.0.0.0/8,127.17.0.0/12,192.168.0.0/1}"
 
+# 命令是否存在, 用于跳过未安装工具的升级步骤
+has_installed() {
+	command -v "$1" >/dev/null 2>&1
+}
+
 log::info "一键升级..."
 
 log::info "升级 apt 系统包..."
@@ -68,30 +73,42 @@ sudo apt upgrade -y
 
 # root 登录环境下升级系统 profile 中的 Nix（多用户安装）
 # sudo -i 会重置环境，需显式转发代理变量
-log::info "升级 Nix root..."
-sudo -i env \
-	http_proxy="$http_proxy" \
-	https_proxy="$https_proxy" \
-	socks_proxy="$socks_proxy" \
-	all_proxy="$all_proxy" \
-	no_proxy="$no_proxy" \
-	nix upgrade-nix
+if has_installed nix; then
+	log::info "升级 Nix root..."
+	sudo -i env \
+		http_proxy="$http_proxy" \
+		https_proxy="$https_proxy" \
+		socks_proxy="$socks_proxy" \
+		all_proxy="$all_proxy" \
+		no_proxy="$no_proxy" \
+		nix upgrade-nix
 
-log::info "升级 Nix default..."
-sudo -i env \
-	http_proxy="$http_proxy" \
-	https_proxy="$https_proxy" \
-	socks_proxy="$socks_proxy" \
-	all_proxy="$all_proxy" \
-	no_proxy="$no_proxy" \
-	nix upgrade-nix --profile /nix/var/nix/profiles/default
+	log::info "升级 Nix default..."
+	sudo -i env \
+		http_proxy="$http_proxy" \
+		https_proxy="$https_proxy" \
+		socks_proxy="$socks_proxy" \
+		all_proxy="$all_proxy" \
+		no_proxy="$no_proxy" \
+		nix upgrade-nix --profile /nix/var/nix/profiles/default
+else
+	log::info "未检测到 nix, 跳过升级"
+fi
 
-log::info "升级 flatpak user..."
-flatpak update --user -y
-log::info "升级 flatpak system..."
-flatpak update --system -y
+if has_installed flatpak; then
+	log::info "升级 flatpak user..."
+	flatpak update --user -y
+	log::info "升级 flatpak system..."
+	flatpak update --system -y
+else
+	log::info "未检测到 flatpak, 跳过升级"
+fi
 
-log::info "升级 uv tool..."
-uv tool upgrade --all
+if has_installed uv; then
+	log::info "升级 uv tool..."
+	uv tool upgrade --all
+else
+	log::info "未检测到 uv, 跳过升级"
+fi
 
 log::info "一键升级完成"
