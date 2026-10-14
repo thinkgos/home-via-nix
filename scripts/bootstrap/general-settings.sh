@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source $(cd "$(dirname "${BASH_SOURCE[0]}")/lib/" && pwd)/log4sh.sh
+source $(cd "$(dirname "${BASH_SOURCE[0]}")/../lib/" && pwd)/log4sh.sh
 
 log::info "设置中文语言(注意: 重启后生效)..."
 sudo locale-gen zh_CN.UTF-8

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source $(cd "$(dirname "${BASH_SOURCE[0]}")/lib/" && pwd)/log4sh.sh
+source $(cd "$(dirname "${BASH_SOURCE[0]}")/../lib/" && pwd)/log4sh.sh
 
 log::info "安装必需的系统软件..."
 sudo apt install -y \

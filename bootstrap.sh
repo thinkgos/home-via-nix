@@ -49,8 +49,10 @@ if [ -z "$SESSION" ]; then
 	exit 1
 fi
 
-source ./scripts/packages.sh
-source ./scripts/wayland-session.sh -s $SESSION
-source ./scripts/general-settings.sh
-source ./scripts/rules.sh
-source ./scripts/cleanup.sh
+source ./scripts/bootstrap/packages.sh
+source ./scripts/bootstrap/wayland-session.sh -s $SESSION
+source ./scripts/bootstrap/general-settings.sh
+source ./scripts/bootstrap/rules.sh
+source ./scripts/bootstrap/cleanup.sh
+
+# source ./scripts/bootstrap/hooks/hooks.sh

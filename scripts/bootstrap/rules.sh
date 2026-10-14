@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source $(cd "$(dirname "${BASH_SOURCE[0]}")/lib/" && pwd)/log4sh.sh
+source $(cd "$(dirname "${BASH_SOURCE[0]}")/../lib/" && pwd)/log4sh.sh
 
 # moonlight/sunshine的键盘/鼠标才能工作
 log::info "配置sunshine udev规则(注意: 重启后生效)..."

@@ -65,7 +65,12 @@
 ├── overlays/                 # Nixpkgs overlays
 ├── packages/                 # Nix 包（hvn、ohlib、ohshell、home-assets）
 ├── npins/                    # Nix pins 依赖管理
-├── scripts/                  # 系统脚本（bootstrap、wayland-session、rules 等）
+├── scripts/                  # 系统脚本
+│   ├── bootstrap/            # bootstrap.sh 初始化脚本（packages、wayland-session、rules 等）
+│   │   └── hooks/            # 钩子脚本（perf、swayosd、flathub）
+│   ├── lib/                  # 脚本公共库（log4sh）
+│   ├── accounts-service.sh   # 账户服务（accounts-service）用户配置脚本
+│   └── extend-swapon.sh      # 扩展 swap 脚本
 ├── docs/                     # 文档目录
 │   ├── system/               # 系统文档（issues、keybinding、manual-install）
 │   └── terminal/             # 终端文档（keybinding）

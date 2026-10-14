@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source $(cd "$(dirname "${BASH_SOURCE[0]}")/lib/" && pwd)/log4sh.sh
+source $(cd "$(dirname "${BASH_SOURCE[0]}")/../lib/" && pwd)/log4sh.sh
 
 log::info "清理系统软件包..."
 sudo apt autoremove -y --purge snapd cloud-init open-iscsi apport modemmanager unattended-upgrades rsyslog needrestart
