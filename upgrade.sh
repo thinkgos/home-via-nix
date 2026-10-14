@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-source $(cd "$(dirname "${BASH_SOURCE[0]}")/lib/" && pwd)/log4sh.sh
+source $(cd "$(dirname "${BASH_SOURCE[0]}")/scripts/lib/" && pwd)/log4sh.sh
 
 usage() {
 	echo "Usage: $0 [-p|--proxy host:port] [-h|--help]"
