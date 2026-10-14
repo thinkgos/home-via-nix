@@ -24,9 +24,9 @@ sudo swapon $NEW_SWAP_FILE
 FSTAB_LINE="$NEW_SWAP_FILE none swap sw 0 0"
 # 如果已存在任何 swapfile/swap.img 配置，则替换
 if grep -qF "$OLD_SWAP_FILE" /etc/fstab || grep -qF "$NEW_SWAP_FILE" /etc/fstab; then
-    sudo sed -i "s|^$OLD_SWAP_FILE.*|$FSTAB_LINE|; s|^$NEW_SWAP_FILE.*|$FSTAB_LINE|" /etc/fstab
+	sudo sed -i "s|^$OLD_SWAP_FILE.*|$FSTAB_LINE|; s|^$NEW_SWAP_FILE.*|$FSTAB_LINE|" /etc/fstab
 else
-    echo "$FSTAB_LINE" | sudo tee -a /etc/fstab >/dev/null
+	echo "$FSTAB_LINE" | sudo tee -a /etc/fstab >/dev/null
 fi
 
 log::info "Swap 配置完成"
