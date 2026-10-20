@@ -6,8 +6,6 @@ flathub_apps:
     description: 微信
   - name: com.dingtalk.DingTalk
     description: 钉钉
-  - name: com.redis.RedisInsight
-    description: redis insight
   - name: org.nickvision.tubeconverter
     description: yt-dlp frontend (Parabolic)
   - name: io.github.seadve.Kooha

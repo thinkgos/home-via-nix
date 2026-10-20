@@ -22,6 +22,15 @@ github_apps:
   #   debian_pattern: "Clash.Verge___VERSION___amd64.deb"
   #   redhat_pattern: "Clash.Verge-__VERSION__-1.x86_64.rpm"
 
+  - name: "zedis"
+    description: "A blazing-fast, native Redis GUI built with Rust and GPUI"
+    repo: "vicanso/zedis"
+    version: 0.14.0
+    tag_prefix: "v"
+    package_name: "zedis"
+    debian_pattern: "zedis-linux-x86_64.deb"
+    redhat_pattern: "zedis-linux-x86_64.rpm"
+
   - name: "chipmunk"
     description: "a log analysis tool"
     repo: "esrlabs/chipmunk"
