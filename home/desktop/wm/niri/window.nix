@@ -43,6 +43,7 @@
         { app-id = "DBeaver"; }
         { app-id = "dbx"; }
         { app-id = "zedis"; }
+        { app-id = "apifox"; }
         { app-id = "com.alibabainc.dingtalk"; }
         { app-id = "wechat"; }
         { app-id = "navop"; }
