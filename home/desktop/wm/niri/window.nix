@@ -41,6 +41,8 @@
         { app-id = "com.microsoft.VSCode"; }
         { app-id = "dev.zed.Zed"; }
         { app-id = "DBeaver"; }
+        { app-id = "dbx"; }
+        { app-id = "zedis"; }
         { app-id = "com.alibabainc.dingtalk"; }
         { app-id = "wechat"; }
         { app-id = "navop"; }
