@@ -34,7 +34,7 @@ in
     inputs.niri.overlays.niri
     (final: prev: {
       # niri = final.niri-unstable;
-      # niri = final.niri-stable;
+      niri = final.niri-stable;
       piri = inputs.piri.packages.${system}.default;
       nirimod = inputs.nirimod.packages.${system}.default;
     })

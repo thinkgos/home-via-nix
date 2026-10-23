@@ -86,6 +86,7 @@
       builtins.elem (lib.getName pkg) [
         "albert"
         "claude-code"
+        "rtk"
       ];
   };
 
