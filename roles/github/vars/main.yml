@@ -25,7 +25,7 @@ github_apps:
   - name: "dbx"
     description: "lightweight cross-platform database client for 100+ databases"
     repo: "t8y2/dbx"
-    version: 0.6.52
+    version: 0.6.54
     tag_prefix: "v"
     package_name: "dbx"
     debian_pattern: "DBX___VERSION___amd64.deb"
