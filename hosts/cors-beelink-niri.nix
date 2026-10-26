@@ -5,13 +5,13 @@ lib.recursiveUpdate (import ./preset.nix { inherit lib pkgs; }) {
     window = "niri";
     window-version = "niri";
     monitor-primary = "HDMI-A-1";
-    monitor-secondary = "";
+    monitor-secondary = "HDMI-A-2";
   };
   components = [
     # 键鼠共享
     # "deskflow"
-    "lan-mouse"
-    # "lan-mouse-client"
+    # "lan-mouse"
+    "lan-mouse-client"
   ];
   apps = [
     # "nushell"
