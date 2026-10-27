@@ -19,17 +19,17 @@
       proportion = 0.5;
     };
     preset-column-widths = [
-      { proportion = 1. / 3.; }
-      { proportion = 1. / 2.; }
-      { proportion = 2. / 3.; }
-      { proportion = 9. / 10.; }
+      { proportion = 3.5 / 10.; }
+      { proportion = 5.0 / 10.; }
+      { proportion = 6.5 / 10.; }
+      { proportion = 9.0 / 10.; }
       { proportion = 1.; }
     ];
     preset-window-heights = [
-      { proportion = 1. / 3.; }
-      { proportion = 1. / 2.; }
-      { proportion = 2. / 3.; }
-      { proportion = 9. / 10.; }
+      { proportion = 3.5 / 10.; }
+      { proportion = 5.0 / 10.; }
+      { proportion = 6.5 / 10.; }
+      { proportion = 9.0 / 10.; }
       { proportion = 1.; }
     ];
     focus-ring = {
