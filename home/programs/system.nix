@@ -16,6 +16,7 @@
     jq # json美化过滤
     yq # yaml美化过滤
     fastfetch # 系统信息查看工具
+    inxi # 系统信息查看工具
     chezmoi # 管理dotfiles
     net-tools # 网络工具集
 
