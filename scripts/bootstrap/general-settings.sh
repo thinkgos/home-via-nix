@@ -13,6 +13,7 @@ log::info "配置brightnessctl(自带udev规则)/sunshine权限(注意: 重启�
 sudo usermod -aG video $USER
 sudo usermod -aG input $USER
 sudo usermod -aG render $USER
+sudo usermod -aG vboxusers $USER # VirtualBox
 
 # log::info "配置hyprlock的pam配置..."
 # sudo tee /etc/pam.d/hyprlock >/dev/null <<EOF
