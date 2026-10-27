@@ -17,8 +17,8 @@
     yq # yaml美化过滤
     fastfetch # 系统信息查看工具
     inxi # 系统信息查看工具
-    chezmoi # 管理dotfiles
     net-tools # 网络工具集
+    smartmontools # 硬盘监控
 
     #! 命令行替代工具
     eza # 替代ls
@@ -38,5 +38,6 @@
     parallel # 并行执行命令
     imagemagick # 图片处理工具集
     navi # 交互式命令行工具提示
+    chezmoi # 管理dotfiles
   ];
 }
