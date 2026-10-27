@@ -34,7 +34,7 @@ github_apps:
   - name: "zedis"
     description: "A blazing-fast, native Redis GUI built with Rust and GPUI"
     repo: "vicanso/zedis"
-    version: 0.15.0
+    version: 0.15.1
     tag_prefix: "v"
     package_name: "zedis"
     debian_pattern: "zedis-linux-x86_64.deb"
