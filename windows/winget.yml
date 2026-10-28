@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
+# winget configure --file .\windows/winget.yml --accept-configuration-agreements
+properties:
+  configurationVersion: 0.2.0
+  resources:
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: install-vscode
+      directives:
+        description: 安装 Visual Studio Code
+      settings:
+        id: XP9KHM4BK9FZ7Q
+        source: msstore
+        ensure: Present
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: install-git
+      directives:
+        description: 安装 Git
+      settings:
+        id: XPDFF77QZ71XD0
+        source: msstore
+        ensure: Present
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: install-WeChat
+      directives:
+        description: 安装 WeChat
+      settings:
+        id: XPFCKBRNFZQ62G
+        source: msstore
+        ensure: Present
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: install-WorkBuddy
+      directives:
+        description: 安装 WorkBuddy
+      settings:
+        id: XPFG2P1XDMX1X0
+        source: msstore
+        ensure: Present
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: install-搜狗五笔输入法
+      directives:
+        description: 安装 搜狗五笔输入法
+      settings:
+        id: XPDMD65PJWKC9C
+        source: msstore
+        ensure: Present
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: install-向日葵远程
+      directives:
+        description: 安装 向日葵远程
+      settings:
+        id: XPDDRBQ2D1N7NJ
+        source: msstore
+        ensure: Present
