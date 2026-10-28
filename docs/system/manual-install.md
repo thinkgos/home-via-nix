@@ -8,6 +8,8 @@
 - [`vnc-viewer`](https://www.realvnc.com/en/connect/download/viewer/) VNC客户端
 - [`vscode`](https://code.visualstudio.com/) vscode代码编辑器
 - [`warp`](https://www.warp.dev/terminal) warp终端
-- [多系统启动盘工具](https://www.ventoy.net/cn/index.html)
 - GNOME
   - [`gnome-browser-connector`](https://extensions.gnome.org) GNOME浏览器连接器
+- Other
+  - [`UltaISO`](https://www.ezbsystems.com/ultraiso/`) ISO工具
+  - [`ventoy`](https://www.ventoy.net/cn/index.html) 多系统启动盘工具
