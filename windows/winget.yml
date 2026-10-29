@@ -1,5 +1,5 @@
 # yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
-# winget configure --file .\windows/winget.yml --accept-configuration-agreements
+# winget configure --file .\windows/winget.yml --accept-configuration-agreements --silent
 properties:
   configurationVersion: 0.2.0
   resources:
@@ -19,6 +19,15 @@ properties:
       settings:
         id: XPDFF77QZ71XD0
         source: msstore
+        ensure: Present
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: install-svn
+      directives:
+        description: 安装 svn
+      settings:
+        id: TortoiseSVN.TortoiseSVN
+        source: winget
         ensure: Present
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
