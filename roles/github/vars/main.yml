@@ -61,7 +61,7 @@ github_apps:
   - name: "motrix"
     description: "A full-featured download manager."
     repo: "agalwood/Motrix"
-    version: 2.2.1
+    version: 2.1.1
     tag_prefix: "v"
     package_name: "motrix"
     debian_pattern: "Motrix___VERSION___amd64.deb"
