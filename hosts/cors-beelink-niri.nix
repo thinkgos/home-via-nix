@@ -17,7 +17,7 @@ lib.recursiveUpdate (import ./preset.nix { inherit lib pkgs; }) {
     # "nushell"
     # "yt-dlp"
     # "wayvnc"
-    "sunshine"
+    # "sunshine"
     # "obs-studio"
     # 视频剪辑
     # "aegisub"
