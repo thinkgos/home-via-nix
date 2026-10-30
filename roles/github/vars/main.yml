@@ -22,6 +22,24 @@ github_apps:
   #   debian_pattern: "Clash.Verge___VERSION___amd64.deb"
   #   redhat_pattern: "Clash.Verge-__VERSION__-1.x86_64.rpm"
 
+  - name: "Readest"
+    description: "Readest is a modern, feature-rich ebook reader designed for avid readers offering seamless cross-platform access, powerful tools, and an intuitive interface to elevate your reading experience."
+    repo: "readest/readest"
+    version: 0.12.16
+    tag_prefix: "v"
+    package_name: "readest"
+    debian_pattern: "Readest___VERSION___amd64.deb"
+    redhat_pattern: "Readest-__VERSION__-1.x86_64.rpm"
+
+  - name: "Handy"
+    description: "A free, open source, and extensible speech-to-text application that works completely offline."
+    repo: "cjpais/Handy"
+    version: 0.9.8
+    tag_prefix: "v"
+    package_name: "handy"
+    debian_pattern: "Handy___VERSION___amd64.deb"
+    redhat_pattern: "Handy-__VERSION__-1.x86_64.rpm"
+
   - name: "dbx"
     description: "lightweight cross-platform database client for 100+ databases"
     repo: "t8y2/dbx"

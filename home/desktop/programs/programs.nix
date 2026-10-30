@@ -31,11 +31,16 @@
     kdePackages.gwenview # image viewer
     kdePackages.kcolorchooser # 颜色选择器
     kdePackages.ark # 压缩工具
+    kdePackages.elisa # 音乐播放器
+    kdePackages.kate # 文本编辑器
+    kdePackages.kdenlive # 视频编辑器
+    inkscape # 矢量图形编辑工具
+    digikam # 图片管理
     localsend # 局域网文件传输工具
     drawy # 画布工具
     wayscrollshot # 滚动截图工具
     cage # wayland的kiosk
     wooz # 缩放/放大镜工具
-    freerdp # freerdp
+    freerdp # rdp远程桌面
   ];
 }
