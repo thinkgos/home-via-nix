@@ -33,6 +33,7 @@
     kdePackages.kcolorchooser # 颜色选择器
     kdePackages.ark # 压缩工具
     kdePackages.elisa # 音乐播放器
+    kdePackages.sweeper # 磁盘清理工具
     digikam # 图片管理
     localsend # 局域网文件传输工具
     drawy # 画布工具

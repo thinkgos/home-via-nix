@@ -39,5 +39,7 @@
     imagemagick # 图片处理工具集
     navi # 交互式命令行工具提示
     chezmoi # 管理dotfiles
+    ncdu # 磁盘分析工具
+    kondo # 软件项目缓存清理工具
   ];
 }
