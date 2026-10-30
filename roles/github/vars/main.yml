@@ -40,14 +40,14 @@ github_apps:
     debian_pattern: "Handy___VERSION___amd64.deb"
     redhat_pattern: "Handy-__VERSION__-1.x86_64.rpm"
 
-  - name: "dbx"
-    description: "lightweight cross-platform database client for 100+ databases"
-    repo: "t8y2/dbx"
-    version: 0.6.61
-    tag_prefix: "v"
-    package_name: "dbx"
-    debian_pattern: "DBX___VERSION___amd64.deb"
-    redhat_pattern: "DBX-__VERSION__-1.x86_64.rpm.rpm"
+  - name: "chipmunk"
+    description: "a log analysis tool"
+    repo: "esrlabs/chipmunk"
+    version: 4.4.0
+    tag_prefix: ""
+    package_name: "chipmunk"
+    debian_pattern: "chipmunk@__VERSION__-linux-amd64.deb"
+    redhat_pattern: "chipmunk@__VERSION__-linux-x86_64.rpm"
 
   - name: "zedis"
     description: "A blazing-fast, native Redis GUI built with Rust and GPUI"
@@ -58,14 +58,23 @@ github_apps:
     debian_pattern: "zedis-linux-x86_64.deb"
     redhat_pattern: "zedis-linux-x86_64.rpm"
 
-  - name: "chipmunk"
-    description: "a log analysis tool"
-    repo: "esrlabs/chipmunk"
-    version: 4.4.0
-    tag_prefix: ""
-    package_name: "chipmunk"
-    debian_pattern: "chipmunk@__VERSION__-linux-amd64.deb"
-    redhat_pattern: "chipmunk@__VERSION__-linux-x86_64.rpm"
+  - name: "motrix"
+    description: "A full-featured download manager."
+    repo: "agalwood/Motrix"
+    version: 2.2.1
+    tag_prefix: "v"
+    package_name: "motrix"
+    debian_pattern: "Motrix___VERSION___amd64.deb"
+    redhat_pattern: "Motrix-__VERSION__.x86_64.rpm"
+
+  - name: "dbx"
+    description: "lightweight cross-platform database client for 100+ databases"
+    repo: "t8y2/dbx"
+    version: 0.6.61
+    tag_prefix: "v"
+    package_name: "dbx"
+    debian_pattern: "DBX___VERSION___amd64.deb"
+    redhat_pattern: "DBX-__VERSION__-1.x86_64.rpm.rpm"
 
   - name: "cc-switch"
     description: "cc-switch"

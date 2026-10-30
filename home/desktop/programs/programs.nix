@@ -23,7 +23,6 @@
     mission-center # 监控您的CPU,内存,磁盘,网络和GPU使用情况
     vlc # 多媒体播放器
     mpv # 多媒体播放器
-    uget # 下载工具
     baobab # 磁盘占用分析工具
     qalculate-gtk # 计算器
     gnome-disk-utility # 磁盘管理工具
