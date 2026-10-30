@@ -84,6 +84,7 @@
     allowUnfreePredicate =
       pkg:
       builtins.elem (lib.getName pkg) [
+        "sublimetext4"
         "albert"
         "claude-code"
         "rtk"
