@@ -12,6 +12,8 @@
 
   home.packages = with pkgs; [
     gfold # 跟踪git仓库
+    worktrunk # git worktree 管理
+    gitlogue # git 提交重放工具
   ];
 
   # Home Manager is pretty good at managing dotfiles.

@@ -22,3 +22,8 @@ python_app:
   # db 客户端
   # http://github.com/clement-tourriere/dbcrust
   - name: dbcrust
+
+  # 终端数据浏览
+  # https://github.com/saulpw/visidata
+  # https://www.visidata.org/
+  - name: visidata

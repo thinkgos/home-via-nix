@@ -28,6 +28,7 @@
     aria2 # 高速下载工具
     tesseract # ocr工具
     wttrbar # 天气栏
+    grex # 生成正则表达式
 
     ohshell # ohshell
   ];

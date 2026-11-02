@@ -41,5 +41,6 @@
     chezmoi # 管理dotfiles
     ncdu # 磁盘分析工具
     kondo # 软件项目缓存清理工具
+    oxker # docker查看和管理
   ];
 }
