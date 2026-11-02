@@ -22,6 +22,15 @@ properties:
         ensure: Present
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: install-git-xet(huggingface)
+      directives:
+        description: 安装 Git-Xet
+      settings:
+        id: HuggingFace.Git-Xet
+        source: winget
+        ensure: Present
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: install-svn
       directives:
         description: 安装 svn
