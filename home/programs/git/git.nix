@@ -11,6 +11,7 @@
   ];
 
   home.packages = with pkgs; [
+    git-xet # gut lfs plugin via xet protocol
     gfold # 跟踪git仓库
     worktrunk # git worktree 管理
     gitlogue # git 提交重放工具

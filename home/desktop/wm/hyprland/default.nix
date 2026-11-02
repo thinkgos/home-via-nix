@@ -36,7 +36,7 @@ in
   home.sessionVariables = {
     NIXOS_OZONE_WL = 1; # Chromium 内核应用 使用 Wayland
     MOZ_ENABLE_WAYLAND = 1; # Mozilla 系应用 使用 Wayland
-    GDK_BACKEND = "wayland,x11,*"; # GTK 框架应用 使用 Wayland
+    # GDK_BACKEND = "wayland,x11,*"; # GTK 框架应用 使用 Wayland, NOTE: 影响一些应用, 直接取消
     SDL_VIDEODRIVER = "wayland"; # 游戏及多媒体应用 使用 Wayland
     CLUTTER_BACKEND = "wayland"; # Clutter 框架应用 使用 Wayland
     ELECTRON_OZONE_PLATFORM_HINT = "auto"; # Electron 应用 使用 Wayland
