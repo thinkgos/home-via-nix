@@ -1,5 +1,5 @@
 # yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
-# winget configure --file .\windows/winget.yml --accept-configuration-agreements --silent
+# winget configure --file .\windows\winget.yml --accept-configuration-agreements
 properties:
   configurationVersion: 0.2.0
   resources:
@@ -40,6 +40,15 @@ properties:
         ensure: Present
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: install-uv
+      directives:
+        description: 安装 uv
+      settings:
+        id: astral-sh.uv
+        source: winget
+        ensure: Present
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: install-WeChat
       directives:
         description: 安装 WeChat
@@ -73,4 +82,22 @@ properties:
       settings:
         id: XPDDRBQ2D1N7NJ
         source: msstore
+        ensure: Present
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: install-LocalSend
+      directives:
+        description: 安装 LocalSend
+      settings:
+        id: LocalSend.LocalSend
+        source: winget
+        ensure: Present
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: install-warp
+      directives:
+        description: 安装 warp
+      settings:
+        id: Warp.Warp
+        source: winget
         ensure: Present
