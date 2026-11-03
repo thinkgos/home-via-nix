@@ -27,3 +27,7 @@ python_app:
   # https://github.com/saulpw/visidata
   # https://www.visidata.org/
   - name: visidata
+
+  # hggingface cli
+  # huggingface.co
+  - name: hf
