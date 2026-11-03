@@ -34,7 +34,7 @@ github_apps:
   - name: "Handy"
     description: "A free, open source, and extensible speech-to-text application that works completely offline."
     repo: "cjpais/Handy"
-    version: 0.9.8
+    version: 0.10.0
     tag_prefix: "v"
     package_name: "handy"
     debian_pattern: "Handy___VERSION___amd64.deb"
