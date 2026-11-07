@@ -87,6 +87,6 @@ github_apps:
   - name: "opencode"
     description: "code agent"
     repo: "anomalyco/opencode"
-    version: 2.2.5
+    version: 2.2.6
     binary_name: "opencode"
     binary_pattern: "opencode-linux-x64.tar.gz"
