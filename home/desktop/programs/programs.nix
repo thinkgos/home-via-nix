@@ -24,8 +24,9 @@
     vlc # 多媒体播放器
     mpv # 多媒体播放器
     baobab # 磁盘占用分析工具
-    qalculate-gtk # 计算器
     gnome-disk-utility # 磁盘管理工具
+    disktree # 用于查找和删除文件的磁盘使用情况树状图
+    qalculate-gtk # 计算器
     inkscape # 矢量图形编辑工具
     kdePackages.okular # 文档查看器
     kdePackages.kdenlive # 视频编辑器
