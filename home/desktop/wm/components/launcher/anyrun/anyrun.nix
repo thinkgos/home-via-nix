@@ -38,7 +38,6 @@
         "${pkgs.anyrun}/lib/libsymbols.so"
         "${pkgs.anyrun}/lib/libwebsearch.so"
         "${pkgs.anyrun}/lib/libtranslate.so"
-        "${pkgs.anyrun-plugins}/lib/libssh_pattern.so"
         "${pkgs.anyrun-plugins}/lib/libmenu_bar.so"
       ];
     };
@@ -52,7 +51,6 @@
       "symbols.ron".source = ./config/symbols.ron;
       "websearch.ron".source = ./config/websearch.ron;
       "translate.ron".source = ./config/translate.ron;
-      "ssh-pattern.ron".source = ./config/ssh-pattern.ron;
       "menu-bar.ron".source = ./config/menu-bar.ron;
     };
   };
