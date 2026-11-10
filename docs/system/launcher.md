@@ -9,4 +9,3 @@
 | `translate` | `/t` | 翻译 | `/t zh-CN>en 你好` |
 | `symbols` | `/s` | 符号复制 | `/s arrow` |
 | `shell` | `>` | Shell 命令执行 | `> htop` |
-| `menu-bar` | `/m` | 菜单栏 | `/m a/b` |

@@ -21,10 +21,6 @@
       url = "github:anyrun-org/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    anyrun-plugins = {
-      url = "github:thinkgos/anyrun-plugins";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     ie-r = {
       url = "github:miaupaw/ie-r";
       inputs.nixpkgs.follows = "nixpkgs";
