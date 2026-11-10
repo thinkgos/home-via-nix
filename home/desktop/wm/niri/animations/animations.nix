@@ -7,6 +7,7 @@
 {
   # Niri 动画配置
   # https://yalter.github.io/niri/Configuration:-Animations
+  # https://github.com/epireyn/niri-flake/blob/main/docs.md
   # https://github.com/sodiboo/niri-flake/blob/main/docs.md#programsnirisettingsanimations
   programs.niri.settings.animations = {
     enable = true;
@@ -31,7 +32,7 @@
           duration-ms = 250;
         };
       };
-      custom-shader = builtins.readFile ./window-open.glsl;
+      custom-shader.text = builtins.readFile ./window-open.glsl;
     };
     window-close = {
       enable = true;
@@ -41,7 +42,7 @@
           duration-ms = 250;
         };
       };
-      custom-shader = builtins.readFile ./window-close.glsl;
+      custom-shader.text = builtins.readFile ./window-close.glsl;
     };
 
     horizontal-view-movement = {
