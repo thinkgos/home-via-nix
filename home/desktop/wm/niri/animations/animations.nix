@@ -32,7 +32,8 @@
           duration-ms = 250;
         };
       };
-      custom-shader.text = builtins.readFile ./window-open.glsl;
+      custom-shader = builtins.readFile ./window-open.glsl;
+      # custom-shader.text = builtins.readFile ./window-open.glsl;
     };
     window-close = {
       enable = true;
@@ -42,7 +43,8 @@
           duration-ms = 250;
         };
       };
-      custom-shader.text = builtins.readFile ./window-close.glsl;
+      custom-shader = builtins.readFile ./window-close.glsl;
+      # custom-shader.text = builtins.readFile ./window-close.glsl;
     };
 
     horizontal-view-movement = {
