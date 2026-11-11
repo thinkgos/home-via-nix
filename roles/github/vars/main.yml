@@ -25,7 +25,7 @@ github_apps:
   - name: "Readest"
     description: "Readest is a modern, feature-rich ebook reader designed for avid readers offering seamless cross-platform access, powerful tools, and an intuitive interface to elevate your reading experience."
     repo: "readest/readest"
-    version: 0.12.16
+    version: 0.12.20
     tag_prefix: "v"
     package_name: "readest"
     debian_pattern: "Readest___VERSION___amd64.deb"
