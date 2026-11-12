@@ -6,6 +6,7 @@ lib.recursiveUpdate (import ./preset.nix { inherit lib pkgs; }) {
     window-version = "niri";
     monitor-primary = "HDMI-A-1";
     monitor-secondary = "HDMI-A-2";
+    disable-power-off-monitors = true;
   };
   components = [
     # 键鼠共享

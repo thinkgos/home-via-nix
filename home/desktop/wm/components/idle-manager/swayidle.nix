@@ -18,7 +18,13 @@
           if (customize.desktop.window == "hyprland") then
             "${pkgs.hyprland}/bin/hyprctl dispatch 'hl.dsp.dpms({ action = \"disable\" })'"
           else if (customize.desktop.window == "niri") then
-            "${pkgs.niri}/bin/niri msg action power-off-monitors"
+            # 禁用关闭显示器(beelink的HDMI-A-2坏掉了)
+            if
+              customize.desktop.disable-power-off-monitors != null && customize.desktop.disable-power-off-monitors
+            then
+              ''/bin/notify-send "[swayidle] temporary disable because HDMI broken!"''
+            else
+              "${pkgs.niri}/bin/niri msg action power-off-monitors"
           else
             ''/bin/notify-send "[swayidle] lock not supported"''
         );
