@@ -20,6 +20,10 @@
         "github-releases"
       ],
       "extractVersion": "^v?(?<version>.*)$"
+    },
+    {
+      "matchUpdateTypes": ["minor", "patch", "digest"],
+      "automerge": true
     }
   ]
 }
