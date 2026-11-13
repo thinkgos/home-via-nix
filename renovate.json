@@ -14,7 +14,8 @@
       "datasourceTemplate": "github-releases"
     }
   ],
-  "platformAutomerge": true,
+  "platformAutomerge": false,
+  "ignoreTests": true,
   "packageRules": [
     {
       "matchDatasources": [
