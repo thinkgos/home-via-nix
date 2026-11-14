@@ -1,5 +1,6 @@
 # yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
 # winget configure --file .\windows\winget.yml --accept-configuration-agreements
+# winget upgrade --all
 properties:
   configurationVersion: 0.2.0
   resources:
@@ -45,6 +46,15 @@ properties:
         description: 安装 uv
       settings:
         id: astral-sh.uv
+        source: winget
+        ensure: Present
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: install-rustup
+      directives:
+        description: 安装 rustup
+      settings:
+        id: Rustlang.Rustup
         source: winget
         ensure: Present
 
