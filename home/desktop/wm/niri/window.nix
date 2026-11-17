@@ -111,7 +111,7 @@
     # LocalSend
     {
       matches = [
-        { app-id = "^localsend_app.*"; }
+        { app-id = "org.localsend.localsend_app"; }
       ];
       open-floating = true;
       default-column-width = {
@@ -193,6 +193,18 @@
       };
       default-window-height = {
         fixed = 230;
+      };
+    }
+    # pedal 开发
+    {
+      matches = [
+        { app-id = "pedal"; }
+      ];
+      default-column-width = {
+        fixed = 720;
+      };
+      default-window-height = {
+        fixed = 800;
       };
     }
   ];

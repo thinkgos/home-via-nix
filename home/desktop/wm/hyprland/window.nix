@@ -43,7 +43,7 @@
     }
     # LocalSend
     {
-      match.class = "^(localsend_app)$";
+      match.class = "^(org.localsend.localsend_app)$";
       float = true;
       size = [
         720
