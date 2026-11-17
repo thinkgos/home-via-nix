@@ -200,6 +200,7 @@
       matches = [
         { app-id = "pedal"; }
       ];
+      open-floating = true;
       default-column-width = {
         fixed = 720;
       };
