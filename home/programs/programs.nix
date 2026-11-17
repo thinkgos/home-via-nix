@@ -29,6 +29,7 @@
     tesseract # ocr工具
     wttrbar # 天气栏
     grex # 生成正则表达式
+    boring # ssh tunnel manager https://github.com/alebeck/boring
 
     ohshell # ohshell
   ];
