@@ -9,7 +9,8 @@
     ./mcp.nix
     ./claude
     ./codex
-    ./herdr/herdr.nix
+    ./deepseek
+    ./herdr
   ];
 
   home.packages = with pkgs; [
