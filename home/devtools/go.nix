@@ -14,8 +14,8 @@
     goperf # Tools and packages for analyzing Go benchmark results
     golangci-lint # Fast linters Runner for Go
     goreleaser # Deliver Go binaries as fast and easily as possible
-    nilaway # Static Analysis tool to detect potential Nil panics in Go code
+    # nilaway # Static Analysis tool to detect potential Nil panics in Go code
     go-licenses # Reports on the licenses used by a Go package and its dependencies
-    goup-rs
+    # goup-rs
   ];
 }
