@@ -16,6 +16,6 @@
     goreleaser # Deliver Go binaries as fast and easily as possible
     # nilaway # Static Analysis tool to detect potential Nil panics in Go code
     go-licenses # Reports on the licenses used by a Go package and its dependencies
-    # goup-rs
+    goup-rs
   ];
 }
