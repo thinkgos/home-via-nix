@@ -68,15 +68,6 @@ properties:
         ensure: Present
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: install-WorkBuddy
-      directives:
-        description: 安装 WorkBuddy
-      settings:
-        id: XPFG2P1XDMX1X0
-        source: msstore
-        ensure: Present
-
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: install-搜狗五笔输入法
       directives:
         description: 安装 搜狗五笔输入法
@@ -109,5 +100,33 @@ properties:
         description: 安装 warp
       settings:
         id: Warp.Warp
+        source: winget
+        ensure: Present
+
+    # AI 国内工具
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: install-DeepSeekHarnessDesktop
+      directives:
+        description: 安装 DeepSeekHarnessDesktop
+      settings:
+        id: DeepSeek.DeepSeekHarnessDesktop
+        source: winget
+        ensure: Present
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: install-WorkBuddy
+      directives:
+        description: 安装 WorkBuddy
+      settings:
+        id: XPFG2P1XDMX1X0
+        source: msstore
+        ensure: Present
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: install-Trae
+      directives:
+        description: 安装 Trae
+      settings:
+        id: ByteDance.Trae
         source: winget
         ensure: Present
