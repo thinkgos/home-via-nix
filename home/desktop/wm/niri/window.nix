@@ -47,6 +47,7 @@
         { app-id = "com.alibabainc.dingtalk"; }
         { app-id = "wechat"; }
         { app-id = "navop"; }
+        { app-id = "sublime_text"; }
       ];
       opacity = 0.88;
       background-effect = {
