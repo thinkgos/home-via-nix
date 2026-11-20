@@ -7,7 +7,7 @@
 此代码库包含一个基于 **Nix 的 home-manager 配置**，用于管理不同 Linux 发行版上的用户环境。它使用 **Nix flakes** 来实现可复现性，并采用模块化配置来管理终端和图形环境。该项目结合了：
 
 - **Nix/Home Manager** 用于声明式用户环境管理
-- **Ansible roles** 用于系统包、GitHub 应用、Flathub 应用、Python 工具及商业软件安装
+- **Ansible roles** 用于系统包、GitHub 应用、Flathub 应用、Python/npm 工具及商业软件安装
 
 ## 架构概述
 
@@ -15,37 +15,45 @@
 
 ```text
 ├── bootstrap.sh              # Ubuntu server 安装 wm 初始化脚本
+├── upgrade.sh                # 配置升级脚本
 ├── flake.nix                 # Home Manager 主配置入口点
 ├── flake/                    # Flake 辅助模块
 │   ├── hosts.nix             # mkHome 函数及主机配置入口
 │   └── overlays.nix          # Nixpkgs overlays
-├── hosts/                    # 主机特定配置
-│   ├── preset.nix            # 预设配置（theme/icon/cursor/desktop/defaults）
-│   ├── thinkgo-laptop.nix    # thinkgo-laptop 主机配置
-│   ├── cors-beelink.nix      # cors-beelink 主机配置
-│   └── thinkgo-work.nix      # thinkgo-work 主机配置
+├── hosts/                    # 主机特定配置（按窗口管理器拆分）
+│   ├── preset.nix            # 预设配置（theme/icon/cursor/desktop/apps/lang/defaults）
+│   ├── thinkgo-laptop-hyprland.nix # thinkgo-laptop + Hyprland 主机配置
+│   ├── thinkgo-laptop-niri.nix     # thinkgo-laptop + Niri 主机配置
+│   ├── cors-beelink-hyprland.nix   # cors-beelink + Hyprland 主机配置
+│   ├── cors-beelink-niri.nix       # cors-beelink + Niri 主机配置
+│   ├── thinkgo-work-hyprland.nix   # thinkgo-work + Hyprland 主机配置
+│   └── thinkgo-work-niri.nix       # thinkgo-work + Niri 主机配置
 ├── home/                     # Home Manager 主配置目录
 │   ├── default.nix           # 基础配置，导入各模块，可选 graphical
 │   ├── accounts.nix          # 账户配置
 │   ├── assets.nix            # 资源配置
-│   ├── fonts.nix             # 字体配置，包括 Nerd Fonts 和 CJK 支持
+│   ├── autostart.nix         # 自启动配置
 │   ├── password-store.nix    # 密码存储配置
 │   ├── systemd.nix           # 用户会话 PATH 和环境变量
-│   ├── ai/                   # CLI AI 工具模块
+│   ├── fonts/                # 字体配置（fonts.nix，Nerd Fonts 和 CJK 支持）
+│   ├── ai/                   # CLI AI 工具模块（claude、codex、deepseek、herdr、mcp 等）
 │   ├── desktop/              # 桌面系统模块
 │   │   ├── desktop.nix       # 桌面入口，导入 wm/、terminal/、editor/、programs/ 等
 │   │   ├── editor/           # 图形编辑器（zed 等）
-│   │   ├── programs/         # 图形程序（obs-studio、yt-dlp、cava、视频剪辑等）
-│   │   ├── terminal/         # 终端模拟器（alacritty、ghostty、kitty、wezterm）
+│   │   ├── programs/         # 图形程序（obs-studio、yt-dlp、cava、视频剪辑、share-desktop 等）
+│   │   ├── terminal/         # 终端模拟器（alacritty、ghostty、kitty、wezterm、warp-terminal）
 │   │   ├── wm/               # 窗口管理器
 │   │   │   ├── gnome/        # GNOME 配置
 │   │   │   ├── hyprland/     # Hyprland 配置（动画、快捷键、插件等）
 │   │   │   ├── niri/         # Niri 配置
-│   │   │   ├── wme/          # 窗口管理器环境（hyprland/niri）
-│   │   │   └── components/   # 桌面组件（clipboard、launcher、notification、status-bars、wallpaper 等）
+│   │   │   ├── packages/     # WM 环境包（hyprland/niri）
+│   │   │   ├── wm.nix        # WM 入口配置
+│   │   │   └── components/   # 桌面组件（clipboard、launcher、notification-center、status-bars、wallpaper 等）
 │   │   ├── email.nix         # 邮件配置
 │   │   ├── gtk.nix           # GTK 主题配置
 │   │   ├── qt.nix            # Qt 主题配置
+│   │   ├── pointer-cursor.nix # 鼠标指针配置
+│   │   ├── password-store.nix # browserpass 浏览器密码集成
 │   │   ├── stylix.nix        # Stylix 全局主题
 │   │   ├── i18n.nix          # 国际化配置
 │   │   ├── screenshot.nix    # 截图工具
@@ -53,8 +61,8 @@
 │   ├── devtools/             # 开发工具模块（go、rust、python、cpp）
 │   ├── editor/               # 终端编辑器（neovim、vim）
 │   ├── fun/                  # 娱乐工具
-│   ├── programs/             # CLI 工具（git、ansible、starship、zellij、nix 等）
-│   └── shell/                # Shell 配置（zsh、nushell、sh 环境脚本）
+│   ├── programs/             # CLI 工具（git、ansible、starship、zellij、nix、tldr 等）
+│   └── shell/                # Shell 配置（zsh、nushell、templates）
 ├── roles/                    # Ansible roles
 │   ├── system/               # 系统包角色
 │   ├── github/               # GitHub 应用角色，支持版本跟踪和包/二进制策略
@@ -67,13 +75,16 @@
 ├── npins/                    # Nix pins 依赖管理
 ├── scripts/                  # 系统脚本
 │   ├── bootstrap/            # bootstrap.sh 初始化脚本（packages、wayland-session、rules 等）
-│   │   └── hooks/            # 钩子脚本（perf、swayosd、flathub）
+│   │   └── hooks/            # 钩子脚本（perf、swayosd、flathub、hooks）
 │   ├── lib/                  # 脚本公共库（log4sh）
 │   ├── accounts-service.sh   # 账户服务（accounts-service）用户配置脚本
 │   └── extend-swapon.sh      # 扩展 swap 脚本
-├── docs/                     # 文档目录
-│   ├── system/               # 系统文档（issues、keybinding、manual-install）
+├── docs/                     # 文档目录（mdbook）
+│   ├── guide.md              # 使用指南（SUMMARY.md 为目录索引）
+│   ├── system/               # 系统文档（issues、keybinding、launcher、manual-install）
 │   └── terminal/             # 终端文档（keybinding）
+├── examples/                 # 示例配置（cloud-init installer 等）
+├── windows/                  # Windows 侧配置（winget 包定义）
 ├── site.yml                  # Ansible playbook 入口
 ├── book.toml                 # mdbook 配置
 └── renovate.json             # Renovate 依赖更新配置
@@ -93,6 +104,7 @@
     - `monitor-primary` / `monitor-secondary`：显示器标识
   - `components`：组件列表（如 "lan-mouse"、"deskflow"）
   - `apps`：应用列表（如 "obs-studio"、"yt-dlp"、"aegisub"）
+  - `lang`：开发语言列表（如 "go"、"rust"、"python"、"cpp"）
 - 支持的系统：x86_64-linux、aarch64-linux、x86_64-darwin、aarch64-darwin。
 
 ### `ansible` 结构
@@ -107,14 +119,14 @@
 ## 常用工作流指南
 
 ### Home Manager 管理
-- 切换到用户配置：`home-manager switch --flake .#thinkgo-laptop`（具体查看 `flake/hosts.nix`）
-- 仅构建配置（不切换）：`home-manager build --flake .#thinkgo-laptop`
+- 切换到用户配置：`home-manager switch --flake .#thinkgo-laptop-hyprland`（配置名为 `<主机>-<窗口管理器>`，具体查看 `flake/hosts.nix`）
+- 仅构建配置（不切换）：`home-manager build --flake .#thinkgo-laptop-hyprland`
 - 查看生成的配置：`home-manager generations`
 
 ### Nix Flake 命令
 - 更新所有 flake：`nix flake update`
 - 显示可用的 flake 输出：`nix flake show`
-- 构建特定配置：`nix build .#thinkgo-laptop`
+- 构建特定配置：`nix build .#thinkgo-laptop-hyprland`
 
 ### Ansible 系统包管理
 - 前置条件：`home-manager` 已经切换到用户配置，它包含了 `ansible`。
@@ -167,7 +179,7 @@
 2. 运行 `ansible-playbook site.yml -u <用户名> --tags unfree -K` 进行部署。
 
 ### 添加新主机时
-1. 在 `hosts/` 目录下创建新的主机配置文件，通过 `lib.recursiveUpdate` 合并 `preset.nix`。
+1. 在 `hosts/` 目录下创建新的主机配置文件（按 `<主机>-<窗口管理器>.nix` 命名，如 `xxx-hyprland.nix`、`xxx-niri.nix`），通过 `lib.recursiveUpdate` 合并 `preset.nix`。
 2. 在 `flake/hosts.nix` 中添加 `mkHome` 调用。
 
 ### 调试问题时
@@ -178,7 +190,7 @@
 
 ## 注意事项
 
-- Home Manager `stateVersion` 设置为 "25.11"。更新前请阅读发行说明。
+- Home Manager `stateVersion` 设置为 "26.05"。更新前请阅读发行说明。
 - 图形配置依赖于 `targets.genericLinux` 和 `xdg.enable`。
 - 某些商业软件（Chrome、VirtualBox、VSCode、Wireshark）必须手动安装（见 `docs/system/manual-install.md`）。
 
