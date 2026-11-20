@@ -7,9 +7,20 @@
 {
   programs.niri.settings.binds = {
     "Mod+T" = {
-      action.spawn = [ "${pkgs.alacritty}/bin/alacritty" ];
+      action.spawn = [
+        "sh"
+        "-c"
+        ''
+          exec $(${pkgs.coreutils}/bin/shuf -n1 -e \
+            "${pkgs.alacritty}/bin/alacritty" \
+            "${pkgs.kitty}/bin/kitty" \
+            "${pkgs.ghostty}/bin/ghostty" \
+            "${pkgs.wezterm}/bin/wezterm" \
+          )
+        ''
+      ];
       repeat = false;
-      hotkey-overlay.title = "启动终端";
+      hotkey-overlay.title = "启动终端(随机一个)";
     };
     "Mod+Grave" = {
       action.spawn = [
