@@ -9,7 +9,7 @@
   #
   # https://docs.warp.dev/terminal/settings/all-settings/#editor
   editor = {
-    open_file_editor = "system_default"; # 打开文件使用的编辑器: "system_default"/"warp"/"env_editor"/{ external_editor = "zed" } (默认: "system_default")
+    open_file_editor = "system_default"; # 打开文件使用的编辑器: system_default/warp/env_editor/{ external_editor = "zed" } (默认: "system_default")
     open_code_panels_file_editor = "warp"; # 从代码面板打开文件使用的编辑器, 取值同 open_file_editor (默认: "warp")
     open_file_layout = "split_pane"; # 编辑器中打开文件的布局: split_pane/new_tab (默认: "split_pane")
     prefer_markdown_viewer = true; # 打开 Markdown 文件时是否使用 Markdown 查看器 (默认: true)

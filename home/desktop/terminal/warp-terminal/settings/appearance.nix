@@ -10,11 +10,11 @@
   # https://docs.warp.dev/terminal/settings/all-settings/#themes
   themes = {
     theme = "dark"; # 配色主题, 支持内置主题名或自定义主题 { custom = { name = "..."; path = "..." } } (默认: "dark")
-    system_theme = false; # 是否跟随系统明暗主题 (默认: false)
-    selected_system_themes = { # 跟随系统主题时明暗模式使用的主题 (默认: { dark = "dark", light = "light" })
+    system_theme = true; # 是否跟随系统明暗主题 (默认: false)
+    selected_system_themes = {
       dark = "dark";
       light = "light";
-    };
+    }; # 跟随系统主题时明暗模式使用的主题 (默认: { dark = "dark", light = "light" })
   };
   # https://docs.warp.dev/terminal/settings/all-settings/#text
   text = {
@@ -47,7 +47,7 @@
   tabs = {
     workspace_decoration_visibility = "hide_fullscreen"; # 工作区装饰(标签栏等)的可见性: always_show/hide_fullscreen/on_hover (默认: "hide_fullscreen")
     tab_close_button_position = "right"; # 标签关闭按钮位置: right/left (默认: "right")
-    show_indicators_button = false; # 是否在标签上显示活动指示器 (默认: true)
+    show_indicators_button = true; # 是否在标签上显示活动指示器 (默认: true)
     preserve_active_tab_color = false; # 切换标签时是否保留活动标签的颜色 (默认: false)
     directory_tab_colors = { }; # 目录路径到标签颜色的映射, 通过按目录分配标签颜色时填充 (默认: {})
     header_toolbar_chip_selection = "default"; # 垂直标签面板头部工具栏芯片布局, 可设 "default" 或 { custom = { left = [ ]; right = [ ] } } (默认: "default")
@@ -78,8 +78,10 @@
   };
   # https://docs.warp.dev/terminal/settings/all-settings/#full-screen-apps
   full_screen_apps = {
-    alt_screen_padding = { # 全屏终端应用(备用屏幕)周围的内边距 (默认: { custom = { uniform_padding = 0.0 } })
-      custom = { # 自定义内边距
+    alt_screen_padding = {
+      # 全屏终端应用(备用屏幕)周围的内边距 (默认: { custom = { uniform_padding = 0.0 } })
+      custom = {
+        # 自定义内边距
         uniform_padding = 0.0; # 四周统一内边距 (默认: 0.0)
       };
     };

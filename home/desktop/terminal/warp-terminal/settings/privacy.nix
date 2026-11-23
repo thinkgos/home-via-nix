@@ -8,7 +8,14 @@
   # https://docs.warp.dev/terminal/settings/all-settings/#privacy
   telemetry_enabled = true; # 是否收集匿名使用遥测数据 (默认: true)
   crash_reporting_enabled = true; # 是否发送崩溃报告 (默认: true)
-  custom_secret_regex_list = [ # 自定义机密检测正则列表, 检测并遮蔽终端输出中的机密, 每项含 name/pattern (默认: [])
+  # https://docs.warp.dev/terminal/settings/all-settings/#secret-redaction
+  secret_redaction = {
+    enabled = false; # 是否启用机密遮蔽, 检测并模糊终端输出中的机密 (默认: false)
+    hide_secrets_in_block_list = false; # 块列表中是否用星号隐藏检测到的机密 (默认: false)
+    secret_display_mode_setting = "strikethrough"; # 检测到机密的显示方式: asterisks/strikethrough/always_show (默认: "strikethrough")
+  };
+  custom_secret_regex_list = [
+    # 自定义机密检测正则列表, 检测并遮蔽终端输出中的机密, 每项含 name/pattern (默认: [])
     {
       name = "IPv4 Address";
       pattern = ''\b((25[0-5]|(2[0-4]|1\d|[1-9]|)\d)\.?\b){4}\b'';
@@ -90,10 +97,5 @@
       pattern = ''\bfw_[a-zA-Z0-9]{24}\b'';
     }
   ];
-  # https://docs.warp.dev/terminal/settings/all-settings/#secret-redaction
-  secret_redaction = {
-    enabled = false; # 是否启用机密遮蔽, 检测并模糊终端输出中的机密 (默认: false)
-    hide_secrets_in_block_list = false; # 块列表中是否用星号隐藏检测到的机密 (默认: false)
-    secret_display_mode_setting = "strikethrough"; # 检测到机密的显示方式: asterisks/strikethrough/always_show (默认: "strikethrough")
-  };
+
 }

@@ -8,13 +8,16 @@
   # https://docs.warp.dev/terminal/settings/all-settings/#agents
   cloud_conversation_storage_enabled = true; # 对话是否存储到云端 (默认: true)
   usage_display_mode = "credits"; # CLI 用量入口的显示单位, 仅对 Warp Agent CLI 的设置文件生效: credits/cost (默认: "credits")
-  execution_profiles = { # Agent 执行配置(profile)集合, 由 Agent Mode 与终端 Agent 共用 (默认: {})
-    default = { # 名为 Default 的默认执行配置
+  execution_profiles = {
+    # Agent 执行配置(profile)集合, 由 Agent Mode 与终端 Agent 共用 (默认: {})
+    default = {
+      # 名为 Default 的默认执行配置
       apply_code_diffs = "agent_decides"; # 应用代码变更(diff)的权限: agent_decides 由 Agent 自行决定
       ask_user_question = "always_ask"; # Agent 向用户提问的策略: always_ask 总是询问
       autosync_plans_to_warp_drive = true; # 计划(plans)是否自动同步到 Warp Drive
       command_allowlist = [ ]; # 免确认执行的命令白名单(正则列表)
-      command_denylist = [ # 必须确认才能执行的命令黑名单(正则列表, 子 shell/网络传输/rm 等危险命令)
+      command_denylist = [
+        # 必须确认才能执行的命令黑名单(正则列表, 子 shell/网络传输/rm 等危险命令)
         ''bash(\s.*)?''
         ''fish(\s.*)?''
         ''pwsh(\s.*)?''
@@ -62,15 +65,17 @@
     agent_mode_coding_permissions = "always_ask_before_reading"; # Agent 读取文件的权限: always_ask_before_reading/always_allow_reading/allow_reading_specific_files (默认: "always_ask_before_reading")
     agent_mode_coding_file_read_allowlist = [ ]; # Agent 无需询问即可读取的文件路径 (默认: [])
     agent_mode_execute_readonly_commands = false; # Agent 是否可自动执行只读命令 (默认: false)
-    agent_mode_command_execution_allowlist = [ # Agent 无需许可即可执行的命令白名单(正则) (默认: ["cat(\\s.*)?", "echo(\\s.*)?", "find .*", "grep(\\s.*)?", "ls(\\s.*)?", "which .*"])
+    agent_mode_command_execution_allowlist = [
+      # Agent 无需许可即可执行的命令白名单(正则) (默认: ["cat(\\s.*)?", "echo(\\s.*)?", "find .*", "grep(\\s.*)?", "ls(\\s.*)?", "which .*"])
       ''cat(\s.*)?''
       ''echo(\s.*)?''
-      ''find .*''
+      "find .*"
       ''grep(\s.*)?''
       ''ls(\s.*)?''
-      ''which .*''
+      "which .*"
     ];
-    agent_mode_command_execution_denylist = [ # Agent 执行前必须询问的命令黑名单(正则) (默认: ["bash(\\s.*)?", "fish(\\s.*)?", "pwsh(\\s.*)?", "sh(\\s.*)?", "zsh(\\s.*)?", "curl(\\s.*)?", "eval(\\s.*)?", "exec(\\s.*)?", "source(\\s.*)?", "wget(\\s.*)?", "dig(\\s.*)?", "nslookup(\\s.*)?", "host(\\s.*)?", "ssh(\\s.*)?", "scp(\\s.*)?", "rsync(\\s.*)?", "telnet(\\s.*)?", "rm(\\s.*)?"])
+    agent_mode_command_execution_denylist = [
+      # Agent 执行前必须询问的命令黑名单(正则) (默认: ["bash(\\s.*)?", "fish(\\s.*)?", "pwsh(\\s.*)?", "sh(\\s.*)?", "zsh(\\s.*)?", "curl(\\s.*)?", "eval(\\s.*)?", "exec(\\s.*)?", "source(\\s.*)?", "wget(\\s.*)?", "dig(\\s.*)?", "nslookup(\\s.*)?", "host(\\s.*)?", "ssh(\\s.*)?", "scp(\\s.*)?", "rsync(\\s.*)?", "telnet(\\s.*)?", "rm(\\s.*)?"])
       ''bash(\s.*)?''
       ''fish(\s.*)?''
       ''pwsh(\s.*)?''
