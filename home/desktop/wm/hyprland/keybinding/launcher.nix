@@ -36,7 +36,7 @@ in
       {
         _args = [
           (mkLuaInline ''mod .. " + ALT + N"'')
-          (mkLuaInline ''hl.dsp.exec_cmd("warp-terminal")'')
+          (mkLuaInline ''hl.dsp.exec_cmd("${pkgs.warp-terminal}/bin/warp-terminal")'')
           { description = "启动wrap终端"; }
         ];
       }

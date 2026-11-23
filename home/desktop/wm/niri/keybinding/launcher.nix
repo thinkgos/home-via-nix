@@ -44,7 +44,7 @@
       hotkey-overlay.title = "启动浮动终端";
     };
     "Mod+Alt+N" = {
-      action.spawn = [ "warp-terminal" ];
+      action.spawn = [ "${pkgs.warp-terminal}/bin/warp-terminal" ];
       repeat = false;
       hotkey-overlay.title = "启动wrap终端";
     };
