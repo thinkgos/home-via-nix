@@ -193,6 +193,8 @@
 - Home Manager `stateVersion` 设置为 "26.05"。更新前请阅读发行说明。
 - 图形配置依赖于 `targets.genericLinux` 和 `xdg.enable`。
 - 某些商业软件（Chrome、VirtualBox、VSCode、Wireshark）必须手动安装（见 `docs/system/manual-install.md`）。
+- 注释的标点使用英文半角符号(如 `,` `.` `:` `;` `(` `)`), 避免使用全角标点(如 `，` `。` `：` `（` `）`)。
+- 同步官方文档的配置并添加注释时, 把文档标注的默认值也写上, 格式如 `# 说明 (默认: X)`。
 
 ## 快速参考
 

@@ -33,8 +33,8 @@
     themes = { };
     # validateSettings = config.programs.warp-terminal.package != null;
     # https://docs.warp.dev/terminal/settings/all-settings/
-    settings = import ./settings.nix { inherit config lib pkgs; };
-    #  https://docs.warp.dev/terminal/entry/yaml-workflows/
+    settings = import ./settings { inherit config lib pkgs; };
+    # https://docs.warp.dev/terminal/entry/yaml-workflows/
     workflows = import ./workflows.nix { inherit config lib pkgs; };
   };
 }
