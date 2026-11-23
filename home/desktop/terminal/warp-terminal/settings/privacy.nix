@@ -90,4 +90,10 @@
       pattern = ''\bfw_[a-zA-Z0-9]{24}\b'';
     }
   ];
+  # https://docs.warp.dev/terminal/settings/all-settings/#secret-redaction
+  secret_redaction = {
+    enabled = false; # 是否启用机密遮蔽, 检测并模糊终端输出中的机密 (默认: false)
+    hide_secrets_in_block_list = false; # 块列表中是否用星号隐藏检测到的机密 (默认: false)
+    secret_display_mode_setting = "strikethrough"; # 检测到机密的显示方式: asterisks/strikethrough/always_show (默认: "strikethrough")
+  };
 }
