@@ -14,6 +14,6 @@
     ./kitty.nix
     ./ghostty.nix
     ./wezterm.nix
-    ./warp-terminal.nix
+    # ./warp-terminal
   ];
 }

@@ -15,6 +15,7 @@
       ${builtins.readFile ./templates/cargo}
       ${builtins.readFile ./templates/goup}
       source "${config.xdg.configHome}/zsh/.zshrc-credentials"
+      ${builtins.readFile ./templates/ai}
     '';
 
     setOptions = [ "no_nomatch" ];
