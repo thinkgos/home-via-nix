@@ -10,7 +10,7 @@
   # https://docs.warp.dev/terminal/settings/all-settings/#themes
   themes = {
     theme = "dark"; # 配色主题, 支持内置主题名或自定义主题 { custom = { name = "..."; path = "..." } } (默认: "dark")
-    system_theme = true; # 是否跟随系统明暗主题 (默认: false)
+    system_theme = false; # 是否跟随系统明暗主题 (默认: false)
     selected_system_themes = {
       dark = "dark";
       light = "light";
