@@ -130,3 +130,12 @@ properties:
         id: ByteDance.Trae
         source: winget
         ensure: Present
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: install-Trae-CN
+      directives:
+        description: 安装 Trae-CN
+      settings:
+        id: ByteDance.Trae.CN
+        source: winget
+        ensure: Present
